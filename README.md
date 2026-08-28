@@ -18,4 +18,6 @@ O campeonato será simulado de acordo com suas respectivas fases, com os resulta
 ## Base de dados
 https://www.kaggle.com/datasets/stefanoleone992/ea-sports-fc-24-complete-player-dataset/data
 
+https://www.kaggle.com/datasets/luisfucros/fifa-players?select=players_16.csv
+
 <img width="1048" height="435" alt="image" src="https://github.com/user-attachments/assets/5c5734b4-2e71-4b54-9ca5-06626bc280a1" />
