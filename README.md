@@ -21,3 +21,6 @@ https://www.kaggle.com/datasets/stefanoleone992/ea-sports-fc-24-complete-player-
 https://www.kaggle.com/datasets/luisfucros/fifa-players?select=players_16.csv
 
 <img width="1048" height="435" alt="image" src="https://github.com/user-attachments/assets/5c5734b4-2e71-4b54-9ca5-06626bc280a1" />
+
+
+Para executá-lo é preciso ter o Node.js 20 ou superior instalado; com ele, basta entrar na pasta design, instalar as dependências com `npm install` e subir o servidor de desenvolvimento com `npm run dev`, que disponibiliza a aplicação em http://localhost:xxxx. 
