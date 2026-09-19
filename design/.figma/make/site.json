@@ -1,0 +1,11 @@
+{
+  "description": "Participe de um torneio histórico de futebol escolhendo seleções, montando elencos e simulando partidas em uma interface imersiva no modo escuro.",
+  "language": "pt-BR",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
