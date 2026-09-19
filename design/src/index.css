@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-gold: #F59E0B;
+  --color-gold-dark: #D97706;
+  --color-crimson: #EF4444;
+  --color-emerald: #10B981;
+  --color-surface: #F5F7FA;
+  --color-card: #FFFFFF;
+  --color-card2: #EEF2F7;
+  --color-border: #DCE3EC;
+  --color-border-gold: rgba(217, 119, 6, 0.42);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background-color: #E9EEF5;
+  color: #172033;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+.font-display { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.01em; }
+.font-mono { font-family: var(--font-mono); font-weight: 500; }
+
+/* Retro arcade treatment: compact contrast, hard edges, and a subtle pitch grid. */
+.retro-shell {
+  background-image: linear-gradient(rgba(23,32,51,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(23,32,51,0.025) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.retro-shell button,
+.retro-shell input {
+  font-weight: 600;
+}
+
+.retro-shell .font-mono {
+  font-weight: 700;
+}
+
+.retro-shell .font-display {
+  font-weight: 900;
+}
+
+.retro-shell .rounded-2xl,
+.retro-shell .rounded-xl {
+  box-shadow: 2px 2px 0 rgba(23,32,51,0.08);
+}
+
+.retro-shell .readable-ui {
+  text-rendering: geometricPrecision;
+}
+
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+}
+
+.animate-slide-up { animation: slide-up 0.3s ease-out; }
+.animate-fade-in { animation: fade-in 0.4s ease-out; }
+.pulse-gold { animation: pulse-gold 2s infinite; }
+
+.glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+}
+
+.bracket-connector {
+  position: relative;
+}
+.bracket-connector::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 1px;
+  height: 50%;
+  background: rgba(23,32,51,0.14);
+}
+
+/* Vintage matchday programme (home): warm paper + halftone dots. */
+.retro-paper {
+  background-color: #F6F1E5;
+  background-image: radial-gradient(rgba(23, 32, 51, 0.055) 1px, transparent 1.4px);
+  background-size: 9px 9px;
+}
+
+/* Staggered entry used by the home screen cards (fill-mode both so delayed
+   items stay hidden until their turn). */
+.stagger-up {
+  animation: slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Perforation line on the mode tickets: a full row of punched holes across the
+   stub, like a tear-off ticket. Two side notches anchor the ends. */
+.ticket-perf {
+  position: relative;
+  height: 0;
+  border-top: 2px dotted #C9BFA6;
+}
+.ticket-perf::before,
+.ticket-perf::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: #F6F1E5;
+  border: 1px solid #C9BFA6;
+}
+.ticket-perf::before { left: -8px; }
+.ticket-perf::after { right: -8px; }
+
+/* Diagonal pinstripes layered over the colored ticket top bars. */
+.ticket-stripe {
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.30) 0 6px, transparent 6px 12px);
+}
+
+/* Readability pass: keep compact mobile layouts while making essential copy legible. */
+.readable-ui [class~="text-white/15"] { color: rgba(71,85,105,0.78) !important; }
+.readable-ui [class~="text-white/20"] { color: rgba(71,85,105,0.84) !important; }
+.readable-ui [class~="text-white/25"] { color: rgba(71,85,105,0.88) !important; }
+.readable-ui [class~="text-white/30"] { color: rgba(71,85,105,0.92) !important; }
+.readable-ui [class~="text-white/35"] { color: rgba(71,85,105,0.94) !important; }
+.readable-ui [class~="text-white/40"] { color: rgba(51,65,85,0.94) !important; }
+.readable-ui [class~="text-white/45"] { color: rgba(51,65,85,0.96) !important; }
+.readable-ui [class~="text-white/50"],
+.readable-ui [class~="text-white/55"],
+.readable-ui [class~="text-white/60"],
+.readable-ui [class~="text-white/65"],
+.readable-ui [class~="text-white/70"],
+.readable-ui [class~="text-white/75"],
+.readable-ui [class~="text-white/80"] { color: #26364F !important; font-weight: 700 !important; }
+
+.readable-ui [class~="text-amber-400/50"],
+.readable-ui [class~="text-amber-400/55"],
+.readable-ui [class~="text-amber-300/70"] { color: rgba(251,191,36,0.86) !important; }
+.readable-ui [class~="text-blue-400/50"],
+.readable-ui [class~="text-blue-300/70"] { color: rgba(147,197,253,0.82) !important; }
+.readable-ui [class~="text-red-400/55"] { color: rgba(248,113,113,0.82) !important; }
+.readable-ui [class~="text-emerald-400/55"] { color: rgba(52,211,153,0.82) !important; }
+
+.readable-ui input::placeholder { color: rgba(71,85,105,0.68); }
+.readable-ui button:disabled { opacity: 0.62; }
+.readable-ui .placeholder-gray-600::placeholder { color: rgba(71,85,105,0.68); }

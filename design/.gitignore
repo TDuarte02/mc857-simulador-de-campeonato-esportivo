@@ -1,0 +1,11 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+
+# macOS
+.DS_Store
+
+# Configurações locais das ferramentas
+.claude/settings.local.json
