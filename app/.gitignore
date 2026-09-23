@@ -1,0 +1,12 @@
+.gradle/
+build/
+composeApp/build/
+.idea/
+.kotlin/
+local.properties
+*.iml
+.DS_Store
+captures/
+iosApp/build/
+iosApp/Pods/
+iosApp/.xcode.env.local
