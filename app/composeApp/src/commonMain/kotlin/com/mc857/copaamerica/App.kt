@@ -17,7 +17,6 @@ import com.mc857.copaamerica.domain.data.FIRST_MATCH_CARDS
 import com.mc857.copaamerica.domain.logic.KnockoutRound
 import com.mc857.copaamerica.domain.logic.applyGroupResult
 import com.mc857.copaamerica.domain.logic.completeGroupStage
-import com.mc857.copaamerica.domain.logic.decideTie
 import com.mc857.copaamerica.domain.logic.finishKnockout
 import com.mc857.copaamerica.domain.logic.groupMatchCards
 import com.mc857.copaamerica.domain.logic.groupMatchScore
@@ -180,6 +179,7 @@ fun CopaAmericaApp() {
             Screen.MATCH_RESULT -> MatchResultScreen(
                 team = team, opponent = currentOpponent, phase = phase,
                 groupMatch = if (phase == Phase.GROUP) currentGroupMatch else null,
+                knockoutTie = if (phase == Phase.GROUP) null else koTie,
                 squad = lockedSquad,
                 onNext = {
                     finishMatch()
@@ -200,21 +200,32 @@ fun CopaAmericaApp() {
                             }
                         }
                         phase == Phase.SF && koTie != null && b != null -> {
-                            val settled = settleRound(b.ko, KnockoutRound.SF, koIndexOf(b.ko.sf, team.name), decideTie(koTie, currentOpponent, 2, 1))
-                            bracket = b.copy(ko = settled)
-                            phase = Phase.THIRD
-                            nav(Screen.ELIMINATION)
+                            val settled = settleRound(b.ko, KnockoutRound.SF, koIndexOf(b.ko.sf, team.name), simulateTie(koTie))
+                            val reachedFinal = settled.final.home?.name == team.name || settled.final.away?.name == team.name
+                            if (reachedFinal) {
+                                bracket = b.copy(ko = finishKnockout(settled))
+                                nav(Screen.PHASE_OVERVIEW)
+                            } else {
+                                bracket = b.copy(ko = settled)
+                                phase = Phase.THIRD
+                                nav(Screen.ELIMINATION)
+                            }
                         }
                         phase == Phase.THIRD && koTie != null && b != null -> {
-                            val third = decideTie(koTie, PoolTeam(team.name, team.flag), 2, 1)
+                            val third = simulateTie(koTie)
                             bracket = b.copy(ko = finishKnockout(b.ko.copy(third = third)))
                             nav(Screen.PHASE_OVERVIEW)
                         }
                         koTie != null && b != null -> {
-                            val settled = settleRound(b.ko, KnockoutRound.QF, koIndexOf(b.ko.qf, team.name), decideTie(koTie, PoolTeam(team.name, team.flag), 2, 1))
+                            val settled = settleRound(b.ko, KnockoutRound.QF, koIndexOf(b.ko.qf, team.name), simulateTie(koTie))
                             bracket = b.copy(ko = settled)
-                            phase = Phase.SF
-                            nav(Screen.BRACKET)
+                            if (settled.sf.any { it.home?.name == team.name || it.away?.name == team.name }) {
+                                phase = Phase.SF
+                                nav(Screen.BRACKET)
+                            } else {
+                                bracket = b.copy(ko = finishKnockout(settled))
+                                nav(Screen.PHASE_OVERVIEW)
+                            }
                         }
                         else -> nav(Screen.ELIMINATION)
                     }

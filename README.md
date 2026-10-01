@@ -15,6 +15,12 @@ O usuário poderá escolher uma seleção participante, sua escalação inicial 
 
 O campeonato será simulado de acordo com suas respectivas fases, com os resultados das partidas determinando a classificação e o avanço das equipes. Durante o campeonato, o usuário poderá tomar decisões que alterem a configuração de sua equipe, como modificar a escalação ou a formação tática entre as partidas. Inicialmente, a interação durante uma partida ficará limitada à visualização de sua evolução, deixando alterações táticas e de escalação para o intervalo entre partidas. A simulação utilizará elementos probabilísticos influenciados pelos atributos dos jogadores, de modo que equipes e jogadores com características diferentes apresentem desempenhos distintos, mantendo, ao mesmo tempo, um certo grau de aleatoriedade nos resultados.
 
+## Modelo probabilístico inicial
+
+Como ainda não há uma base de partidas e escalações, o placar é simulado a partir de perfis agregados por seleção, derivados de `players_data.csv` (FIFA 22). Para cada país, são usados os 11 jogadores de maior `overall` disponíveis (Haiti tem 10) e o goleiro de maior `overall` encontrado. Ataque combina finalização, velocidade, drible e passe; meio-campo combina passe, drible e físico; defesa combina defesa e físico. Os perfis resultantes estão em `app/composeApp/src/commonMain/kotlin/com/mc857/copaamerica/domain/data/NationalTeamAttributes.kt`.
+
+O modelo calcula gols esperados com esses quatro atributos e sorteia gols por uma distribuição de Poisson. Os pesos e a média-base são heurísticas iniciais, ainda não calibradas nem avaliadas contra resultados reais. Os placares são reprodutíveis para o mesmo confronto para evitar mudanças durante recomposições da interface. A escalação mockada da aplicação não participa do cálculo; os atributos do time vêm do perfil agregado da seleção.
+
 ## Base de dados
 https://www.kaggle.com/datasets/stefanoleone992/ea-sports-fc-24-complete-player-dataset/data
 

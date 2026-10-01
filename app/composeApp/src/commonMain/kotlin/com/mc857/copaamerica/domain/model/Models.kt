@@ -33,6 +33,13 @@ data class Player(
     val role: SlotRole,
 )
 
+data class TeamAttributes(
+    val attack: Double,
+    val midfield: Double,
+    val defense: Double,
+    val goalkeeper: Double,
+)
+
 enum class PosFilter { ALL, GK, DEF, MID, FW }
 
 enum class FormKey(val label: String) {
