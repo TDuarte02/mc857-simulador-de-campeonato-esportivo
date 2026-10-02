@@ -57,6 +57,7 @@ import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.CircleFab
+import com.mc857.copaamerica.ui.components.PlayTriangle
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
 import com.mc857.copaamerica.ui.components.RoleChip
 import com.mc857.copaamerica.ui.components.TopBar
@@ -232,7 +233,7 @@ fun SquadBuilderScreen(
                             Text(title, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 15.sp, color = AppColors.ink)
                             Text(hint, fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.mutedText)
                         }
-                        Text("▶", color = AppColors.antiqueGold, fontSize = 16.sp)
+                        PlayTriangle(color = AppColors.antiqueGold, size = 12.dp)
                     }
                 }
             }

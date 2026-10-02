@@ -1,6 +1,7 @@
 package com.mc857.copaamerica.ui.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -17,7 +18,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -36,6 +41,39 @@ fun DiamondBullet(color: Color = AppColors.antiqueGold, size: androidx.compose.u
             .rotate(45f)
             .background(color),
     )
+}
+
+/**
+ * The "▶" play glyph, drawn instead of typed: iOS renders U+25B6 as a color
+ * emoji, so a text glyph looks different on each platform.
+ */
+@Composable
+fun PlayTriangle(color: Color, size: androidx.compose.ui.unit.Dp = 9.dp, modifier: Modifier = Modifier) {
+    Canvas(modifier.size(size)) {
+        val path = Path().apply {
+            moveTo(this@Canvas.size.width * 0.08f, 0f)
+            lineTo(this@Canvas.size.width, this@Canvas.size.height / 2f)
+            lineTo(this@Canvas.size.width * 0.08f, this@Canvas.size.height)
+            close()
+        }
+        drawPath(path, color)
+    }
+}
+
+/** Outline user glyph from the masthead profile button (App.tsx, 24x24 viewBox SVG). */
+@Composable
+fun ProfileIcon(color: Color = AppColors.antiqueGold, size: androidx.compose.ui.unit.Dp = 19.dp) {
+    Canvas(Modifier.size(size)) {
+        val u = this.size.width / 24f
+        val stroke = Stroke(width = 2.2f * u, cap = StrokeCap.Round)
+        drawCircle(color, radius = 3.5f * u, center = Offset(12f * u, 8f * u), style = stroke)
+        val shoulders = Path().apply {
+            moveTo(5f * u, 20f * u)
+            cubicTo(5.8f * u, 16.6f * u, 8.2f * u, 14.8f * u, 12f * u, 14.8f * u)
+            cubicTo(15.8f * u, 14.8f * u, 18.2f * u, 16.6f * u, 19f * u, 20f * u)
+        }
+        drawPath(shoulders, color, style = stroke)
+    }
 }
 
 /** Small uppercase mono label with a diamond bullet, e.g. "◆ Copa América". */
