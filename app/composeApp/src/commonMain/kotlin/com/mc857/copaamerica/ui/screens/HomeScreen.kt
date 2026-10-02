@@ -1,26 +1,34 @@
 package com.mc857.copaamerica.ui.screens
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -32,6 +40,8 @@ import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.theme.ticketStripe
 import com.mc857.copaamerica.ui.components.KickerLabel
+import com.mc857.copaamerica.ui.components.PlayTriangle
+import com.mc857.copaamerica.ui.components.ProfileIcon
 
 private data class ModeTicket(
     val title: String,
@@ -65,76 +75,88 @@ fun HomeScreen(onClassic: () -> Unit) {
         ),
     )
 
-    Column(Modifier.fillMaxSize().retroPaper()) {
-        // Masthead
-        Column(Modifier.padding(horizontal = 20.dp).padding(top = 20.dp, bottom = 12.dp)) {
-            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
-                Row {
-                    Text("COPA ", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 40.sp, color = AppColors.ink, lineHeight = 36.sp)
-                    Text("AMÉRICA", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 40.sp, color = AppColors.antiqueGold, lineHeight = 36.sp)
-                }
-                Box(
-                    Modifier
-                        .size(40.dp)
-                        .hardShadow(cornerRadius = 100.dp)
-                        .background(AppColors.cream, CircleShape)
-                        .border(BorderStroke(2.dp, AppColors.antiqueGold), CircleShape),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    Text("👤", fontSize = 16.sp)
-                }
-            }
-            Spacer(Modifier.height(8.dp))
-            KickerLabel(text = "Campeonato das seleções históricas", modifier = Modifier.fillMaxWidth(), color = AppColors.kicker)
-        }
-
-        // Stats scoreboard
+    // Fills the screen like the design; on short screens the column grows to the
+    // cards' content height and scrolls instead of clipping the descriptions.
+    BoxWithConstraints(Modifier.fillMaxSize().retroPaper()) {
         Column(
             Modifier
-                .padding(horizontal = 20.dp)
-                .padding(bottom = 12.dp)
                 .fillMaxWidth()
-                .hardShadow(cornerRadius = 16.dp)
-                .background(AppColors.cream, RoundedCornerShape(16.dp))
-                .border(BorderStroke(2.dp, AppColors.ink), RoundedCornerShape(16.dp)),
+                .verticalScroll(rememberScrollState())
+                .heightIn(min = maxHeight)
+                .height(IntrinsicSize.Min),
         ) {
-            Row(
-                Modifier.fillMaxWidth().background(AppColors.ink).padding(horizontal = 16.dp, vertical = 8.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
+            // Masthead
+            Column(Modifier.padding(horizontal = 20.dp).padding(top = 20.dp, bottom = 12.dp)) {
+                Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
+                    Row {
+                        Text("COPA ", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 40.sp, color = AppColors.ink, lineHeight = 36.sp)
+                        Text("AMÉRICA", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 40.sp, color = AppColors.antiqueGold, lineHeight = 36.sp)
+                    }
+                    Box(
+                        Modifier
+                            .size(40.dp)
+                            .hardShadow(cornerRadius = 100.dp)
+                            .background(AppColors.cream, CircleShape)
+                            .border(BorderStroke(2.dp, AppColors.antiqueGold), CircleShape),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        ProfileIcon()
+                    }
+                }
+                Spacer(Modifier.height(8.dp))
+                KickerLabel(text = "Campeonato das seleções históricas", modifier = Modifier.fillMaxWidth(), color = AppColors.kicker)
+            }
+
+            // Stats scoreboard
+            Column(
+                Modifier
+                    .padding(horizontal = 20.dp)
+                    .padding(bottom = 12.dp)
+                    .fillMaxWidth()
+                    .hardShadow(cornerRadius = 16.dp)
+                    .background(AppColors.cream, RoundedCornerShape(16.dp))
+                    .border(BorderStroke(2.dp, AppColors.ink), RoundedCornerShape(16.dp)),
             ) {
-                Text("SUAS ESTATÍSTICAS", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.paper)
-                Text("TEMPORADA 2026", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.antiqueGold)
+                Row(
+                    Modifier.fillMaxWidth().background(AppColors.ink).padding(horizontal = 16.dp, vertical = 8.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                ) {
+                    Text("SUAS ESTATÍSTICAS", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.paper)
+                    Text("TEMPORADA 2026", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.antiqueGold)
+                }
+                Box(Modifier.fillMaxWidth().height(2.dp).background(AppColors.antiqueGold))
+                Row(Modifier.fillMaxWidth()) {
+                    StatColumn("SINGLE PLAYER", Modifier.weight(1f))
+                    Box(Modifier.width(2.dp).height(70.dp).background(AppColors.rowBorder))
+                    StatColumn("MULTIPLAYER", Modifier.weight(1f))
+                }
             }
-            Box(Modifier.fillMaxWidth().height(2.dp).background(AppColors.antiqueGold))
-            Row(Modifier.fillMaxWidth()) {
-                StatColumn("SINGLE PLAYER", Modifier.weight(1f))
-                Box(Modifier.width(2.dp).height(70.dp).background(AppColors.rowBorder))
-                StatColumn("MULTIPLAYER", Modifier.weight(1f))
+
+            // Section label
+            Row(
+                Modifier.padding(horizontal = 20.dp).padding(bottom = 10.dp).fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                KickerLabel(text = "Selecione seu modo de jogo", color = AppColors.ink)
+                Spacer(Modifier.width(10.dp))
+                Box(Modifier.weight(1f).height(2.dp).background(AppColors.paperBorder))
             }
-        }
 
-        // Section label
-        Row(
-            Modifier.padding(horizontal = 20.dp).padding(bottom = 10.dp).fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            KickerLabel(text = "Selecione seu modo de jogo")
-        }
+            // Tickets
+            Column(
+                Modifier.weight(1f).padding(horizontal = 20.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                tickets.forEach { ticket -> ModeTicketCard(ticket, Modifier.weight(1f)) }
+            }
 
-        // Tickets
-        Column(
-            Modifier.weight(1f).padding(horizontal = 20.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-        ) {
-            tickets.forEach { ticket -> ModeTicketCard(ticket, Modifier.weight(1f)) }
-        }
-
-        Column(Modifier.padding(20.dp)) {
-            Text(
-                "BOA SORTE, TREINADOR!",
-                fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.5.sp,
-                color = AppColors.kicker, modifier = Modifier.fillMaxWidth(), textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-            )
+            Column(Modifier.padding(20.dp)) {
+                Text(
+                    "BOA SORTE, TREINADOR!",
+                    fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.5.sp,
+                    color = AppColors.kicker, modifier = Modifier.fillMaxWidth(), textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                )
+            }
         }
     }
 }
@@ -159,18 +181,43 @@ private fun ModeTicketCard(ticket: ModeTicket, modifier: Modifier) {
             .border(BorderStroke(2.dp, ticket.border.copy(alpha = alpha)), RoundedCornerShape(16.dp))
             .then(if (ticket.enabled) Modifier.clickable(onClick = ticket.onClick!!) else Modifier),
     ) {
-        Box(Modifier.fillMaxWidth().height(10.dp).background(ticket.bar.copy(alpha = alpha), RoundedCornerShape(topStart = 14.dp, topEnd = 14.dp)).ticketStripe())
+        Box(Modifier.fillMaxWidth().height(10.dp).clip(RoundedCornerShape(topStart = 14.dp, topEnd = 14.dp)).background(ticket.bar.copy(alpha = alpha)).ticketStripe())
         Column(Modifier.weight(1f).padding(horizontal = 20.dp, vertical = 12.dp), verticalArrangement = Arrangement.Center) {
             Text(ticket.title.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 22.sp, color = AppColors.ink.copy(alpha = alpha.coerceAtLeast(0.8f)))
             Spacer(Modifier.height(4.dp))
             Text(ticket.desc, fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText.copy(alpha = alpha.coerceAtLeast(0.8f)))
         }
-        Box(Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(bottom = 10.dp), contentAlignment = Alignment.CenterEnd) {
-            Text(
-                text = if (ticket.enabled) "▶ JOGAR" else "EM BREVE",
-                fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, letterSpacing = 1.sp,
-                color = if (ticket.enabled) ticket.ctaColor else AppColors.mutedText,
-            )
+        Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp)) {
+            DottedRule(AppColors.paperBorder)
+            Row(
+                Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                horizontalArrangement = Arrangement.End,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                val ctaColor = if (ticket.enabled) ticket.ctaColor else AppColors.mutedText
+                if (ticket.enabled) {
+                    PlayTriangle(color = ctaColor)
+                    Spacer(Modifier.width(8.dp))
+                }
+                Text(
+                    text = if (ticket.enabled) "JOGAR" else "EM BREVE",
+                    fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, letterSpacing = 1.sp,
+                    color = ctaColor,
+                )
+            }
+        }
+    }
+}
+
+/** 2dp dotted horizontal rule, like CSS `border-t-2 border-dotted`. */
+@Composable
+private fun DottedRule(color: Color) {
+    Canvas(Modifier.fillMaxWidth().height(2.dp)) {
+        val dot = size.height
+        var x = dot / 2
+        while (x < size.width) {
+            drawCircle(color, radius = dot / 2, center = Offset(x, dot / 2))
+            x += dot * 2
         }
     }
 }
