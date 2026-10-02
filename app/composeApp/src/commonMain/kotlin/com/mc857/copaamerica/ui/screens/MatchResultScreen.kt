@@ -27,7 +27,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mc857.copaamerica.domain.logic.buildMatchEvents
 import com.mc857.copaamerica.domain.logic.groupMatchScore
+import com.mc857.copaamerica.domain.logic.predictMatchScore
+import com.mc857.copaamerica.domain.logic.tieSeed
 import com.mc857.copaamerica.domain.model.GroupMatch
+import com.mc857.copaamerica.domain.model.KnockoutTie
 import com.mc857.copaamerica.domain.model.MatchEventType
 import com.mc857.copaamerica.domain.model.MatchSide
 import com.mc857.copaamerica.domain.model.Phase
@@ -48,6 +51,7 @@ fun MatchResultScreen(
     opponent: PoolTeam,
     phase: Phase,
     groupMatch: GroupMatch?,
+    knockoutTie: KnockoutTie?,
     squad: List<Player>,
     onNext: () -> Unit,
     onBack: () -> Unit,
@@ -62,10 +66,19 @@ fun MatchResultScreen(
         isThirdPlace -> "Disputa de 3º lugar"
         else -> "Quartas de final"
     }
-    val groupScore = groupMatch?.let { groupMatchScore(it) } ?: (2 to 1)
-    val teamIsHome = groupMatch?.home?.name == team.name
-    val teamGoals = if (isGroupMatch) (if (teamIsHome) groupScore.first else groupScore.second) else if (isSemiFinal) 1 else 2
-    val opponentGoals = if (isGroupMatch) (if (teamIsHome) groupScore.second else groupScore.first) else if (isSemiFinal) 2 else 1
+    val score = when {
+        groupMatch != null -> groupMatchScore(groupMatch)
+        knockoutTie?.home != null && knockoutTie.away != null ->
+            predictMatchScore(knockoutTie.home.name, knockoutTie.away.name, tieSeed(knockoutTie.home, knockoutTie.away))
+        else -> predictMatchScore(team.name, opponent.name, ("${team.name}×${opponent.name}").sumOf { it.code })
+    }
+    val teamIsHome = when {
+        groupMatch != null -> groupMatch.home.name == team.name
+        knockoutTie?.home != null -> knockoutTie.home.name == team.name
+        else -> true
+    }
+    val teamGoals = if (teamIsHome) score.first else score.second
+    val opponentGoals = if (teamIsHome) score.second else score.first
     val didWin = teamGoals > opponentGoals
     val didLose = teamGoals < opponentGoals
 
