@@ -17,7 +17,7 @@ O campeonato será simulado de acordo com suas respectivas fases, com os resulta
 
 ## Modelo probabilístico inicial
 
-Como ainda não há uma base de partidas e escalações, o placar é simulado a partir de perfis agregados por seleção, derivados de `players_data.csv` (FIFA 22). Para cada país, são usados os 11 jogadores de maior `overall` disponíveis (Haiti tem 10) e o goleiro de maior `overall` encontrado. Ataque combina finalização, velocidade, drible e passe; meio-campo combina passe, drible e físico; defesa combina defesa e físico. Os perfis resultantes estão em `app/composeApp/src/commonMain/kotlin/com/mc857/copaamerica/domain/data/NationalTeamAttributes.kt`.
+Como ainda não há uma base de partidas e escalações, o placar é simulado a partir de perfis agregados por seleção, derivados de `players_data.csv` (FIFA 22). Para cada país, os jogadores são selecionados pela posição principal e por pontuações construídas a partir dos atributos: até 2 atacantes, 4 meio-campistas e 4 defensores; o goleiro é escolhido por `goalkeeping_reflexes`. Haiti tem 10 jogadores disponíveis e, por isso, um defensor a menos. Ataque combina finalização, velocidade, drible e passe; meio-campo combina passe, drible e físico; defesa combina defesa e físico. Os perfis resultantes estão em `app/composeApp/src/commonMain/kotlin/com/mc857/copaamerica/domain/data/NationalTeamAttributes.kt`.
 
 O modelo calcula gols esperados com esses quatro atributos e sorteia gols por uma distribuição de Poisson. Os pesos e a média-base são heurísticas iniciais, ainda não calibradas nem avaliadas contra resultados reais. Os placares são reprodutíveis para o mesmo confronto para evitar mudanças durante recomposições da interface. A escalação mockada da aplicação não participa do cálculo; os atributos do time vêm do perfil agregado da seleção.
 
@@ -27,6 +27,18 @@ https://www.kaggle.com/datasets/stefanoleone992/ea-sports-fc-24-complete-player-
 https://www.kaggle.com/datasets/luisfucros/fifa-players?select=players_16.csv
 
 <img width="1048" height="435" alt="image" src="https://github.com/user-attachments/assets/5c5734b4-2e71-4b54-9ca5-06626bc280a1" />
+
+## Roteiro de demonstração (3 partidas)
+
+Execute o app mobile pelo Android Studio com um emulador ou dispositivo Android conectado. Para mostrar três partidas seguidas:
+
+1. Inicie o Modo Clássico, escolha Brasil e monte o elenco.
+2. Faça o sorteio e abra a primeira partida da fase de grupos.
+3. Na tela de resultado, destaque placar e eventos; avance para a fase de grupos.
+4. Use “Jogar próxima partida” e repita o passo anterior mais duas vezes.
+5. Após a terceira partida da seleção, mostre a classificação final do grupo e o chaveamento. As outras partidas do grupo são simuladas automaticamente.
+
+O caminho garante três partidas da seleção independentemente de vitórias ou derrotas. Os placares dependem dos perfis agregados das equipes e do sorteio dos grupos; a escalação escolhida não altera o modelo nesta versão.
 
 ## Design
 Para executá-lo é preciso ter o Node.js 20 ou superior instalado; com ele, basta entrar na pasta design, instalar as dependências com `npm install` e subir o servidor de desenvolvimento com `npm run dev`, que disponibiliza a aplicação em http://localhost:xxxx. 
