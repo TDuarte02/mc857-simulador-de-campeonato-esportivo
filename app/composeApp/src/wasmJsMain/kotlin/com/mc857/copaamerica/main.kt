@@ -21,6 +21,9 @@ import androidx.compose.ui.window.ComposeViewport
 import com.mc857.copaamerica.resources.Res
 import com.mc857.copaamerica.theme.AppColors
 import kotlinx.browser.document
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalResourceApi::class)
@@ -31,18 +34,32 @@ fun main() {
         // fallback. The file is a subset of Noto Color Emoji with only the
         // glyphs the app uses.
         val fontFamilyResolver = LocalFontFamilyResolver.current
-        var emojiLoaded by remember { mutableStateOf(false) }
+        var fontsLoaded by remember { mutableStateOf(false) }
         LaunchedEffect(Unit) {
-            val bytes = Res.readBytes("files/NotoColorEmoji-subset.ttf")
-            fontFamilyResolver.preload(FontFamily(Font("NotoColorEmoji", bytes)))
-            emojiLoaded = true
+            coroutineScope {
+                // The app's own fonts load asynchronously on first use, so text
+                // would show as empty boxes for a moment; fetching them up front
+                // lets those loads hit the browser cache instead.
+                val appFonts = APP_FONTS.map { async { Res.readBytes("font/$it.ttf") } }
+                val emoji = Res.readBytes("files/NotoColorEmoji-subset.ttf")
+                fontFamilyResolver.preload(FontFamily(Font("NotoColorEmoji", emoji)))
+                appFonts.awaitAll()
+            }
+            fontsLoaded = true
         }
         // The app is designed for a phone frame (design/: 390x844); on wide
         // browser windows keep it in a centered phone-width column.
         Box(Modifier.fillMaxSize().background(AppColors.surface), contentAlignment = Alignment.TopCenter) {
             Box(Modifier.fillMaxHeight().widthIn(max = 480.dp)) {
-                if (emojiLoaded) CopaAmericaApp()
+                if (fontsLoaded) CopaAmericaApp()
             }
         }
     }
 }
+
+/** Files in commonMain/composeResources/font, as referenced by theme/Type.kt. */
+private val APP_FONTS = listOf(
+    "barlow_semibold", "barlow_bold", "barlow_extrabold", "barlow_black",
+    "jetbrains_medium", "jetbrains_bold",
+    "outfit_medium", "outfit_semibold", "outfit_bold", "outfit_extrabold",
+)
