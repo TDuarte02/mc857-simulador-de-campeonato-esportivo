@@ -28,6 +28,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -106,6 +107,7 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
                     Modifier
                         .background(if (active) AppColors.ink else AppColors.cream, RoundedCornerShape(8.dp))
                         .border(BorderStroke(2.dp, if (active) AppColors.ink else AppColors.paperBorder), RoundedCornerShape(8.dp))
+                        .clip(RoundedCornerShape(8.dp))
                         .clickable { confFilter = conf }
                         .padding(horizontal = 12.dp, vertical = 6.dp),
                 ) {
@@ -132,6 +134,7 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
                         .fillMaxWidth()
                         .background(if (isSel) AppColors.ticketOrangeBg else AppColors.cream, RoundedCornerShape(14.dp))
                         .border(BorderStroke(2.dp, if (isSel) AppColors.antiqueGold else AppColors.paperBorder), RoundedCornerShape(14.dp))
+                        .clip(RoundedCornerShape(14.dp))
                         .clickable { selectedId = team.id }
                         .padding(8.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,

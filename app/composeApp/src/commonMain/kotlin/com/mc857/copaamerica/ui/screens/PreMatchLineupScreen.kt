@@ -59,6 +59,7 @@ import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.CircleFab
+import com.mc857.copaamerica.ui.components.DieFiveIcon
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
 import com.mc857.copaamerica.ui.components.TopBar
 
@@ -147,6 +148,7 @@ fun PreMatchLineupScreen(
                         Modifier
                             .background(if (active) AppColors.ticketOrange else AppColors.cream, RoundedCornerShape(50))
                             .border(BorderStroke(2.dp, if (active) AppColors.ink else AppColors.paperBorder), RoundedCornerShape(50))
+                            .clip(RoundedCornerShape(50))
                             .clickable { changeFormation(fk) }
                             .padding(horizontal = 12.dp, vertical = 6.dp),
                     ) {
@@ -228,7 +230,7 @@ fun PreMatchLineupScreen(
 
     Box(Modifier.fillMaxSize().padding(20.dp), contentAlignment = Alignment.BottomEnd) {
         Box(Modifier.padding(bottom = 96.dp)) {
-            CircleFab(onClick = ::fillRandom) { Text("⚄", fontSize = 20.sp, color = AppColors.cream) }
+            CircleFab(onClick = ::fillRandom) { DieFiveIcon(color = AppColors.cream) }
         }
     }
     } // Box
@@ -252,6 +254,7 @@ fun PreMatchLineupScreen(
                                     .fillMaxWidth()
                                     .background(if (suspended) AppColors.lossRedBg else AppColors.paper, RoundedCornerShape(12.dp))
                                     .border(BorderStroke(2.dp, if (suspended) Color(0xFFE0B4B4) else AppColors.paperBorder), RoundedCornerShape(12.dp))
+                                    .clip(RoundedCornerShape(12.dp))
                                     .then(if (!suspended) Modifier.clickable { choosePlayer(player) } else Modifier)
                                     .padding(horizontal = 16.dp, vertical = 12.dp),
                                 verticalAlignment = Alignment.CenterVertically,

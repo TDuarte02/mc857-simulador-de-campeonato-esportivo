@@ -35,6 +35,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -56,6 +57,7 @@ import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
+import com.mc857.copaamerica.ui.components.ChevronDownIcon
 import com.mc857.copaamerica.ui.components.CircleFab
 import com.mc857.copaamerica.ui.components.PlayTriangle
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
@@ -125,6 +127,7 @@ fun SquadBuilderScreen(
                             .weight(1f)
                             .background(if (active) AppColors.ink else AppColors.cream, RoundedCornerShape(8.dp))
                             .border(BorderStroke(2.dp, if (active) AppColors.ink else AppColors.paperBorder), RoundedCornerShape(8.dp))
+                            .clip(RoundedCornerShape(8.dp))
                             .clickable { filter = tab }
                             .padding(vertical = 6.dp),
                     ) {
@@ -143,15 +146,20 @@ fun SquadBuilderScreen(
                         .fillMaxWidth()
                         .background(AppColors.cream, RoundedCornerShape(8.dp))
                         .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(8.dp))
+                        .clip(RoundedCornerShape(8.dp))
                         .clickable { sortMenuOpen = true }
                         .padding(horizontal = 12.dp, vertical = 8.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text("ORDENAR POR", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
-                    Text(
-                        (if (sortByRating) "Nota: maior primeiro" else "Nome: A–Z") + " ⌄",
-                        fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink,
-                    )
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                        Text(
+                            if (sortByRating) "Nota: maior primeiro" else "Nome: A–Z",
+                            fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink,
+                        )
+                        ChevronDownIcon(color = AppColors.kicker)
+                    }
                 }
                 DropdownMenu(expanded = sortMenuOpen, onDismissRequest = { sortMenuOpen = false }) {
                     DropdownMenuItem(text = { Text("Nota: maior primeiro") }, onClick = { sortByRating = true; sortMenuOpen = false })
@@ -224,6 +232,7 @@ fun SquadBuilderScreen(
                             .padding(bottom = 8.dp)
                             .background(AppColors.cream, RoundedCornerShape(12.dp))
                             .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(12.dp))
+                            .clip(RoundedCornerShape(12.dp))
                             .clickable { applySquad(apply()); presetSheetOpen = false }
                             .padding(horizontal = 16.dp, vertical = 12.dp),
                         horizontalArrangement = Arrangement.SpaceBetween,
@@ -248,6 +257,7 @@ private fun PlayerCard(player: Player, selected: Boolean, dimmed: Boolean, onCli
             .fillMaxWidth()
             .background(if (selected) AppColors.ticketOrangeBg else AppColors.cream, RoundedCornerShape(12.dp))
             .border(BorderStroke(2.dp, if (selected) AppColors.antiqueGold else AppColors.paperBorder), RoundedCornerShape(12.dp))
+            .clip(RoundedCornerShape(12.dp))
             .clickable(onClick = onClick)
             .padding(10.dp)
             .then(if (dimmed) Modifier else Modifier),

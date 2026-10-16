@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -65,12 +66,13 @@ fun TopBar(
                 modifier = Modifier
                     .background(AppColors.cream, RoundedCornerShape(8.dp))
                     .border(BorderStroke(2.dp, AppColors.ink), RoundedCornerShape(8.dp))
+                    .clip(RoundedCornerShape(8.dp))
                     .clickable(onClick = onReset)
                     .padding(horizontal = 10.dp, vertical = 6.dp),
                 horizontalArrangement = Arrangement.spacedBy(4.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Text("↺", color = AppColors.kicker, fontSize = 14.sp)
+                RestartIcon(color = AppColors.kicker)
                 Text(
                     "Novo",
                     fontFamily = monoFontFamily(),

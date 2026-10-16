@@ -179,6 +179,7 @@ private fun ModeTicketCard(ticket: ModeTicket, modifier: Modifier) {
             .hardShadow(cornerRadius = 16.dp)
             .background(ticket.bg.copy(alpha = alpha.coerceAtLeast(0.85f)), RoundedCornerShape(16.dp))
             .border(BorderStroke(2.dp, ticket.border.copy(alpha = alpha)), RoundedCornerShape(16.dp))
+            .clip(RoundedCornerShape(16.dp))
             .then(if (ticket.enabled) Modifier.clickable(onClick = ticket.onClick!!) else Modifier),
     ) {
         Box(Modifier.fillMaxWidth().height(10.dp).clip(RoundedCornerShape(topStart = 14.dp, topEnd = 14.dp)).background(ticket.bar.copy(alpha = alpha)).ticketStripe())
