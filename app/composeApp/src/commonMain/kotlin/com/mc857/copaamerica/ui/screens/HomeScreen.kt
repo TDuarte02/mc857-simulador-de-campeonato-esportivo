@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -19,6 +20,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -27,6 +29,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -34,18 +37,28 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mc857.copaamerica.theme.AppColors
+import com.mc857.copaamerica.theme.bodyFontFamily
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.theme.ticketStripe
 import com.mc857.copaamerica.ui.components.KickerLabel
+import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.PlayTriangle
 import com.mc857.copaamerica.ui.components.ProfileIcon
+import com.mc857.copaamerica.ui.components.WideInkHeaderCard
+import com.mc857.copaamerica.ui.components.WidePage
+import com.mc857.copaamerica.ui.components.WideSectionRule
+import com.mc857.copaamerica.ui.components.WideTicketCard
+import com.mc857.copaamerica.ui.components.WideTitle
 
 private data class ModeTicket(
     val title: String,
     val desc: String,
+    /** Wide layout only: small label above the title and the big faded figure behind it. */
+    val kicker: String,
+    val ghost: String,
     val bar: Color,
     val bg: Color,
     val border: Color,
@@ -59,21 +72,26 @@ private data class ModeTicket(
 fun HomeScreen(onClassic: () -> Unit) {
     val tickets = listOf(
         ModeTicket(
-            title = "Modo clássico", desc = "16 seleções. Conquiste o continente.",
+            title = "Modo clássico", desc = "16 seleções. Conquiste o continente.", kicker = "Fase de grupos", ghost = "16",
             bar = AppColors.ticketOrange, bg = AppColors.ticketOrangeBg, border = AppColors.ticketOrange,
             ctaColor = AppColors.ticketOrangeText, enabled = true, onClick = onClassic,
         ),
         ModeTicket(
-            title = "Modo rápido", desc = "8 seleções. Mata-mata direto.",
+            title = "Modo rápido", desc = "8 seleções. Mata-mata direto.", kicker = "Mata-mata direto", ghost = "8",
             bar = AppColors.ticketGreen, bg = AppColors.ticketGreenBg, border = AppColors.ticketGreen,
             ctaColor = AppColors.ticketGreenText, enabled = false, onClick = null,
         ),
         ModeTicket(
-            title = "Multiplayer", desc = "1vs1. Quem escala melhor?",
+            title = "Multiplayer", desc = "1vs1. Quem escala melhor?", kicker = "Duelo online", ghost = "1v1",
             bar = AppColors.ticketBlue, bg = AppColors.ticketBlueBg, border = AppColors.ticketBlue,
             ctaColor = AppColors.ticketBlueText, enabled = false, onClick = null,
         ),
     )
+
+    if (LocalWideLayout.current) {
+        WideHome(tickets)
+        return
+    }
 
     // Fills the screen like the design; on short screens the column grows to the
     // cards' content height and scrolls instead of clipping the descriptions.
@@ -222,3 +240,94 @@ private fun DottedRule(color: Color) {
         }
     }
 }
+
+@Composable
+private fun WideHome(tickets: List<ModeTicket>) {
+    WidePage {
+        Row(Modifier.fillMaxWidth().padding(top = 20.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(40.dp)) {
+            BoxWithConstraints(Modifier.weight(1f)) {
+                val titleSize = if (maxWidth >= 600.dp) 104.sp else 80.sp
+                Column {
+                    KickerLabel("Campeonato das seleções históricas")
+                    Spacer(Modifier.height(14.dp))
+                    WideTitle("COPA", "AMÉRICA", fontSize = titleSize)
+                    Spacer(Modifier.height(20.dp))
+                    Text(
+                        "Escolha uma seleção, monte o elenco com lendas de todas as épocas e leve-a até o título continental.",
+                        fontFamily = bodyFontFamily(), fontWeight = FontWeight.Medium, fontSize = 19.sp, lineHeight = 28.sp,
+                        color = AppColors.bodyText, modifier = Modifier.widthIn(max = 520.dp),
+                    )
+                }
+            }
+            WideInkHeaderCard("Suas estatísticas", "Temporada 2026", Modifier.width(420.dp)) {
+                Row(Modifier.fillMaxWidth()) {
+                    StatColumn("SINGLE PLAYER", Modifier.weight(1f))
+                    Box(Modifier.width(2.dp).height(70.dp).background(AppColors.rowBorder).align(Alignment.CenterVertically))
+                    StatColumn("MULTIPLAYER", Modifier.weight(1f))
+                }
+            }
+        }
+
+        Spacer(Modifier.height(48.dp))
+        WideSectionRule("Selecione seu modo de jogo")
+        Spacer(Modifier.height(18.dp))
+        // Measured out here: the row below uses intrinsic heights, which BoxWithConstraints can't provide.
+        BoxWithConstraints(Modifier.fillMaxWidth()) {
+            val gap = 24.dp
+            // The decorative figure only fits clear of the text on roomy cards.
+            val showGhost = (maxWidth - gap * (tickets.size - 1)) / tickets.size >= 360.dp
+            Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(gap)) {
+                tickets.forEach { WideModeTicket(it, showGhost, Modifier.weight(1f).fillMaxHeight()) }
+            }
+        }
+
+        Spacer(Modifier.height(48.dp))
+        Text(
+            "BOA SORTE, TREINADOR!",
+            fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 3.sp,
+            color = AppColors.kicker, modifier = Modifier.fillMaxWidth(), textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+        )
+    }
+}
+
+@Composable
+private fun WideModeTicket(ticket: ModeTicket, showGhost: Boolean, modifier: Modifier) {
+    val alpha = if (ticket.enabled) 1f else 0.78f
+    WideTicketCard(
+        modifier = modifier
+            .alpha(alpha)
+            .then(if (ticket.enabled) Modifier.clip(RoundedCornerShape(16.dp)).clickable(onClick = ticket.onClick!!) else Modifier),
+        bar = ticket.bar, border = ticket.border, background = ticket.bg,
+    ) {
+        Box(Modifier.fillMaxWidth().weight(1f).padding(start = 24.dp, end = 20.dp, top = 22.dp)) {
+            if (showGhost) {
+                Text(
+                    ticket.ghost, fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 96.sp, lineHeight = 96.sp,
+                    color = AppColors.ink.copy(alpha = 0.07f), modifier = Modifier.align(Alignment.TopEnd),
+                )
+            }
+            Column {
+                Text(ticket.kicker.uppercase(), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 2.sp, color = ticket.ctaColor)
+                Spacer(Modifier.height(6.dp))
+                Text(ticket.title.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 34.sp, lineHeight = 34.sp, color = AppColors.ink)
+                Spacer(Modifier.height(8.dp))
+                Text(ticket.desc, fontFamily = monoFontFamily(), fontSize = 14.sp, lineHeight = 21.sp, color = AppColors.bodyText, modifier = Modifier.widthIn(max = 220.dp))
+            }
+        }
+        Column(Modifier.fillMaxWidth().padding(horizontal = 24.dp).padding(top = 20.dp)) {
+            DottedRule(AppColors.paperBorder)
+            Row(Modifier.fillMaxWidth().padding(vertical = 14.dp), horizontalArrangement = Arrangement.End, verticalAlignment = Alignment.CenterVertically) {
+                if (ticket.enabled) {
+                    PlayTriangle(color = ticket.ctaColor, size = 10.dp)
+                    Spacer(Modifier.width(8.dp))
+                }
+                Text(
+                    if (ticket.enabled) "JOGAR" else "EM BREVE",
+                    fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 14.sp, letterSpacing = 2.sp,
+                    color = if (ticket.enabled) ticket.ctaColor else AppColors.mutedText,
+                )
+            }
+        }
+    }
+}
+

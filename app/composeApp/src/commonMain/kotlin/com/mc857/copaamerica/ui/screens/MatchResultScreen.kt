@@ -1,8 +1,8 @@
 package com.mc857.copaamerica.ui.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mc857.copaamerica.domain.model.MatchEvent
 import com.mc857.copaamerica.domain.logic.buildMatchEvents
 import com.mc857.copaamerica.domain.logic.groupMatchScore
 import com.mc857.copaamerica.domain.logic.predictMatchScore
@@ -39,10 +40,16 @@ import com.mc857.copaamerica.domain.model.PoolTeam
 import com.mc857.copaamerica.domain.model.TeamData
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
+import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
+import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
 import com.mc857.copaamerica.ui.components.TopBar
+import com.mc857.copaamerica.ui.components.WideFlagName
+import com.mc857.copaamerica.ui.components.WideInkHeaderCard
+import com.mc857.copaamerica.ui.components.WidePage
+import com.mc857.copaamerica.ui.components.WidePageHeader
 
 /** Mirrors MatchResult, App.tsx:1848-1966. */
 @Composable
@@ -92,6 +99,69 @@ fun MatchResultScreen(
     val bannerColor = if (didWin) AppColors.ticketGreen else if (didLose) AppColors.lossRed else AppColors.antiqueGold
     val bannerBg = if (didWin) AppColors.winGreenBg else if (didLose) AppColors.lossRedBg else AppColors.ticketOrangeBg
     val resultWord = if (didWin) "Vitória" else if (didLose) "Derrota" else "Empate"
+
+    if (LocalWideLayout.current) {
+        WidePage {
+            WidePageHeader("FIM DE", "JOGO", kicker = "Resultado · $resultLabel")
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+                    Column(
+                        Modifier
+                            .fillMaxWidth()
+                            .hardShadow(color = bannerColor.copy(alpha = 0.3f), cornerRadius = 16.dp)
+                            .background(AppColors.cream, RoundedCornerShape(16.dp))
+                            .border(BorderStroke(2.dp, bannerColor), RoundedCornerShape(16.dp))
+                            .padding(28.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(20.dp),
+                    ) {
+                        Box(
+                            Modifier
+                                .background(bannerBg, RoundedCornerShape(50))
+                                .border(BorderStroke(2.dp, bannerColor), RoundedCornerShape(50))
+                                .padding(horizontal = 16.dp, vertical = 8.dp),
+                        ) {
+                            Text("${resultWord.uppercase()} · ${resultLabel.uppercase()}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, letterSpacing = 1.5.sp, color = bannerColor)
+                        }
+                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                            WideFlagName(team.flag, team.name, AppColors.antiqueGold, Modifier.weight(1f), flagSize = 64.sp)
+                            Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text("$teamGoals", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 96.sp, lineHeight = 96.sp, color = AppColors.ink)
+                                    Text(" – ", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 56.sp, color = AppColors.mutedText)
+                                    Text("$opponentGoals", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 96.sp, lineHeight = 96.sp, color = if (didLose) AppColors.lossRed else AppColors.bodyText)
+                                }
+                                Text("FIM DE JOGO", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 2.sp, color = AppColors.kicker)
+                            }
+                            WideFlagName(opponent.flag, opponent.name, AppColors.bodyText, Modifier.weight(1f), flagSize = 64.sp)
+                        }
+                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                            stats.forEach { (value, label) ->
+                                Column(
+                                    Modifier.weight(1f).background(AppColors.paper, RoundedCornerShape(12.dp)).padding(vertical = 14.dp),
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                ) {
+                                    Text(label, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.5.sp, color = AppColors.mutedText)
+                                    Text(value, fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 24.sp, color = AppColors.ink)
+                                }
+                            }
+                        }
+                    }
+                    RetroPrimaryButton(
+                        text = if (isGroupMatch) "Voltar para a fase de grupos" else "Ver resumo da fase",
+                        onClick = onNext,
+                        modifier = Modifier.fillMaxWidth(),
+                    )
+                }
+                WideInkHeaderCard("Eventos da partida", "${events.size} lances", Modifier.width(440.dp)) {
+                    Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                        events.forEach { ev -> MatchEventRow(ev, team, opponent) }
+                    }
+                }
+            }
+        }
+        return
+    }
 
     Column(Modifier.fillMaxSize()) {
         TopBar(title = "Fim de jogo", sub = "Resultado · $resultLabel", onBack = onBack, onReset = onReset)
@@ -150,40 +220,7 @@ fun MatchResultScreen(
             )
             LazyColumn(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 items(events) { ev ->
-                    val isTeam = ev.side == MatchSide.TEAM
-                    val icon = if (ev.type == MatchEventType.GOAL) "⚽" else "🟨"
-                    Row(verticalAlignment = Alignment.Top) {
-                        Box(
-                            Modifier
-                                .size(28.dp)
-                                .background(if (ev.type == MatchEventType.GOAL && isTeam) AppColors.winGreenBg else AppColors.cream, CircleShape)
-                                .border(BorderStroke(2.dp, if (ev.type == MatchEventType.GOAL && isTeam) AppColors.ticketGreen else AppColors.paperBorder), CircleShape),
-                            contentAlignment = Alignment.Center,
-                        ) { Text(icon, fontSize = 13.sp) }
-                        Spacer(Modifier.width(10.dp))
-                        Column(
-                            Modifier
-                                .weight(1f)
-                                .background(if (ev.type == MatchEventType.GOAL && isTeam) AppColors.winGreenBg else if (ev.type == MatchEventType.GOAL) AppColors.cream else androidx.compose.ui.graphics.Color.Transparent, RoundedCornerShape(10.dp))
-                                .padding(horizontal = 10.dp, vertical = 8.dp),
-                        ) {
-                            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                                Text(ev.player.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink)
-                                if (ev.type == MatchEventType.GOAL) {
-                                    Text(ev.score, fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.antiqueGold)
-                                }
-                            }
-                            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                                Text("${ev.minute}'", fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.mutedText)
-                                Text(
-                                    if (isTeam) "${team.flag} ${team.name}" else "${opponent.flag} ${opponent.name}",
-                                    fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp,
-                                    color = if (isTeam) AppColors.ticketGreen else AppColors.mutedText,
-                                )
-                                Text(if (ev.type == MatchEventType.GOAL) "GOL" else "AMARELO", fontFamily = monoFontFamily(), fontSize = 10.sp, color = AppColors.mutedText)
-                            }
-                        }
-                    }
+                    MatchEventRow(ev, team, opponent)
                 }
             }
         }
@@ -194,6 +231,44 @@ fun MatchResultScreen(
                 onClick = onNext,
                 modifier = Modifier.fillMaxWidth(),
             )
+        }
+    }
+}
+
+@Composable
+private fun MatchEventRow(ev: MatchEvent, team: TeamData, opponent: PoolTeam) {
+    val isTeam = ev.side == MatchSide.TEAM
+    val icon = if (ev.type == MatchEventType.GOAL) "⚽" else "🟨"
+    Row(verticalAlignment = Alignment.Top) {
+        Box(
+            Modifier
+                .size(28.dp)
+                .background(if (ev.type == MatchEventType.GOAL && isTeam) AppColors.winGreenBg else AppColors.cream, CircleShape)
+                .border(BorderStroke(2.dp, if (ev.type == MatchEventType.GOAL && isTeam) AppColors.ticketGreen else AppColors.paperBorder), CircleShape),
+            contentAlignment = Alignment.Center,
+        ) { Text(icon, fontSize = 13.sp) }
+        Spacer(Modifier.width(10.dp))
+        Column(
+            Modifier
+                .weight(1f)
+                .background(if (ev.type == MatchEventType.GOAL && isTeam) AppColors.winGreenBg else if (ev.type == MatchEventType.GOAL) AppColors.cream else androidx.compose.ui.graphics.Color.Transparent, RoundedCornerShape(10.dp))
+                .padding(horizontal = 10.dp, vertical = 8.dp),
+        ) {
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                Text(ev.player.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink)
+                if (ev.type == MatchEventType.GOAL) {
+                    Text(ev.score, fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.antiqueGold)
+                }
+            }
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                Text("${ev.minute}'", fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.mutedText)
+                Text(
+                    if (isTeam) "${team.flag} ${team.name}" else "${opponent.flag} ${opponent.name}",
+                    fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp,
+                    color = if (isTeam) AppColors.ticketGreen else AppColors.mutedText,
+                )
+                Text(if (ev.type == MatchEventType.GOAL) "GOL" else "AMARELO", fontFamily = monoFontFamily(), fontSize = 10.sp, color = AppColors.mutedText)
+            }
         }
     }
 }

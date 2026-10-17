@@ -36,13 +36,22 @@ import androidx.compose.ui.unit.sp
 import com.mc857.copaamerica.domain.model.Confederation
 import com.mc857.copaamerica.domain.model.TeamData
 import com.mc857.copaamerica.theme.AppColors
+import com.mc857.copaamerica.theme.bodyFontFamily
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.KickerLabel
+import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroIconButton
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
+import com.mc857.copaamerica.ui.components.WideBackLink
+import com.mc857.copaamerica.ui.components.WideChip
+import com.mc857.copaamerica.ui.components.WideGrid
+import com.mc857.copaamerica.ui.components.WidePage
+import com.mc857.copaamerica.ui.components.WideSearchField
+import com.mc857.copaamerica.ui.components.WideTicketCard
+import com.mc857.copaamerica.ui.components.WideTitle
 
 /** Mirrors TeamSelection, App.tsx:705-793. */
 @Composable
@@ -55,6 +64,16 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
         it.name.contains(search, ignoreCase = true) && (confFilter == null || it.conf == confFilter)
     }
     val selectedTeam = teams.firstOrNull { it.id == selectedId }
+
+    if (LocalWideLayout.current) {
+        WideTeamSelection(
+            teams = filtered, selected = selectedTeam, onSelect = { selectedId = it.id },
+            search = search, onSearch = { search = it },
+            confFilter = confFilter, onConfFilter = { confFilter = it },
+            onNext = onNext, onBack = onBack,
+        )
+        return
+    }
 
     Column(Modifier.fillMaxSize().retroPaper()) {
         Row(Modifier.padding(20.dp).padding(bottom = 4.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -163,3 +182,95 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
         }
     }
 }
+
+@Composable
+private fun WideTeamSelection(
+    teams: List<TeamData>,
+    selected: TeamData?,
+    onSelect: (TeamData) -> Unit,
+    search: String,
+    onSearch: (String) -> Unit,
+    confFilter: Confederation?,
+    onConfFilter: (Confederation?) -> Unit,
+    onNext: (TeamData) -> Unit,
+    onBack: () -> Unit,
+) {
+    WidePage {
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Column(Modifier.weight(1f)) {
+                WideBackLink("Modos de jogo", onBack)
+                Spacer(Modifier.height(4.dp))
+                WideTitle("ESCOLHA SEU", "PAÍS", fontSize = 56.sp)
+                Spacer(Modifier.height(6.dp))
+                Text("${teams.size} seleções disponíveis", fontFamily = monoFontFamily(), fontSize = 14.sp, color = AppColors.bodyText)
+            }
+            WideSearchField(search, onSearch, "Buscar seleções…", Modifier.width(280.dp))
+            listOf<Confederation?>(null, Confederation.CONMEBOL, Confederation.CONCACAF).forEach { conf ->
+                WideChip(conf?.name ?: "Todas", active = confFilter == conf, onClick = { onConfFilter(conf) })
+            }
+        }
+
+        Spacer(Modifier.height(28.dp))
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(28.dp)) {
+            WideGrid(teams, minCellWidth = 150.dp, modifier = Modifier.weight(1f)) { team ->
+                WideTeamCard(team, isSelected = team.id == selected?.id, onClick = { onSelect(team) })
+            }
+            WideTicketCard(Modifier.width(340.dp)) {
+                Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                    KickerLabel("Sua seleção")
+                    if (selected != null) {
+                        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                            Text(selected.flag, fontSize = 48.sp)
+                            Column {
+                                Text(selected.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 34.sp, lineHeight = 34.sp, color = AppColors.ink)
+                                Text(selected.conf.name, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.5.sp, color = AppColors.kicker)
+                            }
+                        }
+                        Text(
+                            "Próximo passo: montar o elenco com 26 convocados de todas as épocas.",
+                            fontFamily = bodyFontFamily(), fontWeight = FontWeight.Medium, fontSize = 15.sp, lineHeight = 22.sp, color = AppColors.bodyText,
+                        )
+                    } else {
+                        Text(
+                            "Clique em uma seleção para ver o resumo e confirmar.",
+                            fontFamily = bodyFontFamily(), fontWeight = FontWeight.Medium, fontSize = 15.sp, lineHeight = 22.sp, color = AppColors.bodyText,
+                        )
+                    }
+                    RetroPrimaryButton(
+                        text = if (selected != null) "Confirmar · ${selected.name}" else "Selecione uma seleção",
+                        enabled = selected != null,
+                        onClick = { selected?.let(onNext) },
+                        modifier = Modifier.fillMaxWidth(),
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun WideTeamCard(team: TeamData, isSelected: Boolean, onClick: () -> Unit) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .then(if (isSelected) Modifier.hardShadow(color = AppColors.antiqueGold.copy(alpha = 0.35f), cornerRadius = 14.dp) else Modifier)
+            .background(if (isSelected) AppColors.ticketOrangeBg else AppColors.cream, RoundedCornerShape(14.dp))
+            .border(BorderStroke(2.dp, if (isSelected) AppColors.antiqueGold else AppColors.paperBorder), RoundedCornerShape(14.dp))
+            .clip(RoundedCornerShape(14.dp))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 10.dp, vertical = 16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(6.dp),
+    ) {
+        Text(team.flag, fontSize = 32.sp)
+        Text(
+            team.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 18.sp,
+            color = AppColors.ink, textAlign = androidx.compose.ui.text.style.TextAlign.Center, maxLines = 1,
+        )
+        Text(
+            team.conf.name, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.5.sp,
+            color = if (team.conf == Confederation.CONMEBOL) AppColors.kicker else AppColors.ticketBlueText,
+        )
+    }
+}
+
