@@ -2,10 +2,14 @@ package com.mc857.copaamerica
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -39,6 +43,11 @@ import com.mc857.copaamerica.domain.repository.MockTeamRepository
 import com.mc857.copaamerica.nav.Screen
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.monoFontFamily
+import com.mc857.copaamerica.ui.components.LocalWideLayout
+import com.mc857.copaamerica.ui.components.TournamentStep
+import com.mc857.copaamerica.ui.components.WideLayoutMinWidth
+import com.mc857.copaamerica.ui.components.WideNarrowColumn
+import com.mc857.copaamerica.ui.components.WideNavBar
 import com.mc857.copaamerica.ui.screens.DrawSetupScreen
 import com.mc857.copaamerica.ui.screens.EliminationScreen
 import com.mc857.copaamerica.ui.screens.GroupStageScreen
@@ -138,137 +147,175 @@ fun CopaAmericaApp() {
         matchesPlayed += 1
     }
 
-    Box(Modifier.fillMaxSize().background(AppColors.surface).systemBarsPadding()) {
-        when (val screen = stack.last()) {
-            Screen.HOME -> HomeScreen(onClassic = { nav(Screen.TEAM_SELECTION) })
+    BoxWithConstraints(Modifier.fillMaxSize().background(AppColors.surface).systemBarsPadding()) {
+        val wide = maxWidth >= WideLayoutMinWidth
+        val screen = stack.last()
+        CompositionLocalProvider(LocalWideLayout provides wide) {
+            Column(Modifier.fillMaxSize()) {
+                if (wide) WideNavBar(step = tournamentStep(screen, phase), onReset = if (screen == Screen.HOME) null else ({ reset() }))
+                Box(Modifier.weight(1f).fillMaxWidth()) {
+                    // Below the wide breakpoint the phone layout stays phone-width and
+                    // centered (tablets, mid-size windows); on a phone this changes nothing.
+                    PhoneColumnWhen(!wide) {
+                        when (screen) {
+                            Screen.HOME -> HomeScreen(onClassic = { nav(Screen.TEAM_SELECTION) })
 
-            Screen.TEAM_SELECTION -> TeamSelectionScreen(
-                teams = teams,
-                onNext = { t -> team = t; nav(Screen.SQUAD_BUILDER) },
-                onBack = { goBack() },
-            )
+                            Screen.TEAM_SELECTION -> TeamSelectionScreen(
+                                teams = teams,
+                                onNext = { t -> team = t; nav(Screen.SQUAD_BUILDER) },
+                                onBack = { goBack() },
+                            )
 
-            Screen.SQUAD_BUILDER -> SquadBuilderScreen(
-                team = team, pool = pool,
-                onNext = { sq -> lockedSquad = sq; nav(Screen.DRAW_SETUP) },
-                onBack = { goBack() }, onReset = { reset() },
-            )
+                            Screen.SQUAD_BUILDER -> SquadBuilderScreen(
+                                team = team, pool = pool,
+                                onNext = { sq -> lockedSquad = sq; nav(Screen.DRAW_SETUP) },
+                                onBack = { goBack() }, onReset = { reset() },
+                            )
 
-            Screen.DRAW_SETUP -> DrawSetupScreen(
-                team = team, teams = teams,
-                onNext = { shuffledRivals ->
-                    val drawn = makeDrawnBracket(PoolTeam(team.name, team.flag), shuffledRivals, TournamentFormat.CLASSIC)
-                    bracket = drawn
-                    val first = drawn.groups.firstOrNull { g -> g.teams.any { it.name == team.name } }
-                        ?.matches?.firstOrNull { it.home.name == team.name || it.away.name == team.name }
-                    currentGroupMatchId = first?.id
-                    phase = Phase.GROUP
-                    nav(Screen.PRE_MATCH)
-                },
-                onBack = { goBack() }, onReset = { reset() },
-            )
+                            Screen.DRAW_SETUP -> DrawSetupScreen(
+                                team = team, teams = teams,
+                                onNext = { shuffledRivals ->
+                                    val drawn = makeDrawnBracket(PoolTeam(team.name, team.flag), shuffledRivals, TournamentFormat.CLASSIC)
+                                    bracket = drawn
+                                    val first = drawn.groups.firstOrNull { g -> g.teams.any { it.name == team.name } }
+                                        ?.matches?.firstOrNull { it.home.name == team.name || it.away.name == team.name }
+                                    currentGroupMatchId = first?.id
+                                    phase = Phase.GROUP
+                                    nav(Screen.PRE_MATCH)
+                                },
+                                onBack = { goBack() }, onReset = { reset() },
+                            )
 
-            Screen.PRE_MATCH -> PreMatchLineupScreen(
-                team = team, opponent = currentOpponent, squad = lockedSquad, pool = pool,
-                phase = phase, cards = cards, lineup = lineup, formKey = formKey,
-                onLineupChange = { lineup = it }, onFormKeyChange = { formKey = it },
-                onNext = { nav(Screen.MATCH_RESULT) },
-                onBack = { goBack() }, onReset = { reset() },
-            )
+                            Screen.PRE_MATCH -> PreMatchLineupScreen(
+                                team = team, opponent = currentOpponent, squad = lockedSquad, pool = pool,
+                                phase = phase, cards = cards, lineup = lineup, formKey = formKey,
+                                onLineupChange = { lineup = it }, onFormKeyChange = { formKey = it },
+                                onNext = { nav(Screen.MATCH_RESULT) },
+                                onBack = { goBack() }, onReset = { reset() },
+                            )
 
-            Screen.MATCH_RESULT -> MatchResultScreen(
-                team = team, opponent = currentOpponent, phase = phase,
-                groupMatch = if (phase == Phase.GROUP) currentGroupMatch else null,
-                knockoutTie = if (phase == Phase.GROUP) null else koTie,
-                squad = lockedSquad,
-                onNext = {
-                    finishMatch()
-                    val b = bracket
-                    when {
-                        phase == Phase.GROUP && currentGroupMatchId != null && b != null -> {
-                            val match = b.groups.flatMap { it.matches }.firstOrNull { it.id == currentGroupMatchId }
-                            if (match != null) {
-                                val (homeGoals, awayGoals) = groupMatchScore(match)
-                                val withCards = groupMatchCards(match)
-                                val groups = b.groups.map { g -> if (g.matches.any { it.id == match.id }) applyGroupResult(g, withCards, homeGoals, awayGoals) else g }
-                                val userGames = groups.flatMap { it.matches }.count { (it.home.name == team.name || it.away.name == team.name) && it.status == MatchStatus.PLAYED }
-                                val updated = b.copy(groups = groups)
-                                bracket = if (userGames >= 3) completeGroupStage(updated) else updated
-                                currentGroupMatchId = null
-                                phase = Phase.GROUP
-                                nav(Screen.GROUP_STAGE)
+                            Screen.MATCH_RESULT -> MatchResultScreen(
+                                team = team, opponent = currentOpponent, phase = phase,
+                                groupMatch = if (phase == Phase.GROUP) currentGroupMatch else null,
+                                knockoutTie = if (phase == Phase.GROUP) null else koTie,
+                                squad = lockedSquad,
+                                onNext = {
+                                    finishMatch()
+                                    val b = bracket
+                                    when {
+                                        phase == Phase.GROUP && currentGroupMatchId != null && b != null -> {
+                                            val match = b.groups.flatMap { it.matches }.firstOrNull { it.id == currentGroupMatchId }
+                                            if (match != null) {
+                                                val (homeGoals, awayGoals) = groupMatchScore(match)
+                                                val withCards = groupMatchCards(match)
+                                                val groups = b.groups.map { g -> if (g.matches.any { it.id == match.id }) applyGroupResult(g, withCards, homeGoals, awayGoals) else g }
+                                                val userGames = groups.flatMap { it.matches }.count { (it.home.name == team.name || it.away.name == team.name) && it.status == MatchStatus.PLAYED }
+                                                val updated = b.copy(groups = groups)
+                                                bracket = if (userGames >= 3) completeGroupStage(updated) else updated
+                                                currentGroupMatchId = null
+                                                phase = Phase.GROUP
+                                                nav(Screen.GROUP_STAGE)
+                                            }
+                                        }
+                                        phase == Phase.SF && koTie != null && b != null -> {
+                                            val settled = settleRound(b.ko, KnockoutRound.SF, koIndexOf(b.ko.sf, team.name), simulateTie(koTie))
+                                            val reachedFinal = settled.final.home?.name == team.name || settled.final.away?.name == team.name
+                                            if (reachedFinal) {
+                                                bracket = b.copy(ko = finishKnockout(settled))
+                                                nav(Screen.PHASE_OVERVIEW)
+                                            } else {
+                                                bracket = b.copy(ko = settled)
+                                                phase = Phase.THIRD
+                                                nav(Screen.ELIMINATION)
+                                            }
+                                        }
+                                        phase == Phase.THIRD && koTie != null && b != null -> {
+                                            val third = simulateTie(koTie)
+                                            bracket = b.copy(ko = finishKnockout(b.ko.copy(third = third)))
+                                            nav(Screen.PHASE_OVERVIEW)
+                                        }
+                                        koTie != null && b != null -> {
+                                            val settled = settleRound(b.ko, KnockoutRound.QF, koIndexOf(b.ko.qf, team.name), simulateTie(koTie))
+                                            bracket = b.copy(ko = settled)
+                                            if (settled.sf.any { it.home?.name == team.name || it.away?.name == team.name }) {
+                                                phase = Phase.SF
+                                                nav(Screen.BRACKET)
+                                            } else {
+                                                bracket = b.copy(ko = finishKnockout(settled))
+                                                nav(Screen.PHASE_OVERVIEW)
+                                            }
+                                        }
+                                        else -> nav(Screen.ELIMINATION)
+                                    }
+                                },
+                                onBack = { goBack() }, onReset = { reset() },
+                            )
+
+                            Screen.GROUP_STAGE -> bracket?.let { b ->
+                                GroupStageScreen(
+                                    bracket = b, team = team,
+                                    onPlayNext = { match -> currentGroupMatchId = match.id; phase = Phase.GROUP; nav(Screen.PRE_MATCH) },
+                                    onQuarterfinals = {
+                                        if (koIndexOf(b.ko.qf, team.name) >= 0) {
+                                            phase = Phase.QF
+                                        } else {
+                                            // Out in the group stage: nothing left to play, so the whole
+                                            // knockout is simulated and the bracket shows how it ended.
+                                            bracket = b.copy(ko = finishKnockout(b.ko))
+                                        }
+                                        nav(Screen.BRACKET)
+                                    },
+                                    onBack = { goBack() }, onReset = { reset() },
+                                )
+                            }
+
+                            Screen.BRACKET -> bracket?.let { b ->
+                                TournamentBracketScreen(
+                                    team = team, bracket = b,
+                                    onAdvance = { nav(Screen.PRE_MATCH) },
+                                    onSummary = { nav(Screen.PHASE_OVERVIEW) },
+                                    onBack = { goBack() }, onReset = { reset() },
+                                )
+                            }
+
+                            Screen.ELIMINATION -> bracket?.let { b ->
+                                EliminationScreen(
+                                    team = team, bracket = b,
+                                    onPlayThird = { phase = Phase.THIRD; nav(Screen.PRE_MATCH) },
+                                    onSimulateRest = { bracket = b.copy(ko = finishKnockout(b.ko.copy(third = simulateTie(b.ko.third)))) },
+                                    onSeeResults = { nav(Screen.PHASE_OVERVIEW) },
+                                    onBack = { goBack() },
+                                )
+                            }
+
+                            Screen.PHASE_OVERVIEW -> bracket?.let { b ->
+                                PhaseOverviewScreen(
+                                    team = team, bracket = b,
+                                    ctaLabel = summaryCta?.first,
+                                    onNext = summaryCta?.let { (_, target) -> { nav(target) } },
+                                    onBack = { goBack() }, onReset = { reset() },
+                                )
                             }
                         }
-                        phase == Phase.SF && koTie != null && b != null -> {
-                            val settled = settleRound(b.ko, KnockoutRound.SF, koIndexOf(b.ko.sf, team.name), simulateTie(koTie))
-                            val reachedFinal = settled.final.home?.name == team.name || settled.final.away?.name == team.name
-                            if (reachedFinal) {
-                                bracket = b.copy(ko = finishKnockout(settled))
-                                nav(Screen.PHASE_OVERVIEW)
-                            } else {
-                                bracket = b.copy(ko = settled)
-                                phase = Phase.THIRD
-                                nav(Screen.ELIMINATION)
-                            }
-                        }
-                        phase == Phase.THIRD && koTie != null && b != null -> {
-                            val third = simulateTie(koTie)
-                            bracket = b.copy(ko = finishKnockout(b.ko.copy(third = third)))
-                            nav(Screen.PHASE_OVERVIEW)
-                        }
-                        koTie != null && b != null -> {
-                            val settled = settleRound(b.ko, KnockoutRound.QF, koIndexOf(b.ko.qf, team.name), simulateTie(koTie))
-                            bracket = b.copy(ko = settled)
-                            if (settled.sf.any { it.home?.name == team.name || it.away?.name == team.name }) {
-                                phase = Phase.SF
-                                nav(Screen.BRACKET)
-                            } else {
-                                bracket = b.copy(ko = finishKnockout(settled))
-                                nav(Screen.PHASE_OVERVIEW)
-                            }
-                        }
-                        else -> nav(Screen.ELIMINATION)
                     }
-                },
-                onBack = { goBack() }, onReset = { reset() },
-            )
-
-            Screen.GROUP_STAGE -> bracket?.let { b ->
-                GroupStageScreen(
-                    bracket = b, team = team,
-                    onPlayNext = { match -> currentGroupMatchId = match.id; phase = Phase.GROUP; nav(Screen.PRE_MATCH) },
-                    onQuarterfinals = { phase = Phase.QF; nav(Screen.BRACKET) },
-                    onBack = { goBack() }, onReset = { reset() },
-                )
-            }
-
-            Screen.BRACKET -> bracket?.let { b ->
-                TournamentBracketScreen(
-                    team = team, bracket = b,
-                    onAdvance = { nav(Screen.PRE_MATCH) },
-                    onSummary = { nav(Screen.PHASE_OVERVIEW) },
-                    onBack = { goBack() }, onReset = { reset() },
-                )
-            }
-
-            Screen.ELIMINATION -> bracket?.let { b ->
-                EliminationScreen(
-                    team = team, bracket = b,
-                    onPlayThird = { phase = Phase.THIRD; nav(Screen.PRE_MATCH) },
-                    onSimulateRest = { bracket = b.copy(ko = finishKnockout(b.ko.copy(third = simulateTie(b.ko.third)))) },
-                    onSeeResults = { nav(Screen.PHASE_OVERVIEW) },
-                    onBack = { goBack() },
-                )
-            }
-
-            Screen.PHASE_OVERVIEW -> bracket?.let { b ->
-                PhaseOverviewScreen(
-                    team = team, bracket = b,
-                    ctaLabel = summaryCta?.first,
-                    onNext = summaryCta?.let { (_, target) -> { nav(target) } },
-                    onBack = { goBack() }, onReset = { reset() },
-                )
+                }
             }
         }
     }
+}
+
+@Composable
+private fun PhoneColumnWhen(condition: Boolean, content: @Composable () -> Unit) {
+    if (condition) WideNarrowColumn(content) else content()
+}
+
+/** Navbar step for a screen; matches during the group phase count as "Grupos". */
+private fun tournamentStep(screen: Screen, phase: Phase): TournamentStep? = when (screen) {
+    Screen.HOME -> null
+    Screen.TEAM_SELECTION -> TournamentStep.TEAM
+    Screen.SQUAD_BUILDER -> TournamentStep.SQUAD
+    Screen.DRAW_SETUP -> TournamentStep.DRAW
+    Screen.GROUP_STAGE -> TournamentStep.GROUPS
+    Screen.PRE_MATCH, Screen.MATCH_RESULT -> if (phase == Phase.GROUP) TournamentStep.GROUPS else TournamentStep.KNOCKOUT
+    Screen.BRACKET, Screen.ELIMINATION, Screen.PHASE_OVERVIEW -> TournamentStep.KNOCKOUT
 }

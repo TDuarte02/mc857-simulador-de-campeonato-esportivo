@@ -17,12 +17,19 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
+import kotlin.math.PI
+import kotlin.math.cos
+import kotlin.math.sin
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -59,6 +66,80 @@ fun PlayTriangle(color: Color, size: androidx.compose.ui.unit.Dp = 9.dp, modifie
         drawPath(path, color)
     }
 }
+
+/*
+ * The icons below stand in for the "↺", "⌄" and "⚄" glyphs the design types
+ * as text: none of the app's fonts have them, so on the web (which only has
+ * the app's own fonts) they rendered as empty boxes.
+ */
+
+/** "↺" restart arrow: an open circle with the arrowhead pointing anticlockwise into the gap. */
+@Composable
+fun RestartIcon(color: Color, size: androidx.compose.ui.unit.Dp = 13.dp) {
+    Canvas(Modifier.size(size)) {
+        val strokeWidth = this.size.width * 0.14f
+        val radius = this.size.width / 2f - strokeWidth
+        val center = Offset(this.size.width / 2f, this.size.height / 2f)
+        drawArc(
+            color = color,
+            startAngle = -60f,
+            sweepAngle = 300f,
+            useCenter = false,
+            topLeft = Offset(center.x - radius, center.y - radius),
+            size = Size(radius * 2, radius * 2),
+            style = Stroke(width = strokeWidth, cap = StrokeCap.Round),
+        )
+        val angle = (-60.0).toRadians()
+        val tip = Offset(center.x + radius * cos(angle).toFloat(), center.y + radius * sin(angle).toFloat())
+        val tangent = Offset(sin(angle).toFloat(), -cos(angle).toFloat())
+        val normal = Offset(cos(angle).toFloat(), sin(angle).toFloat())
+        val head = strokeWidth * 2.2f
+        val arrow = Path().apply {
+            moveTo(tip.x + tangent.x * head, tip.y + tangent.y * head)
+            lineTo(tip.x + normal.x * head, tip.y + normal.y * head)
+            lineTo(tip.x - normal.x * head, tip.y - normal.y * head)
+            close()
+        }
+        drawPath(arrow, color)
+    }
+}
+
+/** "⌄" chevron used on dropdown triggers. */
+@Composable
+fun ChevronDownIcon(color: Color, size: androidx.compose.ui.unit.Dp = 10.dp) {
+    Canvas(Modifier.size(size)) {
+        val w = this.size.width
+        val h = this.size.height
+        val chevron = Path().apply {
+            moveTo(w * 0.12f, h * 0.32f)
+            lineTo(w * 0.5f, h * 0.7f)
+            lineTo(w * 0.88f, h * 0.32f)
+        }
+        drawPath(chevron, color, style = Stroke(width = w * 0.2f, cap = StrokeCap.Round, join = StrokeJoin.Round))
+    }
+}
+
+/** "⚄" die face showing five, on the "random lineup" button. */
+@Composable
+fun DieFiveIcon(color: Color, size: androidx.compose.ui.unit.Dp = 18.dp) {
+    Canvas(Modifier.size(size)) {
+        val w = this.size.width
+        val strokeWidth = w * 0.1f
+        drawRoundRect(
+            color = color,
+            topLeft = Offset(strokeWidth / 2, strokeWidth / 2),
+            size = Size(w - strokeWidth, w - strokeWidth),
+            cornerRadius = CornerRadius(w * 0.18f),
+            style = Stroke(width = strokeWidth),
+        )
+        val pip = w * 0.085f
+        listOf(0.3f to 0.3f, 0.7f to 0.3f, 0.5f to 0.5f, 0.3f to 0.7f, 0.7f to 0.7f).forEach { (x, y) ->
+            drawCircle(color, radius = pip, center = Offset(w * x, w * y))
+        }
+    }
+}
+
+private fun Double.toRadians(): Double = this * PI / 180.0
 
 /** Outline user glyph from the masthead profile button (App.tsx, 24x24 viewBox SVG). */
 @Composable
@@ -108,6 +189,7 @@ fun RetroPrimaryButton(
             .then(if (enabled) Modifier.hardShadow(color = AppColors.ink.copy(alpha = 0.22f), cornerRadius = 16.dp) else Modifier)
             .background(bg, RoundedCornerShape(16.dp))
             .border(BorderStroke(2.dp, border), RoundedCornerShape(16.dp))
+            .clip(RoundedCornerShape(16.dp))
             .then(if (enabled) Modifier.clickable(onClick = onClick) else Modifier)
             .padding(vertical = 16.dp),
         contentAlignment = Alignment.Center,
@@ -131,6 +213,7 @@ fun RetroSecondaryButton(text: String, onClick: () -> Unit, modifier: Modifier =
         modifier = modifier
             .background(AppColors.cream, RoundedCornerShape(16.dp))
             .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(16.dp))
+            .clip(RoundedCornerShape(16.dp))
             .clickable(onClick = onClick)
             .padding(vertical = 13.dp),
         contentAlignment = Alignment.Center,
@@ -181,6 +264,7 @@ fun RetroIconButton(
             .hardShadow(color = AppColors.ink.copy(alpha = 0.16f), offsetX = 2.dp, offsetY = 2.dp, cornerRadius = 12.dp)
             .background(background, RoundedCornerShape(12.dp))
             .border(BorderStroke(2.dp, border), RoundedCornerShape(12.dp))
+            .clip(RoundedCornerShape(12.dp))
             .clickable(onClick = onClick),
         contentAlignment = Alignment.Center,
     ) { content() }
@@ -199,6 +283,7 @@ fun CircleFab(
             .hardShadow(color = AppColors.ink.copy(alpha = 0.24f), cornerRadius = 100.dp)
             .background(background, CircleShape)
             .border(BorderStroke(2.dp, AppColors.ink), CircleShape)
+            .clip(CircleShape)
             .clickable(onClick = onClick),
         contentAlignment = Alignment.Center,
     ) { content() }
