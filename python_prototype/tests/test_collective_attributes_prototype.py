@@ -1,6 +1,6 @@
 import pytest
 
-from collective_attributes_prototype import (
+from python_prototype.collective_attributes import (
     Player,
     TeamAttributes,
     apply_formation_modifiers,
