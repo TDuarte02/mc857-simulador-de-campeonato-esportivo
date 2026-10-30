@@ -15,6 +15,8 @@ from api.domain.models import (
     Squad,
     Stage,
     Standing,
+    PlayerStatus,
+    Session,
 )
 from api.services.squad_service import SquadService
 
@@ -22,6 +24,21 @@ from api.services.squad_service import SquadService
 class Serializer:
     def __init__(self, squads: SquadService):
         self._squads = squads  # resolves the squad and player ids stored on matches
+
+    def session(self, session: Session) -> dict:
+        return {
+            "id": session.id,
+            "createdAt": session.created_at.isoformat(),
+            "phase": session.phase,
+            "squadId": session.squad_id,
+            "callUp": session.call_up,
+            "playerStatus": {
+                str(player_id): self._player_status(status)
+                for player_id, status in session.player_status.items()
+            },
+            "round": session.round,
+            "userEliminated": session.user_eliminated,
+        }
 
     def squad(self, squad: Squad) -> dict:
         return {
@@ -219,4 +236,14 @@ class Serializer:
             "goals": [event(goal) for goal in result.goals],
             "cards": [event(card, type=card.type) for card in result.cards],
             "injuries": [event(injury, matchesOut=injury.matches_out) for injury in result.injuries],
+        }
+
+    def _player_status(self, status: PlayerStatus) -> dict:
+        return {
+            "yellowCards": status.yellow_cards,
+            "suspendedMatches": status.suspended_matches,
+            "suspensionReason": status.suspension_reason,
+            "injuredMatches": status.injured_matches,
+            "available": status.available,
+            "matchesRemaining": status.matches_remaining,
         }
