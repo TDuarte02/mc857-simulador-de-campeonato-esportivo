@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import random
 from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass
@@ -520,4 +521,7 @@ def calculate_team_attributes(
         players,
         formation_config,
     )
+
+
+
 
