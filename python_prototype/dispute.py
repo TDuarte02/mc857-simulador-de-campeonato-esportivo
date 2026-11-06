@@ -26,13 +26,20 @@ class MD3Result:
 def simulate_md5(
     control_a,
     control_b,
-    rng: random.Random,
+    rng: random.Random | None = None,
+    *,
+    seed: int | None = None,
 ) -> MD5Result:
     """
     Simula uma série MD5 (melhor de cinco).
 
     A série termina quando um time alcança três vitórias.
     """
+    if rng is not None and seed is not None:
+        raise ValueError("Informe rng ou seed, não ambos.")
+
+    random_generator = rng if rng is not None else random.Random(seed)
+
     wins = {"A": 0, "B": 0}
     duels = []
 
@@ -40,7 +47,7 @@ def simulate_md5(
         duel_winner = simulate_control_duel(
             control_a,
             control_b,
-            rng=rng,
+            rng=random_generator,
         )
 
         wins[duel_winner] += 1
