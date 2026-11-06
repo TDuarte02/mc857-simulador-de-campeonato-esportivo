@@ -206,3 +206,18 @@ def test_invalid_parameters(goal, continuation, decay):
             decay_factor=decay,
         )
 
+@pytest.mark.parametrize(
+    "attack, defense",
+    [
+        (None, 60),
+        ("abc", 60),
+        ([], 60),
+        (float("nan"), 60),
+        (float("inf"), 60),
+        (-1, 60),
+    ],
+)
+def test_invalid_attribute_types(attack, defense):
+    with pytest.raises(ValueError):
+        calculate_offense_probabilities(attack, defense)
+
