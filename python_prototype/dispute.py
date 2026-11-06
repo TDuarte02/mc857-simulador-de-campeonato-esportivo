@@ -4,7 +4,7 @@ from __future__ import annotations
 import random
 from dataclasses import dataclass
 
-from control import simulate_control_duel
+from python_prototype.control import simulate_control_duel
 
 
 @dataclass(frozen=True)

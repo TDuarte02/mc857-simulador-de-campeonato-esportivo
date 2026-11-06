@@ -2,7 +2,7 @@ import random
 
 import pytest
 
-from offense import (
+from python_prototype.offense import (
     OffenseParameters,
     calculate_offense_probabilities,
     simulate_offense_sequence,
@@ -124,6 +124,20 @@ def test_continuation_increments_attempt_counter(parameters):
 
     assert result.attempts[1].outcome == GOAL
     assert result.attempts[1].number == 2
+
+
+def test_default_parameters_allow_multiple_continuations():
+    rng = FixedRNG([0.50, 0.20, 0.99])
+
+    result = simulate_offense_sequence(80, 60, rng=rng)
+
+    assert result.outcome == POSSESSION_LOSS
+    assert result.total_attempts == 3
+    assert [attempt.outcome for attempt in result.attempts] == [
+        CONTINUATION,
+        CONTINUATION,
+        POSSESSION_LOSS,
+    ]
 
 
 def test_sequence_can_have_multiple_continuations(parameters):
