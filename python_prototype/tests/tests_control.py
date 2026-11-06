@@ -3,7 +3,7 @@ import random
 
 import pytest
 
-from controll_dispute import (
+from python_prototype.control import (
     calculate_control_win_probability,
     control_win_probability,
     simulate_control_duel,
