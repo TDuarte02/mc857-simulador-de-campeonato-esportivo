@@ -4,7 +4,7 @@ from __future__ import annotations
 import random
 from dataclasses import dataclass
 
-from .control import simulate_control_duel
+from control import simulate_control_duel
 
 
 @dataclass(frozen=True)
@@ -102,3 +102,23 @@ def simulate_md3(
         wins_b=wins["B"],
         series=tuple(series),
     )
+
+if __name__ == "__main__":
+    # Exemplo de uso
+    result = simulate_md3(
+    control_a=75,
+    control_b=65,
+    seed=42,
+    )
+
+    print(f"Vencedor da MD3: {result.winner}")
+    print(f"Placar: {result.wins_a} x {result.wins_b}")
+
+    for i, md5 in enumerate(result.series, start=1):
+        print(
+            f"MD5 {i}: {md5.winner} "
+            f"({md5.wins_a} x {md5.wins_b})"
+        )
+
+    # O vencedor é o único autorizado a iniciar o ataque.
+    attacking_team = result.winner
