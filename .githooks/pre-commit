@@ -1,0 +1,31 @@
+#!/bin/sh
+# Runs the server's tests before a commit that touches server/.
+# Enable once per clone:  git config core.hooksPath .githooks
+# Skip in an emergency:   git commit --no-verify
+
+if git diff --cached --quiet -- server/; then
+    exit 0  # nothing staged under server/
+fi
+
+if ! command -v uv >/dev/null 2>&1; then
+    echo "pre-commit: uv not found; install it to run the server tests (https://docs.astral.sh/uv/)." >&2
+    exit 1
+fi
+
+cd "$(git rev-parse --show-toplevel)/server" || exit 1
+
+# The functional tests run too when the Docker stack is up; otherwise pytest skips them.
+API_BASE_URL="${API_BASE_URL:-http://127.0.0.1:5000}"
+if curl -s -o /dev/null --max-time 2 "$API_BASE_URL/squads"; then
+    export API_BASE_URL
+    export MONGO_URI="${MONGO_URI:-mongodb://127.0.0.1:27018}"
+    echo "pre-commit: running unit + functional tests (stack at $API_BASE_URL)"
+else
+    unset API_BASE_URL
+    echo "pre-commit: running unit tests (stack not running, functional tests skipped)"
+fi
+
+if ! uv run pytest -q -p no:cacheprovider; then
+    echo "pre-commit: tests failed, commit aborted (use --no-verify to bypass)." >&2
+    exit 1
+fi
