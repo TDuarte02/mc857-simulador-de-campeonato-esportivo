@@ -51,6 +51,7 @@ import com.mc857.copaamerica.domain.model.CardStatus
 import com.mc857.copaamerica.domain.model.FormKey
 import com.mc857.copaamerica.domain.model.Phase
 import com.mc857.copaamerica.domain.model.Player
+import com.mc857.copaamerica.domain.model.SlotCfg
 import com.mc857.copaamerica.domain.model.PoolTeam
 import com.mc857.copaamerica.domain.model.TeamData
 import com.mc857.copaamerica.theme.AppColors
@@ -59,8 +60,18 @@ import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.CircleFab
+import com.mc857.copaamerica.ui.components.DieFiveIcon
+import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
+import com.mc857.copaamerica.ui.components.RetroSecondaryButton
 import com.mc857.copaamerica.ui.components.TopBar
+import com.mc857.copaamerica.ui.components.WideCaption
+import com.mc857.copaamerica.ui.components.WideChip
+import com.mc857.copaamerica.ui.components.WideFlagName
+import com.mc857.copaamerica.ui.components.WideInkHeaderCard
+import com.mc857.copaamerica.ui.components.WidePage
+import com.mc857.copaamerica.ui.components.WidePageHeader
+import com.mc857.copaamerica.ui.components.WideTicketCard
 
 /** Mirrors PreMatchLineup, App.tsx:1642-1810. */
 @Composable
@@ -120,6 +131,60 @@ fun PreMatchLineupScreen(
     }
 
     val hasPreviousLineup = lineup.any { it != null }
+    val confirmText = if (selectedCount == 11) "Simular partida" else "Escale ${11 - selectedCount} jogador${if (11 - selectedCount == 1) "" else "es"}"
+
+    if (LocalWideLayout.current) {
+        WidePage {
+            WidePageHeader("SUA", "ESCALAÇÃO", back = "Voltar" to onBack, kicker = if (hasPreviousLineup) "Ajuste a escalação" else "Monte seus titulares")
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(28.dp)) {
+                Column(Modifier.width(460.dp)) {
+                    LineupPitch(slots, sized, suspendedIds, yellowIds, activeSlot, onSlotClick = { activeSlot = it }, large = true)
+                    Row(Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+                        Text("Clique em uma posição para escolher o jogador", fontFamily = monoFontFamily(), fontSize = 12.sp, color = AppColors.mutedText)
+                        Text("$selectedCount / 11", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, color = AppColors.ticketGreen)
+                    }
+                }
+                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+                    WideTicketCard {
+                        Column(Modifier.padding(22.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+                            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                                WideFlagName(team.flag, team.name, AppColors.antiqueGold, Modifier.weight(1f))
+                                Text("×", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 28.sp, color = AppColors.mutedText)
+                                WideFlagName(opponent.flag, opponent.name, AppColors.ink, Modifier.weight(1f))
+                            }
+                            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                WideCaption("Formação")
+                                Spacer(Modifier.width(4.dp))
+                                FormKey.entries.forEach { fk -> WideChip(fk.label, active = formKey == fk, onClick = { changeFormation(fk) }) }
+                            }
+                            Row(horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.CenterVertically) {
+                                RetroSecondaryButton("Sortear escalação", onClick = ::fillRandom, modifier = Modifier.weight(1f))
+                                RetroPrimaryButton(confirmText, enabled = selectedCount == 11, onClick = onNext, modifier = Modifier.weight(1f))
+                            }
+                        }
+                    }
+                    WideInkHeaderCard(
+                        "Escolha o jogador",
+                        activeSlot?.let { "Posição ${slots[it].label}" } ?: "",
+                    ) {
+                        Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                            when {
+                                activeSlot == null -> Text(
+                                    "Selecione uma posição no campo para ver os jogadores disponíveis.",
+                                    fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText,
+                                )
+                                eligiblePlayers.isEmpty() -> Text("Nenhum jogador disponível para esta posição.", fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText)
+                                else -> eligiblePlayers.forEach { player ->
+                                    PlayerPickRow(player, suspended = player.id in suspendedIds, hasYellow = player.id in yellowIds, onChoose = { choosePlayer(player) })
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return
+    }
 
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize()) {
@@ -147,6 +212,7 @@ fun PreMatchLineupScreen(
                         Modifier
                             .background(if (active) AppColors.ticketOrange else AppColors.cream, RoundedCornerShape(50))
                             .border(BorderStroke(2.dp, if (active) AppColors.ink else AppColors.paperBorder), RoundedCornerShape(50))
+                            .clip(RoundedCornerShape(50))
                             .clickable { changeFormation(fk) }
                             .padding(horizontal = 12.dp, vertical = 6.dp),
                     ) {
@@ -157,56 +223,7 @@ fun PreMatchLineupScreen(
         }
 
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).retroPaper().padding(16.dp)) {
-            Box(
-                Modifier
-                    .fillMaxWidth()
-                    .aspectRatio(100f / 136f)
-                    .clip(RoundedCornerShape(16.dp))
-                    .border(BorderStroke(2.dp, AppColors.ink), RoundedCornerShape(16.dp))
-                    .background(
-                        Brush.verticalGradient(listOf(AppColors.fieldGreenTop, AppColors.fieldGreenMid, AppColors.fieldGreenBottom)),
-                    ),
-            ) {
-                PitchMarkings()
-                slots.forEachIndexed { index, slot ->
-                    val player = sized.getOrNull(index)
-                    val card = player?.let { p -> if (p.id in suspendedIds) CardStatus.RED else if (p.id in yellowIds) CardStatus.YELLOW else null }
-                    Box(
-                        Modifier
-                            .fillMaxSize(),
-                    ) {
-                        Column(
-                            modifier = Modifier
-                                .align(androidx.compose.ui.BiasAlignment(2f * slot.x / 100f - 1f, 2f * slot.y / 100f - 1f))
-                                .clickable { activeSlot = index },
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                        ) {
-                            Box(
-                                Modifier
-                                    .size(44.dp)
-                                    .background(if (player != null) AppColors.ticketOrange else Color.White.copy(alpha = 0.12f), CircleShape)
-                                    .border(BorderStroke(2.dp, if (player != null) AppColors.ink else Color.White.copy(alpha = 0.85f)), CircleShape),
-                                contentAlignment = Alignment.Center,
-                            ) {
-                                Text(slot.label, fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 11.sp, color = if (player != null) AppColors.cream else Color.White)
-                                if (card != null) {
-                                    Text(
-                                        if (card == CardStatus.RED) "🟥" else "🟨",
-                                        fontSize = 13.sp,
-                                        modifier = Modifier.align(Alignment.TopEnd).offset(x = 6.dp, y = (-6).dp),
-                                    )
-                                }
-                            }
-                            if (player != null) {
-                                Text(
-                                    player.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 9.sp,
-                                    color = Color.White, maxLines = 1,
-                                )
-                            }
-                        }
-                    }
-                }
-            }
+            LineupPitch(slots, sized, suspendedIds, yellowIds, activeSlot = null, onSlotClick = { activeSlot = it })
             Row(Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                 Text(
                     if (hasPreviousLineup) "Toque para trocar quem quiser" else "Toque em uma posição para escolher",
@@ -218,7 +235,7 @@ fun PreMatchLineupScreen(
 
         Column(Modifier.background(AppColors.paper).padding(20.dp)) {
             RetroPrimaryButton(
-                text = if (selectedCount == 11) "Simular partida" else "Escale ${11 - selectedCount} jogador${if (11 - selectedCount == 1) "" else "es"}",
+                text = confirmText,
                 enabled = selectedCount == 11,
                 onClick = onNext,
                 modifier = Modifier.fillMaxWidth(),
@@ -228,7 +245,7 @@ fun PreMatchLineupScreen(
 
     Box(Modifier.fillMaxSize().padding(20.dp), contentAlignment = Alignment.BottomEnd) {
         Box(Modifier.padding(bottom = 96.dp)) {
-            CircleFab(onClick = ::fillRandom) { Text("⚄", fontSize = 20.sp, color = AppColors.cream) }
+            CircleFab(onClick = ::fillRandom) { DieFiveIcon(color = AppColors.cream) }
         }
     }
     } // Box
@@ -245,36 +262,105 @@ fun PreMatchLineupScreen(
                 } else {
                     LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         items(eligiblePlayers, key = { it.id }) { player ->
-                            val suspended = player.id in suspendedIds
-                            val hasYellow = player.id in yellowIds
-                            Row(
-                                Modifier
-                                    .fillMaxWidth()
-                                    .background(if (suspended) AppColors.lossRedBg else AppColors.paper, RoundedCornerShape(12.dp))
-                                    .border(BorderStroke(2.dp, if (suspended) Color(0xFFE0B4B4) else AppColors.paperBorder), RoundedCornerShape(12.dp))
-                                    .then(if (!suspended) Modifier.clickable { choosePlayer(player) } else Modifier)
-                                    .padding(horizontal = 16.dp, vertical = 12.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                            ) {
-                                Text(
-                                    player.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 14.sp,
-                                    color = if (suspended) Color(0xFFB0A488) else AppColors.ink, modifier = Modifier.weight(1f),
-                                )
-                                if (hasYellow) Text("🟨", fontSize = 13.sp)
-                                if (suspended) {
-                                    Text("🟥 SUSPENSO", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, color = AppColors.lossRed)
-                                } else {
-                                    Text(player.role.name, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 12.sp, color = AppColors.kicker)
-                                    secondaryRole(player.role)?.let { Text("($it)", fontFamily = monoFontFamily(), fontSize = 10.sp, color = AppColors.mutedText) }
-                                }
-                                Text("${player.rating}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, color = AppColors.kicker)
-                            }
+                            PlayerPickRow(player, suspended = player.id in suspendedIds, hasYellow = player.id in yellowIds, onChoose = { choosePlayer(player) })
                         }
                     }
                 }
             }
         }
+    }
+}
+
+/** The pitch with one tappable circle per formation slot. [activeSlot] is outlined in gold (wide layout). */
+@Composable
+private fun LineupPitch(
+    slots: List<SlotCfg>,
+    lineup: List<Player?>,
+    suspendedIds: Set<Int>,
+    yellowIds: Set<Int>,
+    activeSlot: Int?,
+    onSlotClick: (Int) -> Unit,
+    large: Boolean = false,
+) {
+    Box(
+        Modifier
+            .fillMaxWidth()
+            .aspectRatio(100f / 136f)
+            .clip(RoundedCornerShape(16.dp))
+            .border(BorderStroke(2.dp, AppColors.ink), RoundedCornerShape(16.dp))
+            .background(
+                Brush.verticalGradient(listOf(AppColors.fieldGreenTop, AppColors.fieldGreenMid, AppColors.fieldGreenBottom)),
+            ),
+    ) {
+        PitchMarkings()
+        slots.forEachIndexed { index, slot ->
+            val player = lineup.getOrNull(index)
+            val card = player?.let { p -> if (p.id in suspendedIds) CardStatus.RED else if (p.id in yellowIds) CardStatus.YELLOW else null }
+            val isActive = index == activeSlot
+            Box(Modifier.fillMaxSize()) {
+                Column(
+                    modifier = Modifier
+                        .align(androidx.compose.ui.BiasAlignment(2f * slot.x / 100f - 1f, 2f * slot.y / 100f - 1f))
+                        .clickable { onSlotClick(index) },
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    Box(
+                        Modifier
+                            .size(if (large) 52.dp else 44.dp)
+                            .background(if (player != null) AppColors.ticketOrange else Color.White.copy(alpha = 0.12f), CircleShape)
+                            .border(
+                                BorderStroke(if (isActive) 3.dp else 2.dp, if (isActive) AppColors.antiqueGold else if (player != null) AppColors.ink else Color.White.copy(alpha = 0.85f)),
+                                CircleShape,
+                            ),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Text(slot.label, fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = if (large) 13.sp else 11.sp, color = if (player != null) AppColors.cream else Color.White)
+                        if (card != null) {
+                            Text(
+                                if (card == CardStatus.RED) "🟥" else "🟨",
+                                fontSize = 13.sp,
+                                modifier = Modifier.align(Alignment.TopEnd).offset(x = 6.dp, y = (-6).dp),
+                            )
+                        }
+                    }
+                    if (player != null) {
+                        Text(
+                            player.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = if (large) 12.sp else 9.sp,
+                            color = Color.White, maxLines = 1,
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** One choosable (or suspended) player in the position picker. */
+@Composable
+private fun PlayerPickRow(player: Player, suspended: Boolean, hasYellow: Boolean, onChoose: () -> Unit) {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .background(if (suspended) AppColors.lossRedBg else AppColors.paper, RoundedCornerShape(12.dp))
+            .border(BorderStroke(2.dp, if (suspended) Color(0xFFE0B4B4) else AppColors.paperBorder), RoundedCornerShape(12.dp))
+            .clip(RoundedCornerShape(12.dp))
+            .then(if (!suspended) Modifier.clickable(onClick = onChoose) else Modifier)
+            .padding(horizontal = 16.dp, vertical = 12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        Text(
+            player.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 14.sp,
+            color = if (suspended) Color(0xFFB0A488) else AppColors.ink, modifier = Modifier.weight(1f),
+        )
+        if (hasYellow) Text("🟨", fontSize = 13.sp)
+        if (suspended) {
+            Text("🟥 SUSPENSO", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, color = AppColors.lossRed)
+        } else {
+            Text(player.role.name, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 12.sp, color = AppColors.kicker)
+            secondaryRole(player.role)?.let { Text("($it)", fontFamily = monoFontFamily(), fontSize = 10.sp, color = AppColors.mutedText) }
+        }
+        Text("${player.rating}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, color = AppColors.kicker)
     }
 }
 

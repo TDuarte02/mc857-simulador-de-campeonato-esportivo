@@ -66,8 +66,7 @@ private fun seedOf(id: String): Int = id.sumOf { it.code }
 
 /** Deterministic placeholder score/cards for a match, keyed by its id — same match always resolves the same way. Mirrors App.tsx:490-504. */
 fun groupMatchScore(match: GroupMatch): Pair<Int, Int> {
-    val seed = seedOf(match.id)
-    return (seed % 3) to ((seed / 3) % 3)
+    return predictMatchScore(match.home.name, match.away.name, seedOf(match.id))
 }
 
 fun groupMatchCards(match: GroupMatch): GroupMatch {
@@ -84,8 +83,7 @@ fun groupMatchCards(match: GroupMatch): GroupMatch {
 fun simulateGroupMatches(groups: List<TournamentGroup>): List<TournamentGroup> = groups.map { group ->
     group.matches.fold(group) { current, match ->
         if (match.status == MatchStatus.PLAYED) return@fold current
-        val homeGoals = (group.matches.indexOf(match) + group.name[0].code) % 3
-        val awayGoals = (group.matches.indexOf(match) * 2 + group.name[0].code) % 2
+        val (homeGoals, awayGoals) = groupMatchScore(match)
         applyGroupResult(current, groupMatchCards(match), homeGoals, awayGoals)
     }
 }

@@ -49,8 +49,7 @@ fun tieSeed(a: PoolTeam, b: PoolTeam): Int = "${a.name}×${b.name}".sumOf { it.c
 fun simulateTie(tie: KnockoutTie): KnockoutTie {
     if (tie.home == null || tie.away == null || tie.winner != null) return tie
     val seed = tieSeed(tie.home, tie.away)
-    val homeGoals = seed % 3
-    val awayGoals = (seed / 3) % 3
+    val (homeGoals, awayGoals) = predictMatchScore(tie.home.name, tie.away.name, seed)
     val winner = when {
         homeGoals == awayGoals -> if (seed % 2 == 0) tie.home else tie.away
         homeGoals > awayGoals -> tie.home
@@ -103,8 +102,12 @@ enum class KnockoutRound { QF, SF }
 
 /** User eliminated: resolves final and 3rd place together so the bracket closes out. Mirrors App.tsx:648-651. */
 fun finishKnockout(ko: Knockout): Knockout {
-    val filled = propagateKnockout(ko)
-    return filled.copy(final = simulateTie(filled.final), third = simulateTie(filled.third))
+    val resolvedQuarterfinals = propagateKnockout(ko.copy(qf = ko.qf.map(::simulateTie)))
+    val resolvedSemifinals = propagateKnockout(resolvedQuarterfinals.copy(sf = resolvedQuarterfinals.sf.map(::simulateTie)))
+    return resolvedSemifinals.copy(
+        final = simulateTie(resolvedSemifinals.final),
+        third = simulateTie(resolvedSemifinals.third),
+    )
 }
 
 fun makeDrawnBracket(team: PoolTeam, shuffledRivals: List<PoolTeam>, format: TournamentFormat): DrawnBracket {

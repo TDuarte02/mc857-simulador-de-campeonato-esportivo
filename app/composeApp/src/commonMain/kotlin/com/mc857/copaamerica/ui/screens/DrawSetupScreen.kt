@@ -34,6 +34,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,8 +48,14 @@ import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.CircleFab
 import com.mc857.copaamerica.ui.components.KickerLabel
+import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
 import com.mc857.copaamerica.ui.components.TopBar
+import com.mc857.copaamerica.ui.components.WideCaption
+import com.mc857.copaamerica.ui.components.WideGrid
+import com.mc857.copaamerica.ui.components.WidePage
+import com.mc857.copaamerica.ui.components.WidePageHeader
+import com.mc857.copaamerica.ui.components.WideTicketCard
 import kotlinx.coroutines.delay
 
 private enum class DrawState { IDLE, DRAWING, DONE }
@@ -76,6 +83,89 @@ fun DrawSetupScreen(
             }
             state = DrawState.DONE
         }
+    }
+
+    val drawButton: @Composable (Modifier) -> Unit = { modifier ->
+        when (state) {
+            DrawState.IDLE -> RetroPrimaryButton(
+                text = "Sortear grupos",
+                onClick = {
+                    shuffled = rivalPool.shuffled()
+                    revealedCount = 0
+                    state = DrawState.DRAWING
+                },
+                modifier = modifier,
+            )
+            DrawState.DRAWING -> RetroPrimaryButton(text = "Sorteando…", enabled = false, onClick = {}, modifier = modifier)
+            DrawState.DONE -> RetroPrimaryButton(text = "Ir para escalação", onClick = { onNext(shuffled) }, modifier = modifier)
+        }
+    }
+
+    if (LocalWideLayout.current) {
+        WidePage {
+            WidePageHeader("SORTEIO DO", "TORNEIO", back = "Elenco" to onBack)
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+                Column(Modifier.width(320.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+                    WideTicketCard {
+                        Column(Modifier.padding(22.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                            KickerLabel("Sua seleção")
+                            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
+                                Text(team.flag, fontSize = 44.sp)
+                                Column {
+                                    Text(team.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 30.sp, lineHeight = 30.sp, color = AppColors.ink)
+                                    Text("CABEÇA DE CHAVE · GRUPO A", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
+                                }
+                            }
+                            drawButton(Modifier.fillMaxWidth())
+                        }
+                    }
+                    // The phone layout hides this behind the "i" button.
+                    Column(Modifier.padding(horizontal = 4.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        WideCaption("4 grupos de 4 seleções")
+                        Text(
+                            "As duas melhores de cada grupo avançam para as quartas. Empate no mata-mata vai direto para os pênaltis.",
+                            fontFamily = monoFontFamily(), fontSize = 13.sp, lineHeight = 20.sp, color = AppColors.bodyText,
+                        )
+                    }
+                }
+                WideGrid((0 until 4).toList(), minCellWidth = 300.dp, modifier = Modifier.weight(1f), gap = 16.dp) { groupIndex ->
+                    Column(
+                        Modifier
+                            .fillMaxWidth()
+                            .hardShadow(cornerRadius = 16.dp)
+                            .background(AppColors.cream, RoundedCornerShape(16.dp))
+                            .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(16.dp))
+                            .clip(RoundedCornerShape(16.dp)),
+                    ) {
+                        Box(Modifier.fillMaxWidth().background(AppColors.ticketOrangeBg).padding(horizontal = 14.dp, vertical = 10.dp)) {
+                            Text("GRUPO ${('A' + groupIndex)}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, letterSpacing = 1.5.sp, color = AppColors.kicker)
+                        }
+                        Column(Modifier.padding(10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                            repeat(4) { slot ->
+                                val isHead = groupIndex == 0 && slot == 0
+                                val (item, visible) = drawnSlot(groupIndex, slot, team, shuffled, revealedCount)
+                                Row(
+                                    Modifier
+                                        .fillMaxWidth()
+                                        .background(if (isHead) AppColors.ticketOrangeBg else AppColors.paper, RoundedCornerShape(8.dp))
+                                        .padding(horizontal = 10.dp, vertical = 10.dp),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(10.dp),
+                                ) {
+                                    Text(if (visible) (item?.flag ?: "🎱") else "🎱", fontSize = 20.sp)
+                                    Text(
+                                        if (visible) (item?.name?.uppercase() ?: "") else "A SORTEAR",
+                                        fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 16.sp,
+                                        color = if (visible) AppColors.ink else AppColors.mutedText, maxLines = 1,
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return
     }
 
     Box(Modifier.fillMaxSize()) {
@@ -122,9 +212,7 @@ fun DrawSetupScreen(
                         Column(Modifier.padding(6.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                             repeat(4) { slot ->
                                 val isHead = groupIndex == 0 && slot == 0
-                                val globalIndex = groupIndex * 4 + slot - 1
-                                val item = if (isHead) PoolTeam(team.name, team.flag) else shuffled.getOrNull(globalIndex)
-                                val visible = isHead || (item != null && globalIndex < revealedCount)
+                                val (item, visible) = drawnSlot(groupIndex, slot, team, shuffled, revealedCount)
                                 Row(
                                     Modifier
                                         .fillMaxWidth()
@@ -148,23 +236,7 @@ fun DrawSetupScreen(
         }
 
         Column(Modifier.background(AppColors.paper).padding(20.dp)) {
-            when (state) {
-                DrawState.IDLE -> RetroPrimaryButton(
-                    text = "Sortear grupos",
-                    onClick = {
-                        shuffled = rivalPool.shuffled()
-                        revealedCount = 0
-                        state = DrawState.DRAWING
-                    },
-                    modifier = Modifier.fillMaxWidth(),
-                )
-                DrawState.DRAWING -> RetroPrimaryButton(text = "Sorteando…", enabled = false, onClick = {}, modifier = Modifier.fillMaxWidth())
-                DrawState.DONE -> RetroPrimaryButton(
-                    text = "Ir para escalação",
-                    onClick = { onNext(shuffled) },
-                    modifier = Modifier.fillMaxWidth(),
-                )
-            }
+            drawButton(Modifier.fillMaxWidth())
         }
     }
 
@@ -193,6 +265,7 @@ fun DrawSetupScreen(
                     Modifier
                         .fillMaxWidth()
                         .background(AppColors.ink, RoundedCornerShape(16.dp))
+                        .clip(RoundedCornerShape(16.dp))
                         .clickable { infoOpen = false }
                         .padding(vertical = 12.dp),
                     horizontalArrangement = Arrangement.Center,
@@ -202,4 +275,12 @@ fun DrawSetupScreen(
             }
         }
     }
+}
+
+/** Team in slot [slot] of group [groupIndex] (the user heads group A), and whether the draw has revealed it yet. */
+private fun drawnSlot(groupIndex: Int, slot: Int, team: TeamData, shuffled: List<PoolTeam>, revealedCount: Int): Pair<PoolTeam?, Boolean> {
+    if (groupIndex == 0 && slot == 0) return PoolTeam(team.name, team.flag) to true
+    val globalIndex = groupIndex * 4 + slot - 1
+    val item = shuffled.getOrNull(globalIndex)
+    return item to (item != null && globalIndex < revealedCount)
 }

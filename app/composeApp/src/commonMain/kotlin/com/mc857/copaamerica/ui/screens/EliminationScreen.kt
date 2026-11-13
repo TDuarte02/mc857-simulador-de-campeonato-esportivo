@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -30,9 +32,14 @@ import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.KickerLabel
+import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
 import com.mc857.copaamerica.ui.components.RetroSecondaryButton
 import com.mc857.copaamerica.ui.components.TopBar
+import com.mc857.copaamerica.ui.components.WideFlagName
+import com.mc857.copaamerica.ui.components.WideInkHeaderCard
+import com.mc857.copaamerica.ui.components.WidePage
+import com.mc857.copaamerica.ui.components.WidePageHeader
 
 /** Mirrors Elimination, App.tsx:2213-2351. */
 @Composable
@@ -63,6 +70,62 @@ fun EliminationScreen(
 
     val tournamentOver = ko.third.winner != null
     val inThird = ko.third.home?.name == team.name || ko.third.away?.name == team.name
+
+    if (LocalWideLayout.current) {
+        WidePage {
+            WidePageHeader(
+                "ELIMINADO NA", "SEMIFINAL", back = "Voltar" to onBack,
+                kicker = if (tournamentOver) "Torneio encerrado" else "Disputa de 3º lugar",
+            )
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+                    Column(
+                        Modifier
+                            .fillMaxWidth()
+                            .hardShadow(color = AppColors.lossRed.copy(alpha = 0.25f), cornerRadius = 16.dp)
+                            .background(AppColors.lossRedBg, RoundedCornerShape(16.dp))
+                            .border(BorderStroke(2.dp, AppColors.lossRed), RoundedCornerShape(16.dp))
+                            .padding(28.dp),
+                    ) {
+                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                            WideFlagName(team.flag, team.name, AppColors.mutedText, Modifier.weight(1f), flagSize = 56.sp)
+                            Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
+                                Text("$teamGoals – $rivalGoals", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 72.sp, lineHeight = 72.sp, color = AppColors.ink)
+                                Text("ELIMINADA NA SEMI", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.5.sp, color = AppColors.lossRed)
+                            }
+                            WideFlagName(rival?.flag ?: "🎱", rival?.name ?: "—", AppColors.ink, Modifier.weight(1f), flagSize = 56.sp)
+                        }
+                    }
+                    if (!tournamentOver) {
+                        Text(
+                            if (inThird) "Você ainda disputa o 3º lugar. Jogue essa partida ou deixe o app simular o resultado." else "A disputa de 3º lugar segue em aberto.",
+                            fontFamily = monoFontFamily(), fontSize = 14.sp, lineHeight = 21.sp, color = AppColors.bodyText,
+                        )
+                    }
+                    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                        if (!tournamentOver && inThird) {
+                            RetroPrimaryButton("Jogar a disputa de 3º lugar", onClick = onPlayThird, modifier = Modifier.weight(1f))
+                            RetroSecondaryButton("Simular e ver resultados", onClick = { onSimulateRest(); onSeeResults() }, modifier = Modifier.weight(1f))
+                        } else {
+                            RetroPrimaryButton("Ver resumo da fase", onClick = onSeeResults, modifier = Modifier.weight(1f))
+                        }
+                    }
+                }
+                if (champion != null) {
+                    WideInkHeaderCard("Prêmios do campeão", "${champion.flag} ${champion.name}", Modifier.width(380.dp)) {
+                        awards.forEachIndexed { i, (label, value) ->
+                            if (i != 0) Box(Modifier.fillMaxWidth().height(1.dp).background(AppColors.rowBorder))
+                            Row(Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 14.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+                                Text(label.uppercase(), fontFamily = monoFontFamily(), fontSize = 12.sp, color = AppColors.mutedText)
+                                Text(value, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 17.sp, color = AppColors.ink)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return
+    }
 
     Column(Modifier.fillMaxSize()) {
         TopBar(title = "Eliminado", sub = if (tournamentOver) "Semifinal · Torneio encerrado" else "Semifinal · Disputa de 3º lugar", onBack = onBack)

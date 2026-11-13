@@ -9,6 +9,7 @@ import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -52,16 +53,20 @@ fun Modifier.ticketStripe(
     val stripeWidthPx = stripeWidth.toPx()
     val periodPx = stripeWidthPx + gap.toPx()
     onDrawBehind {
-        rotate(degrees = -45f) {
-            val diag = size.width + size.height
-            var x = -diag
-            while (x < diag) {
-                drawRect(
-                    color = stripeColor,
-                    topLeft = Offset(x, -diag / 2f),
-                    size = Size(stripeWidthPx, diag * 2f),
-                )
-                x += periodPx
+        // The rotated stripes overshoot the bounds; Compose doesn't clip by
+        // default, so without this they bleed over the whole screen.
+        clipRect {
+            rotate(degrees = -45f) {
+                val diag = size.width + size.height
+                var x = -diag
+                while (x < diag) {
+                    drawRect(
+                        color = stripeColor,
+                        topLeft = Offset(x, -diag / 2f),
+                        size = Size(stripeWidthPx, diag * 2f),
+                    )
+                    x += periodPx
+                }
             }
         }
     }

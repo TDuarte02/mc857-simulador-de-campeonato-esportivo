@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mc857.copaamerica.domain.logic.tieLine
@@ -35,12 +37,12 @@ import com.mc857.copaamerica.theme.monoFontFamily
 
 /** One tie of the bracket: two rows, one per side. Mirrors TieCard, App.tsx:1167-1197. */
 @Composable
-fun TieCard(tie: KnockoutTie, label: String, highlightName: String? = null, emptyLabel: String = "A definir") {
+fun TieCard(tie: KnockoutTie, label: String, highlightName: String? = null, emptyLabel: String = "A definir", large: Boolean = false) {
     val isUserTie = tie.home?.name == highlightName || tie.away?.name == highlightName
     val borderColor = if (isUserTie) AppColors.antiqueGold else AppColors.paperBorder
     Column(
         Modifier
-            .width(104.dp)
+            .width(if (large) 200.dp else 104.dp)
             .background(AppColors.cream, RoundedCornerShape(8.dp))
             .border(BorderStroke(2.dp, borderColor), RoundedCornerShape(8.dp)),
     ) {
@@ -48,7 +50,7 @@ fun TieCard(tie: KnockoutTie, label: String, highlightName: String? = null, empt
             text = label,
             fontFamily = monoFontFamily(),
             fontWeight = FontWeight.Bold,
-            fontSize = 11.sp,
+            fontSize = if (large) 12.sp else 11.sp,
             letterSpacing = 0.5.sp,
             color = if (isUserTie) AppColors.antiqueGold else AppColors.kicker,
             maxLines = 1,
@@ -56,16 +58,16 @@ fun TieCard(tie: KnockoutTie, label: String, highlightName: String? = null, empt
             modifier = Modifier
                 .fillMaxWidth()
                 .background(if (isUserTie) AppColors.ticketOrangeBg else AppColors.paper)
-                .padding(horizontal = 6.dp, vertical = 2.dp),
+                .padding(horizontal = if (large) 10.dp else 6.dp, vertical = if (large) 4.dp else 2.dp),
         )
-        TieCardRow(tie.home, tie.homeGoals, tie.winner, highlightName, emptyLabel)
+        TieCardRow(tie.home, tie.homeGoals, tie.winner, highlightName, emptyLabel, large)
         Box(Modifier.fillMaxWidth().height(1.dp).background(AppColors.rowBorder))
-        TieCardRow(tie.away, tie.awayGoals, tie.winner, highlightName, emptyLabel)
+        TieCardRow(tie.away, tie.awayGoals, tie.winner, highlightName, emptyLabel, large)
     }
 }
 
 @Composable
-private fun TieCardRow(side: PoolTeam?, goals: Int?, winner: PoolTeam?, highlightName: String?, emptyLabel: String) {
+private fun TieCardRow(side: PoolTeam?, goals: Int?, winner: PoolTeam?, highlightName: String?, emptyLabel: String, large: Boolean) {
     val isWinner = winner != null && winner.name == side?.name
     val isUser = side != null && side.name == highlightName
     val textColor = when {
@@ -78,16 +80,16 @@ private fun TieCardRow(side: PoolTeam?, goals: Int?, winner: PoolTeam?, highligh
         Modifier
             .fillMaxWidth()
             .background(if (isWinner) AppColors.ticketOrangeBg else Color.Transparent)
-            .padding(horizontal = 6.dp, vertical = 4.dp),
+            .padding(horizontal = if (large) 10.dp else 6.dp, vertical = if (large) 8.dp else 4.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Text(side?.flag ?: "🎱", fontSize = 13.sp)
-        Spacer(Modifier.width(4.dp))
+        Text(side?.flag ?: "🎱", fontSize = if (large) 18.sp else 13.sp)
+        Spacer(Modifier.width(if (large) 8.dp else 4.dp))
         Text(
             text = side?.name ?: emptyLabel,
             fontFamily = displayFontFamily(),
             fontWeight = FontWeight.ExtraBold,
-            fontSize = 11.sp,
+            fontSize = if (large) 16.sp else 11.sp,
             color = textColor,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
@@ -97,33 +99,33 @@ private fun TieCardRow(side: PoolTeam?, goals: Int?, winner: PoolTeam?, highligh
             text = goals?.toString() ?: "–",
             fontFamily = monoFontFamily(),
             fontWeight = FontWeight.Bold,
-            fontSize = 11.sp,
+            fontSize = if (large) 14.sp else 11.sp,
             color = if (isWinner) AppColors.antiqueGold else AppColors.kicker,
         )
     }
 }
 
 @Composable
-private fun TieColumn(ties: List<KnockoutTie>, labels: List<String>, highlightName: String?, emptyLabel: String = "A definir") {
+private fun TieColumn(ties: List<KnockoutTie>, labels: List<String>, highlightName: String?, emptyLabel: String = "A definir", large: Boolean = false) {
     Column(Modifier.fillMaxHeight(), verticalArrangement = androidx.compose.foundation.layout.Arrangement.SpaceEvenly) {
         ties.forEachIndexed { index, tie ->
             Box(Modifier.weight(1f), contentAlignment = Alignment.Center) {
-                TieCard(tie = tie, label = labels.getOrElse(index) { "" }, highlightName = highlightName, emptyLabel = emptyLabel)
+                TieCard(tie = tie, label = labels.getOrElse(index) { "" }, highlightName = highlightName, emptyLabel = emptyLabel, large = large)
             }
         }
     }
 }
 
 @Composable
-private fun ConnectorColumn(pairCount: Int) {
-    Column(Modifier.width(20.dp).fillMaxHeight()) {
+private fun ConnectorColumn(pairCount: Int, width: Dp = 20.dp) {
+    Column(Modifier.width(width).fillMaxHeight()) {
         repeat(pairCount) {
             Box(Modifier.weight(1f).fillMaxWidth()) {
                 // Simple "]"-style connector: a vertical tick centered in the pair's band.
                 Box(
                     Modifier
                         .align(Alignment.Center)
-                        .width(10.dp)
+                        .width(width / 2)
                         .height(1.dp)
                         .background(AppColors.paperBorder),
                 )
@@ -132,20 +134,25 @@ private fun ConnectorColumn(pairCount: Int) {
     }
 }
 
-/** The whole knockout tree: quarters → semis → final, left to right. Mirrors BracketTree, App.tsx:1237-1250. */
+/**
+ * The whole knockout tree: quarters → semis → final, left to right. Mirrors BracketTree, App.tsx:1237-1250.
+ * [large] is the wide (desktop/web) variant: bigger cards spread over the full width.
+ */
 @Composable
-fun BracketTree(qf: List<KnockoutTie>, sf: List<KnockoutTie>, final: KnockoutTie, highlightName: String?, emptyLabel: String = "A definir") {
+fun BracketTree(qf: List<KnockoutTie>, sf: List<KnockoutTie>, final: KnockoutTie, highlightName: String?, emptyLabel: String = "A definir", large: Boolean = false) {
+    val connector = if (large) 56.dp else 20.dp
     Row(
         Modifier
             .fillMaxWidth()
             .horizontalScroll(rememberScrollState())
-            .height(340.dp),
+            .height(if (large) 480.dp else 340.dp),
+        horizontalArrangement = if (large) Arrangement.Center else Arrangement.Start,
     ) {
-        TieColumn(ties = qf, labels = listOf("Quartas 1", "Quartas 2", "Quartas 3", "Quartas 4"), highlightName = highlightName, emptyLabel = emptyLabel)
-        ConnectorColumn(pairCount = qf.size / 2)
-        TieColumn(ties = sf, labels = listOf("Semifinal 1", "Semifinal 2"), highlightName = highlightName)
-        ConnectorColumn(pairCount = sf.size / 2)
-        TieColumn(ties = listOf(final), labels = listOf("Final"), highlightName = highlightName)
+        TieColumn(ties = qf, labels = listOf("Quartas 1", "Quartas 2", "Quartas 3", "Quartas 4"), highlightName = highlightName, emptyLabel = emptyLabel, large = large)
+        ConnectorColumn(pairCount = qf.size / 2, width = connector)
+        TieColumn(ties = sf, labels = listOf("Semifinal 1", "Semifinal 2"), highlightName = highlightName, large = large)
+        ConnectorColumn(pairCount = sf.size / 2, width = connector)
+        TieColumn(ties = listOf(final), labels = listOf("Final"), highlightName = highlightName, large = large)
     }
 }
 
