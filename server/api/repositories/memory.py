@@ -1,14 +1,21 @@
-"""In-memory repositories: everything lives in dicts and is lost on restart."""
+"""In-memory repositories: everything lives in dicts and is lost on restart.
+
+Sessions, tournaments and matches are copied on the way in and out, so these
+behave like a real database: a change that is never saved is lost.
+"""
 
 from collections.abc import Iterable
+from copy import deepcopy
 
 from api.domain.models import Match, Player, Position, Session, Squad, Tournament
 from api.repositories.base import (
     PlayerRepository,
+    Repositories,
     SessionRepository,
     SquadRepository,
     TournamentRepository,
 )
+from api.repositories.mock_data import build_players, build_squads
 
 
 class InMemorySquadRepository(SquadRepository):
@@ -42,13 +49,13 @@ class InMemorySessionRepository(SessionRepository):
         self._sessions: dict[str, Session] = {}
 
     def add(self, session: Session) -> None:
-        self._sessions[session.id] = session
+        self._sessions[session.id] = deepcopy(session)
 
     def get(self, session_id: str) -> Session | None:
-        return self._sessions.get(session_id)
+        return deepcopy(self._sessions.get(session_id))
 
     def save(self, session: Session) -> None:
-        self._sessions[session.id] = session
+        self._sessions[session.id] = deepcopy(session)
 
 
 class InMemoryTournamentRepository(TournamentRepository):
@@ -57,15 +64,24 @@ class InMemoryTournamentRepository(TournamentRepository):
         self._matches: dict[str, dict[str, Match]] = {}
 
     def get(self, session_id: str) -> Tournament | None:
-        return self._tournaments.get(session_id)
+        return deepcopy(self._tournaments.get(session_id))
 
     def save(self, tournament: Tournament) -> None:
-        self._tournaments[tournament.session_id] = tournament
+        self._tournaments[tournament.session_id] = deepcopy(tournament)
 
     def list_matches(self, session_id: str, round_no: int | None = None) -> list[Match]:
         matches = self._matches.get(session_id, {}).values()
-        return [match for match in matches if round_no is None or match.round == round_no]
+        return [deepcopy(match) for match in matches if round_no is None or match.round == round_no]
 
     def save_matches(self, matches: Iterable[Match]) -> None:
         for match in matches:
-            self._matches.setdefault(match.session_id, {})[match.id] = match
+            self._matches.setdefault(match.session_id, {})[match.id] = deepcopy(match)
+
+
+def create_memory_repositories() -> Repositories:
+    return Repositories(
+        squads=InMemorySquadRepository(build_squads()),
+        players=InMemoryPlayerRepository(build_players()),
+        sessions=InMemorySessionRepository(),
+        tournaments=InMemoryTournamentRepository(),
+    )

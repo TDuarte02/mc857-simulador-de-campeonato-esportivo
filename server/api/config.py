@@ -23,6 +23,10 @@ class Settings:
     simulator: str = "mock"
     repository: str = "memory"
 
+    # Used when repository == "mongo".
+    mongo_uri: str = "mongodb://localhost:27017"
+    mongo_db: str = "copa"
+
     @property
     def squad_size(self) -> int:
         return sum(self.squad_quotas.values())
@@ -32,4 +36,6 @@ class Settings:
         return cls(
             simulator=os.environ.get("SIMULATOR", "mock"),
             repository=os.environ.get("REPOSITORY", "memory"),
+            mongo_uri=os.environ.get("MONGO_URI", cls.mongo_uri),
+            mongo_db=os.environ.get("MONGO_DB", cls.mongo_db),
         )

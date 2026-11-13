@@ -1,28 +1,20 @@
 """Wires repositories, the simulator and the services together.
 
-This is the only place that knows which implementations are in use. To go from
-the mocks to the real thing, add the new class to REPOSITORIES or SIMULATORS and
-select it with the REPOSITORY / SIMULATOR environment variables.
+This is the only place that knows which implementations are in use. Storage is
+picked with the REPOSITORY environment variable (`memory` or `mongo`) and the
+model with SIMULATOR (`mock`); a new implementation is one more registry entry.
 """
 
 import random
 from collections.abc import Callable
 from dataclasses import dataclass
 
+from pymongo import MongoClient
+
 from api.config import Settings
-from api.repositories.base import (
-    PlayerRepository,
-    SessionRepository,
-    SquadRepository,
-    TournamentRepository,
-)
-from api.repositories.memory import (
-    InMemoryPlayerRepository,
-    InMemorySessionRepository,
-    InMemorySquadRepository,
-    InMemoryTournamentRepository,
-)
-from api.repositories.mock_data import build_players, build_squads
+from api.repositories.base import Repositories
+from api.repositories.memory import create_memory_repositories
+from api.repositories.mongo import create_mongo_repositories
 from api.services.call_up_service import CallUpService
 from api.services.draw_service import DrawService
 from api.services.match_runner import MatchRunner
@@ -32,14 +24,6 @@ from api.services.session_service import SessionService
 from api.services.squad_service import SquadService
 from api.simulation.base import MatchSimulator
 from api.simulation.mock import RandomMatchSimulator
-
-
-@dataclass(frozen=True)
-class Repositories:
-    squads: SquadRepository
-    players: PlayerRepository
-    sessions: SessionRepository
-    tournaments: TournamentRepository
 
 
 @dataclass(frozen=True)
@@ -53,17 +37,14 @@ class Container:
     results: ResultsService
 
 
-def _memory_repositories() -> Repositories:
-    return Repositories(
-        squads=InMemorySquadRepository(build_squads()),
-        players=InMemoryPlayerRepository(build_players()),
-        sessions=InMemorySessionRepository(),
-        tournaments=InMemoryTournamentRepository(),
-    )
+def _mongo_repositories(settings: Settings) -> Repositories:
+    client = MongoClient(settings.mongo_uri, tz_aware=True, serverSelectionTimeoutMS=5000)
+    return create_mongo_repositories(client[settings.mongo_db])
 
 
-REPOSITORIES: dict[str, Callable[[], Repositories]] = {
-    "memory": _memory_repositories,
+REPOSITORIES: dict[str, Callable[[Settings], Repositories]] = {
+    "memory": lambda settings: create_memory_repositories(),
+    "mongo": _mongo_repositories,
 }
 
 SIMULATORS: dict[str, Callable[[random.Random], MatchSimulator]] = {
@@ -74,13 +55,14 @@ SIMULATORS: dict[str, Callable[[random.Random], MatchSimulator]] = {
 def build_container(
     settings: Settings | None = None,
     *,
+    repositories: Repositories | None = None,
     simulator: MatchSimulator | None = None,
     rng: random.Random | None = None,
 ) -> Container:
-    """Builds the service graph. `simulator` and `rng` can be injected, e.g. by tests."""
+    """Builds the service graph. `repositories`, `simulator` and `rng` can be injected, e.g. by tests."""
     settings = settings or Settings()
     rng = rng or random.Random()
-    repositories = _pick(REPOSITORIES, settings.repository, "REPOSITORY")()
+    repositories = repositories or _pick(REPOSITORIES, settings.repository, "REPOSITORY")(settings)
     simulator = simulator or _pick(SIMULATORS, settings.simulator, "SIMULATOR")(rng)
 
     sessions = SessionService(repositories.sessions)

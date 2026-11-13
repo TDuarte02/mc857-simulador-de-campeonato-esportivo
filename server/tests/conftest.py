@@ -1,14 +1,39 @@
 import random
 from collections.abc import Callable
 
+import mongomock
 import pytest
+from flask.testing import FlaskClient
 
 from api import create_app
-from api.container import build_container
+from api.container import Container, build_container
+from api.controllers.openapi import openapi_spec
 from api.domain.models import Card, CardType, Goal, MatchResult, Position, Stage
+from api.repositories.base import Repositories
+from api.repositories.memory import create_memory_repositories
+from api.repositories.mongo import create_mongo_repositories
 from api.simulation.base import MatchContext, MatchSimulator
+from openapi_check import response_problems
 
 USER_SQUAD = "brazil"
+
+
+class SpecCheckedClient(FlaskClient):
+    """Flask test client that fails the test when a response does not match the OpenAPI document."""
+
+    def open(self, *args, **kwargs):
+        response = super().open(*args, **kwargs)
+        request = response.request
+        body = response.get_json(silent=True)
+        problems = response_problems(openapi_spec(), request.method, request.path, response.status_code, body)
+        assert not problems, "\n".join(problems)
+        return response
+
+
+def make_client(container: Container) -> SpecCheckedClient:
+    app = create_app(container)
+    app.test_client_class = SpecCheckedClient
+    return app.test_client()
 
 
 class ScriptedSimulator(MatchSimulator):
@@ -44,15 +69,28 @@ class ScriptedSimulator(MatchSimulator):
         return MatchResult(home_goals=1, away_goals=0, goals=[Goal(30, scorer.id, context.home.squad_id)])
 
 
+def mock_mongo_db():
+    """A fresh in-memory stand-in for a MongoDB database."""
+    return mongomock.MongoClient(tz_aware=True)["copa"]
+
+
+@pytest.fixture(params=["memory", "mongo"])
+def repositories(request) -> Repositories:
+    """Every test using it runs once per storage backend; Mongo is faked with mongomock."""
+    if request.param == "memory":
+        return create_memory_repositories()
+    return create_mongo_repositories(mock_mongo_db())
+
+
 @pytest.fixture
 def simulator() -> ScriptedSimulator:
     return ScriptedSimulator()
 
 
 @pytest.fixture
-def client(simulator):
-    app = create_app(build_container(simulator=simulator, rng=random.Random(7)))
-    return app.test_client()
+def client(repositories, simulator):
+    container = build_container(repositories=repositories, simulator=simulator, rng=random.Random(7))
+    return make_client(container)
 
 
 class Cup:

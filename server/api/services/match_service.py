@@ -76,10 +76,14 @@ class MatchService:
         round_no = session.round + 1
         match = self._user_match(session, round_no)
         self._runner.run_full(tournament, match, session.squad_id, lineup, formation)
+        # Saved before the round closes: _complete_round reloads the round and would
+        # otherwise quick-simulate this match again.
+        self._tournaments.save_matches([match])
         apply_match_events(session.player_status, match.result, session.squad_id, self._settings)
-        self._complete_round(session, tournament, round_no)
+        round_matches = self._complete_round(session, tournament, round_no)
         self._sessions.save(session)
-        return SimulationOutcome(match, self._next(session), session.squad_id)
+        played = next(m for m in round_matches if m.id == match.id)
+        return SimulationOutcome(played, self._next(session), session.squad_id)
 
     def simulate_all(self, session_id: str) -> None:
         """Finishes the cup once the user is out. Calling it on a finished cup is a no-op."""
@@ -132,8 +136,11 @@ class MatchService:
             raise ValidationError("INVALID_LINEUP", "A lineup needs exactly one goalkeeper.")
         return lineup
 
-    def _complete_round(self, session: Session, tournament: Tournament, round_no: int) -> None:
-        """Resolves what is left of a round, reveals it and sets up the next one."""
+    def _complete_round(self, session: Session, tournament: Tournament, round_no: int) -> list[Match]:
+        """Resolves what is left of a round, reveals it and sets up the next one.
+
+        Returns the round's matches as stored. The caller saves `session`.
+        """
         matches = self._tournaments.list_matches(session.id, round_no)
         for match in matches:
             if match.result is None:
@@ -144,7 +151,7 @@ class MatchService:
         user = session.squad_id
 
         if round_no < GROUP_ROUNDS:
-            return
+            return matches
         if round_no == GROUP_ROUNDS:
             qualified = qualified_squads(tournament.groups, self._tournaments.list_matches(session.id))
             session.user_eliminated = user not in qualified
@@ -158,6 +165,7 @@ class MatchService:
             session.phase = Phase.FINALS
         else:
             session.phase = Phase.FINISHED
+        return matches
 
     def _open_semi_finals(self, session: Session, quarter_finals: list[Match]) -> list[Match]:
         by_id = {match.id: match for match in quarter_finals}

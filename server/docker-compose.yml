@@ -1,0 +1,41 @@
+name: copa-simulador
+
+services:
+  mongo:
+    image: mongodb/mongodb-community-server:latest
+    restart: unless-stopped
+    ports:
+      # 27018 on the host, so a local Mongo on 27017 can keep running.
+      - "127.0.0.1:27018:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  api:
+    build: .
+    restart: unless-stopped
+    init: true  # forwards SIGTERM to Flask, so `docker compose stop` is immediate
+    environment:
+      REPOSITORY: mongo
+      MONGO_URI: mongodb://mongo:27017
+      MONGO_DB: copa
+    ports:
+      - "127.0.0.1:5000:5000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    healthcheck:
+      # /squads reads from Mongo, so a healthy API also means a reachable database.
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/squads', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+volumes:
+  mongo-data:

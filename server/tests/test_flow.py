@@ -3,10 +3,9 @@ from collections import Counter
 
 import pytest
 
-from api import create_app
 from api.container import build_container
 from api.domain.models import Stage
-from conftest import USER_SQUAD, Cup
+from conftest import USER_SQUAD, Cup, make_client
 
 QUOTAS = {"GK": 3, "DEF": 8, "MID": 8, "FW": 7}
 
@@ -296,8 +295,8 @@ def test_steps_out_of_order_are_conflicts(cup):
 
 
 @pytest.mark.parametrize("seed", range(12))
-def test_random_model_always_finishes_a_cup(seed):
-    client = create_app(build_container(rng=random.Random(seed))).test_client()
+def test_random_model_always_finishes_a_cup(seed, repositories):
+    client = make_client(build_container(repositories=repositories, rng=random.Random(seed)))
     cup = Cup(client, squad="uruguay")
     cup.start()
 
