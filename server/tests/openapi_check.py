@@ -65,8 +65,13 @@ def schema_problems(spec: dict, value, schema: dict, at: str = "$") -> list[str]
     if isinstance(value, dict):
         properties = schema.get("properties", {})
         problems += [f"{at}: missing '{key}'" for key in schema.get("required", []) if key not in value]
-        if schema.get("additionalProperties") is False:
+        extra = schema.get("additionalProperties")
+        if extra is False:
             problems += [f"{at}: undocumented field '{key}'" for key in value if key not in properties]
+        elif isinstance(extra, dict):  # a map: every other key's value must match this schema
+            for key in value:
+                if key not in properties:
+                    problems += schema_problems(spec, value[key], extra, f"{at}.{key}")
         for key, subschema in properties.items():
             if key in value:
                 problems += schema_problems(spec, value[key], subschema, f"{at}.{key}")

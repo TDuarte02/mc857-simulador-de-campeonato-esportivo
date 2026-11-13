@@ -91,6 +91,32 @@ SCHEMAS = {
         }
     ),
     "SessionCreated": _obj({"sessionId": {**STR, "format": "uuid"}}),
+    "PlayerStatus": _obj(
+        {
+            "yellowCards": {**INT, "description": "Amarelos acumulados."},
+            "suspendedMatches": INT,
+            "suspensionReason": _nullable(_enum([UnavailableReason.SUSPENDED_RED, UnavailableReason.SUSPENDED_YELLOWS])),
+            "injuredMatches": INT,
+            "available": BOOL,
+            "matchesRemaining": {**INT, "description": "Partidas que ainda vai perder (0 se disponível)."},
+        }
+    ),
+    "SessionState": _obj(
+        {
+            "id": {**STR, "format": "uuid"},
+            "createdAt": {**STR, "format": "date-time"},
+            "phase": _enum(Phase),
+            "squadId": _nullable({**STR, "description": "null até a convocação."}),
+            "callUp": _array(INT, description="Ids dos 26 convocados; vazio até a convocação."),
+            "playerStatus": {
+                "type": "object",
+                "description": "Situação de cada convocado, indexada pelo id do jogador (como string).",
+                "additionalProperties": _ref("PlayerStatus"),
+            },
+            "round": {**INT, "description": "Rodadas já jogadas (0–6)."},
+            "userEliminated": BOOL,
+        }
+    ),
     "CallUpRequest": _obj(
         {
             "squad": {**STR, "description": "Id da seleção do usuário.", "example": "brazil"},
@@ -294,6 +320,16 @@ PATHS = {
             "Cria uma sessão",
             "Não há autenticação: o `sessionId` devolvido identifica o usuário nas outras chamadas.",
             [_ok("Sessão criada.", _ref("SessionCreated"), status=201)],
+        )
+    },
+    "/session/{sessionId}": {
+        "get": _operation(
+            "getSession",
+            _SESSION,
+            "Estado da sessão",
+            "Fase atual, seleção e convocação do usuário, rodadas jogadas e a situação de cada convocado.",
+            [_ok("Sessão.", _obj({"session": _ref("SessionState")})), _error(404, ["SESSION_NOT_FOUND"])],
+            parameters=[_SESSION_ID],
         )
     },
     "/squads": {

@@ -158,6 +158,13 @@ def test_checker_reports_responses_that_break_the_document():
     assert "is not one of" in problems(unknown_code, status=404, path="/brazil/players")[0]
 
 
+def test_checker_validates_map_values():
+    schema = {"type": "object", "additionalProperties": {"type": "integer"}}
+
+    assert schema_problems(SPEC, {"301": 1, "302": 2}, schema) == []
+    assert "expected integer" in schema_problems(SPEC, {"301": "x"}, schema)[0]
+
+
 def test_checker_refuses_schemas_it_cannot_check():
     with pytest.raises(AssertionError, match="does not support"):
         schema_problems(SPEC, 1, {"oneOf": [{"type": "integer"}]})
