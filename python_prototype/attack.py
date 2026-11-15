@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import random
 from dataclasses import dataclass
 from enum import Enum
@@ -91,6 +92,8 @@ def _validate_effective_value(value: float, label: str) -> float:
         numeric = float(value)
     except (TypeError, ValueError) as exc:
         raise ValueError(f"Valor inválido para {label}: {value!r}") from exc
+    if not math.isfinite(numeric):
+        raise ValueError(f"{label} deve ser um número finito; recebido: {value!r}")
     if numeric < 0:
         raise ValueError(f"{label} não pode ser negativo.")
     return numeric
@@ -204,14 +207,15 @@ def simulate_attack_sequence(
             history=tuple(history),
         )
 
+
 # ============================================================
 # Exemplo de uso
 # ============================================================
 
 if __name__ == "__main__":
     # Rode com: python -m python_prototype.attack
-    attack_value = 30.0   # Ataque efetivo do atacante
-    defense_value = 30.0  # Defesa efetiva do adversário
+    attack_value = 75.0   # Ataque efetivo do atacante
+    defense_value = 60.0  # Defesa efetiva do adversário
 
     # 1) Probabilidades de cada tentativa com os parâmetros padrão
     print("Probabilidades por tentativa (A=75, D=60):")
