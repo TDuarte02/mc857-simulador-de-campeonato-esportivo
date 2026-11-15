@@ -304,4 +304,21 @@ def play_match(
     return results
 
 
+if __name__ == "__main__":
+    def squad(prefix: str, rating: int) -> list[Player]:
+        positions = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "RW", "ST", "LW"]
+        return [
+            Player(
+                f"{prefix}{i}", pos, rating, rating, rating, rating, rating,
+                rating, rating, rating, rating, rating, rating, rating,
+                rating, rating, rating, rating, rating, rating,
+            )
+            for i, pos in enumerate(positions)
+        ]
 
+    formation = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
+    match = create_match(squad("A", 75), formation, squad("B", 65), formation)
+    play_match(match, seed=42)
+    print("Placar final:", match.score)
+    for event in match.events:
+        print(f"{event.minute:>2}' {event.type.value} {event.team or ''} {event.detail}")
