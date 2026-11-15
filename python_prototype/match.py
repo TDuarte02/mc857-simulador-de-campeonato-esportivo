@@ -143,4 +143,165 @@ class CycleResult:
         return self.scorer is not None
 
 
+# ============================================================
+# Criação e intervalo
+# ============================================================
+
+def create_match(
+    players_a: Sequence[Player],
+    formation_a: Sequence[str],
+    players_b: Sequence[Player],
+    formation_b: Sequence[str],
+) -> MatchState:
+    return MatchState(
+        teams={
+            "A": TeamState.from_lineup("A", players_a, formation_a),
+            "B": TeamState.from_lineup("B", players_b, formation_b),
+        }
+    )
+
+
+def change_lineup(
+    state: MatchState,
+    team_id: str,
+    players: Sequence[Player],
+    formation: Sequence[str],
+) -> None:
+    """Altera a escalação de um time. Só é permitido durante o intervalo."""
+    if state.phase is not MatchPhase.HALFTIME:
+        raise ValueError("Alterações na escalação só são permitidas no intervalo.")
+    if team_id not in state.teams:
+        raise ValueError(f"Time desconhecido: {team_id!r}")
+
+    new_team = TeamState.from_lineup(team_id, players, formation)
+    # Os modificadores (efeitos) do time são preservados.
+    new_team.modifiers = dict(state.teams[team_id].modifiers)
+    state.teams[team_id] = new_team
+    state.events.append(
+        MatchEvent(state.clock, MatchEventType.LINEUP_CHANGE, team_id)
+    )
+
+
+def start_second_half(state: MatchState) -> None:
+    if state.phase is not MatchPhase.HALFTIME:
+        raise ValueError("O segundo tempo só pode começar a partir do intervalo.")
+    state.phase = MatchPhase.SECOND_HALF
+    state.events.append(MatchEvent(state.clock, MatchEventType.SECOND_HALF_START))
+
+
+# ============================================================
+# Ciclo
+# ============================================================
+
+def run_cycle(
+    state: MatchState,
+    rng: random.Random | None = None,
+    *,
+    seed: int | None = None,
+    attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
+) -> CycleResult:
+    """
+    Executa um ciclo de 15 minutos:
+    atributos efetivos -> MD3 -> sequência ofensiva -> registro
+    -> atualização de placar/fase -> avanço do relógio.
+    """
+    if rng is not None and seed is not None:
+        raise ValueError("Informe rng ou seed, não ambos.")
+    if state.is_finished:
+        raise ValueError("A partida já foi encerrada.")
+    if state.phase is MatchPhase.HALFTIME:
+        raise ValueError(
+            "A partida está no intervalo; chame start_second_half antes do próximo ciclo."
+        )
+
+    generator = rng if rng is not None else random.Random(seed)
+    start = state.clock
+
+    # 1) Atributos efetivos
+    effective = {tid: team.effective() for tid, team in state.teams.items()}
+
+    # 2) MD3: o vencedor ataca
+    md3 = simulate_md3(
+        effective["A"].control, effective["B"].control, rng=generator
+    )
+    attacker = md3.winner
+    defender = _other(attacker)
+    state.events.append(
+        MatchEvent(
+            start,
+            MatchEventType.MD3_RESULT,
+            attacker,
+            f"MD3 {md3.wins_a}x{md3.wins_b}",
+        )
+    )
+
+    # 3) Sequência ofensiva
+    sequence = simulate_attack_sequence(
+        effective[attacker].attack,
+        effective[defender].defense,
+        params=attack_params,
+        rng=generator,
+    )
+    state.events.append(
+        MatchEvent(
+            start,
+            MatchEventType.ATTACK_SEQUENCE,
+            attacker,
+            f"{sequence.attempts} tentativa(s)",
+        )
+    )
+
+    # 4) Registro e placar (um único incremento por gol)
+    scorer: str | None = None
+    if sequence.outcome is AttackOutcome.GOAL:
+        scorer = attacker
+        state.score[scorer] += 1
+        state.events.append(MatchEvent(start, MatchEventType.GOAL, scorer))
+    else:
+        state.events.append(
+            MatchEvent(start, MatchEventType.POSSESSION_LOST, attacker)
+        )
+
+    # 5) Relógio e fase
+    state.clock += CYCLE_MINUTES
+    state.cycle_index += 1
+
+    if state.clock >= FULL_TIME_MINUTE:
+        state.phase = MatchPhase.FINISHED
+        state.events.append(MatchEvent(state.clock, MatchEventType.FULL_TIME))
+    elif state.clock == HALFTIME_MINUTE:
+        state.phase = MatchPhase.HALFTIME
+        state.events.append(MatchEvent(state.clock, MatchEventType.HALFTIME))
+
+    return CycleResult(
+        cycle=state.cycle_index,
+        start_minute=start,
+        end_minute=state.clock,
+        md3=md3,
+        attacking_team=attacker,
+        attack=sequence,
+        scorer=scorer,
+    )
+
+
+def play_match(
+    state: MatchState,
+    rng: random.Random | None = None,
+    *,
+    seed: int | None = None,
+    attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
+) -> list[CycleResult]:
+    """Joga a partida até o fim, sem alterações no intervalo."""
+    if rng is not None and seed is not None:
+        raise ValueError("Informe rng ou seed, não ambos.")
+    generator = rng if rng is not None else random.Random(seed)
+
+    results: list[CycleResult] = []
+    while not state.is_finished:
+        if state.phase is MatchPhase.HALFTIME:
+            start_second_half(state)
+        results.append(run_cycle(state, generator, attack_params=attack_params))
+    return results
+
+
 
