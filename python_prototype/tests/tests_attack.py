@@ -1,3 +1,5 @@
+import dataclasses
+import math
 import random
 
 import pytest
@@ -106,6 +108,34 @@ def test_zero_attack_always_loses_possession():
     assert p.loss == pytest.approx(1.0)
 
 
+@pytest.mark.parametrize("bad", [math.nan, math.inf, -math.inf])
+def test_non_finite_inputs_raise_error(bad):
+    with pytest.raises(ValueError):
+        calculate_attack_probabilities(bad, 50)
+    with pytest.raises(ValueError):
+        calculate_attack_probabilities(50, bad)
+    with pytest.raises(ValueError):
+        resolve_attack_attempt(bad, 50, seed=1)
+    with pytest.raises(ValueError):
+        simulate_attack_sequence(50, bad, seed=1)
+
+
+@pytest.mark.parametrize("bad", [math.nan, math.inf])
+def test_non_finite_parameters_raise_error(bad):
+    for field in ("g_max", "c_max", "r"):
+        with pytest.raises(ValueError):
+            AttackParameters(**{field: bad})
+
+
+def test_degenerate_cases_keep_probabilities_constant():
+    # Sem ataque (q = 0) ou sem continuação (c_max = 0), a continuação
+    # fica em 0 e a perda não varia: a monotonicidade estrita não se aplica.
+    for attack, params in ((0, AttackParameters()), (60, AttackParameters(c_max=0.0))):
+        values = [calculate_attack_probabilities(attack, 50, k, params) for k in (1, 2, 3)]
+        assert all(v.continuation == 0.0 for v in values)
+        assert len({v.loss for v in values}) == 1
+
+
 def test_invalid_inputs_raise_error():
     with pytest.raises(ValueError):
         calculate_attack_probabilities(-1, 50)
@@ -178,6 +208,27 @@ def test_attempt_counter_increments_on_each_continuation():
     assert not result.is_goal
 
 
+def test_sequence_allows_three_or_more_continuations():
+    # q = 0.5: 0.20 < P_G + P_C(k) para k = 1, 2, 3 (0.40, 0.34, 0.30),
+    # mas fica acima de P_G (0.15), logo é sempre continuação.
+    draws = iter([0.20, 0.20, 0.20, 0.01])
+
+    class SequencedRandom(random.Random):
+        def random(self) -> float:
+            return next(draws)
+
+    result = simulate_attack_sequence(50, 50, rng=SequencedRandom())
+
+    assert result.history == (
+        AttackOutcome.CONTINUE,
+        AttackOutcome.CONTINUE,
+        AttackOutcome.CONTINUE,
+        AttackOutcome.GOAL,
+    )
+    assert result.attempts == 4
+    assert result.is_goal
+
+
 def test_sequence_ends_in_goal_after_continuation():
     draws = iter([0.20, 0.01])
 
@@ -201,19 +252,39 @@ def test_sequence_rng_and_seed_cannot_be_used_together():
         simulate_attack_sequence(70, 60, rng=random.Random(1), seed=1)
 
 
-def test_sequence_always_terminates_even_with_slowest_decay():
+def test_probability_of_never_ending_goes_to_zero():
+    # Pior caso para terminar: g_max = 0, c_max = 1, q = 1 e decaimento lento.
+    # A chance de continuar até a tentativa n é o produto das P_C(k);
+    # esse produto precisa tender a 0.
+    params = AttackParameters(g_max=0.0, c_max=1.0, r=0.99)
+    survival = 1.0
+    for k in range(1, 301):
+        survival *= calculate_attack_probabilities(100, 0, k, params).continuation
+
+    assert survival < 1e-9
+
+
+def test_sequences_terminate_even_with_slowest_decay():
     params = AttackParameters(g_max=0.0, c_max=1.0, r=0.99)
 
-    for seed in range(50):
-        result = simulate_attack_sequence(100, 1, params=params, seed=seed)
-        assert result.outcome is AttackOutcome.POSSESSION_LOST
+    attempts = [
+        simulate_attack_sequence(100, 0, params=params, seed=seed).attempts
+        for seed in range(200)
+    ]
+
+    assert all(a >= 1 for a in attempts)
+    assert max(attempts) < 1000
 
 
-def test_sequence_result_does_not_touch_any_scoreboard():
+def test_sequence_result_only_reports_the_outcome():
     result = simulate_attack_sequence(70, 60, seed=7)
 
-    assert not hasattr(result, "score")
+    # O motor só informa o desfecho; o placar é do componente da partida.
+    assert {f.name for f in dataclasses.fields(result)} == {"outcome", "attempts", "history"}
     assert isinstance(result.is_goal, bool)
+
+    with pytest.raises(dataclasses.FrozenInstanceError):
+        result.outcome = AttackOutcome.GOAL
 
 
 def test_stronger_attack_scores_more_often():
