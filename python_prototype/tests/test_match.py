@@ -19,6 +19,7 @@ from python_prototype.match import (
 POSITIONS = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "RW", "ST", "LW"]
 FORMATION_433 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
 FORMATION_442 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "CM", "ST", "ST"]
+POSITIONS_442 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "CM", "ST", "ST"]
 
 
 def make_player(name: str, pos: str, rating: int) -> Player:
@@ -33,8 +34,8 @@ def make_player(name: str, pos: str, rating: int) -> Player:
     )
 
 
-def squad(prefix: str, rating: int):
-    return [make_player(f"{prefix}{i}", pos, rating) for i, pos in enumerate(POSITIONS)]
+def squad(prefix: str, rating: int, positions=POSITIONS):
+    return [make_player(f"{prefix}{i}", pos, rating) for i, pos in enumerate(positions)]
 
 
 def new_match(rating_a: int = 75, rating_b: int = 65):
@@ -124,7 +125,7 @@ def test_lineup_change_allowed_only_at_halftime():
         run_cycle(state, rng)
     before = state.teams["A"].base
 
-    change_lineup(state, "A", squad("N", 90), FORMATION_442)
+    change_lineup(state, "A", squad("N", 90, POSITIONS_442), FORMATION_442)
     assert state.teams["A"].base != before
     assert state.teams["A"].formation == tuple(FORMATION_442)
 
@@ -254,3 +255,23 @@ def test_cycle_event_order_is_stable():
     types = [e.type for e in state.events]
     assert types[:2] == [MatchEventType.MD3_RESULT, MatchEventType.ATTACK_SEQUENCE]
     assert types[2] in (MatchEventType.GOAL, MatchEventType.POSSESSION_LOST)
+
+def test_change_lineup_with_mismatched_formation_does_not_alter_state():
+    state = new_match()
+    rng = random.Random(2)
+    for _ in range(3):
+        run_cycle(state, rng)
+    original = state.teams["A"]
+    events = len(state.events)
+
+    with pytest.raises(ValueError, match="não corresponde à formação"):
+        change_lineup(state, "A", squad("N", 80), FORMATION_442)   # jogadores 4-3-3
+
+    assert state.teams["A"] is original
+    assert len(state.events) == events
+    assert state.phase is MatchPhase.HALFTIME
+
+
+def test_create_match_rejects_lineup_not_matching_formation():
+    with pytest.raises(ValueError, match="não corresponde à formação"):
+        create_match(squad("A", 70), FORMATION_442, squad("B", 70), FORMATION_433)

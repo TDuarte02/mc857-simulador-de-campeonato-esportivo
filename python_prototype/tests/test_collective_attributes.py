@@ -52,6 +52,16 @@ starting_eleven = [
     make_test_player("Left Winger", "LW"),
 ]
 
+POSITIONS_442 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "CM", "ST", "ST"]
+FORMATION_433 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
+FORMATION_442 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "CM", "ST", "ST"]
+
+
+def make_lineup(positions, rating: int = 70):
+    return [make_test_player(f"Player {i}", pos, rating) for i, pos in enumerate(positions)]
+
+def squad(prefix: str, rating: int, positions=POSITIONS_442):
+    return [make_test_player(f"{prefix}{i}", pos, rating) for i, pos in enumerate(positions)]
 
 def test_player_from_csv_row_parses_real_dataset_values():
     row = {
@@ -137,11 +147,10 @@ def test_calculate_team_attributes_without_formation_config_returns_base_attribu
 
 
 def test_collective_attributes_changes_when_formation_changes():
-    formation_433 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
-    formation_442 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "CM", "ST", "ST"]
+    lineup_442 = make_lineup(POSITIONS_442)
 
-    attrs_433 = collective_attributes(starting_eleven, formation_433)
-    attrs_442 = collective_attributes(starting_eleven, formation_442)
+    attrs_433 = collective_attributes(starting_eleven, FORMATION_433)
+    attrs_442 = collective_attributes(lineup_442, FORMATION_442)
 
     assert attrs_433["attack"] > attrs_442["attack"]
     assert attrs_442["defense"] > attrs_433["defense"]
@@ -222,4 +231,60 @@ def test_canonical_position_normalizes_starting_eleven_roles():
     assert canonical_position("RW") == "W"
     assert canonical_position("LW") == "W"
     assert canonical_position("ST") == "ST"
+
+def test_lineup_must_match_formation_sectors():
+    # starting_eleven é 4-3-3; a formação 4-4-2 tem um meio-campista a mais
+    with pytest.raises(ValueError, match="não corresponde à formação"):
+        collective_attributes(starting_eleven, FORMATION_442)
+
+
+def test_mismatch_message_reports_both_distributions():
+    with pytest.raises(ValueError) as exc:
+        collective_attributes(starting_eleven, FORMATION_442)
+
+    message = str(exc.value)
+    assert "jogadores GK=1 DEF=4 MID=3 FW=3" in message
+    assert "formação GK=1 DEF=4 MID=4 FW=2" in message
+
+
+def test_matching_non_433_lineup_applies_formation_modifiers():
+    lineup = make_lineup(POSITIONS_442)
+
+    attrs = collective_attributes(lineup, FORMATION_442)
+
+    # Base uniforme 70; deltas 4-4-2 vs 4-3-3: MID +1, FW -1.
+    assert attrs["attack"] == pytest.approx(70 + 0.5 - 2.0)
+    assert attrs["defense"] == pytest.approx(70 - 0.5 + 1.0)
+    assert attrs["control"] == pytest.approx(70 + 2.0 + 0.5)
+
+
+def test_validation_is_by_sector_not_by_slot():
+    # Mesmos setores do 4-3-3, mas com slots diferentes dentro de cada setor.
+    formation = ["GK", "CB", "CB", "CB", "CB", "DM", "AM", "CM", "ST", "ST", "W"]
+
+    attrs = collective_attributes(starting_eleven, formation)
+
+    assert attrs == collective_attributes(starting_eleven, FORMATION_433)
+
+
+@pytest.mark.parametrize("gk_slots", [0, 2])
+def test_formation_must_have_exactly_one_goalkeeper(gk_slots):
+    formation = ["CB"] * 4 + ["CM"] * 3 + ["ST"] * 3   # 10 slots de linha
+    formation = formation + ["CB"] if gk_slots == 0 else ["GK", "GK"] + formation[1:]
+
+    with pytest.raises(ValueError, match="formação deve conter exatamente um goleiro"):
+        collective_attributes(starting_eleven, formation)
+
+
+def test_lineup_with_two_goalkeepers_is_rejected():
+    positions = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "GK", "RW", "ST", "LW"]
+
+    with pytest.raises(ValueError, match="não corresponde à formação"):
+        collective_attributes(make_lineup(positions), FORMATION_433)
+
+
+def test_size_and_duplicate_checks_run_before_sector_validation():
+    # Formação incoerente E lineup curta: a mensagem de tamanho vence.
+    with pytest.raises(ValueError, match="exactly 11 starters"):
+        collective_attributes(starting_eleven[:-1], FORMATION_442)
 
