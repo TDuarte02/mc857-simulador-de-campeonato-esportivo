@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections.abc import Sequence
 from dataclasses import dataclass
 
-
+from python_prototype.common import ATTRIBUTE_MAX, clamp
 
 @dataclass(frozen=True)
 class Player:
@@ -343,7 +343,7 @@ def calculate_player_scores(player) -> PlayerScores:
         ("defense", scores.defense),
         ("control", scores.control),
     ):
-        if not 0 <= value <= 100:
+        if not 0 <= value <= ATTRIBUTE_MAX:
             raise ValueError(
                 f"Pontuação {attribute} inválida para {player.name}: {value}"
             )
@@ -458,9 +458,6 @@ def validate_lineup_matches_formation(
 # Bônus e penalidades da formação
 # ============================================================
 
-def _clamp(value: float) -> float:
-    return max(0.0, min(100.0, value))
-
 
 def _formation_deltas(
     formation: Sequence[str],
@@ -506,9 +503,9 @@ def apply_formation_modifiers(
     deltas = _formation_deltas(formation, config)
 
     return TeamAttributes(
-        attack=_clamp(attributes.attack + deltas["attack"]),
-        defense=_clamp(attributes.defense + deltas["defense"]),
-        control=_clamp(attributes.control + deltas["control"]),
+        attack=clamp(attributes.attack + deltas["attack"]),
+        defense=clamp(attributes.defense + deltas["defense"]),
+        control=clamp(attributes.control + deltas["control"]),
     )
 
 

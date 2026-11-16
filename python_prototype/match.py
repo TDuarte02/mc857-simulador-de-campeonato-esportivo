@@ -5,6 +5,14 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Sequence
 
+from python_prototype.common import (
+    TEAM_IDS,
+    TeamId,
+    clamp,
+    other_team,
+    resolve_rng,
+)
+
 from python_prototype.attack import (
     AttackOutcome,
     AttackParameters,
@@ -29,13 +37,6 @@ CYCLE_MINUTES = 15
 CYCLES_PER_MATCH = 6
 HALFTIME_MINUTE = 45
 FULL_TIME_MINUTE = CYCLE_MINUTES * CYCLES_PER_MATCH  # 90
-
-TEAM_IDS = ("A", "B")
-
-
-def _other(team_id: str) -> str:
-    return "B" if team_id == "A" else "A"
-
 
 # ============================================================
 # Estruturas
@@ -70,7 +71,7 @@ class MatchEvent:
 
     minute: int
     type: MatchEventType
-    team: str | None = None
+    team: TeamId | None = None
     detail: str = ""
 
 
@@ -78,7 +79,7 @@ class MatchEvent:
 class TeamState:
     """Time em campo: escalação, formação e atributos coletivos."""
 
-    team_id: str
+    team_id: TeamId
     players: tuple[Player, ...]
     formation: tuple[str, ...]
     base: TeamAttributes
@@ -99,9 +100,6 @@ class TeamState:
 
     def effective(self) -> TeamAttributes:
         """Atributos efetivos do ciclo: base + modificadores, em [0, 100]."""
-
-        def clamp(value: float) -> float:
-            return max(0.0, min(100.0, value))
 
         return TeamAttributes(
             attack=clamp(self.base.attack + self.modifiers["attack"]),
@@ -130,9 +128,9 @@ class CycleResult:
     start_minute: int
     end_minute: int
     md3: MD3Result
-    attacking_team: str
+    attacking_team: TeamId
     attack: AttackSequenceResult
-    scorer: str | None  # "A", "B" ou None
+    scorer: TeamId | None  # "A", "B" ou None
 
     @property
     def is_goal(self) -> bool:
@@ -212,7 +210,7 @@ def run_cycle(
             "A partida está no intervalo; chame start_second_half antes do próximo ciclo."
         )
 
-    generator = rng if rng is not None else random.Random(seed)
+    generator = resolve_rng(rng, seed)
     start = state.clock
 
     # ---- Fase 1: cálculo (não altera `state`) ----
@@ -222,7 +220,7 @@ def run_cycle(
         effective["A"].control, effective["B"].control, rng=generator
     )
     attacker = md3.winner
-    defender = _other(attacker)
+    defender = other_team(attacker)
 
     sequence = simulate_attack_sequence(
         effective[attacker].attack,
@@ -281,7 +279,7 @@ def play_match(
     """Joga a partida até o fim, sem alterações no intervalo."""
     if rng is not None and seed is not None:
         raise ValueError("Informe rng ou seed, não ambos.")
-    generator = rng if rng is not None else random.Random(seed)
+    generator = resolve_rng(rng, seed)
 
     results: list[CycleResult] = []
     while not state.is_finished:

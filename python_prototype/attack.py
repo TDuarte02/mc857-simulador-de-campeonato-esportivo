@@ -5,6 +5,8 @@ import random
 from dataclasses import dataclass
 from enum import Enum
 
+from python_prototype.common import ensure_finite_non_negative, resolve_rng
+
 
 # ============================================================
 # Parâmetros configuráveis
@@ -87,22 +89,11 @@ class AttackSequenceResult:
 # Cálculo das probabilidades
 # ============================================================
 
-def _validate_effective_value(value: float, label: str) -> float:
-    try:
-        numeric = float(value)
-    except (TypeError, ValueError) as exc:
-        raise ValueError(f"Valor inválido para {label}: {value!r}") from exc
-    if not math.isfinite(numeric):
-        raise ValueError(f"{label} deve ser um número finito; recebido: {value!r}")
-    if numeric < 0:
-        raise ValueError(f"{label} não pode ser negativo.")
-    return numeric
-
 
 def attack_quality(attack: float, defense: float) -> float:
     """Calcula q = A / (A + D)."""
-    a = _validate_effective_value(attack, "Ataque efetivo")
-    d = _validate_effective_value(defense, "Defesa efetiva")
+    a = ensure_finite_non_negative(attack, "Ataque efetivo")
+    d = ensure_finite_non_negative(defense, "Defesa efetiva")
 
     if a + d <= 0:
         raise ValueError("Ataque e Defesa efetivos não podem ser ambos zero.")
@@ -152,10 +143,7 @@ def resolve_attack_attempt(
     seed: int | None = None,
 ) -> AttackOutcome:
     """Sorteia o desfecho de uma única tentativa ofensiva."""
-    if rng is not None and seed is not None:
-        raise ValueError("Informe rng ou seed, não ambos.")
-
-    random_generator = rng if rng is not None else random.Random(seed)
+    random_generator = resolve_rng(rng, seed)
     probabilities = calculate_attack_probabilities(attack, defense, attempt, params)
 
     draw = random_generator.random()
@@ -183,10 +171,7 @@ def simulate_attack_sequence(
     Com parâmetros válidos, termina com probabilidade 1, pois
     P_C(k) decai geometricamente.
     """
-    if rng is not None and seed is not None:
-        raise ValueError("Informe rng ou seed, não ambos.")
-
-    random_generator = rng if rng is not None else random.Random(seed)
+    random_generator = resolve_rng(rng, seed)
 
     attempt = 1
     history: list[AttackOutcome] = []
