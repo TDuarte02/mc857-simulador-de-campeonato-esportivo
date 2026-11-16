@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-import random
-from collections import Counter
 from collections.abc import Sequence
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
+
 
 
 @dataclass(frozen=True)
@@ -185,15 +184,19 @@ POSITION_ALIASES = {
 }
 
 
+# Setores do campo. Taxonomia única, usada tanto para validar a escalação
+# quanto para calcular os modificadores de formação.
+SECTORS = ("GK", "DEF", "MID", "FW")
+
 POSITION_SECTORS = {
-    "GK": "goalkeeper",
-    "CB": "defense",
-    "FB": "defense",
-    "DM": "midfield",
-    "CM": "midfield",
-    "AM": "midfield",
-    "W": "attack",
-    "ST": "attack",
+    "GK": "GK",
+    "CB": "DEF",
+    "FB": "DEF",
+    "DM": "MID",
+    "CM": "MID",
+    "AM": "MID",
+    "W": "FW",
+    "ST": "FW",
 }
 
 
@@ -400,177 +403,167 @@ def aggregate_player_scores(
 
 
 # ============================================================
+# Setores e validação da escalação
+# ============================================================
+
+def formation_distribution(formation: Sequence[str]) -> dict[str, int]:
+    """Conta os slots (ou posições) por setor: GK, DEF, MID e FW."""
+    counts = dict.fromkeys(SECTORS, 0)
+
+    for slot in formation:
+        counts[POSITION_SECTORS[canonical_position(slot)]] += 1
+
+    return counts
+
+
+def _describe_counts(counts: dict[str, int]) -> str:
+    return (
+        f"GK={counts['GK']} DEF={counts['DEF']} "
+        f"MID={counts['MID']} FW={counts['FW']}"
+    )
+
+
+def validate_lineup_matches_formation(
+    players: Sequence[Player],
+    formation: Sequence[str],
+) -> None:
+    """
+    Garante que a escalação é coerente com a formação.
+
+    - a formação deve conter exatamente um goleiro;
+    - a contagem de jogadores por setor deve ser igual à contagem de slots.
+
+    A comparação é por setor, não por slot: um "RB" num slot "CB" é aceito,
+    pois os modificadores de formação só dependem da contagem por setor.
+    """
+    formation_counts = formation_distribution(formation)
+
+    if formation_counts["GK"] != 1:
+        raise ValueError(
+            "A formação deve conter exatamente um goleiro; "
+            f"encontrado: {formation_counts['GK']}"
+        )
+
+    lineup_counts = formation_distribution([player.pos for player in players])
+
+    if lineup_counts != formation_counts:
+        raise ValueError(
+            "A escalação não corresponde à formação: "
+            f"jogadores {_describe_counts(lineup_counts)}, "
+            f"formação {_describe_counts(formation_counts)}."
+        )
+
+
+# ============================================================
 # Bônus e penalidades da formação
 # ============================================================
 
-def count_formation_sectors(players: Sequence) -> dict[str, int]:
-    """Conta os jogadores por setor, excluindo o goleiro."""
-    counts = {
-        "goalkeeper": 0,
-        "defense": 0,
-        "midfield": 0,
-        "attack": 0,
+def _clamp(value: float) -> float:
+    return max(0.0, min(100.0, value))
+
+
+def _formation_deltas(
+    formation: Sequence[str],
+    config: FormationBonusConfig,
+) -> dict[str, float]:
+    """Modificadores aditivos de Ataque, Defesa e Controle da formação."""
+    counts = formation_distribution(formation)
+
+    defender_delta = counts["DEF"] - config.baseline_defenders
+    midfielder_delta = counts["MID"] - config.baseline_midfielders
+    forward_delta = counts["FW"] - config.baseline_forwards
+
+    return {
+        "attack": (
+            defender_delta * config.defender_attack
+            + midfielder_delta * config.midfielder_attack
+            + forward_delta * config.forward_attack
+        ),
+        "defense": (
+            defender_delta * config.defender_defense
+            + midfielder_delta * config.midfielder_defense
+            + forward_delta * config.forward_defense
+        ),
+        "control": (
+            defender_delta * config.defender_control
+            + midfielder_delta * config.midfielder_control
+            + forward_delta * config.forward_control
+        ),
     }
-
-    for player in players:
-        position = canonical_position(player.pos)
-        sector = POSITION_SECTORS[position]
-        counts[sector] += 1
-
-    return counts
 
 
 def apply_formation_modifiers(
     attributes: TeamAttributes,
-    players: Sequence,
+    formation: Sequence[str],
     config: FormationBonusConfig = DEFAULT_FORMATION_BONUS,
 ) -> TeamAttributes:
     """
-    Aplica bônus e penalidades relativos à formação de referência.
+    Aplica bônus e penalidades relativos à formação de referência (4-3-3).
 
-    Os modificadores são aditivos e limitados à escala [0, 100].
+    `formation` é a lista de slots (ou posições) dos 11 titulares.
+    Os modificadores são aditivos e o resultado é limitado a [0, 100].
     """
-    counts = count_formation_sectors(players)
-
-    defender_delta = counts["defense"] - config.baseline_defenders
-    midfielder_delta = counts["midfield"] - config.baseline_midfielders
-    forward_delta = counts["attack"] - config.baseline_forwards
-
-    attack_modifier = (
-        defender_delta * config.defender_attack
-        + midfielder_delta * config.midfielder_attack
-        + forward_delta * config.forward_attack
-    )
-
-    defense_modifier = (
-        defender_delta * config.defender_defense
-        + midfielder_delta * config.midfielder_defense
-        + forward_delta * config.forward_defense
-    )
-
-    control_modifier = (
-        defender_delta * config.defender_control
-        + midfielder_delta * config.midfielder_control
-        + forward_delta * config.forward_control
-    )
+    deltas = _formation_deltas(formation, config)
 
     return TeamAttributes(
-        attack=max(0.0, min(100.0, attributes.attack + attack_modifier)),
-        defense=max(0.0, min(100.0, attributes.defense + defense_modifier)),
-        control=max(0.0, min(100.0, attributes.control + control_modifier)),
+        attack=_clamp(attributes.attack + deltas["attack"]),
+        defense=_clamp(attributes.defense + deltas["defense"]),
+        control=_clamp(attributes.control + deltas["control"]),
     )
 
 
 # ============================================================
+# API principal
 # ============================================================
-# Agregação por formação (compatível com testes e protótipo)
-# ============================================================
 
-def formation_distribution(formation: Sequence[str]) -> dict[str, int]:
-    """Conta jogadores por setor do campo conforme a formação."""
-    counts = {"GK": 0, "DEF": 0, "MID": 0, "FW": 0}
+def calculate_team_attributes(
+    players: Sequence[Player],
+    formation: Sequence[str] | None = None,
+    *,
+    formation_config: FormationBonusConfig | None = DEFAULT_FORMATION_BONUS,
+) -> TeamAttributes:
+    """
+    Calcula os atributos coletivos de um time titular.
 
-    for slot in formation:
-        normalized = canonical_position(slot)
-        if normalized == "GK":
-            counts["GK"] += 1
-        elif normalized in {"CB", "FB"}:
-            counts["DEF"] += 1
-        elif normalized in {"DM", "CM", "AM"}:
-            counts["MID"] += 1
-        else:
-            counts["FW"] += 1
+    - `formation`: slots táticos dos 11 titulares. Se omitida, é derivada
+      das posições dos próprios jogadores.
+    - `formation_config`: bônus de formação. Com `None`, devolve apenas
+      os atributos-base (sem modificadores).
 
-    return counts
+    Levanta ValueError se não houver 11 jogadores, se a formação não tiver
+    11 slots, se houver jogadores duplicados ou se a escalação não for
+    coerente com a formação (ver `validate_lineup_matches_formation`).
+    """
+    if len(players) != 11:
+        raise ValueError("Collective attributes require exactly 11 starters.")
+
+    slots = [player.pos for player in players] if formation is None else list(formation)
+
+    if len(slots) != 11:
+        raise ValueError("A valid tactical shape must contain 11 slots.")
+    if len({player.name for player in players}) != len(players):
+        raise ValueError("A lineup cannot contain duplicate players.")
+
+    validate_lineup_matches_formation(players, slots)
+
+    base = aggregate_player_scores(players)
+
+    if formation_config is None:
+        return base
+
+    return apply_formation_modifiers(base, slots, formation_config)
 
 
 def collective_attributes(
     players: Sequence[Player],
     formation: Sequence[str],
 ) -> dict[str, float]:
-    """Calcula o perfil coletivo do time para uma formação específica."""
-    if len(players) != 11:
-        raise ValueError(f"Collective attributes require exactly 11 starters.")
-    if len(formation) != 11:
-        raise ValueError("A valid tactical shape must contain 11 slots.")
-    if len({player.name for player in players}) != len(players):
-        raise ValueError("A lineup cannot contain duplicate players.")
-    if len({player.name for player in players}) != len(players):
-        raise ValueError("A lineup cannot contain duplicate players.")
-
-    validate_lineup_matches_formation(players, formation)
-
-    base = aggregate_player_scores(players)
-
-    base = aggregate_player_scores(players)
-    counts = formation_distribution(formation)
-
-    defender_delta = counts["DEF"] - DEFAULT_FORMATION_BONUS.baseline_defenders
-    midfielder_delta = counts["MID"] - DEFAULT_FORMATION_BONUS.baseline_midfielders
-    forward_delta = counts["FW"] - DEFAULT_FORMATION_BONUS.baseline_forwards
-
-    attack_modifier = (
-        defender_delta * DEFAULT_FORMATION_BONUS.defender_attack
-        + midfielder_delta * DEFAULT_FORMATION_BONUS.midfielder_attack
-        + forward_delta * DEFAULT_FORMATION_BONUS.forward_attack
-    )
-    defense_modifier = (
-        defender_delta * DEFAULT_FORMATION_BONUS.defender_defense
-        + midfielder_delta * DEFAULT_FORMATION_BONUS.midfielder_defense
-        + forward_delta * DEFAULT_FORMATION_BONUS.forward_defense
-    )
-    control_modifier = (
-        defender_delta * DEFAULT_FORMATION_BONUS.defender_control
-        + midfielder_delta * DEFAULT_FORMATION_BONUS.midfielder_control
-        + forward_delta * DEFAULT_FORMATION_BONUS.forward_control
-    )
-
-    return {
-        "attack": max(0.0, min(100.0, base.attack + attack_modifier)),
-        "defense": max(0.0, min(100.0, base.defense + defense_modifier)),
-        "control": max(0.0, min(100.0, base.control + control_modifier)),
-    }
-
-
-# API principal
-# ============================================================
-
-def calculate_team_attributes(
-    players: Sequence,
-    formation_config: FormationBonusConfig | None = DEFAULT_FORMATION_BONUS,
-) -> TeamAttributes:
     """
-    Calcula os atributos coletivos de um time titular.
-
-    Por padrão, aplica os bônus e penalidades da formação.
-    Passe formation_config=None para obter apenas os atributos-base.
+    Wrapper de compatibilidade: igual a `calculate_team_attributes`,
+    mas devolve dict. Será removido no item 6, quando `match.py` passar
+    a consumir `TeamAttributes` diretamente.
     """
-    if len(players) != 11:
-        raise ValueError(
-            f"O time deve conter exatamente 11 jogadores; recebido: {len(players)}"
-        )
-
-    goalkeeper_count = sum(
-        canonical_position(player.pos) == "GK"
-        for player in players
-    )
-
-    if goalkeeper_count != 1:
-        raise ValueError(
-            f"O time deve conter exatamente um goleiro; encontrado: "
-            f"{goalkeeper_count}"
-        )
-
-    base_attributes = aggregate_player_scores(players)
-
-    if formation_config is None:
-        return base_attributes
-
-    return apply_formation_modifiers(
-        base_attributes,
-        players,
-        formation_config,
-    )
+    return asdict(calculate_team_attributes(players, formation))
 
 
 
