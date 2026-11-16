@@ -201,9 +201,11 @@ def run_cycle(
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
 ) -> CycleResult:
     """
-    Executa um ciclo de 15 minutos:
-    atributos efetivos -> MD3 -> sequência ofensiva -> registro
-    -> atualização de placar/fase -> avanço do relógio.
+    Executa um ciclo de 15 minutos.
+
+    O ciclo é atômico: toda a simulação (atributos efetivos -> MD3 ->
+    sequência ofensiva) acontece antes de qualquer alteração em `state`.
+    Se algo falhar na simulação, o estado permanece intacto.
     """
     if rng is not None and seed is not None:
         raise ValueError("Informe rng ou seed, não ambos.")
@@ -217,66 +219,55 @@ def run_cycle(
     generator = rng if rng is not None else random.Random(seed)
     start = state.clock
 
-    # 1) Atributos efetivos
+    # ---- Fase 1: cálculo (não altera `state`) ----
     effective = {tid: team.effective() for tid, team in state.teams.items()}
 
-    # 2) MD3: o vencedor ataca
     md3 = simulate_md3(
         effective["A"].control, effective["B"].control, rng=generator
     )
     attacker = md3.winner
     defender = _other(attacker)
-    state.events.append(
-        MatchEvent(
-            start,
-            MatchEventType.MD3_RESULT,
-            attacker,
-            f"MD3 {md3.wins_a}x{md3.wins_b}",
-        )
-    )
 
-    # 3) Sequência ofensiva
     sequence = simulate_attack_sequence(
         effective[attacker].attack,
         effective[defender].defense,
         params=attack_params,
         rng=generator,
     )
-    state.events.append(
-        MatchEvent(
-            start,
-            MatchEventType.ATTACK_SEQUENCE,
-            attacker,
-            f"{sequence.attempts} tentativa(s)",
-        )
-    )
 
-    # 4) Registro e placar (um único incremento por gol)
-    scorer: str | None = None
-    if sequence.outcome is AttackOutcome.GOAL:
-        scorer = attacker
+    scorer: str | None = attacker if sequence.outcome is AttackOutcome.GOAL else None
+
+    new_events = [
+        MatchEvent(start, MatchEventType.MD3_RESULT, attacker,
+                   f"MD3 {md3.wins_a}x{md3.wins_b}"),
+        MatchEvent(start, MatchEventType.ATTACK_SEQUENCE, attacker,
+                   f"{sequence.attempts} tentativa(s)"),
+        MatchEvent(start, MatchEventType.GOAL, scorer)
+        if scorer is not None
+        else MatchEvent(start, MatchEventType.POSSESSION_LOST, attacker),
+    ]
+
+    new_clock = start + CYCLE_MINUTES
+    new_phase = state.phase
+    if new_clock >= FULL_TIME_MINUTE:
+        new_phase = MatchPhase.FINISHED
+        new_events.append(MatchEvent(new_clock, MatchEventType.FULL_TIME))
+    elif new_clock == HALFTIME_MINUTE:
+        new_phase = MatchPhase.HALFTIME
+        new_events.append(MatchEvent(new_clock, MatchEventType.HALFTIME))
+
+    # ---- Fase 2: commit (sem nada que possa falhar) ----
+    if scorer is not None:
         state.score[scorer] += 1
-        state.events.append(MatchEvent(start, MatchEventType.GOAL, scorer))
-    else:
-        state.events.append(
-            MatchEvent(start, MatchEventType.POSSESSION_LOST, attacker)
-        )
-
-    # 5) Relógio e fase
-    state.clock += CYCLE_MINUTES
+    state.events.extend(new_events)
+    state.clock = new_clock
     state.cycle_index += 1
-
-    if state.clock >= FULL_TIME_MINUTE:
-        state.phase = MatchPhase.FINISHED
-        state.events.append(MatchEvent(state.clock, MatchEventType.FULL_TIME))
-    elif state.clock == HALFTIME_MINUTE:
-        state.phase = MatchPhase.HALFTIME
-        state.events.append(MatchEvent(state.clock, MatchEventType.HALFTIME))
+    state.phase = new_phase
 
     return CycleResult(
         cycle=state.cycle_index,
         start_minute=start,
-        end_minute=state.clock,
+        end_minute=new_clock,
         md3=md3,
         attacking_team=attacker,
         attack=sequence,

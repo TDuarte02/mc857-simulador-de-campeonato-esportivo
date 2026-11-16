@@ -1,6 +1,7 @@
 import random
 
 import pytest
+import copy
 
 from python_prototype.collective_attributes import Player
 from python_prototype.match import (
@@ -203,3 +204,53 @@ def test_stronger_team_scores_more_over_many_matches():
         totals["B"] += state.score["B"]
 
     assert totals["A"] > totals["B"]
+
+def _snapshot(state):
+    return (
+        state.clock, state.cycle_index, state.phase,
+        dict(state.score), list(state.events),
+        {t: dict(s.modifiers) for t, s in state.teams.items()},
+    )
+
+
+def test_failed_attack_simulation_leaves_state_unchanged(monkeypatch):
+    state = new_match()
+    before = _snapshot(state)
+
+    def boom(*args, **kwargs):
+        raise ValueError("falha simulada")
+
+    monkeypatch.setattr("python_prototype.match.simulate_attack_sequence", boom)
+
+    with pytest.raises(ValueError, match="falha simulada"):
+        run_cycle(state, seed=1)
+
+    assert _snapshot(state) == before
+
+
+def test_failed_cycle_mid_match_leaves_state_unchanged(monkeypatch):
+    state = new_match()
+    rng = random.Random(7)
+    run_cycle(state, rng)
+    run_cycle(state, rng)          # clock = 30, próximo ciclo cruza o intervalo
+    before = copy.deepcopy(_snapshot(state))
+
+    monkeypatch.setattr(
+        "python_prototype.match.simulate_attack_sequence",
+        lambda *a, **k: (_ for _ in ()).throw(ValueError("falha simulada")),
+    )
+
+    with pytest.raises(ValueError):
+        run_cycle(state, rng)
+
+    assert _snapshot(state) == before
+    assert state.phase is MatchPhase.FIRST_HALF   # HALFTIME não foi registrado
+
+
+def test_cycle_event_order_is_stable():
+    state = new_match()
+    run_cycle(state, random.Random(3))
+
+    types = [e.type for e in state.events]
+    assert types[:2] == [MatchEventType.MD3_RESULT, MatchEventType.ATTACK_SEQUENCE]
+    assert types[2] in (MatchEventType.GOAL, MatchEventType.POSSESSION_LOST)
