@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Sequence
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 
 
 
@@ -553,17 +553,6 @@ def calculate_team_attributes(
 
     return apply_formation_modifiers(base, slots, formation_config)
 
-
-def collective_attributes(
-    players: Sequence[Player],
-    formation: Sequence[str],
-) -> dict[str, float]:
-    """
-    Wrapper de compatibilidade: igual a `calculate_team_attributes`,
-    mas devolve dict. Será removido no item 6, quando `match.py` passar
-    a consumir `TeamAttributes` diretamente.
-    """
-    return asdict(calculate_team_attributes(players, formation))
 
 
 

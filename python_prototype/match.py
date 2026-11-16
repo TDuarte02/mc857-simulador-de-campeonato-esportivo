@@ -12,11 +12,13 @@ from python_prototype.attack import (
     DEFAULT_ATTACK_PARAMETERS,
     simulate_attack_sequence,
 )
+
 from python_prototype.collective_attributes import (
     Player,
     TeamAttributes,
-    collective_attributes,
+    calculate_team_attributes,
 )
+
 from python_prototype.dispute import MD3Result, simulate_md3
 
 # ============================================================
@@ -92,7 +94,7 @@ class TeamState:
     ) -> "TeamState":
         if team_id not in TEAM_IDS:
             raise ValueError(f"team_id deve ser 'A' ou 'B'; recebido: {team_id!r}")
-        base = _to_team_attributes(collective_attributes(players, formation))
+        base = calculate_team_attributes(players, formation)
         return cls(team_id, tuple(players), tuple(formation), base)
 
     def effective(self) -> TeamAttributes:
@@ -106,12 +108,6 @@ class TeamState:
             defense=clamp(self.base.defense + self.modifiers["defense"]),
             control=clamp(self.base.control + self.modifiers["control"]),
         )
-
-
-def _to_team_attributes(values: dict[str, float]) -> TeamAttributes:
-    return TeamAttributes(
-        attack=values["attack"], defense=values["defense"], control=values["control"]
-    )
 
 
 @dataclass
