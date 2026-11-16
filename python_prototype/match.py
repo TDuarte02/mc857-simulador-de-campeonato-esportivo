@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import math
 import random
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Sequence
+from collections.abc import Mapping, Sequence
+from typing import Any
 
 from python_prototype.common import (
     TEAM_IDS,
@@ -35,8 +37,10 @@ from python_prototype.dispute import MD3Result, simulate_md3
 
 CYCLE_MINUTES = 15
 CYCLES_PER_MATCH = 6
-HALFTIME_MINUTE = 45
-FULL_TIME_MINUTE = CYCLE_MINUTES * CYCLES_PER_MATCH  # 90
+HALFTIME_MINUTE = (CYCLES_PER_MATCH // 2) * CYCLE_MINUTES   # 45
+FULL_TIME_MINUTE = CYCLES_PER_MATCH * CYCLE_MINUTES         # 90
+
+MODIFIER_KEYS = ("attack", "defense", "control")
 
 # ============================================================
 # Estruturas
@@ -67,12 +71,26 @@ class MatchEvent:
 
     `minute` é o minuto simulado de INÍCIO do ciclo em que o evento
     ocorreu (os eventos de intervalo e fim de jogo usam 45 e 90).
+
+    `data` guarda os dados estruturados do evento:
+    - MD3_RESULT: wins_a, wins_b
+    - ATTACK_SEQUENCE: attempts
+    - demais tipos: vazio
     """
 
     minute: int
     type: MatchEventType
     team: TeamId | None = None
-    detail: str = ""
+    data: Mapping[str, Any] = field(default_factory=dict)
+
+    @property
+    def detail(self) -> str:
+        """Descrição textual, derivada de `data` (para exibição)."""
+        if self.type is MatchEventType.MD3_RESULT:
+            return f"MD3 {self.data['wins_a']}x{self.data['wins_b']}"
+        if self.type is MatchEventType.ATTACK_SEQUENCE:
+            return f"{self.data['attempts']} tentativa(s)"
+        return ""
 
 
 @dataclass
@@ -86,7 +104,7 @@ class TeamState:
     # Ajustes aditivos temporários (efeitos). Nenhum é aplicado por padrão:
     # os efeitos pertinentes devem ser registrados explicitamente aqui.
     modifiers: dict[str, float] = field(
-        default_factory=lambda: {"attack": 0.0, "defense": 0.0, "control": 0.0}
+        default_factory=lambda: dict.fromkeys(MODIFIER_KEYS, 0.0)
     )
 
     @classmethod
@@ -98,9 +116,25 @@ class TeamState:
         base = calculate_team_attributes(players, formation)
         return cls(team_id, tuple(players), tuple(formation), base)
 
+    def _validate_modifiers(self) -> None:
+        keys = set(self.modifiers)
+        unknown = keys - set(MODIFIER_KEYS)
+        missing = set(MODIFIER_KEYS) - keys
+        if unknown or missing:
+            raise ValueError(
+                f"Modificadores inválidos para o time {self.team_id}: "
+                f"desconhecidos={sorted(unknown)}, ausentes={sorted(missing)}."
+            )
+        for key, value in self.modifiers.items():
+            if not math.isfinite(value):
+                raise ValueError(
+                    f"O modificador {key!r} do time {self.team_id} deve ser "
+                    f"finito; recebido: {value!r}"
+                )
+
     def effective(self) -> TeamAttributes:
         """Atributos efetivos do ciclo: base + modificadores, em [0, 100]."""
-
+        self._validate_modifiers()
         return TeamAttributes(
             attack=clamp(self.base.attack + self.modifiers["attack"]),
             defense=clamp(self.base.defense + self.modifiers["defense"]),
@@ -110,17 +144,20 @@ class TeamState:
 
 @dataclass
 class MatchState:
-    teams: dict[str, TeamState]
-    clock: int = 0
+    teams: dict[TeamId, TeamState]
     cycle_index: int = 0  # ciclos já concluídos
     phase: MatchPhase = MatchPhase.FIRST_HALF
-    score: dict[str, int] = field(default_factory=lambda: {"A": 0, "B": 0})
+    score: dict[TeamId, int] = field(default_factory=lambda: {"A": 0, "B": 0})
     events: list[MatchEvent] = field(default_factory=list)
+
+    @property
+    def clock(self) -> int:
+        """Minuto simulado atual (derivado de `cycle_index`)."""
+        return self.cycle_index * CYCLE_MINUTES
 
     @property
     def is_finished(self) -> bool:
         return self.phase is MatchPhase.FINISHED
-
 
 @dataclass(frozen=True)
 class CycleResult:
@@ -157,7 +194,7 @@ def create_match(
 
 def change_lineup(
     state: MatchState,
-    team_id: str,
+    team_id: TeamId,
     players: Sequence[Player],
     formation: Sequence[str],
 ) -> None:
@@ -201,8 +238,6 @@ def run_cycle(
     sequência ofensiva) acontece antes de qualquer alteração em `state`.
     Se algo falhar na simulação, o estado permanece intacto.
     """
-    if rng is not None and seed is not None:
-        raise ValueError("Informe rng ou seed, não ambos.")
     if state.is_finished:
         raise ValueError("A partida já foi encerrada.")
     if state.phase is MatchPhase.HALFTIME:
@@ -229,13 +264,13 @@ def run_cycle(
         rng=generator,
     )
 
-    scorer: str | None = attacker if sequence.outcome is AttackOutcome.GOAL else None
+    scorer: TeamId | None = attacker if sequence.outcome is AttackOutcome.GOAL else None
 
     new_events = [
         MatchEvent(start, MatchEventType.MD3_RESULT, attacker,
-                   f"MD3 {md3.wins_a}x{md3.wins_b}"),
+                   {"wins_a": md3.wins_a, "wins_b": md3.wins_b}),
         MatchEvent(start, MatchEventType.ATTACK_SEQUENCE, attacker,
-                   f"{sequence.attempts} tentativa(s)"),
+                   {"attempts": sequence.attempts}),
         MatchEvent(start, MatchEventType.GOAL, scorer)
         if scorer is not None
         else MatchEvent(start, MatchEventType.POSSESSION_LOST, attacker),
@@ -254,7 +289,6 @@ def run_cycle(
     if scorer is not None:
         state.score[scorer] += 1
     state.events.extend(new_events)
-    state.clock = new_clock
     state.cycle_index += 1
     state.phase = new_phase
 
@@ -277,10 +311,10 @@ def play_match(
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
 ) -> list[CycleResult]:
     """Joga a partida até o fim, sem alterações no intervalo."""
-    if rng is not None and seed is not None:
-        raise ValueError("Informe rng ou seed, não ambos.")
-    generator = resolve_rng(rng, seed)
+    if state.is_finished:
+        raise ValueError("A partida já foi encerrada.")
 
+    generator = resolve_rng(rng, seed)
     results: list[CycleResult] = []
     while not state.is_finished:
         if state.phase is MatchPhase.HALFTIME:
