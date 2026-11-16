@@ -275,3 +275,9 @@ def test_change_lineup_with_mismatched_formation_does_not_alter_state():
 def test_create_match_rejects_lineup_not_matching_formation():
     with pytest.raises(ValueError, match="não corresponde à formação"):
         create_match(squad("A", 70), FORMATION_442, squad("B", 70), FORMATION_433)
+
+def test_play_match_rng_and_seed_cannot_be_used_together():
+    state = new_match()
+    with pytest.raises(ValueError):
+        play_match(state, random.Random(1), seed=1)
+    assert state.clock == 0

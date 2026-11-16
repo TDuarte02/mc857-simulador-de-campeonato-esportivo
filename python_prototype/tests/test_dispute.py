@@ -3,13 +3,15 @@ import pytest
 
 from python_prototype.dispute import simulate_md5, simulate_md3
 
+import random
+
 
 @pytest.mark.parametrize("seed", range(100))
 def test_md5_always_ends_with_three_wins(seed):
     result = simulate_md5(
         control_a=70,
         control_b=60,
-        rng=__import__("random").Random(seed),
+        rng=random.Random(seed),
     )
 
     assert result.winner in ("A", "B")
@@ -62,3 +64,7 @@ def test_rng_and_seed_cannot_be_used_together():
             rng=random.Random(42),
             seed=42,
         )
+
+def test_md5_rng_and_seed_cannot_be_used_together():
+    with pytest.raises(ValueError):
+        simulate_md5(70, 60, rng=random.Random(42), seed=42)
