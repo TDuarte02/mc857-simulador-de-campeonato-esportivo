@@ -1,4 +1,5 @@
 import pytest
+from dataclasses import asdict
 
 from python_prototype.collective_attributes import (
     Player,
@@ -9,6 +10,8 @@ from python_prototype.collective_attributes import (
     canonical_position,
     collective_attributes,
     formation_distribution,
+    POSITION_ALIASES, POSITION_WEIGHTS, POSITION_SECTORS, SECTORS,
+
 )
 
 
@@ -289,4 +292,41 @@ def test_size_and_duplicate_checks_run_before_sector_validation():
     # Formação incoerente E lineup curta: a mensagem de tamanho vence.
     with pytest.raises(ValueError, match="exactly 11 starters"):
         collective_attributes(starting_eleven[:-1], FORMATION_442)
+
+def test_formation_is_derived_from_players_when_omitted():
+    lineup = make_lineup(POSITIONS_442)
+
+    assert calculate_team_attributes(lineup) == calculate_team_attributes(
+        lineup, FORMATION_442
+    )
+
+
+def test_collective_attributes_wrapper_matches_calculate_team_attributes():
+    result = collective_attributes(starting_eleven, FORMATION_433)
+
+    assert result == asdict(calculate_team_attributes(starting_eleven, FORMATION_433))
+    assert isinstance(result, dict)
+
+
+def test_calculate_team_attributes_rejects_duplicate_players():
+    duplicated = starting_eleven[:-1] + [make_test_player("Goalkeeper", "ST")]
+
+    with pytest.raises(ValueError, match="duplicate players"):
+        calculate_team_attributes(duplicated)
+
+
+def test_formation_modifiers_are_clamped_to_scale_limits():
+    formation = [p.pos for p in make_lineup(POSITIONS_532)]   # attack -3, defense +3
+    near_limits = TeamAttributes(attack=1.0, defense=99.0, control=50.0)
+
+    result = apply_formation_modifiers(near_limits, formation)
+
+    assert result.attack == 0.0
+    assert result.defense == 100.0
+    assert result.control == pytest.approx(50.0)
+
+
+def test_position_tables_are_consistent():
+    assert set(POSITION_ALIASES.values()) == set(POSITION_WEIGHTS) == set(POSITION_SECTORS)
+    assert set(POSITION_SECTORS.values()) == set(SECTORS)
 
