@@ -244,6 +244,50 @@ class FormationBonusConfig:
 
 DEFAULT_FORMATION_BONUS = FormationBonusConfig()
 
+# ============================================================
+# Validação da formação
+# ============================================================
+def validate_lineup_matches_formation(
+    players: Sequence[Player],
+    formation: Sequence[str],
+) -> None:
+    """
+    Garante que a escalação é coerente com a formação.
+
+    Os pesos posicionais vêm de `player.pos`, mas os bônus de formação vêm
+    dos slots de `formation`. Para que as duas fontes não divirjam:
+
+    - a formação deve conter exatamente um goleiro;
+    - a contagem de jogadores por setor (GK/DEF/MID/FW) deve ser igual à
+      contagem de slots da formação.
+
+    A comparação é por setor, não por slot: um jogador "RB" num slot "CB"
+    é aceito (ambos são defesa), pois os modificadores de formação só
+    dependem da contagem por setor.
+    """
+    formation_counts = formation_distribution(formation)
+
+    if formation_counts["GK"] != 1:
+        raise ValueError(
+            "A formação deve conter exatamente um goleiro; "
+            f"encontrado: {formation_counts['GK']}"
+        )
+
+    lineup_counts = formation_distribution([player.pos for player in players])
+
+    if lineup_counts != formation_counts:
+        raise ValueError(
+            "A escalação não corresponde à formação: "
+            f"jogadores {_describe_counts(lineup_counts)}, "
+            f"formação {_describe_counts(formation_counts)}."
+        )
+
+
+def _describe_counts(counts: dict[str, int]) -> str:
+    return (
+        f"GK={counts['GK']} DEF={counts['DEF']} "
+        f"MID={counts['MID']} FW={counts['FW']}"
+    )
 
 # ============================================================
 # Cálculo das pontuações individuais
@@ -451,6 +495,12 @@ def collective_attributes(
         raise ValueError("A valid tactical shape must contain 11 slots.")
     if len({player.name for player in players}) != len(players):
         raise ValueError("A lineup cannot contain duplicate players.")
+    if len({player.name for player in players}) != len(players):
+        raise ValueError("A lineup cannot contain duplicate players.")
+
+    validate_lineup_matches_formation(players, formation)
+
+    base = aggregate_player_scores(players)
 
     base = aggregate_player_scores(players)
     counts = formation_distribution(formation)
