@@ -8,7 +8,6 @@ from python_prototype.collective_attributes import (
     calculate_team_attributes,
     canonical_position,
     collective_attributes,
-    count_formation_sectors,
     formation_distribution,
 )
 
@@ -53,6 +52,7 @@ starting_eleven = [
 ]
 
 POSITIONS_442 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "CM", "ST", "ST"]
+POSITIONS_532 = ["GK", "CB", "CB", "FB", "FB", "CB", "CM", "CM", "CM", "ST", "ST"]
 FORMATION_433 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
 FORMATION_442 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "CM", "ST", "ST"]
 
@@ -98,13 +98,10 @@ def test_player_from_csv_row_parses_real_dataset_values():
     assert player.goalkeeping_reflexes == 8
 
 
-def test_count_formation_sectors_matches_starting_eleven_433():
-    assert count_formation_sectors(starting_eleven) == {
-        "goalkeeper": 1,
-        "defense": 4,
-        "midfield": 3,
-        "attack": 3,
-    }
+def test_formation_distribution_works_on_player_positions():
+    positions = [player.pos for player in starting_eleven]
+
+    assert formation_distribution(positions) == {"GK": 1, "DEF": 4, "MID": 3, "FW": 3}
 
 
 def test_apply_formation_modifiers_uses_expected_deltas_for_a_532_shape():
@@ -123,7 +120,7 @@ def test_apply_formation_modifiers_uses_expected_deltas_for_a_532_shape():
     ]
 
     attributes = TeamAttributes(attack=50.0, defense=50.0, control=50.0)
-    modified = apply_formation_modifiers(attributes, players)
+    modified = apply_formation_modifiers(attributes, [p.pos for p in players])
 
     assert modified.attack == pytest.approx(47.0)
     assert modified.defense == pytest.approx(53.0)
@@ -139,11 +136,16 @@ def test_collective_attributes_433_is_repeatable_for_same_starting_eleven():
     assert first == second
 
 
-def test_calculate_team_attributes_without_formation_config_returns_base_attributes():
-    base = calculate_team_attributes(starting_eleven, formation_config=None)
-    with_default = calculate_team_attributes(starting_eleven)
+def test_formation_config_none_returns_base_attributes_without_modifiers():
+    lineup = make_lineup(POSITIONS_532)
 
-    assert base == with_default
+    base = calculate_team_attributes(lineup, formation_config=None)
+    modified = calculate_team_attributes(lineup)
+
+    assert base.attack == pytest.approx(70.0)
+    assert modified.attack == pytest.approx(67.0)    # DEF +1, FW -1
+    assert modified.defense == pytest.approx(73.0)
+    assert modified.control == pytest.approx(70.0)
 
 
 def test_collective_attributes_changes_when_formation_changes():
