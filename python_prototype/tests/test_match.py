@@ -20,26 +20,12 @@ from python_prototype.match import (
     start_second_half,
 )
 
-POSITIONS = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "RW", "ST", "LW"]
-FORMATION_433 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
-FORMATION_442 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "CM", "ST", "ST"]
-POSITIONS_442 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "CM", "ST", "ST"]
-
-
-def make_player(name: str, pos: str, rating: int) -> Player:
-    return Player(
-        name=name, pos=pos, overall=rating, potential=rating, pace=rating,
-        shooting=rating, passing=rating, dribbling=rating, defending=rating,
-        physic=rating, attacking_heading_accuracy=rating, movement_agility=rating,
-        movement_reactions=rating, movement_balance=rating, power_jumping=rating,
-        power_stamina=rating, mentality_aggression=rating,
-        mentality_penalties=rating, mentality_composure=rating,
-        goalkeeping_reflexes=rating,
-    )
-
-
-def squad(prefix: str, rating: int, positions=POSITIONS):
-    return [make_player(f"{prefix}{i}", pos, rating) for i, pos in enumerate(positions)]
+from python_prototype.tests.helpers import (
+    FORMATION_433,
+    FORMATION_442,
+    POSITIONS_442,
+    squad,
+)
 
 
 def new_match(rating_a: int = 75, rating_b: int = 65):

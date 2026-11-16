@@ -14,57 +14,34 @@ from python_prototype.collective_attributes import (
 
 )
 
-
-def make_test_player(name: str, pos: str, rating: int = 70) -> Player:
-    return Player(
-        name=name,
-        pos=pos,
-        overall=rating,
-        potential=rating,
-        pace=rating,
-        shooting=rating,
-        passing=rating,
-        dribbling=rating,
-        defending=rating,
-        physic=rating,
-        attacking_heading_accuracy=rating,
-        movement_agility=rating,
-        movement_reactions=rating,
-        movement_balance=rating,
-        power_jumping=rating,
-        power_stamina=rating,
-        mentality_aggression=rating,
-        mentality_penalties=rating,
-        mentality_composure=rating,
-        goalkeeping_reflexes=rating,
-    )
-
+from python_prototype.tests.helpers import (
+    FORMATION_433,
+    FORMATION_442,
+    POSITIONS_442,
+    POSITIONS_532,
+    make_lineup,
+    make_player,
+)
 
 starting_eleven = [
-    make_test_player("Goalkeeper", "GK"),
-    make_test_player("Right Back", "RB"),
-    make_test_player("Center Back 1", "CB"),
-    make_test_player("Center Back 2", "CB"),
-    make_test_player("Left Back", "LB"),
-    make_test_player("Defensive Midfielder", "CDM"),
-    make_test_player("Central Midfielder 1", "CM"),
-    make_test_player("Central Midfielder 2", "CM"),
-    make_test_player("Right Winger", "RW"),
-    make_test_player("Striker", "ST"),
-    make_test_player("Left Winger", "LW"),
+    make_player("Goalkeeper", "GK"),
+    make_player("Right Back", "RB"),
+    make_player("Center Back 1", "CB"),
+    make_player("Center Back 2", "CB"),
+    make_player("Left Back", "LB"),
+    make_player("Defensive Midfielder", "CDM"),
+    make_player("Central Midfielder 1", "CM"),
+    make_player("Central Midfielder 2", "CM"),
+    make_player("Right Winger", "RW"),
+    make_player("Striker", "ST"),
+    make_player("Left Winger", "LW"),
 ]
 
-POSITIONS_442 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "CM", "ST", "ST"]
-POSITIONS_532 = ["GK", "CB", "CB", "FB", "FB", "CB", "CM", "CM", "CM", "ST", "ST"]
-FORMATION_433 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
-FORMATION_442 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "CM", "ST", "ST"]
-
-
 def make_lineup(positions, rating: int = 70):
-    return [make_test_player(f"Player {i}", pos, rating) for i, pos in enumerate(positions)]
+    return [make_player(f"Player {i}", pos, rating) for i, pos in enumerate(positions)]
 
 def squad(prefix: str, rating: int, positions=POSITIONS_442):
-    return [make_test_player(f"{prefix}{i}", pos, rating) for i, pos in enumerate(positions)]
+    return [make_player(f"{prefix}{i}", pos, rating) for i, pos in enumerate(positions)]
 
 def test_player_from_csv_row_parses_real_dataset_values():
     row = {
@@ -109,17 +86,17 @@ def test_formation_distribution_works_on_player_positions():
 
 def test_apply_formation_modifiers_uses_expected_deltas_for_a_532_shape():
     players = [
-        make_test_player("Goalkeeper", "GK"),
-        make_test_player("Center Back 1", "CB"),
-        make_test_player("Center Back 2", "CB"),
-        make_test_player("Full Back 1", "FB"),
-        make_test_player("Full Back 2", "FB"),
-        make_test_player("Center Back 3", "CB"),
-        make_test_player("Midfielder 1", "CM"),
-        make_test_player("Midfielder 2", "CM"),
-        make_test_player("Midfielder 3", "CM"),
-        make_test_player("Striker 1", "ST"),
-        make_test_player("Striker 2", "ST"),
+        make_player("Goalkeeper", "GK"),
+        make_player("Center Back 1", "CB"),
+        make_player("Center Back 2", "CB"),
+        make_player("Full Back 1", "FB"),
+        make_player("Full Back 2", "FB"),
+        make_player("Center Back 3", "CB"),
+        make_player("Midfielder 1", "CM"),
+        make_player("Midfielder 2", "CM"),
+        make_player("Midfielder 3", "CM"),
+        make_player("Striker 1", "ST"),
+        make_player("Striker 2", "ST"),
     ]
 
     attributes = TeamAttributes(attack=50.0, defense=50.0, control=50.0)
@@ -208,14 +185,14 @@ def test_calculate_team_attributes_rejects_invalid_lineups_and_formations():
     with pytest.raises(ValueError, match="must contain 11 slots"):
         calculate_team_attributes(starting_eleven, invalid_formation)
 
-    duplicate_players = starting_eleven[:-1] + [make_test_player("Goalkeeper", "ST")]
+    duplicate_players = starting_eleven[:-1] + [make_player("Goalkeeper", "ST")]
     with pytest.raises(ValueError, match="duplicate players"):
         calculate_team_attributes(duplicate_players, ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"])
 
 
 def test_calculate_team_attributes_rejects_invalid_goalkeepers_and_positions():
     no_goalkeeper = starting_eleven.copy()
-    no_goalkeeper[0] = make_test_player("No Goalkeeper", "CB")
+    no_goalkeeper[0] = make_player("No Goalkeeper", "CB")
 
     with pytest.raises(ValueError, match="exatamente um goleiro|exactly one goleiro"):
         calculate_team_attributes(no_goalkeeper)
@@ -223,7 +200,7 @@ def test_calculate_team_attributes_rejects_invalid_goalkeepers_and_positions():
     with pytest.raises(ValueError, match="Posição desconhecida"):
         canonical_position("INVALID")
 
-    invalid_player = make_test_player("Overrated Striker", "ST", rating=200)
+    invalid_player = make_player("Overrated Striker", "ST", rating=200)
     with pytest.raises(ValueError, match="Pontuação attack inválida"):
         calculate_player_scores(invalid_player)
 
@@ -303,7 +280,7 @@ def test_formation_is_derived_from_players_when_omitted():
 
 
 def test_calculate_team_attributes_rejects_duplicate_players():
-    duplicated = starting_eleven[:-1] + [make_test_player("Goalkeeper", "ST")]
+    duplicated = starting_eleven[:-1] + [make_player("Goalkeeper", "ST")]
 
     with pytest.raises(ValueError, match="duplicate players"):
         calculate_team_attributes(duplicated)
