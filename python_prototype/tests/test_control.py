@@ -28,10 +28,22 @@ def test_invalid_control_raises_error(bad):
         simulate_control_duel(bad, 50, seed=1)
 
 
-def test_zero_vs_zero_raises_error():
-    # Comportamento atual; pode mudar com a decisão do item 10.
-    with pytest.raises(ValueError):
-        control_win_probability(0, 0)
+def test_zero_vs_zero_is_a_coin_flip():
+    assert control_win_probability(0, 0) == pytest.approx(0.5)
+
+
+def test_zero_vs_zero_duel_still_consumes_one_draw_and_is_reproducible():
+    first = simulate_control_duel(0, 0, rng=random.Random(42))
+    second = simulate_control_duel(0, 0, rng=random.Random(42))
+
+    assert first == second
+    assert first in ("A", "B")
+
+
+def test_zero_vs_zero_gives_both_teams_wins():
+    wins = [simulate_control_duel(0, 0, rng=random.Random(s)) for s in range(200)]
+
+    assert 60 < wins.count("A") < 140
 
 
 def test_simulation_is_reproducible():

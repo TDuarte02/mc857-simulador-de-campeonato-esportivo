@@ -91,14 +91,20 @@ class AttackSequenceResult:
 
 
 def attack_quality(attack: float, defense: float) -> float:
-    """Calcula q = A / (A + D)."""
+    """
+    Calcula q = A / (A + D).
+
+    Se Ataque e Defesa efetivos forem ambos zero, a razão é indefinida
+    e q = 0.5.
+    """
     a = ensure_finite_non_negative(attack, "Ataque efetivo")
     d = ensure_finite_non_negative(defense, "Defesa efetiva")
 
-    if a + d <= 0:
-        raise ValueError("Ataque e Defesa efetivos não podem ser ambos zero.")
+    total = a + d
+    if total == 0:
+        return 0.5
 
-    return a / (a + d)
+    return a / total
 
 
 def calculate_attack_probabilities(

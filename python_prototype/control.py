@@ -14,8 +14,11 @@ def control_win_probability(control_a: float, control_b: float) -> float:
     """
     Probabilidade de o time A vencer um duelo de Controle: C_A / (C_A + C_B).
 
+    Se os dois Controles forem zero, a razão é indefinida e o duelo é
+    50/50 (devolve 0.5).
+
     Levanta ValueError se algum valor não for finito, for negativo ou
-    exceder ATTRIBUTE_MAX, ou se a soma for zero.
+    exceder ATTRIBUTE_MAX.
     """
     ca = ensure_finite_non_negative(control_a, "Controle do time A")
     cb = ensure_finite_non_negative(control_b, "Controle do time B")
@@ -26,11 +29,8 @@ def control_win_probability(control_a: float, control_b: float) -> float:
         )
 
     total = ca + cb
-    if total <= 0:
-        raise ValueError(
-            "Os atributos de Controle devem somar um valor positivo "
-            "para calcular a probabilidade."
-        )
+    if total == 0:
+        return 0.5
 
     return ca / total
 

@@ -383,3 +383,18 @@ def test_non_finite_modifier_is_rejected(bad):
         run_cycle(state, seed=1)
 
     assert state.clock == 0
+
+def test_cycle_runs_when_all_effective_attributes_are_zero():
+    state = new_match()
+    for team in state.teams.values():
+        team.modifiers.update(attack=-100.0, defense=-100.0, control=-100.0)
+
+    assert all(
+        (e.attack, e.defense, e.control) == (0.0, 0.0, 0.0)
+        for e in (t.effective() for t in state.teams.values())
+    )
+
+    results = play_match(state, seed=1)
+
+    assert len(results) == CYCLES_PER_MATCH
+    assert state.is_finished
