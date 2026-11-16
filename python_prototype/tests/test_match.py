@@ -2,9 +2,13 @@ import random
 
 import pytest
 import copy
+import math
 
 from python_prototype.collective_attributes import Player
 from python_prototype.match import (
+    HALFTIME_MINUTE,
+    FULL_TIME_MINUTE,
+    MODIFIER_KEYS,
     CYCLE_MINUTES,
     CYCLES_PER_MATCH,
     MatchEventType,
@@ -280,4 +284,102 @@ def test_play_match_rng_and_seed_cannot_be_used_together():
     state = new_match()
     with pytest.raises(ValueError):
         play_match(state, random.Random(1), seed=1)
+    assert state.clock == 0
+
+def test_time_constants_are_derived_from_cycles():
+    assert HALFTIME_MINUTE == 45
+    assert FULL_TIME_MINUTE == 90
+
+
+def test_clock_is_derived_from_cycle_index():
+    state = new_match()
+    assert state.clock == 0
+
+    run_cycle(state, random.Random(1))
+
+    assert state.cycle_index == 1
+    assert state.clock == CYCLE_MINUTES
+    with pytest.raises(AttributeError):
+        state.clock = 30
+
+
+def test_play_match_on_finished_match_raises_and_keeps_state():
+    state = new_match()
+    play_match(state, seed=3)
+    score, events = dict(state.score), len(state.events)
+
+    with pytest.raises(ValueError, match="encerrada"):
+        play_match(state, seed=4)
+
+    assert state.score == score
+    assert len(state.events) == events
+
+
+def test_play_match_resumes_from_halftime():
+    state = new_match()
+    rng = random.Random(5)
+    for _ in range(3):
+        run_cycle(state, rng)
+
+    results = play_match(state, rng)
+
+    assert len(results) == 3
+    assert state.is_finished
+    assert count(state, MatchEventType.SECOND_HALF_START) == 1
+
+
+def test_events_carry_structured_data_and_derived_detail():
+    state = new_match()
+    result = run_cycle(state, random.Random(3))
+    md3_event, attack_event = state.events[0], state.events[1]
+
+    assert md3_event.data == {"wins_a": result.md3.wins_a, "wins_b": result.md3.wins_b}
+    assert attack_event.data == {"attempts": result.attack.attempts}
+    assert md3_event.detail == f"MD3 {result.md3.wins_a}x{result.md3.wins_b}"
+    assert attack_event.detail == f"{result.attack.attempts} tentativa(s)"
+
+
+def test_outcome_events_have_no_data_and_empty_detail():
+    state = new_match()
+    run_cycle(state, random.Random(3))
+    outcome = state.events[2]
+
+    assert outcome.type in (MatchEventType.GOAL, MatchEventType.POSSESSION_LOST)
+    assert outcome.data == {}
+    assert outcome.detail == ""
+
+def test_default_modifiers_use_the_declared_keys():
+    state = new_match()
+    assert set(state.teams["A"].modifiers) == set(MODIFIER_KEYS)
+
+
+def test_unknown_modifier_key_is_rejected_without_altering_state():
+    state = new_match()
+    state.teams["A"].modifiers["atack"] = 5.0
+    before = _snapshot(state)
+
+    with pytest.raises(ValueError, match="atack"):
+        run_cycle(state, seed=1)
+
+    assert _snapshot(state) == before
+
+
+def test_missing_modifier_key_is_rejected():
+    state = new_match()
+    del state.teams["B"].modifiers["control"]
+
+    with pytest.raises(ValueError, match="control"):
+        run_cycle(state, seed=1)
+
+    assert state.clock == 0
+
+
+@pytest.mark.parametrize("bad", [math.nan, math.inf, -math.inf])
+def test_non_finite_modifier_is_rejected(bad):
+    state = new_match()
+    state.teams["A"].modifiers["attack"] = bad
+
+    with pytest.raises(ValueError, match="finito"):
+        run_cycle(state, seed=1)
+
     assert state.clock == 0
