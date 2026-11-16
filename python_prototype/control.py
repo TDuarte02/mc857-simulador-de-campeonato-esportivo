@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import random
+import math
 
 DEFAULT_CONTROL_SCALE = 100.0
 
@@ -21,6 +22,8 @@ def _coerce_control_value(value, label: str) -> float:
 
     if numeric < 0:
         raise ValueError(f"O atributo de Controle do {label} não pode ser negativo.")
+    if not math.isfinite(numeric):
+            raise ValueError(f"{label} deve ser um número finito; recebido: {value!r}")
 
     return numeric
 
