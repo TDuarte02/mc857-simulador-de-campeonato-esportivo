@@ -60,24 +60,27 @@ def test_regular_match_ends_after_six_cycles(seed):
     assert count(state, MatchEventType.FULL_TIME) == 1
 
 
+@pytest.mark.parametrize("k", [1, 3])
 @pytest.mark.parametrize("seed", range(50))
-def test_score_is_updated_once_per_goal(seed):
+def test_score_is_updated_once_per_goal(seed, k):
     state = new_match()
-    results = play_match(state, seed=seed)
+    results = play_match(state, seed=seed, possessions_per_cycle=k)
 
-    goals = [r for r in results if r.is_goal]
-    assert sum(state.score.values()) == len(goals)
-    assert count(state, MatchEventType.GOAL) == len(goals)
+    total_goals = sum(r.goals for r in results)
+    assert sum(state.score.values()) == total_goals
+    assert count(state, MatchEventType.GOAL) == total_goals
     for team in ("A", "B"):
-        assert state.score[team] == sum(1 for r in goals if r.scorer == team)
+        assert state.score[team] == sum(r.scorers.count(team) for r in results)
 
 
+@pytest.mark.parametrize("k", [1, 3])
 @pytest.mark.parametrize("seed", range(30))
-def test_only_md3_winner_can_score(seed):
+def test_only_md3_winner_can_score(seed, k):
     state = new_match()
-    for result in play_match(state, seed=seed):
-        assert result.attacking_team == result.md3.winner
-        assert result.scorer in (None, result.md3.winner)
+    for result in play_match(state, seed=seed, possessions_per_cycle=k):
+        for p in result.possessions:
+            assert p.attacking_team == p.md3.winner
+            assert p.scorer in (None, p.md3.winner)
 
 
 def test_cannot_run_cycles_after_match_ends():
@@ -387,17 +390,19 @@ def test_cycle_runs_when_all_effective_attributes_are_zero():
     assert len(results) == CYCLES_PER_MATCH
     assert state.is_finished
 
+@pytest.mark.parametrize("k", [1, 3])
 @pytest.mark.parametrize("seed", range(20))
-def test_event_log_invariants_for_complete_match(seed):
+def test_event_log_invariants_for_complete_match(seed, k):
     state = new_match()
-    play_match(state, seed=seed)
+    play_match(state, seed=seed, possessions_per_cycle=k)
     types = [e.type for e in state.events]
+    possessions = CYCLES_PER_MATCH * k
 
-    assert types.count(MatchEventType.MD3_RESULT) == CYCLES_PER_MATCH
-    assert types.count(MatchEventType.ATTACK_SEQUENCE) == CYCLES_PER_MATCH
+    assert types.count(MatchEventType.MD3_RESULT) == possessions
+    assert types.count(MatchEventType.ATTACK_SEQUENCE) == possessions
     assert (
         types.count(MatchEventType.GOAL) + types.count(MatchEventType.POSSESSION_LOST)
-        == CYCLES_PER_MATCH
+        == possessions
     )
     for once in (
         MatchEventType.HALFTIME,

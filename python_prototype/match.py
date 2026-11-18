@@ -44,6 +44,8 @@ FULL_TIME_MINUTE = CYCLES_PER_MATCH * CYCLE_MINUTES         # 90
 MODIFIER_KEYS = ("attack", "defense", "control")
 
 DEFAULT_RECOVERY_CONTROL_BONUS = 5.0
+
+DEFAULT_POSSESSIONS_PER_CYCLE = 1
 # ============================================================
 # Estruturas
 # ============================================================
@@ -184,10 +186,81 @@ class CycleResult:
     def is_goal(self) -> bool:
         return self.scorer is not None
 
+@dataclass(frozen=True)
+class PossessionResult:
+    """Uma posse: MD3 -> sequência ofensiva do vencedor -> desfecho."""
+
+    index: int  # número da posse dentro do ciclo, começando em 1
+    md3: MD3Result
+    attacking_team: TeamId
+    attack: AttackSequenceResult
+    scorer: TeamId | None
+    applied_control_bonus: PendingControlBonus | None = None  # consumido nesta posse
+    granted_control_bonus: PendingControlBonus | None = None  # gerado nesta posse
+
+    @property
+    def is_goal(self) -> bool:
+        return self.scorer is not None
+
+
+@dataclass(frozen=True)
+class CycleResult:
+    cycle: int  # número do ciclo, começando em 1
+    start_minute: int
+    end_minute: int
+    possessions: tuple[PossessionResult, ...]
+
+    # --- agregados ---
+    @property
+    def goals(self) -> int:
+        return sum(p.is_goal for p in self.possessions)
+
+    @property
+    def scorers(self) -> tuple[TeamId, ...]:
+        return tuple(p.scorer for p in self.possessions if p.scorer is not None)
+
+    @property
+    def is_goal(self) -> bool:
+        return self.goals > 0
+
+    # --- atalhos de compatibilidade (primeira posse) ---
+    @property
+    def md3(self) -> MD3Result:
+        return self.possessions[0].md3
+
+    @property
+    def attacking_team(self) -> TeamId:
+        return self.possessions[0].attacking_team
+
+    @property
+    def attack(self) -> AttackSequenceResult:
+        return self.possessions[0].attack
+
+    @property
+    def scorer(self) -> TeamId | None:
+        return self.possessions[0].scorer
+
+    @property
+    def applied_control_bonus(self) -> PendingControlBonus | None:
+        """Bônus que vinha pendente do ciclo anterior (aplicado na 1ª posse)."""
+        return self.possessions[0].applied_control_bonus
+
+    @property
+    def granted_control_bonus(self) -> PendingControlBonus | None:
+        """Bônus que sai do ciclo (gerado pela última posse)."""
+        return self.possessions[-1].granted_control_bonus
+
 
 # ============================================================
 # Criação e intervalo
 # ============================================================
+
+def _validate_possessions(value: int) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+        raise ValueError(
+            f"possessions_per_cycle deve ser um inteiro >= 1; recebido: {value!r}"
+        )
+    return value
 
 def create_match(
     players_a: Sequence[Player],
@@ -242,13 +315,13 @@ def run_cycle(
     seed: int | None = None,
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
     recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS,
+    possessions_per_cycle: int = DEFAULT_POSSESSIONS_PER_CYCLE,
 ) -> CycleResult:
     """
-    Executa um ciclo de 15 minutos.
+    Executa um ciclo de 15 minutos com `possessions_per_cycle` posses.
 
-    O ciclo é atômico: toda a simulação (atributos efetivos -> MD3 ->
-    sequência ofensiva) acontece antes de qualquer alteração em `state`.
-    Se algo falhar na simulação, o estado permanece intacto.
+    O ciclo é atômico: todas as posses são simuladas antes de qualquer
+    alteração em `state`. Uma falha em qualquer posse deixa o estado intacto.
     """
     if state.is_finished:
         raise ValueError("A partida já foi encerrada.")
@@ -256,86 +329,96 @@ def run_cycle(
         raise ValueError(
             "A partida está no intervalo; chame start_second_half antes do próximo ciclo."
         )
-    
+
+    k = _validate_possessions(possessions_per_cycle)
     generator = resolve_rng(rng, seed)
     amount = ensure_finite_non_negative(
         recovery_control_bonus, "Bônus de recuperação de posse"
     )
     start = state.clock
-
-    # ---- Fase 1: cálculo (não altera `state`) ----
-    effective = {tid: team.effective() for tid, team in state.teams.items()}
-
-    applied = state.pending_control_bonus
-    bonus_a = applied.amount if applied and applied.team == "A" else 0.0
-    bonus_b = applied.amount if applied and applied.team == "B" else 0.0
-
-    md3 = simulate_md3(
-        effective["A"].control,
-        effective["B"].control,
-        rng=generator,
-        first_md5_bonus_a=bonus_a,
-        first_md5_bonus_b=bonus_b,
-    )
-    attacker = md3.winner
-    defender = other_team(attacker)
-
-    sequence = simulate_attack_sequence(
-        effective[attacker].attack,
-        effective[defender].defense,
-        params=attack_params,
-        rng=generator,
-    )
-
-    scorer: TeamId | None = attacker if sequence.outcome is AttackOutcome.GOAL else None
-
-    new_events = [
-        MatchEvent(start, MatchEventType.MD3_RESULT, attacker,
-                   {"wins_a": md3.wins_a, "wins_b": md3.wins_b}),
-        MatchEvent(start, MatchEventType.ATTACK_SEQUENCE, attacker,
-                   {"attempts": sequence.attempts}),
-        MatchEvent(start, MatchEventType.GOAL, scorer)
-        if scorer is not None
-        else MatchEvent(start, MatchEventType.POSSESSION_LOST, attacker),
-    ]
-
     new_clock = start + CYCLE_MINUTES
     new_phase = state.phase
     if new_clock >= FULL_TIME_MINUTE:
         new_phase = MatchPhase.FINISHED
-        new_events.append(MatchEvent(new_clock, MatchEventType.FULL_TIME))
     elif new_clock == HALFTIME_MINUTE:
         new_phase = MatchPhase.HALFTIME
+
+    # ---- Fase 1: cálculo (não altera `state`) ----
+    effective = {tid: team.effective() for tid, team in state.teams.items()}
+
+    pending = state.pending_control_bonus
+    possessions: list[PossessionResult] = []
+    new_events: list[MatchEvent] = []
+
+    for j in range(1, k + 1):
+        applied = pending
+        bonus_a = applied.amount if applied and applied.team == "A" else 0.0
+        bonus_b = applied.amount if applied and applied.team == "B" else 0.0
+
+        md3 = simulate_md3(
+            effective["A"].control,
+            effective["B"].control,
+            rng=generator,
+            first_md5_bonus_a=bonus_a,
+            first_md5_bonus_b=bonus_b,
+        )
+        attacker = md3.winner
+        defender = other_team(attacker)
+
+        sequence = simulate_attack_sequence(
+            effective[attacker].attack,
+            effective[defender].defense,
+            params=attack_params,
+            rng=generator,
+        )
+        scorer: TeamId | None = (
+            attacker if sequence.outcome is AttackOutcome.GOAL else None
+        )
+
+        # Perda de posse gera bônus para o adversário, inclusive dentro do
+        # ciclo; só é descartado se esta for a última posse da partida.
+        granted: PendingControlBonus | None = None
+        is_last_of_match = j == k and new_phase is MatchPhase.FINISHED
+        if (
+            sequence.outcome is AttackOutcome.POSSESSION_LOST
+            and not is_last_of_match
+            and amount > 0
+        ):
+            granted = PendingControlBonus(defender, amount)
+
+        possessions.append(
+            PossessionResult(j, md3, attacker, sequence, scorer, applied, granted)
+        )
+        new_events += [
+            MatchEvent(start, MatchEventType.MD3_RESULT, attacker,
+                       {"wins_a": md3.wins_a, "wins_b": md3.wins_b}),
+            MatchEvent(start, MatchEventType.ATTACK_SEQUENCE, attacker,
+                       {"attempts": sequence.attempts}),
+            MatchEvent(start, MatchEventType.GOAL, scorer)
+            if scorer is not None
+            else MatchEvent(start, MatchEventType.POSSESSION_LOST, attacker),
+        ]
+        pending = granted  # consome o aplicado e encadeia o novo (nunca acumula)
+
+    if new_phase is MatchPhase.FINISHED:
+        new_events.append(MatchEvent(new_clock, MatchEventType.FULL_TIME))
+    elif new_phase is MatchPhase.HALFTIME:
         new_events.append(MatchEvent(new_clock, MatchEventType.HALFTIME))
 
-    # Perda de posse: o adversário recupera a bola e ganha o bônus,
-    # exceto se a partida acabou (não haveria próxima disputa).
-    granted: PendingControlBonus | None = None
-    if (
-        sequence.outcome is AttackOutcome.POSSESSION_LOST
-        and new_phase is not MatchPhase.FINISHED
-        and amount > 0
-    ):
-        granted = PendingControlBonus(defender, amount)
-
     # ---- Fase 2: commit ----
-    if scorer is not None:
-        state.score[scorer] += 1
+    for p in possessions:
+        if p.scorer is not None:
+            state.score[p.scorer] += 1
     state.events.extend(new_events)
     state.cycle_index += 1
     state.phase = new_phase
-    state.pending_control_bonus = granted   # consome o antigo e registra o novo
+    state.pending_control_bonus = pending
 
     return CycleResult(
         cycle=state.cycle_index,
         start_minute=start,
         end_minute=new_clock,
-        md3=md3,
-        attacking_team=attacker,
-        attack=sequence,
-        scorer=scorer,
-        applied_control_bonus=applied,
-        granted_control_bonus=granted,
+        possessions=tuple(possessions),
     )
 
 
@@ -346,6 +429,7 @@ def play_match(
     seed: int | None = None,
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
     recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS,
+    possessions_per_cycle: int = DEFAULT_POSSESSIONS_PER_CYCLE,
 
 ) -> list[CycleResult]:
     """Joga a partida até o fim, sem alterações no intervalo."""
