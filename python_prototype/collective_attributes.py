@@ -1,9 +1,13 @@
 from __future__ import annotations
 
-from collections.abc import Sequence
-from dataclasses import dataclass
+from collections.abc import Mapping, Sequence
+from dataclasses import dataclass, fields
 
 from python_prototype.common import ATTRIBUTE_MAX, clamp
+
+# Tolerância para erro de ponto flutuante nas somas ponderadas
+# (p. ex. 100.00000000000001 com todos os atributos em 100).
+SCORE_TOLERANCE = 1e-9
 
 @dataclass(frozen=True)
 class Player:
@@ -28,50 +32,49 @@ class Player:
     mentality_composure: int
     goalkeeping_reflexes: int
 
+    def __post_init__(self) -> None:
+        """Exige todos os atributos numéricos finitos e em [0, ATTRIBUTE_MAX]."""
+        for f in fields(self):
+            if f.name in ("name", "pos"):
+                continue
+            value = getattr(self, f.name)
+            valid = (
+                isinstance(value, (int, float))
+                and not isinstance(value, bool)
+                and 0 <= value <= ATTRIBUTE_MAX  # NaN falha aqui
+            )
+            if not valid:
+                raise ValueError(
+                    f"Atributo {f.name!r} de {self.name!r} fora da escala "
+                    f"[0, {ATTRIBUTE_MAX:g}]: {value!r}"
+                )
+
     @classmethod
-    def from_csv_row(cls, name: str, pos: str, row: dict[str, str]) -> "Player":
-        values = {key: row[key] for key in (
-            "potential",
-            "pace",
-            "shooting",
-            "passing",
-            "dribbling",
-            "defending",
-            "physic",
-            "attacking_heading_accuracy",
-            "movement_agility",
-            "movement_reactions",
-            "movement_balance",
-            "power_jumping",
-            "power_stamina",
-            "mentality_aggression",
-            "mentality_penalties",
-            "mentality_composure",
-            "goalkeeping_reflexes",
-        )}
-        overall_value = row.get("overall", row.get("potential", values["potential"]))
-        return cls(
-            name=name,
-            pos=pos,
-            overall=int(overall_value),
-            potential=int(values["potential"]),
-            pace=float(values["pace"]),
-            shooting=float(values["shooting"]),
-            passing=float(values["passing"]),
-            dribbling=float(values["dribbling"]),
-            defending=float(values["defending"]),
-            physic=float(values["physic"]),
-            attacking_heading_accuracy=int(values["attacking_heading_accuracy"]),
-            movement_agility=int(values["movement_agility"]),
-            movement_reactions=int(values["movement_reactions"]),
-            movement_balance=int(values["movement_balance"]),
-            power_jumping=int(values["power_jumping"]),
-            power_stamina=int(values["power_stamina"]),
-            mentality_aggression=int(values["mentality_aggression"]),
-            mentality_penalties=int(values["mentality_penalties"]),
-            mentality_composure=int(values["mentality_composure"]),
-            goalkeeping_reflexes=int(values["goalkeeping_reflexes"]),
-        )
+    def from_csv_row(cls, name: str, pos: str, row: Mapping[str, str]) -> "Player":
+        """
+        Cria um Player a partir de uma linha de CSV (valores em texto).
+
+        Todas as colunas dos atributos são obrigatórias, inclusive `overall`.
+        Levanta ValueError se faltar coluna ou se um valor não for numérico
+        ou estiver fora da escala.
+        """
+        numeric = [f for f in fields(cls) if f.name not in ("name", "pos")]
+
+        missing = [f.name for f in numeric if f.name not in row]
+        if missing:
+            raise ValueError(f"Linha de {name!r} sem as colunas: {missing}")
+
+        values: dict[str, float] = {}
+        for f in numeric:
+            convert = float if f.type == "float" else int
+            try:
+                values[f.name] = convert(row[f.name])
+            except (TypeError, ValueError):
+                raise ValueError(
+                    f"Valor inválido na coluna {f.name!r} de {name!r}: {row[f.name]!r}"
+                ) from None
+
+        return cls(name=name, pos=pos, **values)
 
 # ============================================================
 # Configuração dos pesos dos atributos individuais
@@ -166,6 +169,8 @@ POSITION_ALIASES = {
 
     "CAM": "AM",
     "AM": "AM",
+    "LAM": "AM",
+    "RAM": "AM",
 
     "LW": "W",
     "RW": "W",
@@ -549,7 +554,6 @@ def calculate_team_attributes(
         return base
 
     return apply_formation_modifiers(base, slots, formation_config)
-
 
 
 
