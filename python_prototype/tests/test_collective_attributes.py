@@ -1,4 +1,5 @@
 import pytest
+import math
 from dataclasses import asdict
 
 from python_prototype.collective_attributes import (
@@ -179,14 +180,14 @@ def test_calculate_team_attributes_rejects_invalid_lineups_and_formations():
     invalid_lineup = starting_eleven[:-1]
     invalid_formation = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W"]
 
-    with pytest.raises(ValueError, match="exactly 11 starters"):
+    with pytest.raises(ValueError, match="exatamente 11 titulares"):
         calculate_team_attributes(invalid_lineup, ["GK"] * 11)
 
-    with pytest.raises(ValueError, match="must contain 11 slots"):
+    with pytest.raises(ValueError, match="exatamente 11 slots"):
         calculate_team_attributes(starting_eleven, invalid_formation)
 
     duplicate_players = starting_eleven[:-1] + [make_player("Goalkeeper", "ST")]
-    with pytest.raises(ValueError, match="duplicate players"):
+    with pytest.raises(ValueError, match="jogadores duplicados"):
         calculate_team_attributes(duplicate_players, ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"])
 
 
@@ -194,15 +195,14 @@ def test_calculate_team_attributes_rejects_invalid_goalkeepers_and_positions():
     no_goalkeeper = starting_eleven.copy()
     no_goalkeeper[0] = make_player("No Goalkeeper", "CB")
 
-    with pytest.raises(ValueError, match="exatamente um goleiro|exactly one goleiro"):
+    with pytest.raises(ValueError, match="exatamente um goleiro"):
         calculate_team_attributes(no_goalkeeper)
 
     with pytest.raises(ValueError, match="Posição desconhecida"):
         canonical_position("INVALID")
 
-    invalid_player = make_player("Overrated Striker", "ST", rating=200)
-    with pytest.raises(ValueError, match="Pontuação attack inválida"):
-        calculate_player_scores(invalid_player)
+    with pytest.raises(ValueError, match="fora da escala"):
+        make_player("Overrated Striker", "ST", rating=200)
 
 
 def test_canonical_position_normalizes_starting_eleven_roles():
@@ -267,7 +267,7 @@ def test_lineup_with_two_goalkeepers_is_rejected():
 
 def test_size_and_duplicate_checks_run_before_sector_validation():
     # Formação incoerente E lineup curta: a mensagem de tamanho vence.
-    with pytest.raises(ValueError, match="exactly 11 starters"):
+    with pytest.raises(ValueError, match="exatamente 11 titulares"):
         calculate_team_attributes(starting_eleven[:-1], FORMATION_442)
 
 def test_formation_is_derived_from_players_when_omitted():
@@ -282,7 +282,7 @@ def test_formation_is_derived_from_players_when_omitted():
 def test_calculate_team_attributes_rejects_duplicate_players():
     duplicated = starting_eleven[:-1] + [make_player("Goalkeeper", "ST")]
 
-    with pytest.raises(ValueError, match="duplicate players"):
+    with pytest.raises(ValueError, match="jogadores duplicados"):
         calculate_team_attributes(duplicated)
 
 

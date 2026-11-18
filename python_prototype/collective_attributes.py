@@ -301,7 +301,7 @@ def _describe_counts(counts: dict[str, int]) -> str:
 # Cálculo das pontuações individuais
 # ============================================================
 
-def weighted_score(player, weights: dict[str, float]) -> float:
+def weighted_score(player: Player, weights: Mapping[str, float]) -> float:
     """Calcula uma média ponderada dos atributos de um jogador."""
     return sum(
         getattr(player, attribute) * weight
@@ -318,42 +318,42 @@ def canonical_position(pos: str) -> str:
         raise ValueError(f"Posição desconhecida: {pos!r}") from None
 
 
-def calculate_player_scores(player) -> PlayerScores:
+def calculate_player_scores(player: Player) -> PlayerScores:
     """
     Calcula as pontuações individuais de Ataque, Defesa e Controle.
 
     Potential, overall, power_stamina e mentality_penalties
     não entram diretamente nos atributos coletivos.
+
+    Como os atributos do Player são validados na construção e cada
+    conjunto de pesos soma 1, o resultado cabe em [0, ATTRIBUTE_MAX].
+    A checagem abaixo é defensiva (pesos mal configurados) e tolera
+    erro de ponto flutuante; o valor devolvido é limitado à escala.
     """
     position = canonical_position(player.pos)
 
-    attack = weighted_score(player, ATTACK_WEIGHTS)
-    control = weighted_score(player, CONTROL_WEIGHTS)
+    raw = {
+        "attack": weighted_score(player, ATTACK_WEIGHTS),
+        "control": weighted_score(player, CONTROL_WEIGHTS),
+        # O dataset só tem um atributo específico de goleiro.
+        "defense": (
+            float(player.goalkeeping_reflexes)
+            if position == "GK"
+            else weighted_score(player, DEFENSE_WEIGHTS)
+        ),
+    }
 
-    if position == "GK":
-        # O dataset disponível possui apenas um atributo específico
-        # de goleiro: goalkeeping_reflexes.
-        defense = float(player.goalkeeping_reflexes)
-    else:
-        defense = weighted_score(player, DEFENSE_WEIGHTS)
-
-    scores = PlayerScores(
-        attack=attack,
-        defense=defense,
-        control=control,
-    )
-
-    for attribute, value in (
-        ("attack", scores.attack),
-        ("defense", scores.defense),
-        ("control", scores.control),
-    ):
-        if not 0 <= value <= ATTRIBUTE_MAX:
+    for attribute, value in raw.items():
+        if not -SCORE_TOLERANCE <= value <= ATTRIBUTE_MAX + SCORE_TOLERANCE:
             raise ValueError(
                 f"Pontuação {attribute} inválida para {player.name}: {value}"
             )
 
-    return scores
+    return PlayerScores(
+        attack=clamp(raw["attack"]),
+        defense=clamp(raw["defense"]),
+        control=clamp(raw["control"]),
+    )
 
 
 # ============================================================
@@ -361,7 +361,7 @@ def calculate_player_scores(player) -> PlayerScores:
 # ============================================================
 
 def aggregate_player_scores(
-    players: Sequence,
+    players: Sequence[Player],
 ) -> TeamAttributes:
     """
     Agrega as pontuações individuais usando os pesos posicionais.
@@ -537,14 +537,18 @@ def calculate_team_attributes(
     coerente com a formação (ver `validate_lineup_matches_formation`).
     """
     if len(players) != 11:
-        raise ValueError("Collective attributes require exactly 11 starters.")
+        raise ValueError(
+            f"A escalação deve conter exatamente 11 titulares; recebido: {len(players)}"
+        )
 
     slots = [player.pos for player in players] if formation is None else list(formation)
 
     if len(slots) != 11:
-        raise ValueError("A valid tactical shape must contain 11 slots.")
+        raise ValueError(
+            f"A formação deve conter exatamente 11 slots; recebido: {len(slots)}"
+        )
     if len({player.name for player in players}) != len(players):
-        raise ValueError("A lineup cannot contain duplicate players.")
+        raise ValueError("A escalação não pode conter jogadores duplicados.")
 
     validate_lineup_matches_formation(players, slots)
 
