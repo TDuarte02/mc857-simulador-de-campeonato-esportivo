@@ -586,3 +586,123 @@ def test_zero_bonus_disables_the_mechanic():
     run_cycle(state, ScriptedRandom([0.1] * 6 + [0.99]), recovery_control_bonus=0.0)
 
     assert state.pending_control_bonus is None
+
+def test_possessions_per_cycle_is_validated():
+    for bad in (0, -1, 1.5, "2", True, None):
+        state = new_match()
+        with pytest.raises(ValueError, match="possessions_per_cycle"):
+            run_cycle(state, seed=1, possessions_per_cycle=bad)
+        assert state.clock == 0
+
+
+def test_k_possessions_can_produce_multiple_goals_in_one_cycle():
+    state = new_match(70, 70)
+    # por posse: 6 sorteios de MD3 (A vence 2x0) + 1 de ataque (gol)
+    rng = ScriptedRandom(([0.1] * 6 + [0.01]) * 3)
+
+    result = run_cycle(state, rng, possessions_per_cycle=3)
+
+    assert result.goals == 3 and result.scorers == ("A", "A", "A")
+    assert state.score == {"A": 3, "B": 0}
+    assert state.clock == CYCLE_MINUTES
+    assert count(state, MatchEventType.GOAL) == 3
+    assert rng.remaining == 0
+
+
+def test_possession_events_keep_stable_order_per_possession():
+    state = new_match(70, 70)
+    run_cycle(state, ScriptedRandom(([0.1] * 6 + [0.01]) * 2), possessions_per_cycle=2)
+
+    assert [e.type for e in state.events] == [
+        MatchEventType.MD3_RESULT, MatchEventType.ATTACK_SEQUENCE, MatchEventType.GOAL,
+    ] * 2
+    assert {e.minute for e in state.events} == {0}
+
+
+def test_bonus_is_chained_between_possessions_in_same_cycle():
+    state = new_match(70, 70)
+    rng = ScriptedRandom(
+        [0.1] * 6 + [0.99]        # posse 1: A vence a MD3 e perde a posse -> B ganha 5
+        + [0.49] * 3              # posse 2, 1ª MD5 (B +5, p(A) ≈ 0.483): B vence
+        + [0.1] * 6               # 2ª e 3ª MD5 (sem bônus): A vence ambas
+        + [0.01]                  # ataque de A: gol
+    )
+
+    result = run_cycle(state, rng, possessions_per_cycle=2)
+
+    p1, p2 = result.possessions
+    assert p1.attacking_team == "A" and p1.scorer is None
+    assert p1.applied_control_bonus is None
+    assert p1.granted_control_bonus == PendingControlBonus("B", 5.0)
+
+    assert p2.applied_control_bonus == p1.granted_control_bonus
+    assert tuple(s.winner for s in p2.md3.series) == ("B", "A", "A")
+    assert p2.attacking_team == "A" and p2.scorer == "A"
+    assert p2.granted_control_bonus is None      # gol não gera bônus
+
+    assert state.pending_control_bonus is None
+    assert state.score == {"A": 1, "B": 0}
+    assert rng.remaining == 0
+
+
+def test_bonus_is_never_accumulated_across_possessions():
+    state = new_match(70, 70)
+    rng = ScriptedRandom(
+        [0.1] * 6 + [0.99]        # posse 1: A ataca e perde -> B ganha 5
+        + [0.49] * 3 + [0.9] * 3  # posse 2: B vence a 1ª MD5 (com bônus) e a 2ª
+        + [0.99]                  # B ataca e perde -> A ganha 5
+    )
+
+    result = run_cycle(state, rng, possessions_per_cycle=2)
+
+    p1, p2 = result.possessions
+    assert p1.granted_control_bonus == PendingControlBonus("B", 5.0)
+    assert p2.applied_control_bonus == PendingControlBonus("B", 5.0)
+    assert p2.attacking_team == "B"
+    assert p2.granted_control_bonus == PendingControlBonus("A", 5.0)
+
+    # O bônus de B foi consumido, e o de A é novo, sem somar (não é 10).
+    assert state.pending_control_bonus == PendingControlBonus("A", 5.0)
+    assert rng.remaining == 0
+
+
+@pytest.mark.parametrize("j_fail", [1, 2, 3])
+def test_failure_in_any_possession_leaves_state_unchanged(monkeypatch, j_fail):
+    state = new_match()
+    before = copy.deepcopy(_snapshot(state))
+    real = simulate_attack_sequence_ref = __import__(
+        "python_prototype.match", fromlist=["x"]
+    ).simulate_attack_sequence
+    calls = {"n": 0}
+
+    def flaky(*a, **k):
+        calls["n"] += 1
+        if calls["n"] == j_fail:
+            raise ValueError("falha simulada")
+        return real(*a, **k)
+
+    monkeypatch.setattr("python_prototype.match.simulate_attack_sequence", flaky)
+
+    with pytest.raises(ValueError, match="falha simulada"):
+        run_cycle(state, seed=1, possessions_per_cycle=3)
+
+    assert _snapshot(state) == before
+
+
+@pytest.mark.parametrize("seed", range(20))
+def test_k3_match_invariants(seed):
+    state = new_match()
+    results = play_match(state, seed=seed, possessions_per_cycle=3)
+
+    assert state.clock == 90
+    assert sum(state.score.values()) == count(state, MatchEventType.GOAL)
+    assert count(state, MatchEventType.MD3_RESULT) == CYCLES_PER_MATCH * 3
+    assert all(len(r.possessions) == 3 for r in results)
+    assert state.pending_control_bonus is None
+
+
+def test_k1_matches_default_behaviour():
+    a, b = new_match(), new_match()
+    play_match(a, seed=42)
+    play_match(b, seed=42, possessions_per_cycle=1)
+    assert a.events == b.events and a.score == b.score
