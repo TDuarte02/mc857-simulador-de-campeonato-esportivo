@@ -430,18 +430,26 @@ def play_match(
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
     recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS,
     possessions_per_cycle: int = DEFAULT_POSSESSIONS_PER_CYCLE,
-
 ) -> list[CycleResult]:
     """Joga a partida até o fim, sem alterações no intervalo."""
     if state.is_finished:
         raise ValueError("A partida já foi encerrada.")
 
+    k = _validate_possessions(possessions_per_cycle)
     generator = resolve_rng(rng, seed)
     results: list[CycleResult] = []
     while not state.is_finished:
         if state.phase is MatchPhase.HALFTIME:
             start_second_half(state)
-        results.append(run_cycle(state, generator, attack_params=attack_params, recovery_control_bonus=recovery_control_bonus))
+        results.append(
+            run_cycle(
+                state,
+                generator,
+                attack_params=attack_params,
+                recovery_control_bonus=recovery_control_bonus,
+                possessions_per_cycle=k,
+            )
+        )
     return results
 
 
