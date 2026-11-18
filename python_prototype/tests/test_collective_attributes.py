@@ -24,6 +24,8 @@ from python_prototype.tests.helpers import (
     make_player,
 )
 
+import python_prototype.collective_attributes as collective_attributes_module
+
 starting_eleven = [
     make_player("Goalkeeper", "GK"),
     make_player("Right Back", "RB"),
@@ -38,11 +40,79 @@ starting_eleven = [
     make_player("Left Winger", "LW"),
 ]
 
+CSV_ROW = {
+    "overall": "93", "potential": "93", "pace": "85.0", "shooting": "92.0",
+    "passing": "91.0", "dribbling": "95.0", "defending": "34.0", "physic": "65.0",
+    "attacking_heading_accuracy": "70", "movement_agility": "91",
+    "movement_reactions": "94", "movement_balance": "95", "power_jumping": "68",
+    "power_stamina": "72", "mentality_aggression": "44", "mentality_penalties": "75",
+    "mentality_composure": "96", "goalkeeping_reflexes": "8",
+}
+
+# --- Helpers ---
+
 def make_lineup(positions, rating: int = 70):
     return [make_player(f"Player {i}", pos, rating) for i, pos in enumerate(positions)]
 
 def squad(prefix: str, rating: int, positions=POSITIONS_442):
     return [make_player(f"{prefix}{i}", pos, rating) for i, pos in enumerate(positions)]
+
+# --- Player ---
+
+@pytest.mark.parametrize("bad", [-1, 100.5, math.nan, math.inf])
+def test_player_rejects_attribute_outside_scale(bad):
+    with pytest.raises(ValueError, match="'shooting' de 'X' fora da escala"):
+        make_player("X", "ST", shooting=bad)
+
+
+def test_player_rejects_non_numeric_attribute():
+    with pytest.raises(ValueError, match="fora da escala"):
+        make_player("X", "ST", pace="80")
+
+
+# --- Pontuações ---
+
+def test_perfect_player_scores_never_exceed_scale():
+    scores = calculate_player_scores(make_player("Perfect", "ST", rating=100))
+
+    assert scores.attack <= 100.0
+    assert scores.defense <= 100.0
+    assert scores.control <= 100.0
+    assert scores.attack == pytest.approx(100.0)
+
+
+def test_misconfigured_weights_are_rejected(monkeypatch):
+    monkeypatch.setitem(collective_attributes_module.ATTACK_WEIGHTS, "shooting", 1.25)
+
+    with pytest.raises(ValueError, match="Pontuação attack inválida"):
+        calculate_player_scores(make_player("X", "ST", 70))
+
+
+# --- from_csv_row ---
+
+@pytest.mark.parametrize("column", ["overall", "shooting"])
+def test_csv_row_missing_column_is_rejected(column):
+    row = {k: v for k, v in CSV_ROW.items() if k != column}
+
+    with pytest.raises(ValueError, match=column):
+        Player.from_csv_row("CSV", "ST", row)
+
+
+def test_csv_row_non_numeric_value_is_rejected():
+    with pytest.raises(ValueError, match="coluna 'pace'"):
+        Player.from_csv_row("CSV", "ST", {**CSV_ROW, "pace": "rápido"})
+
+
+def test_csv_row_out_of_scale_value_is_rejected():
+    with pytest.raises(ValueError, match="fora da escala"):
+        Player.from_csv_row("CSV", "ST", {**CSV_ROW, "shooting": "120"})
+
+
+# --- Aliases ---
+
+@pytest.mark.parametrize("pos", ["LAM", "RAM"])
+def test_lateral_attacking_midfielders_map_to_am(pos):
+    assert canonical_position(pos) == "AM"
 
 def test_player_from_csv_row_parses_real_dataset_values():
     row = {
