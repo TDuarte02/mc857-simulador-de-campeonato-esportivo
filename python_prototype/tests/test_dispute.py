@@ -203,3 +203,40 @@ def test_md5_three_duel_frequency_matches_model():
     short = sum(len(simulate_md5(60, 40, rng=rng).duels) == 3 for _ in range(n))
 
     assert short / n == pytest.approx(0.28, abs=0.015)
+
+def test_first_md5_bonus_applies_only_to_first_series():
+    # 50x50 + bônus 50 para A na 1ª MD5 => p = 100/150 ≈ 0.667; depois p = 0.5.
+    # Sorteio 0.6: A vence na 1ª MD5; B vence nas demais.
+    rng = ScriptedRandom([0.6] * 9)
+
+    result = simulate_md3(50, 50, rng=rng, first_md5_bonus_a=50)
+
+    assert tuple(s.winner for s in result.series) == ("A", "B", "B")
+    assert result.winner == "B"
+    assert rng.remaining == 0
+
+
+def test_first_md5_bonus_for_b_lowers_a_probability():
+    rng = ScriptedRandom([0.4] * 9)   # sem bônus, 0.4 < 0.5 => A
+
+    result = simulate_md3(50, 50, rng=rng, first_md5_bonus_b=50)
+
+    assert tuple(s.winner for s in result.series) == ("B", "A", "A")
+
+
+def test_bonus_is_clamped_to_attribute_max():
+    result = simulate_md3(100, 0, seed=1, first_md5_bonus_a=50)
+
+    assert result.winner == "A"
+
+
+@pytest.mark.parametrize("bad", [-1, float("nan"), float("inf")])
+def test_invalid_first_md5_bonus_is_rejected(bad):
+    with pytest.raises(ValueError):
+        simulate_md3(50, 50, seed=1, first_md5_bonus_a=bad)
+
+
+def test_md3_without_bonus_is_unchanged():
+    assert simulate_md3(70, 60, seed=42) == simulate_md3(
+        70, 60, seed=42, first_md5_bonus_a=0.0, first_md5_bonus_b=0.0
+    )

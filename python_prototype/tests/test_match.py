@@ -13,6 +13,7 @@ from python_prototype.match import (
     CYCLES_PER_MATCH,
     MatchEventType,
     MatchPhase,
+    PendingControlBonus,
     change_lineup,
     create_match,
     play_match,
@@ -462,3 +463,121 @@ def test_scripted_cycle_with_continuation_then_goal():
     assert result.scorer == "A"
     assert state.events[1].data == {"attempts": 2}
     assert rng.remaining == 0
+
+# Times 70x70: Controle igual. Com bônus 5 para A na 1ª MD5, p(A) = 75/145 ≈ 0.517,
+# então o sorteio 0.51 dá vitória a A só nessa MD5 (sem bônus, 0.51 >= 0.5 => B).
+
+def test_possession_loss_grants_bonus_to_the_opponent_only():
+    state = new_match(70, 70)
+    rng = ScriptedRandom([0.1] * 6 + [0.99])      # A ataca e perde a posse
+
+    result = run_cycle(state, rng)
+
+    assert state.pending_control_bonus == PendingControlBonus("B", 5.0)
+    assert result.granted_control_bonus == state.pending_control_bonus
+    assert result.applied_control_bonus is None
+
+
+def test_goal_does_not_grant_bonus():
+    state = new_match(70, 70)
+    run_cycle(state, ScriptedRandom([0.1] * 6 + [0.01]))
+
+    assert state.pending_control_bonus is None
+
+
+def test_bonus_applies_to_first_md5_only_and_is_then_consumed():
+    state = new_match(70, 70)
+    run_cycle(state, ScriptedRandom([0.9] * 6 + [0.99]))   # B ataca e perde => A ganha bônus
+    assert state.pending_control_bonus == PendingControlBonus("A", 5.0)
+
+    # 2º ciclo: 1ª MD5 com bônus (A vence), demais sem (B vence); B marca.
+    rng = ScriptedRandom([0.51] * 9 + [0.01])
+    result = run_cycle(state, rng)
+
+    assert result.applied_control_bonus == PendingControlBonus("A", 5.0)
+    assert tuple(s.winner for s in result.md3.series) == ("A", "B", "B")
+    assert result.scorer == "B"
+    assert state.pending_control_bonus is None
+    assert rng.remaining == 0
+
+    # 3º ciclo: sem bônus, 0.51 => B em todos os duelos.
+    rng = ScriptedRandom([0.51] * 6 + [0.01])
+    result = run_cycle(state, rng)
+
+    assert result.applied_control_bonus is None
+    assert (result.md3.wins_a, result.md3.wins_b) == (0, 2)
+
+
+def test_new_possession_loss_generates_a_new_bonus_without_accumulating():
+    state = new_match(70, 70)
+    run_cycle(state, ScriptedRandom([0.9] * 6 + [0.99]))       # A recebe 5
+    result = run_cycle(state, ScriptedRandom([0.51] * 9 + [0.99]))  # B ataca e perde
+
+    assert result.applied_control_bonus == PendingControlBonus("A", 5.0)
+    assert state.pending_control_bonus == PendingControlBonus("A", 5.0)  # novo, não 10
+
+
+def test_bonus_does_not_change_base_or_modifiers():
+    state = new_match(70, 70)
+    before = {t: (s.base, dict(s.modifiers)) for t, s in state.teams.items()}
+
+    run_cycle(state, ScriptedRandom([0.9] * 6 + [0.99]))
+    assert state.pending_control_bonus is not None
+    run_cycle(state, ScriptedRandom([0.51] * 9 + [0.99]))
+
+    assert {t: (s.base, dict(s.modifiers)) for t, s in state.teams.items()} == before
+    assert state.teams["A"].effective().control == pytest.approx(state.teams["A"].base.control)
+
+
+def test_bonus_survives_halftime_and_lineup_change():
+    state = new_match(70, 70)
+    rng = random.Random(0)
+    run_cycle(state, ScriptedRandom([0.9] * 6 + [0.01]))        # B marca
+    run_cycle(state, ScriptedRandom([0.9] * 6 + [0.01]))        # B marca
+    run_cycle(state, ScriptedRandom([0.9] * 6 + [0.99]))        # B perde => A ganha bônus
+    assert state.phase is MatchPhase.HALFTIME
+
+    change_lineup(state, "A", squad("N", 70), FORMATION_433)
+    start_second_half(state)
+
+    assert state.pending_control_bonus == PendingControlBonus("A", 5.0)
+
+
+def test_no_bonus_is_left_pending_when_match_ends():
+    for seed in range(50):
+        state = new_match()
+        play_match(state, seed=seed)
+        assert state.pending_control_bonus is None
+
+
+def test_failed_cycle_does_not_consume_pending_bonus(monkeypatch):
+    state = new_match(70, 70)
+    run_cycle(state, ScriptedRandom([0.9] * 6 + [0.99]))
+    pending = state.pending_control_bonus
+
+    monkeypatch.setattr(
+        "python_prototype.match.simulate_attack_sequence",
+        lambda *a, **k: (_ for _ in ()).throw(ValueError("falha simulada")),
+    )
+    with pytest.raises(ValueError, match="falha simulada"):
+        run_cycle(state, seed=1)
+
+    assert state.pending_control_bonus == pending
+
+
+def test_configurable_bonus_value_and_validation():
+    state = new_match(70, 70)
+    run_cycle(state, ScriptedRandom([0.1] * 6 + [0.99]), recovery_control_bonus=12.0)
+    assert state.pending_control_bonus == PendingControlBonus("B", 12.0)
+
+    for bad in (-1.0, float("nan"), float("inf")):
+        with pytest.raises(ValueError):
+            run_cycle(state, seed=1, recovery_control_bonus=bad)
+    assert state.cycle_index == 1
+
+
+def test_zero_bonus_disables_the_mechanic():
+    state = new_match(70, 70)
+    run_cycle(state, ScriptedRandom([0.1] * 6 + [0.99]), recovery_control_bonus=0.0)
+
+    assert state.pending_control_bonus is None
