@@ -11,6 +11,7 @@ from python_prototype.common import (
     TEAM_IDS,
     TeamId,
     clamp,
+    ensure_finite_non_negative,
     other_team,
     resolve_rng,
 )
@@ -42,6 +43,7 @@ FULL_TIME_MINUTE = CYCLES_PER_MATCH * CYCLE_MINUTES         # 90
 
 MODIFIER_KEYS = ("attack", "defense", "control")
 
+DEFAULT_RECOVERY_CONTROL_BONUS = 5.0
 # ============================================================
 # Estruturas
 # ============================================================
@@ -141,6 +143,12 @@ class TeamState:
             control=clamp(self.base.control + self.modifiers["control"]),
         )
 
+@dataclass(frozen=True)
+class PendingControlBonus:
+    """Bônus de Controle pendente para a primeira MD5 da próxima disputa."""
+
+    team: TeamId
+    amount: float
 
 @dataclass
 class MatchState:
@@ -149,6 +157,7 @@ class MatchState:
     phase: MatchPhase = MatchPhase.FIRST_HALF
     score: dict[TeamId, int] = field(default_factory=lambda: {"A": 0, "B": 0})
     events: list[MatchEvent] = field(default_factory=list)
+    pending_control_bonus: PendingControlBonus | None = None
 
     @property
     def clock(self) -> int:
@@ -168,6 +177,8 @@ class CycleResult:
     attacking_team: TeamId
     attack: AttackSequenceResult
     scorer: TeamId | None  # "A", "B" ou None
+    applied_control_bonus: PendingControlBonus | None = None  # consumido neste ciclo
+    granted_control_bonus: PendingControlBonus | None = None  # gerado neste ciclo
 
     @property
     def is_goal(self) -> bool:
@@ -230,6 +241,7 @@ def run_cycle(
     *,
     seed: int | None = None,
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
+    recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS,
 ) -> CycleResult:
     """
     Executa um ciclo de 15 minutos.
@@ -244,15 +256,26 @@ def run_cycle(
         raise ValueError(
             "A partida está no intervalo; chame start_second_half antes do próximo ciclo."
         )
-
+    
     generator = resolve_rng(rng, seed)
+    amount = ensure_finite_non_negative(
+        recovery_control_bonus, "Bônus de recuperação de posse"
+    )
     start = state.clock
 
     # ---- Fase 1: cálculo (não altera `state`) ----
     effective = {tid: team.effective() for tid, team in state.teams.items()}
 
+    applied = state.pending_control_bonus
+    bonus_a = applied.amount if applied and applied.team == "A" else 0.0
+    bonus_b = applied.amount if applied and applied.team == "B" else 0.0
+
     md3 = simulate_md3(
-        effective["A"].control, effective["B"].control, rng=generator
+        effective["A"].control,
+        effective["B"].control,
+        rng=generator,
+        first_md5_bonus_a=bonus_a,
+        first_md5_bonus_b=bonus_b,
     )
     attacker = md3.winner
     defender = other_team(attacker)
@@ -285,12 +308,23 @@ def run_cycle(
         new_phase = MatchPhase.HALFTIME
         new_events.append(MatchEvent(new_clock, MatchEventType.HALFTIME))
 
-    # ---- Fase 2: commit (sem nada que possa falhar) ----
+    # Perda de posse: o adversário recupera a bola e ganha o bônus,
+    # exceto se a partida acabou (não haveria próxima disputa).
+    granted: PendingControlBonus | None = None
+    if (
+        sequence.outcome is AttackOutcome.POSSESSION_LOST
+        and new_phase is not MatchPhase.FINISHED
+        and amount > 0
+    ):
+        granted = PendingControlBonus(defender, amount)
+
+    # ---- Fase 2: commit ----
     if scorer is not None:
         state.score[scorer] += 1
     state.events.extend(new_events)
     state.cycle_index += 1
     state.phase = new_phase
+    state.pending_control_bonus = granted   # consome o antigo e registra o novo
 
     return CycleResult(
         cycle=state.cycle_index,
@@ -300,6 +334,8 @@ def run_cycle(
         attacking_team=attacker,
         attack=sequence,
         scorer=scorer,
+        applied_control_bonus=applied,
+        granted_control_bonus=granted,
     )
 
 
@@ -309,6 +345,8 @@ def play_match(
     *,
     seed: int | None = None,
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
+    recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS,
+
 ) -> list[CycleResult]:
     """Joga a partida até o fim, sem alterações no intervalo."""
     if state.is_finished:
@@ -319,7 +357,7 @@ def play_match(
     while not state.is_finished:
         if state.phase is MatchPhase.HALFTIME:
             start_second_half(state)
-        results.append(run_cycle(state, generator, attack_params=attack_params))
+        results.append(run_cycle(state, generator, attack_params=attack_params, recovery_control_bonus=recovery_control_bonus))
     return results
 
 

@@ -19,7 +19,7 @@ from python_prototype.tests.helpers import (
     make_player,
 )
 
-UPDATE_GOLDEN = 1 # Defina para 1 quando quiser salvar o gabarito
+UPDATE_GOLDEN = 0 # Defina para 1 quando quiser salvar o gabarito
 GOLDEN = Path(__file__).parent / "golden" / "match_seeds.json"
 SEEDS = (0, 1, 7, 42, 2026)
 
