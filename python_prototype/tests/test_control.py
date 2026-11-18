@@ -5,6 +5,8 @@ import pytest
 
 from python_prototype.control import control_win_probability, simulate_control_duel
 
+from python_prototype.tests.helpers import ScriptedRandom
+
 
 def test_equal_control_gives_equal_probability():
     assert control_win_probability(70, 70) == pytest.approx(0.5)
@@ -71,3 +73,8 @@ def test_less_extreme_control_advantage_still_favors_team_a():
     wins = [simulate_control_duel(90, 10, rng=random.Random(s)) for s in range(100)]
     assert wins.count("B") > 0
     assert wins.count("A") > 50
+
+def test_duel_boundary_draw_goes_to_team_b():
+    # p = 0.5. A vitória de A exige sorteio estritamente menor que p.
+    assert simulate_control_duel(50, 50, rng=ScriptedRandom([0.5])) == "B"
+    assert simulate_control_duel(50, 50, rng=ScriptedRandom([0.4999])) == "A"

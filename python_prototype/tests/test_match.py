@@ -25,6 +25,7 @@ from python_prototype.tests.helpers import (
     FORMATION_442,
     POSITIONS_442,
     squad,
+    ScriptedRandom,
 )
 
 
@@ -384,3 +385,80 @@ def test_cycle_runs_when_all_effective_attributes_are_zero():
 
     assert len(results) == CYCLES_PER_MATCH
     assert state.is_finished
+
+@pytest.mark.parametrize("seed", range(20))
+def test_event_log_invariants_for_complete_match(seed):
+    state = new_match()
+    play_match(state, seed=seed)
+    types = [e.type for e in state.events]
+
+    assert types.count(MatchEventType.MD3_RESULT) == CYCLES_PER_MATCH
+    assert types.count(MatchEventType.ATTACK_SEQUENCE) == CYCLES_PER_MATCH
+    assert (
+        types.count(MatchEventType.GOAL) + types.count(MatchEventType.POSSESSION_LOST)
+        == CYCLES_PER_MATCH
+    )
+    for once in (
+        MatchEventType.HALFTIME,
+        MatchEventType.SECOND_HALF_START,
+        MatchEventType.FULL_TIME,
+    ):
+        assert types.count(once) == 1
+    assert (
+        types.index(MatchEventType.HALFTIME)
+        < types.index(MatchEventType.SECOND_HALF_START)
+        < types.index(MatchEventType.FULL_TIME)
+    )
+    assert types[-1] is MatchEventType.FULL_TIME
+    minutes = [e.minute for e in state.events]
+    assert minutes == sorted(minutes)
+
+
+# --- Ciclo completo com RNG roteirizado (times iguais: MD3 e ataque com q = 0.5) ---
+# Sorteios: 6 da MD3 (3 duelos x 2 séries), depois 1 por tentativa de ataque.
+# q = 0.5 => P_G = 0.15, P_C(1) = 0.25 (continuação para sorteio em [0.15, 0.40)).
+
+def test_scripted_cycle_ending_in_goal():
+    state = new_match(70, 70)
+    rng = ScriptedRandom([0.1] * 6 + [0.01])
+
+    result = run_cycle(state, rng)
+
+    assert result.attacking_team == "A"
+    assert result.scorer == "A"
+    assert result.attack.attempts == 1
+    assert state.score == {"A": 1, "B": 0}
+    assert [e.type for e in state.events] == [
+        MatchEventType.MD3_RESULT,
+        MatchEventType.ATTACK_SEQUENCE,
+        MatchEventType.GOAL,
+    ]
+    assert state.events[0].data == {"wins_a": 2, "wins_b": 0}
+    assert rng.remaining == 0
+
+
+def test_scripted_cycle_ending_in_possession_lost():
+    state = new_match(70, 70)
+    rng = ScriptedRandom([0.9] * 6 + [0.99])
+
+    result = run_cycle(state, rng)
+
+    assert result.attacking_team == "B"
+    assert result.scorer is None
+    assert state.score == {"A": 0, "B": 0}
+    assert state.events[0].data == {"wins_a": 0, "wins_b": 2}
+    assert state.events[-1].type is MatchEventType.POSSESSION_LOST
+    assert state.events[-1].team == "B"
+    assert rng.remaining == 0
+
+
+def test_scripted_cycle_with_continuation_then_goal():
+    state = new_match(70, 70)
+    rng = ScriptedRandom([0.1] * 6 + [0.20, 0.01])
+
+    result = run_cycle(state, rng)
+
+    assert result.attack.attempts == 2
+    assert result.scorer == "A"
+    assert state.events[1].data == {"attempts": 2}
+    assert rng.remaining == 0

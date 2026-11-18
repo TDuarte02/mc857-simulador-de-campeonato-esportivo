@@ -1,6 +1,6 @@
 import pytest
 import math
-from dataclasses import asdict
+from dataclasses import fields
 
 from python_prototype.collective_attributes import (
     Player,
@@ -12,13 +12,15 @@ from python_prototype.collective_attributes import (
     calculate_team_attributes,
     formation_distribution,
     POSITION_ALIASES, POSITION_WEIGHTS, POSITION_SECTORS, SECTORS,
-
+    ATTACK_WEIGHTS, CONTROL_WEIGHTS, DEFENSE_WEIGHTS, POSITION_WEIGHTS,
+    FormationBonusConfig,
 )
 
 from python_prototype.tests.helpers import (
     FORMATION_433,
     FORMATION_442,
     POSITIONS_442,
+    POSITIONS_433,
     POSITIONS_532,
     make_lineup,
     make_player,
@@ -49,6 +51,13 @@ CSV_ROW = {
     "mentality_composure": "96", "goalkeeping_reflexes": "8",
 }
 
+WEIGHT_TABLES = {
+    "attack": ATTACK_WEIGHTS,
+    "defense": DEFENSE_WEIGHTS,
+    "control": CONTROL_WEIGHTS,
+}
+PLAYER_ATTRIBUTES = {f.name for f in fields(Player)} - {"name", "pos"}
+
 # --- Helpers ---
 
 def make_lineup(positions, rating: int = 70):
@@ -56,6 +65,166 @@ def make_lineup(positions, rating: int = 70):
 
 def squad(prefix: str, rating: int, positions=POSITIONS_442):
     return [make_player(f"{prefix}{i}", pos, rating) for i, pos in enumerate(positions)]
+
+
+# --- Tabelas de pesos (7 + 3 casos) ---
+
+@pytest.mark.parametrize("table", list(WEIGHT_TABLES.values()), ids=list(WEIGHT_TABLES))
+def test_weight_table_sums_to_one(table):
+    assert sum(table.values()) == pytest.approx(1.0)
+
+
+@pytest.mark.parametrize("table", list(WEIGHT_TABLES.values()), ids=list(WEIGHT_TABLES))
+def test_weight_table_only_references_player_attributes(table):
+    assert set(table) <= PLAYER_ATTRIBUTES
+    assert all(weight > 0 for weight in table.values())
+
+
+def test_position_weights_are_well_formed():
+    for position, weights in POSITION_WEIGHTS.items():
+        assert set(weights) == {"attack", "defense", "control"}, position
+        assert all(value >= 0 for value in weights.values()), position
+        assert sum(weights.values()) == pytest.approx(1.0), position
+
+
+@pytest.mark.parametrize("attribute", ["attack", "defense", "control"])
+def test_every_collective_attribute_has_contributing_positions(attribute):
+    # Sem isso, aggregate_player_scores levantaria "Não há contribuições".
+    assert sum(w[attribute] for w in POSITION_WEIGHTS.values()) > 0
+
+
+# --- Pontuação individual com jogadores heterogêneos (5) ---
+
+def test_shooting_only_affects_attack_score():
+    scores = calculate_player_scores(make_player("S", "ST", 50, shooting=100))
+
+    assert scores.attack == pytest.approx(50 + 50 * ATTACK_WEIGHTS["shooting"])
+    assert scores.defense == pytest.approx(50)
+    assert scores.control == pytest.approx(50)
+
+
+def test_defending_only_affects_defense_score():
+    scores = calculate_player_scores(make_player("D", "CB", 50, defending=100))
+
+    assert scores.defense == pytest.approx(50 + 50 * DEFENSE_WEIGHTS["defending"])
+    assert scores.attack == pytest.approx(50)
+    assert scores.control == pytest.approx(50)
+
+
+def test_goalkeeper_defense_uses_only_goalkeeping_reflexes():
+    scores = calculate_player_scores(
+        make_player("G", "GK", 50, goalkeeping_reflexes=90, defending=100)
+    )
+
+    assert scores.defense == pytest.approx(90.0)
+
+
+def test_outfield_player_ignores_goalkeeping_reflexes():
+    scores = calculate_player_scores(
+        make_player("C", "CB", 50, goalkeeping_reflexes=100)
+    )
+
+    assert (scores.attack, scores.defense, scores.control) == pytest.approx((50, 50, 50))
+
+
+def test_unused_attributes_do_not_affect_scores():
+    base = calculate_player_scores(make_player("X", "CM", 70))
+    changed = calculate_player_scores(
+        make_player(
+            "X", "CM", 70,
+            overall=10, potential=99, power_stamina=10, mentality_penalties=10,
+        )
+    )
+
+    assert changed == base
+
+
+# --- Efeito no time (3) ---
+
+def _team(players):
+    return calculate_team_attributes(players, formation_config=None)
+
+
+def _lineup_with(index: int, **overrides):
+    lineup = make_lineup(POSITIONS_433)
+    lineup[index] = make_player(lineup[index].name, lineup[index].pos, 70, **overrides)
+    return lineup
+
+
+def _as_tuple(team):
+    return (team.attack, team.defense, team.control)
+
+
+def test_striker_shooting_lifts_team_attack_more_than_center_back():
+    base = _team(make_lineup(POSITIONS_433))
+    striker = _team(_lineup_with(9, shooting=100))      # ST
+    center_back = _team(_lineup_with(2, shooting=100))  # CB
+
+    assert striker.attack - base.attack > center_back.attack - base.attack > 0
+    assert striker.defense == pytest.approx(base.defense)
+    assert striker.control == pytest.approx(base.control)
+
+
+def test_goalkeeper_reflexes_lift_team_defense_more_than_center_back_defending():
+    base = _team(make_lineup(POSITIONS_433))
+    goalkeeper = _team(_lineup_with(0, goalkeeping_reflexes=100))
+    center_back = _team(_lineup_with(2, defending=100))
+
+    assert goalkeeper.defense - base.defense > center_back.defense - base.defense > 0
+    assert goalkeeper.attack == pytest.approx(base.attack)
+    assert goalkeeper.control == pytest.approx(base.control)
+
+
+def test_goalkeeper_outfield_attributes_do_not_affect_team():
+    base = _team(make_lineup(POSITIONS_433))
+    changed = _team(
+        _lineup_with(0, shooting=100, passing=100, dribbling=100, defending=100, pace=100)
+    )
+
+    assert _as_tuple(changed) == pytest.approx(_as_tuple(base))
+
+
+# --- Normalização de posições (8 + 3 casos) ---
+
+@pytest.mark.parametrize(
+    "raw, expected",
+    [
+        (" c-b ", "CB"), ("cdm", "DM"), ("r w", "W"), ("Gk", "GK"),
+        (" l-b ", "FB"), ("rwb", "FB"), ("st", "ST"), ("l am", "AM"),
+    ],
+)
+def test_canonical_position_ignores_case_spaces_and_hyphens(raw, expected):
+    assert canonical_position(raw) == expected
+
+
+@pytest.mark.parametrize("raw", ["left-back", "", "XYZ"])
+def test_canonical_position_rejects_unrecognized_names(raw):
+    # "left-back" vira "LEFTBACK", que não está na tabela (só "FULLBACK").
+    with pytest.raises(ValueError, match="Posição desconhecida"):
+        canonical_position(raw)
+
+
+# --- FormationBonusConfig (2) ---
+
+def test_zero_formation_config_applies_no_modifiers():
+    lineup = make_lineup(POSITIONS_532)
+    zero = FormationBonusConfig(
+        defender_attack=0.0, defender_defense=0.0, defender_control=0.0,
+        midfielder_attack=0.0, midfielder_defense=0.0, midfielder_control=0.0,
+        forward_attack=0.0, forward_defense=0.0, forward_control=0.0,
+    )
+
+    assert calculate_team_attributes(lineup, formation_config=zero) == _team(lineup)
+
+
+def test_custom_baseline_makes_other_shape_neutral():
+    lineup = make_lineup(POSITIONS_532)
+    config = FormationBonusConfig(
+        baseline_defenders=5, baseline_midfielders=3, baseline_forwards=2
+    )
+
+    assert calculate_team_attributes(lineup, formation_config=config) == _team(lineup)
+
 
 # --- Player ---
 

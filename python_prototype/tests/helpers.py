@@ -5,6 +5,8 @@ from dataclasses import fields
 
 from python_prototype.collective_attributes import Player
 
+import random
+
 # Posições dos jogadores (uma por jogador) e slots da formação (uma por vaga).
 POSITIONS_433 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "RW", "ST", "LW"]
 POSITIONS_442 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "CM", "ST", "ST"]
@@ -42,3 +44,27 @@ def make_lineup(
 def squad(prefix: str, rating: int, positions: list[str] = POSITIONS_433) -> list[Player]:
     """Escalação com nomes `{prefix}0..10` (padrão 4-3-3)."""
     return make_lineup(positions, rating, prefix)
+
+class ScriptedRandom(random.Random):
+    """
+    RNG que devolve uma sequência fixa de sorteios, na ordem dada.
+
+    `used` conta os sorteios consumidos e `remaining` os que sobraram. Se o
+    código consumir mais do que o roteiro, levanta AssertionError.
+    """
+
+    def __init__(self, draws):
+        super().__init__()
+        self._draws = list(draws)
+        self.used = 0
+
+    def random(self) -> float:
+        if self.used >= len(self._draws):
+            raise AssertionError("ScriptedRandom: sequência de sorteios esgotada.")
+        value = self._draws[self.used]
+        self.used += 1
+        return value
+
+    @property
+    def remaining(self) -> int:
+        return len(self._draws) - self.used

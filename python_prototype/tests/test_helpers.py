@@ -27,3 +27,21 @@ def test_squad_names_and_size():
 
     assert [p.name for p in team] == [f"A{i}" for i in range(11)]
     assert len({p.name for p in make_lineup(["GK"] * 3)}) == 3
+
+from python_prototype.tests.helpers import ScriptedRandom
+
+
+def test_scripted_random_returns_draws_in_order_and_tracks_usage():
+    rng = ScriptedRandom([0.1, 0.2])
+
+    assert (rng.random(), rng.random()) == (0.1, 0.2)
+    assert rng.used == 2
+    assert rng.remaining == 0
+
+
+def test_scripted_random_fails_loudly_when_exhausted():
+    rng = ScriptedRandom([0.1])
+    rng.random()
+
+    with pytest.raises(AssertionError, match="esgotada"):
+        rng.random()
