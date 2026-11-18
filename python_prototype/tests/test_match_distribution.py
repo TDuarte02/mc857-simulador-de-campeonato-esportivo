@@ -10,30 +10,13 @@ from functools import lru_cache
 
 from python_prototype.collective_attributes import Player
 from python_prototype.match import create_match, play_match
+from python_prototype.tests.helpers import FORMATION_433, squad
 
 N_MATCHES = 4000
-POSITIONS = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "RW", "ST", "LW"]
-FORMATION_433 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
-
 
 # ------------------------------------------------------------
 # Auxiliares
 # ------------------------------------------------------------
-
-def make_player(name: str, pos: str, rating: int) -> Player:
-    return Player(
-        name=name, pos=pos, overall=rating, potential=rating, pace=rating,
-        shooting=rating, passing=rating, dribbling=rating, defending=rating,
-        physic=rating, attacking_heading_accuracy=rating, movement_agility=rating,
-        movement_reactions=rating, movement_balance=rating, power_jumping=rating,
-        power_stamina=rating, mentality_aggression=rating,
-        mentality_penalties=rating, mentality_composure=rating,
-        goalkeeping_reflexes=rating,
-    )
-
-
-def squad(prefix: str, rating: int):
-    return [make_player(f"{prefix}{i}", pos, rating) for i, pos in enumerate(POSITIONS)]
 
 
 @lru_cache(maxsize=None)

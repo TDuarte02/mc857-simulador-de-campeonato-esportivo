@@ -142,9 +142,22 @@ def test_invalid_inputs_raise_error():
     with pytest.raises(ValueError):
         calculate_attack_probabilities(50, -1)
     with pytest.raises(ValueError):
-        calculate_attack_probabilities(0, 0)
-    with pytest.raises(ValueError):
         calculate_attack_probabilities(50, 50, attempt=0)
+
+def test_zero_attack_and_zero_defense_gives_even_quality():
+    p = calculate_attack_probabilities(0, 0, attempt=1)
+
+    assert p.goal == pytest.approx(0.30 * 0.5)
+    assert p.continuation == pytest.approx(0.50 * 0.5)
+    assert p.loss == pytest.approx(1 - 0.15 - 0.25)
+
+
+def test_zero_vs_zero_sequence_terminates_and_is_reproducible():
+    first = simulate_attack_sequence(0, 0, seed=5)
+    second = simulate_attack_sequence(0, 0, seed=5)
+
+    assert first == second
+    assert first.outcome in (AttackOutcome.GOAL, AttackOutcome.POSSESSION_LOST)
 
 
 # ------------------------------------------------------------

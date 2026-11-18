@@ -1,10 +1,13 @@
 from __future__ import annotations
 
-import random
-from collections import Counter
-from collections.abc import Sequence
-from dataclasses import dataclass
+from collections.abc import Mapping, Sequence
+from dataclasses import dataclass, fields
 
+from python_prototype.common import ATTRIBUTE_MAX, clamp
+
+# Tolerância para erro de ponto flutuante nas somas ponderadas
+# (p. ex. 100.00000000000001 com todos os atributos em 100).
+SCORE_TOLERANCE = 1e-9
 
 @dataclass(frozen=True)
 class Player:
@@ -29,50 +32,49 @@ class Player:
     mentality_composure: int
     goalkeeping_reflexes: int
 
+    def __post_init__(self) -> None:
+        """Exige todos os atributos numéricos finitos e em [0, ATTRIBUTE_MAX]."""
+        for f in fields(self):
+            if f.name in ("name", "pos"):
+                continue
+            value = getattr(self, f.name)
+            valid = (
+                isinstance(value, (int, float))
+                and not isinstance(value, bool)
+                and 0 <= value <= ATTRIBUTE_MAX  # NaN falha aqui
+            )
+            if not valid:
+                raise ValueError(
+                    f"Atributo {f.name!r} de {self.name!r} fora da escala "
+                    f"[0, {ATTRIBUTE_MAX:g}]: {value!r}"
+                )
+
     @classmethod
-    def from_csv_row(cls, name: str, pos: str, row: dict[str, str]) -> "Player":
-        values = {key: row[key] for key in (
-            "potential",
-            "pace",
-            "shooting",
-            "passing",
-            "dribbling",
-            "defending",
-            "physic",
-            "attacking_heading_accuracy",
-            "movement_agility",
-            "movement_reactions",
-            "movement_balance",
-            "power_jumping",
-            "power_stamina",
-            "mentality_aggression",
-            "mentality_penalties",
-            "mentality_composure",
-            "goalkeeping_reflexes",
-        )}
-        overall_value = row.get("overall", row.get("potential", values["potential"]))
-        return cls(
-            name=name,
-            pos=pos,
-            overall=int(overall_value),
-            potential=int(values["potential"]),
-            pace=float(values["pace"]),
-            shooting=float(values["shooting"]),
-            passing=float(values["passing"]),
-            dribbling=float(values["dribbling"]),
-            defending=float(values["defending"]),
-            physic=float(values["physic"]),
-            attacking_heading_accuracy=int(values["attacking_heading_accuracy"]),
-            movement_agility=int(values["movement_agility"]),
-            movement_reactions=int(values["movement_reactions"]),
-            movement_balance=int(values["movement_balance"]),
-            power_jumping=int(values["power_jumping"]),
-            power_stamina=int(values["power_stamina"]),
-            mentality_aggression=int(values["mentality_aggression"]),
-            mentality_penalties=int(values["mentality_penalties"]),
-            mentality_composure=int(values["mentality_composure"]),
-            goalkeeping_reflexes=int(values["goalkeeping_reflexes"]),
-        )
+    def from_csv_row(cls, name: str, pos: str, row: Mapping[str, str]) -> "Player":
+        """
+        Cria um Player a partir de uma linha de CSV (valores em texto).
+
+        Todas as colunas dos atributos são obrigatórias, inclusive `overall`.
+        Levanta ValueError se faltar coluna ou se um valor não for numérico
+        ou estiver fora da escala.
+        """
+        numeric = [f for f in fields(cls) if f.name not in ("name", "pos")]
+
+        missing = [f.name for f in numeric if f.name not in row]
+        if missing:
+            raise ValueError(f"Linha de {name!r} sem as colunas: {missing}")
+
+        values: dict[str, float] = {}
+        for f in numeric:
+            convert = float if f.type == "float" else int
+            try:
+                values[f.name] = convert(row[f.name])
+            except (TypeError, ValueError):
+                raise ValueError(
+                    f"Valor inválido na coluna {f.name!r} de {name!r}: {row[f.name]!r}"
+                ) from None
+
+        return cls(name=name, pos=pos, **values)
 
 # ============================================================
 # Configuração dos pesos dos atributos individuais
@@ -167,6 +169,8 @@ POSITION_ALIASES = {
 
     "CAM": "AM",
     "AM": "AM",
+    "LAM": "AM",
+    "RAM": "AM",
 
     "LW": "W",
     "RW": "W",
@@ -185,15 +189,19 @@ POSITION_ALIASES = {
 }
 
 
+# Setores do campo. Taxonomia única, usada tanto para validar a escalação
+# quanto para calcular os modificadores de formação.
+SECTORS = ("GK", "DEF", "MID", "FW")
+
 POSITION_SECTORS = {
-    "GK": "goalkeeper",
-    "CB": "defense",
-    "FB": "defense",
-    "DM": "midfield",
-    "CM": "midfield",
-    "AM": "midfield",
-    "W": "attack",
-    "ST": "attack",
+    "GK": "GK",
+    "CB": "DEF",
+    "FB": "DEF",
+    "DM": "MID",
+    "CM": "MID",
+    "AM": "MID",
+    "W": "FW",
+    "ST": "FW",
 }
 
 
@@ -244,12 +252,56 @@ class FormationBonusConfig:
 
 DEFAULT_FORMATION_BONUS = FormationBonusConfig()
 
+# ============================================================
+# Validação da formação
+# ============================================================
+def validate_lineup_matches_formation(
+    players: Sequence[Player],
+    formation: Sequence[str],
+) -> None:
+    """
+    Garante que a escalação é coerente com a formação.
+
+    Os pesos posicionais vêm de `player.pos`, mas os bônus de formação vêm
+    dos slots de `formation`. Para que as duas fontes não divirjam:
+
+    - a formação deve conter exatamente um goleiro;
+    - a contagem de jogadores por setor (GK/DEF/MID/FW) deve ser igual à
+      contagem de slots da formação.
+
+    A comparação é por setor, não por slot: um jogador "RB" num slot "CB"
+    é aceito (ambos são defesa), pois os modificadores de formação só
+    dependem da contagem por setor.
+    """
+    formation_counts = formation_distribution(formation)
+
+    if formation_counts["GK"] != 1:
+        raise ValueError(
+            "A formação deve conter exatamente um goleiro; "
+            f"encontrado: {formation_counts['GK']}"
+        )
+
+    lineup_counts = formation_distribution([player.pos for player in players])
+
+    if lineup_counts != formation_counts:
+        raise ValueError(
+            "A escalação não corresponde à formação: "
+            f"jogadores {_describe_counts(lineup_counts)}, "
+            f"formação {_describe_counts(formation_counts)}."
+        )
+
+
+def _describe_counts(counts: dict[str, int]) -> str:
+    return (
+        f"GK={counts['GK']} DEF={counts['DEF']} "
+        f"MID={counts['MID']} FW={counts['FW']}"
+    )
 
 # ============================================================
 # Cálculo das pontuações individuais
 # ============================================================
 
-def weighted_score(player, weights: dict[str, float]) -> float:
+def weighted_score(player: Player, weights: Mapping[str, float]) -> float:
     """Calcula uma média ponderada dos atributos de um jogador."""
     return sum(
         getattr(player, attribute) * weight
@@ -266,42 +318,42 @@ def canonical_position(pos: str) -> str:
         raise ValueError(f"Posição desconhecida: {pos!r}") from None
 
 
-def calculate_player_scores(player) -> PlayerScores:
+def calculate_player_scores(player: Player) -> PlayerScores:
     """
     Calcula as pontuações individuais de Ataque, Defesa e Controle.
 
     Potential, overall, power_stamina e mentality_penalties
     não entram diretamente nos atributos coletivos.
+
+    Como os atributos do Player são validados na construção e cada
+    conjunto de pesos soma 1, o resultado cabe em [0, ATTRIBUTE_MAX].
+    A checagem abaixo é defensiva (pesos mal configurados) e tolera
+    erro de ponto flutuante; o valor devolvido é limitado à escala.
     """
     position = canonical_position(player.pos)
 
-    attack = weighted_score(player, ATTACK_WEIGHTS)
-    control = weighted_score(player, CONTROL_WEIGHTS)
+    raw = {
+        "attack": weighted_score(player, ATTACK_WEIGHTS),
+        "control": weighted_score(player, CONTROL_WEIGHTS),
+        # O dataset só tem um atributo específico de goleiro.
+        "defense": (
+            float(player.goalkeeping_reflexes)
+            if position == "GK"
+            else weighted_score(player, DEFENSE_WEIGHTS)
+        ),
+    }
 
-    if position == "GK":
-        # O dataset disponível possui apenas um atributo específico
-        # de goleiro: goalkeeping_reflexes.
-        defense = float(player.goalkeeping_reflexes)
-    else:
-        defense = weighted_score(player, DEFENSE_WEIGHTS)
-
-    scores = PlayerScores(
-        attack=attack,
-        defense=defense,
-        control=control,
-    )
-
-    for attribute, value in (
-        ("attack", scores.attack),
-        ("defense", scores.defense),
-        ("control", scores.control),
-    ):
-        if not 0 <= value <= 100:
+    for attribute, value in raw.items():
+        if not -SCORE_TOLERANCE <= value <= ATTRIBUTE_MAX + SCORE_TOLERANCE:
             raise ValueError(
                 f"Pontuação {attribute} inválida para {player.name}: {value}"
             )
 
-    return scores
+    return PlayerScores(
+        attack=clamp(raw["attack"]),
+        defense=clamp(raw["defense"]),
+        control=clamp(raw["control"]),
+    )
 
 
 # ============================================================
@@ -309,7 +361,7 @@ def calculate_player_scores(player) -> PlayerScores:
 # ============================================================
 
 def aggregate_player_scores(
-    players: Sequence,
+    players: Sequence[Player],
 ) -> TeamAttributes:
     """
     Agrega as pontuações individuais usando os pesos posicionais.
@@ -356,171 +408,156 @@ def aggregate_player_scores(
 
 
 # ============================================================
+# Setores e validação da escalação
+# ============================================================
+
+def formation_distribution(formation: Sequence[str]) -> dict[str, int]:
+    """Conta os slots (ou posições) por setor: GK, DEF, MID e FW."""
+    counts = dict.fromkeys(SECTORS, 0)
+
+    for slot in formation:
+        counts[POSITION_SECTORS[canonical_position(slot)]] += 1
+
+    return counts
+
+
+def _describe_counts(counts: dict[str, int]) -> str:
+    return (
+        f"GK={counts['GK']} DEF={counts['DEF']} "
+        f"MID={counts['MID']} FW={counts['FW']}"
+    )
+
+
+def validate_lineup_matches_formation(
+    players: Sequence[Player],
+    formation: Sequence[str],
+) -> None:
+    """
+    Garante que a escalação é coerente com a formação.
+
+    - a formação deve conter exatamente um goleiro;
+    - a contagem de jogadores por setor deve ser igual à contagem de slots.
+
+    A comparação é por setor, não por slot: um "RB" num slot "CB" é aceito,
+    pois os modificadores de formação só dependem da contagem por setor.
+    """
+    formation_counts = formation_distribution(formation)
+
+    if formation_counts["GK"] != 1:
+        raise ValueError(
+            "A formação deve conter exatamente um goleiro; "
+            f"encontrado: {formation_counts['GK']}"
+        )
+
+    lineup_counts = formation_distribution([player.pos for player in players])
+
+    if lineup_counts != formation_counts:
+        raise ValueError(
+            "A escalação não corresponde à formação: "
+            f"jogadores {_describe_counts(lineup_counts)}, "
+            f"formação {_describe_counts(formation_counts)}."
+        )
+
+
+# ============================================================
 # Bônus e penalidades da formação
 # ============================================================
 
-def count_formation_sectors(players: Sequence) -> dict[str, int]:
-    """Conta os jogadores por setor, excluindo o goleiro."""
-    counts = {
-        "goalkeeper": 0,
-        "defense": 0,
-        "midfield": 0,
-        "attack": 0,
+
+def _formation_deltas(
+    formation: Sequence[str],
+    config: FormationBonusConfig,
+) -> dict[str, float]:
+    """Modificadores aditivos de Ataque, Defesa e Controle da formação."""
+    counts = formation_distribution(formation)
+
+    defender_delta = counts["DEF"] - config.baseline_defenders
+    midfielder_delta = counts["MID"] - config.baseline_midfielders
+    forward_delta = counts["FW"] - config.baseline_forwards
+
+    return {
+        "attack": (
+            defender_delta * config.defender_attack
+            + midfielder_delta * config.midfielder_attack
+            + forward_delta * config.forward_attack
+        ),
+        "defense": (
+            defender_delta * config.defender_defense
+            + midfielder_delta * config.midfielder_defense
+            + forward_delta * config.forward_defense
+        ),
+        "control": (
+            defender_delta * config.defender_control
+            + midfielder_delta * config.midfielder_control
+            + forward_delta * config.forward_control
+        ),
     }
-
-    for player in players:
-        position = canonical_position(player.pos)
-        sector = POSITION_SECTORS[position]
-        counts[sector] += 1
-
-    return counts
 
 
 def apply_formation_modifiers(
     attributes: TeamAttributes,
-    players: Sequence,
+    formation: Sequence[str],
     config: FormationBonusConfig = DEFAULT_FORMATION_BONUS,
 ) -> TeamAttributes:
     """
-    Aplica bônus e penalidades relativos à formação de referência.
+    Aplica bônus e penalidades relativos à formação de referência (4-3-3).
 
-    Os modificadores são aditivos e limitados à escala [0, 100].
+    `formation` é a lista de slots (ou posições) dos 11 titulares.
+    Os modificadores são aditivos e o resultado é limitado a [0, 100].
     """
-    counts = count_formation_sectors(players)
-
-    defender_delta = counts["defense"] - config.baseline_defenders
-    midfielder_delta = counts["midfield"] - config.baseline_midfielders
-    forward_delta = counts["attack"] - config.baseline_forwards
-
-    attack_modifier = (
-        defender_delta * config.defender_attack
-        + midfielder_delta * config.midfielder_attack
-        + forward_delta * config.forward_attack
-    )
-
-    defense_modifier = (
-        defender_delta * config.defender_defense
-        + midfielder_delta * config.midfielder_defense
-        + forward_delta * config.forward_defense
-    )
-
-    control_modifier = (
-        defender_delta * config.defender_control
-        + midfielder_delta * config.midfielder_control
-        + forward_delta * config.forward_control
-    )
+    deltas = _formation_deltas(formation, config)
 
     return TeamAttributes(
-        attack=max(0.0, min(100.0, attributes.attack + attack_modifier)),
-        defense=max(0.0, min(100.0, attributes.defense + defense_modifier)),
-        control=max(0.0, min(100.0, attributes.control + control_modifier)),
+        attack=clamp(attributes.attack + deltas["attack"]),
+        defense=clamp(attributes.defense + deltas["defense"]),
+        control=clamp(attributes.control + deltas["control"]),
     )
 
 
 # ============================================================
-# ============================================================
-# Agregação por formação (compatível com testes e protótipo)
-# ============================================================
-
-def formation_distribution(formation: Sequence[str]) -> dict[str, int]:
-    """Conta jogadores por setor do campo conforme a formação."""
-    counts = {"GK": 0, "DEF": 0, "MID": 0, "FW": 0}
-
-    for slot in formation:
-        normalized = canonical_position(slot)
-        if normalized == "GK":
-            counts["GK"] += 1
-        elif normalized in {"CB", "FB"}:
-            counts["DEF"] += 1
-        elif normalized in {"DM", "CM", "AM"}:
-            counts["MID"] += 1
-        else:
-            counts["FW"] += 1
-
-    return counts
-
-
-def collective_attributes(
-    players: Sequence[Player],
-    formation: Sequence[str],
-) -> dict[str, float]:
-    """Calcula o perfil coletivo do time para uma formação específica."""
-    if len(players) != 11:
-        raise ValueError(f"Collective attributes require exactly 11 starters.")
-    if len(formation) != 11:
-        raise ValueError("A valid tactical shape must contain 11 slots.")
-    if len({player.name for player in players}) != len(players):
-        raise ValueError("A lineup cannot contain duplicate players.")
-
-    base = aggregate_player_scores(players)
-    counts = formation_distribution(formation)
-
-    defender_delta = counts["DEF"] - DEFAULT_FORMATION_BONUS.baseline_defenders
-    midfielder_delta = counts["MID"] - DEFAULT_FORMATION_BONUS.baseline_midfielders
-    forward_delta = counts["FW"] - DEFAULT_FORMATION_BONUS.baseline_forwards
-
-    attack_modifier = (
-        defender_delta * DEFAULT_FORMATION_BONUS.defender_attack
-        + midfielder_delta * DEFAULT_FORMATION_BONUS.midfielder_attack
-        + forward_delta * DEFAULT_FORMATION_BONUS.forward_attack
-    )
-    defense_modifier = (
-        defender_delta * DEFAULT_FORMATION_BONUS.defender_defense
-        + midfielder_delta * DEFAULT_FORMATION_BONUS.midfielder_defense
-        + forward_delta * DEFAULT_FORMATION_BONUS.forward_defense
-    )
-    control_modifier = (
-        defender_delta * DEFAULT_FORMATION_BONUS.defender_control
-        + midfielder_delta * DEFAULT_FORMATION_BONUS.midfielder_control
-        + forward_delta * DEFAULT_FORMATION_BONUS.forward_control
-    )
-
-    return {
-        "attack": max(0.0, min(100.0, base.attack + attack_modifier)),
-        "defense": max(0.0, min(100.0, base.defense + defense_modifier)),
-        "control": max(0.0, min(100.0, base.control + control_modifier)),
-    }
-
-
 # API principal
 # ============================================================
 
 def calculate_team_attributes(
-    players: Sequence,
+    players: Sequence[Player],
+    formation: Sequence[str] | None = None,
+    *,
     formation_config: FormationBonusConfig | None = DEFAULT_FORMATION_BONUS,
 ) -> TeamAttributes:
     """
     Calcula os atributos coletivos de um time titular.
 
-    Por padrão, aplica os bônus e penalidades da formação.
-    Passe formation_config=None para obter apenas os atributos-base.
+    - `formation`: slots táticos dos 11 titulares. Se omitida, é derivada
+      das posições dos próprios jogadores.
+    - `formation_config`: bônus de formação. Com `None`, devolve apenas
+      os atributos-base (sem modificadores).
+
+    Levanta ValueError se não houver 11 jogadores, se a formação não tiver
+    11 slots, se houver jogadores duplicados ou se a escalação não for
+    coerente com a formação (ver `validate_lineup_matches_formation`).
     """
     if len(players) != 11:
         raise ValueError(
-            f"O time deve conter exatamente 11 jogadores; recebido: {len(players)}"
+            f"A escalação deve conter exatamente 11 titulares; recebido: {len(players)}"
         )
 
-    goalkeeper_count = sum(
-        canonical_position(player.pos) == "GK"
-        for player in players
-    )
+    slots = [player.pos for player in players] if formation is None else list(formation)
 
-    if goalkeeper_count != 1:
+    if len(slots) != 11:
         raise ValueError(
-            f"O time deve conter exatamente um goleiro; encontrado: "
-            f"{goalkeeper_count}"
+            f"A formação deve conter exatamente 11 slots; recebido: {len(slots)}"
         )
+    if len({player.name for player in players}) != len(players):
+        raise ValueError("A escalação não pode conter jogadores duplicados.")
 
-    base_attributes = aggregate_player_scores(players)
+    validate_lineup_matches_formation(players, slots)
+
+    base = aggregate_player_scores(players)
 
     if formation_config is None:
-        return base_attributes
+        return base
 
-    return apply_formation_modifiers(
-        base_attributes,
-        players,
-        formation_config,
-    )
+    return apply_formation_modifiers(base, slots, formation_config)
 
 
 

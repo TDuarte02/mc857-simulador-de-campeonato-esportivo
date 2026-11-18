@@ -1,9 +1,19 @@
 from __future__ import annotations
 
+import math
 import random
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Sequence
+from collections.abc import Mapping, Sequence
+from typing import Any
+
+from python_prototype.common import (
+    TEAM_IDS,
+    TeamId,
+    clamp,
+    other_team,
+    resolve_rng,
+)
 
 from python_prototype.attack import (
     AttackOutcome,
@@ -12,11 +22,13 @@ from python_prototype.attack import (
     DEFAULT_ATTACK_PARAMETERS,
     simulate_attack_sequence,
 )
+
 from python_prototype.collective_attributes import (
     Player,
     TeamAttributes,
-    collective_attributes,
+    calculate_team_attributes,
 )
+
 from python_prototype.dispute import MD3Result, simulate_md3
 
 # ============================================================
@@ -25,15 +37,10 @@ from python_prototype.dispute import MD3Result, simulate_md3
 
 CYCLE_MINUTES = 15
 CYCLES_PER_MATCH = 6
-HALFTIME_MINUTE = 45
-FULL_TIME_MINUTE = CYCLE_MINUTES * CYCLES_PER_MATCH  # 90
+HALFTIME_MINUTE = (CYCLES_PER_MATCH // 2) * CYCLE_MINUTES   # 45
+FULL_TIME_MINUTE = CYCLES_PER_MATCH * CYCLE_MINUTES         # 90
 
-TEAM_IDS = ("A", "B")
-
-
-def _other(team_id: str) -> str:
-    return "B" if team_id == "A" else "A"
-
+MODIFIER_KEYS = ("attack", "defense", "control")
 
 # ============================================================
 # Estruturas
@@ -64,26 +71,40 @@ class MatchEvent:
 
     `minute` é o minuto simulado de INÍCIO do ciclo em que o evento
     ocorreu (os eventos de intervalo e fim de jogo usam 45 e 90).
+
+    `data` guarda os dados estruturados do evento:
+    - MD3_RESULT: wins_a, wins_b
+    - ATTACK_SEQUENCE: attempts
+    - demais tipos: vazio
     """
 
     minute: int
     type: MatchEventType
-    team: str | None = None
-    detail: str = ""
+    team: TeamId | None = None
+    data: Mapping[str, Any] = field(default_factory=dict)
+
+    @property
+    def detail(self) -> str:
+        """Descrição textual, derivada de `data` (para exibição)."""
+        if self.type is MatchEventType.MD3_RESULT:
+            return f"MD3 {self.data['wins_a']}x{self.data['wins_b']}"
+        if self.type is MatchEventType.ATTACK_SEQUENCE:
+            return f"{self.data['attempts']} tentativa(s)"
+        return ""
 
 
 @dataclass
 class TeamState:
     """Time em campo: escalação, formação e atributos coletivos."""
 
-    team_id: str
+    team_id: TeamId
     players: tuple[Player, ...]
     formation: tuple[str, ...]
     base: TeamAttributes
     # Ajustes aditivos temporários (efeitos). Nenhum é aplicado por padrão:
     # os efeitos pertinentes devem ser registrados explicitamente aqui.
     modifiers: dict[str, float] = field(
-        default_factory=lambda: {"attack": 0.0, "defense": 0.0, "control": 0.0}
+        default_factory=lambda: dict.fromkeys(MODIFIER_KEYS, 0.0)
     )
 
     @classmethod
@@ -92,15 +113,28 @@ class TeamState:
     ) -> "TeamState":
         if team_id not in TEAM_IDS:
             raise ValueError(f"team_id deve ser 'A' ou 'B'; recebido: {team_id!r}")
-        base = _to_team_attributes(collective_attributes(players, formation))
+        base = calculate_team_attributes(players, formation)
         return cls(team_id, tuple(players), tuple(formation), base)
+
+    def _validate_modifiers(self) -> None:
+        keys = set(self.modifiers)
+        unknown = keys - set(MODIFIER_KEYS)
+        missing = set(MODIFIER_KEYS) - keys
+        if unknown or missing:
+            raise ValueError(
+                f"Modificadores inválidos para o time {self.team_id}: "
+                f"desconhecidos={sorted(unknown)}, ausentes={sorted(missing)}."
+            )
+        for key, value in self.modifiers.items():
+            if not math.isfinite(value):
+                raise ValueError(
+                    f"O modificador {key!r} do time {self.team_id} deve ser "
+                    f"finito; recebido: {value!r}"
+                )
 
     def effective(self) -> TeamAttributes:
         """Atributos efetivos do ciclo: base + modificadores, em [0, 100]."""
-
-        def clamp(value: float) -> float:
-            return max(0.0, min(100.0, value))
-
+        self._validate_modifiers()
         return TeamAttributes(
             attack=clamp(self.base.attack + self.modifiers["attack"]),
             defense=clamp(self.base.defense + self.modifiers["defense"]),
@@ -108,25 +142,22 @@ class TeamState:
         )
 
 
-def _to_team_attributes(values: dict[str, float]) -> TeamAttributes:
-    return TeamAttributes(
-        attack=values["attack"], defense=values["defense"], control=values["control"]
-    )
-
-
 @dataclass
 class MatchState:
-    teams: dict[str, TeamState]
-    clock: int = 0
+    teams: dict[TeamId, TeamState]
     cycle_index: int = 0  # ciclos já concluídos
     phase: MatchPhase = MatchPhase.FIRST_HALF
-    score: dict[str, int] = field(default_factory=lambda: {"A": 0, "B": 0})
+    score: dict[TeamId, int] = field(default_factory=lambda: {"A": 0, "B": 0})
     events: list[MatchEvent] = field(default_factory=list)
+
+    @property
+    def clock(self) -> int:
+        """Minuto simulado atual (derivado de `cycle_index`)."""
+        return self.cycle_index * CYCLE_MINUTES
 
     @property
     def is_finished(self) -> bool:
         return self.phase is MatchPhase.FINISHED
-
 
 @dataclass(frozen=True)
 class CycleResult:
@@ -134,9 +165,9 @@ class CycleResult:
     start_minute: int
     end_minute: int
     md3: MD3Result
-    attacking_team: str
+    attacking_team: TeamId
     attack: AttackSequenceResult
-    scorer: str | None  # "A", "B" ou None
+    scorer: TeamId | None  # "A", "B" ou None
 
     @property
     def is_goal(self) -> bool:
@@ -163,7 +194,7 @@ def create_match(
 
 def change_lineup(
     state: MatchState,
-    team_id: str,
+    team_id: TeamId,
     players: Sequence[Player],
     formation: Sequence[str],
 ) -> None:
@@ -201,12 +232,12 @@ def run_cycle(
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
 ) -> CycleResult:
     """
-    Executa um ciclo de 15 minutos:
-    atributos efetivos -> MD3 -> sequência ofensiva -> registro
-    -> atualização de placar/fase -> avanço do relógio.
+    Executa um ciclo de 15 minutos.
+
+    O ciclo é atômico: toda a simulação (atributos efetivos -> MD3 ->
+    sequência ofensiva) acontece antes de qualquer alteração em `state`.
+    Se algo falhar na simulação, o estado permanece intacto.
     """
-    if rng is not None and seed is not None:
-        raise ValueError("Informe rng ou seed, não ambos.")
     if state.is_finished:
         raise ValueError("A partida já foi encerrada.")
     if state.phase is MatchPhase.HALFTIME:
@@ -214,69 +245,57 @@ def run_cycle(
             "A partida está no intervalo; chame start_second_half antes do próximo ciclo."
         )
 
-    generator = rng if rng is not None else random.Random(seed)
+    generator = resolve_rng(rng, seed)
     start = state.clock
 
-    # 1) Atributos efetivos
+    # ---- Fase 1: cálculo (não altera `state`) ----
     effective = {tid: team.effective() for tid, team in state.teams.items()}
 
-    # 2) MD3: o vencedor ataca
     md3 = simulate_md3(
         effective["A"].control, effective["B"].control, rng=generator
     )
     attacker = md3.winner
-    defender = _other(attacker)
-    state.events.append(
-        MatchEvent(
-            start,
-            MatchEventType.MD3_RESULT,
-            attacker,
-            f"MD3 {md3.wins_a}x{md3.wins_b}",
-        )
-    )
+    defender = other_team(attacker)
 
-    # 3) Sequência ofensiva
     sequence = simulate_attack_sequence(
         effective[attacker].attack,
         effective[defender].defense,
         params=attack_params,
         rng=generator,
     )
-    state.events.append(
-        MatchEvent(
-            start,
-            MatchEventType.ATTACK_SEQUENCE,
-            attacker,
-            f"{sequence.attempts} tentativa(s)",
-        )
-    )
 
-    # 4) Registro e placar (um único incremento por gol)
-    scorer: str | None = None
-    if sequence.outcome is AttackOutcome.GOAL:
-        scorer = attacker
+    scorer: TeamId | None = attacker if sequence.outcome is AttackOutcome.GOAL else None
+
+    new_events = [
+        MatchEvent(start, MatchEventType.MD3_RESULT, attacker,
+                   {"wins_a": md3.wins_a, "wins_b": md3.wins_b}),
+        MatchEvent(start, MatchEventType.ATTACK_SEQUENCE, attacker,
+                   {"attempts": sequence.attempts}),
+        MatchEvent(start, MatchEventType.GOAL, scorer)
+        if scorer is not None
+        else MatchEvent(start, MatchEventType.POSSESSION_LOST, attacker),
+    ]
+
+    new_clock = start + CYCLE_MINUTES
+    new_phase = state.phase
+    if new_clock >= FULL_TIME_MINUTE:
+        new_phase = MatchPhase.FINISHED
+        new_events.append(MatchEvent(new_clock, MatchEventType.FULL_TIME))
+    elif new_clock == HALFTIME_MINUTE:
+        new_phase = MatchPhase.HALFTIME
+        new_events.append(MatchEvent(new_clock, MatchEventType.HALFTIME))
+
+    # ---- Fase 2: commit (sem nada que possa falhar) ----
+    if scorer is not None:
         state.score[scorer] += 1
-        state.events.append(MatchEvent(start, MatchEventType.GOAL, scorer))
-    else:
-        state.events.append(
-            MatchEvent(start, MatchEventType.POSSESSION_LOST, attacker)
-        )
-
-    # 5) Relógio e fase
-    state.clock += CYCLE_MINUTES
+    state.events.extend(new_events)
     state.cycle_index += 1
-
-    if state.clock >= FULL_TIME_MINUTE:
-        state.phase = MatchPhase.FINISHED
-        state.events.append(MatchEvent(state.clock, MatchEventType.FULL_TIME))
-    elif state.clock == HALFTIME_MINUTE:
-        state.phase = MatchPhase.HALFTIME
-        state.events.append(MatchEvent(state.clock, MatchEventType.HALFTIME))
+    state.phase = new_phase
 
     return CycleResult(
         cycle=state.cycle_index,
         start_minute=start,
-        end_minute=state.clock,
+        end_minute=new_clock,
         md3=md3,
         attacking_team=attacker,
         attack=sequence,
@@ -292,10 +311,10 @@ def play_match(
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
 ) -> list[CycleResult]:
     """Joga a partida até o fim, sem alterações no intervalo."""
-    if rng is not None and seed is not None:
-        raise ValueError("Informe rng ou seed, não ambos.")
-    generator = rng if rng is not None else random.Random(seed)
+    if state.is_finished:
+        raise ValueError("A partida já foi encerrada.")
 
+    generator = resolve_rng(rng, seed)
     results: list[CycleResult] = []
     while not state.is_finished:
         if state.phase is MatchPhase.HALFTIME:

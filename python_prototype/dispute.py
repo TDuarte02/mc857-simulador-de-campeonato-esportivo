@@ -4,20 +4,21 @@ from __future__ import annotations
 import random
 from dataclasses import dataclass
 
+from python_prototype.common import TeamId, resolve_rng
 from python_prototype.control import simulate_control_duel
 
 
 @dataclass(frozen=True)
 class MD5Result:
-    winner: str
+    winner: TeamId
     wins_a: int
     wins_b: int
-    duels: tuple[str, ...]
+    duels: tuple[TeamId, ...]
 
 
 @dataclass(frozen=True)
 class MD3Result:
-    winner: str
+    winner: TeamId
     wins_a: int
     wins_b: int
     series: tuple[MD5Result, ...]
@@ -35,10 +36,7 @@ def simulate_md5(
 
     A série termina quando um time alcança três vitórias.
     """
-    if rng is not None and seed is not None:
-        raise ValueError("Informe rng ou seed, não ambos.")
-
-    random_generator = rng if rng is not None else random.Random(seed)
+    random_generator = resolve_rng(rng, seed)
 
     wins = {"A": 0, "B": 0}
     duels = []
@@ -76,10 +74,7 @@ def simulate_md3(
     A disputa termina quando um time vence duas séries MD5.
     O vencedor da MD3 recebe o direito de iniciar o ataque.
     """
-    if rng is not None and seed is not None:
-        raise ValueError("Informe rng ou seed, não ambos.")
-
-    random_generator = rng if rng is not None else random.Random(seed)
+    random_generator = resolve_rng(rng, seed)
 
     wins = {"A": 0, "B": 0}
     series = []
@@ -105,20 +100,10 @@ def simulate_md3(
 
 if __name__ == "__main__":
     # Exemplo de uso
-    result = simulate_md3(
-    control_a=75,
-    control_b=65,
-    seed=42,
-    )
+    result = simulate_md3(control_a=75, control_b=65, seed=42)
 
     print(f"Vencedor da MD3: {result.winner}")
     print(f"Placar: {result.wins_a} x {result.wins_b}")
 
     for i, md5 in enumerate(result.series, start=1):
-        print(
-            f"MD5 {i}: {md5.winner} "
-            f"({md5.wins_a} x {md5.wins_b})"
-        )
-
-    # O vencedor é o único autorizado a iniciar o ataque.
-    attacking_team = result.winner
+        print(f"MD5 {i}: {md5.winner} ({md5.wins_a} x {md5.wins_b})")
