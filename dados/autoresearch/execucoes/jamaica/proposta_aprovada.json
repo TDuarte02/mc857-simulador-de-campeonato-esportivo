@@ -259,7 +259,10 @@
       }
     ],
     "confianca": 0.55,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Karoy Anderson",
@@ -415,7 +418,10 @@
       }
     ],
     "confianca": 0.45,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LB"
+    ]
   },
   {
     "nome": "Greg Leigh",

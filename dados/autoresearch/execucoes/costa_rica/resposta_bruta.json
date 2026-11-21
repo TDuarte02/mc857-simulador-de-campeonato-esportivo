@@ -49,7 +49,10 @@
       }
     ],
     "confianca": 0.5,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Jeyland Mitchell",
@@ -75,7 +78,10 @@
       }
     ],
     "confianca": 0.55,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LB"
+    ]
   },
   {
     "nome": "Juan Pablo Vargas",

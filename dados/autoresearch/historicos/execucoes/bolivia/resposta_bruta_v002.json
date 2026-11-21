@@ -1,0 +1,575 @@
+[
+  {
+    "nome": "Marco Etcheverry",
+    "pais": "Bolivia",
+    "posicao": "CAM",
+    "dob": "1970-09-26",
+    "percentis": {
+      "overall": 0.98,
+      "pace": 0.75,
+      "shooting": 0.85,
+      "passing": 0.98,
+      "dribbling": 0.95,
+      "defending": 0.4,
+      "physic": 0.6
+    },
+    "observacao": "Considerado o maior jogador da historia da selecao boliviana, foi o grande criador da geracao que disputou a Copa do Mundo de 1994. Destacou-se como meia armador de elite na MLS pelo DC United, com visao de jogo e capacidade de passe muito acima da media regional. Sua lideranca tecnica e criativa o coloca no topo absoluto do grupo de meio-campistas do pais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q246243",
+        "afirmacao": "Marco Etcheverry e reconhecido como um dos maiores meio-campistas armadores da historia do futebol boliviano, com carreira de destaque no DC United (MLS)."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 85,
+      "pace": 78,
+      "shooting": 82,
+      "passing": 88,
+      "dribbling": 86,
+      "defending": 44,
+      "physic": 68
+    },
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Erwin Sanchez",
+    "pais": "Bolivia",
+    "posicao": "CAM",
+    "dob": "1969-10-19",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.7,
+      "shooting": 0.75,
+      "passing": 0.85,
+      "dribbling": 0.82,
+      "defending": 0.45,
+      "physic": 0.55
+    },
+    "observacao": "Integrante da geracao de ouro boliviana da Copa America de 1994, atuou como meia ofensivo de qualidade tecnica elevada, tendo tambem jogado no futebol europeu pelo Boavista, de Portugal. Foi titular frequente da selecao por varios anos, consolidando-se como um dos meio-campistas mais habilidosos do pais naquele periodo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2331752",
+        "afirmacao": "Erwin Sanchez foi titular da selecao boliviana na Copa America de 1994 e teve passagem destacada pelo futebol europeu."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 84,
+      "pace": 80,
+      "shooting": 83,
+      "passing": 85,
+      "dribbling": 85,
+      "defending": 42,
+      "physic": 68
+    },
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Marcelo Martins",
+    "pais": "Bolivia",
+    "posicao": "ST",
+    "dob": "1987-06-18",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.75,
+      "shooting": 0.88,
+      "passing": 0.65,
+      "dribbling": 0.78,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Atacante de referencia da selecao boliviana na era moderna, com longa trajetoria internacional e passagem de destaque pelo Cruzeiro, no Brasil. Figura entre os maiores artilheiros historicos da selecao, combinando faro de gol com boa movimentacao de area. Manteve-se como titular absoluto do ataque boliviano por mais de uma decada.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q370507",
+        "afirmacao": "Marcelo Martins e um dos principais artilheiros historicos da selecao boliviana, com passagem de destaque pelo Cruzeiro."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 82,
+      "pace": 80,
+      "shooting": 82,
+      "passing": 68,
+      "dribbling": 78,
+      "defending": 34,
+      "physic": 82
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Roger Suarez",
+    "pais": "Bolivia",
+    "posicao": "CAM",
+    "dob": "1977-04-02",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.65,
+      "shooting": 0.6,
+      "passing": 0.72,
+      "dribbling": 0.68,
+      "defending": 0.45,
+      "physic": 0.55
+    },
+    "observacao": "Meio-campista que fez parte do elenco boliviano na Copa America de 1999, atuando como peca de rotacao e opcao ofensiva no meio-campo. Teve participacao solida em competicoes continentais, sem alcancar o status de titular inquestionavel, mas mantendo relevancia dentro do grupo convocado.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q772048",
+        "afirmacao": "Roger Suarez integrou o elenco da selecao boliviana convocado para a Copa America de 1999."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Julio Cesar Baldivieso",
+    "pais": "Bolivia",
+    "posicao": "CAM",
+    "dob": "1971-12-02",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.6,
+      "shooting": 0.6,
+      "passing": 0.9,
+      "dribbling": 0.75,
+      "defending": 0.7,
+      "physic": 0.75
+    },
+    "observacao": "Conhecido como 'El General', foi o capitao e lider da geracao boliviana que disputou a Copa do Mundo de 1994 e participou de multiplas edicoes da Copa America entre 1994 e 2002. Media de campo completo, com forte capacidade de distribuicao de jogo e liderança tatica, sendo uma das figuras mais respeitadas da historia da selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q558955",
+        "afirmacao": "Julio Cesar Baldivieso foi capitao da selecao boliviana e disputou multiplas edicoes da Copa America entre 1994 e 2002."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Alejandro Chumacero",
+    "pais": "Bolivia",
+    "posicao": "CM",
+    "dob": "1991-04-22",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.65,
+      "shooting": 0.55,
+      "passing": 0.72,
+      "dribbling": 0.68,
+      "defending": 0.6,
+      "physic": 0.6
+    },
+    "observacao": "Volante/meio-campista que integrou o elenco boliviano na Copa America de 2015, representando a geracao mais recente de convocados. Atuou com regularidade no meio-campo, equilibrando funcoes defensivas e de construcao de jogo, sem se destacar como protagonista absoluto da selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2017783",
+        "afirmacao": "Alejandro Chumacero foi convocado para a selecao boliviana na Copa America de 2015."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Alvaro Pena",
+    "pais": "Bolivia",
+    "posicao": "CM",
+    "dob": "1965-02-11",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.7,
+      "dribbling": 0.65,
+      "defending": 0.62,
+      "physic": 0.6
+    },
+    "observacao": "Meio-campista que fez parte do elenco da selecao boliviana na Copa America de 1994, contribuindo com equilibrio tatico no setor central do campo. Jogador de carreira solida no futebol boliviano, com participacao relevante dentro do contexto da geracao de 1994, ainda que sem protagonismo de destaque internacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2563266",
+        "afirmacao": "Alvaro Pena integrou o elenco da selecao boliviana na Copa America de 1994."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Milton Melgar",
+    "pais": "Bolivia",
+    "posicao": "CDM",
+    "dob": "1959-09-20",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.45,
+      "shooting": 0.35,
+      "passing": 0.58,
+      "dribbling": 0.5,
+      "defending": 0.72,
+      "physic": 0.68
+    },
+    "observacao": "Volante de contencao que participou da selecao boliviana na Copa America de 1994, sendo um dos jogadores mais experientes daquele grupo. Os registros disponiveis sobre sua carreira sao mais escassos em comparacao com companheiros mais conhecidos, o que o situa como peca solida, porem secundaria, dentro do elenco.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2733543",
+        "afirmacao": "Milton Melgar integrou o elenco da selecao boliviana na Copa America de 1994 como volante defensivo."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ronald Garcia",
+    "pais": "Bolivia",
+    "posicao": "CM",
+    "dob": "1980-12-17",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.75,
+      "dribbling": 0.7,
+      "defending": 0.65,
+      "physic": 0.62
+    },
+    "observacao": "Meio-campista que teve longa trajetoria com a selecao boliviana, sendo convocado para a Copa America de 2015 em uma carreira internacional que se estendeu por varios anos. Reconhecido por sua regularidade e capacidade de equilibrar o meio-campo, consolidou-se como titular habitual da selecao em diferentes ciclos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2460918",
+        "afirmacao": "Ronald Garcia foi convocado para a selecao boliviana na Copa America de 2015, apos longa carreira internacional."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Cristaldo",
+    "pais": "Bolivia",
+    "posicao": "CB",
+    "dob": "1969-08-31",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.55,
+      "shooting": 0.3,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.78,
+      "physic": 0.7
+    },
+    "observacao": "Zagueiro que integrou a defesa da selecao boliviana na Copa America de 1994, contribuindo para a solidez defensiva daquele time historico. Jogador confiavel na marcacao e no jogo aereo, foi peca relevante do sistema defensivo boliviano durante aquele ciclo competitivo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1351101",
+        "afirmacao": "Luis Cristaldo integrou a defesa da selecao boliviana na Copa America de 1994."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Marco Sandy",
+    "pais": "Bolivia",
+    "posicao": "CB",
+    "dob": "1971-08-29",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.6,
+      "shooting": 0.3,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.88,
+      "physic": 0.82
+    },
+    "observacao": "Zagueiro de destaque da geracao boliviana de 1994, reconhecido por sua forca fisica e capacidade de marcacao em jogos disputados na altitude de La Paz, fator historicamente favoravel a selecao. Foi um dos pilares defensivos daquela equipe, com presenca de area solida e disciplina tatica.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q970005",
+        "afirmacao": "Marco Sandy foi um dos zagueiros titulares da selecao boliviana na Copa America de 1994."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Juan Manuel Pena",
+    "pais": "Bolivia",
+    "posicao": "CB",
+    "dob": "1973-01-17",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.6,
+      "shooting": 0.3,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.85,
+      "physic": 0.75
+    },
+    "observacao": "Zagueiro boliviano com longa carreira internacional, representando a selecao entre as Copas America de 1994 e 2002, periodo em que atuou tambem no futebol espanhol pelo Villarreal. Sua experiencia no exterior e consistencia defensiva o colocam entre os zagueiros mais respeitados da historia recente do futebol boliviano.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q554944",
+        "afirmacao": "Juan Manuel Pena representou a selecao boliviana entre 1994 e 2002, com passagem pelo futebol espanhol."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ronald Raldes",
+    "pais": "Bolivia",
+    "posicao": "CB",
+    "dob": "1981-04-20",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.65,
+      "shooting": 0.3,
+      "passing": 0.62,
+      "dribbling": 0.55,
+      "defending": 0.88,
+      "physic": 0.78
+    },
+    "observacao": "Um dos zagueiros mais importantes da historia recente da selecao boliviana, exerceu a capitania do time por varios anos e disputou a Copa America de 2015. Teve passagens de destaque pelo futebol frances, incluindo Lille e Girondins de Bordeaux, o que reforca seu status de defensor de alto nivel internacional dentro do contexto boliviano.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2422878",
+        "afirmacao": "Ronald Raldes foi capitao da selecao boliviana e disputou a Copa America de 2015, com carreira no futebol frances."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
+  },
+  {
+    "nome": "Carlos Trucco",
+    "pais": "Bolivia",
+    "posicao": "GK",
+    "dob": "1957-08-08",
+    "percentis": {
+      "overall": 0.9,
+      "goalkeeping_diving": 0.88,
+      "goalkeeping_handling": 0.85,
+      "goalkeeping_kicking": 0.8,
+      "goalkeeping_positioning": 0.88,
+      "goalkeeping_reflexes": 0.88,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Goleiro historico da selecao boliviana, foi o titular absoluto na Copa America de 1994 e manteve a posicao por mais de uma decada, sendo uma figura central na defesa boliviana. Reconhecido por sua grande experiencia, reflexos solidos e seguranca no jogo aereo, e considerado um dos maiores goleiros da historia do futebol boliviano.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2540098",
+        "afirmacao": "Carlos Trucco foi o goleiro titular da selecao boliviana na Copa America de 1994 e um dos arqueiros mais duradouros da historia do pais."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Lider Paz",
+    "pais": "Bolivia",
+    "posicao": "ST",
+    "dob": "1974-12-02",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.65,
+      "shooting": 0.72,
+      "passing": 0.5,
+      "dribbling": 0.6,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Atacante que integrou o elenco boliviano na Copa America de 1999, atuando como opcao ofensiva no ataque da selecao. Teve participacao relevante dentro do contexto daquela convocacao, sem alcancar, no entanto, o status de grande referencia historica da posicao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2475806",
+        "afirmacao": "Lider Paz integrou o elenco da selecao boliviana convocado para a Copa America de 1999."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Joaquin Botero",
+    "pais": "Bolivia",
+    "posicao": "ST",
+    "dob": "1977-12-10",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.75,
+      "shooting": 0.95,
+      "passing": 0.6,
+      "dribbling": 0.78,
+      "defending": 0.3,
+      "physic": 0.7
+    },
+    "observacao": "Reconhecido como o maior artilheiro historico da selecao boliviana, Joaquin Botero se destacou por seu faro de gol excepcional ao longo de toda a sua carreira internacional. Sua capacidade de finalizacao e protagonismo ofensivo o colocam no topo absoluto dos atacantes bolivianos de todos os tempos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q720639",
+        "afirmacao": "Joaquin Botero e o maior artilheiro historico da selecao boliviana de futebol."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "William Ramallo",
+    "pais": "Bolivia",
+    "posicao": "ST",
+    "dob": "1963-07-04",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.65,
+      "shooting": 0.8,
+      "passing": 0.55,
+      "dribbling": 0.68,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Atacante veterano da geracao boliviana de 1994, reconhecido por seu historico de gols e longevidade na selecao nacional. Figura entre os artilheiros mais lembrados da historia do futebol boliviano, com desempenho consistente ao longo de sua carreira internacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2439639",
+        "afirmacao": "William Ramallo integrou o ataque da selecao boliviana na Copa America de 1994 e e lembrado como um dos grandes artilheiros do pais."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ramiro Castillo",
+    "pais": "Bolivia",
+    "posicao": "RW",
+    "dob": "1966-03-27",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.75,
+      "shooting": 0.6,
+      "passing": 0.6,
+      "dribbling": 0.72,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Ponta direita que fez parte do elenco da selecao boliviana na Copa America de 1994, contribuindo com velocidade e capacidade de drible pelo setor ofensivo. Jogador de perfil tecnico, foi peca relevante na equipe daquele ciclo, atuando com regularidade nas competicoes continentais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2712394",
+        "afirmacao": "Ramiro Castillo integrou o elenco da selecao boliviana na Copa America de 1994 como ponta direita."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
+  }
+]

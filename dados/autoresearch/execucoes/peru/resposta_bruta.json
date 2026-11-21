@@ -23,7 +23,10 @@
       }
     ],
     "confianca": 0.65,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Bryan Reyna",

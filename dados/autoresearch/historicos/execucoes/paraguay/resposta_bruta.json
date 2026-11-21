@@ -78,7 +78,7 @@
   {
     "nome": "Saturnino Arrua",
     "pais": "Paraguay",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1949-04-07",
     "percentis": {
       "overall": 0.82,
@@ -136,7 +136,7 @@
   {
     "nome": "Andres Cubas",
     "pais": "Paraguay",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1996-05-11",
     "percentis": {
       "overall": 0.68,
@@ -160,12 +160,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Oscar Romero",
     "pais": "Paraguay",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1992-07-04",
     "percentis": {
       "overall": 0.78,
@@ -189,12 +192,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Victor Caceres",
     "pais": "Paraguay",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1985-03-25",
     "percentis": {
       "overall": 0.75,
@@ -218,12 +224,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Julio Cesar Romero",
     "pais": "Paraguay",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1960-08-28",
     "percentis": {
       "overall": 0.99,
@@ -247,12 +256,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Carlos Humberto Paredes",
     "pais": "Paraguay",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1976-07-16",
     "percentis": {
       "overall": 0.76,
@@ -276,7 +288,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Roberto Acuna",
@@ -305,12 +320,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Jorge Luis Campos",
     "pais": "Paraguay",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1970-08-11",
     "percentis": {
       "overall": 0.85,
@@ -653,7 +671,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LWB"
+    ]
   },
   {
     "nome": "Nelson Cuevas",
@@ -682,7 +703,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "ST"
+    ]
   },
   {
     "nome": "Nelson Haedo Valdez",
@@ -711,7 +735,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Justo Villar",

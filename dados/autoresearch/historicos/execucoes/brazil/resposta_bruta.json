@@ -73,12 +73,15 @@
       "dribbling": 92,
       "defending": 45,
       "physic": 78
-    }
+    },
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Ronaldinho",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1980-03-21",
     "percentis": {
       "overall": 0.97,
@@ -111,7 +114,10 @@
       "dribbling": 95,
       "defending": 38,
       "physic": 71
-    }
+    },
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Garrincha",
@@ -192,7 +198,7 @@
   {
     "nome": "Zico",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1953-03-03",
     "percentis": {
       "overall": 0.95,
@@ -225,7 +231,10 @@
       "dribbling": 89,
       "defending": 52,
       "physic": 72
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Roberto Carlos",
@@ -263,12 +272,15 @@
       "dribbling": 84,
       "defending": 85,
       "physic": 88
-    }
+    },
+    "posicoes_secundarias": [
+      "LWB"
+    ]
   },
   {
     "nome": "Rivaldo",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1972-04-19",
     "percentis": {
       "overall": 0.94,
@@ -301,7 +313,10 @@
       "dribbling": 89,
       "defending": 45,
       "physic": 76
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Cafu",
@@ -339,12 +354,15 @@
       "dribbling": 84,
       "defending": 86,
       "physic": 84
-    }
+    },
+    "posicoes_secundarias": [
+      "RWB"
+    ]
   },
   {
     "nome": "Kaka",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1982-04-22",
     "percentis": {
       "overall": 0.92,
@@ -377,7 +395,10 @@
       "dribbling": 89,
       "defending": 52,
       "physic": 74
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Castilho",
@@ -527,7 +548,7 @@
   {
     "nome": "Ademir da Guia",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1942-04-03",
     "percentis": {
       "overall": 0.72,
@@ -556,7 +577,7 @@
   {
     "nome": "Rai",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1965-05-15",
     "percentis": {
       "overall": 0.78,
@@ -585,7 +606,7 @@
   {
     "nome": "Juninho Pernambucano",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1975-01-30",
     "percentis": {
       "overall": 0.82,
@@ -609,12 +630,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Emerson",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1976-04-04",
     "percentis": {
       "overall": 0.8,
@@ -638,12 +662,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Gilberto Silva",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1976-10-07",
     "percentis": {
       "overall": 0.84,
@@ -725,7 +752,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Didi",
@@ -754,12 +784,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Juninho Paulista",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1973-02-22",
     "percentis": {
       "overall": 0.78,
@@ -788,7 +821,7 @@
   {
     "nome": "Alex",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1977-09-14",
     "percentis": {
       "overall": 0.74,
@@ -812,7 +845,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Ramires",
@@ -841,7 +877,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Gerson",
@@ -870,12 +909,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Cesar Sampaio",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1968-03-31",
     "percentis": {
       "overall": 0.75,
@@ -904,7 +946,7 @@
   {
     "nome": "Zito",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1932-08-08",
     "percentis": {
       "overall": 0.82,
@@ -933,7 +975,7 @@
   {
     "nome": "Dunga",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1963-10-31",
     "percentis": {
       "overall": 0.88,
@@ -962,7 +1004,7 @@
   {
     "nome": "Zizinho",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1921-09-14",
     "percentis": {
       "overall": 0.93,
@@ -986,7 +1028,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Socrates",
@@ -1015,7 +1060,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Falcao",
@@ -1044,12 +1092,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Toninho Cerezo",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1955-04-21",
     "percentis": {
       "overall": 0.82,
@@ -1073,12 +1124,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Bauer",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1925-11-21",
     "percentis": {
       "overall": 0.75,
@@ -1107,7 +1161,7 @@
   {
     "nome": "Clodoaldo",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1949-09-25",
     "percentis": {
       "overall": 0.85,
@@ -1136,7 +1190,7 @@
   {
     "nome": "Piazza",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1943-02-25",
     "percentis": {
       "overall": 0.8,
@@ -1160,12 +1214,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Rivellino",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1946-01-01",
     "percentis": {
       "overall": 0.93,
@@ -1189,12 +1246,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Danilo Alvim",
     "pais": "Brazil",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1920-12-03",
     "percentis": {
       "overall": 0.68,
@@ -1223,7 +1283,7 @@
   {
     "nome": "Djalminha",
     "pais": "Brazil",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1970-12-09",
     "percentis": {
       "overall": 0.74,
@@ -1276,7 +1336,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Filipe Luis",
@@ -1363,7 +1426,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Orlando",
@@ -1479,7 +1545,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Pepe",
@@ -1653,7 +1722,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "ST"
+    ]
   },
   {
     "nome": "Fred",
@@ -1740,7 +1812,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Dani Alves",
@@ -1769,7 +1844,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
   },
   {
     "nome": "Tostao",
@@ -2059,7 +2137,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
   },
   {
     "nome": "Maicon",
@@ -2088,7 +2169,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
   },
   {
     "nome": "Willian",
@@ -2117,7 +2201,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "Lucio",
@@ -2204,7 +2291,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Adriano",
@@ -2291,7 +2381,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
   },
   {
     "nome": "Ze Roberto",
@@ -2320,6 +2413,9 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   }
 ]

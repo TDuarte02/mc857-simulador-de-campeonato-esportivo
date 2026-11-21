@@ -25,7 +25,10 @@
       }
     ],
     "confianca": 0.62,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Guido Rodríguez",
@@ -79,6 +82,9 @@
       }
     ],
     "confianca": 0.55,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   }
 ]

@@ -1,0 +1,261 @@
+[
+  {
+    "nome": "Carlos Valderrama",
+    "dob": "1961-09-02",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.7,
+    "justificativa": "El Pibe also operated as a deep-lying playmaker in central midfield, not only as the classic attacking mid."
+  },
+  {
+    "nome": "Willington Ortiz",
+    "dob": "1952-03-26",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.5,
+    "justificativa": "A versatile winger who could be deployed on either flank during his career."
+  },
+  {
+    "nome": "Miguel Angel Borja",
+    "dob": "1993-01-26",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.6,
+    "justificativa": "Often used as a second striker/false nine alongside being the main centre-forward."
+  },
+  {
+    "nome": "Jackson Martinez",
+    "dob": "1986-10-03",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.6,
+    "justificativa": "At Porto and Atletico Madrid he frequently played as a mobile second striker as well as outright ST."
+  },
+  {
+    "nome": "Teofilo Gutierrez",
+    "dob": "1985-05-17",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.5,
+    "justificativa": "Played as a dropping forward/second striker for River Plate and Colombia at times."
+  },
+  {
+    "nome": "Faustino Asprilla",
+    "dob": "1969-11-10",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.7,
+    "justificativa": "Famously played as a right winger for Newcastle, including the Champions League hat-trick vs Barcelona."
+  },
+  {
+    "nome": "Victor Hugo Aristizabal",
+    "dob": "1971-12-09",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.5,
+    "justificativa": "Prolific Atletico Nacional forward often used as a second striker as well as a pure striker."
+  },
+  {
+    "nome": "Antony de Avila",
+    "dob": "1962-12-21",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.5,
+    "justificativa": "Small, quick forward known for tricky dribbling, often drifting wide as a winger-forward."
+  },
+  {
+    "nome": "Arnoldo Iguaran",
+    "dob": "1957-01-18",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Traditional Millonarios striker with no well-documented secondary position."
+  },
+  {
+    "nome": "Juan Pablo Angel",
+    "dob": "1975-10-24",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.5,
+    "justificativa": "At River Plate and Aston Villa he sometimes played as a second striker in a front two."
+  },
+  {
+    "nome": "Adolfo Valencia",
+    "dob": "1968-02-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Powerful Bayern Munich forward without a clearly documented secondary role."
+  },
+  {
+    "nome": "Leonel Alvarez",
+    "dob": "1965-07-29",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.5,
+    "justificativa": "Defensive midfielder for the 1990 squad who also featured in a more box-to-box central role."
+  },
+  {
+    "nome": "Freddy Rincon",
+    "dob": "1966-08-14",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.6,
+    "justificativa": "Box-to-box midfielder for Real Madrid and Colombia who also covered holding midfield duties."
+  },
+  {
+    "nome": "Wilmar Barrios",
+    "dob": "1993-10-16",
+    "posicoes_secundarias": ["CB"],
+    "confianca": 0.5,
+    "justificativa": "Occasionally deployed as a centre-back at Zenit and for Colombia given his physical, defensive profile."
+  },
+  {
+    "nome": "Ivan Cordoba",
+    "dob": "1976-08-11",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "At Inter he was sometimes used as a right-back in addition to his main centre-back role."
+  },
+  {
+    "nome": "Mario Yepes",
+    "dob": "1976-01-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Long-time Colombia captain and classic centre-back with no well-documented secondary role."
+  },
+  {
+    "nome": "Alexis Garcia",
+    "dob": "1960-07-21",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.5,
+    "justificativa": "1990 squad playmaker who also operated as an attacking midfielder behind the strikers."
+  },
+  {
+    "nome": "Camilo Zuniga",
+    "dob": "1985-12-14",
+    "posicoes_secundarias": ["RM"],
+    "confianca": 0.5,
+    "justificativa": "Attacking right-back for Napoli and Colombia who was also used higher up as a right midfielder/wing-back."
+  },
+  {
+    "nome": "Pablo Armero",
+    "dob": "1986-11-02",
+    "posicoes_secundarias": ["LM"],
+    "confianca": 0.6,
+    "justificativa": "Attack-minded left-back frequently pushed into a left-midfield/wing role for Colombia and his clubs."
+  },
+  {
+    "nome": "Carlos Sanchez",
+    "dob": "1986-02-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Primarily a holding midfielder; occasional centre-back use is not well documented enough to be confident."
+  },
+  {
+    "nome": "Abel Aguilar",
+    "dob": "1985-01-06",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.5,
+    "justificativa": "Also played as a more advanced central midfielder for Toulouse and Hertha Berlin."
+  },
+  {
+    "nome": "Fabian Vargas",
+    "dob": "1980-04-17",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Mostly a central midfielder; no strong evidence of a consistent secondary role."
+  },
+  {
+    "nome": "Giovanny Hernandez",
+    "dob": "1976-06-16",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.5,
+    "justificativa": "Deportivo Cali playmaker who also featured in a deeper central midfield role."
+  },
+  {
+    "nome": "Luis Amaranto Perea",
+    "dob": "1979-01-30",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Mainly a centre-back at Atletico Madrid; occasional right-back use is not well confirmed."
+  },
+  {
+    "nome": "Jorge Bermudez",
+    "dob": "1971-06-18",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "At Boca Juniors he was used both as a centre-back and as a right-back/sweeper."
+  },
+  {
+    "nome": "Mauricio Serna",
+    "dob": "1968-01-22",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Classic defensive midfielder for Boca Juniors with no well-documented secondary position."
+  },
+  {
+    "nome": "Faryd Mondragon",
+    "dob": "1971-06-21",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper."
+  },
+  {
+    "nome": "Oscar Cordoba",
+    "dob": "1970-02-03",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper."
+  },
+  {
+    "nome": "Rene Higuita",
+    "dob": "1966-08-27",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper."
+  },
+  {
+    "nome": "Kevin Castaño",
+    "dob": "2000-09-29",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.5,
+    "justificativa": "Young midfielder at Krasnodar who also covers a deeper, defensive midfield role."
+  },
+  {
+    "nome": "Miguel Borja",
+    "dob": "1993-01-26",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.6,
+    "justificativa": "Same player as Miguel Angel Borja; also used as a second striker/false nine."
+  },
+  {
+    "nome": "Jhon Arias",
+    "dob": "1997-09-21",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.7,
+    "justificativa": "At Fluminense and for the national team he is primarily a right-winger, despite being listed here as CM."
+  },
+  {
+    "nome": "Yerry Mina",
+    "dob": "1994-09-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Tall, classic centre-back with no well-documented secondary position."
+  },
+  {
+    "nome": "Jhon Durán",
+    "dob": "2003-12-13",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.5,
+    "justificativa": "Young Aston Villa forward also used as a dropping second striker."
+  },
+  {
+    "nome": "Yáser Asprilla",
+    "dob": "2003-11-19",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.5,
+    "justificativa": "Attacking midfielder/winger hybrid, frequently used as a classic number 10 as well as central midfield."
+  },
+  {
+    "nome": "Jhon Córdoba",
+    "dob": "1993-05-11",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.5,
+    "justificativa": "Powerful forward at Krasnodar also deployed as a second striker."
+  },
+  {
+    "nome": "Deiver Machado",
+    "dob": "1992-09-02",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.8,
+    "justificativa": "Primarily a left-back for Lens and Colombia, despite being listed here with CB as the coarse primary position."
+  }
+]

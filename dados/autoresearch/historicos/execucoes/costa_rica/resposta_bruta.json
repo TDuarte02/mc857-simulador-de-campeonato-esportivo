@@ -35,12 +35,15 @@
       "dribbling": 83,
       "defending": 34,
       "physic": 76
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Bryan Ruiz",
     "pais": "Costa Rica",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1985-08-18",
     "percentis": {
       "overall": 0.93,
@@ -64,7 +67,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Celso Borges",
@@ -93,12 +99,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Walter Centeno",
     "pais": "Costa Rica",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1974-10-06",
     "percentis": {
       "overall": 0.93,
@@ -238,7 +247,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Marco Urena",
@@ -296,7 +308,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Gilberto Martinez",

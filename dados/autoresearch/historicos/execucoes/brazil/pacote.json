@@ -24,7 +24,7 @@
     {
       "nome": "Ronaldinho",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q39444",
       "titular_ultima_partida": false,
       "dob": "1980-03-21",
@@ -51,7 +51,7 @@
     {
       "nome": "Zico",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q47526",
       "titular_ultima_partida": false,
       "dob": "1953-03-03",
@@ -69,7 +69,7 @@
     {
       "nome": "Rivaldo",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q483577",
       "titular_ultima_partida": false,
       "dob": "1972-04-19",
@@ -87,7 +87,7 @@
     {
       "nome": "Kaka",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q531814",
       "titular_ultima_partida": false,
       "dob": "1982-04-22",
@@ -141,7 +141,7 @@
     {
       "nome": "Ademir da Guia",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q355742",
       "titular_ultima_partida": false,
       "dob": "1942-04-03",
@@ -150,7 +150,7 @@
     {
       "nome": "Rai",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q312895",
       "titular_ultima_partida": false,
       "dob": "1965-05-15",
@@ -159,7 +159,7 @@
     {
       "nome": "Juninho Pernambucano",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q203451",
       "titular_ultima_partida": false,
       "dob": "1975-01-30",
@@ -168,7 +168,7 @@
     {
       "nome": "Emerson",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q215952",
       "titular_ultima_partida": false,
       "dob": "1976-04-04",
@@ -177,7 +177,7 @@
     {
       "nome": "Gilberto Silva",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q190142",
       "titular_ultima_partida": false,
       "dob": "1976-10-07",
@@ -213,7 +213,7 @@
     {
       "nome": "Juninho Paulista",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q318184",
       "titular_ultima_partida": false,
       "dob": "1973-02-22",
@@ -222,7 +222,7 @@
     {
       "nome": "Alex",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q507815",
       "titular_ultima_partida": false,
       "dob": "1977-09-14",
@@ -249,7 +249,7 @@
     {
       "nome": "Cesar Sampaio",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q316436",
       "titular_ultima_partida": false,
       "dob": "1968-03-31",
@@ -258,7 +258,7 @@
     {
       "nome": "Zito",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q372092",
       "titular_ultima_partida": false,
       "dob": "1932-08-08",
@@ -267,7 +267,7 @@
     {
       "nome": "Dunga",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q215890",
       "titular_ultima_partida": false,
       "dob": "1963-10-31",
@@ -276,7 +276,7 @@
     {
       "nome": "Zizinho",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q207085",
       "titular_ultima_partida": false,
       "dob": "1921-09-14",
@@ -303,7 +303,7 @@
     {
       "nome": "Toninho Cerezo",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q552917",
       "titular_ultima_partida": false,
       "dob": "1955-04-21",
@@ -312,7 +312,7 @@
     {
       "nome": "Bauer",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q703634",
       "titular_ultima_partida": false,
       "dob": "1925-11-21",
@@ -321,7 +321,7 @@
     {
       "nome": "Clodoaldo",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q464419",
       "titular_ultima_partida": false,
       "dob": "1949-09-25",
@@ -330,7 +330,7 @@
     {
       "nome": "Piazza",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q535520",
       "titular_ultima_partida": false,
       "dob": "1943-02-25",
@@ -339,7 +339,7 @@
     {
       "nome": "Rivellino",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q220283",
       "titular_ultima_partida": false,
       "dob": "1946-01-01",
@@ -348,7 +348,7 @@
     {
       "nome": "Danilo Alvim",
       "pais": "Brazil",
-      "posicao": "DM",
+      "posicao": "CDM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q1164053",
       "titular_ultima_partida": false,
       "dob": "1920-12-03",
@@ -357,7 +357,7 @@
     {
       "nome": "Djalminha",
       "pais": "Brazil",
-      "posicao": "AM",
+      "posicao": "CAM",
       "fonte_convocacao": "https://www.wikidata.org/wiki/Q47489",
       "titular_ultima_partida": false,
       "dob": "1970-12-09",

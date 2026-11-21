@@ -53,7 +53,10 @@
       }
     ],
     "confianca": 0.7,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Tim Ream",
@@ -190,7 +193,10 @@
       }
     ],
     "confianca": 0.65,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Joe Scally",
@@ -271,6 +277,9 @@
       }
     ],
     "confianca": 0.65,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   }
 ]

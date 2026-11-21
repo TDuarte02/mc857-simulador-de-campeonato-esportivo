@@ -1,5 +1,5 @@
 pais,nome,posicao,fonte_url,dob,contexto
-Argentina,Diego Maradona,AM,https://www.wikidata.org/wiki/Q17515,1960-10-30,Campeao 1986 - Icon EA FC
+Argentina,Diego Maradona,CAM,https://www.wikidata.org/wiki/Q17515,1960-10-30,Campeao 1986 - Icon EA FC
 Argentina,Ezequiel Lavezzi,RW,https://www.wikidata.org/wiki/Q275415,1985-05-03,PSG
 Argentina,Omar Sivori,ST,https://www.wikidata.org/wiki/Q220700,1935-10-02,Naturalizado italiano
 Argentina,Jose Manuel Moreno,ST,https://www.wikidata.org/wiki/Q543951,1916-08-03,Anos 40
@@ -47,40 +47,40 @@ Argentina,Sergio Goycochea,GK,https://www.wikidata.org/wiki/Q316205,1963-10-17,C
 Argentina,Nery Pumpido,GK,https://www.wikidata.org/wiki/Q461838,1957-07-30,Campeao 1986
 Argentina,Roberto Abbondanzieri,GK,https://www.wikidata.org/wiki/Q296961,1972-08-19,Copa 2006
 Argentina,Hector Enrique,CM,https://www.wikidata.org/wiki/Q516743,1962-04-26,Campeao 1986
-Argentina,Leandro Paredes,DM,https://www.wikidata.org/wiki/Q630170,1994-06-29,Roma
+Argentina,Leandro Paredes,CDM,https://www.wikidata.org/wiki/Q630170,1994-06-29,Roma
 Argentina,Exequiel Palacios,CM,https://www.wikidata.org/wiki/Q19345715,1998-10-05,Bayer Leverkusen
 Argentina,Rodrigo De Paul,CM,https://www.wikidata.org/wiki/Q6110670,1994-05-24,Campeao 2022
 Argentina,Osvaldo Ardiles,CM,https://www.wikidata.org/wiki/Q310373,1952-08-03,Campeao 1978
 Argentina,Ricardo Villa,CM,https://www.wikidata.org/wiki/Q705946,1952-08-18,Campeao 1978
-Argentina,Luis Monti,DM,https://www.wikidata.org/wiki/Q315333,1901-05-15,Campeao 1934 pela Italia
+Argentina,Luis Monti,CDM,https://www.wikidata.org/wiki/Q315333,1901-05-15,Campeao 1934 pela Italia
 Argentina,Enzo Fernandez,CM,https://www.wikidata.org/wiki/Q96105248,2001-01-17,Melhor jovem 2022
-Argentina,Miguel Angel Brindisi,AM,https://www.wikidata.org/wiki/Q727597,1950-10-08,Independiente
-Argentina,Manuel Lanzini,AM,https://www.wikidata.org/wiki/Q1524928,1993-02-15,West Ham
+Argentina,Miguel Angel Brindisi,CAM,https://www.wikidata.org/wiki/Q727597,1950-10-08,Independiente
+Argentina,Manuel Lanzini,CAM,https://www.wikidata.org/wiki/Q1524928,1993-02-15,West Ham
 Argentina,Ever Banega,CM,https://www.wikidata.org/wiki/Q19392,1988-06-29,Sevilla
-Argentina,Paulo Dybala,AM,https://www.wikidata.org/wiki/Q166317,1993-11-15,Roma
+Argentina,Paulo Dybala,CAM,https://www.wikidata.org/wiki/Q166317,1993-11-15,Roma
 Argentina,Giovani Lo Celso,CM,https://www.wikidata.org/wiki/Q20743436,1996-04-09,Villarreal
-Argentina,Fernando Gago,DM,https://www.wikidata.org/wiki/Q187426,1986-04-10,Real Madrid
+Argentina,Fernando Gago,CDM,https://www.wikidata.org/wiki/Q187426,1986-04-10,Real Madrid
 Argentina,Alexis Mac Allister,CM,https://www.wikidata.org/wiki/Q33297140,1998-12-24,Campeao 2022
-Argentina,Alberto Marcico,AM,https://www.wikidata.org/wiki/Q1998778,1960-05-13,Boca Juniors
-Argentina,Jorge Burruchaga,AM,https://www.wikidata.org/wiki/Q313774,1962-10-09,Gol na final 1986
-Argentina,Ariel Ortega,AM,https://www.wikidata.org/wiki/Q296965,1974-03-04,Copa 1994-2002
-Argentina,Fernando Redondo,DM,https://www.wikidata.org/wiki/Q295456,1969-06-06,Real Madrid
+Argentina,Alberto Marcico,CAM,https://www.wikidata.org/wiki/Q1998778,1960-05-13,Boca Juniors
+Argentina,Jorge Burruchaga,CAM,https://www.wikidata.org/wiki/Q313774,1962-10-09,Gol na final 1986
+Argentina,Ariel Ortega,CAM,https://www.wikidata.org/wiki/Q296965,1974-03-04,Copa 1994-2002
+Argentina,Fernando Redondo,CDM,https://www.wikidata.org/wiki/Q295456,1969-06-06,Real Madrid
 Argentina,Juan Sebastian Veron,CM,https://www.wikidata.org/wiki/Q46502,1975-03-09,Libertadores 2009
-Argentina,Ricardo Bochini,AM,https://www.wikidata.org/wiki/Q318304,1954-01-25,Independiente
-Argentina,Norberto Alonso,AM,https://www.wikidata.org/wiki/Q94949,1953-01-04,River Plate
-Argentina,Antonio Rattin,DM,https://www.wikidata.org/wiki/Q604553,1937-05-16,Capitao 1966
+Argentina,Ricardo Bochini,CAM,https://www.wikidata.org/wiki/Q318304,1954-01-25,Independiente
+Argentina,Norberto Alonso,CAM,https://www.wikidata.org/wiki/Q94949,1953-01-04,River Plate
+Argentina,Antonio Rattin,CDM,https://www.wikidata.org/wiki/Q604553,1937-05-16,Capitao 1966
 Argentina,Ricardo Giusti,CM,https://www.wikidata.org/wiki/Q721996,1956-12-11,Campeao 1986
-Argentina,Claudio Borghi,AM,https://www.wikidata.org/wiki/Q516805,1964-09-28,Campeao 1986
+Argentina,Claudio Borghi,CAM,https://www.wikidata.org/wiki/Q516805,1964-09-28,Campeao 1986
 Argentina,Pedro Troglio,CM,https://www.wikidata.org/wiki/Q509107,1965-07-28,Copa 1990
-Argentina,Javier Mascherano,DM,https://www.wikidata.org/wiki/Q161571,1984-06-08,Capitao 2014
+Argentina,Javier Mascherano,CDM,https://www.wikidata.org/wiki/Q161571,1984-06-08,Capitao 2014
 Argentina,Diego Simeone,CM,https://www.wikidata.org/wiki/Q258115,1970-04-28,Campeao 1991 e 1993
-Argentina,Juan Roman Riquelme,AM,https://www.wikidata.org/wiki/Q192965,1978-06-24,Libertadores 2000
-Argentina,Matias Almeyda,DM,https://www.wikidata.org/wiki/Q359494,1973-12-21,Lazio
-Argentina,Leonardo Astrada,DM,https://www.wikidata.org/wiki/Q2477498,1970-01-06,River Plate
-Argentina,Pablo Aimar,AM,https://www.wikidata.org/wiki/Q130215,1979-11-03,Valencia
-Argentina,Andres D'Alessandro,AM,https://www.wikidata.org/wiki/Q313741,1981-04-15,Inter de Porto Alegre
+Argentina,Juan Roman Riquelme,CAM,https://www.wikidata.org/wiki/Q192965,1978-06-24,Libertadores 2000
+Argentina,Matias Almeyda,CDM,https://www.wikidata.org/wiki/Q359494,1973-12-21,Lazio
+Argentina,Leonardo Astrada,CDM,https://www.wikidata.org/wiki/Q2477498,1970-01-06,River Plate
+Argentina,Pablo Aimar,CAM,https://www.wikidata.org/wiki/Q130215,1979-11-03,Valencia
+Argentina,Andres D'Alessandro,CAM,https://www.wikidata.org/wiki/Q313741,1981-04-15,Inter de Porto Alegre
 Argentina,Lucho Gonzalez,CM,https://www.wikidata.org/wiki/Q244894,1981-01-19,Porto
-Argentina,Esteban Cambiasso,DM,https://www.wikidata.org/wiki/Q192122,1980-08-18,Inter de Milao
+Argentina,Esteban Cambiasso,CDM,https://www.wikidata.org/wiki/Q192122,1980-08-18,Inter de Milao
 Argentina,Javier Zanetti,RB,https://www.wikidata.org/wiki/Q52876,1973-08-10,Recordista de jogos na Inter
 Argentina,Jose Luis Brown,CB,https://www.wikidata.org/wiki/Q721998,1956-11-10,Campeao 1986
 Argentina,Silvio Marzolini,LB,https://www.wikidata.org/wiki/Q616023,1940-10-04,Boca Juniors

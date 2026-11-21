@@ -23,7 +23,10 @@
       }
     ],
     "confianca": 0.55,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Miguel Borja",
@@ -49,7 +52,10 @@
       }
     ],
     "confianca": 0.6,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Jhon Arias",
@@ -128,7 +134,10 @@
       }
     ],
     "confianca": 0.6,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Yáser Asprilla",
@@ -154,7 +163,10 @@
       }
     ],
     "confianca": 0.5,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Jhon Córdoba",
@@ -180,7 +192,10 @@
       }
     ],
     "confianca": 0.5,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Deiver Machado",

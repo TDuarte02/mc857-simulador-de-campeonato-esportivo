@@ -75,7 +75,10 @@
       }
     ],
     "confianca": 0.75,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "José Contreras",
@@ -153,7 +156,10 @@
       }
     ],
     "confianca": 0.45,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Matías Lacava",
@@ -204,7 +210,10 @@
       }
     ],
     "confianca": 0.65,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Alexander González",

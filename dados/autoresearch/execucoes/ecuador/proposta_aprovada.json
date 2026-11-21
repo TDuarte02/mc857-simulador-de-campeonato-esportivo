@@ -49,7 +49,10 @@
       }
     ],
     "confianca": 0.6,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Willian Pacho",
@@ -77,7 +80,10 @@
       }
     ],
     "confianca": 0.7,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LB"
+    ]
   },
   {
     "nome": "Layan Loor",
@@ -129,7 +135,10 @@
       }
     ],
     "confianca": 0.5,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Kendry Páez",
@@ -182,7 +191,10 @@
       }
     ],
     "confianca": 0.55,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Jeremy Sarmiento",
@@ -208,7 +220,10 @@
       }
     ],
     "confianca": 0.55,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Joao Ortiz",
@@ -234,7 +249,10 @@
       }
     ],
     "confianca": 0.65,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Jordy Caicedo",
@@ -260,7 +278,10 @@
       }
     ],
     "confianca": 0.55,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Janner Corozo",

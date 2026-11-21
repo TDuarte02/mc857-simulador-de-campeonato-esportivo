@@ -24,7 +24,10 @@
       }
     ],
     "confianca": 0.65,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Marcelo Flores",
@@ -50,7 +53,10 @@
       }
     ],
     "confianca": 0.5,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Raúl Rangel",

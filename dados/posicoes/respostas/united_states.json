@@ -1,0 +1,247 @@
+[
+  {
+    "nome": "Landon Donovan",
+    "dob": "1982-03-04",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.6,
+    "justificativa": "Also deployed as a right winger/second striker for LA Galaxy and on European loans."
+  },
+  {
+    "nome": "Clint Dempsey",
+    "dob": "1983-03-09",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.8,
+    "justificativa": "Often played as a creative forward just behind the striker for Fulham and Seattle Sounders."
+  },
+  {
+    "nome": "Maurice Edu",
+    "dob": "1986-04-18",
+    "posicoes_secundarias": ["CM", "CB"],
+    "confianca": 0.6,
+    "justificativa": "Versatile midfielder who also filled in at center back for Stoke City and Philadelphia Union."
+  },
+  {
+    "nome": "Stuart Holden",
+    "dob": "1985-08-01",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.6,
+    "justificativa": "Played as a box-to-box central midfielder for Bolton Wanderers alongside his attacking role."
+  },
+  {
+    "nome": "Benny Feilhaber",
+    "dob": "1985-01-19",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.7,
+    "justificativa": "Frequently pushed into the attacking midfield role for club and country."
+  },
+  {
+    "nome": "Tab Ramos",
+    "dob": "1966-09-21",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.6,
+    "justificativa": "Played as a central creative midfielder in addition to his attacking role."
+  },
+  {
+    "nome": "Claudio Reyna",
+    "dob": "1973-07-20",
+    "posicoes_secundarias": ["CDM", "RM"],
+    "confianca": 0.6,
+    "justificativa": "Played defensive midfield later at Manchester City and wide right midfield at Rangers/Wolfsburg."
+  },
+  {
+    "nome": "John Harkes",
+    "dob": "1967-03-08",
+    "posicoes_secundarias": ["LM"],
+    "confianca": 0.6,
+    "justificativa": "Known for operating as a left-sided midfielder at Sheffield Wednesday."
+  },
+  {
+    "nome": "Matt Turner",
+    "dob": "1994-06-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper, no secondary positions."
+  },
+  {
+    "nome": "Oguchi Onyewu",
+    "dob": "1982-05-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Primarily a pure center back throughout his career; no well-documented secondary role."
+  },
+  {
+    "nome": "Carlos Bocanegra",
+    "dob": "1979-05-25",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.7,
+    "justificativa": "Played left back for Fulham and Rangers in addition to center back."
+  },
+  {
+    "nome": "Steve Cherundolo",
+    "dob": "1979-02-19",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Essentially a career-long right back with no clearly documented secondary position."
+  },
+  {
+    "nome": "Tony Meola",
+    "dob": "1969-02-21",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper, no secondary positions."
+  },
+  {
+    "nome": "Tim Howard",
+    "dob": "1979-03-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper, no secondary positions."
+  },
+  {
+    "nome": "Brad Friedel",
+    "dob": "1971-05-18",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper, no secondary positions."
+  },
+  {
+    "nome": "Kasey Keller",
+    "dob": "1969-11-29",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper, no secondary positions."
+  },
+  {
+    "nome": "Alexi Lalas",
+    "dob": "1970-06-01",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Played as a center back/sweeper with no other well-documented secondary position."
+  },
+  {
+    "nome": "Jeff Agoos",
+    "dob": "1968-05-02",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.6,
+    "justificativa": "Also played left back for D.C. United and the national team."
+  },
+  {
+    "nome": "Eddie Pope",
+    "dob": "1973-12-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Primarily a pure center back with no clearly documented secondary role."
+  },
+  {
+    "nome": "Marcelo Balboa",
+    "dob": "1967-08-08",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Played as a center back/sweeper with no other well-documented secondary position."
+  },
+  {
+    "nome": "Earnie Stewart",
+    "dob": "1969-03-28",
+    "posicoes_secundarias": ["RM"],
+    "confianca": 0.6,
+    "justificativa": "Versatile wide player who also operated as a right midfielder for NAC Breda and the national team."
+  },
+  {
+    "nome": "Joe-Max Moore",
+    "dob": "1971-02-23",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.5,
+    "justificativa": "Also used as a wide forward/winger for Everton and New England Revolution."
+  },
+  {
+    "nome": "Brian McBride",
+    "dob": "1972-06-19",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.6,
+    "justificativa": "Target forward who also dropped into a deeper second-striker role at Fulham."
+  },
+  {
+    "nome": "DaMarcus Beasley",
+    "dob": "1982-05-24",
+    "posicoes_secundarias": ["LB", "LM"],
+    "confianca": 0.8,
+    "justificativa": "Converted to left back/left wing-back later in his career, including the 2014 World Cup."
+  },
+  {
+    "nome": "Eric Wynalda",
+    "dob": "1969-06-09",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Primarily a pure striker with no clearly documented secondary position."
+  },
+  {
+    "nome": "Cobi Jones",
+    "dob": "1970-06-16",
+    "posicoes_secundarias": ["RM"],
+    "confianca": 0.6,
+    "justificativa": "Played as a right-sided midfielder for LA Galaxy in addition to his winger role."
+  },
+  {
+    "nome": "Folarin Balogun",
+    "dob": "2001-07-03",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.6,
+    "justificativa": "Can play as a second striker/false nine in addition to his main striker role."
+  },
+  {
+    "nome": "Chris Richards",
+    "dob": "2000-03-28",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "Has filled in at right back for Crystal Palace and the national team in addition to center back."
+  },
+  {
+    "nome": "Tim Ream",
+    "dob": "1987-10-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Mainly a center back with no strongly documented secondary position."
+  },
+  {
+    "nome": "Johnny Cardoso",
+    "dob": "2001-09-20",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.8,
+    "justificativa": "Primarily known as a defensive midfielder at Real Betis and the national team."
+  },
+  {
+    "nome": "Shaq Moore",
+    "dob": "1996-11-02",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.9,
+    "justificativa": "Actually plays mainly as a right back for Nashville SC, not center back."
+  },
+  {
+    "nome": "Malik Tillman",
+    "dob": "2002-05-28",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.7,
+    "justificativa": "Primarily an attacking midfielder/second striker for PSV Eindhoven."
+  },
+  {
+    "nome": "Joe Scally",
+    "dob": "2002-12-31",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.8,
+    "justificativa": "Actually plays mainly as a right back for Borussia Mönchengladbach, not center back."
+  },
+  {
+    "nome": "Kristoffer Lund",
+    "dob": "2002-05-14",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.7,
+    "justificativa": "Danish-American defender who plays mainly as a left back, including at Palermo."
+  },
+  {
+    "nome": "Josh Sargent",
+    "dob": "2000-02-20",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.6,
+    "justificativa": "Often plays as a deeper center forward/second striker for Norwich City."
+  }
+]

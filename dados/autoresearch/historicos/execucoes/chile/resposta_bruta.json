@@ -73,7 +73,10 @@
       "dribbling": 85,
       "defending": 36,
       "physic": 76
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Ivan Zamorano",
@@ -232,7 +235,7 @@
   {
     "nome": "Jorge Valdivia",
     "pais": "Chile",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1983-10-19",
     "percentis": {
       "overall": 0.88,
@@ -256,12 +259,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Matias Fernandez",
     "pais": "Chile",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1986-05-15",
     "percentis": {
       "overall": 0.87,
@@ -285,12 +291,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Jorge Aravena",
     "pais": "Chile",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1958-04-22",
     "percentis": {
       "overall": 0.68,
@@ -319,7 +328,7 @@
   {
     "nome": "Eduardo Bonvallet",
     "pais": "Chile",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1955-01-13",
     "percentis": {
       "overall": 0.68,
@@ -348,7 +357,7 @@
   {
     "nome": "Fabian Estay",
     "pais": "Chile",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1968-10-05",
     "percentis": {
       "overall": 0.68,
@@ -377,7 +386,7 @@
   {
     "nome": "Claudio Maldonado",
     "pais": "Chile",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1980-01-03",
     "percentis": {
       "overall": 0.75,
@@ -401,12 +410,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Jorge Toro",
     "pais": "Chile",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1939-01-10",
     "percentis": {
       "overall": 0.78,
@@ -459,7 +471,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Leonel Sanchez",
@@ -488,7 +503,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "ST"
+    ]
   },
   {
     "nome": "Hugo Rubio",
@@ -546,7 +564,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "Osvaldo Castro",
@@ -604,7 +625,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Jaime Ramirez",
@@ -720,7 +744,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
   },
   {
     "nome": "Eduardo Vargas",
@@ -749,7 +776,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Humberto Suazo",
@@ -836,7 +866,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
   },
   {
     "nome": "Raul Sanchez",
@@ -894,7 +927,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Pedro Reyes",
@@ -952,7 +988,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Pablo Contreras",
@@ -1010,7 +1049,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Fernando Astengo",

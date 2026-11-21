@@ -2,7 +2,7 @@
   {
     "nome": "Diego Maradona",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1960-10-30",
     "percentis": {
       "overall": 0.98,
@@ -35,7 +35,10 @@
       "dribbling": 96,
       "defending": 46,
       "physic": 76
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Ezequiel Lavezzi",
@@ -64,7 +67,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Omar Sivori",
@@ -122,7 +128,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Adolfo Pedernera",
@@ -151,7 +160,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Angel Labruna",
@@ -180,7 +192,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Juan Carlos Munoz",
@@ -354,7 +369,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Abel Balbo",
@@ -412,7 +430,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Kily Gonzalez",
@@ -441,7 +462,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
   },
   {
     "nome": "Maxi Rodriguez",
@@ -470,7 +494,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Javier Saviola",
@@ -499,7 +526,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Julio Cruz",
@@ -644,7 +674,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Alfredo Di Stefano",
@@ -673,7 +706,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Mario Kempes",
@@ -789,7 +825,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Hernan Crespo",
@@ -818,7 +857,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Gabriel Batistuta",
@@ -1166,7 +1208,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Ricardo Villa",
@@ -1200,7 +1245,7 @@
   {
     "nome": "Luis Monti",
     "pais": "Argentina",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1901-05-15",
     "percentis": {
       "overall": 0.85,
@@ -1229,7 +1274,7 @@
   {
     "nome": "Miguel Angel Brindisi",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1950-10-08",
     "percentis": {
       "overall": 0.74,
@@ -1258,7 +1303,7 @@
   {
     "nome": "Fernando Gago",
     "pais": "Argentina",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1986-04-10",
     "percentis": {
       "overall": 0.78,
@@ -1282,12 +1327,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Alberto Marcico",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1960-05-13",
     "percentis": {
       "overall": 0.68,
@@ -1316,7 +1364,7 @@
   {
     "nome": "Jorge Burruchaga",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1962-10-09",
     "percentis": {
       "overall": 0.88,
@@ -1340,12 +1388,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Ariel Ortega",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1974-03-04",
     "percentis": {
       "overall": 0.84,
@@ -1369,12 +1420,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Fernando Redondo",
     "pais": "Argentina",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1969-06-06",
     "percentis": {
       "overall": 0.9,
@@ -1398,7 +1452,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Juan Sebastian Veron",
@@ -1427,12 +1484,16 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM",
+      "CAM"
+    ]
   },
   {
     "nome": "Ricardo Bochini",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1954-01-25",
     "percentis": {
       "overall": 0.8,
@@ -1461,7 +1522,7 @@
   {
     "nome": "Norberto Alonso",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1953-01-04",
     "percentis": {
       "overall": 0.82,
@@ -1490,7 +1551,7 @@
   {
     "nome": "Antonio Rattin",
     "pais": "Argentina",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1937-05-16",
     "percentis": {
       "overall": 0.8,
@@ -1514,7 +1575,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Ricardo Giusti",
@@ -1543,12 +1607,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Claudio Borghi",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1964-09-28",
     "percentis": {
       "overall": 0.76,
@@ -1606,7 +1673,7 @@
   {
     "nome": "Javier Mascherano",
     "pais": "Argentina",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1984-06-08",
     "percentis": {
       "overall": 0.93,
@@ -1630,7 +1697,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Diego Simeone",
@@ -1659,12 +1729,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Juan Roman Riquelme",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1978-06-24",
     "percentis": {
       "overall": 0.9,
@@ -1693,7 +1766,7 @@
   {
     "nome": "Matias Almeyda",
     "pais": "Argentina",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1973-12-21",
     "percentis": {
       "overall": 0.77,
@@ -1722,7 +1795,7 @@
   {
     "nome": "Leonardo Astrada",
     "pais": "Argentina",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1970-01-06",
     "percentis": {
       "overall": 0.68,
@@ -1751,7 +1824,7 @@
   {
     "nome": "Pablo Aimar",
     "pais": "Argentina",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1979-11-03",
     "percentis": {
       "overall": 0.84,
@@ -1775,7 +1848,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Lucho Gonzalez",
@@ -1804,12 +1880,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Esteban Cambiasso",
     "pais": "Argentina",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1980-08-18",
     "percentis": {
       "overall": 0.85,
@@ -1833,7 +1912,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Javier Zanetti",
@@ -1862,7 +1944,11 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB",
+      "CDM"
+    ]
   },
   {
     "nome": "Jose Luis Brown",
@@ -1891,7 +1977,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Silvio Marzolini",
@@ -2065,7 +2154,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Alberto Tarantini",
@@ -2123,7 +2215,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
   },
   {
     "nome": "Juan Pablo Sorin",
@@ -2152,7 +2247,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
   },
   {
     "nome": "Walter Samuel",
@@ -2210,6 +2308,9 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   }
 ]

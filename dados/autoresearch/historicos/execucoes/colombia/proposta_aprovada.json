@@ -2,7 +2,7 @@
   {
     "nome": "Carlos Valderrama",
     "pais": "Colombia",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1961-09-02",
     "percentis": {
       "overall": 0.98,
@@ -35,7 +35,10 @@
       "dribbling": 88,
       "defending": 45,
       "physic": 64
-    }
+    },
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Willington Ortiz",
@@ -64,7 +67,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Miguel Angel Borja",
@@ -93,7 +99,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Jackson Martinez",
@@ -122,7 +131,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Teofilo Gutierrez",
@@ -151,7 +163,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Faustino Asprilla",
@@ -180,7 +195,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Victor Hugo Aristizabal",
@@ -209,7 +227,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Antony de Avila",
@@ -238,7 +259,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Arnoldo Iguaran",
@@ -296,7 +320,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Adolfo Valencia",
@@ -330,7 +357,7 @@
   {
     "nome": "Leonel Alvarez",
     "pais": "Colombia",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1965-07-29",
     "percentis": {
       "overall": 0.85,
@@ -354,7 +381,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Freddy Rincon",
@@ -383,12 +413,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Wilmar Barrios",
     "pais": "Colombia",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1993-10-16",
     "percentis": {
       "overall": 0.78,
@@ -412,7 +445,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Ivan Cordoba",
@@ -441,7 +477,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Mario Yepes",
@@ -499,7 +538,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Camilo Zuniga",
@@ -528,7 +570,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "Pablo Armero",
@@ -557,12 +602,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
   },
   {
     "nome": "Carlos Sanchez",
     "pais": "Colombia",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1986-02-06",
     "percentis": {
       "overall": 0.75,
@@ -591,7 +639,7 @@
   {
     "nome": "Abel Aguilar",
     "pais": "Colombia",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1985-01-06",
     "percentis": {
       "overall": 0.73,
@@ -615,7 +663,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Fabian Vargas",
@@ -649,7 +700,7 @@
   {
     "nome": "Giovanny Hernandez",
     "pais": "Colombia",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1976-06-16",
     "percentis": {
       "overall": 0.62,
@@ -673,7 +724,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Luis Amaranto Perea",
@@ -731,12 +785,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Mauricio Serna",
     "pais": "Colombia",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1968-01-22",
     "percentis": {
       "overall": 0.86,

@@ -35,12 +35,15 @@
       "dribbling": 84,
       "defending": 40,
       "physic": 78
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Enzo Francescoli",
     "pais": "Uruguay",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1961-11-12",
     "percentis": {
       "overall": 0.97,
@@ -73,7 +76,10 @@
       "dribbling": 88,
       "defending": 45,
       "physic": 68
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Dario Silva",
@@ -131,7 +137,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "Julio Cesar Abbadie",
@@ -160,7 +169,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Luis Cubilla",
@@ -189,7 +201,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "Pedro Rocha",
@@ -218,7 +233,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Cristian Rodriguez",
@@ -247,7 +265,11 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB",
+      "LM"
+    ]
   },
   {
     "nome": "Sebastian Abreu",
@@ -276,7 +298,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Marcelo Zalayeta",
@@ -392,7 +417,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Hector Scarone",
@@ -421,7 +449,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Paolo Montero",
@@ -508,7 +539,11 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LWB",
+      "LM"
+    ]
   },
   {
     "nome": "Jose Nasazzi",
@@ -537,7 +572,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Diego Lugano",
@@ -595,12 +633,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Obdulio Varela",
     "pais": "Uruguay",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1917-09-20",
     "percentis": {
       "overall": 0.96,
@@ -624,12 +665,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Victor Rodriguez Andrade",
     "pais": "Uruguay",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1927-05-02",
     "percentis": {
       "overall": 0.73,
@@ -658,7 +702,7 @@
   {
     "nome": "Schubert Gambetta",
     "pais": "Uruguay",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1920-04-14",
     "percentis": {
       "overall": 0.71,
@@ -682,12 +726,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Giorgian de Arrascaeta",
     "pais": "Uruguay",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1994-06-01",
     "percentis": {
       "overall": 0.86,
@@ -711,12 +758,16 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM",
+      "LW"
+    ]
   },
   {
     "nome": "Alvaro Recoba",
     "pais": "Uruguay",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1976-03-17",
     "percentis": {
       "overall": 0.86,
@@ -740,12 +791,16 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW",
+      "CF"
+    ]
   },
   {
     "nome": "Gaston Ramirez",
     "pais": "Uruguay",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1990-12-02",
     "percentis": {
       "overall": 0.73,
@@ -769,12 +824,16 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM",
+      "RW"
+    ]
   },
   {
     "nome": "Juan Alberto Schiaffino",
     "pais": "Uruguay",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1925-07-28",
     "percentis": {
       "overall": 0.98,
@@ -798,12 +857,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Egidio Arevalo Rios",
     "pais": "Uruguay",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1982-01-01",
     "percentis": {
       "overall": 0.79,
@@ -827,7 +889,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Gustavo Varela",
@@ -861,7 +926,7 @@
   {
     "nome": "Pablo Garcia",
     "pais": "Uruguay",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1977-05-11",
     "percentis": {
       "overall": 0.83,
@@ -885,7 +950,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Fabian Carini",

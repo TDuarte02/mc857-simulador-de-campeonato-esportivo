@@ -64,7 +64,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Omar Bravo",
@@ -122,7 +125,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Carlos Hermosillo",
@@ -267,7 +273,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Enrique Borja",
@@ -383,7 +392,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "Oswaldo Sanchez",
@@ -475,7 +487,7 @@
   {
     "nome": "Cuauhtemoc Blanco",
     "pais": "Mexico",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1973-01-17",
     "percentis": {
       "overall": 0.97,
@@ -499,12 +511,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Adolfo Bautista",
     "pais": "Mexico",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1979-05-15",
     "percentis": {
       "overall": 0.78,
@@ -533,7 +548,7 @@
   {
     "nome": "Benjamin Galindo",
     "pais": "Mexico",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1960-12-11",
     "percentis": {
       "overall": 0.86,
@@ -586,7 +601,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Tomas Boy",
@@ -615,12 +633,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Manuel Negrete",
     "pais": "Mexico",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1959-03-11",
     "percentis": {
       "overall": 0.78,
@@ -644,12 +665,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Pavel Pardo",
     "pais": "Mexico",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1976-07-26",
     "percentis": {
       "overall": 0.86,
@@ -673,12 +697,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Gerardo Torrado",
     "pais": "Mexico",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1979-04-30",
     "percentis": {
       "overall": 0.85,
@@ -702,12 +729,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Antonio Naelson",
     "pais": "Mexico",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1976-05-23",
     "percentis": {
       "overall": 0.72,
@@ -736,7 +766,7 @@
   {
     "nome": "Giovani dos Santos",
     "pais": "Mexico",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1989-05-11",
     "percentis": {
       "overall": 0.84,
@@ -760,7 +790,11 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW",
+      "RW"
+    ]
   },
   {
     "nome": "Fernando Quirarte",
@@ -847,7 +881,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
   },
   {
     "nome": "Duilio Davino",
@@ -876,7 +913,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Carlos Salcido",
@@ -905,7 +945,11 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB",
+      "LM"
+    ]
   },
   {
     "nome": "Rafael Marquez",
@@ -934,6 +978,9 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   }
 ]

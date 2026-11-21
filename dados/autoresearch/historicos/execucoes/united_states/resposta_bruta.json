@@ -2,7 +2,7 @@
   {
     "nome": "Landon Donovan",
     "pais": "United States",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1982-03-04",
     "percentis": {
       "overall": 0.99,
@@ -35,7 +35,10 @@
       "dribbling": 85,
       "defending": 46,
       "physic": 72
-    }
+    },
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Clint Dempsey",
@@ -73,12 +76,15 @@
       "dribbling": 83,
       "defending": 42,
       "physic": 78
-    }
+    },
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Maurice Edu",
     "pais": "United States",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1986-04-18",
     "percentis": {
       "overall": 0.75,
@@ -102,12 +108,16 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM",
+      "CB"
+    ]
   },
   {
     "nome": "Stuart Holden",
     "pais": "United States",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1985-08-01",
     "percentis": {
       "overall": 0.68,
@@ -131,7 +141,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Benny Feilhaber",
@@ -160,12 +173,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Tab Ramos",
     "pais": "United States",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1966-09-21",
     "percentis": {
       "overall": 0.88,
@@ -189,7 +205,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Claudio Reyna",
@@ -218,7 +237,11 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM",
+      "RM"
+    ]
   },
   {
     "nome": "John Harkes",
@@ -247,7 +270,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
   },
   {
     "nome": "Matt Turner",
@@ -334,7 +360,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
   },
   {
     "nome": "Steve Cherundolo",
@@ -537,7 +566,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
   },
   {
     "nome": "Eddie Pope",
@@ -624,7 +656,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "Joe-Max Moore",
@@ -653,7 +688,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Brian McBride",
@@ -682,7 +720,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "DaMarcus Beasley",
@@ -711,7 +752,11 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB",
+      "LM"
+    ]
   },
   {
     "nome": "Eric Wynalda",
@@ -769,7 +814,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "Folarin Balogun",
@@ -798,6 +846,9 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   }
 ]

@@ -26,7 +26,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Alberto Spencer",
@@ -55,7 +58,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Leonardo Campana",
@@ -113,7 +119,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Nicolas Asencio",
@@ -176,7 +185,7 @@
   {
     "nome": "Polo Carrera",
     "pais": "Ecuador",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1945-01-11",
     "percentis": {
       "overall": 0.95,
@@ -205,7 +214,7 @@
   {
     "nome": "Alex Aguinaga",
     "pais": "Ecuador",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1968-07-09",
     "percentis": {
       "overall": 0.97,
@@ -229,7 +238,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Edison Mendez",
@@ -258,7 +270,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Cristian Noboa",
@@ -287,12 +302,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Segundo Castillo",
     "pais": "Ecuador",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1982-05-15",
     "percentis": {
       "overall": 0.82,
@@ -316,12 +334,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Michael Arroyo",
     "pais": "Ecuador",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1987-04-23",
     "percentis": {
       "overall": 0.78,
@@ -345,7 +366,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Frickson Erazo",
@@ -432,7 +456,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
   },
   {
     "nome": "Ulises de la Cruz",
@@ -461,7 +488,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
   },
   {
     "nome": "Ivan Hurtado",

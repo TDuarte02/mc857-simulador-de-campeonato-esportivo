@@ -145,3 +145,33 @@ Três diferenças em relação aos convocados de 2024:
 A fonte de cada jogador histórico é a página do Wikidata (`https://www.wikidata.org/wiki/<QID>`),
 derivada de `fonte_validacao` nos arquivos históricos anteriores. Não há chamada de rede
 no pipeline: as propostas entram como JSON versionado, igual à camada 2024.
+
+## Posições (`pipeline/posicoes.py`)
+
+O jogo só permite escalar um jogador nas posições que ele de fato joga, então cada um
+precisa da principal **e** das secundárias, mais as 27 notas de posição específica
+(`st`, `cb`, `cam`, …) que a base usa para decidir por limiar quem pode atuar onde.
+
+- `CODIGOS_VALIDOS`: os 15 códigos que existem na base. A curadoria histórica usava
+  `AM`/`DM`; `normalizar_codigo` converte para `CAM`/`CDM`.
+- `injetar_secundarias(propostas, respostas)`: copia as posições secundárias pesquisadas
+  para dentro da proposta, para que elas fluam pelo pipeline (validate → publish →
+  materialize) em vez de serem aplicadas à mão sobre o snapshot publicado.
+- `treinar_modelo(dataset)` + `prever_colunas(...)`: ajusta uma regressão por coluna de
+  posição **na própria base** (que tem os 7 atributos e as 27 notas para 19 mil
+  jogadores). Erro médio de ~1,5 ponto na escala 0-99, medido em 15k/4k. As colunas são
+  preenchidas **só nas posições plausíveis**; as outras 24 ficam vazias de propósito —
+  preencher as 27 sugeriria polivalência que o jogador não tem.
+- Formato: gravamos inteiro puro, sem o bônus de química (`"+2"`) que a base carrega e
+  que não temos como reproduzir.
+
+Pesquisa de secundárias: 47% dos enriquecidos receberam 1–2 posições; os 53% restantes
+ficaram só com a principal — espelhando a base real (49% com posição única). Quem ficou
+sem secundária é especialista de verdade (um centroavante puro) ou jogador sem
+documentação; nenhuma foi inventada.
+
+## Filtro de praticabilidade (`pipeline/filtro.py`)
+
+O pool completo (~5.000 jogadores para 16 seleções) é inviável num jogo. `filter-pool`
+corta por **cota de posição por seleção** (padrão 5 GK / 12 DEF / 12 MID / 11 ATT),
+mantendo os enriquecidos sempre — a cota é **piso**, não teto. Resultado: 756 jogadores.

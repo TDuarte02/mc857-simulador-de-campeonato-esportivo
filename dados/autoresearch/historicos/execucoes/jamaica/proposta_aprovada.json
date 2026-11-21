@@ -2,7 +2,7 @@
   {
     "nome": "Rodolph Austin",
     "pais": "Jamaica",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1985-06-01",
     "percentis": {
       "overall": 0.85,
@@ -26,12 +26,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Theodore Whitmore",
     "pais": "Jamaica",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1972-08-05",
     "percentis": {
       "overall": 0.96,
@@ -55,12 +58,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Jermaine Hue",
     "pais": "Jamaica",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1978-06-15",
     "percentis": {
       "overall": 0.72,
@@ -113,7 +119,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Walter Boyd",
@@ -229,7 +238,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Donovan Ricketts",
@@ -345,7 +357,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
   },
   {
     "nome": "Demar Phillips",
@@ -403,7 +418,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Wes Morgan",

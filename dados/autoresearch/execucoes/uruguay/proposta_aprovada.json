@@ -29,7 +29,11 @@
       }
     ],
     "confianca": 0.85,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CM",
+      "LW"
+    ]
   },
   {
     "nome": "Franco Israel",

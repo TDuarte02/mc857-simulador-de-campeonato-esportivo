@@ -2,7 +2,7 @@
   {
     "nome": "Teofilo Cubillas",
     "pais": "Peru",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1949-03-08",
     "percentis": {
       "overall": 0.99,
@@ -35,7 +35,10 @@
       "dribbling": 89,
       "defending": 44,
       "physic": 70
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Claudio Pizarro",
@@ -73,7 +76,10 @@
       "dribbling": 82,
       "defending": 36,
       "physic": 80
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Paolo Guerrero",
@@ -111,7 +117,10 @@
       "dribbling": 80,
       "defending": 38,
       "physic": 84
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Ramon Mifflin",
@@ -140,7 +149,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Jose del Solar",
@@ -169,12 +181,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "German Leguia",
     "pais": "Peru",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1954-01-02",
     "percentis": {
       "overall": 0.72,
@@ -203,7 +218,7 @@
   {
     "nome": "Julio Cesar Uribe",
     "pais": "Peru",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1958-05-09",
     "percentis": {
       "overall": 0.9,
@@ -227,7 +242,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Luis Cruzado",
@@ -261,7 +279,7 @@
   {
     "nome": "Roberto Palacios",
     "pais": "Peru",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1972-12-28",
     "percentis": {
       "overall": 0.86,
@@ -285,12 +303,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Cesar Cueto",
     "pais": "Peru",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1952-06-16",
     "percentis": {
       "overall": 0.9,
@@ -314,12 +335,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Hugo Sotil",
     "pais": "Peru",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1949-05-18",
     "percentis": {
       "overall": 0.94,
@@ -343,12 +367,15 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Roberto Challe",
     "pais": "Peru",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1946-11-24",
     "percentis": {
       "overall": 0.68,
@@ -401,7 +428,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LWB"
+    ]
   },
   {
     "nome": "Alberto Rodriguez",
@@ -546,7 +576,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
   },
   {
     "nome": "Flavio Maestri",
@@ -604,7 +637,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Oswaldo Ramirez",
@@ -662,7 +698,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "ST"
+    ]
   },
   {
     "nome": "Nolberto Solano",
@@ -691,7 +730,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   },
   {
     "nome": "Pedro Pablo Leon",

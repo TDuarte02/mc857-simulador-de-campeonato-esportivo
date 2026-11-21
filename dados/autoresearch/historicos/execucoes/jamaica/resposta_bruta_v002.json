@@ -1,0 +1,484 @@
+[
+  {
+    "nome": "Rodolph Austin",
+    "pais": "Jamaica",
+    "posicao": "CDM",
+    "dob": "1985-06-01",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.75,
+      "dribbling": 0.6,
+      "defending": 0.85,
+      "physic": 0.82
+    },
+    "observacao": "Rodolph Austin foi capitão da seleção jamaicana e volante de referência em sua geração, com passagens por clubes ingleses como Leeds United. Combinava físico robusto e forte presença defensiva com boa capacidade de distribuição de jogo, características de um titular internacional de alto nível. Os percentis refletem um meio-campista defensivo sólido, acima da mediana do grupo em defesa e físico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q769566",
+        "afirmacao": "Rodolph Austin foi convocado pela seleção da Jamaica e atuou como volante, com passagem pelo Leeds United."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Theodore Whitmore",
+    "pais": "Jamaica",
+    "posicao": "CAM",
+    "dob": "1972-08-05",
+    "percentis": {
+      "overall": 0.96,
+      "pace": 0.75,
+      "shooting": 0.88,
+      "passing": 0.85,
+      "dribbling": 0.82,
+      "defending": 0.55,
+      "physic": 0.7
+    },
+    "observacao": "Theodore Whitmore é um dos maiores ídolos da história da seleção jamaicana: marcou os dois gols da histórica primeira vitória da Jamaica em Copas do Mundo, contra o Japão em 1998. Meio-campista criativo e decisivo, combinava boa finalização com excelente visão de jogo. Por seu status de lenda nacional, seus percentis ficam no topo da distribuição do grupo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q950720",
+        "afirmacao": "Theodore Whitmore foi convocado para a Copa do Mundo de 1998 e é lembrado como herói nacional por seus gols decisivos."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Jermaine Hue",
+    "pais": "Jamaica",
+    "posicao": "CAM",
+    "dob": "1978-06-15",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.68,
+      "shooting": 0.6,
+      "passing": 0.62,
+      "dribbling": 0.65,
+      "defending": 0.4,
+      "physic": 0.55
+    },
+    "observacao": "Jermaine Hue integrou o elenco da Jamaica na Copa do Mundo de 1998, mas teve participação e registros históricos mais discretos que outros nomes daquela geração. Era um meio-campista de apoio ofensivo com boa movimentação, mas sem o mesmo destaque de companheiros de equipe. Os percentis o posicionam como peça de rotação de nível internacional regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q6182326",
+        "afirmacao": "Jermaine Hue foi convocado para a Copa do Mundo de 1998 integrando o elenco da Jamaica."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Robbie Earle",
+    "pais": "Jamaica",
+    "posicao": "ST",
+    "dob": "1965-01-27",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.6,
+      "shooting": 0.85,
+      "passing": 0.8,
+      "dribbling": 0.75,
+      "defending": 0.5,
+      "physic": 0.72
+    },
+    "observacao": "Robbie Earle é uma figura histórica do futebol jamaicano: marcou o primeiro gol da seleção em Copas do Mundo, na derrota para a Croácia em 1998, e teve longa e respeitada carreira pelo Wimbledon na Premier League inglesa. Era um atacante inteligente, com boa leitura de jogo e finalização consistente. Seus percentis refletem o status de lenda com carreira europeia de alto nível.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q975790",
+        "afirmacao": "Robbie Earle defendeu o Wimbledon e marcou o primeiro gol histórico da Jamaica em Copas do Mundo, em 1998."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Walter Boyd",
+    "pais": "Jamaica",
+    "posicao": "ST",
+    "dob": "1972-01-01",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.78,
+      "shooting": 0.85,
+      "passing": 0.65,
+      "dribbling": 0.92,
+      "defending": 0.3,
+      "physic": 0.6
+    },
+    "observacao": "Walter Boyd ficou conhecido como um dos jogadores mais talentosos de sua geração na Jamaica, apelidado por vezes de 'Maradona jamaicano' pela qualidade técnica e drible, fazendo parte do elenco histórico da Copa de 1998. Sua carreira, porém, foi marcada por instabilidade fora de campo que limitou seu alcance internacional. Os percentis destacam um drible excepcional, com finalização e criatividade acima da média do grupo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q973675",
+        "afirmacao": "Walter Boyd integrou o elenco da Jamaica na Copa do Mundo de 1998, reconhecido por sua habilidade técnica."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luton Shelton",
+    "pais": "Jamaica",
+    "posicao": "ST",
+    "dob": "1985-11-11",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.85,
+      "shooting": 0.9,
+      "passing": 0.6,
+      "dribbling": 0.75,
+      "defending": 0.3,
+      "physic": 0.75
+    },
+    "observacao": "Luton Shelton se tornou um dos maiores artilheiros da história da seleção jamaicana, com passagens de destaque por clubes europeus como Vålerenga e Sheffield United. Atacante rápido e com excelente faro de gol, foi peça central do ataque jamaicano por vários ciclos. Seus percentis refletem alto nível de finalização e velocidade, típico de um titular internacional de longa data.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q289756",
+        "afirmacao": "Luton Shelton defendeu o Vålerenga e é um dos principais artilheiros da história da seleção jamaicana."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Onandi Lowe",
+    "pais": "Jamaica",
+    "posicao": "ST",
+    "dob": "1974-12-02",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.75,
+      "shooting": 0.78,
+      "passing": 0.55,
+      "dribbling": 0.7,
+      "defending": 0.3,
+      "physic": 0.68
+    },
+    "observacao": "Onandi Lowe integrou o histórico elenco jamaicano da Copa do Mundo de 1998, atuando como atacante com boa mobilidade e capacidade de finalização, tendo defendido clubes na Inglaterra e nos Estados Unidos. Não alcançou o mesmo status de superestrela de outros companheiros, mas foi peça regular e confiável do ataque. Os percentis colocam-no como titular internacional sólido.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1982002",
+        "afirmacao": "Onandi Lowe foi convocado para a Copa do Mundo de 1998 como atacante da seleção jamaicana."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Deon Burton",
+    "pais": "Jamaica",
+    "posicao": "ST",
+    "dob": "1976-10-25",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.72,
+      "shooting": 0.82,
+      "passing": 0.55,
+      "dribbling": 0.68,
+      "defending": 0.35,
+      "physic": 0.78
+    },
+    "observacao": "Deon Burton teve uma das carreiras mais longevas entre os atacantes jamaicanos, com passagens por diversos clubes do futebol inglês desde a Premier League até a Championship, após integrar o elenco histórico de 1998. Era um centroavante forte fisicamente e eficiente na finalização. Os percentis refletem um atacante de alto nível com carreira europeia duradoura.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2456848",
+        "afirmacao": "Deon Burton integrou o elenco da Jamaica na Copa do Mundo de 1998 e teve longa carreira no futebol inglês."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Donovan Ricketts",
+    "pais": "Jamaica",
+    "posicao": "GK",
+    "dob": "1977-06-07",
+    "percentis": {
+      "overall": 0.9,
+      "goalkeeping_diving": 0.9,
+      "goalkeeping_handling": 0.88,
+      "goalkeeping_kicking": 0.75,
+      "goalkeeping_positioning": 0.9,
+      "goalkeeping_reflexes": 0.92,
+      "goalkeeping_speed": 0.6
+    },
+    "observacao": "Donovan Ricketts foi o goleiro titular da Jamaica por boa parte dos anos 2000 e 2010, com longa e vitoriosa carreira na MLS, incluindo passagens por LA Galaxy e Portland Timbers, onde foi reconhecido como um dos melhores goleiros da liga. Possuía excelentes reflexos e grande presença na área. Os percentis refletem um goleiro titular internacional de alto nível.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q426615",
+        "afirmacao": "Donovan Ricketts foi goleiro titular da seleção jamaicana e defendeu o LA Galaxy na MLS."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Claude Davis",
+    "pais": "Jamaica",
+    "posicao": "CB",
+    "dob": "1979-03-06",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.55,
+      "shooting": 0.3,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.78,
+      "physic": 0.8
+    },
+    "observacao": "Claude Davis foi um zagueiro robusto que atuou por anos no futebol inglês, com destaque para sua passagem pelo Derby County na Premier League. Era conhecido por sua força física e firmeza defensiva, características valorizadas em zagueiros centrais de seleção. Os percentis refletem um defensor internacional regular, acima da mediana em defesa e físico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q675535",
+        "afirmacao": "Claude Davis foi convocado pela seleção da Jamaica como zagueiro e defendeu o Derby County."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ian Goodison",
+    "pais": "Jamaica",
+    "posicao": "CB",
+    "dob": "1972-11-21",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.5,
+      "shooting": 0.35,
+      "passing": 0.58,
+      "dribbling": 0.5,
+      "defending": 0.95,
+      "physic": 0.85
+    },
+    "observacao": "Ian Goodison é o jogador mais convocado da história da seleção jamaicana, com mais de 120 partidas disputadas, incluindo a histórica Copa do Mundo de 1998. Zagueiro extremamente consistente e confiável, foi pilar defensivo da seleção por quase duas décadas. Seus percentis, no topo da distribuição, refletem seu status de maior lenda defensiva do país.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1269556",
+        "afirmacao": "Ian Goodison é o jogador com mais convocações pela seleção da Jamaica e integrou o elenco da Copa de 1998."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ricardo Gardner",
+    "pais": "Jamaica",
+    "posicao": "LB",
+    "dob": "1978-09-25",
+    "percentis": {
+      "overall": 0.94,
+      "pace": 0.82,
+      "shooting": 0.55,
+      "passing": 0.72,
+      "dribbling": 0.75,
+      "defending": 0.82,
+      "physic": 0.78
+    },
+    "observacao": "Ricardo Gardner, conhecido como 'Bibi', é uma lenda do futebol jamaicano, com mais de uma década defendendo o Bolton Wanderers na Premier League inglesa e participação na Copa do Mundo de 1998. Lateral-esquerdo veloz e ofensivo, combinava boa capacidade defensiva com projeção pelo lado do campo. Os percentis refletem um dos maiores laterais que o país já produziu.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q317754",
+        "afirmacao": "Ricardo Gardner teve longa carreira no Bolton Wanderers e é um dos laterais mais lembrados da seleção jamaicana."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
+  },
+  {
+    "nome": "Demar Phillips",
+    "pais": "Jamaica",
+    "posicao": "LB",
+    "dob": "1983-09-23",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.7,
+      "shooting": 0.45,
+      "passing": 0.6,
+      "dribbling": 0.6,
+      "defending": 0.72,
+      "physic": 0.68
+    },
+    "observacao": "Demar Phillips foi lateral regular da seleção jamaicana e teve passagem pelo Real Salt Lake na MLS, onde conquistou títulos relevantes. Combinava solidez defensiva com participação ofensiva pelas laterais. Os percentis o colocam como um titular internacional sólido, consistente com sua carreira na liga norte-americana.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q973733",
+        "afirmacao": "Demar Phillips foi convocado pela seleção da Jamaica como lateral e defendeu o Real Salt Lake."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Adrian Mariappa",
+    "pais": "Jamaica",
+    "posicao": "CB",
+    "dob": "1986-10-03",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.68,
+      "shooting": 0.3,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.85,
+      "physic": 0.78
+    },
+    "observacao": "Adrian Mariappa construiu longa carreira no Watford, com mais de 400 partidas pelo clube inglês entre Premier League e Championship, tornando-se um dos zagueiros de elite elegíveis pela Jamaica. Era um defensor versátil, seguro na marcação e com boa leitura posicional. Os percentis refletem um zagueiro internacional de alto nível com vasta experiência europeia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q10572",
+        "afirmacao": "Adrian Mariappa foi convocado pela seleção da Jamaica e teve longa carreira como zagueiro do Watford."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
+  },
+  {
+    "nome": "Wes Morgan",
+    "pais": "Jamaica",
+    "posicao": "CB",
+    "dob": "1984-01-21",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.4,
+      "shooting": 0.35,
+      "passing": 0.5,
+      "dribbling": 0.4,
+      "defending": 0.92,
+      "physic": 0.95
+    },
+    "observacao": "Wes Morgan é um dos maiores nomes do futebol jamaicano na era moderna: capitão do Leicester City no histórico título improvável da Premier League em 2016. Zagueiro físico, de liderança e grande presença aérea, foi peça fundamental tanto no clube quanto na seleção. Seus percentis, próximos ao topo, refletem esse status de lenda com conquista de elite europeia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1392500",
+        "afirmacao": "Wes Morgan foi capitão do Leicester City campeão da Premier League em 2016 e é elegível pela seleção da Jamaica."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Tyrone Marshall",
+    "pais": "Jamaica",
+    "posicao": "CB",
+    "dob": "1974-11-12",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.5,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.65,
+      "physic": 0.7
+    },
+    "observacao": "Tyrone Marshall fez parte do elenco histórico da Jamaica na Copa do Mundo de 1998, atuando como zagueiro central de perfil mais discreto em relação a outros companheiros daquela geração. Seus registros públicos são mais escassos, típico de jogadores de rotação daquele período. Os percentis refletem um defensor de seleção com participação relevante, porém sem o mesmo destaque das principais lendas do time.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2062203",
+        "afirmacao": "Tyrone Marshall integrou o elenco da Jamaica na Copa do Mundo de 1998 como zagueiro."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]

@@ -1,7 +1,7 @@
 pais,nome,posicao,fonte_url,dob,contexto,status,indice_base,nome_base,sofifa_id
 Colombia,Radamel Falcao,ST,https://www.wikidata.org/wiki/Q138172,1986-02-10,Atletico de Madrid,present,670,Radamel Falcao García Zárate,167397
-Colombia,Carlos Valderrama,AM,https://www.wikidata.org/wiki/Q204089,1961-09-02,El Pibe,missing,,,
-Colombia,James Rodriguez,AM,https://www.wikidata.org/wiki/Q368441,1991-07-12,Artilheiro Copa 2014,present,310,James David Rodríguez Rubio,198710
+Colombia,Carlos Valderrama,CAM,https://www.wikidata.org/wiki/Q204089,1961-09-02,El Pibe,missing,,,
+Colombia,James Rodriguez,CAM,https://www.wikidata.org/wiki/Q368441,1991-07-12,Artilheiro Copa 2014,present,310,James David Rodríguez Rubio,198710
 Colombia,Willington Ortiz,RW,https://www.wikidata.org/wiki/Q2422986,1952-03-26,Copa 1975-1983,missing,,,
 Colombia,Miguel Angel Borja,ST,https://www.wikidata.org/wiki/Q4094820,1993-01-26,River Plate,missing,,,
 Colombia,Rafael Santos Borre,ST,https://www.wikidata.org/wiki/Q18719633,1995-09-15,River Plate,present,779,Rafael Santos Borré Maury,220883
@@ -17,28 +17,28 @@ Colombia,Arnoldo Iguaran,ST,https://www.wikidata.org/wiki/Q696868,1957-01-18,Mil
 Colombia,Juan Pablo Angel,ST,https://www.wikidata.org/wiki/Q310620,1975-10-24,Aston Villa,missing,,,
 Colombia,Juan Guillermo Cuadrado,RW,https://www.wikidata.org/wiki/Q509374,1988-05-26,Juventus,present,157,Juan Guillermo Cuadrado Bello,193082
 Colombia,Adolfo Valencia,ST,https://www.wikidata.org/wiki/Q365208,1968-02-06,Bayern de Munique,missing,,,
-Colombia,Leonel Alvarez,DM,https://www.wikidata.org/wiki/Q720014,1965-07-29,Copa 1990,missing,,,
+Colombia,Leonel Alvarez,CDM,https://www.wikidata.org/wiki/Q720014,1965-07-29,Copa 1990,missing,,,
 Colombia,Johan Mojica,LB,https://www.wikidata.org/wiki/Q5932872,1992-08-21,Villarreal,present,2142,Johan Andrés Mojica Palacio,214026
 Colombia,Santiago Arias,RB,https://www.wikidata.org/wiki/Q2502118,1992-01-13,Bayer Leverkusen,present,567,Santiago Arias Naranjo,204259
-Colombia,Jefferson Lerma,DM,https://www.wikidata.org/wiki/Q16300824,1994-10-25,Crystal Palace,present,1691,Jefferson Andrés Lerma Solís,213991
+Colombia,Jefferson Lerma,CDM,https://www.wikidata.org/wiki/Q16300824,1994-10-25,Crystal Palace,present,1691,Jefferson Andrés Lerma Solís,213991
 Colombia,Freddy Rincon,CM,https://www.wikidata.org/wiki/Q225837,1966-08-14,Real Madrid,missing,,,
 Colombia,Mateus Uribe,CM,https://www.wikidata.org/wiki/Q20017202,1991-03-21,Porto,present,593,Andrés Mateus Uribe Villa,214047
-Colombia,Wilmar Barrios,DM,https://www.wikidata.org/wiki/Q19661792,1993-10-16,Boca Juniors,missing,,,
+Colombia,Wilmar Barrios,CDM,https://www.wikidata.org/wiki/Q19661792,1993-10-16,Boca Juniors,missing,,,
 Colombia,Davinson Sanchez,CB,https://www.wikidata.org/wiki/Q20737387,1996-06-12,Tottenham,present,604,Davinson Sánchez Mina,220793
 Colombia,Yerry Mina,CB,https://www.wikidata.org/wiki/Q16648816,1994-09-23,Everton,present,602,Yerry Fernando Mina González,220523
 Colombia,Ivan Cordoba,CB,https://www.wikidata.org/wiki/Q231348,1976-08-11,Inter de Milao,missing,,,
-Colombia,Juan Fernando Quintero,AM,https://www.wikidata.org/wiki/Q2092409,1993-01-18,River Plate,present,582,Juan Fernando Quintero Paniagua,210513
+Colombia,Juan Fernando Quintero,CAM,https://www.wikidata.org/wiki/Q2092409,1993-01-18,River Plate,present,582,Juan Fernando Quintero Paniagua,210513
 Colombia,Mario Yepes,CB,https://www.wikidata.org/wiki/Q309778,1976-01-13,Milan,missing,,,
 Colombia,Alexis Garcia,CM,https://www.wikidata.org/wiki/Q2325844,1960-07-21,Copa 1990,missing,,,
 Colombia,Camilo Zuniga,RB,https://www.wikidata.org/wiki/Q456797,1985-12-14,Napoli,missing,,,
 Colombia,Pablo Armero,LB,https://www.wikidata.org/wiki/Q371305,1986-11-02,Udinese,missing,,,
-Colombia,Carlos Sanchez,DM,https://www.wikidata.org/wiki/Q116602,1986-02-06,Aston Villa,missing,,,
-Colombia,Abel Aguilar,DM,https://www.wikidata.org/wiki/Q318416,1985-01-06,Toulouse,missing,,,
+Colombia,Carlos Sanchez,CDM,https://www.wikidata.org/wiki/Q116602,1986-02-06,Aston Villa,missing,,,
+Colombia,Abel Aguilar,CDM,https://www.wikidata.org/wiki/Q318416,1985-01-06,Toulouse,missing,,,
 Colombia,Fabian Vargas,CM,https://www.wikidata.org/wiki/Q2332517,1980-04-17,Boca Juniors,missing,,,
-Colombia,Giovanny Hernandez,AM,https://www.wikidata.org/wiki/Q2664005,1976-06-16,Deportivo Cali,missing,,,
+Colombia,Giovanny Hernandez,CAM,https://www.wikidata.org/wiki/Q2664005,1976-06-16,Deportivo Cali,missing,,,
 Colombia,Luis Amaranto Perea,CB,https://www.wikidata.org/wiki/Q316631,1979-01-30,Atletico de Madrid,missing,,,
 Colombia,Jorge Bermudez,CB,https://www.wikidata.org/wiki/Q2583266,1971-06-18,Boca Juniors,missing,,,
-Colombia,Mauricio Serna,DM,https://www.wikidata.org/wiki/Q2383612,1968-01-22,Boca Juniors,missing,,,
+Colombia,Mauricio Serna,CDM,https://www.wikidata.org/wiki/Q2383612,1968-01-22,Boca Juniors,missing,,,
 Colombia,Frank Fabra,LB,https://www.wikidata.org/wiki/Q6436974,1991-02-22,Boca Juniors,present,764,Frank Yusty Fabra Palacios,214040
 Colombia,David Ospina,GK,https://www.wikidata.org/wiki/Q436987,1988-08-31,Napoli,present,517,David Ospina Ramírez,176550
 Colombia,Faryd Mondragon,GK,https://www.wikidata.org/wiki/Q352215,1971-06-21,Copa 1994-2014,missing,,,

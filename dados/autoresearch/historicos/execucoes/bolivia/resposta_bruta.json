@@ -2,7 +2,7 @@
   {
     "nome": "Marco Etcheverry",
     "pais": "Bolivia",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1970-09-26",
     "percentis": {
       "overall": 0.98,
@@ -35,12 +35,15 @@
       "dribbling": 86,
       "defending": 44,
       "physic": 68
-    }
+    },
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Erwin Sanchez",
     "pais": "Bolivia",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1969-10-19",
     "percentis": {
       "overall": 0.88,
@@ -73,7 +76,10 @@
       "dribbling": 85,
       "defending": 42,
       "physic": 68
-    }
+    },
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Marcelo Martins",
@@ -111,12 +117,15 @@
       "dribbling": 78,
       "defending": 34,
       "physic": 82
-    }
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "Roger Suarez",
     "pais": "Bolivia",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1977-04-02",
     "percentis": {
       "overall": 0.72,
@@ -145,7 +154,7 @@
   {
     "nome": "Julio Cesar Baldivieso",
     "pais": "Bolivia",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1971-12-02",
     "percentis": {
       "overall": 0.93,
@@ -169,7 +178,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Alejandro Chumacero",
@@ -198,7 +210,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Alvaro Pena",
@@ -232,7 +247,7 @@
   {
     "nome": "Milton Melgar",
     "pais": "Bolivia",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1959-09-20",
     "percentis": {
       "overall": 0.65,
@@ -401,7 +416,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
   },
   {
     "nome": "Carlos Trucco",
@@ -488,7 +506,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
   },
   {
     "nome": "William Ramallo",
@@ -546,6 +567,9 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
   }
 ]

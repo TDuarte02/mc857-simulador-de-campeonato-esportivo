@@ -1,0 +1,226 @@
+[
+  {
+    "nome": "Paulo Wanchope",
+    "dob": "1976-07-31",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.5,
+    "justificativa": "Atacante versátil, por vezes jogou como segundo atacante/CF além de centroavante fixo."
+  },
+  {
+    "nome": "Bryan Ruiz",
+    "dob": "1985-08-18",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.7,
+    "justificativa": "Atuou frequentemente como ponta esquerda no PSV, Twente e Fulham, além de meia-atacante."
+  },
+  {
+    "nome": "Celso Borges",
+    "dob": "1988-05-27",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.5,
+    "justificativa": "Volante box-to-box que também atuou em posição mais recuada de proteção."
+  },
+  {
+    "nome": "Walter Centeno",
+    "dob": "1974-10-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meia-armador clássico; sem informação confiável de outra posição recorrente."
+  },
+  {
+    "nome": "Hernan Medford",
+    "dob": "1968-05-23",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante histórico; dados insuficientes para confirmar posição secundária."
+  },
+  {
+    "nome": "Alvaro Saborio",
+    "dob": "1982-03-25",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Centroavante clássico sem registro consistente de outra função."
+  },
+  {
+    "nome": "Rolando Fonseca",
+    "dob": "1974-06-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Artilheiro histórico da seleção, atuou majoritariamente como centroavante."
+  },
+  {
+    "nome": "Christian Bolanos",
+    "dob": "1984-05-17",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.6,
+    "justificativa": "Ponta-direita que também foi usado como meia-atacante/segundo atacante pela seleção."
+  },
+  {
+    "nome": "Marco Urena",
+    "dob": "1990-03-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante de área sem papel secundário bem documentado."
+  },
+  {
+    "nome": "Luis Marin",
+    "dob": "1974-08-10",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "Zagueiro que em algumas partidas das Copas de 2002/2006 também jogou como lateral-direito."
+  },
+  {
+    "nome": "Gilberto Martinez",
+    "dob": "1979-10-01",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro sem posição secundária confiável registrada."
+  },
+  {
+    "nome": "Michael Umana",
+    "dob": "1982-07-16",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro e capitão, papel defensivo central fixo."
+  },
+  {
+    "nome": "Kevin Chamorro",
+    "dob": "2000-04-08",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; por regra não possui posições secundárias."
+  },
+  {
+    "nome": "Gerald Taylor",
+    "dob": "2001-05-28",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "Defensor do Saprissa que também atua como lateral-direito, além de zagueiro."
+  },
+  {
+    "nome": "Jeyland Mitchell",
+    "dob": "2004-09-29",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.6,
+    "justificativa": "Defensor formado como lateral-esquerdo na Alajuelense antes de ser usado como zagueiro."
+  },
+  {
+    "nome": "Juan Pablo Vargas",
+    "dob": "1995-06-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro central sem registro consistente de outra posição."
+  },
+  {
+    "nome": "Fernán Faerrón",
+    "dob": "2000-08-22",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro do Herediano, sem dado confiável de outra função."
+  },
+  {
+    "nome": "Anthony Contreras",
+    "dob": "2000-01-29",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante sem posição secundária documentada com confiança."
+  },
+  {
+    "nome": "Brandon Aguilera",
+    "dob": "2003-06-28",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.5,
+    "justificativa": "Meio-campista versátil, usado também como meia-atacante em empréstimos na Europa."
+  },
+  {
+    "nome": "Jefferson Brenes",
+    "dob": "1997-04-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Volante/meio-campista sem posição secundária confirmada."
+  },
+  {
+    "nome": "Orlando Galo",
+    "dob": "2000-08-11",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meio-campista do Herediano sem registro claro de outra função."
+  },
+  {
+    "nome": "Alejandro Bran",
+    "dob": "2001-03-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meio-campista do Minnesota United sem dado confiável de posição secundária."
+  },
+  {
+    "nome": "Warren Madrigal",
+    "dob": "2004-07-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante jovem do Saprissa sem informação consistente de outra posição."
+  },
+  {
+    "nome": "Aarón Cruz",
+    "dob": "1991-05-25",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; por regra não possui posições secundárias."
+  },
+  {
+    "nome": "Kenneth Vargas",
+    "dob": "2002-04-17",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante do Heart of Midlothian sem posição secundária confirmada."
+  },
+  {
+    "nome": "Josimar Alcócer",
+    "dob": "2004-07-07",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante jovem sem dados suficientes para posição secundária."
+  },
+  {
+    "nome": "Álvaro Zamora",
+    "dob": "2002-03-09",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante do Aris sem posição secundária documentada."
+  },
+  {
+    "nome": "Haxzel Quirós",
+    "dob": "1998-06-03",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro do Herediano sem outra posição confirmada."
+  },
+  {
+    "nome": "Patrick Sequeira",
+    "dob": "1999-03-01",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; por regra não possui posições secundárias."
+  },
+  {
+    "nome": "Andy Rojas",
+    "dob": "2005-12-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante jovem do Herediano sem dado confiável de outra posição."
+  },
+  {
+    "nome": "Yeison Molina",
+    "dob": "1996-01-25",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro da Guanacasteca sem posição secundária confirmada."
+  },
+  {
+    "nome": "Douglas Sequeira",
+    "dob": "2003-09-16",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro do Saprissa sem posição secundária documentada."
+  }
+]

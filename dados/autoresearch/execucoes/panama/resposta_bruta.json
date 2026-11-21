@@ -49,7 +49,10 @@
       }
     ],
     "confianca": 0.45,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Eduardo Anderson",
@@ -101,7 +104,10 @@
       }
     ],
     "confianca": 0.5,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Cristian Martínez",
@@ -308,7 +314,10 @@
       }
     ],
     "confianca": 0.45,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Iván Anderson",

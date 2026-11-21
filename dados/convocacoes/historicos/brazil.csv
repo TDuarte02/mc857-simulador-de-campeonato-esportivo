@@ -1,15 +1,15 @@
 pais,nome,posicao,fonte_url,dob,contexto
 Brazil,Ronaldo,ST,https://www.wikidata.org/wiki/Q529207,1976-09-18,Campeao 1994 e 2002 - Icon EA FC
 Brazil,Pele,ST,https://www.wikidata.org/wiki/Q12897,1940-10-23,Rei do Futebol - Icon EA FC
-Brazil,Ronaldinho,AM,https://www.wikidata.org/wiki/Q39444,1980-03-21,Campeao 2002 - Icon EA FC
+Brazil,Ronaldinho,CAM,https://www.wikidata.org/wiki/Q39444,1980-03-21,Campeao 2002 - Icon EA FC
 Brazil,Garrincha,RW,https://www.wikidata.org/wiki/Q180642,1933-10-28,Campeao 1958 e 1962 - Icon EA FC
 Brazil,Romario,ST,https://www.wikidata.org/wiki/Q178649,1966-01-29,Campeao 1994
-Brazil,Zico,AM,https://www.wikidata.org/wiki/Q47526,1953-03-03,Copa 1982
+Brazil,Zico,CAM,https://www.wikidata.org/wiki/Q47526,1953-03-03,Copa 1982
 Brazil,Roberto Carlos,LB,https://www.wikidata.org/wiki/Q429039,1973-04-10,Campeao 2002 - Icon EA FC
-Brazil,Rivaldo,AM,https://www.wikidata.org/wiki/Q483577,1972-04-19,Campeao 2002
+Brazil,Rivaldo,CAM,https://www.wikidata.org/wiki/Q483577,1972-04-19,Campeao 2002
 Brazil,Neymar,LW,https://www.wikidata.org/wiki/Q142794,1992-02-05,Artilheiro da selecao
 Brazil,Cafu,RB,https://www.wikidata.org/wiki/Q178683,1970-06-07,Campeao 1994 e 2002
-Brazil,Kaka,AM,https://www.wikidata.org/wiki/Q531814,1982-04-22,Melhor do mundo 2007
+Brazil,Kaka,CAM,https://www.wikidata.org/wiki/Q531814,1982-04-22,Melhor do mundo 2007
 Brazil,Castilho,GK,https://www.wikidata.org/wiki/Q667127,1927-11-27,Campeao 1958 e 1962
 Brazil,Zetti,GK,https://www.wikidata.org/wiki/Q196897,1965-01-10,Campeao 1994
 Brazil,Gilmar,GK,https://www.wikidata.org/wiki/Q257606,1930-08-22,Campeao 1958 e 1962
@@ -17,39 +17,39 @@ Brazil,Alisson Becker,GK,https://www.wikidata.org/wiki/Q18237361,1992-10-02,Live
 Brazil,Julio Cesar,GK,https://www.wikidata.org/wiki/Q182459,1979-09-03,Inter de Milao
 Brazil,Claudio Taffarel,GK,https://www.wikidata.org/wiki/Q295891,1966-05-08,Campeao 1994
 Brazil,Ederson,GK,https://www.wikidata.org/wiki/Q17074511,1993-08-17,Manchester City
-Brazil,Ademir da Guia,AM,https://www.wikidata.org/wiki/Q355742,1942-04-03,Palmeiras
-Brazil,Rai,AM,https://www.wikidata.org/wiki/Q312895,1965-05-15,Sao Paulo e PSG
-Brazil,Juninho Pernambucano,AM,https://www.wikidata.org/wiki/Q203451,1975-01-30,Lyon
-Brazil,Emerson,DM,https://www.wikidata.org/wiki/Q215952,1976-04-04,Roma e Juventus
-Brazil,Gilberto Silva,DM,https://www.wikidata.org/wiki/Q190142,1976-10-07,Campeao 2002
+Brazil,Ademir da Guia,CAM,https://www.wikidata.org/wiki/Q355742,1942-04-03,Palmeiras
+Brazil,Rai,CAM,https://www.wikidata.org/wiki/Q312895,1965-05-15,Sao Paulo e PSG
+Brazil,Juninho Pernambucano,CAM,https://www.wikidata.org/wiki/Q203451,1975-01-30,Lyon
+Brazil,Emerson,CDM,https://www.wikidata.org/wiki/Q215952,1976-04-04,Roma e Juventus
+Brazil,Gilberto Silva,CDM,https://www.wikidata.org/wiki/Q190142,1976-10-07,Campeao 2002
 Brazil,Kleberson,CM,https://www.wikidata.org/wiki/Q311035,1979-06-19,Campeao 2002
 Brazil,Vampeta,CM,https://www.wikidata.org/wiki/Q1982869,1974-03-13,Campeao 2002
 Brazil,Didi,CM,https://www.wikidata.org/wiki/Q312486,1928-10-08,Campeao 1958 e 1962
-Brazil,Juninho Paulista,AM,https://www.wikidata.org/wiki/Q318184,1973-02-22,Middlesbrough
-Brazil,Casemiro,DM,https://www.wikidata.org/wiki/Q616664,1992-02-23,Real Madrid
-Brazil,Fabinho,DM,https://www.wikidata.org/wiki/Q641425,1993-10-23,Liverpool
-Brazil,Philippe Coutinho,AM,https://www.wikidata.org/wiki/Q311872,1992-06-12,Liverpool e Bayern
-Brazil,Alex,AM,https://www.wikidata.org/wiki/Q507815,1977-09-14,Fenerbahce
+Brazil,Juninho Paulista,CAM,https://www.wikidata.org/wiki/Q318184,1973-02-22,Middlesbrough
+Brazil,Casemiro,CDM,https://www.wikidata.org/wiki/Q616664,1992-02-23,Real Madrid
+Brazil,Fabinho,CDM,https://www.wikidata.org/wiki/Q641425,1993-10-23,Liverpool
+Brazil,Philippe Coutinho,CAM,https://www.wikidata.org/wiki/Q311872,1992-06-12,Liverpool e Bayern
+Brazil,Alex,CAM,https://www.wikidata.org/wiki/Q507815,1977-09-14,Fenerbahce
 Brazil,Ramires,CM,https://www.wikidata.org/wiki/Q204407,1987-03-24,Chelsea
 Brazil,Gerson,CM,https://www.wikidata.org/wiki/Q280306,1941-01-11,Campeao 1970
 Brazil,Bruno Guimaraes,CM,https://www.wikidata.org/wiki/Q58323172,1997-11-16,Newcastle
-Brazil,Lucas Paqueta,AM,https://www.wikidata.org/wiki/Q30089624,1997-08-27,West Ham
-Brazil,Fernandinho,DM,https://www.wikidata.org/wiki/Q459356,1985-05-04,Manchester City
-Brazil,Oscar,AM,https://www.wikidata.org/wiki/Q19497,1991-09-09,Chelsea
+Brazil,Lucas Paqueta,CAM,https://www.wikidata.org/wiki/Q30089624,1997-08-27,West Ham
+Brazil,Fernandinho,CDM,https://www.wikidata.org/wiki/Q459356,1985-05-04,Manchester City
+Brazil,Oscar,CAM,https://www.wikidata.org/wiki/Q19497,1991-09-09,Chelsea
 Brazil,Paulinho,CM,https://www.wikidata.org/wiki/Q73082,1988-07-25,Tottenham e Barcelona
-Brazil,Cesar Sampaio,DM,https://www.wikidata.org/wiki/Q316436,1968-03-31,Copa 1998
-Brazil,Zito,DM,https://www.wikidata.org/wiki/Q372092,1932-08-08,Campeao 1958 e 1962
-Brazil,Dunga,DM,https://www.wikidata.org/wiki/Q215890,1963-10-31,Campeao 1994
-Brazil,Zizinho,AM,https://www.wikidata.org/wiki/Q207085,1921-09-14,Vice 1950
+Brazil,Cesar Sampaio,CDM,https://www.wikidata.org/wiki/Q316436,1968-03-31,Copa 1998
+Brazil,Zito,CDM,https://www.wikidata.org/wiki/Q372092,1932-08-08,Campeao 1958 e 1962
+Brazil,Dunga,CDM,https://www.wikidata.org/wiki/Q215890,1963-10-31,Campeao 1994
+Brazil,Zizinho,CAM,https://www.wikidata.org/wiki/Q207085,1921-09-14,Vice 1950
 Brazil,Socrates,CM,https://www.wikidata.org/wiki/Q102331,1954-02-09,Copa 1982
 Brazil,Falcao,CM,https://www.wikidata.org/wiki/Q312454,1953-10-16,Copa 1982
-Brazil,Toninho Cerezo,DM,https://www.wikidata.org/wiki/Q552917,1955-04-21,Copa 1982
-Brazil,Bauer,DM,https://www.wikidata.org/wiki/Q703634,1925-11-21,Vice 1950
-Brazil,Clodoaldo,DM,https://www.wikidata.org/wiki/Q464419,1949-09-25,Campeao 1970
-Brazil,Piazza,DM,https://www.wikidata.org/wiki/Q535520,1943-02-25,Campeao 1970
-Brazil,Rivellino,AM,https://www.wikidata.org/wiki/Q220283,1946-01-01,Campeao 1970
-Brazil,Danilo Alvim,DM,https://www.wikidata.org/wiki/Q1164053,1920-12-03,Vice 1950
-Brazil,Djalminha,AM,https://www.wikidata.org/wiki/Q47489,1970-12-09,Deportivo La Coruna
+Brazil,Toninho Cerezo,CDM,https://www.wikidata.org/wiki/Q552917,1955-04-21,Copa 1982
+Brazil,Bauer,CDM,https://www.wikidata.org/wiki/Q703634,1925-11-21,Vice 1950
+Brazil,Clodoaldo,CDM,https://www.wikidata.org/wiki/Q464419,1949-09-25,Campeao 1970
+Brazil,Piazza,CDM,https://www.wikidata.org/wiki/Q535520,1943-02-25,Campeao 1970
+Brazil,Rivellino,CAM,https://www.wikidata.org/wiki/Q220283,1946-01-01,Campeao 1970
+Brazil,Danilo Alvim,CDM,https://www.wikidata.org/wiki/Q1164053,1920-12-03,Vice 1950
+Brazil,Djalminha,CAM,https://www.wikidata.org/wiki/Q47489,1970-12-09,Deportivo La Coruna
 Brazil,David Luiz,CB,https://www.wikidata.org/wiki/Q193706,1987-04-22,Chelsea
 Brazil,Filipe Luis,LB,https://www.wikidata.org/wiki/Q350547,1985-08-09,Atletico de Madrid
 Brazil,Danilo,RB,https://www.wikidata.org/wiki/Q437329,1991-07-15,Juventus

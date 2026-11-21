@@ -2,7 +2,7 @@
   {
     "nome": "Dwayne De Rosario",
     "pais": "Canada",
-    "posicao": "AM",
+    "posicao": "CAM",
     "dob": "1978-05-15",
     "percentis": {
       "overall": 0.97,
@@ -26,12 +26,16 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM",
+      "RW"
+    ]
   },
   {
     "nome": "Julian de Guzman",
     "pais": "Canada",
-    "posicao": "DM",
+    "posicao": "CDM",
     "dob": "1981-03-25",
     "percentis": {
       "overall": 0.88,
@@ -55,7 +59,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
   },
   {
     "nome": "Dale Mitchell",
@@ -113,7 +120,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Alex Bunbury",
@@ -200,7 +210,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
   },
   {
     "nome": "Mark Watson",
@@ -316,7 +329,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
   },
   {
     "nome": "Bob Lenarduzzi",
@@ -345,7 +361,10 @@
     "is_historico": true,
     "origem_registro": "historico_estimado",
     "fonte_atributos": "inferencia_llm_calibrada_historico",
-    "validacao_via": "wikidata"
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
   },
   {
     "nome": "Craig Forrest",

@@ -9,6 +9,7 @@ import pandas as pd
 
 from .calibration import banda_lenda, converter_percentil, grupo_da_proposta, pool_por_posicao
 from .config import ATRIBUTOS_GK, ATRIBUTOS_LINHA, COLUNAS_RASTREIO
+from .posicoes import formatar_posicoes, prever_colunas
 from .research import chave_jogador
 
 
@@ -72,6 +73,7 @@ def materializar_linha(
     colunas_dataset: list[str],
     data_referencia: str,
     registry: Path,
+    modelo_posicoes: dict | None = None,
 ) -> dict:
     grupo = grupo_da_proposta(proposta["posicao"])
     # Histórico calibra na escala global; convocado atual, no pool do próprio país.
@@ -90,6 +92,12 @@ def materializar_linha(
             atributos[coluna] = int(valor)
     if proposta.get("is_historico") and not override:
         atributos = _aplicar_banda_lenda(atributos, percentis.get("overall"))
+    # Posições: escreve 'PRINCIPAL, SEC1, SEC2' e preenche as colunas de posição
+    # só nas posições plausíveis — as outras 24 ficam vazias de propósito.
+    secundarias = proposta.get("posicoes_secundarias") or []
+    colunas_posicao: dict[str, int | None] = {}
+    if modelo_posicoes is not None:
+        colunas_posicao = prever_colunas(modelo_posicoes, atributos, proposta["posicao"], secundarias)
 
     linha = {coluna: None for coluna in colunas_dataset}
     idade = proposta.get("age")
@@ -97,7 +105,7 @@ def materializar_linha(
         "sofifa_id": alocar_id(registry, proposta),
         "short_name": proposta["nome"],
         "long_name": proposta["nome"],
-        "player_positions": proposta["posicao"],
+        "player_positions": formatar_posicoes(proposta["posicao"], secundarias),
         "overall": atributos.get("overall"),
         "potential": atributos.get("overall"),
         "age": int(idade) if idade is not None else _idade(proposta.get("dob"), data_referencia),
@@ -113,6 +121,9 @@ def materializar_linha(
     })
     for coluna in ATRIBUTOS_LINHA + ATRIBUTOS_GK:
         linha[coluna] = atributos.get(coluna) if coluna in atributos else None
+    for coluna, valor in colunas_posicao.items():
+        if valor is not None:
+            linha[coluna] = valor
     linha.update({
         "is_historico": bool(proposta.get("is_historico", False)),
         "origem_registro": proposta.get("origem_registro", "convocado_2024_adicionado"),
@@ -127,7 +138,16 @@ def materializar_linha(
     return linha
 
 
-def materializar(propostas: list[dict], dataset: pd.DataFrame, data_referencia: str, registry: Path) -> pd.DataFrame:
+def materializar(
+    propostas: list[dict],
+    dataset: pd.DataFrame,
+    data_referencia: str,
+    registry: Path,
+    modelo_posicoes: dict | None = None,
+) -> pd.DataFrame:
     colunas = list(dataset.columns)
-    resultado = [materializar_linha(p, dataset, colunas, data_referencia, registry) for p in propostas]
+    resultado = [
+        materializar_linha(p, dataset, colunas, data_referencia, registry, modelo_posicoes)
+        for p in propostas
+    ]
     return pd.DataFrame(resultado).reindex(columns=colunas + [c for c in COLUNAS_RASTREIO if c not in colunas])

@@ -59,7 +59,10 @@
       }
     ],
     "confianca": 0.55,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
   },
   {
     "nome": "Thomas Galdames",
@@ -85,7 +88,10 @@
       }
     ],
     "confianca": 0.4,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Darío Osorio",
@@ -116,7 +122,10 @@
       }
     ],
     "confianca": 0.65,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Eduardo Vargas",
@@ -147,7 +156,10 @@
       }
     ],
     "confianca": 0.6,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Cristián Zavala",
@@ -255,7 +267,10 @@
       }
     ],
     "confianca": 0.4,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Matías Catalán",
@@ -312,7 +327,10 @@
       }
     ],
     "confianca": 0.6,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Brayan Cortés",

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "created_at": "2026-11-21T16:18:20+00:00",
-  "updated_at": "2026-11-21T16:40:12+00:00",
+  "updated_at": "2026-11-21T19:54:29+00:00",
   "competicao": "Copa América",
   "edicao": 2024,
   "data_referencia": "2024-07-14",
@@ -13,18 +13,20 @@
     "Argentina": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:23:30+00:00",
+      "updated_at": "2026-11-21T19:54:10+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/argentina/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/argentina/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/argentina/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/argentina/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/argentina/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/argentina/validacao_v001.csv"
+        "dados/autoresearch/execucoes/argentina/validacao_v001.csv",
+        "dados/autoresearch/execucoes/argentina/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/argentina/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/argentina/validacao_v002.csv",
       "approved": 3,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/argentina/argentina_2024.csv",
@@ -33,18 +35,20 @@
     "Bolivia": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:25:36+00:00",
+      "updated_at": "2026-11-21T19:54:11+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/bolivia/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/bolivia/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/bolivia/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/bolivia/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/bolivia/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/bolivia/validacao_v001.csv"
+        "dados/autoresearch/execucoes/bolivia/validacao_v001.csv",
+        "dados/autoresearch/execucoes/bolivia/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/bolivia/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/bolivia/validacao_v002.csv",
       "approved": 10,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/bolivia/bolivia_2024.csv",
@@ -53,18 +57,20 @@
     "Brazil": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:20:19+00:00",
+      "updated_at": "2026-11-21T19:54:12+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/brazil/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/brazil/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/brazil/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/brazil/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/brazil/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/brazil/validacao_v001.csv"
+        "dados/autoresearch/execucoes/brazil/validacao_v001.csv",
+        "dados/autoresearch/execucoes/brazil/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/brazil/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/brazil/validacao_v002.csv",
       "approved": 9,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/brazil/brazil_2024.csv",
@@ -73,18 +79,20 @@
     "Canada": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:25:37+00:00",
+      "updated_at": "2026-11-21T19:54:13+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/canada/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/canada/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/canada/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/canada/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/canada/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/canada/validacao_v001.csv"
+        "dados/autoresearch/execucoes/canada/validacao_v001.csv",
+        "dados/autoresearch/execucoes/canada/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/canada/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/canada/validacao_v002.csv",
       "approved": 9,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/canada/canada_2024.csv",
@@ -93,18 +101,20 @@
     "Chile": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:31:08+00:00",
+      "updated_at": "2026-11-21T19:54:15+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/chile/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/chile/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/chile/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/chile/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/chile/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/chile/validacao_v001.csv"
+        "dados/autoresearch/execucoes/chile/validacao_v001.csv",
+        "dados/autoresearch/execucoes/chile/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/chile/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/chile/validacao_v002.csv",
       "approved": 15,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/chile/chile_2024.csv",
@@ -113,18 +123,20 @@
     "Colombia": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:26:19+00:00",
+      "updated_at": "2026-11-21T19:54:16+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/colombia/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/colombia/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/colombia/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/colombia/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/colombia/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/colombia/validacao_v001.csv"
+        "dados/autoresearch/execucoes/colombia/validacao_v001.csv",
+        "dados/autoresearch/execucoes/colombia/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/colombia/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/colombia/validacao_v002.csv",
       "approved": 8,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/colombia/colombia_2024.csv",
@@ -133,18 +145,20 @@
     "Costa Rica": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:40:12+00:00",
+      "updated_at": "2026-11-21T19:54:17+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/costa_rica/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/costa_rica/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/costa_rica/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/costa_rica/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/costa_rica/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/costa_rica/validacao_v001.csv"
+        "dados/autoresearch/execucoes/costa_rica/validacao_v001.csv",
+        "dados/autoresearch/execucoes/costa_rica/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/costa_rica/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/costa_rica/validacao_v002.csv",
       "approved": 20,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/costa_rica/costa_rica_2024.csv",
@@ -153,18 +167,20 @@
     "Ecuador": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:25:38+00:00",
+      "updated_at": "2026-11-21T19:54:19+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/ecuador/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/ecuador/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/ecuador/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/ecuador/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/ecuador/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/ecuador/validacao_v001.csv"
+        "dados/autoresearch/execucoes/ecuador/validacao_v001.csv",
+        "dados/autoresearch/execucoes/ecuador/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/ecuador/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/ecuador/validacao_v002.csv",
       "approved": 14,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/ecuador/ecuador_2024.csv",
@@ -173,18 +189,20 @@
     "Jamaica": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:37:05+00:00",
+      "updated_at": "2026-11-21T19:54:20+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/jamaica/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/jamaica/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/jamaica/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/jamaica/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/jamaica/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/jamaica/validacao_v001.csv"
+        "dados/autoresearch/execucoes/jamaica/validacao_v001.csv",
+        "dados/autoresearch/execucoes/jamaica/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/jamaica/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/jamaica/validacao_v002.csv",
       "approved": 18,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/jamaica/jamaica_2024.csv",
@@ -193,18 +211,20 @@
     "Mexico": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:21:52+00:00",
+      "updated_at": "2026-11-21T19:54:21+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/mexico/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/mexico/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/mexico/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/mexico/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/mexico/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/mexico/validacao_v001.csv"
+        "dados/autoresearch/execucoes/mexico/validacao_v001.csv",
+        "dados/autoresearch/execucoes/mexico/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/mexico/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/mexico/validacao_v002.csv",
       "approved": 3,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/mexico/mexico_2024.csv",
@@ -213,18 +233,20 @@
     "Panama": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:30:16+00:00",
+      "updated_at": "2026-11-21T19:54:22+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/panama/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/panama/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/panama/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/panama/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/panama/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/panama/validacao_v001.csv"
+        "dados/autoresearch/execucoes/panama/validacao_v001.csv",
+        "dados/autoresearch/execucoes/panama/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/panama/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/panama/validacao_v002.csv",
       "approved": 17,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/panama/panama_2024.csv",
@@ -233,18 +255,20 @@
     "Paraguay": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:25:39+00:00",
+      "updated_at": "2026-11-21T19:54:24+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/paraguay/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/paraguay/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/paraguay/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/paraguay/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/paraguay/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/paraguay/validacao_v001.csv"
+        "dados/autoresearch/execucoes/paraguay/validacao_v001.csv",
+        "dados/autoresearch/execucoes/paraguay/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/paraguay/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/paraguay/validacao_v002.csv",
       "approved": 12,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/paraguay/paraguay_2024.csv",
@@ -253,18 +277,20 @@
     "Peru": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:25:40+00:00",
+      "updated_at": "2026-11-21T19:54:25+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/peru/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/peru/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/peru/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/peru/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/peru/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/peru/validacao_v001.csv"
+        "dados/autoresearch/execucoes/peru/validacao_v001.csv",
+        "dados/autoresearch/execucoes/peru/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/peru/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/peru/validacao_v002.csv",
       "approved": 9,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/peru/peru_2024.csv",
@@ -273,18 +299,20 @@
     "United States": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:25:41+00:00",
+      "updated_at": "2026-11-21T19:54:26+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/united_states/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/united_states/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/united_states/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/united_states/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/united_states/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/united_states/validacao_v001.csv"
+        "dados/autoresearch/execucoes/united_states/validacao_v001.csv",
+        "dados/autoresearch/execucoes/united_states/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/united_states/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/united_states/validacao_v002.csv",
       "approved": 10,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/united_states/united_states_2024.csv",
@@ -293,18 +321,20 @@
     "Uruguay": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:22:55+00:00",
+      "updated_at": "2026-11-21T19:54:28+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/uruguay/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/uruguay/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/uruguay/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/uruguay/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/uruguay/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/uruguay/validacao_v001.csv"
+        "dados/autoresearch/execucoes/uruguay/validacao_v001.csv",
+        "dados/autoresearch/execucoes/uruguay/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/uruguay/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/uruguay/validacao_v002.csv",
       "approved": 5,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/uruguay/uruguay_2024.csv",
@@ -313,18 +343,20 @@
     "Venezuela": {
       "status": "published",
       "attempts": 1,
-      "updated_at": "2026-11-21T16:25:42+00:00",
+      "updated_at": "2026-11-21T19:54:29+00:00",
       "message": "snapshot publicado",
       "input_path": "dados/autoresearch/execucoes/venezuela/lacunas.csv",
       "package_path": "dados/autoresearch/execucoes/venezuela/pacote.json",
       "escalacao_path": null,
       "response_versions": [
-        "dados/autoresearch/execucoes/venezuela/resposta_bruta_v001.json"
+        "dados/autoresearch/execucoes/venezuela/resposta_bruta_v001.json",
+        "dados/autoresearch/execucoes/venezuela/resposta_bruta_v002.json"
       ],
       "validation_versions": [
-        "dados/autoresearch/execucoes/venezuela/validacao_v001.csv"
+        "dados/autoresearch/execucoes/venezuela/validacao_v001.csv",
+        "dados/autoresearch/execucoes/venezuela/validacao_v002.csv"
       ],
-      "validation_path": "dados/autoresearch/execucoes/venezuela/validacao_v001.csv",
+      "validation_path": "dados/autoresearch/execucoes/venezuela/validacao_v002.csv",
       "approved": 10,
       "review_required": 0,
       "output_path": "dados/autoresearch/execucoes/venezuela/venezuela_2024.csv",

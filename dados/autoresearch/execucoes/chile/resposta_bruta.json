@@ -18,8 +18,14 @@
     },
     "observacao": "Lateral-esquerdo titular absoluto da seleção chilena desde 2021, com boa capacidade ofensiva e físico robusto para a função; a finalização não é o ponto forte de seu jogo.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Gabriel Suazo foi convocado pelo Chile para a Copa América 2024."},
-      {"url": "https://en.wikipedia.org/wiki/Gabriel_Suazo", "afirmacao": "Gabriel Suazo é lateral-esquerdo titular da seleção chilena e atua no Toulouse FC."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Gabriel Suazo foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Gabriel_Suazo",
+        "afirmacao": "Gabriel Suazo é lateral-esquerdo titular da seleção chilena e atua no Toulouse FC."
+      }
     ],
     "confianca": 0.65,
     "status": "approved"
@@ -43,11 +49,20 @@
     },
     "observacao": "Jogador muito experiente e histórico lateral/meio-campista da seleção, mas aos 36 anos em 2024 já apresenta queda de ritmo físico; mantém bom senso tático e passe, servindo mais como opção de rotação.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Mauricio Isla foi convocado pelo Chile para a Copa América 2024."},
-      {"url": "https://en.wikipedia.org/wiki/Mauricio_Isla", "afirmacao": "Mauricio Isla é um jogador veterano e histórico da seleção chilena, que defendia o Independiente em 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Mauricio Isla foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Mauricio_Isla",
+        "afirmacao": "Mauricio Isla é um jogador veterano e histórico da seleção chilena, que defendia o Independiente em 2024."
+      }
     ],
     "confianca": 0.55,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
   },
   {
     "nome": "Thomas Galdames",
@@ -67,10 +82,16 @@
     },
     "observacao": "Jogador de rotação na defesa chilena, sem posição de titular consolidada na seleção; perfil ainda em desenvolvimento no Godoy Cruz.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Thomas Galdames foi convocado pelo Chile para a Copa América 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Thomas Galdames foi convocado pelo Chile para a Copa América 2024."
+      }
     ],
     "confianca": 0.4,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Darío Osorio",
@@ -91,11 +112,20 @@
     },
     "observacao": "Um dos maiores talentos emergentes do futebol chileno, ponta canhota com grande capacidade de drible e velocidade; principal esperança ofensiva jovem da seleção nesta Copa América.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Darío Osorio foi convocado pelo Chile para a Copa América 2024."},
-      {"url": "https://en.wikipedia.org/wiki/Dar%C3%ADo_Osorio", "afirmacao": "Darío Osorio é um jovem ponta chileno que atua pelo FC Midtjylland e é visto como grande promessa da seleção."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Darío Osorio foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Dar%C3%ADo_Osorio",
+        "afirmacao": "Darío Osorio é um jovem ponta chileno que atua pelo FC Midtjylland e é visto como grande promessa da seleção."
+      }
     ],
     "confianca": 0.65,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Eduardo Vargas",
@@ -116,11 +146,20 @@
     },
     "observacao": "Histórico artilheiro da seleção chilena, ainda com faro de gol relevante apesar da idade avançada (34 anos em 2024) e perda natural de velocidade.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Eduardo Vargas foi convocado pelo Chile para a Copa América 2024."},
-      {"url": "https://en.wikipedia.org/wiki/Eduardo_Vargas", "afirmacao": "Eduardo Vargas é um dos maiores artilheiros da história da seleção chilena e atuava pelo Atlético Mineiro em 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Eduardo Vargas foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Eduardo_Vargas",
+        "afirmacao": "Eduardo Vargas é um dos maiores artilheiros da história da seleção chilena e atuava pelo Atlético Mineiro em 2024."
+      }
     ],
     "confianca": 0.6,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RW"
+    ]
   },
   {
     "nome": "Cristián Zavala",
@@ -140,7 +179,10 @@
     },
     "observacao": "Atacante do Colo-Colo convocado como opção de rotação no ataque, sem grande histórico internacional pela seleção principal.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Cristián Zavala foi convocado pelo Chile para a Copa América 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Cristián Zavala foi convocado pelo Chile para a Copa América 2024."
+      }
     ],
     "confianca": 0.4,
     "status": "approved"
@@ -163,8 +205,14 @@
     },
     "observacao": "Volante defensivo com presença regular na seleção chilena nos últimos anos, destacando-se pela marcação e disciplina tática mais do que pela construção ofensiva.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Rodrigo Echeverría foi convocado pelo Chile para a Copa América 2024."},
-      {"url": "https://en.wikipedia.org/wiki/Rodrigo_Echeverr%C3%ADa", "afirmacao": "Rodrigo Echeverría é um volante chileno que defendia o Huracán em 2024 e é presença frequente na seleção."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Rodrigo Echeverría foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Rodrigo_Echeverr%C3%ADa",
+        "afirmacao": "Rodrigo Echeverría é um volante chileno que defendia o Huracán em 2024 e é presença frequente na seleção."
+      }
     ],
     "confianca": 0.55,
     "status": "approved"
@@ -187,7 +235,10 @@
     },
     "observacao": "Ponta do Colo-Colo com passagens pela seleção, mas sem espaço fixo no time titular; é uma aposta de velocidade pelo lado direito do ataque.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Marcos Bolados foi convocado pelo Chile para a Copa América 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Marcos Bolados foi convocado pelo Chile para a Copa América 2024."
+      }
     ],
     "confianca": 0.4,
     "status": "approved"
@@ -210,10 +261,16 @@
     },
     "observacao": "Ponta da Universidad de Chile com presença crescente na seleção, ainda buscando consolidar espaço como opção ofensiva pelo lado direito.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Maximiliano Guerrero foi convocado pelo Chile para a Copa América 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Maximiliano Guerrero foi convocado pelo Chile para a Copa América 2024."
+      }
     ],
     "confianca": 0.4,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Matías Catalán",
@@ -233,7 +290,10 @@
     },
     "observacao": "Zagueiro que ganhou espaço na seleção chilena atuando no Talleres, com boa presença física e consistência defensiva nos últimos ciclos.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Matías Catalán foi convocado pelo Chile para a Copa América 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Matías Catalán foi convocado pelo Chile para a Copa América 2024."
+      }
     ],
     "confianca": 0.5,
     "status": "approved"
@@ -257,11 +317,20 @@
     },
     "observacao": "Atacante nascido na Inglaterra e naturalizado chileno, titular frequente no ataque da seleção, com boa força física e finalização acima da média do grupo de atacantes.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Ben Brereton Díaz foi convocado pelo Chile para a Copa América 2024."},
-      {"url": "https://en.wikipedia.org/wiki/Ben_Brereton_D%C3%ADaz", "afirmacao": "Ben Brereton Díaz é um atacante chileno-inglês que se naturalizou chileno e é titular frequente da seleção."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Ben Brereton Díaz foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Ben_Brereton_D%C3%ADaz",
+        "afirmacao": "Ben Brereton Díaz é um atacante chileno-inglês que se naturalizou chileno e é titular frequente da seleção."
+      }
     ],
     "confianca": 0.6,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Brayan Cortés",
@@ -281,8 +350,14 @@
     },
     "observacao": "Goleiro com papel relevante na seleção chilena nos últimos ciclos, com atuação consistente pelo Colo-Colo e boa leitura de jogo sob a trave.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Brayan Cortés foi convocado pelo Chile para a Copa América 2024."},
-      {"url": "https://en.wikipedia.org/wiki/Brayan_Cort%C3%A9s", "afirmacao": "Brayan Cortés é goleiro do Colo-Colo e integrante da seleção chilena."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Brayan Cortés foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Brayan_Cort%C3%A9s",
+        "afirmacao": "Brayan Cortés é goleiro do Colo-Colo e integrante da seleção chilena."
+      }
     ],
     "confianca": 0.55,
     "status": "approved"
@@ -305,7 +380,10 @@
     },
     "observacao": "Meio-campista jovem da Unión La Calera, com convocação recente e ainda pouca rodagem na seleção principal.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "César Pérez foi convocado pelo Chile para a Copa América 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "César Pérez foi convocado pelo Chile para a Copa América 2024."
+      }
     ],
     "confianca": 0.35,
     "status": "approved"
@@ -328,7 +406,10 @@
     },
     "observacao": "Zagueiro com experiência internacional pelo Fortaleza, atuando como opção de rotação na defesa da seleção chilena.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Benjamín Kuscevic foi convocado pelo Chile para a Copa América 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Benjamín Kuscevic foi convocado pelo Chile para a Copa América 2024."
+      }
     ],
     "confianca": 0.45,
     "status": "approved"
@@ -351,7 +432,10 @@
     },
     "observacao": "Zagueiro do Audax Italiano com convocação pontual, perfil ainda pouco testado em competições internacionais pela seleção principal.",
     "fontes": [
-      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Nicolás Fernández foi convocado pelo Chile para a Copa América 2024."}
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Nicolás Fernández foi convocado pelo Chile para a Copa América 2024."
+      }
     ],
     "confianca": 0.35,
     "status": "approved"

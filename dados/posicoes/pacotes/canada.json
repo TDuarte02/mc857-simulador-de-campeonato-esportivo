@@ -1,0 +1,225 @@
+{
+  "pais": "Canada",
+  "jogadores": [
+    {
+      "nome": "Dwayne De Rosario",
+      "posicao_principal": "CAM",
+      "dob": "1978-05-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q704094",
+      "contexto": "Maior artilheiro historico"
+    },
+    {
+      "nome": "Julian de Guzman",
+      "posicao_principal": "CDM",
+      "dob": "1981-03-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q362857",
+      "contexto": "Deportivo La Coruna"
+    },
+    {
+      "nome": "Dale Mitchell",
+      "posicao_principal": "ST",
+      "dob": "1958-04-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2438777",
+      "contexto": "Copa 1986"
+    },
+    {
+      "nome": "Tomasz Radzinski",
+      "posicao_principal": "ST",
+      "dob": "1973-12-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q444814",
+      "contexto": "Everton"
+    },
+    {
+      "nome": "Alex Bunbury",
+      "posicao_principal": "ST",
+      "dob": "1967-06-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1400508",
+      "contexto": "Maritimo"
+    },
+    {
+      "nome": "Bruce Wilson",
+      "posicao_principal": "LB",
+      "dob": "1951-06-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q3273479",
+      "contexto": "Copa 1986"
+    },
+    {
+      "nome": "Randy Samuel",
+      "posicao_principal": "CB",
+      "dob": "1963-12-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1388050",
+      "contexto": "Copa 1986"
+    },
+    {
+      "nome": "Mark Watson",
+      "posicao_principal": "CB",
+      "dob": "1970-09-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q612493",
+      "contexto": "Copa 2000"
+    },
+    {
+      "nome": "Kevin McKenna",
+      "posicao_principal": "CB",
+      "dob": "1980-01-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q726364",
+      "contexto": "Energie Cottbus"
+    },
+    {
+      "nome": "Jason de Vos",
+      "posicao_principal": "CB",
+      "dob": "1974-01-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2465196",
+      "contexto": "Ipswich Town"
+    },
+    {
+      "nome": "Paul Stalteri",
+      "posicao_principal": "RB",
+      "dob": "1977-10-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q312091",
+      "contexto": "Tottenham"
+    },
+    {
+      "nome": "Bob Lenarduzzi",
+      "posicao_principal": "RB",
+      "dob": "1955-05-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2274245",
+      "contexto": "Copa 1986"
+    },
+    {
+      "nome": "Craig Forrest",
+      "posicao_principal": "GK",
+      "dob": "1967-09-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1138541",
+      "contexto": "Copa 2000"
+    },
+    {
+      "nome": "Luc de Fougerolles",
+      "posicao_principal": "CB",
+      "dob": "2005-10-12",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Fulham"
+    },
+    {
+      "nome": "Ismaël Koné",
+      "posicao_principal": "CM",
+      "dob": "2002-06-16",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Watford"
+    },
+    {
+      "nome": "Theo Bair",
+      "posicao_principal": "ST",
+      "dob": "1999-08-27",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Motherwell"
+    },
+    {
+      "nome": "Jacen Russell-Rowe",
+      "posicao_principal": "ST",
+      "dob": "2002-09-13",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Columbus Crew"
+    },
+    {
+      "nome": "Moïse Bombito",
+      "posicao_principal": "CB",
+      "dob": "2000-03-30",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Colorado Rapids"
+    },
+    {
+      "nome": "Tom McGill",
+      "posicao_principal": "GK",
+      "dob": "2000-03-25",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Brighton & Hove Albion"
+    },
+    {
+      "nome": "Ali Ahmed",
+      "posicao_principal": "CM",
+      "dob": "2000-10-10",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Vancouver Whitecaps FC"
+    },
+    {
+      "nome": "Tani Oluwaseyi",
+      "posicao_principal": "ST",
+      "dob": "2000-05-15",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Minnesota United FC"
+    },
+    {
+      "nome": "Kyle Hiebert",
+      "posicao_principal": "CB",
+      "dob": "1997-07-30",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "St. Louis City SC"
+    }
+  ]
+}

@@ -179,7 +179,10 @@
       }
     ],
     "confianca": 0.5,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LW"
+    ]
   },
   {
     "nome": "Tani Oluwaseyi",

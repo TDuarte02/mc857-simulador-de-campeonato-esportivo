@@ -82,7 +82,10 @@
       }
     ],
     "confianca": 0.85,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   },
   {
     "nome": "Guilherme Arana",
@@ -168,7 +171,10 @@
       }
     ],
     "confianca": 0.8,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
   },
   {
     "nome": "Savinho",
@@ -252,6 +258,9 @@
       }
     ],
     "confianca": 0.85,
-    "status": "approved"
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
   }
 ]

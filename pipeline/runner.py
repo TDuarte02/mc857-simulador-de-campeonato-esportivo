@@ -13,6 +13,7 @@ from . import __version__
 from .identity import carregar_aliases, descobrir_lacunas
 from .io import carregar_convocacoes, carregar_dataset, carregar_escalacao, escrever_csv
 from .materialize import materializar
+from .posicoes import treinar_modelo
 from .research import PROMPT_VERSION, gerar_pacote, escrever_pacote
 from .state import (
     STATUS_APPROVED,
@@ -154,7 +155,10 @@ def publicar_pais(
     if not aprovadas:
         raise ValueError("nenhuma proposta aprovada para publicar")
     saida = destino / nome_snapshot(pais, manifesto["edicao"])
-    resultado = materializar(aprovadas, carregar_dataset(dataset), manifesto["data_referencia"], registry)
+    base = carregar_dataset(dataset)
+    resultado = materializar(
+        aprovadas, base, manifesto["data_referencia"], registry, treinar_modelo(base)
+    )
     escrever_csv(resultado, saida)
     if len(resultado.columns) < 110:
         raise ValueError("snapshot publicado não preserva o schema do dataset")

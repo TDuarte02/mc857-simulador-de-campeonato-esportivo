@@ -1,7 +1,7 @@
 pais,nome,posicao,fonte_url,dob,contexto,status,indice_base,nome_base,sofifa_id
 Uruguay,Luis Suarez,ST,https://www.wikidata.org/wiki/Q26517,1987-01-24,Artilheiro da selecao,present,23,Luis Alberto Suárez Díaz,176580
 Uruguay,Diego Forlan,ST,https://www.wikidata.org/wiki/Q261534,1979-05-19,Melhor da Copa 2010,missing,,,
-Uruguay,Enzo Francescoli,AM,https://www.wikidata.org/wiki/Q210083,1961-11-12,Idolo do River,missing,,,
+Uruguay,Enzo Francescoli,CAM,https://www.wikidata.org/wiki/Q210083,1961-11-12,Idolo do River,missing,,,
 Uruguay,Edinson Cavani,ST,https://www.wikidata.org/wiki/Q167790,1987-02-14,PSG e Napoli,present,74,Edinson Roberto Cavani Gómez,179813
 Uruguay,Dario Silva,ST,https://www.wikidata.org/wiki/Q359804,1972-11-02,Malaga,missing,,,
 Uruguay,Alcides Ghiggia,RW,https://www.wikidata.org/wiki/Q352611,1926-11-22,Gol do Maracanazo,missing,,,
@@ -29,21 +29,21 @@ Uruguay,Jose Nasazzi,CB,https://www.wikidata.org/wiki/Q312164,1901-05-24,Capitao
 Uruguay,Diego Lugano,CB,https://www.wikidata.org/wiki/Q373547,1980-11-02,Capitao 2010,missing,,,
 Uruguay,Jorge Fucile,LB,https://www.wikidata.org/wiki/Q178599,1984-11-19,Porto,missing,,,
 Uruguay,Diego Godin,CB,https://www.wikidata.org/wiki/Q214903,1986-02-16,Atletico de Madrid,present,402,Diego Roberto Godín Leal,182493
-Uruguay,Obdulio Varela,DM,https://www.wikidata.org/wiki/Q471743,1917-09-20,Capitao 1950,missing,,,
-Uruguay,Nicolas De La Cruz,AM,https://www.wikidata.org/wiki/Q20994037,1997-06-01,River Plate,present,840,Diego Nicolás De La Cruz Arcosa,240699
-Uruguay,Victor Rodriguez Andrade,DM,https://www.wikidata.org/wiki/Q721958,1927-05-02,Campeao 1950,missing,,,
-Uruguay,Schubert Gambetta,DM,https://www.wikidata.org/wiki/Q722004,1920-04-14,Campeao 1950,missing,,,
-Uruguay,Manuel Ugarte,DM,https://www.wikidata.org/wiki/Q27960175,2001-04-11,PSG,present,3798,Manuel Ugarte Ribeiro,253306
-Uruguay,Nicolas Lodeiro,AM,https://www.wikidata.org/wiki/Q309808,1989-03-21,Seattle Sounders,present,415,Marcelo Nicolás Lodeiro Benítez,197225
-Uruguay,Giorgian de Arrascaeta,AM,https://www.wikidata.org/wiki/Q13578003,1994-06-01,Flamengo,missing,,,
-Uruguay,Rodrigo Bentancur,DM,https://www.wikidata.org/wiki/Q18817134,1997-06-25,Tottenham,present,800,Rodrigo Bentancur Colmán,227535
+Uruguay,Obdulio Varela,CDM,https://www.wikidata.org/wiki/Q471743,1917-09-20,Capitao 1950,missing,,,
+Uruguay,Nicolas De La Cruz,CAM,https://www.wikidata.org/wiki/Q20994037,1997-06-01,River Plate,present,840,Diego Nicolás De La Cruz Arcosa,240699
+Uruguay,Victor Rodriguez Andrade,CDM,https://www.wikidata.org/wiki/Q721958,1927-05-02,Campeao 1950,missing,,,
+Uruguay,Schubert Gambetta,CDM,https://www.wikidata.org/wiki/Q722004,1920-04-14,Campeao 1950,missing,,,
+Uruguay,Manuel Ugarte,CDM,https://www.wikidata.org/wiki/Q27960175,2001-04-11,PSG,present,3798,Manuel Ugarte Ribeiro,253306
+Uruguay,Nicolas Lodeiro,CAM,https://www.wikidata.org/wiki/Q309808,1989-03-21,Seattle Sounders,present,415,Marcelo Nicolás Lodeiro Benítez,197225
+Uruguay,Giorgian de Arrascaeta,CAM,https://www.wikidata.org/wiki/Q13578003,1994-06-01,Flamengo,missing,,,
+Uruguay,Rodrigo Bentancur,CDM,https://www.wikidata.org/wiki/Q18817134,1997-06-25,Tottenham,present,800,Rodrigo Bentancur Colmán,227535
 Uruguay,Federico Valverde,CM,https://www.wikidata.org/wiki/Q19509544,1998-07-22,Real Madrid,present,196,Federico Santiago Valverde Dipetta,239053
-Uruguay,Alvaro Recoba,AM,https://www.wikidata.org/wiki/Q204108,1976-03-17,Inter de Milao,missing,,,
-Uruguay,Gaston Ramirez,AM,https://www.wikidata.org/wiki/Q437673,1990-12-02,Middlesbrough,missing,,,
-Uruguay,Juan Alberto Schiaffino,AM,https://www.wikidata.org/wiki/Q332064,1925-07-28,Campeao 1950,missing,,,
-Uruguay,Egidio Arevalo Rios,DM,https://www.wikidata.org/wiki/Q315674,1982-01-01,Copa 2010,missing,,,
+Uruguay,Alvaro Recoba,CAM,https://www.wikidata.org/wiki/Q204108,1976-03-17,Inter de Milao,missing,,,
+Uruguay,Gaston Ramirez,CAM,https://www.wikidata.org/wiki/Q437673,1990-12-02,Middlesbrough,missing,,,
+Uruguay,Juan Alberto Schiaffino,CAM,https://www.wikidata.org/wiki/Q332064,1925-07-28,Campeao 1950,missing,,,
+Uruguay,Egidio Arevalo Rios,CDM,https://www.wikidata.org/wiki/Q315674,1982-01-01,Copa 2010,missing,,,
 Uruguay,Gustavo Varela,CM,https://www.wikidata.org/wiki/Q736488,1978-05-14,Nacional,missing,,,
-Uruguay,Pablo Garcia,DM,https://www.wikidata.org/wiki/Q279673,1977-05-11,Real Madrid,missing,,,
+Uruguay,Pablo Garcia,CDM,https://www.wikidata.org/wiki/Q279673,1977-05-11,Real Madrid,missing,,,
 Uruguay,Fabian Carini,GK,https://www.wikidata.org/wiki/Q430729,1979-12-26,Juventus,missing,,,
 Uruguay,Sergio Rochet,GK,https://www.wikidata.org/wiki/Q17086753,1993-03-23,Internacional,present,1332,Sergio Ramón Rochet Álvarez,223690
 Uruguay,Ladislao Mazurkiewicz,GK,https://www.wikidata.org/wiki/Q608126,1945-02-14,Copa 1970,missing,,,
