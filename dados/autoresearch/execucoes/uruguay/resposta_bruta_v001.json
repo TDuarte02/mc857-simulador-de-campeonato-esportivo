@@ -1,0 +1,143 @@
+[
+  {
+    "nome": "Giorgian de Arrascaeta",
+    "pais": "Uruguay",
+    "posicao": "CAM",
+    "dob": "1994-06-01",
+    "club_name": "Flamengo",
+    "league_name": "Brasileiro Série A",
+    "preferred_foot": "Right",
+    "height_cm": 172,
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.6,
+      "shooting": 0.88,
+      "passing": 0.9,
+      "dribbling": 0.88,
+      "defending": 0.25,
+      "physic": 0.45
+    },
+    "observacao": "Arrascaeta é o principal criador de jogadas da seleção uruguaia e um dos melhores meio-campistas ofensivos da América do Sul, com chute, passe e drible muito acima da mediana do pool MID do Uruguai. É pouco envolvido defensivamente e não tem velocidade de ponta, por isso defending e pace ficam abaixo da média em relação ao próprio nível geral.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Giorgian de Arrascaeta foi convocado pelo Uruguai para a Copa América 2024, atuando no meio-campo, com clube Flamengo."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Giorgian_De_Arrascaeta",
+        "afirmacao": "Giorgian de Arrascaeta é meio-campista ofensivo do Flamengo e da seleção uruguaia, reconhecido por sua capacidade de passe, chute e criação de jogadas."
+      }
+    ],
+    "confianca": 0.85,
+    "status": "approved"
+  },
+  {
+    "nome": "Franco Israel",
+    "pais": "Uruguay",
+    "posicao": "GK",
+    "dob": "2000-04-22",
+    "club_name": "Sporting CP",
+    "league_name": "Primeira Liga",
+    "percentis": {
+      "overall": 0.6,
+      "goalkeeping_diving": 0.6,
+      "goalkeeping_handling": 0.55,
+      "goalkeeping_kicking": 0.55,
+      "goalkeeping_positioning": 0.6,
+      "goalkeeping_reflexes": 0.65,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Franco Israel era o segundo goleiro do Uruguai na Copa América 2024, atrás de Sergio Rochet, atuando como reserva de qualidade pelo Sporting CP. Isso o posiciona um pouco acima da mediana do pool de goleiros uruguaios, sem alcançar o nível dos goleiros estabelecidos como titulares da seleção.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Franco Israel foi convocado pelo Uruguai para a Copa América 2024 como goleiro, com clube Sporting CP."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Guillermo Varela",
+    "pais": "Uruguay",
+    "posicao": "RB",
+    "dob": "1993-03-24",
+    "club_name": "Flamengo",
+    "league_name": "Brasileiro Série A",
+    "preferred_foot": "Right",
+    "percentis": {
+      "overall": 0.5,
+      "pace": 0.65,
+      "shooting": 0.3,
+      "passing": 0.55,
+      "dribbling": 0.55,
+      "defending": 0.5,
+      "physic": 0.5
+    },
+    "observacao": "Guillermo Varela é lateral-direito (não zagueiro central) e peça de rotação na defesa do Uruguai, sem ser titular fixo, o que o coloca próximo da mediana do pool DEF do país. Tem boa velocidade para apoiar o ataque pelo lado, mas finalização limitada, típica de um lateral.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Guillermo Varela foi convocado pelo Uruguai para a Copa América 2024, listado na defesa, com clube Flamengo."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Guillermo_Varela",
+        "afirmacao": "Guillermo Varela é lateral-direito do Flamengo e da seleção uruguaia."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Emiliano Martínez",
+    "pais": "Uruguay",
+    "posicao": "CDM",
+    "dob": "1999-08-17",
+    "club_name": "Midtjylland",
+    "league_name": "Danish Superliga",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.45,
+      "shooting": 0.25,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.6,
+      "physic": 0.6
+    },
+    "observacao": "Este Emiliano Martínez (homônimo do goleiro argentino) é um volante de contenção do Midtjylland, convocado como opção de profundidade no meio-campo do Uruguai, sem ser peça habitual da seleção principal. Por isso seu overall fica abaixo da mediana do pool MID, com perfil mais defensivo (defending e physic acima da média) e pouca contribuição ofensiva (shooting baixo).",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Emiliano Martínez foi convocado pelo Uruguai para a Copa América 2024, atuando no meio-campo, com clube Midtjylland."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Santiago Mele",
+    "pais": "Uruguay",
+    "posicao": "GK",
+    "dob": "1997-09-06",
+    "club_name": "Atlético Junior",
+    "league_name": "Categoría Primera A",
+    "percentis": {
+      "overall": 0.2,
+      "goalkeeping_diving": 0.25,
+      "goalkeeping_handling": 0.2,
+      "goalkeeping_kicking": 0.2,
+      "goalkeeping_positioning": 0.25,
+      "goalkeeping_reflexes": 0.25,
+      "goalkeeping_speed": 0.3
+    },
+    "observacao": "Santiago Mele era o terceiro goleiro do Uruguai na Copa América 2024, atuando em um clube colombiano de perfil menos destacado internacionalmente do que os demais goleiros convocados. Isso o posiciona na parte inferior do pool de goleiros uruguaios, refletindo seu papel de reserva distante da titularidade.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Santiago Mele foi convocado pelo Uruguai para a Copa América 2024 como goleiro, com clube Atlético Junior."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  }
+]

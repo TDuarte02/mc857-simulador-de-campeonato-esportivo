@@ -1,0 +1,314 @@
+[
+  {
+    "nome": "Carlos Coronel",
+    "pais": "Paraguay",
+    "posicao": "GK",
+    "dob": "1996-12-29",
+    "club_name": "New York Red Bulls",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.6,
+      "goalkeeping_diving": 0.6,
+      "goalkeeping_handling": 0.55,
+      "goalkeeping_kicking": 0.55,
+      "goalkeeping_positioning": 0.55,
+      "goalkeeping_reflexes": 0.6,
+      "goalkeeping_speed": 0.45
+    },
+    "observacao": "Goleiro titular do New York Red Bulls na MLS, com atuações consistentes; dentro do grupo de goleiros convocados pelo Paraguai fica pouco acima da mediana, sem ser o titular indiscutível da seleção em 2024.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Carlos Coronel foi convocado pelo Paraguai como goleiro para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Matías Espinoza",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1997-09-19",
+    "club_name": "Libertad",
+    "league_name": "Primera División (Paraguay)",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.5,
+      "shooting": 0.2,
+      "passing": 0.4,
+      "dribbling": 0.4,
+      "defending": 0.45,
+      "physic": 0.5
+    },
+    "observacao": "Zagueiro do Libertad, peça em ascensão mas ainda sem grande volume de jogos pela seleção principal; percentis próximos ou levemente abaixo da mediana do grupo de zagueiros paraguaios.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Matías Espinoza foi convocado pelo Paraguai como zagueiro para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Fabián Balbuena",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1991-08-23",
+    "club_name": "Dynamo Moscow",
+    "league_name": "Russian Premier League",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.5,
+      "shooting": 0.2,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.78,
+      "physic": 0.72
+    },
+    "observacao": "Zagueiro experiente, com passagem pela Premier League inglesa (West Ham) e boa bagagem internacional; defesa e físico bem acima da mediana do grupo de zagueiros paraguaios.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Fabián Balbuena foi convocado pelo Paraguai como zagueiro para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Júnior Alonso",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1993-02-09",
+    "club_name": "Krasnodar",
+    "league_name": "Russian Premier League",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.5,
+      "shooting": 0.15,
+      "passing": 0.48,
+      "dribbling": 0.4,
+      "defending": 0.8,
+      "physic": 0.75
+    },
+    "observacao": "Zagueiro habitual da seleção paraguaia, jogando em clube de bom nível na Rússia; força defensiva e física claramente acima da mediana do grupo de zagueiros.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Júnior Alonso foi convocado pelo Paraguai como zagueiro para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Damián Bobadilla",
+    "pais": "Paraguay",
+    "posicao": "CDM",
+    "dob": "2001-07-11",
+    "club_name": "São Paulo",
+    "league_name": "Campeonato Brasileiro Série A",
+    "percentis": {
+      "overall": 0.45,
+      "pace": 0.5,
+      "shooting": 0.3,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.55,
+      "physic": 0.55
+    },
+    "observacao": "Volante jovem do São Paulo, com papel ainda em consolidação na seleção; marcação levemente acima da mediana, demais atributos próximos da mediana do grupo de meio-campistas paraguaios.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Damián Bobadilla foi convocado pelo Paraguai como meio-campista para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Ángel Romero",
+    "pais": "Paraguay",
+    "posicao": "RW",
+    "dob": "1992-07-04",
+    "club_name": "Corinthians",
+    "league_name": "Campeonato Brasileiro Série A",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.7,
+      "shooting": 0.75,
+      "passing": 0.6,
+      "dribbling": 0.75,
+      "defending": 0.2,
+      "physic": 0.55
+    },
+    "observacao": "Ponta/atacante experiente e peça frequente do ataque paraguaio, com bom volume de gols e assistências pelo Corinthians; finalização e drible bem acima da mediana do grupo ofensivo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Ángel Romero foi convocado pelo Paraguai como atacante para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Néstor Giménez",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1997-07-24",
+    "club_name": "Libertad",
+    "league_name": "Primera División (Paraguay)",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.45,
+      "shooting": 0.15,
+      "passing": 0.4,
+      "dribbling": 0.35,
+      "defending": 0.45,
+      "physic": 0.45
+    },
+    "observacao": "Zagueiro de rotação do Libertad, sem grande destaque internacional; percentis próximos à mediana do grupo de zagueiros paraguaios.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Néstor Giménez foi convocado pelo Paraguai como zagueiro para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Gustavo Gómez",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1993-05-06",
+    "club_name": "Palmeiras",
+    "league_name": "Campeonato Brasileiro Série A",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.55,
+      "shooting": 0.2,
+      "passing": 0.65,
+      "dribbling": 0.5,
+      "defending": 0.92,
+      "physic": 0.85
+    },
+    "observacao": "Capitão da seleção paraguaia e do Palmeiras, um dos zagueiros mais respeitados da América do Sul; defesa e físico no topo do grupo de zagueiros paraguaios.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Gustavo Gómez foi convocado pelo Paraguai como zagueiro para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.85,
+    "status": "approved"
+  },
+  {
+    "nome": "Álex Arce",
+    "pais": "Paraguay",
+    "posicao": "ST",
+    "dob": "1995-06-16",
+    "club_name": "LDU Quito",
+    "league_name": "Liga Pro (Ecuador)",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.5,
+      "shooting": 0.45,
+      "passing": 0.35,
+      "dribbling": 0.4,
+      "defending": 0.2,
+      "physic": 0.45
+    },
+    "observacao": "Atacante de referência física, mas sem papel de titular fixo na seleção; percentis de finalização e físico próximos da mediana do grupo ofensivo paraguaio.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Álex Arce foi convocado pelo Paraguai como atacante para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Fabrizio Peralta",
+    "pais": "Paraguay",
+    "posicao": "CM",
+    "dob": "2002-08-02",
+    "club_name": "Cerro Porteño",
+    "league_name": "Primera División (Paraguay)",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.45,
+      "shooting": 0.3,
+      "passing": 0.4,
+      "dribbling": 0.4,
+      "defending": 0.4,
+      "physic": 0.4
+    },
+    "observacao": "Meio-campista jovem do Cerro Porteño, ainda em início de carreira na seleção; percentis levemente abaixo da mediana do grupo de meio-campistas paraguaios.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Fabrizio Peralta foi convocado pelo Paraguai como meio-campista para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Mathías Villasanti",
+    "pais": "Paraguay",
+    "posicao": "CDM",
+    "dob": "1997-01-24",
+    "club_name": "Grêmio",
+    "league_name": "Campeonato Brasileiro Série A",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.55,
+      "shooting": 0.3,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.8,
+      "physic": 0.8
+    },
+    "observacao": "Volante titular e um dos pilares defensivos da seleção paraguaia, com atuação de destaque no Grêmio; marcação e físico bem acima da mediana do grupo de meio-campistas.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Mathías Villasanti foi convocado pelo Paraguai como meio-campista para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved"
+  },
+  {
+    "nome": "Hernesto Caballero",
+    "pais": "Paraguay",
+    "posicao": "CM",
+    "dob": "1991-04-09",
+    "club_name": "Libertad",
+    "league_name": "Primera División (Paraguay)",
+    "percentis": {
+      "overall": 0.45,
+      "pace": 0.4,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.5,
+      "physic": 0.5
+    },
+    "observacao": "Meio-campista experiente do Libertad, com papel coadjuvante na seleção; percentis próximos da mediana do grupo de meio-campistas paraguaios, sem destaque acima da média.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Hernesto Caballero foi convocado pelo Paraguai como meio-campista para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  }
+]

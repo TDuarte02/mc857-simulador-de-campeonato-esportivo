@@ -1,0 +1,236 @@
+[
+  {
+    "nome": "Paolo Guerrero",
+    "pais": "Peru",
+    "posicao": "ST",
+    "dob": "1984-01-01",
+    "club_name": "Universidad César Vallejo",
+    "league_name": "Liga 1 (Peru)",
+    "percentis": {
+      "overall": 0.45,
+      "pace": 0.15,
+      "shooting": 0.65,
+      "passing": 0.5,
+      "dribbling": 0.35,
+      "defending": 0.2,
+      "physic": 0.6
+    },
+    "observacao": "Veterano de 40 anos no momento da Copa América 2024, Guerrero chegou como peça de experiência e liderança mais do que titular fixo, por isso o overall fica abaixo da mediana do grupo ATT do Peru. Mantém finalização e jogo aéreo/físico de nível historicamente alto, mas a velocidade está bastante reduzida pela idade.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Paolo Guerrero foi convocado pelo Peru para a Copa América 2024, defendendo o Universidad César Vallejo."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Bryan Reyna",
+    "pais": "Peru",
+    "posicao": "RW",
+    "dob": "1998-08-23",
+    "club_name": "Belgrano",
+    "league_name": "Primera División (Argentina)",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.75,
+      "shooting": 0.45,
+      "passing": 0.5,
+      "dribbling": 0.65,
+      "defending": 0.3,
+      "physic": 0.4
+    },
+    "observacao": "Reyna atua predominantemente como ponta pelo lado direito, não como centroavante fixo, por isso a posição foi refinada de ST para RW mantendo o grupo ATT. É um jogador de rotação da seleção com boa velocidade e drible, mas sem ser peça indiscutível no ataque peruano.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Bryan Reyna foi convocado pelo Peru para a Copa América 2024, defendendo o Belgrano."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Miguel Araujo",
+    "pais": "Peru",
+    "posicao": "CB",
+    "dob": "1994-10-24",
+    "club_name": "Portland Timbers",
+    "league_name": "Major League Soccer (MLS)",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.55,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.35,
+      "defending": 0.8,
+      "physic": 0.75
+    },
+    "observacao": "Araujo é titular habitual da zaga central do Peru, com forte presença defensiva e física, por isso fica no topo da distribuição do grupo DEF em overall e defending. Contribuição ofensiva (passe/drible) é discreta, como típico de um zagueiro titular.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Miguel Araujo foi convocado pelo Peru para a Copa América 2024, defendendo o Portland Timbers."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Wilder Cartagena",
+    "pais": "Peru",
+    "posicao": "CDM",
+    "dob": "1994-09-23",
+    "club_name": "Orlando City SC",
+    "league_name": "Major League Soccer (MLS)",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.5,
+      "shooting": 0.3,
+      "passing": 0.55,
+      "dribbling": 0.4,
+      "defending": 0.78,
+      "physic": 0.75
+    },
+    "observacao": "Cartagena joga claramente como volante de contenção e não como meio-campista mais ofensivo, por isso a posição foi refinada de CM para CDM dentro do grupo MID. É titular/peça importante do meio-campo peruano, com defesa e físico fortes e produção ofensiva limitada.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Wilder Cartagena foi convocado pelo Peru para a Copa América 2024, defendendo o Orlando City SC."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Oliver Sonne",
+    "pais": "Peru",
+    "posicao": "RB",
+    "dob": "2000-11-10",
+    "club_name": "Silkeborg",
+    "league_name": "Superliga (Dinamarca)",
+    "percentis": {
+      "overall": 0.62,
+      "pace": 0.8,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.55,
+      "defending": 0.5,
+      "physic": 0.55
+    },
+    "observacao": "Sonne é lateral direito, não zagueiro central, então a posição foi refinada de CB para RB mantendo o grupo DEF. Era uma convocação relativamente nova em 2024, atleta rápido e com boa projeção ofensiva vindo do futebol dinamarquês, ainda consolidando a titularidade.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Oliver Sonne foi convocado pelo Peru para a Copa América 2024, defendendo o Silkeborg."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Edison Flores",
+    "pais": "Peru",
+    "posicao": "LW",
+    "dob": "1994-05-15",
+    "club_name": "Universitario",
+    "league_name": "Liga 1 (Peru)",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.6,
+      "dribbling": 0.6,
+      "defending": 0.3,
+      "physic": 0.45
+    },
+    "observacao": "Flores atua tradicionalmente como ponta/meia-atacante pelo lado esquerdo e não como centroavante, por isso a posição foi refinada de ST para LW mantendo o grupo ATT. Em 2024 já era um jogador de rotação experiente da seleção, com bom passe e drible, mas sem ser titular indiscutível.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Edison Flores foi convocado pelo Peru para a Copa América 2024, defendendo o Universitario."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Piero Quispe",
+    "pais": "Peru",
+    "posicao": "CAM",
+    "dob": "2001-08-14",
+    "club_name": "UNAM",
+    "league_name": "Liga MX",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.65,
+      "shooting": 0.55,
+      "passing": 0.75,
+      "dribbling": 0.78,
+      "defending": 0.35,
+      "physic": 0.45
+    },
+    "observacao": "Quispe é um armador criativo que se destacou em 2023/2024 e se tornou peça importante do meio-campo peruano, por isso a posição foi refinada de CM para CAM mantendo o grupo MID. Destaca-se em passe e drible, com contribuição defensiva baixa, típica de um meia criativo jovem em ascensão.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Piero Quispe foi convocado pelo Peru para a Copa América 2024, defendendo o UNAM."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "José Rivera",
+    "pais": "Peru",
+    "posicao": "ST",
+    "dob": "1997-05-08",
+    "club_name": "Universitario",
+    "league_name": "Liga 1 (Peru)",
+    "percentis": {
+      "overall": 0.45,
+      "pace": 0.6,
+      "shooting": 0.5,
+      "passing": 0.4,
+      "dribbling": 0.5,
+      "defending": 0.25,
+      "physic": 0.45
+    },
+    "observacao": "Rivera é um atacante de área, centroavante clássico, mantendo a posição ST informada no pacote. Era uma opção de reserva/rotação no ataque peruano em 2024, com perfil mediano dentro do grupo ATT, sem ainda ter consolidado titularidade.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "José Rivera foi convocado pelo Peru para a Copa América 2024, defendendo o Universitario."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Franco Zanelatto",
+    "pais": "Peru",
+    "posicao": "RW",
+    "dob": "2000-05-09",
+    "club_name": "Alianza Lima",
+    "league_name": "Liga 1 (Peru)",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.65,
+      "shooting": 0.4,
+      "passing": 0.4,
+      "dribbling": 0.5,
+      "defending": 0.25,
+      "physic": 0.35
+    },
+    "observacao": "Zanelatto atua como ponta pelo lado direito, e não como centroavante fixo, por isso a posição foi refinada de ST para RW mantendo o grupo ATT. Em 2024 era o jogador mais marginal desta leva de convocados do Peru, com overall abaixo da mediana do grupo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Franco Zanelatto foi convocado pelo Peru para a Copa América 2024, defendendo o Alianza Lima."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  }
+]

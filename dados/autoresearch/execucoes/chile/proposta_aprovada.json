@@ -1,0 +1,425 @@
+[
+  {
+    "nome": "Gabriel Suazo",
+    "pais": "Chile",
+    "posicao": "LB",
+    "dob": "1997-08-09",
+    "club_name": "Toulouse",
+    "league_name": "Ligue 1",
+    "preferred_foot": "Left",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.75,
+      "shooting": 0.35,
+      "passing": 0.65,
+      "dribbling": 0.6,
+      "defending": 0.6,
+      "physic": 0.65
+    },
+    "observacao": "Lateral-esquerdo titular absoluto da seleção chilena desde 2021, com boa capacidade ofensiva e físico robusto para a função; a finalização não é o ponto forte de seu jogo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Gabriel Suazo foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Gabriel_Suazo",
+        "afirmacao": "Gabriel Suazo é lateral-esquerdo titular da seleção chilena e atua no Toulouse FC."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Mauricio Isla",
+    "pais": "Chile",
+    "posicao": "CM",
+    "dob": "1988-06-12",
+    "club_name": "Independiente",
+    "league_name": "Primera División Argentina",
+    "preferred_foot": "Right",
+    "percentis": {
+      "overall": 0.5,
+      "pace": 0.3,
+      "shooting": 0.4,
+      "passing": 0.6,
+      "dribbling": 0.45,
+      "defending": 0.55,
+      "physic": 0.45
+    },
+    "observacao": "Jogador muito experiente e histórico lateral/meio-campista da seleção, mas aos 36 anos em 2024 já apresenta queda de ritmo físico; mantém bom senso tático e passe, servindo mais como opção de rotação.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Mauricio Isla foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Mauricio_Isla",
+        "afirmacao": "Mauricio Isla é um jogador veterano e histórico da seleção chilena, que defendia o Independiente em 2024."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Thomas Galdames",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1998-11-20",
+    "club_name": "Godoy Cruz",
+    "league_name": "Primera División Argentina",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.45,
+      "shooting": 0.3,
+      "passing": 0.4,
+      "dribbling": 0.4,
+      "defending": 0.4,
+      "physic": 0.45
+    },
+    "observacao": "Jogador de rotação na defesa chilena, sem posição de titular consolidada na seleção; perfil ainda em desenvolvimento no Godoy Cruz.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Thomas Galdames foi convocado pelo Chile para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Darío Osorio",
+    "pais": "Chile",
+    "posicao": "LW",
+    "dob": "2004-01-24",
+    "club_name": "Midtjylland",
+    "league_name": "Danish Superliga",
+    "preferred_foot": "Left",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.75,
+      "shooting": 0.6,
+      "passing": 0.65,
+      "dribbling": 0.85,
+      "defending": 0.25,
+      "physic": 0.4
+    },
+    "observacao": "Um dos maiores talentos emergentes do futebol chileno, ponta canhota com grande capacidade de drible e velocidade; principal esperança ofensiva jovem da seleção nesta Copa América.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Darío Osorio foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Dar%C3%ADo_Osorio",
+        "afirmacao": "Darío Osorio é um jovem ponta chileno que atua pelo FC Midtjylland e é visto como grande promessa da seleção."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Eduardo Vargas",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1989-11-20",
+    "club_name": "Atlético Mineiro",
+    "league_name": "Campeonato Brasileiro Série A",
+    "preferred_foot": "Right",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.4,
+      "shooting": 0.75,
+      "passing": 0.5,
+      "dribbling": 0.55,
+      "defending": 0.25,
+      "physic": 0.55
+    },
+    "observacao": "Histórico artilheiro da seleção chilena, ainda com faro de gol relevante apesar da idade avançada (34 anos em 2024) e perda natural de velocidade.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Eduardo Vargas foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Eduardo_Vargas",
+        "afirmacao": "Eduardo Vargas é um dos maiores artilheiros da história da seleção chilena e atuava pelo Atlético Mineiro em 2024."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Cristián Zavala",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1999-08-03",
+    "club_name": "Colo-Colo",
+    "league_name": "Primera División de Chile",
+    "percentis": {
+      "overall": 0.3,
+      "pace": 0.5,
+      "shooting": 0.45,
+      "passing": 0.4,
+      "dribbling": 0.5,
+      "defending": 0.25,
+      "physic": 0.45
+    },
+    "observacao": "Atacante do Colo-Colo convocado como opção de rotação no ataque, sem grande histórico internacional pela seleção principal.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Cristián Zavala foi convocado pelo Chile para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Rodrigo Echeverría",
+    "pais": "Chile",
+    "posicao": "CDM",
+    "dob": "1995-04-17",
+    "club_name": "Huracán",
+    "league_name": "Primera División Argentina",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.45,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.7,
+      "physic": 0.6
+    },
+    "observacao": "Volante defensivo com presença regular na seleção chilena nos últimos anos, destacando-se pela marcação e disciplina tática mais do que pela construção ofensiva.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Rodrigo Echeverría foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Rodrigo_Echeverr%C3%ADa",
+        "afirmacao": "Rodrigo Echeverría é um volante chileno que defendia o Huracán em 2024 e é presença frequente na seleção."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Marcos Bolados",
+    "pais": "Chile",
+    "posicao": "RW",
+    "dob": "1996-02-28",
+    "club_name": "Colo-Colo",
+    "league_name": "Primera División de Chile",
+    "percentis": {
+      "overall": 0.32,
+      "pace": 0.6,
+      "shooting": 0.4,
+      "passing": 0.45,
+      "dribbling": 0.55,
+      "defending": 0.2,
+      "physic": 0.4
+    },
+    "observacao": "Ponta do Colo-Colo com passagens pela seleção, mas sem espaço fixo no time titular; é uma aposta de velocidade pelo lado direito do ataque.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Marcos Bolados foi convocado pelo Chile para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Maximiliano Guerrero",
+    "pais": "Chile",
+    "posicao": "RW",
+    "dob": "2000-01-15",
+    "club_name": "Universidad de Chile",
+    "league_name": "Primera División de Chile",
+    "percentis": {
+      "overall": 0.42,
+      "pace": 0.55,
+      "shooting": 0.45,
+      "passing": 0.5,
+      "dribbling": 0.6,
+      "defending": 0.25,
+      "physic": 0.4
+    },
+    "observacao": "Ponta da Universidad de Chile com presença crescente na seleção, ainda buscando consolidar espaço como opção ofensiva pelo lado direito.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Maximiliano Guerrero foi convocado pelo Chile para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Matías Catalán",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1992-08-19",
+    "club_name": "Talleres",
+    "league_name": "Primera División Argentina",
+    "percentis": {
+      "overall": 0.58,
+      "pace": 0.5,
+      "shooting": 0.35,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.6,
+      "physic": 0.65
+    },
+    "observacao": "Zagueiro que ganhou espaço na seleção chilena atuando no Talleres, com boa presença física e consistência defensiva nos últimos ciclos.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Matías Catalán foi convocado pelo Chile para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Ben Brereton Díaz",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1999-04-18",
+    "club_name": "Sheffield United",
+    "preferred_foot": "Right",
+    "height_cm": 187,
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.7,
+      "shooting": 0.65,
+      "passing": 0.5,
+      "dribbling": 0.6,
+      "defending": 0.25,
+      "physic": 0.65
+    },
+    "observacao": "Atacante nascido na Inglaterra e naturalizado chileno, titular frequente no ataque da seleção, com boa força física e finalização acima da média do grupo de atacantes.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Ben Brereton Díaz foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Ben_Brereton_D%C3%ADaz",
+        "afirmacao": "Ben Brereton Díaz é um atacante chileno-inglês que se naturalizou chileno e é titular frequente da seleção."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Brayan Cortés",
+    "pais": "Chile",
+    "posicao": "GK",
+    "dob": "1995-03-11",
+    "club_name": "Colo-Colo",
+    "league_name": "Primera División de Chile",
+    "percentis": {
+      "overall": 0.65,
+      "goalkeeping_diving": 0.6,
+      "goalkeeping_handling": 0.6,
+      "goalkeeping_kicking": 0.55,
+      "goalkeeping_positioning": 0.65,
+      "goalkeeping_reflexes": 0.6,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Goleiro com papel relevante na seleção chilena nos últimos ciclos, com atuação consistente pelo Colo-Colo e boa leitura de jogo sob a trave.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Brayan Cortés foi convocado pelo Chile para a Copa América 2024."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Brayan_Cort%C3%A9s",
+        "afirmacao": "Brayan Cortés é goleiro do Colo-Colo e integrante da seleção chilena."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "César Pérez",
+    "pais": "Chile",
+    "posicao": "CM",
+    "dob": "2002-11-29",
+    "club_name": "Unión La Calera",
+    "league_name": "Primera División de Chile",
+    "percentis": {
+      "overall": 0.3,
+      "pace": 0.5,
+      "shooting": 0.35,
+      "passing": 0.45,
+      "dribbling": 0.45,
+      "defending": 0.35,
+      "physic": 0.4
+    },
+    "observacao": "Meio-campista jovem da Unión La Calera, com convocação recente e ainda pouca rodagem na seleção principal.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "César Pérez foi convocado pelo Chile para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.35,
+    "status": "approved"
+  },
+  {
+    "nome": "Benjamín Kuscevic",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1996-05-02",
+    "club_name": "Fortaleza",
+    "league_name": "Campeonato Brasileiro Série A",
+    "percentis": {
+      "overall": 0.48,
+      "pace": 0.45,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.55,
+      "physic": 0.6
+    },
+    "observacao": "Zagueiro com experiência internacional pelo Fortaleza, atuando como opção de rotação na defesa da seleção chilena.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Benjamín Kuscevic foi convocado pelo Chile para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Nicolás Fernández",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1999-08-03",
+    "club_name": "Audax Italiano",
+    "league_name": "Primera División de Chile",
+    "percentis": {
+      "overall": 0.28,
+      "pace": 0.4,
+      "shooting": 0.25,
+      "passing": 0.35,
+      "dribbling": 0.35,
+      "defending": 0.4,
+      "physic": 0.45
+    },
+    "observacao": "Zagueiro do Audax Italiano com convocação pontual, perfil ainda pouco testado em competições internacionais pela seleção principal.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Nicolás Fernández foi convocado pelo Chile para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.35,
+    "status": "approved"
+  }
+]

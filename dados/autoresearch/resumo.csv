@@ -1,0 +1,17 @@
+pais,convocados,presentes,ausentes,aprovados,revisao_manual,tentativas,status
+Argentina,26,23,3,3,0,1,published
+Bolivia,26,16,10,10,0,1,published
+Brazil,26,17,9,9,0,1,published
+Canada,26,17,9,9,0,1,published
+Chile,26,11,15,15,0,1,published
+Colombia,26,18,8,8,0,1,published
+Costa Rica,26,6,20,20,0,1,published
+Ecuador,26,12,14,14,0,1,published
+Jamaica,25,7,18,18,0,1,published
+Mexico,26,23,3,3,0,1,published
+Panama,25,8,17,17,0,1,published
+Paraguay,26,14,12,12,0,1,published
+Peru,26,17,9,9,0,1,published
+United States,26,16,10,10,0,1,published
+Uruguay,26,21,5,5,0,1,published
+Venezuela,26,16,10,10,0,1,published
