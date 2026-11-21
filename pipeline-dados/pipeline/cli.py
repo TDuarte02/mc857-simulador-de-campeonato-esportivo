@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from .ancoragem import BONUS_PADRAO, reescalar_lendas
 from .filtro import COTAS_PADRAO, filtrar_pool, parse_cotas
 from .identity import carregar_aliases, descobrir_lacunas
 from .io import carregar_convocacoes, carregar_dataset, escrever_csv
@@ -108,6 +109,12 @@ def _parser() -> argparse.ArgumentParser:
     filtro.add_argument("--cotas", default=",".join(f"{g}={n}" for g, n in COTAS_PADRAO.items()))
     filtro.add_argument("--selecoes", nargs="+", help="restringe a estas seleções (padrão: todas)")
 
+    ancorar = sub.add_parser("ancorar-lendas", help="reâncora as lendas históricas pela força do país")
+    ancorar.add_argument("--pool", type=Path, required=True)
+    ancorar.add_argument("--dataset", type=Path, required=True)
+    ancorar.add_argument("--output", type=Path, required=True)
+    ancorar.add_argument("--bonus", type=float, default=BONUS_PADRAO)
+
     motor = sub.add_parser("exportar-motor", help="exporta o pool no formato do motor do simulador")
     motor.add_argument("--pool", type=Path, required=True)
     motor.add_argument("--dataset", type=Path, required=True, help="base usada para derivar os sub-atributos")
@@ -188,6 +195,17 @@ def main(argv: list[str] | None = None) -> int:
     orchestration_result = _run_orchestration(args)
     if orchestration_result is not None:
         return orchestration_result
+    if args.comando == "ancorar-lendas":
+        pool = pd.read_csv(args.pool, low_memory=False)
+        dataset = carregar_dataset(args.dataset)
+        reescalado, deslocamentos = reescalar_lendas(pool, dataset, bonus=args.bonus)
+        escrever_csv(reescalado, args.output)
+        print(json.dumps({
+            "paises": len(deslocamentos),
+            "deslocamento_medio": round(sum(deslocamentos.values()) / len(deslocamentos), 2),
+            "deslocamento_maximo": round(max(deslocamentos.values()), 2),
+        }, ensure_ascii=False))
+        return 0
     if args.comando == "exportar-motor":
         pool = pd.read_csv(args.pool, low_memory=False)
         dataset = carregar_dataset(args.dataset)

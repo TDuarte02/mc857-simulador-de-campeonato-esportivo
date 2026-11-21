@@ -2,5 +2,5 @@
   "pais": "Mexico",
   "status": "published",
   "published_count": 32,
-  "output_path": "dados/autoresearch/historicos/execucoes/mexico/mexico_2024.csv"
+  "output_path": "artefatos/autoresearch/historicos/execucoes/mexico/mexico_2024.csv"
 }

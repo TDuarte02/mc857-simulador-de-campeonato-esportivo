@@ -2,5 +2,5 @@
   "pais": "Costa Rica",
   "status": "published",
   "published_count": 12,
-  "output_path": "dados/autoresearch/historicos/execucoes/costa_rica/costa_rica_2024.csv"
+  "output_path": "artefatos/autoresearch/historicos/execucoes/costa_rica/costa_rica_2024.csv"
 }

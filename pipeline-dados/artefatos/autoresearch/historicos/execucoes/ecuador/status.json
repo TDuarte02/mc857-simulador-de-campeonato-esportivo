@@ -2,5 +2,5 @@
   "pais": "Ecuador",
   "status": "published",
   "published_count": 20,
-  "output_path": "dados/autoresearch/historicos/execucoes/ecuador/ecuador_2024.csv"
+  "output_path": "artefatos/autoresearch/historicos/execucoes/ecuador/ecuador_2024.csv"
 }

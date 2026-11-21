@@ -12,6 +12,7 @@ import pandas as pd
 from . import __version__
 from .identity import carregar_aliases, descobrir_lacunas
 from .io import carregar_convocacoes, carregar_dataset, carregar_escalacao, escrever_csv
+from .ancoragem import deslocamentos_por_pais
 from .materialize import materializar
 from .posicoes import treinar_modelo
 from .research import PROMPT_VERSION, gerar_pacote, escrever_pacote
@@ -157,7 +158,8 @@ def publicar_pais(
     saida = destino / nome_snapshot(pais, manifesto["edicao"])
     base = carregar_dataset(dataset)
     resultado = materializar(
-        aprovadas, base, manifesto["data_referencia"], registry, treinar_modelo(base)
+        aprovadas, base, manifesto["data_referencia"], registry, treinar_modelo(base),
+        deslocamentos_por_pais(base),
     )
     escrever_csv(resultado, saida)
     if len(resultado.columns) < 110:

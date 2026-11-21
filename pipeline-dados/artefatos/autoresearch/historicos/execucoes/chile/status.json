@@ -2,5 +2,5 @@
   "pais": "Chile",
   "status": "published",
   "published_count": 35,
-  "output_path": "dados/autoresearch/historicos/execucoes/chile/chile_2024.csv"
+  "output_path": "artefatos/autoresearch/historicos/execucoes/chile/chile_2024.csv"
 }

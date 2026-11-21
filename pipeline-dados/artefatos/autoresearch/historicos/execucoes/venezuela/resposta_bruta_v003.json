@@ -1,0 +1,528 @@
+[
+  {
+    "nome": "Juan Arango",
+    "pais": "Venezuela",
+    "posicao": "CAM",
+    "dob": "1980-05-16",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.85,
+      "shooting": 0.95,
+      "passing": 0.95,
+      "dribbling": 0.93,
+      "defending": 0.4,
+      "physic": 0.6
+    },
+    "observacao": "Juan Arango e considerado por muitos o maior jogador da historia da Venezuela, com longa e consistente carreira na Bundesliga pelo Borussia Monchengladbach e no Mallorca. Capitao e principal artilheiro historico da selecao por muitos anos, era famoso por seus chutes de longa distancia e cobrancas de falta. Os percentis refletem o status de lenda absoluta como armador e finalizador, com defensividade baixa tipica de um meia ofensivo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q313143",
+        "afirmacao": "Juan Arango foi meia-atacante do Borussia Monchengladbach e capitao historico da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.78,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 85,
+      "pace": 80,
+      "shooting": 84,
+      "passing": 86,
+      "dribbling": 85,
+      "defending": 44,
+      "physic": 70
+    },
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Cesar Gonzalez",
+    "pais": "Venezuela",
+    "posicao": "LW",
+    "dob": "1933-05-11",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.55,
+      "shooting": 0.55,
+      "passing": 0.5,
+      "dribbling": 0.5,
+      "defending": 0.4,
+      "physic": 0.5
+    },
+    "observacao": "Cesar Gonzalez e um ponta esquerdo de registros escassos na historia do futebol venezuelano, com data de nascimento de 1933 que o situa entre as geracoes mais antigas da selecao. A falta de documentacao detalhada sobre sua carreira limita a certeza sobre seu nivel real de desempenho. Os percentis foram calibrados de forma conservadora, proprios de um jogador de era pre-moderna com pouca informacao disponivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q126914836",
+        "afirmacao": "Cesar Gonzalez foi convocado pela selecao venezuelana como ponta esquerdo, segundo registro da Wikidata."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Nicolas Fedor",
+    "pais": "Venezuela",
+    "posicao": "ST",
+    "dob": "1985-08-19",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.8,
+      "shooting": 0.95,
+      "passing": 0.7,
+      "dribbling": 0.78,
+      "defending": 0.3,
+      "physic": 0.75
+    },
+    "observacao": "Conhecido como 'El Matador', Nicolas Fedor foi por muitos anos o maior artilheiro historico da selecao venezuelana antes da era de Salomon Rondon, com passagens por clubes do Mexico e participacoes marcantes em Copas America. Sua principal qualidade era a finalizacao e o oportunismo dentro da area. Os percentis altos em shooting e overall refletem seu status de grande referencia ofensiva historica da Vinotinto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q359179",
+        "afirmacao": "Nicolas Fedor atuou como atacante da selecao venezuelana na Copa America de 2011."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Jefferson Savarino",
+    "pais": "Venezuela",
+    "posicao": "RW",
+    "dob": "1996-11-11",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.9,
+      "shooting": 0.75,
+      "passing": 0.78,
+      "dribbling": 0.85,
+      "defending": 0.35,
+      "physic": 0.6
+    },
+    "observacao": "Jefferson Savarino e um ponta direito veloz e moderno, com passagens relevantes na MLS pelo Real Salt Lake e em clubes sul-americanos, consolidando-se como titular habitual da selecao na ultima decada. Sua velocidade e capacidade de drible em espacos curtos sao seus principais atributos. Os percentis indicam um jogador de alto nivel, ainda que abaixo do patamar de lenda absoluta da posicao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q20735677",
+        "afirmacao": "Jefferson Savarino jogou pelo Real Salt Lake e e ponta direito da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
+  },
+  {
+    "nome": "Giancarlo Maldonado",
+    "pais": "Venezuela",
+    "posicao": "ST",
+    "dob": "1982-06-29",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.7,
+      "shooting": 0.78,
+      "passing": 0.6,
+      "dribbling": 0.65,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Giancarlo Maldonado foi um atacante de carreira itinerante, com passagem pelo Xerez na Espanha, atuando como opcao regular na selecao venezuelana em periodos distintos. Nao chegou ao status de titular inquestionavel, mas manteve relevancia como atacante de equipe nacional. Os percentis refletem um jogador solido, de nivel internacional consistente mas nao excepcional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q596136",
+        "afirmacao": "Giancarlo Maldonado foi atacante do Xerez e integrou convocacoes da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alejandro Guerra",
+    "pais": "Venezuela",
+    "posicao": "CAM",
+    "dob": "1985-07-09",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.7,
+      "shooting": 0.75,
+      "passing": 0.9,
+      "dribbling": 0.85,
+      "defending": 0.4,
+      "physic": 0.6
+    },
+    "observacao": "Alejandro Guerra foi um dos principais meias criativos da geracao que disputou a Copa America de 2011, com carreira relevante em clubes como Zamora e Internacional. Reconhecido por sua visao de jogo e qualidade na ultima passagem para os atacantes. Os percentis elevados em passing e dribbling refletem seu papel de armador titular de longa data na selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2704072",
+        "afirmacao": "Alejandro Guerra atuou como meia-atacante da selecao venezuelana na Copa America de 2011."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Luis Manuel Seijas",
+    "pais": "Venezuela",
+    "posicao": "CM",
+    "dob": "1986-06-23",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.8,
+      "dribbling": 0.65,
+      "defending": 0.68,
+      "physic": 0.7
+    },
+    "observacao": "Luis Manuel Seijas foi um volante de construcao que atuou por anos como titular regular da selecao venezuelana, com passagem destacada pelo Santa Fe na Colombia. Combinava equilibrio entre marcacao e distribuicao de jogo no meio-campo. Os percentis refletem um jogador internacional solido, com bom nivel de passe e contribuicao defensiva equilibrada.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q644017",
+        "afirmacao": "Luis Manuel Seijas foi volante do Santa Fe e titular regular da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Alain Baroja",
+    "pais": "Venezuela",
+    "posicao": "GK",
+    "dob": "1989-10-23",
+    "percentis": {
+      "overall": 0.7,
+      "goalkeeping_diving": 0.68,
+      "goalkeeping_handling": 0.65,
+      "goalkeeping_kicking": 0.6,
+      "goalkeeping_positioning": 0.68,
+      "goalkeeping_reflexes": 0.7,
+      "goalkeeping_speed": 0.4
+    },
+    "observacao": "Alain Baroja foi goleiro de destaque no futebol venezuelano, com longa passagem pelo Caracas e algumas convocacoes para a selecao nacional. Sem ser o titular absoluto historico, manteve-se relevante como opcao de qualidade no gol. Os percentis indicam um goleiro solido dentro do grupo de referencia, abaixo do nivel dos principais titulares historicos da Vinotinto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q5662087",
+        "afirmacao": "Alain Baroja foi goleiro do Caracas e integrou convocacoes da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.52,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Renny Vega",
+    "pais": "Venezuela",
+    "posicao": "GK",
+    "dob": "1979-07-04",
+    "percentis": {
+      "overall": 0.88,
+      "goalkeeping_diving": 0.85,
+      "goalkeeping_handling": 0.82,
+      "goalkeeping_kicking": 0.75,
+      "goalkeeping_positioning": 0.85,
+      "goalkeeping_reflexes": 0.88,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Renny Vega foi o goleiro titular da selecao venezuelana durante grande parte dos anos 2000 e inicio dos 2010, incluindo a campanha historica da Copa America de 2011. Reconhecido por sua experiencia, reflexos e lideranca na defesa, foi uma das bases da geracao de ouro do futebol venezuelano. Os percentis altos refletem seu status de goleiro titular de longa data em alto nivel internacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2568239",
+        "afirmacao": "Renny Vega foi goleiro titular da selecao venezuelana na Copa America de 2011."
+      }
+    ],
+    "confianca": 0.73,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jose Manuel Rey",
+    "pais": "Venezuela",
+    "posicao": "CB",
+    "dob": "1975-05-20",
+    "percentis": {
+      "overall": 0.96,
+      "pace": 0.6,
+      "shooting": 0.4,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.95,
+      "physic": 0.9
+    },
+    "observacao": "Jose Manuel Rey e considerado um dos maiores defensores da historia da selecao venezuelana, tendo sido capitao e lider da geracao que disputou as Copas America de 2007 e 2011. Zagueiro de forte presenca fisica e lideranca, foi referencia defensiva por mais de uma decada na Vinotinto. Os percentis refletem seu status de lenda absoluta na posicao de zagueiro central.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q358432",
+        "afirmacao": "Jose Manuel Rey foi capitao e zagueiro titular da selecao venezuelana entre 2007 e 2011."
+      }
+    ],
+    "confianca": 0.76,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gabriel Cichero",
+    "pais": "Venezuela",
+    "posicao": "CB",
+    "dob": "1984-04-25",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.65,
+      "shooting": 0.35,
+      "passing": 0.6,
+      "dribbling": 0.5,
+      "defending": 0.88,
+      "physic": 0.85
+    },
+    "observacao": "Gabriel Cichero foi um zagueiro titular de longa data da selecao venezuelana, integrando a defesa que alcancou as semifinais da Copa America de 2011. Destacava-se pela solidez defensiva e forca fisica em duelos aereos e corporais. Os percentis refletem o nivel de um zagueiro internacional de alto nivel, parte da geracao mais competitiva do futebol venezuelano.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q733037",
+        "afirmacao": "Gabriel Cichero foi zagueiro titular da selecao venezuelana na Copa America de 2011."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
+  },
+  {
+    "nome": "Fernando Amorebieta",
+    "pais": "Venezuela",
+    "posicao": "CB",
+    "dob": "1985-03-29",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.68,
+      "shooting": 0.35,
+      "passing": 0.62,
+      "dribbling": 0.52,
+      "defending": 0.9,
+      "physic": 0.88
+    },
+    "observacao": "Fernando Amorebieta teve uma carreira de destaque na Europa, com passagens pelo Athletic Bilbao e pelo Fulham na Premier League, tornando-se um dos zagueiros venezuelanos mais respeitados internacionalmente. Sua experiencia em ligas de alto nivel elevou o padrao tecnico e fisico da defesa da selecao. Os percentis refletem esse nivel elevado de competicao e consistencia como zagueiro titular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q314250",
+        "afirmacao": "Fernando Amorebieta foi zagueiro do Athletic Bilbao e defensor da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
+  },
+  {
+    "nome": "Oswaldo Vizcarrondo",
+    "pais": "Venezuela",
+    "posicao": "CB",
+    "dob": "1984-05-31",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.6,
+      "shooting": 0.3,
+      "passing": 0.58,
+      "dribbling": 0.48,
+      "defending": 0.85,
+      "physic": 0.82
+    },
+    "observacao": "Oswaldo Vizcarrondo foi zagueiro titular da selecao venezuelana na campanha da Copa America de 2011, formando dupla de zaga consistente e dificil de superar. Caracterizava-se pela leitura de jogo e firmeza nos duelos defensivos. Os percentis indicam um defensor internacional de alto nivel, parte do nucleo defensivo mais forte da historia recente da Vinotinto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q970711",
+        "afirmacao": "Oswaldo Vizcarrondo foi zagueiro titular da selecao venezuelana na Copa America de 2011."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alexander Gonzalez",
+    "pais": "Venezuela",
+    "posicao": "RB",
+    "dob": "1977-02-15",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.65,
+      "shooting": 0.3,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.78,
+      "physic": 0.7
+    },
+    "observacao": "Alexander Gonzalez foi lateral direito de longa carreira internacional, com passagem pelo Young Boys na Suica, acumulando numerosas convocacoes para a selecao venezuelana ao longo de mais de uma decada. Sua experiencia e regularidade o tornaram uma presenca constante no lateral direito. Os percentis refletem um jogador internacional solido e de longa trajetoria, sem atingir o status de lenda maxima.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3129298",
+        "afirmacao": "Alexander Gonzalez foi lateral direito do Young Boys e defensor regular da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jhon Chancellor",
+    "pais": "Venezuela",
+    "posicao": "CB",
+    "dob": "1992-01-02",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.62,
+      "shooting": 0.32,
+      "passing": 0.6,
+      "dribbling": 0.5,
+      "defending": 0.88,
+      "physic": 0.83
+    },
+    "observacao": "Jhon Chancellor se consolidou como um dos zagueiros mais importantes da selecao venezuelana na geracao mais recente, com passagem pelo Coritiba no Brasil e longa titularidade na defesa nacional. Destaca-se pela lideranca e solidez defensiva em competicoes sul-americanas. Os percentis refletem seu papel como zagueiro titular de alto nivel e referencia defensiva atual da Vinotinto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q20085270",
+        "afirmacao": "Jhon Chancellor foi zagueiro do Coritiba e titular da defesa da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Roberto Rosales",
+    "pais": "Venezuela",
+    "posicao": "RB",
+    "dob": "1988-11-20",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.75,
+      "shooting": 0.4,
+      "passing": 0.65,
+      "dribbling": 0.6,
+      "defending": 0.75,
+      "physic": 0.68
+    },
+    "observacao": "Roberto Rosales construiu uma carreira solida na Europa, com passagens pelo Malaga e pelo Standard de Liege, alem de longa titularidade como lateral da selecao venezuelana. Combinava velocidade com capacidade ofensiva pelo lado direito. Os percentis refletem o nivel de um lateral internacional consistente, com boa experiencia em competicoes europeias.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q596146",
+        "afirmacao": "Roberto Rosales foi lateral do Maccabi Tel Aviv e defensor regular da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
+  },
+  {
+    "nome": "Rubert Quijada",
+    "pais": "Venezuela",
+    "posicao": "CB",
+    "dob": "1989-02-10",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.58,
+      "shooting": 0.28,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.72,
+      "physic": 0.7
+    },
+    "observacao": "Rubert Quijada foi um zagueiro que desenvolveu a maior parte de sua carreira no Caracas, com participacoes pontuais na selecao venezuelana como opcao de reserva na defesa. Nao chegou a ser titular inquestionavel, mas manteve relevancia no futebol domestico. Os percentis refletem um jogador de nivel internacional mais modesto, tipico de um defensor de elenco e nao de titular historico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q6113099",
+        "afirmacao": "Rubert Quijada foi zagueiro do Caracas e integrou convocacoes da selecao venezuelana."
+      }
+    ],
+    "confianca": 0.48,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]
