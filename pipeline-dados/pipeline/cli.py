@@ -12,6 +12,7 @@ from .filtro import COTAS_PADRAO, filtrar_pool, parse_cotas
 from .identity import carregar_aliases, descobrir_lacunas
 from .io import carregar_convocacoes, carregar_dataset, escrever_csv
 from .materialize import materializar
+from .motor import exportar_jogadores
 from .posicoes import aplicar_posicoes, treinar_modelo
 from .report import consolidar_resumo, mesclar_publicados
 from .research import gerar_pacote, escrever_pacote
@@ -107,6 +108,11 @@ def _parser() -> argparse.ArgumentParser:
     filtro.add_argument("--cotas", default=",".join(f"{g}={n}" for g, n in COTAS_PADRAO.items()))
     filtro.add_argument("--selecoes", nargs="+", help="restringe a estas seleções (padrão: todas)")
 
+    motor = sub.add_parser("exportar-motor", help="exporta o pool no formato do motor do simulador")
+    motor.add_argument("--pool", type=Path, required=True)
+    motor.add_argument("--dataset", type=Path, required=True, help="base usada para derivar os sub-atributos")
+    motor.add_argument("--output", type=Path, required=True)
+
     posicoes = sub.add_parser("aplicar-posicoes", help="posições secundárias + colunas de posição")
     posicoes.add_argument("--snapshot", type=Path, required=True)
     posicoes.add_argument("--respostas", type=Path, required=True, help="JSON com as posições secundárias")
@@ -182,6 +188,13 @@ def main(argv: list[str] | None = None) -> int:
     orchestration_result = _run_orchestration(args)
     if orchestration_result is not None:
         return orchestration_result
+    if args.comando == "exportar-motor":
+        pool = pd.read_csv(args.pool, low_memory=False)
+        dataset = carregar_dataset(args.dataset)
+        exportado = exportar_jogadores(pool, dataset)
+        escrever_csv(exportado, args.output)
+        print(json.dumps({"jogadores": len(exportado), "colunas": len(exportado.columns)}, ensure_ascii=False))
+        return 0
     if args.comando == "filter-pool":
         pool = pd.read_csv(args.pool, low_memory=False)
         filtrado = filtrar_pool(pool, parse_cotas(args.cotas), args.selecoes)
