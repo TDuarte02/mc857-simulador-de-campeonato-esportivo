@@ -17,6 +17,7 @@ from api.domain.models import (
     Standing,
     PlayerStatus,
     Session,
+    User,
 )
 from api.services.squad_service import SquadService
 
@@ -38,6 +39,14 @@ class Serializer:
             },
             "round": session.round,
             "userEliminated": session.user_eliminated,
+        }
+
+    def user(self, user: User) -> dict:
+        return {
+            "id": user.id,
+            "sessionId": user.sessionId,
+            "email": user.email,
+            #"passwordHash": user.passwordhash,
         }
 
     def squad(self, squad: Squad) -> dict:

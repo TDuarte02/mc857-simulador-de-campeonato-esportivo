@@ -78,6 +78,10 @@ _EVENT = {
     "squad": {**STR, "description": "Id da seleção do jogador."},
     "player": _ref("EventPlayer"),
 }
+_CREDS = {
+    "email": {**STR},
+    "password": {**STR},
+}
 
 SCHEMAS = {
     "Squad": _obj(_SQUAD),
@@ -117,6 +121,11 @@ SCHEMAS = {
             "userEliminated": BOOL,
         }
     ),
+    "User": _obj({"id": STR, "sessionId": STR, "email": STR}),
+    "RegisterRequest": _obj({"email": STR, "password": STR, "sessionId": STR},
+                            required=["email", "password"]),
+    "LoginRequest": _obj({"email": STR, "password": STR},
+                            required=["email", "password"]),
     "CallUpRequest": _obj(
         {
             "squad": {**STR, "description": "Id da seleção do usuário.", "example": "brazil"},
@@ -285,7 +294,7 @@ def _ok(description: str, schema: dict, status: int = 200) -> tuple[str, dict]:
 
 def _error(status: int, codes: list[str]) -> tuple[str, dict]:
     """An error response; `error.code` is one of `codes`."""
-    titles = {400: "Corpo ou parâmetro inválido", 404: "Não encontrado", 409: "Etapa errada da sessão"}
+    titles = {400: "Corpo ou parâmetro inválido", 401: "Credenciais inválidas", 404: "Não encontrado", 409: "Etapa errada da sessão"}
     schema = _obj({"error": _obj({"code": _enum(codes), "message": STR})})
     listed = ", ".join(f"`{code}`" for code in codes)
     return str(status), {"description": f"{titles[status]}: {listed}.", "content": _json(schema)}
@@ -311,6 +320,8 @@ _CATALOGUE = "Catálogo"
 _SETUP = "Preparação"
 _LOOP = "Loop de partidas"
 _ENDGAME = "Mata-mata e encerramento"
+_LOGIN = "Login"
+_REGISTER = "Registro"
 
 PATHS = {
     "/session": {
@@ -480,6 +491,36 @@ PATHS = {
             parameters=[_SESSION_ID],
         )
     },
+    "/login": {
+        "post": _operation(
+            "login",
+            _LOGIN,
+            "Realiza o login do usuário",
+            "Autentica o usuário e o retorna com seu sessionId",
+            [
+                _ok("Usuário logado.", _obj({"user": _ref("User")}), status=200),
+                _error(400, ["INSUFFICIENT_INFO"]),
+                _error(401, ["INVALID_CREDENTIALS"]),
+                _error(404, ["USER_NOT_FOUND"])
+            ],
+            requestBody=_body("LoginRequest"),
+        )
+    },
+    "/register": {
+        "post": _operation(
+            "register",
+            _REGISTER,
+            "Cadastra o usuário",
+            "Cria uma conta e vincula a uma sessão",
+            [
+                _ok("Usuário criado.", _obj({"user": _ref("User")}), status=201),
+                _error(400, ["INSUFFICIENT_INFO"]),
+                _error(404, ["USER_NOT_FOUND"]),
+                _error(409, ["USER_ALREADY_EXISTS"])
+            ],
+            requestBody=_body("RegisterRequest"),
+        )
+    }
 }
 
 
@@ -501,6 +542,8 @@ def openapi_spec() -> dict:
         "servers": [{"url": "/", "description": "Este servidor"}],
         "tags": [
             {"name": _SESSION},
+            {"name": _LOGIN},
+            {"name": _REGISTER},
             {"name": _CATALOGUE},
             {"name": _SETUP, "description": "Convocação e sorteio dos grupos."},
             {"name": _LOOP, "description": "Repetido a cada rodada."},

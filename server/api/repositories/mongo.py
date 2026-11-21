@@ -13,6 +13,11 @@ from datetime import UTC
 
 from pymongo import ASCENDING
 from pymongo.database import Database
+from pymongo.errors import DuplicateKeyError
+
+import uuid
+from argon2 import PasswordHasher
+from argon2.exceptions import VerifyMismatchError
 
 from api.domain.models import (
     Card,
@@ -27,6 +32,7 @@ from api.domain.models import (
     PlayerStatus,
     Position,
     Session,
+    User,
     Squad,
     Stage,
     Tournament,
@@ -36,6 +42,7 @@ from api.repositories.base import (
     PlayerRepository,
     Repositories,
     SessionRepository,
+    LoginRepository,
     SquadRepository,
     TournamentRepository,
 )
@@ -53,6 +60,7 @@ def create_mongo_repositories(db: Database, seed: bool = True) -> Repositories:
         players=MongoPlayerRepository(db),
         sessions=MongoSessionRepository(db),
         tournaments=MongoTournamentRepository(db),
+        login=MongoLoginRepository(db),
     )
 
 
@@ -105,6 +113,46 @@ class MongoSessionRepository(SessionRepository):
 
     def save(self, session: Session) -> None:
         self._sessions.replace_one({"_id": session.id}, _session_doc(session), upsert=True)
+
+class MongoLoginRepository(LoginRepository):
+    def __init__(self, db: Database):
+        self._users = db.users
+        self._users.create_index([("email", ASCENDING)], unique=True)
+        self._hasher = PasswordHasher()
+
+    def get(self, email: str) -> User:
+        doc = self._users.find_one({"email": email.strip().lower()})
+        return _user(doc) if doc else None
+    
+    def exists(self, email: str) -> bool:
+        return self._users.find_one({"email": email.strip().lower()}) is not None
+
+    def find_by_email(self, email: str) -> User:
+        doc = self._users.find_one({"email": email.strip().lower()})
+        return _user(doc) if doc else None
+
+    def reg_user(self, email: str, password: str, session_id: str) -> User:
+        user = User(
+            id=str(uuid.uuid4()),
+            sessionId=session_id,
+            email=email.strip().lower(),
+            password=password,
+        )
+        try:
+            self._users.insert_one(_user_doc(user))
+        except DuplicateKeyError as exc:
+            raise ValueError("EMAIL_ALREADY_EXISTS") from exc
+        return user
+
+    def auth(self, email: str, password: str) -> User | None:
+        user = self.find_by_email(email)
+        if user is None:
+            return None
+        try:
+            self._hasher.verify(user.password, password)
+        except VerifyMismatchError:
+            return None
+        return user
 
 
 class MongoTournamentRepository(TournamentRepository):
@@ -222,6 +270,22 @@ def _session(doc: dict) -> Session:
         user_eliminated=doc["user_eliminated"],
     )
 
+def _user_doc(user: User) -> dict:
+    return {
+        "_id": user.id,
+        "sessionId": user.sessionId,
+        "email": user.email,
+        "password": user.password,
+    }
+
+
+def _user(doc: dict) -> User:
+    return User(
+        id=doc["_id"],
+        sessionId=doc["sessionId"],
+        email=doc["email"],
+        password=doc["password"],
+    )
 
 def _tournament_doc(tournament: Tournament) -> dict:
     return {"_id": tournament.session_id, "groups": tournament.groups, "squads": tournament.squads}

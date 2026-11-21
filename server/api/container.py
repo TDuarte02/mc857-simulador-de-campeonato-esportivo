@@ -21,6 +21,7 @@ from api.services.match_runner import MatchRunner
 from api.services.match_service import MatchService
 from api.services.results_service import ResultsService
 from api.services.session_service import SessionService
+from api.services.login_service import LoginService
 from api.services.squad_service import SquadService
 from api.simulation.base import MatchSimulator
 from api.simulation.mock import RandomMatchSimulator
@@ -30,6 +31,7 @@ from api.simulation.mock import RandomMatchSimulator
 class Container:
     settings: Settings
     sessions: SessionService
+    login: LoginService
     squads: SquadService
     call_ups: CallUpService
     draws: DrawService
@@ -66,12 +68,14 @@ def build_container(
     simulator = simulator or _pick(SIMULATORS, settings.simulator, "SIMULATOR")(rng)
 
     sessions = SessionService(repositories.sessions)
+    login = LoginService(repositories.login)
     squads = SquadService(repositories.squads, repositories.players, settings, rng)
     runner = MatchRunner(repositories.players, simulator)
     draws = DrawService(sessions, squads, repositories.tournaments, runner, rng)
     return Container(
         settings=settings,
         sessions=sessions,
+        login=login,
         squads=squads,
         call_ups=CallUpService(sessions, squads, settings),
         draws=draws,

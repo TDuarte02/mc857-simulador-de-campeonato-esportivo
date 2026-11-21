@@ -215,6 +215,12 @@ class Session:
     round: int = 0  # rounds completed so far
     user_eliminated: bool = False
 
+@dataclass
+class User:
+    id: str
+    sessionId: str
+    email: str
+    password: str
 
 @dataclass
 class Tournament:

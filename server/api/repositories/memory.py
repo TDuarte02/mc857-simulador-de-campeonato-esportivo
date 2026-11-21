@@ -4,14 +4,18 @@ Sessions, tournaments and matches are copied on the way in and out, so these
 behave like a real database: a change that is never saved is lost.
 """
 
+import uuid
+from argon2 import PasswordHasher
+from argon2.exceptions import VerifyMismatchError
 from collections.abc import Iterable
 from copy import deepcopy
 
-from api.domain.models import Match, Player, Position, Session, Squad, Tournament
+from api.domain.models import Match, Player, Position, Session, Squad, Tournament, User
 from api.repositories.base import (
     PlayerRepository,
     Repositories,
     SessionRepository,
+    LoginRepository,
     SquadRepository,
     TournamentRepository,
 )
@@ -57,6 +61,44 @@ class InMemorySessionRepository(SessionRepository):
     def save(self, session: Session) -> None:
         self._sessions[session.id] = deepcopy(session)
 
+class InMemoryLoginRepository(LoginRepository):
+    def __init__(self, users: Iterable[User] = ()):
+        self._users_by_email: dict[str, User] = {}
+        self._hasher = PasswordHasher()
+        for user in users:
+            self._users_by_email[user.email.strip().lower()] = deepcopy(user)
+
+    def get(self, email: str) -> User | None:
+        user = self._users_by_email.get(email.strip().lower())
+        return deepcopy(user) if user is not None else None
+    
+    def exists(self, email: str) -> bool:
+        return email.strip().lower() in self._users_by_email
+
+    def find_by_email(self, email: str) -> User | None:
+        user = self._users_by_email.get(email.strip().lower())
+        return deepcopy(user) if user is not None else None
+
+    def reg_user(self, email: str, password: str, session_id: str) -> User:
+        normalized_email = email.strip().lower()
+        user = User(
+            id=str(uuid.uuid4()),
+            sessionId=session_id,
+            email=normalized_email,
+            password=password,
+        )
+        self._users_by_email[normalized_email] = deepcopy(user)
+        return deepcopy(user)
+
+    def auth(self, email: str, password: str) -> User | None:
+        user = self._users_by_email.get(email.strip().lower())
+        if user is None:
+            return None
+        try:
+            self._hasher.verify(user.password, password)
+        except VerifyMismatchError:
+            return None
+        return deepcopy(user)
 
 class InMemoryTournamentRepository(TournamentRepository):
     def __init__(self):
@@ -83,5 +125,6 @@ def create_memory_repositories() -> Repositories:
         squads=InMemorySquadRepository(build_squads()),
         players=InMemoryPlayerRepository(build_players()),
         sessions=InMemorySessionRepository(),
+        login=InMemoryLoginRepository(),
         tournaments=InMemoryTournamentRepository(),
     )

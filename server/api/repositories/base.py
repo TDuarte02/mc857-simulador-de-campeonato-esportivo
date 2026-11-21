@@ -11,7 +11,7 @@ from abc import ABC, abstractmethod
 from collections.abc import Iterable
 from dataclasses import dataclass
 
-from api.domain.models import Match, Player, Position, Session, Squad, Tournament
+from api.domain.models import Match, Player, Position, Session, Squad, Tournament, User
 
 
 class SquadRepository(ABC):
@@ -58,6 +58,19 @@ class TournamentRepository(ABC):
     def save_matches(self, matches: Iterable[Match]) -> None:
         """Inserts new matches and updates the ones already stored."""
 
+class LoginRepository(ABC):
+    @abstractmethod
+    def exists(self, email: str) -> bool: ...
+
+    @abstractmethod
+    def find_by_email(self, email: str) -> User | None: ...
+
+    @abstractmethod
+    def reg_user(self, email: str, password: str, session_id: str) -> User: ...
+
+    @abstractmethod
+    def auth(self, email: str, password: str) -> User | None: ...
+
 
 @dataclass(frozen=True)
 class Repositories:
@@ -66,4 +79,5 @@ class Repositories:
     squads: SquadRepository
     players: PlayerRepository
     sessions: SessionRepository
+    login: LoginRepository
     tournaments: TournamentRepository
