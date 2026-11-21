@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from .calibration import converter_percentil, grupo_da_proposta, pool_por_posicao
+from .calibration import banda_lenda, converter_percentil, grupo_da_proposta, pool_por_posicao
 from .config import ATRIBUTOS_GK, ATRIBUTOS_LINHA, COLUNAS_RASTREIO
 from .research import chave_jogador
 
@@ -30,11 +30,32 @@ def alocar_id(caminho: Path, proposta: dict) -> int:
     nova = pd.DataFrame([{
         "sofifa_id": int(proximo), "player_key": key, "nome": proposta["nome"],
         "pais": proposta["pais"], "dob": proposta.get("dob", ""),
-        "tipo_registro": "convocado_2024_adicionado",
+        "tipo_registro": proposta.get("origem_registro", "convocado_2024_adicionado"),
     }])
     caminho.parent.mkdir(parents=True, exist_ok=True)
     pd.concat([registry, nova], ignore_index=True).to_csv(caminho, index=False, quoting=csv.QUOTE_MINIMAL)
     return int(proximo)
+
+
+def _aplicar_banda_lenda(atributos: dict, percentil_overall: object) -> dict:
+    """Move as notas de um histórico para a banda de lenda, preservando o perfil.
+
+    O percentil já ordena corretamente as lendas (0,95–0,99), mas o quantil da base
+    não tem espaço acima do topo (~82–87). Aqui o `overall` vai para a banda
+    declarada e os demais atributos são escalados na mesma proporção, mantendo a
+    forma do perfil (um zagueiro continua defendendo mais do que finalizando).
+    """
+    alvo = banda_lenda(percentil_overall)
+    calibrado = atributos.get("overall")
+    if not alvo or not calibrado:
+        return atributos
+    fator = alvo / calibrado
+    escalados = {
+        coluna: (None if valor is None else max(1, min(99, round(valor * fator))))
+        for coluna, valor in atributos.items()
+    }
+    escalados["overall"] = alvo
+    return escalados
 
 
 def _idade(dob: str | None, data_referencia: str) -> int | None:
@@ -53,14 +74,25 @@ def materializar_linha(
     registry: Path,
 ) -> dict:
     grupo = grupo_da_proposta(proposta["posicao"])
-    pool = pool_por_posicao(dataset, proposta["pais"], grupo)
+    # Histórico calibra na escala global; convocado atual, no pool do próprio país.
+    escopo = None if proposta.get("is_historico") else proposta["pais"]
+    pool = pool_por_posicao(dataset, escopo, grupo)
     percentis = proposta["percentis"]
     atributos = {}
     colunas = ("overall",) + (ATRIBUTOS_GK if grupo == "GK" else ATRIBUTOS_LINHA)
     for coluna in colunas:
         atributos[coluna] = converter_percentil(pool, coluna, percentis.get(coluna))
+    # Nota real (ex.: EA FC Icon) tem precedência sobre o percentil calibrado.
+    # Só aceita colunas válidas para o grupo, preservando a regra GK/linha.
+    override = proposta.get("atributos_override") or {}
+    for coluna, valor in override.items():
+        if coluna in colunas and valor is not None:
+            atributos[coluna] = int(valor)
+    if proposta.get("is_historico") and not override:
+        atributos = _aplicar_banda_lenda(atributos, percentis.get("overall"))
 
     linha = {coluna: None for coluna in colunas_dataset}
+    idade = proposta.get("age")
     linha.update({
         "sofifa_id": alocar_id(registry, proposta),
         "short_name": proposta["nome"],
@@ -68,7 +100,7 @@ def materializar_linha(
         "player_positions": proposta["posicao"],
         "overall": atributos.get("overall"),
         "potential": atributos.get("overall"),
-        "age": _idade(proposta.get("dob"), data_referencia),
+        "age": int(idade) if idade is not None else _idade(proposta.get("dob"), data_referencia),
         "dob": proposta.get("dob"),
         "height_cm": proposta.get("height_cm"),
         "weight_kg": proposta.get("weight_kg"),
@@ -82,12 +114,12 @@ def materializar_linha(
     for coluna in ATRIBUTOS_LINHA + ATRIBUTOS_GK:
         linha[coluna] = atributos.get(coluna) if coluna in atributos else None
     linha.update({
-        "is_historico": False,
-        "origem_registro": "convocado_2024_adicionado",
-        "fonte_atributos": "inferencia_llm_calibrada",
-        "fonte_validacao": "pesquisa_web_convocacao",
+        "is_historico": bool(proposta.get("is_historico", False)),
+        "origem_registro": proposta.get("origem_registro", "convocado_2024_adicionado"),
+        "fonte_atributos": proposta.get("fonte_atributos", "inferencia_llm_calibrada"),
+        "fonte_validacao": proposta.get("fonte_validacao", "pesquisa_web_convocacao"),
         "observacao": proposta.get("observacao", ""),
-        "validacao_via": "convocacao_copa_america",
+        "validacao_via": proposta.get("validacao_via", "convocacao_copa_america"),
         "data_referencia": data_referencia,
         "status_validacao": proposta.get("status", "review_required"),
         "confianca": proposta.get("confianca"),

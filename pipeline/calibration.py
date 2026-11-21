@@ -9,8 +9,15 @@ import pandas as pd
 from .config import ATRIBUTOS_GK, ATRIBUTOS_LINHA, grupo_posicao
 
 
-def pool_por_posicao(dataset: pd.DataFrame, pais: str, grupo: str) -> pd.DataFrame:
-    recorte = dataset[dataset["nationality_name"].eq(pais)].copy()
+def pool_por_posicao(dataset: pd.DataFrame, pais: str | None, grupo: str) -> pd.DataFrame:
+    """Pool de calibração. `pais=None` usa o conjunto inteiro (escala global).
+
+    O pool do país serve para jogadores atuais: um titular de seleção é o topo
+    daquele país. Para históricos isso não funciona — o teto do pool de um país
+    (ex.: meias da Argentina, 87) não deixa espaço para uma lenda. Nesses casos a
+    calibração usa a distribuição global, onde o topo é o melhor jogador da base.
+    """
+    recorte = dataset[dataset["nationality_name"].eq(pais)].copy() if pais else dataset.copy()
     if grupo == "GK":
         mascara = recorte["player_positions"].fillna("").str.upper().str.contains(r"(?:^|,\s*)GK(?:,|$)", regex=True)
     else:
@@ -80,3 +87,26 @@ def grupo_da_proposta(posicao: str) -> str:
     if not grupo:
         raise ValueError(f"posição não reconhecida: {posicao!r}")
     return grupo
+
+
+# Política declarada para históricos: o `overall` da base é comprimido no topo
+# (p90 -> ~75, p99 -> ~82, máximo 93), então o percentil não tem como expressar uma
+# lenda. Estes pontos preservam a ordem dos percentis mas movem o topo para uma
+# faixa compatível com "maiores de todos os tempos".
+ANCORAS_BANDA_LENDA = (
+    (0.00, 74), (0.50, 74), (0.70, 77), (0.80, 80),
+    (0.90, 86), (0.95, 90), (0.99, 96), (1.00, 97),
+)
+
+
+def banda_lenda(percentil: object) -> int | None:
+    """Converte o percentil de um jogador histórico no overall da banda de lenda."""
+    if percentil is None:
+        return None
+    if isinstance(percentil, bool) or not isinstance(percentil, (int, float)):
+        return None
+    p = max(0.0, min(1.0, float(percentil)))
+    for (x0, y0), (x1, y1) in zip(ANCORAS_BANDA_LENDA, ANCORAS_BANDA_LENDA[1:]):
+        if p <= x1:
+            return y1 if x1 == x0 else round(y0 + (y1 - y0) * (p - x0) / (x1 - x0))
+    return ANCORAS_BANDA_LENDA[-1][1]

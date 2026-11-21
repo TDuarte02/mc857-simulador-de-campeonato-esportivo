@@ -119,3 +119,29 @@ python -m pipeline.cli merge-final \
 ```
 
 O diretório `execucoes/<pais>/` é a fronteira de contexto de cada iteração. O manifesto e o registro de IDs são o estado compartilhado. Por padrão, o registry fica em `dados/autoresearch/registry/player_ids.csv` (criado pelo `init-run`, ignorado pelo git); qualquer subcomando aceita `--registry` para apontar outro caminho. O runner não chama um LLM diretamente: isso mantém pesquisa externa, resposta bruta e aprovação humana auditáveis.
+
+## Camada histórica (lendas por seleção)
+
+O mesmo ciclo é usado para os jogadores históricos das 16 seleções, num estado separado:
+
+```text
+dados/convocacoes/historicos/<pais>.csv     # entradas (pais, nome, posicao, fonte_url, dob, contexto)
+dados/autoresearch/historicos/manifest.json # manifesto próprio
+dados/autoresearch/historicos/execucoes/    # artefatos por país
+```
+
+Três diferenças em relação aos convocados de 2024:
+
+1. **Registry compartilhado.** Toda a execução histórica usa
+   `--registry dados/autoresearch/registry/player_ids.csv`, o mesmo da camada 2024.
+   Assim os IDs negativos continuam de onde pararam e as duas camadas nunca colidem.
+2. **Metadados de camada.** `pipeline/historico.py::marcar_propostas` aplica, de forma
+   centralizada e idempotente, `is_historico=True`, `origem_registro="historico_estimado"`,
+   `fonte_atributos="inferencia_llm_calibrada_historico"` e `validacao_via="wikidata"`.
+3. **Idade de pico.** Para históricos, `age` recebe `27` — convenção de modelagem, não
+   dado observado. Comparar eras é impreciso e a idade em 2024 seria absurda (Maradona
+   sairia com 63). O campo `data_referencia` continua registrado para rastreio.
+
+A fonte de cada jogador histórico é a página do Wikidata (`https://www.wikidata.org/wiki/<QID>`),
+derivada de `fonte_validacao` nos arquivos históricos anteriores. Não há chamada de rede
+no pipeline: as propostas entram como JSON versionado, igual à camada 2024.

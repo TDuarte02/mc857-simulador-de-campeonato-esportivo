@@ -38,7 +38,7 @@ def gerar_pacote(
             "fonte_convocacao": row.get("fonte_url", ""),
             "titular_ultima_partida": str(row.get("titular_ultima_partida", "")).lower() == "true",
         }
-        for opcional in ("dob", "clube", "numero"):
+        for opcional in ("dob", "clube", "numero", "contexto"):
             valor = row.get(opcional)
             if isinstance(valor, str) and valor.strip():
                 entrada[opcional] = valor.strip()

@@ -1,0 +1,321 @@
+[
+  {
+    "nome": "Jaime Penedo",
+    "pais": "Panama",
+    "posicao": "GK",
+    "dob": "1981-09-26",
+    "percentis": {
+      "overall": 0.95,
+      "goalkeeping_diving": 0.92,
+      "goalkeeping_handling": 0.9,
+      "goalkeeping_kicking": 0.85,
+      "goalkeeping_positioning": 0.92,
+      "goalkeeping_reflexes": 0.93,
+      "goalkeeping_speed": 0.55
+    },
+    "observacao": "Jaime Penedo foi o goleiro titular e capitão da Panama por mais de uma decada, incluindo a histórica campanha que levou o país a sua primeira Copa do Mundo, em 2018. Reflexos e posicionamento consistentes ao longo da carreira justificam valores no topo da distribuição histórica de goleiros do país, enquanto a velocidade, atributo menos relevante para goleiros veteranos, fica em nível apenas moderado.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2714776",
+        "afirmacao": "Jaime Penedo é goleiro histórico da seleção do Panama, convocado como referência do gol nacional."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Felipe Baloy",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "1981-02-24",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.9,
+      "physic": 0.75
+    },
+    "observacao": "Felipe Baloy é um dos nomes mais lembrados do futebol panamenho por ter marcado o gol histórico contra a Inglaterra na Copa do Mundo de 2018, o primeiro de Panama em Copas. Zagueiro veterano e de liderança, teve longa carreira como titular da seleção, o que sustenta notas altas em defesa e físico, com velocidade já reduzida pela idade avançada na época do feito.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2499879",
+        "afirmacao": "Felipe Baloy integrou o elenco panamenho na Copa do Mundo de 2018, marcando gol histórico para o país."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Roman Torres",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "1986-03-20",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.5,
+      "shooting": 0.55,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.92,
+      "physic": 0.85
+    },
+    "observacao": "Roman Torres é considerado herói nacional por ter marcado o gol que garantiu a classificação inédita de Panama para a Copa do Mundo de 2018, contra a Costa Rica. Capitão e zagueiro titular por anos, atuou em clubes de MLS, o que reforça sua força física e capacidade defensiva como pontos fortes dentro do perfil histórico do país.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2565181",
+        "afirmacao": "Roman Torres marcou o gol decisivo contra a Costa Rica em 2017 que classificou Panama para a Copa de 2018."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Adolfo Machado",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "1985-02-14",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.55,
+      "shooting": 0.4,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.75,
+      "physic": 0.7
+    },
+    "observacao": "Adolfo Machado foi zagueiro titular da seleção panamenha na campanha histórica da Copa do Mundo de 2018, consolidando-se como peça regular do sistema defensivo nacional por vários anos. Sem o status de ícone individual de Baloy ou Torres, seu perfil é o de um defensor internacional sólido e confiável, refletido em notas de defesa acima da média, mas sem atingir o topo da distribuição.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3605454",
+        "afirmacao": "Adolfo Machado atuou como zagueiro titular de Panama na Copa do Mundo de 2018."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Julio Dely Valdes",
+    "pais": "Panama",
+    "posicao": "ST",
+    "dob": "1967-03-12",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.85,
+      "shooting": 0.95,
+      "passing": 0.7,
+      "dribbling": 0.85,
+      "defending": 0.5,
+      "physic": 0.8
+    },
+    "observacao": "Julio Dely Valdes é tradicionalmente apontado como o maior artilheiro histórico da seleção de Panama, tendo construído parte de sua carreira na Espanha em clubes como Espanyol e Deportivo La Coruña. Sua finalização de alto nível e protagonismo ofensivo ao longo de décadas justificam percentis no topo da distribuição de atacantes do país, especialmente em chute e geral.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q553353",
+        "afirmacao": "Julio Dely Valdes é reconhecido como o maior artilheiro histórico da seleção panamenha."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jorge Dely Valdes",
+    "pais": "Panama",
+    "posicao": "ST",
+    "dob": "1967-03-12",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.8,
+      "shooting": 0.88,
+      "passing": 0.65,
+      "dribbling": 0.8,
+      "defending": 0.45,
+      "physic": 0.75
+    },
+    "observacao": "Jorge Dely Valdes, irmão gêmeo de Julio, também teve carreira de destaque na Espanha, incluindo passagem pelo Málaga, e foi referência ofensiva da seleção panamenha durante os anos 1990. Seu nível internacional sustentado ao longo de uma carreira longa no futebol europeu justifica percentis elevados em finalização e geral, levemente abaixo do irmão por menor destaque como artilheiro histórico isolado.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q181046",
+        "afirmacao": "Jorge Dely Valdes jogou pelo Málaga e foi atacante histórico da seleção de Panama."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Blas Perez",
+    "pais": "Panama",
+    "posicao": "ST",
+    "dob": "1981-03-13",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.65,
+      "shooting": 0.9,
+      "passing": 0.6,
+      "dribbling": 0.7,
+      "defending": 0.4,
+      "physic": 0.85
+    },
+    "observacao": "Blas Perez foi um dos principais artilheiros da seleção panamenha em sua geração, com longa carreira no futebol mexicano e norte-americano, incluindo passagem pelo FC Dallas na MLS. Centroavante físico e eficiente dentro da área, apresenta percentis altos em chute e físico, consistentes com um atacante de nível internacional sustentado por muitos anos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2528573",
+        "afirmacao": "Blas Perez atuou pelo FC Dallas e foi atacante de longa trajetória na seleção de Panama."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Tejada",
+    "pais": "Panama",
+    "posicao": "ST",
+    "dob": "1982-03-28",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.75,
+      "shooting": 0.85,
+      "passing": 0.6,
+      "dribbling": 0.72,
+      "defending": 0.4,
+      "physic": 0.7
+    },
+    "observacao": "Luis Tejada é um dos maiores artilheiros históricos de Panama, com participação na campanha da Copa do Mundo de 2018 e extensa trajetória pela seleção nacional. Sua finalização consistente ao longo de anos como titular ofensivo sustenta percentis altos em chute e geral dentro do grupo de atacantes históricos panamenhos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1457192",
+        "afirmacao": "Luis Tejada integrou o elenco de Panama na Copa do Mundo de 2018 como um dos principais artilheiros históricos."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gabriel Gomez",
+    "pais": "Panama",
+    "posicao": "CM",
+    "dob": "1984-05-29",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.6,
+      "shooting": 0.65,
+      "passing": 0.85,
+      "dribbling": 0.75,
+      "defending": 0.7,
+      "physic": 0.65
+    },
+    "observacao": "Gabriel Gomez foi capitão e meio-campista referência da seleção panamenha na histórica campanha da Copa do Mundo de 2018, exercendo papel de organizador e liderança em campo por muitos anos. Seu perfil de meio-campo completo, com boa passagem de bola e participação defensiva, justifica percentis altos em passe e geral dentro do grupo histórico de meio-campistas do país.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q981799",
+        "afirmacao": "Gabriel Gomez foi capitão da seleção de Panama na Copa do Mundo de 2018."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Amilcar Henriquez",
+    "pais": "Panama",
+    "posicao": "DM",
+    "dob": "1983-08-02",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.8,
+      "physic": 0.7
+    },
+    "observacao": "Amilcar Henriquez atuou como volante na campanha histórica de Panama na Copa do Mundo de 2018, sendo peça regular do meio-campo defensivo da seleção por vários ciclos. Seu papel mais destrutivo e de equilíbrio tático, sem grande protagonismo ofensivo, é refletido em percentis de defesa acima da média e geral em nível de titular internacional sólido.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2844861",
+        "afirmacao": "Amilcar Henriquez integrou o elenco de Panama na Copa do Mundo de 2018 como volante."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ismael Diaz",
+    "pais": "Panama",
+    "posicao": "RW",
+    "dob": "1997-05-12",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.7,
+      "shooting": 0.55,
+      "passing": 0.5,
+      "dribbling": 0.6,
+      "defending": 0.3,
+      "physic": 0.5
+    },
+    "observacao": "Ismael Diaz representa uma geração mais recente da seleção panamenha, com passagem pelo León no futebol mexicano e presença gradual no time nacional. Por ser um jogador ainda em consolidação e com histórico internacional mais escasso do que os grandes nomes históricos de Panama, seus percentis ficam na faixa intermediária da distribuição, com destaque relativo para velocidade e drible.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q18921648",
+        "afirmacao": "Ismael Diaz foi convocado para a seleção de Panama e atuou pelo León no futebol mexicano."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]

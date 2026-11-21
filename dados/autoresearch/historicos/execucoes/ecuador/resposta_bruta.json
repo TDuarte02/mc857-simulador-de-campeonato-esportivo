@@ -1,0 +1,582 @@
+[
+  {
+    "nome": "Antonio Valencia",
+    "pais": "Ecuador",
+    "posicao": "RW",
+    "dob": "1985-08-04",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.9,
+      "shooting": 0.6,
+      "passing": 0.85,
+      "dribbling": 0.82,
+      "defending": 0.75,
+      "physic": 0.82
+    },
+    "observacao": "Antonio Valencia foi capitão da seleção equatoriana e um dos maiores jogadores da história do país, com passagem vitoriosa pelo Manchester United, onde conquistou múltiplos títulos da Premier League. Versátil, atuou tanto como ponta direita quanto lateral, destacando-se pela velocidade, potência física e capacidade de cruzamento. Está entre os jogadores mais icônicos já produzidos pelo Equador.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q174486",
+        "afirmacao": "Antonio Valencia consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alberto Spencer",
+    "pais": "Ecuador",
+    "posicao": "ST",
+    "dob": "1937-12-06",
+    "percentis": {
+      "overall": 0.98,
+      "pace": 0.75,
+      "shooting": 0.95,
+      "passing": 0.6,
+      "dribbling": 0.75,
+      "defending": 0.3,
+      "physic": 0.75
+    },
+    "observacao": "Alberto Spencer é considerado o maior artilheiro da história da Copa Libertadores e um dos melhores atacantes sul-americanos de todos os tempos, apesar de nunca ter disputado uma Copa do Mundo. Jogou praticamente toda a carreira no Peñarol, do Uruguai, onde se tornou lenda absoluta. Combinava faro de gol, cabeceio preciso e oportunismo dentro da área.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q918388",
+        "afirmacao": "Alberto Spencer consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, sendo reconhecido como artilheiro histórico da Libertadores."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Leonardo Campana",
+    "pais": "Ecuador",
+    "posicao": "ST",
+    "dob": "2000-07-24",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.72,
+      "shooting": 0.55,
+      "passing": 0.48,
+      "dribbling": 0.55,
+      "defending": 0.35,
+      "physic": 0.6
+    },
+    "observacao": "Leonardo Campana é um atacante da nova geração equatoriana, atuando no Inter Miami da MLS. Ainda não acumula o mesmo histórico de grandes feitos internacionais dos nomes clássicos da lista, situando-se como peça de rotação ou reserva na seleção. Físico robusto e bom jogo aéreo são suas principais características.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q30899761",
+        "afirmacao": "Leonardo Campana consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, atuando pelo Inter Miami."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Agustin Delgado",
+    "pais": "Ecuador",
+    "posicao": "ST",
+    "dob": "1974-12-23",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.8,
+      "shooting": 0.9,
+      "passing": 0.65,
+      "dribbling": 0.78,
+      "defending": 0.4,
+      "physic": 0.75
+    },
+    "observacao": "Agustin Delgado marcou o primeiro gol da história do Equador em Copas do Mundo, na edição de 2002, e foi peça fundamental também em 2006. Atuou no Southampton, na Inglaterra, e é lembrado como um dos maiores centroavantes equatorianos, com bom instinto goleador e presença de área.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q313147",
+        "afirmacao": "Agustin Delgado consta como jogador convocado pela seleção do Equador nas Copas do Mundo de 2002 e 2006, conforme registro do Wikidata."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Nicolas Asencio",
+    "pais": "Ecuador",
+    "posicao": "ST",
+    "dob": "1975-04-26",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.68,
+      "shooting": 0.68,
+      "passing": 0.55,
+      "dribbling": 0.6,
+      "defending": 0.35,
+      "physic": 0.6
+    },
+    "observacao": "Nicolas Asencio integrou o elenco histórico do Equador na Copa do Mundo de 2002, a primeira participação do país no torneio. Atacante de bom senso de posicionamento, teve carreira relevante no futebol equatoriano, ainda que menos conhecido internacionalmente que outros companheiros de geração.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2563253",
+        "afirmacao": "Nicolas Asencio consta como jogador convocado pela seleção do Equador na Copa do Mundo de 2002, conforme registro do Wikidata."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Carlos Tenorio",
+    "pais": "Ecuador",
+    "posicao": "ST",
+    "dob": "1979-05-14",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.78,
+      "shooting": 0.72,
+      "passing": 0.55,
+      "dribbling": 0.65,
+      "defending": 0.35,
+      "physic": 0.65
+    },
+    "observacao": "Carlos Tenorio fez parte do elenco do Equador na Copa do Mundo de 2006 e teve passagens no futebol árabe, destacando-se pela velocidade e capacidade de finalização. É lembrado como um atacante de boa fase ofensiva durante a geração de ouro equatoriana dos anos 2000.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q313361",
+        "afirmacao": "Carlos Tenorio consta como jogador convocado pela seleção do Equador na Copa do Mundo de 2006, conforme registro do Wikidata."
+      }
+    ],
+    "confianca": 0.52,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Polo Carrera",
+    "pais": "Ecuador",
+    "posicao": "AM",
+    "dob": "1945-01-11",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.68,
+      "shooting": 0.85,
+      "passing": 0.78,
+      "dribbling": 0.8,
+      "defending": 0.3,
+      "physic": 0.62
+    },
+    "observacao": "Polo Carrera é um dos maiores artilheiros da história do futebol equatoriano, com destaque nas décadas de 1960 e 1970 por clubes como Barcelona SC e El Nacional. Reconhecido como lenda do futebol nacional, aliava categoria técnica a grande faro de gol, embora os registros detalhados de sua carreira sejam mais escassos por se tratar de uma era anterior à cobertura estatística moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q531266",
+        "afirmacao": "Polo Carrera consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, sendo referência do futebol equatoriano nos anos 1960-1970."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alex Aguinaga",
+    "pais": "Ecuador",
+    "posicao": "AM",
+    "dob": "1968-07-09",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.68,
+      "shooting": 0.75,
+      "passing": 0.93,
+      "dribbling": 0.88,
+      "defending": 0.4,
+      "physic": 0.58
+    },
+    "observacao": "Alex Aguinaga é amplamente considerado o maior meio-campista da história do Equador, tendo sido capitão da seleção e peça-chave da geração que levou o país à sua primeira Copa do Mundo. Fez carreira de sucesso no México, principalmente no Necaxa, destacando-se pela visão de jogo, passe preciso e liderança em campo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q250553",
+        "afirmacao": "Alex Aguinaga consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, com longa carreira no Necaxa."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Edison Mendez",
+    "pais": "Ecuador",
+    "posicao": "CM",
+    "dob": "1979-03-16",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.78,
+      "shooting": 0.65,
+      "passing": 0.85,
+      "dribbling": 0.8,
+      "defending": 0.65,
+      "physic": 0.7
+    },
+    "observacao": "Edison Mendez foi um dos meio-campistas mais talentosos da geração de ouro do Equador, com passagem marcante pelo PSV Eindhoven, da Holanda. Combinava criatividade, bom passe e participação ofensiva relevante, sendo titular nas Copas do Mundo de 2002 e 2006.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q346789",
+        "afirmacao": "Edison Mendez consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, com passagem pelo PSV Eindhoven."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Cristian Noboa",
+    "pais": "Ecuador",
+    "posicao": "CM",
+    "dob": "1985-04-09",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.7,
+      "shooting": 0.65,
+      "passing": 0.82,
+      "dribbling": 0.75,
+      "defending": 0.55,
+      "physic": 0.65
+    },
+    "observacao": "Cristian Noboa construiu boa parte de sua carreira no futebol russo, principalmente no Rubin Kazan, consolidando-se como meio-campista de qualidade na seleção equatoriana. Destaca-se pela cobrança de falta e visão de jogo, sendo peça regular do time nacional por diversos anos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q468083",
+        "afirmacao": "Cristian Noboa consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, com passagem pelo Rubin Kazan."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Segundo Castillo",
+    "pais": "Ecuador",
+    "posicao": "DM",
+    "dob": "1982-05-15",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.65,
+      "shooting": 0.5,
+      "passing": 0.65,
+      "dribbling": 0.6,
+      "defending": 0.8,
+      "physic": 0.78
+    },
+    "observacao": "Segundo Castillo foi volante de referência da geração de ouro equatoriana, com passagem pelo Everton, da Inglaterra. Jogador forte fisicamente e de boa marcação, atuou como peça de equilíbrio no meio-campo em diversas convocações importantes da seleção.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q316926",
+        "afirmacao": "Segundo Castillo consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, com passagem pelo Everton."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Michael Arroyo",
+    "pais": "Ecuador",
+    "posicao": "AM",
+    "dob": "1987-04-23",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.8,
+      "shooting": 0.68,
+      "passing": 0.72,
+      "dribbling": 0.8,
+      "defending": 0.4,
+      "physic": 0.58
+    },
+    "observacao": "Michael Arroyo se destacou como meia-atacante habilidoso, com passagem pelo América do México, e foi peça importante da seleção equatoriana em período de transição entre gerações. Driblador e criativo, costumava atuar aberto pelos lados do campo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2468273",
+        "afirmacao": "Michael Arroyo consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, com passagem pelo América."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Frickson Erazo",
+    "pais": "Ecuador",
+    "posicao": "CB",
+    "dob": "1988-05-05",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.6,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.85,
+      "physic": 0.82
+    },
+    "observacao": "Frickson Erazo foi zagueiro titular do Equador por muitos anos, com passagem de destaque pelo Flamengo no futebol brasileiro. Forte na marcação e no jogo aéreo, foi peça de confiança na defesa da seleção durante boa parte da década de 2010.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q429023",
+        "afirmacao": "Frickson Erazo consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, com passagem pelo Flamengo."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gabriel Achilier",
+    "pais": "Ecuador",
+    "posicao": "CB",
+    "dob": "1985-03-24",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.55,
+      "shooting": 0.35,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.78,
+      "physic": 0.75
+    },
+    "observacao": "Gabriel Achilier é um ícone do Emelec, um dos maiores clubes do Equador, e foi zagueiro regular da seleção, integrando o elenco da Copa do Mundo de 2014. Jogador sólido defensivamente, destacou-se pela consistência e liderança na zaga.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2007275",
+        "afirmacao": "Gabriel Achilier consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, com passagem pelo Emelec."
+      }
+    ],
+    "confianca": 0.52,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Walter Ayovi",
+    "pais": "Ecuador",
+    "posicao": "LB",
+    "dob": "1979-08-11",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.75,
+      "shooting": 0.5,
+      "passing": 0.6,
+      "dribbling": 0.65,
+      "defending": 0.72,
+      "physic": 0.68
+    },
+    "observacao": "Walter Ayovi atuou como lateral titular da seleção equatoriana na Copa do Mundo de 2006, período de maior relevância internacional da sua carreira. Jogador combativo, equilibrava bem funções defensivas e ofensivas pelo lado do campo, com passagem posterior pelo futebol mexicano.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2562953",
+        "afirmacao": "Walter Ayovi consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, com passagem pelo Monterrey."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ulises de la Cruz",
+    "pais": "Ecuador",
+    "posicao": "RB",
+    "dob": "1974-02-08",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.85,
+      "shooting": 0.5,
+      "passing": 0.65,
+      "dribbling": 0.65,
+      "defending": 0.82,
+      "physic": 0.78
+    },
+    "observacao": "Ulises de la Cruz é um dos maiores laterais da história do Equador, com longa e vitoriosa trajetória no futebol inglês pelo Aston Villa. Rápido, resistente e ofensivo, foi peça fundamental da geração que levou o país às Copas do Mundo de 2002 e 2006.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q353013",
+        "afirmacao": "Ulises de la Cruz consta como jogador convocado pela seleção do Equador, conforme registro do Wikidata, com passagem pelo Aston Villa."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ivan Hurtado",
+    "pais": "Ecuador",
+    "posicao": "CB",
+    "dob": "1974-08-16",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.62,
+      "shooting": 0.4,
+      "passing": 0.6,
+      "dribbling": 0.5,
+      "defending": 0.92,
+      "physic": 0.85
+    },
+    "observacao": "Ivan Hurtado é o jogador mais convocado da história da seleção equatoriana, tendo sido capitão em suas duas primeiras participações em Copas do Mundo (2002 e 2006). Zagueiro de liderança inquestionável, é considerado uma lenda absoluta do futebol equatoriano, simbolizando a consolidação do país no cenário internacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q363069",
+        "afirmacao": "Ivan Hurtado consta como jogador convocado pela seleção do Equador nas Copas do Mundo de 2002 e 2006, conforme registro do Wikidata."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jorge Guagua",
+    "pais": "Ecuador",
+    "posicao": "CB",
+    "dob": "1981-09-28",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.55,
+      "shooting": 0.35,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.75,
+      "physic": 0.72
+    },
+    "observacao": "Jorge Guagua foi zagueiro da seleção equatoriana na Copa do Mundo de 2014, trazendo experiência e solidez defensiva ao time. Jogador de carreira consolidada no futebol local, destacou-se pela constância e pelo jogo aéreo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q725258",
+        "afirmacao": "Jorge Guagua consta como jogador convocado pela seleção do Equador na Copa do Mundo de 2014, conforme registro do Wikidata."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alexander Dominguez",
+    "pais": "Ecuador",
+    "posicao": "GK",
+    "dob": "1987-06-05",
+    "percentis": {
+      "overall": 0.85,
+      "goalkeeping_diving": 0.82,
+      "goalkeeping_handling": 0.8,
+      "goalkeeping_kicking": 0.75,
+      "goalkeeping_positioning": 0.82,
+      "goalkeeping_reflexes": 0.85,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Alexander Dominguez é um dos goleiros mais importantes da história recente do Equador, tendo sido titular absoluto na Copa do Mundo de 2014 e referência no LDU Quito, um dos maiores clubes do país. Reflexos rápidos e boa leitura de jogo são suas principais virtudes.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2667325",
+        "afirmacao": "Alexander Dominguez consta como jogador convocado pela seleção do Equador na Copa do Mundo de 2014, conforme registro do Wikidata."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Hernan Galindez",
+    "pais": "Ecuador",
+    "posicao": "GK",
+    "dob": "1987-03-30",
+    "percentis": {
+      "overall": 0.78,
+      "goalkeeping_diving": 0.75,
+      "goalkeeping_handling": 0.72,
+      "goalkeeping_kicking": 0.65,
+      "goalkeeping_positioning": 0.75,
+      "goalkeeping_reflexes": 0.78,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Hernan Galindez foi o goleiro titular do Equador na Copa do Mundo de 2022, consolidando-se como referência na posição depois de vários anos de carreira na liga local. Seguro embaixo das traves, teve atuações de destaque na fase de classificação sul-americana.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q5742434",
+        "afirmacao": "Hernan Galindez consta como jogador convocado pela seleção do Equador na Copa do Mundo de 2022, conforme registro do Wikidata."
+      }
+    ],
+    "confianca": 0.56,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]

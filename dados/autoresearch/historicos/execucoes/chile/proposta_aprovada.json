@@ -1,0 +1,1044 @@
+[
+  {
+    "nome": "Elias Figueroa",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1946-10-25",
+    "percentis": {
+      "overall": 0.98,
+      "pace": 0.55,
+      "shooting": 0.4,
+      "passing": 0.7,
+      "dribbling": 0.65,
+      "defending": 0.97,
+      "physic": 0.9
+    },
+    "observacao": "Considerado um dos maiores zagueiros da historia do futebol sul-americano, eleito tres vezes Jogador do Ano da America do Sul (1974-1976) enquanto defendia o Internacional. Peca fundamental do Chile entre 1966 e 1982, com leitura de jogo, marcacao e fisico excepcionais para a epoca. Por isso recebe percentis no topo da distribuicao de zagueiros chilenos, com atributos ofensivos mais discretos, tipicos de um zagueiro classico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q310981",
+        "afirmacao": "Elias Figueroa, zagueiro chileno, considerado um dos maiores defensores da historia do futebol sul-americano, convocado para as Copas de 1966 a 1982."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 88,
+      "pace": 78,
+      "shooting": 45,
+      "passing": 72,
+      "dribbling": 70,
+      "defending": 89,
+      "physic": 88
+    }
+  },
+  {
+    "nome": "Marcelo Salas",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1974-12-24",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.8,
+      "shooting": 0.92,
+      "passing": 0.65,
+      "dribbling": 0.78,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "El Matador foi um dos maiores atacantes chilenos, destaque pela Universidad de Chile, River Plate e Lazio, e um dos protagonistas da Copa do Mundo de 1998. Finalizacao de elite e grande capacidade de desequilibrio marcaram sua carreira, justificando percentis de craque historico entre os atacantes chilenos, com menor contribuicao defensiva, como esperado de um centroavante.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q295438",
+        "afirmacao": "Marcelo Salas, atacante chileno, convocado para a Copa do Mundo de 1998, um dos maiores artilheiros da historia da selecao."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 88,
+      "pace": 84,
+      "shooting": 89,
+      "passing": 76,
+      "dribbling": 85,
+      "defending": 36,
+      "physic": 76
+    }
+  },
+  {
+    "nome": "Ivan Zamorano",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1967-01-18",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.75,
+      "shooting": 0.93,
+      "passing": 0.55,
+      "dribbling": 0.7,
+      "defending": 0.3,
+      "physic": 0.8
+    },
+    "observacao": "Bam Bam Zamorano e lenda do Inter de Milao e um dos maiores artilheiros da selecao chilena, com finalizacao e jogo aereo de altissimo nivel. Peca central do ataque chileno nos anos 1990, recebe percentis de referencia historica no grupo de atacantes, com fisico robusto e passe mais modesto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q192035",
+        "afirmacao": "Ivan Zamorano, atacante chileno, lenda do Inter de Milao, um dos maiores artilheiros historicos da selecao do Chile."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 88,
+      "pace": 82,
+      "shooting": 89,
+      "passing": 72,
+      "dribbling": 80,
+      "defending": 38,
+      "physic": 82
+    }
+  },
+  {
+    "nome": "Roberto Rojas",
+    "pais": "Chile",
+    "posicao": "GK",
+    "dob": "1957-08-08",
+    "percentis": {
+      "overall": 0.88,
+      "goalkeeping_diving": 0.9,
+      "goalkeeping_handling": 0.85,
+      "goalkeeping_kicking": 0.75,
+      "goalkeeping_positioning": 0.85,
+      "goalkeeping_reflexes": 0.92,
+      "goalkeeping_speed": 0.7
+    },
+    "observacao": "El Condor foi um dos goleiros mais talentosos da historia chilena, com carreira de destaque no Sao Paulo, reconhecido por reflexos e capacidade de jogo aereo. Apesar do episodio controverso de 1989, como jogador apresentava nivel muito acima da media do grupo de goleiros chilenos, justificando percentis altos em reflexos e defesas.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q719023",
+        "afirmacao": "Roberto Rojas, goleiro chileno, convocado para a Copa America de 1987, destaque no Sao Paulo."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Marco Cornez",
+    "pais": "Chile",
+    "posicao": "GK",
+    "dob": "1957-10-15",
+    "percentis": {
+      "overall": 0.65,
+      "goalkeeping_diving": 0.65,
+      "goalkeeping_handling": 0.62,
+      "goalkeeping_kicking": 0.6,
+      "goalkeeping_positioning": 0.63,
+      "goalkeeping_reflexes": 0.66,
+      "goalkeeping_speed": 0.55
+    },
+    "observacao": "Goleiro reserva do Chile na Copa America de 1987, sem grande destaque internacional fora da selecao. Percentis moderados refletem um jogador solido, mas sem o nivel dos grandes nomes do gol chileno, com poucos registros disponiveis sobre seu desempenho.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q951117",
+        "afirmacao": "Marco Cornez, goleiro chileno, convocado para a Copa America de 1987."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Misael Escuti",
+    "pais": "Chile",
+    "posicao": "GK",
+    "dob": "1926-12-20",
+    "percentis": {
+      "overall": 0.8,
+      "goalkeeping_diving": 0.78,
+      "goalkeeping_handling": 0.75,
+      "goalkeeping_kicking": 0.7,
+      "goalkeeping_positioning": 0.8,
+      "goalkeeping_reflexes": 0.82,
+      "goalkeeping_speed": 0.65
+    },
+    "observacao": "Titular do Chile na historica campanha do terceiro lugar na Copa do Mundo de 1962, disputada em casa. Apresentou atuacoes consistentes na competicao, o que justifica percentis acima da mediana entre os goleiros chilenos, ainda que com registros limitados por ser de uma era pre-moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2635226",
+        "afirmacao": "Misael Escuti, goleiro chileno, titular na Copa do Mundo de 1962, terceiro lugar com o Chile."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Nelson Tapia",
+    "pais": "Chile",
+    "posicao": "GK",
+    "dob": "1966-09-22",
+    "percentis": {
+      "overall": 0.58,
+      "goalkeeping_diving": 0.58,
+      "goalkeeping_handling": 0.55,
+      "goalkeeping_kicking": 0.55,
+      "goalkeeping_positioning": 0.56,
+      "goalkeeping_reflexes": 0.6,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Goleiro reserva do Chile na Copa do Mundo de 1998, sem grande protagonismo nas partidas. Percentis mais baixos refletem o papel secundario no elenco e a escassez de registros de desempenho de alto nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2463272",
+        "afirmacao": "Nelson Tapia, goleiro chileno, convocado para a Copa do Mundo de 1998."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jorge Valdivia",
+    "pais": "Chile",
+    "posicao": "AM",
+    "dob": "1983-10-19",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.6,
+      "shooting": 0.68,
+      "passing": 0.9,
+      "dribbling": 0.92,
+      "defending": 0.35,
+      "physic": 0.5
+    },
+    "observacao": "O Mago foi um dos meio-campistas mais talentosos da geracao dourada chilena, peca-chave do titulo da Copa America de 2015 e destaque no Palmeiras. Criatividade, passe e drible de altissimo nivel justificam percentis elevados em passing e dribbling, com contribuicao defensiva baixa, tipica de um meia armador.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q360782",
+        "afirmacao": "Jorge Valdivia, meio-campista chileno, convocado para a Copa America de 2015, campea com o Chile."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Matias Fernandez",
+    "pais": "Chile",
+    "posicao": "AM",
+    "dob": "1986-05-15",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.65,
+      "shooting": 0.68,
+      "passing": 0.85,
+      "dribbling": 0.88,
+      "defending": 0.4,
+      "physic": 0.52
+    },
+    "observacao": "Meio-campista de grande talento tecnico, destacou-se no Sporting e na selecao chilena como armador criativo, apesar de carreira marcada por lesoes recorrentes. Percentis altos em passe e drible refletem seu nivel tecnico, enquanto a contribuicao defensiva permanece modesta.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q310657",
+        "afirmacao": "Matias Fernandez, meio-campista chileno, destaque no Sporting e na selecao do Chile."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jorge Aravena",
+    "pais": "Chile",
+    "posicao": "AM",
+    "dob": "1958-04-22",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.58,
+      "shooting": 0.55,
+      "passing": 0.62,
+      "dribbling": 0.6,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Meia-atacante do elenco chileno na Copa America de 1987, jogador de bom nivel tecnico mas sem o destaque dos grandes nomes da posicao. Percentis proximos a mediana do grupo de meio-campistas refletem um jogador regular de selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2419813",
+        "afirmacao": "Jorge Aravena, meio-campista chileno, convocado para a Copa America de 1987."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Eduardo Bonvallet",
+    "pais": "Chile",
+    "posicao": "DM",
+    "dob": "1955-01-13",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.55,
+      "shooting": 0.45,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.65,
+      "physic": 0.65
+    },
+    "observacao": "Volante de perfil combativo na Copa do Mundo de 1982, reconhecido por sua entrega fisica e marcacao, tornando-se posteriormente um comentarista conhecido no Chile. Percentis equilibrados refletem um meio-campista solido, com defesa e fisico acima da media ofensiva.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2707333",
+        "afirmacao": "Eduardo Bonvallet, volante chileno, convocado para a Copa do Mundo de 1982."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Fabian Estay",
+    "pais": "Chile",
+    "posicao": "AM",
+    "dob": "1968-10-05",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.58,
+      "shooting": 0.55,
+      "passing": 0.6,
+      "dribbling": 0.6,
+      "defending": 0.4,
+      "physic": 0.55
+    },
+    "observacao": "Meia-atacante que atuou no Toluca, do Mexico, com boa tecnica individual, porem sem grande destaque internacional fora da selecao chilena. Percentis proximos a mediana refletem um jogador regular do elenco.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2454389",
+        "afirmacao": "Fabian Estay, meio-campista chileno, atuou no Toluca e na selecao do Chile."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Claudio Maldonado",
+    "pais": "Chile",
+    "posicao": "DM",
+    "dob": "1980-01-03",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.55,
+      "shooting": 0.45,
+      "passing": 0.55,
+      "dribbling": 0.52,
+      "defending": 0.72,
+      "physic": 0.72
+    },
+    "observacao": "Volante combativo que atuou pelo Santos, reconhecido pela marcacao e intensidade fisica. Percentis acima da mediana em defesa e fisico refletem seu perfil de volante regular da selecao chilena.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q718952",
+        "afirmacao": "Claudio Maldonado, volante chileno, atuou pelo Santos e pela selecao do Chile."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jorge Toro",
+    "pais": "Chile",
+    "posicao": "DM",
+    "dob": "1939-01-10",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.52,
+      "shooting": 0.42,
+      "passing": 0.58,
+      "dribbling": 0.52,
+      "defending": 0.68,
+      "physic": 0.65
+    },
+    "observacao": "Volante do historico terceiro lugar do Chile na Copa do Mundo de 1962, peca relevante do meio-campo da selecao anfitria. Percentis acima da mediana refletem sua importancia na campanha, ainda que com registros limitados pela epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1362642",
+        "afirmacao": "Jorge Toro, volante chileno, convocado para a Copa do Mundo de 1962, terceiro lugar com o Chile."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "David Pizarro",
+    "pais": "Chile",
+    "posicao": "CM",
+    "dob": "1979-09-11",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.93,
+      "dribbling": 0.78,
+      "defending": 0.6,
+      "physic": 0.58
+    },
+    "observacao": "Um dos maiores meio-campistas chilenos da historia, com longa e vitoriosa carreira na Italia por Udinese, Fiorentina, Inter e Roma. Visao de jogo e qualidade de passe excepcionais justificam percentis muito altos em passing, consolidando-o como um dos grandes meio-campistas do futebol chileno.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q70567",
+        "afirmacao": "David Pizarro, meio-campista chileno, destaque na Roma e em outros clubes italianos."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Leonel Sanchez",
+    "pais": "Chile",
+    "posicao": "LW",
+    "dob": "1936-04-25",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.75,
+      "shooting": 0.85,
+      "passing": 0.7,
+      "dribbling": 0.75,
+      "defending": 0.4,
+      "physic": 0.68
+    },
+    "observacao": "Lenda do futebol chileno, foi um dos artilheiros da historica Copa do Mundo de 1962 em casa, dividindo a artilharia da competicao. Ponta-esquerda de finalizacao e drible excepcionais, recebe percentis no topo da distribuicao historica de atacantes chilenos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q314630",
+        "afirmacao": "Leonel Sanchez, atacante chileno, artilheiro da Copa do Mundo de 1962, terceiro lugar com o Chile."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Hugo Rubio",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1960-07-05",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.62,
+      "shooting": 0.6,
+      "passing": 0.5,
+      "dribbling": 0.58,
+      "defending": 0.28,
+      "physic": 0.55
+    },
+    "observacao": "Atacante do elenco chileno na Copa America de 1987, jogador de nivel regular sem grande destaque internacional. Percentis proximos a mediana refletem um atacante de selecao sem registros de desempenho excepcional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q538311",
+        "afirmacao": "Hugo Rubio, atacante chileno, convocado para a Copa America de 1987."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Patricio Yanez",
+    "pais": "Chile",
+    "posicao": "RW",
+    "dob": "1961-01-20",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.78,
+      "shooting": 0.6,
+      "passing": 0.58,
+      "dribbling": 0.68,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Ponta-direita que atuou no Real Zaragoza, da Espanha, com boa velocidade e capacidade de desequilibrio. Percentis acima da mediana refletem um jogador regular e de bom nivel internacional para a selecao chilena.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q509882",
+        "afirmacao": "Patricio Yanez, atacante chileno, atuou pelo Real Zaragoza e pela selecao do Chile."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Osvaldo Castro",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1947-04-14",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.65,
+      "shooting": 0.72,
+      "passing": 0.5,
+      "dribbling": 0.6,
+      "defending": 0.28,
+      "physic": 0.58
+    },
+    "observacao": "Atacante que defendeu o America, do Mexico, e marcou gols importantes para o Chile na Copa do Mundo de 1974. Percentis acima da mediana em finalizacao refletem sua contribuicao ofensiva relevante para a selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1355128",
+        "afirmacao": "Osvaldo Castro, atacante chileno, convocado para a Copa do Mundo de 1974."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Carlos Caszely",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1950-07-05",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.7,
+      "shooting": 0.88,
+      "passing": 0.6,
+      "dribbling": 0.75,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Idolo historico do Colo-Colo e da selecao chilena, participou das Copas do Mundo de 1974 e 1982, sendo tambem lembrado por seu gesto politico contra a ditadura em 1973. Finalizador de altissimo nivel, recebe percentis muito altos entre os atacantes chilenos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q472401",
+        "afirmacao": "Carlos Caszely, atacante chileno, convocado para as Copas do Mundo de 1974 e 1982, idolo do Colo-Colo."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jaime Ramirez",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1931-08-14",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.65,
+      "shooting": 0.75,
+      "passing": 0.5,
+      "dribbling": 0.6,
+      "defending": 0.28,
+      "physic": 0.58
+    },
+    "observacao": "Atacante da historica campanha do terceiro lugar do Chile na Copa do Mundo de 1962, contribuindo com gols importantes na competicao disputada em casa. Percentis acima da mediana refletem sua relevancia ofensiva na campanha.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q125860",
+        "afirmacao": "Jaime Ramirez, atacante chileno, convocado para a Copa do Mundo de 1962, terceiro lugar com o Chile."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Marcelo Barticciotto",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1967-01-01",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.68,
+      "shooting": 0.78,
+      "passing": 0.55,
+      "dribbling": 0.68,
+      "defending": 0.3,
+      "physic": 0.62
+    },
+    "observacao": "Idolo do Colo-Colo nos anos 1980 e 1990, um dos maiores artilheiros do clube, com passagens tambem pela selecao chilena. Percentis elevados em finalizacao refletem seu status de grande atacante do futebol chileno da epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3289656",
+        "afirmacao": "Marcelo Barticciotto, atacante chileno, idolo do Colo-Colo e convocado para a selecao do Chile."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Reinaldo Navia",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1978-05-10",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.65,
+      "shooting": 0.62,
+      "passing": 0.5,
+      "dribbling": 0.58,
+      "defending": 0.28,
+      "physic": 0.55
+    },
+    "observacao": "Atacante que defendeu o America, do Mexico, com participacao regular na selecao chilena, porem sem o destaque dos grandes nomes do ataque. Percentis proximos a mediana refletem um atacante de nivel internacional regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2331895",
+        "afirmacao": "Reinaldo Navia, atacante chileno, atuou pelo America e pela selecao do Chile."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Mark Gonzalez",
+    "pais": "Chile",
+    "posicao": "LW",
+    "dob": "1984-07-10",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.9,
+      "shooting": 0.6,
+      "passing": 0.62,
+      "dribbling": 0.75,
+      "defending": 0.32,
+      "physic": 0.55
+    },
+    "observacao": "Ponta-esquerda de grande velocidade, destacou-se no CSKA Moscou e teve passagem pelo Liverpool, sendo titular regular da selecao chilena na decada de 2000. Percentis altos em pace refletem sua principal caracteristica como jogador.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q213124",
+        "afirmacao": "Mark Gonzalez, atacante chileno, destaque no CSKA Moscou e no Liverpool, convocado pela selecao do Chile."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Eduardo Vargas",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1989-11-20",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.82,
+      "shooting": 0.85,
+      "passing": 0.6,
+      "dribbling": 0.72,
+      "defending": 0.3,
+      "physic": 0.6
+    },
+    "observacao": "Um dos maiores artilheiros da selecao chilena na era moderna, foi artilheiro das Copas America de 2015 e 2016, com passagens por Napoli e Hertha Berlim. Finalizacao e velocidade de alto nivel justificam percentis elevados entre os atacantes chilenos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2268949",
+        "afirmacao": "Eduardo Vargas, atacante chileno, artilheiro das Copas America de 2015 e 2016, destaque no Napoli."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Humberto Suazo",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1981-05-10",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.7,
+      "shooting": 0.85,
+      "passing": 0.52,
+      "dribbling": 0.65,
+      "defending": 0.28,
+      "physic": 0.6
+    },
+    "observacao": "Chupete Suazo foi um dos maiores artilheiros do futebol mexicano pelo Monterrey e peca fundamental do ataque chileno nas eliminatorias para a Copa de 2010, sendo artilheiro das eliminatorias sul-americanas naquele ciclo. Percentis altos em finalizacao refletem sua eficiencia historica como goleador.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q314719",
+        "afirmacao": "Humberto Suazo, atacante chileno, destaque no Monterrey, artilheiro das eliminatorias sul-americanas para a Copa de 2010."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Guillermo Subiabre",
+    "pais": "Chile",
+    "posicao": "ST",
+    "dob": "1903-02-25",
+    "percentis": {
+      "overall": 0.58,
+      "pace": 0.55,
+      "shooting": 0.55,
+      "passing": 0.45,
+      "dribbling": 0.5,
+      "defending": 0.3,
+      "physic": 0.5
+    },
+    "observacao": "Um dos pioneiros do futebol chileno, integrou o elenco da primeira Copa do Mundo da historia, em 1930, no Uruguai. Por se tratar de um jogador de era pre-moderna com registros muito escassos, recebe percentis moderados, refletindo incerteza historica mais do que baixa qualidade.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q458044",
+        "afirmacao": "Guillermo Subiabre, atacante chileno, convocado para a Copa do Mundo de 1930."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Mauricio Isla",
+    "pais": "Chile",
+    "posicao": "RB",
+    "dob": "1988-06-12",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.92,
+      "shooting": 0.55,
+      "passing": 0.72,
+      "dribbling": 0.75,
+      "defending": 0.78,
+      "physic": 0.8
+    },
+    "observacao": "Lateral-direito de grande potencia fisica e capacidade ofensiva, teve longa carreira na Juventus e foi titular em Copas do Mundo e titulos de Copa America pela selecao chilena. Percentis altos em pace e fisico refletem seu perfil moderno de lateral ofensivo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q296222",
+        "afirmacao": "Mauricio Isla, lateral-direito chileno, destaque na Juventus e titular da selecao do Chile."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Raul Sanchez",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1933-10-26",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.5,
+      "shooting": 0.35,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.72,
+      "physic": 0.68
+    },
+    "observacao": "Zagueiro do historico terceiro lugar do Chile na Copa do Mundo de 1962, peca relevante da defesa da selecao anfitria. Percentis acima da mediana refletem sua contribuicao defensiva na campanha, com registros limitados pela epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2463508",
+        "afirmacao": "Raul Sanchez, zagueiro chileno, convocado para a Copa do Mundo de 1962, terceiro lugar com o Chile."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jean Beausejour",
+    "pais": "Chile",
+    "posicao": "LB",
+    "dob": "1984-06-01",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.88,
+      "shooting": 0.5,
+      "passing": 0.72,
+      "dribbling": 0.7,
+      "defending": 0.75,
+      "physic": 0.72
+    },
+    "observacao": "Lateral-esquerdo rapido e ofensivo, titular na conquista historica da Copa America de 2015 e com passagens por clubes como Wigan Athletic, da Premier League. Percentis altos em pace e passing refletem seu perfil moderno de lateral com participacao ofensiva.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q313307",
+        "afirmacao": "Jean Beausejour, lateral-esquerdo chileno, titular na Copa America de 2015, campea com o Chile."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Pedro Reyes",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1972-11-13",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.5,
+      "shooting": 0.35,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.68,
+      "physic": 0.65
+    },
+    "observacao": "Zagueiro do elenco chileno na Copa do Mundo de 1998, com participacao regular na defesa da selecao. Percentis proximos a mediana refletem um zagueiro solido, sem o destaque dos grandes nomes da posicao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2602528",
+        "afirmacao": "Pedro Reyes, zagueiro chileno, convocado para a Copa do Mundo de 1998."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Javier Margas",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1969-05-10",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.55,
+      "shooting": 0.4,
+      "passing": 0.58,
+      "dribbling": 0.55,
+      "defending": 0.8,
+      "physic": 0.75
+    },
+    "observacao": "Zagueiro que teve passagem pelo West Ham, na Inglaterra, e foi titular do Chile na Copa do Mundo de 1998. Percentis acima da mediana em defesa refletem seu nivel de zagueiro internacional consistente.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q933450",
+        "afirmacao": "Javier Margas, zagueiro chileno, destaque no West Ham e titular na Copa do Mundo de 1998."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Pablo Contreras",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1978-09-11",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.58,
+      "shooting": 0.42,
+      "passing": 0.62,
+      "dribbling": 0.58,
+      "defending": 0.84,
+      "physic": 0.78
+    },
+    "observacao": "El Pablote foi capitao e um dos zagueiros mais regulares da selecao chilena por mais de uma decada, com passagem marcante pelo Monaco, da Franca. Percentis altos em defesa e fisico refletem sua lideranca e consistencia defensiva ao longo da carreira.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q323358",
+        "afirmacao": "Pablo Contreras, zagueiro chileno, capitao da selecao e destaque no Monaco."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gonzalo Jara",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1985-08-29",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.58,
+      "shooting": 0.42,
+      "passing": 0.6,
+      "dribbling": 0.57,
+      "defending": 0.78,
+      "physic": 0.72
+    },
+    "observacao": "Zagueiro versatil, titular na historica conquista da Copa America de 2015, com boa capacidade de marcacao e disputa fisica. Percentis acima da mediana refletem sua relevancia na defesa campea da selecao chilena.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q349172",
+        "afirmacao": "Gonzalo Jara, zagueiro chileno, titular na Copa America de 2015, campea com o Chile."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Fernando Astengo",
+    "pais": "Chile",
+    "posicao": "CB",
+    "dob": "1960-01-08",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.5,
+      "shooting": 0.35,
+      "passing": 0.52,
+      "dribbling": 0.48,
+      "defending": 0.68,
+      "physic": 0.62
+    },
+    "observacao": "Zagueiro do elenco chileno na Copa America de 1987, jogador regular sem grande destaque internacional. Percentis proximos a mediana refletem um defensor solido, mas sem registros de desempenho excepcional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3289820",
+        "afirmacao": "Fernando Astengo, zagueiro chileno, convocado para a Copa America de 1987."
+      }
+    ],
+    "confianca": 0.48,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]

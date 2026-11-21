@@ -1,0 +1,948 @@
+[
+  {
+    "nome": "Diego Forlan",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1979-05-19",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.75,
+      "shooting": 0.96,
+      "passing": 0.85,
+      "dribbling": 0.88,
+      "defending": 0.4,
+      "physic": 0.75
+    },
+    "observacao": "Eleito o melhor jogador da Copa do Mundo de 2010, Forlan foi o grande artilheiro e lider tecnico da geracao que levou o Uruguai as semifinais. Sua finalizacao com as duas pernas e capacidade de decidir em jogos grandes o colocam entre os maiores atacantes uruguaios da historia recente, justificando percentis de elite em overall e shooting.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q261534",
+        "afirmacao": "Diego Forlan e um futebolista uruguaio, eleito melhor jogador da Copa do Mundo FIFA de 2010."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 90,
+      "pace": 82,
+      "shooting": 91,
+      "passing": 84,
+      "dribbling": 84,
+      "defending": 40,
+      "physic": 78
+    }
+  },
+  {
+    "nome": "Enzo Francescoli",
+    "pais": "Uruguay",
+    "posicao": "AM",
+    "dob": "1961-11-12",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.7,
+      "shooting": 0.85,
+      "passing": 0.96,
+      "dribbling": 0.92,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Idolo absoluto do River Plate e referencia tecnica do futebol sul-americano nos anos 1980 e 1990, Francescoli e considerado um dos maiores meias-armadores da historia do Uruguai. Sua visao de jogo e elegancia na condução de bola inspiraram geracoes, o que justifica percentis altos em passing e dribbling.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q210083",
+        "afirmacao": "Enzo Francescoli e um ex-futebolista uruguaio, meio-campista ofensivo, idolo do River Plate."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 89,
+      "pace": 82,
+      "shooting": 84,
+      "passing": 87,
+      "dribbling": 88,
+      "defending": 45,
+      "physic": 68
+    }
+  },
+  {
+    "nome": "Dario Silva",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1972-11-02",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.68,
+      "shooting": 0.78,
+      "passing": 0.58,
+      "dribbling": 0.62,
+      "defending": 0.3,
+      "physic": 0.72
+    },
+    "observacao": "Centroavante forte e eficaz, Dario Silva construiu carreira solida na Europa, com destaque no Malaga, e foi titular frequente da selecao uruguaia no final dos anos 1990 e inicio dos 2000. E um atacante internacional de bom nivel, sem alcancar o status de lenda absoluta do pais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q359804",
+        "afirmacao": "Dario Silva e um ex-futebolista uruguaio que atuou como centroavante, com passagem destacada pelo Malaga."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alcides Ghiggia",
+    "pais": "Uruguay",
+    "posicao": "RW",
+    "dob": "1926-11-22",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.9,
+      "shooting": 0.85,
+      "passing": 0.68,
+      "dribbling": 0.85,
+      "defending": 0.3,
+      "physic": 0.6
+    },
+    "observacao": "Autor do gol do Maracanazo na final da Copa do Mundo de 1950, Ghiggia e uma das figuras mais iconicas da historia do futebol uruguaio. Ponta-direita rapido e decisivo, seu feito historico sustenta percentis de elite mesmo com registros estatisticos escassos da epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q352611",
+        "afirmacao": "Alcides Ghiggia marcou o gol da vitoria do Uruguai na final da Copa do Mundo de 1950, o chamado Maracanazo."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Julio Cesar Abbadie",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1930-09-07",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.75,
+      "shooting": 0.7,
+      "passing": 0.55,
+      "dribbling": 0.68,
+      "defending": 0.3,
+      "physic": 0.58
+    },
+    "observacao": "Abbadie fez parte do elenco campeao mundial de 1950, periodo em que o futebol uruguaio dominava o cenario internacional. Atacante veloz e tecnico, seus registros historicos sao escassos, o que resulta em percentis solidos mas nao de maxima excelencia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1340304",
+        "afirmacao": "Julio Cesar Abbadie foi um futebolista uruguaio, campeao mundial com o Uruguai em 1950."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Cubilla",
+    "pais": "Uruguay",
+    "posicao": "RW",
+    "dob": "1940-03-28",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.8,
+      "shooting": 0.75,
+      "passing": 0.65,
+      "dribbling": 0.78,
+      "defending": 0.35,
+      "physic": 0.6
+    },
+    "observacao": "Cubilla foi campeao continental com o Penarol em 1960, 1961 e esteve envolvido em conquistas com o Nacional em 1971, participando de multiplas edicoes de Copa do Mundo pelo Uruguai. Ponta ofensivo de longa carreira internacional em alto nivel, consolida-se como um dos grandes extremos uruguaios da sua geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q555204",
+        "afirmacao": "Luis Cubilla foi um futebolista uruguaio, ponta-direita, campeao com clubes uruguaios e multiplo convocado para Copas do Mundo."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Pedro Rocha",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1942-12-03",
+    "percentis": {
+      "overall": 0.89,
+      "pace": 0.75,
+      "shooting": 0.8,
+      "passing": 0.7,
+      "dribbling": 0.78,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Rocha disputou Copas do Mundo entre 1962 e 1974, sendo um dos atacantes mais talentosos e duradouros da selecao uruguaia naquele periodo. Sua longevidade como titular internacional de alto nivel justifica percentis elevados em overall e shooting.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q516417",
+        "afirmacao": "Pedro Rocha foi um futebolista uruguaio que representou o Uruguai em Copas do Mundo entre 1962 e 1974."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Cristian Rodriguez",
+    "pais": "Uruguay",
+    "posicao": "LW",
+    "dob": "1985-09-30",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.8,
+      "shooting": 0.65,
+      "passing": 0.72,
+      "dribbling": 0.76,
+      "defending": 0.42,
+      "physic": 0.6
+    },
+    "observacao": "Com passagem de destaque pelo Atletico de Madrid, Cristian Rodriguez foi titular regular da geracao de ouro uruguaia da Copa America 2011 e Copa do Mundo de 2010. Extremo veloz e versatil, combina boa contribuicao defensiva com qualidade ofensiva, caracteristica de titular internacional de alto nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q314376",
+        "afirmacao": "Cristian Rodriguez e um futebolista uruguaio que jogou pelo Atletico de Madrid e pela selecao do Uruguai."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Sebastian Abreu",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1976-10-17",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.65,
+      "shooting": 0.83,
+      "passing": 0.55,
+      "dribbling": 0.65,
+      "defending": 0.3,
+      "physic": 0.68
+    },
+    "observacao": "Conhecido como 'El Loco', Abreu marcou gols em seis paises diferentes e ficou famoso pela cavadinha decisiva nos penaltis da Copa do Mundo de 2010. Sua longevidade e presenca constante na selecao uruguaia ao longo de mais de uma decada o colocam como atacante internacional de muito alto nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q132056",
+        "afirmacao": "Sebastian Abreu e um futebolista uruguaio conhecido por marcar gols em clubes de seis paises diferentes."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Marcelo Zalayeta",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1978-12-05",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.7,
+      "shooting": 0.68,
+      "passing": 0.5,
+      "dribbling": 0.6,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Zalayeta teve passagem pela Juventus e foi convocado regularmente para a selecao uruguaia no final dos anos 1990 e 2000. Atacante de bom nivel internacional, sem a projecao historica de um icone absoluto do futebol uruguaio.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q316551",
+        "afirmacao": "Marcelo Zalayeta e um ex-futebolista uruguaio que jogou pela Juventus e pela selecao uruguaia."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Omar Miguez",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1927-12-05",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.6,
+      "shooting": 0.66,
+      "passing": 0.5,
+      "dribbling": 0.55,
+      "defending": 0.3,
+      "physic": 0.62
+    },
+    "observacao": "Miguez fez parte do elenco campeao mundial de 1950, periodo de ouro do futebol uruguaio. Como jogador da era pre-moderna com registros escassos, recebe percentis solidos mas moderados, refletindo a dificuldade de documentar seu nivel individual com precisao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q24347",
+        "afirmacao": "Omar Miguez foi um futebolista uruguaio, campeao mundial com o Uruguai em 1950."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Daniel Fonseca",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1969-09-13",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.72,
+      "shooting": 0.8,
+      "passing": 0.55,
+      "dribbling": 0.66,
+      "defending": 0.3,
+      "physic": 0.68
+    },
+    "observacao": "Fonseca brilhou no Napoli e na Juventus na primeira metade dos anos 1990, sendo um dos centroavantes uruguaios mais respeitados daquela geracao na Serie A italiana. Sua capacidade de finalizacao em alto nivel europeu sustenta percentis elevados de shooting e overall.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q462842",
+        "afirmacao": "Daniel Fonseca e um ex-futebolista uruguaio que jogou pelo Napoli e pela Juventus."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ruben Sosa",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1966-04-25",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.78,
+      "shooting": 0.83,
+      "passing": 0.6,
+      "dribbling": 0.72,
+      "defending": 0.3,
+      "physic": 0.6
+    },
+    "observacao": "Sosa foi um dos grandes artilheiros uruguaios dos anos 1990, com passagem de destaque pela Inter de Milao e pelo futebol italiano. Velocidade e faro de gol marcaram sua carreira como centroavante internacional de altissimo nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q463979",
+        "afirmacao": "Ruben Sosa e um ex-futebolista uruguaio que jogou pela Inter de Milao e marcou epoca no futebol italiano."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Hector Scarone",
+    "pais": "Uruguay",
+    "posicao": "ST",
+    "dob": "1898-11-26",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.8,
+      "shooting": 0.88,
+      "passing": 0.76,
+      "dribbling": 0.82,
+      "defending": 0.3,
+      "physic": 0.58
+    },
+    "observacao": "Apelidado de 'El Magico', Scarone foi bicampeao olimpico pelo Uruguai em 1924 e 1928 e e considerado um dos maiores jogadores sul-americanos da primeira metade do seculo XX. Apesar dos registros estatisticos escassos de sua epoca, seu status historico sustenta percentis proximos do maximo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q318172",
+        "afirmacao": "Hector Scarone foi um futebolista uruguaio, bicampeao olimpico com o Uruguai em 1924 e 1928."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Paolo Montero",
+    "pais": "Uruguay",
+    "posicao": "CB",
+    "dob": "1971-09-03",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.65,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.9,
+      "physic": 0.85
+    },
+    "observacao": "Zagueiro duro e dominante, Montero teve longa e vitoriosa passagem pela Juventus, sendo um dos defensores sul-americanos mais respeitados da Serie A nos anos 1990 e 2000. Sua forca fisica e capacidade defensiva de elite justificam percentis altos em defending e physic.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q342484",
+        "afirmacao": "Paolo Montero e um ex-futebolista uruguaio, zagueiro, que teve longa passagem pela Juventus."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "William Martinez",
+    "pais": "Uruguay",
+    "posicao": "CB",
+    "dob": "1928-01-13",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.55,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.72,
+      "physic": 0.65
+    },
+    "observacao": "Martinez integrou o elenco campeao mundial de 1950, atuando como zagueiro na defesa uruguaia daquela conquista historica. Como jogador da era pre-moderna com poucos registros disponiveis, recebe percentis solidos mas sem extrapolar para o nivel maximo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q977165",
+        "afirmacao": "William Martinez foi um futebolista uruguaio, zagueiro, campeao mundial com o Uruguai em 1950."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alvaro Pereira",
+    "pais": "Uruguay",
+    "posicao": "LB",
+    "dob": "1985-11-28",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.76,
+      "shooting": 0.4,
+      "passing": 0.6,
+      "dribbling": 0.58,
+      "defending": 0.74,
+      "physic": 0.68
+    },
+    "observacao": "Pereira foi lateral titular da geracao uruguaia que alcancou as semifinais da Copa do Mundo de 2010, com passagens relevantes por Porto e Inter de Milao. Sua combinacao de resistencia defensiva e projecao ofensiva o caracteriza como titular internacional de alto nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q214898",
+        "afirmacao": "Alvaro Pereira e um ex-futebolista uruguaio, lateral, que jogou pelo Porto e pela Inter de Milao."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jose Nasazzi",
+    "pais": "Uruguay",
+    "posicao": "CB",
+    "dob": "1901-05-24",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.65,
+      "shooting": 0.35,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.92,
+      "physic": 0.75
+    },
+    "observacao": "Conhecido como 'El Mariscal', Nasazzi capitaneou o Uruguai na conquista do primeiro Campeonato Mundial de 1930, sendo considerado um dos zagueiros mais importantes da historia do futebol sul-americano. Seu papel de lideranca e dominio defensivo sustentam percentis de elite em overall e defending.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q312164",
+        "afirmacao": "Jose Nasazzi foi um futebolista uruguaio, zagueiro e capitao da selecao campeao da primeira Copa do Mundo, em 1930."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Diego Lugano",
+    "pais": "Uruguay",
+    "posicao": "CB",
+    "dob": "1980-11-02",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.65,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.88,
+      "physic": 0.8
+    },
+    "observacao": "Lugano foi capitao da selecao uruguaia na campanha historica da Copa do Mundo de 2010, liderando uma defesa que chegou as semifinais. Zagueiro forte e combativo, tornou-se um dos lideres mais emblematicos da geracao de ouro uruguaia contemporanea.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q373547",
+        "afirmacao": "Diego Lugano e um ex-futebolista uruguaio, zagueiro, capitao da selecao do Uruguai na Copa do Mundo de 2010."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jorge Fucile",
+    "pais": "Uruguay",
+    "posicao": "LB",
+    "dob": "1984-11-19",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.78,
+      "shooting": 0.35,
+      "passing": 0.55,
+      "dribbling": 0.55,
+      "defending": 0.68,
+      "physic": 0.65
+    },
+    "observacao": "Fucile foi lateral regular da selecao uruguaia na geracao da Copa do Mundo de 2010, com passagem de destaque pelo Porto. Jogador rapido e solido defensivamente, representa um titular internacional de bom nivel sem alcancar o status de icone absoluto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q178599",
+        "afirmacao": "Jorge Fucile e um ex-futebolista uruguaio, lateral, que jogou pelo Porto e pela selecao uruguaia."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Obdulio Varela",
+    "pais": "Uruguay",
+    "posicao": "DM",
+    "dob": "1917-09-20",
+    "percentis": {
+      "overall": 0.96,
+      "pace": 0.6,
+      "shooting": 0.4,
+      "passing": 0.6,
+      "dribbling": 0.5,
+      "defending": 0.9,
+      "physic": 0.75
+    },
+    "observacao": "Apelidado 'El Negro Jefe', Varela capitaneou o Uruguai na conquista do Maracanazo em 1950 e e lembrado como uma das maiores liderancas da historia do futebol sul-americano. Sua capacidade defensiva e carisma de capitao justificam percentis de elite mesmo com registros limitados da epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q471743",
+        "afirmacao": "Obdulio Varela foi um futebolista uruguaio, capitao da selecao campeao mundial de 1950."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Victor Rodriguez Andrade",
+    "pais": "Uruguay",
+    "posicao": "DM",
+    "dob": "1927-05-02",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.55,
+      "shooting": 0.35,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.65,
+      "physic": 0.6
+    },
+    "observacao": "Rodriguez Andrade integrou o elenco campeao mundial de 1950, atuando no meio-campo defensivo da selecao uruguaia. Como jogador da era pre-moderna com registros escassos, recebe percentis solidos porem moderados.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q721958",
+        "afirmacao": "Victor Rodriguez Andrade foi um futebolista uruguaio, campeao mundial com o Uruguai em 1950."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Schubert Gambetta",
+    "pais": "Uruguay",
+    "posicao": "DM",
+    "dob": "1920-04-14",
+    "percentis": {
+      "overall": 0.71,
+      "pace": 0.5,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.65,
+      "physic": 0.6
+    },
+    "observacao": "Gambetta foi campeao mundial com o Uruguai em 1950, atuando no meio-campo de contencao daquele time historico. Jogador da era pre-moderna com registros escassos, recebe percentis solidos sem extrapolar para a elite.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q722004",
+        "afirmacao": "Schubert Gambetta foi um futebolista uruguaio, campeao mundial com o Uruguai em 1950."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Giorgian de Arrascaeta",
+    "pais": "Uruguay",
+    "posicao": "AM",
+    "dob": "1994-06-01",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.75,
+      "shooting": 0.73,
+      "passing": 0.83,
+      "dribbling": 0.8,
+      "defending": 0.4,
+      "physic": 0.6
+    },
+    "observacao": "De Arrascaeta se consolidou como um dos principais meias-ofensivos sul-americanos da sua geracao com o sucesso no Flamengo, sendo peca fundamental da selecao uruguaia atual. Sua criatividade, passe preciso e capacidade de decisao em jogos importantes justificam percentis altos em passing e overall.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q13578003",
+        "afirmacao": "Giorgian de Arrascaeta e um futebolista uruguaio, meio-campista ofensivo, que atua pelo Flamengo e pela selecao uruguaia."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alvaro Recoba",
+    "pais": "Uruguay",
+    "posicao": "AM",
+    "dob": "1976-03-17",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.7,
+      "shooting": 0.79,
+      "passing": 0.82,
+      "dribbling": 0.83,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Conhecido como 'El Chino', Recoba foi um dos meias mais talentosos e tecnicos do futebol sul-americano nos anos 1990 e 2000, com passagem de destaque pela Inter de Milao. Sua qualidade de passe, cobranca de falta e drible individual o colocam entre os maiores criadores uruguaios de sua geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q204108",
+        "afirmacao": "Alvaro Recoba e um ex-futebolista uruguaio, meia ofensivo, que jogou pela Inter de Milao."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gaston Ramirez",
+    "pais": "Uruguay",
+    "posicao": "AM",
+    "dob": "1990-12-02",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.66,
+      "shooting": 0.6,
+      "passing": 0.68,
+      "dribbling": 0.7,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Ramirez teve carreira solida no futebol europeu, com destaque pelo Middlesbrough, e foi convocado regularmente para a selecao uruguaia como meia criativo. Representa um meio-campista ofensivo internacional de bom nivel, sem o status de referencia historica absoluta.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q437673",
+        "afirmacao": "Gaston Ramirez e um futebolista uruguaio, meia ofensivo, que jogou pelo Middlesbrough."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Juan Alberto Schiaffino",
+    "pais": "Uruguay",
+    "posicao": "AM",
+    "dob": "1925-07-28",
+    "percentis": {
+      "overall": 0.98,
+      "pace": 0.7,
+      "shooting": 0.86,
+      "passing": 0.96,
+      "dribbling": 0.9,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Conhecido como 'Pepe', Schiaffino foi uma das maiores lendas do futebol uruguaio e sul-americano, decisivo na conquista do Mundial de 1950 e posteriormente estrela do AC Milan na Italia. Sua visao de jogo, passe e liderança tecnica o colocam no topo absoluto da historia do futebol uruguaio.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q332064",
+        "afirmacao": "Juan Alberto Schiaffino foi um futebolista uruguaio, meio-campista ofensivo, campeao mundial em 1950 e estrela do AC Milan."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Egidio Arevalo Rios",
+    "pais": "Uruguay",
+    "posicao": "DM",
+    "dob": "1982-01-01",
+    "percentis": {
+      "overall": 0.79,
+      "pace": 0.6,
+      "shooting": 0.4,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.78,
+      "physic": 0.7
+    },
+    "observacao": "Arevalo Rios foi o volante titular e peca essencial do meio-campo defensivo na campanha historica da Copa do Mundo de 2010. Sua capacidade de marcacao e disciplina tatica o tornaram um dos volantes internacionais de maior destaque de sua geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q315674",
+        "afirmacao": "Egidio Arevalo Rios e um ex-futebolista uruguaio, volante, titular na Copa do Mundo de 2010."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gustavo Varela",
+    "pais": "Uruguay",
+    "posicao": "CM",
+    "dob": "1978-05-14",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.6,
+      "shooting": 0.5,
+      "passing": 0.58,
+      "dribbling": 0.55,
+      "defending": 0.55,
+      "physic": 0.6
+    },
+    "observacao": "Varela foi um meio-campista regular do Nacional e teve passagens pela selecao uruguaia, sem alcancar grande projecao internacional. Representa um jogador de nivel solido, tipico de titular de clube com participacoes esporadicas na selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q736488",
+        "afirmacao": "Gustavo Varela e um ex-futebolista uruguaio, meio-campista, que jogou pelo Nacional."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Pablo Garcia",
+    "pais": "Uruguay",
+    "posicao": "DM",
+    "dob": "1977-05-11",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.6,
+      "shooting": 0.45,
+      "passing": 0.62,
+      "dribbling": 0.55,
+      "defending": 0.76,
+      "physic": 0.68
+    },
+    "observacao": "Garcia teve passagem pelo Real Madrid e foi titular constante do meio-campo defensivo da selecao uruguaia durante os anos 2000. Sua solidez taticA e capacidade de equilibrio no jogo o colocam entre os volantes internacionais de alto nivel do pais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q279673",
+        "afirmacao": "Pablo Garcia e um ex-futebolista uruguaio, volante, que jogou pelo Real Madrid."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Fabian Carini",
+    "pais": "Uruguay",
+    "posicao": "GK",
+    "dob": "1979-12-26",
+    "percentis": {
+      "overall": 0.68,
+      "goalkeeping_diving": 0.65,
+      "goalkeeping_handling": 0.65,
+      "goalkeeping_kicking": 0.6,
+      "goalkeeping_positioning": 0.65,
+      "goalkeeping_reflexes": 0.65,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Carini teve passagem pela Juventus e foi goleiro da selecao uruguaia em periodos relevantes nos anos 2000, incluindo a Copa America. Representa um goleiro internacional solido e regular, sem alcancar o status de referencia historica maxima da posicao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q430729",
+        "afirmacao": "Fabian Carini e um ex-futebolista uruguaio, goleiro, que jogou pela Juventus e pela selecao uruguaia."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ladislao Mazurkiewicz",
+    "pais": "Uruguay",
+    "posicao": "GK",
+    "dob": "1945-02-14",
+    "percentis": {
+      "overall": 0.96,
+      "goalkeeping_diving": 0.92,
+      "goalkeeping_handling": 0.9,
+      "goalkeeping_kicking": 0.82,
+      "goalkeeping_positioning": 0.92,
+      "goalkeeping_reflexes": 0.94,
+      "goalkeeping_speed": 0.6
+    },
+    "observacao": "Mazurkiewicz e amplamente considerado um dos maiores goleiros da historia do futebol sul-americano, com atuacoes de destaque na Copa do Mundo de 1970. Reflexos excepcionais e leitura de jogo o tornaram referencia mundial na posicao durante os anos 1960 e 1970, justificando percentis de elite.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q608126",
+        "afirmacao": "Ladislao Mazurkiewicz foi um goleiro uruguaio, considerado um dos melhores do mundo em sua epoca, destaque na Copa do Mundo de 1970."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]
