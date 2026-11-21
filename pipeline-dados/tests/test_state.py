@@ -25,9 +25,9 @@ class StateTest(unittest.TestCase):
             pacote = preparar_pais(
                 manifesto,
                 "Brazil",
-                raiz / "players_22.csv",
-                raiz / "dados/templates/convocacoes_copa_america_2024.csv",
-                raiz / "dados/templates/aliases.csv",
+                raiz / "dataset/players_22.csv",
+                raiz / "artefatos/templates/convocacoes_copa_america_2024.csv",
+                raiz / "artefatos/templates/aliases.csv",
                 tmp_path,
             )
             self.assertTrue(pacote.exists())

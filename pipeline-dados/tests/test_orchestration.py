@@ -23,8 +23,8 @@ from pipeline.state import (
 )
 
 RAIZ = Path(__file__).resolve().parents[1]
-CONVOCACOES = RAIZ / "dados/templates/convocacoes_copa_america_2024.csv"
-ALIASES = RAIZ / "dados/templates/aliases.csv"
+CONVOCACOES = RAIZ / "artefatos/templates/convocacoes_copa_america_2024.csv"
+ALIASES = RAIZ / "artefatos/templates/aliases.csv"
 
 
 def _resposta_valida(nome: str, posicao: str = "GK") -> dict:
@@ -54,7 +54,7 @@ class OrquestracaoTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
             manifesto = self._manifesto(tmp_path)
-            preparar_pais(manifesto, "Brazil", RAIZ / "players_22.csv", CONVOCACOES, ALIASES, tmp_path)
+            preparar_pais(manifesto, "Brazil", RAIZ / "dataset/players_22.csv", CONVOCACOES, ALIASES, tmp_path)
             resposta = diretorio_pais(tmp_path, "Brazil") / "resposta_bruta.json"
             resposta.write_text(json.dumps([_resposta_valida("Bento")]), encoding="utf-8")
 
@@ -62,7 +62,7 @@ class OrquestracaoTest(unittest.TestCase):
             self.assertTrue((validacao["status"] == "approved").all())
 
             registry = tmp_path / "registry" / "player_ids.csv"
-            saida = publicar_pais(manifesto, "Brazil", RAIZ / "players_22.csv", tmp_path, registry)
+            saida = publicar_pais(manifesto, "Brazil", RAIZ / "dataset/players_22.csv", tmp_path, registry)
             self.assertEqual(manifesto["paises"]["Brazil"]["status"], STATUS_PUBLISHED)
             self.assertTrue(saida.exists())
             publicado = pd.read_csv(saida, low_memory=False)
@@ -74,7 +74,7 @@ class OrquestracaoTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
             manifesto = self._manifesto(tmp_path, max_attempts=1)
-            preparar_pais(manifesto, "Brazil", RAIZ / "players_22.csv", CONVOCACOES, ALIASES, tmp_path)
+            preparar_pais(manifesto, "Brazil", RAIZ / "dataset/players_22.csv", CONVOCACOES, ALIASES, tmp_path)
             invalida = _resposta_valida("Bento", posicao="GK")
             invalida["fontes"] = []
             (diretorio_pais(tmp_path, "Brazil") / "resposta_bruta.json").write_text(
@@ -88,7 +88,7 @@ class OrquestracaoTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
             manifesto = self._manifesto(tmp_path, allow_partial=False)
-            preparar_pais(manifesto, "Brazil", RAIZ / "players_22.csv", CONVOCACOES, ALIASES, tmp_path)
+            preparar_pais(manifesto, "Brazil", RAIZ / "dataset/players_22.csv", CONVOCACOES, ALIASES, tmp_path)
             (diretorio_pais(tmp_path, "Brazil") / "resposta_bruta.json").write_text(
                 json.dumps([_resposta_valida("Bento")]), encoding="utf-8"
             )
@@ -97,7 +97,7 @@ class OrquestracaoTest(unittest.TestCase):
             manifesto["paises"]["Brazil"]["review_required"] = 1
             with self.assertRaises(ValueError):
                 publicar_pais(
-                    manifesto, "Brazil", RAIZ / "players_22.csv", tmp_path,
+                    manifesto, "Brazil", RAIZ / "dataset/players_22.csv", tmp_path,
                     tmp_path / "registry" / "player_ids.csv", allow_partial=True,
                 )
 
@@ -105,7 +105,7 @@ class OrquestracaoTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
             manifesto = self._manifesto(tmp_path)
-            preparar_pais(manifesto, "Brazil", RAIZ / "players_22.csv", CONVOCACOES, ALIASES, tmp_path)
+            preparar_pais(manifesto, "Brazil", RAIZ / "dataset/players_22.csv", CONVOCACOES, ALIASES, tmp_path)
             resumo = consolidar_resumo(manifesto, tmp_path).iloc[0]
             self.assertEqual(resumo["pais"], "Brazil")
             self.assertEqual(resumo["convocados"], 3)
@@ -121,13 +121,13 @@ class OrquestracaoTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
             manifesto = self._manifesto(tmp_path)
-            preparar_pais(manifesto, "Brazil", RAIZ / "players_22.csv", CONVOCACOES, ALIASES, tmp_path)
+            preparar_pais(manifesto, "Brazil", RAIZ / "dataset/players_22.csv", CONVOCACOES, ALIASES, tmp_path)
             (diretorio_pais(tmp_path, "Brazil") / "resposta_bruta.json").write_text(
                 json.dumps([_resposta_valida("Bento")]), encoding="utf-8"
             )
             validar_resposta_pais(manifesto, "Brazil", tmp_path)
             publicar_pais(
-                manifesto, "Brazil", RAIZ / "players_22.csv", tmp_path,
+                manifesto, "Brazil", RAIZ / "dataset/players_22.csv", tmp_path,
                 tmp_path / "registry" / "player_ids.csv",
             )
             self.assertEqual(manifesto["paises"]["Brazil"]["status"], STATUS_PUBLISHED)

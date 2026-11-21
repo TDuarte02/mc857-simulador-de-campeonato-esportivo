@@ -25,7 +25,7 @@ from .runner import (
 from .state import carregar_manifesto, salvar_manifesto, resumo_manifesto
 from .validation import carregar_propostas, validar_propostas
 
-REGISTRY_PADRAO = Path("dados/autoresearch/registry/player_ids.csv")
+REGISTRY_PADRAO = Path("artefatos/autoresearch/registry/player_ids.csv")
 
 
 def _parser() -> argparse.ArgumentParser:
