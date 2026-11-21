@@ -1,0 +1,2421 @@
+[
+  {
+    "nome": "Ronaldo",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1976-09-18",
+    "percentis": {
+      "overall": 0.98,
+      "pace": 0.95,
+      "shooting": 0.99,
+      "passing": 0.75,
+      "dribbling": 0.96,
+      "defending": 0.25,
+      "physic": 0.8
+    },
+    "observacao": "Ronaldo foi duas vezes campeao mundial (1994 e 2002) e e considerado um dos maiores atacantes da historia, com velocidade e finalizacao de outro nivel. Marcou na final de 2002 e e o maior artilheiro da historia das Copas do Mundo. Os percentis refletem seu status de icone absoluto, com defesa baixa por ser puro atacante.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q529207",
+        "afirmacao": "Convocacao/carreira internacional de Ronaldo pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 96,
+      "pace": 94,
+      "shooting": 93,
+      "passing": 80,
+      "dribbling": 92,
+      "defending": 40,
+      "physic": 82
+    }
+  },
+  {
+    "nome": "Pele",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1940-10-23",
+    "percentis": {
+      "overall": 0.99,
+      "pace": 0.93,
+      "shooting": 0.98,
+      "passing": 0.9,
+      "dribbling": 0.99,
+      "defending": 0.3,
+      "physic": 0.78
+    },
+    "observacao": "Pele e o tricampeao mundial (1958, 1962, 1970) mais lembrado da historia do futebol, o 'Rei do Futebol' e simbolo maximo da selecao brasileira. Combinava finalizacao, drible e visao de jogo em nivel sem precedentes para a epoca. Percentis no topo absoluto da escala, como legenda incontestavel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q12897",
+        "afirmacao": "Convocacao/carreira internacional de Pele pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 95,
+      "pace": 88,
+      "shooting": 92,
+      "passing": 88,
+      "dribbling": 92,
+      "defending": 45,
+      "physic": 78
+    },
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Ronaldinho",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1980-03-21",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.85,
+      "shooting": 0.85,
+      "passing": 0.92,
+      "dribbling": 0.98,
+      "defending": 0.25,
+      "physic": 0.6
+    },
+    "observacao": "Ronaldinho foi peca fundamental do titulo mundial de 2002 e eleito o melhor do mundo em 2004 e 2005, com drible e criatividade marcantes. Sua tecnica individual e passe decisivo o colocam entre os maiores meias-atacantes brasileiros. Percentis altos em drible e passe, coerente com seu estilo de jogo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q39444",
+        "afirmacao": "Convocacao/carreira internacional de Ronaldinho pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 95,
+      "pace": 89,
+      "shooting": 84,
+      "passing": 89,
+      "dribbling": 95,
+      "defending": 38,
+      "physic": 71
+    },
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Garrincha",
+    "pais": "Brazil",
+    "posicao": "RW",
+    "dob": "1933-10-28",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.9,
+      "shooting": 0.8,
+      "passing": 0.75,
+      "dribbling": 0.99,
+      "defending": 0.2,
+      "physic": 0.6
+    },
+    "observacao": "Garrincha foi parceiro de Pele nos titulos de 1958 e 1962, reconhecido como um dos maiores dribladores da historia do futebol. Sua capacidade de desequilibrio pela direita e irregularidade defensiva tipica de ponta justificam os percentis atribuidos. Confianca moderada por ser registro de era pre-moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q180642",
+        "afirmacao": "Convocacao/carreira internacional de Garrincha pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 94,
+      "pace": 93,
+      "shooting": 79,
+      "passing": 84,
+      "dribbling": 95,
+      "defending": 42,
+      "physic": 66
+    }
+  },
+  {
+    "nome": "Romario",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1966-01-29",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.85,
+      "shooting": 0.97,
+      "passing": 0.7,
+      "dribbling": 0.9,
+      "defending": 0.2,
+      "physic": 0.65
+    },
+    "observacao": "Romario foi o artilheiro decisivo do titulo de 1994, com instinto de gol refinado e grande oportunismo na area. E lembrado como um dos maiores finalizadores brasileiros de todos os tempos. Percentis altos em finalizacao e drible, coerentes com seu perfil de artilheiro puro.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q178649",
+        "afirmacao": "Convocacao/carreira internacional de Romario pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 93,
+      "pace": 90,
+      "shooting": 92,
+      "passing": 76,
+      "dribbling": 93,
+      "defending": 32,
+      "physic": 66
+    }
+  },
+  {
+    "nome": "Zico",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1953-03-03",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.78,
+      "shooting": 0.88,
+      "passing": 0.9,
+      "dribbling": 0.88,
+      "defending": 0.3,
+      "physic": 0.62
+    },
+    "observacao": "Zico, apelidado de 'Galinho de Quintino', foi o grande lider tecnico da selecao na Copa de 1982, com um dos melhores repertorios de passe e finalizacao do futebol brasileiro. Seu talento ofensivo e visao de jogo o colocam entre os maiores meias-atacantes da historia do pais. Percentis refletem sua estatura de craque mundial nunca campeao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q47526",
+        "afirmacao": "Convocacao/carreira internacional de Zico pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 92,
+      "pace": 84,
+      "shooting": 89,
+      "passing": 90,
+      "dribbling": 89,
+      "defending": 52,
+      "physic": 72
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Roberto Carlos",
+    "pais": "Brazil",
+    "posicao": "LB",
+    "dob": "1973-04-10",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.92,
+      "shooting": 0.8,
+      "passing": 0.72,
+      "dribbling": 0.75,
+      "defending": 0.8,
+      "physic": 0.85
+    },
+    "observacao": "Roberto Carlos foi lateral-esquerdo do titulo de 2002, famoso por sua velocidade, potencia de chute e cobranca de falta. Considerado um dos melhores laterais da historia do futebol, combinava intensidade ofensiva com solidez defensiva. Percentis altos em ritmo e chute, atipicos para a posicao mas coerentes com seu estilo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q429039",
+        "afirmacao": "Convocacao/carreira internacional de Roberto Carlos pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 92,
+      "pace": 93,
+      "shooting": 82,
+      "passing": 83,
+      "dribbling": 84,
+      "defending": 85,
+      "physic": 88
+    },
+    "posicoes_secundarias": [
+      "LWB"
+    ]
+  },
+  {
+    "nome": "Rivaldo",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1972-04-19",
+    "percentis": {
+      "overall": 0.94,
+      "pace": 0.76,
+      "shooting": 0.87,
+      "passing": 0.87,
+      "dribbling": 0.88,
+      "defending": 0.28,
+      "physic": 0.65
+    },
+    "observacao": "Rivaldo foi eleito melhor jogador do mundo em 1999 e peca-chave do titulo de 2002, com excelente chute de longa distancia e drible. Sua versatilidade ofensiva e protagonismo na Copa de 2002 sustentam percentis elevados. Confianca alta dado seu reconhecimento individual global.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q483577",
+        "afirmacao": "Convocacao/carreira internacional de Rivaldo pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 92,
+      "pace": 84,
+      "shooting": 89,
+      "passing": 86,
+      "dribbling": 89,
+      "defending": 45,
+      "physic": 76
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Cafu",
+    "pais": "Brazil",
+    "posicao": "RB",
+    "dob": "1970-06-07",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.88,
+      "shooting": 0.55,
+      "passing": 0.7,
+      "dribbling": 0.75,
+      "defending": 0.82,
+      "physic": 0.8
+    },
+    "observacao": "Cafu e o unico jogador a disputar tres finais de Copa do Mundo consecutivas e bicampeao mundial (1994 e 2002), sendo capitao em 2002. Reconhecido como um dos maiores lateral-direitos da historia, com resistencia fisica e presenca ofensiva constantes. Percentis altos em defesa e fisico, coerentes com sua longevidade e lideranca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q178683",
+        "afirmacao": "Convocacao/carreira internacional de Cafu pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 91,
+      "pace": 92,
+      "shooting": 66,
+      "passing": 82,
+      "dribbling": 84,
+      "defending": 86,
+      "physic": 84
+    },
+    "posicoes_secundarias": [
+      "RWB"
+    ]
+  },
+  {
+    "nome": "Kaka",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1982-04-22",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.82,
+      "shooting": 0.82,
+      "passing": 0.85,
+      "dribbling": 0.87,
+      "defending": 0.3,
+      "physic": 0.7
+    },
+    "observacao": "Kaka foi eleito o melhor jogador do mundo em 2007, com passe preciso, drible e chegada letal ao ataque. Sua fase no Milan e na selecao o colocam entre os grandes meias-atacantes brasileiros do seculo XXI. Percentis altos em passe e drible, refletindo seu auge como armador de luxo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q531814",
+        "afirmacao": "Convocacao/carreira internacional de Kaka pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 91,
+      "pace": 88,
+      "shooting": 86,
+      "passing": 87,
+      "dribbling": 89,
+      "defending": 52,
+      "physic": 74
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Castilho",
+    "pais": "Brazil",
+    "posicao": "GK",
+    "dob": "1927-11-27",
+    "percentis": {
+      "overall": 0.68,
+      "goalkeeping_diving": 0.65,
+      "goalkeeping_handling": 0.65,
+      "goalkeeping_kicking": 0.55,
+      "goalkeeping_positioning": 0.65,
+      "goalkeeping_reflexes": 0.68,
+      "goalkeeping_speed": 0.45
+    },
+    "observacao": "Castilho foi goleiro reserva nos bicampeonatos de 1958 e 1962, com participacao mais discreta que os titulares da epoca. Os registros de sua atuacao internacional sao escassos, o que justifica percentis mais contidos. Confianca baixa dada a raridade de fontes sobre seu desempenho.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q667127",
+        "afirmacao": "Convocacao/carreira internacional de Castilho pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.42,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Zetti",
+    "pais": "Brazil",
+    "posicao": "GK",
+    "dob": "1965-01-10",
+    "percentis": {
+      "overall": 0.62,
+      "goalkeeping_diving": 0.6,
+      "goalkeeping_handling": 0.58,
+      "goalkeeping_kicking": 0.5,
+      "goalkeeping_positioning": 0.58,
+      "goalkeeping_reflexes": 0.62,
+      "goalkeeping_speed": 0.45
+    },
+    "observacao": "Zetti foi goleiro reserva no title de 1994, sem grande protagonismo nas partidas decisivas daquela campanha. Sua carreira internacional foi mais limitada comparada aos titulares historicos da posicao. Percentis e confianca moderados, refletindo um papel de apoio no elenco campeao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q196897",
+        "afirmacao": "Convocacao/carreira internacional de Zetti pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gilmar",
+    "pais": "Brazil",
+    "posicao": "GK",
+    "dob": "1930-08-22",
+    "percentis": {
+      "overall": 0.88,
+      "goalkeeping_diving": 0.85,
+      "goalkeeping_handling": 0.82,
+      "goalkeeping_kicking": 0.65,
+      "goalkeeping_positioning": 0.85,
+      "goalkeeping_reflexes": 0.88,
+      "goalkeeping_speed": 0.48
+    },
+    "observacao": "Gilmar foi o goleiro titular dos bicampeonatos de 1958 e 1962, considerado um dos melhores goleiros brasileiros de todos os tempos, com reflexos e seguranca notaveis. Sua regularidade em duas conquistas mundiais consecutivas sustenta percentis altos entre os goleiros do pais. Confianca moderada por ser registro de era pre-moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q257606",
+        "afirmacao": "Convocacao/carreira internacional de Gilmar pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Julio Cesar",
+    "pais": "Brazil",
+    "posicao": "GK",
+    "dob": "1979-09-03",
+    "percentis": {
+      "overall": 0.85,
+      "goalkeeping_diving": 0.82,
+      "goalkeeping_handling": 0.8,
+      "goalkeeping_kicking": 0.7,
+      "goalkeeping_positioning": 0.82,
+      "goalkeeping_reflexes": 0.85,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Julio Cesar foi goleiro de primeira linha na Inter de Milao, conquistando a Champions League de 2010, e defendeu a selecao brasileira por mais de uma decada. Seus reflexos e seguranca em jogadas aereas o colocam entre os melhores goleiros brasileiros recentes. Percentis altos refletem seu nivel de clube europeu de elite.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q182459",
+        "afirmacao": "Convocacao/carreira internacional de Julio Cesar pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Claudio Taffarel",
+    "pais": "Brazil",
+    "posicao": "GK",
+    "dob": "1966-05-08",
+    "percentis": {
+      "overall": 0.88,
+      "goalkeeping_diving": 0.85,
+      "goalkeeping_handling": 0.82,
+      "goalkeeping_kicking": 0.68,
+      "goalkeeping_positioning": 0.85,
+      "goalkeeping_reflexes": 0.88,
+      "goalkeeping_speed": 0.48
+    },
+    "observacao": "Taffarel foi o goleiro titular do titulo mundial de 1994, decisivo nos penaltis da final contra a Italia. Sua solidez e presenca de area o tornaram uma referencia para a posicao no futebol brasileiro. Percentis altos coerentes com seu papel central na conquista de 1994.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q295891",
+        "afirmacao": "Convocacao/carreira internacional de Claudio Taffarel pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ademir da Guia",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1942-04-03",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.62,
+      "shooting": 0.68,
+      "passing": 0.78,
+      "dribbling": 0.78,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Ademir da Guia, filho de Domingos da Guia, foi um dos maiores craques da historia do Palmeiras, reconhecido por sua elegancia e visao de jogo como meia-armador. Apesar do talento individual, teve passagem discreta pela selecao principal em grandes torneios. Percentis moderados refletem reconhecimento de clube acima do internacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q355742",
+        "afirmacao": "Convocacao/carreira internacional de Ademir da Guia pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Rai",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1965-05-15",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.65,
+      "shooting": 0.7,
+      "passing": 0.8,
+      "dribbling": 0.76,
+      "defending": 0.28,
+      "physic": 0.58
+    },
+    "observacao": "Rai foi capitao do Sao Paulo e depois do PSG, reconhecido por sua elegancia tecnica e capacidade de liderranca em campo. Disputou a Copa de 1994 fazendo parte do elenco campeao, ainda que com participacao reduzida. Percentis moderados-altos, condizentes com craque de selecao em fase de transicao de geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q312895",
+        "afirmacao": "Convocacao/carreira internacional de Rai pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Juninho Pernambucano",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1975-01-30",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.62,
+      "shooting": 0.78,
+      "passing": 0.88,
+      "dribbling": 0.75,
+      "defending": 0.25,
+      "physic": 0.55
+    },
+    "observacao": "Juninho Pernambucano se consagrou no Lyon como um dos maiores cobradores de falta da historia do futebol, com passe preciso e visao de jogo refinada. Sua passagem pela selecao brasileira foi marcada por essa qualidade tecnica especifica. Percentis altos em passe e chute, refletindo sua marca registrada.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q203451",
+        "afirmacao": "Convocacao/carreira internacional de Juninho Pernambucano pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Emerson",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1976-04-04",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.6,
+      "shooting": 0.62,
+      "passing": 0.75,
+      "dribbling": 0.65,
+      "defending": 0.78,
+      "physic": 0.75
+    },
+    "observacao": "Emerson atuou como volante em clubes de peso como Roma e Juventus, destacando-se pela capacidade de recomposicao e distribuicao de jogo. Teve presenca relevante na selecao brasileira no inicio dos anos 2000. Percentis equilibrados entre defesa e passe, tipicos de um volante de qualidade europeia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q215952",
+        "afirmacao": "Convocacao/carreira internacional de Emerson pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Gilberto Silva",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1976-10-07",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.62,
+      "shooting": 0.55,
+      "passing": 0.72,
+      "dribbling": 0.6,
+      "defending": 0.82,
+      "physic": 0.78
+    },
+    "observacao": "Gilberto Silva foi volante titular do titulo mundial de 2002 e peca-chave do Arsenal invencivel de 2003-04, reconhecido pela consistencia defensiva e simplicidade eficaz. Sua regularidade em alto nivel sustenta percentis solidos de defesa e fisico. Confianca alta dado seu historico de titulos comprovados.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q190142",
+        "afirmacao": "Convocacao/carreira internacional de Gilberto Silva pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Kleberson",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "1979-06-19",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.72,
+      "shooting": 0.6,
+      "passing": 0.72,
+      "dribbling": 0.7,
+      "defending": 0.62,
+      "physic": 0.65
+    },
+    "observacao": "Kleberson foi volante do titulo de 2002, contribuindo com transicao de bola e chegada ao ataque em jogadas pontuais. Teve carreira internacional mais modesta apos a Copa. Percentis moderados, coerentes com jogador de esquadrao campeao sem grande destaque individual continuo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q311035",
+        "afirmacao": "Convocacao/carreira internacional de Kleberson pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Vampeta",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "1974-03-13",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.65,
+      "dribbling": 0.6,
+      "defending": 0.68,
+      "physic": 0.68
+    },
+    "observacao": "Vampeta integrou o elenco campeao de 2002 como volante de apoio, reconhecido mais pela personalidade forte que pelo protagonismo tecnico. Sua participacao foi relevante como peca complementar do time. Percentis mais contidos, refletindo um papel de reserva qualificado.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1982869",
+        "afirmacao": "Convocacao/carreira internacional de Vampeta pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Didi",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "1928-10-08",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.65,
+      "shooting": 0.72,
+      "passing": 0.92,
+      "dribbling": 0.8,
+      "defending": 0.5,
+      "physic": 0.6
+    },
+    "observacao": "Didi foi o 'mestre da bola' dos bicampeonatos de 1958 e 1962, criador da famosa 'folha seca' e reconhecido como um dos melhores meio-campistas da historia do futebol. Sua capacidade de distribuicao de jogo era referencia na epoca. Percentis altos em passe, coerentes com seu posto de criador duplo-campeao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q312486",
+        "afirmacao": "Convocacao/carreira internacional de Didi pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Juninho Paulista",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1973-02-22",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.68,
+      "shooting": 0.7,
+      "passing": 0.78,
+      "dribbling": 0.75,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Juninho Paulista se destacou no Middlesbrough e em outros clubes europeus por sua tecnica refinada e cobranca de falta, representando a selecao brasileira em diversas convocacoes. Nunca teve grande peso em copas do mundo, mas foi reconhecido pela qualidade individual. Percentis moderados-altos, coerentes com meia tecnico de nivel internacional solido.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q318184",
+        "afirmacao": "Convocacao/carreira internacional de Juninho Paulista pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alex",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1977-09-14",
+    "percentis": {
+      "overall": 0.74,
+      "pace": 0.65,
+      "shooting": 0.68,
+      "passing": 0.75,
+      "dribbling": 0.72,
+      "defending": 0.28,
+      "physic": 0.58
+    },
+    "observacao": "Alex se destacou no Fenerbahce turco apos boa passagem pelo futebol brasileiro, reconhecido por seu chute de longa distancia e qualidade de passe. Teve presenca pontual na selecao brasileira, sem grande protagonismo em torneios decisivos. Percentis moderados, refletindo jogador de qualidade sem grande peso historico na seleção.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q507815",
+        "afirmacao": "Convocacao/carreira internacional de Alex pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Ramires",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "1987-03-24",
+    "percentis": {
+      "overall": 0.74,
+      "pace": 0.82,
+      "shooting": 0.62,
+      "passing": 0.68,
+      "dribbling": 0.7,
+      "defending": 0.62,
+      "physic": 0.72
+    },
+    "observacao": "Ramires fez parte do elenco do Chelsea campeao da Champions League de 2012 e disputou a Copa do Mundo de 2014 pelo Brasil, destacando-se pela intensidade fisica e chegada ao ataque. Sua funcao era mais de combatividade do que de criacao refinada. Percentis equilibrados, com destaque em ritmo e fisico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q204407",
+        "afirmacao": "Convocacao/carreira internacional de Ramires pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Gerson",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "1941-01-11",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.65,
+      "shooting": 0.75,
+      "passing": 0.88,
+      "dribbling": 0.78,
+      "defending": 0.45,
+      "physic": 0.6
+    },
+    "observacao": "Gerson, o 'Canhao' do titulo de 1970, foi um dos grandes articuladores daquela selecao, com passe de longo alcance e visao de jogo privilegiada. Sua assistencia para o gol de Pele na final de 1970 e historica. Percentis altos em passe, coerentes com seu papel de maestro daquele time.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q280306",
+        "afirmacao": "Convocacao/carreira internacional de Gerson pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Cesar Sampaio",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1968-03-31",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.62,
+      "shooting": 0.55,
+      "passing": 0.65,
+      "dribbling": 0.58,
+      "defending": 0.75,
+      "physic": 0.72
+    },
+    "observacao": "Cesar Sampaio foi volante titular do vice-campeonato de 1998, reconhecido pela capacidade de chegada ao ataque vinda de funcao defensiva, inclusive com gols em Copas do Mundo. Sua carreira internacional foi solida, porem sem titulo mundial. Percentis moderados, coerentes com volante de selecao regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q316436",
+        "afirmacao": "Convocacao/carreira internacional de Cesar Sampaio pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.52,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Zito",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1932-08-08",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.7,
+      "dribbling": 0.62,
+      "defending": 0.78,
+      "physic": 0.68
+    },
+    "observacao": "Zito foi volante titular dos bicampeonatos de 1958 e 1962, reconhecido pela capacidade de equilibrio tatico e recomposicao defensiva daquelas equipes historicas. Sua regularidade em duas conquistas mundiais sustenta percentis solidos. Confianca moderada por escassez de registros detalhados da epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q372092",
+        "afirmacao": "Convocacao/carreira internacional de Zito pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Dunga",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1963-10-31",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.58,
+      "shooting": 0.55,
+      "passing": 0.78,
+      "dribbling": 0.6,
+      "defending": 0.82,
+      "physic": 0.72
+    },
+    "observacao": "Dunga foi capitao e volante titular do titulo mundial de 1994, reconhecido pela lideranca e solidez defensiva em meio-campo. Sua funcao era organizar o time e proteger a defesa, com baixo protagonismo ofensivo. Percentis altos em defesa e fisico, coerentes com seu papel de capitao pragmatico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q215890",
+        "afirmacao": "Convocacao/carreira internacional de Dunga pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Zizinho",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1921-09-14",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.7,
+      "shooting": 0.8,
+      "passing": 0.9,
+      "dribbling": 0.85,
+      "defending": 0.35,
+      "physic": 0.6
+    },
+    "observacao": "Zizinho e considerado um dos maiores jogadores brasileiros de todos os tempos, protagonista do vice-campeonato de 1950 e elogiado por Pele como superior em alguns aspectos tecnicos. Sua visao de jogo e drible eram referencias da epoca. Percentis altos, com confianca moderada por ser registro de era pre-moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q207085",
+        "afirmacao": "Convocacao/carreira internacional de Zizinho pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Socrates",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "1954-02-09",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.62,
+      "shooting": 0.8,
+      "passing": 0.9,
+      "dribbling": 0.82,
+      "defending": 0.35,
+      "physic": 0.58
+    },
+    "observacao": "Socrates foi o capitao carismatico da selecao de 1982, reconhecido por sua elegancia tecnica, visao de jogo e papel historico tambem fora de campo. Aquele time e lembrado como um dos mais talentosos a nao vencer uma Copa. Percentis altos em passe e chute, coerentes com seu protagonismo tecnico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q102331",
+        "afirmacao": "Convocacao/carreira internacional de Socrates pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Falcao",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "1953-10-16",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.6,
+      "shooting": 0.72,
+      "passing": 0.9,
+      "dribbling": 0.78,
+      "defending": 0.45,
+      "physic": 0.62
+    },
+    "observacao": "Falcao foi um dos pilares tecnicos da selecao de 1982, reconhecido por seu talento na Roma e pela qualidade de passe e visao de jogo em meio-campo. Fez parte do time considerado um dos mais admirados tecnicamente da historia do futebol. Percentis altos em passe, coerentes com seu papel de meio-campista criativo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q312454",
+        "afirmacao": "Convocacao/carreira internacional de Falcao pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Toninho Cerezo",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1955-04-21",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.58,
+      "shooting": 0.6,
+      "passing": 0.78,
+      "dribbling": 0.65,
+      "defending": 0.72,
+      "physic": 0.68
+    },
+    "observacao": "Toninho Cerezo integrou o meio-campo talentoso da selecao de 1982 e teve carreira de destaque na Roma italiana, equilibrando funcao defensiva e construcao de jogo. Sua regularidade em clube de elite sustenta percentis solidos. Percentis equilibrados entre defesa e passe, tipicos de volante criativo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q552917",
+        "afirmacao": "Convocacao/carreira internacional de Toninho Cerezo pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Bauer",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1925-11-21",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.68,
+      "dribbling": 0.58,
+      "defending": 0.72,
+      "physic": 0.65
+    },
+    "observacao": "Bauer foi volante do vice-campeonato de 1950, com participacao relevante naquela selecao historica, ainda que com registros escassos sobre seu desempenho detalhado. Percentis moderados e confianca baixa refletem a escassez de fontes sobre jogadores dessa era. Sua funcao era de equilibrio tatico em meio-campo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q703634",
+        "afirmacao": "Convocacao/carreira internacional de Bauer pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Clodoaldo",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1949-09-25",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.6,
+      "shooting": 0.58,
+      "passing": 0.8,
+      "dribbling": 0.68,
+      "defending": 0.72,
+      "physic": 0.65
+    },
+    "observacao": "Clodoaldo foi volante titular do tricampeonato de 1970, participando diretamente da jogada do quarto gol na final contra a Italia, uma das mais lembradas da historia das Copas. Sua capacidade de distribuicao de jogo sustenta percentis solidos. Percentis altos em passe, coerentes com seu papel naquele time lendario.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q464419",
+        "afirmacao": "Convocacao/carreira internacional de Clodoaldo pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Piazza",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1943-02-25",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.68,
+      "dribbling": 0.55,
+      "defending": 0.78,
+      "physic": 0.68
+    },
+    "observacao": "Piazza foi zagueiro-volante do tricampeonato de 1970, reconhecido pela capacidade de marcacao e equilibrio tatico naquela selecao ofensiva. Sua funcao era proteger a defesa enquanto o time atacava com liberdade. Percentis com destaque em defesa, coerentes com seu papel mais discreto porem fundamental.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q535520",
+        "afirmacao": "Convocacao/carreira internacional de Piazza pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
+  },
+  {
+    "nome": "Rivellino",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1946-01-01",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.68,
+      "shooting": 0.85,
+      "passing": 0.88,
+      "dribbling": 0.9,
+      "defending": 0.3,
+      "physic": 0.62
+    },
+    "observacao": "Rivellino foi uma das estrelas do tricampeonato de 1970, famoso pela 'folha seca' e pelo drible característico, alem de passe preciso de longa distancia. E lembrado como um dos melhores canhotos da historia do futebol brasileiro. Percentis altos em drible e chute, coerentes com seu protagonismo naquele time.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q220283",
+        "afirmacao": "Convocacao/carreira internacional de Rivellino pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Danilo Alvim",
+    "pais": "Brazil",
+    "posicao": "CDM",
+    "dob": "1920-12-03",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.5,
+      "shooting": 0.45,
+      "passing": 0.62,
+      "dribbling": 0.5,
+      "defending": 0.68,
+      "physic": 0.6
+    },
+    "observacao": "Danilo Alvim foi volante do vice-campeonato de 1950, com participacao relevante naquela selecao historica, embora os registros detalhados de sua atuacao sejam escassos. Percentis mais contidos e confianca baixa refletem a dificuldade de documentacao de jogadores dessa epoca. Sua funcao era de sustentacao tatica em meio-campo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1164053",
+        "afirmacao": "Convocacao/carreira internacional de Danilo Alvim pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.42,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Djalminha",
+    "pais": "Brazil",
+    "posicao": "CAM",
+    "dob": "1970-12-09",
+    "percentis": {
+      "overall": 0.74,
+      "pace": 0.68,
+      "shooting": 0.7,
+      "passing": 0.78,
+      "dribbling": 0.82,
+      "defending": 0.25,
+      "physic": 0.55
+    },
+    "observacao": "Djalminha se destacou no Deportivo La Coruna espanhol por seu drible e criatividade individual, tendo representado a selecao brasileira em algumas convocacoes. Nunca teve grande peso em Copas do Mundo, sendo mais lembrado pelo futebol de clube. Percentis moderados, com destaque em drible.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q47489",
+        "afirmacao": "Convocacao/carreira internacional de Djalminha pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.52,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "David Luiz",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "1987-04-22",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.68,
+      "shooting": 0.45,
+      "passing": 0.68,
+      "dribbling": 0.6,
+      "defending": 0.78,
+      "physic": 0.8
+    },
+    "observacao": "David Luiz foi zagueiro do Chelsea e integrou a selecao brasileira por varios anos, incluindo a Copa de 2014, reconhecido pela capacidade de saida de bola e versatilidade. Sua atuacao defensiva era combinada com participacao ofensiva em bolas aereas. Percentis moderados-altos, coerentes com zagueiro moderno de selecao regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q193706",
+        "afirmacao": "Convocacao/carreira internacional de David Luiz pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Filipe Luis",
+    "pais": "Brazil",
+    "posicao": "LB",
+    "dob": "1985-08-09",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.7,
+      "shooting": 0.4,
+      "passing": 0.68,
+      "dribbling": 0.62,
+      "defending": 0.78,
+      "physic": 0.7
+    },
+    "observacao": "Filipe Luis teve longa carreira no Atletico de Madrid, sendo reconhecido como um dos melhores lateral-esquerdos brasileiros de sua geracao, com solidez defensiva e participacao ofensiva pelo lado do campo. Representou a selecao brasileira em diversas convocacoes. Percentis moderados-altos, coerentes com lateral de selecao regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q350547",
+        "afirmacao": "Convocacao/carreira internacional de Filipe Luis pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.52,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Miranda",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "1962-03-21",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.6,
+      "shooting": 0.35,
+      "passing": 0.62,
+      "dribbling": 0.5,
+      "defending": 0.8,
+      "physic": 0.78
+    },
+    "observacao": "Miranda teve passagem de destaque pela Inter de Milao, reconhecido pela capacidade de marcacao e lideranca na zaga, representando a selecao brasileira em diversas convocacoes. Os dados de nascimento disponiveis apresentam inconsistencia em relacao ao contexto de carreira, reduzindo a confianca da avaliacao. Percentis moderados, coerentes com zagueiro internacional regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q9697024",
+        "afirmacao": "Convocacao/carreira internacional de Miranda pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Edmundo",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1971-04-02",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.78,
+      "shooting": 0.85,
+      "passing": 0.68,
+      "dribbling": 0.88,
+      "defending": 0.25,
+      "physic": 0.68
+    },
+    "observacao": "Edmundo, o 'Animal', foi um dos grandes talentos do Vasco da Gama, reconhecido pela finalizacao e drible, ainda que com carreira internacional marcada por instabilidade. Sua qualidade tecnica era amplamente reconhecida no futebol brasileiro. Percentis altos em drible e chute, coerentes com seu talento individual.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q445541",
+        "afirmacao": "Convocacao/carreira internacional de Edmundo pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Orlando",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "1986-02-19",
+    "percentis": {
+      "overall": 0.7,
+      "pace": 0.58,
+      "shooting": 0.35,
+      "passing": 0.58,
+      "dribbling": 0.48,
+      "defending": 0.75,
+      "physic": 0.72
+    },
+    "observacao": "Orlando e associado ao contexto do titulo de 1958 da selecao brasileira, atuando como zagueiro. Os dados de nascimento disponiveis apresentam inconsistencia relevante em relacao a esse periodo, o que reduz significativamente a confianca da avaliacao. Percentis moderados, refletindo incerteza documental sobre sua carreira.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q228616",
+        "afirmacao": "Convocacao/carreira internacional de Orlando pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.42,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Fabiano",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1980-11-08",
+    "percentis": {
+      "overall": 0.81,
+      "pace": 0.75,
+      "shooting": 0.84,
+      "passing": 0.62,
+      "dribbling": 0.8,
+      "defending": 0.22,
+      "physic": 0.72
+    },
+    "observacao": "Luis Fabiano foi atacante de destaque no Sevilla espanhol e na selecao brasileira em meados dos anos 2000, reconhecido pela finalizacao e movimentacao na area. Disputou Copas do Mundo representando o Brasil. Percentis altos em chute, coerentes com seu perfil de artilheiro de selecao regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q192963",
+        "afirmacao": "Convocacao/carreira internacional de Luis Fabiano pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Bellini",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "1930-06-07",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.62,
+      "shooting": 0.35,
+      "passing": 0.6,
+      "dribbling": 0.5,
+      "defending": 0.88,
+      "physic": 0.78
+    },
+    "observacao": "Bellini foi capitao e zagueiro titular do titulo de 1958, celebre por erguer a taca pela primeira vez em frente as cameras, criando uma tradicao do futebol. Sua lideranca e solidez defensiva foram fundamentais naquela conquista historica. Percentis altos em defesa, coerentes com seu papel de capitao campeao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q262826",
+        "afirmacao": "Convocacao/carreira internacional de Bellini pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Muller",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1966-01-31",
+    "percentis": {
+      "overall": 0.79,
+      "pace": 0.72,
+      "shooting": 0.8,
+      "passing": 0.6,
+      "dribbling": 0.74,
+      "defending": 0.25,
+      "physic": 0.68
+    },
+    "observacao": "Muller representou o Brasil nas Copas de 1986 e 1990, reconhecido pela capacidade de finalizacao e oportunismo na area adversaria. Sua carreira internacional foi solida, sem conquistar titulo mundial. Percentis moderados-altos em chute, coerentes com atacante de selecao regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q381729",
+        "afirmacao": "Convocacao/carreira internacional de Muller pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Pepe",
+    "pais": "Brazil",
+    "posicao": "LW",
+    "dob": "1984-02-26",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.88,
+      "shooting": 0.78,
+      "passing": 0.65,
+      "dribbling": 0.87,
+      "defending": 0.22,
+      "physic": 0.6
+    },
+    "observacao": "Pepe e associado ao contexto dos bicampeonatos de 1958 e 1962 como ponta de ataque. Os dados de nascimento disponiveis apresentam inconsistencia relevante com esse periodo historico, reduzindo a confianca da avaliacao, ainda que o perfil tecnico de ponta driblador seja mantido. Percentis moderados-altos, com ressalva documental.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q485697",
+        "afirmacao": "Convocacao/carreira internacional de Pepe pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jair da Costa",
+    "pais": "Brazil",
+    "posicao": "RW",
+    "dob": "1940-07-09",
+    "percentis": {
+      "overall": 0.79,
+      "pace": 0.82,
+      "shooting": 0.72,
+      "passing": 0.6,
+      "dribbling": 0.8,
+      "defending": 0.2,
+      "physic": 0.58
+    },
+    "observacao": "Jair da Costa teve passagem pela Inter de Milao e representou a selecao brasileira no ciclo da Copa de 1962, reconhecido pela velocidade e drible pela ponta direita. Sua carreira internacional foi relevante, ainda que sem grande destaque individual continuo. Percentis moderados-altos, coerentes com ponta de selecao daquela geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q720549",
+        "afirmacao": "Convocacao/carreira internacional de Jair da Costa pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Brito",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "1939-08-09",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.62,
+      "shooting": 0.35,
+      "passing": 0.62,
+      "dribbling": 0.52,
+      "defending": 0.85,
+      "physic": 0.75
+    },
+    "observacao": "Brito foi zagueiro titular do tricampeonato de 1970, reconhecido pela solidez defensiva ao lado de Piazza naquela selecao historica. Sua regularidade na conquista de 1970 sustenta percentis solidos de defesa. Percentis altos em defesa, coerentes com zagueiro campeao mundial.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q705942",
+        "afirmacao": "Convocacao/carreira internacional de Brito pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Savio",
+    "pais": "Brazil",
+    "posicao": "LW",
+    "dob": "1974-01-09",
+    "percentis": {
+      "overall": 0.7,
+      "pace": 0.8,
+      "shooting": 0.68,
+      "passing": 0.55,
+      "dribbling": 0.75,
+      "defending": 0.2,
+      "physic": 0.55
+    },
+    "observacao": "Savio teve carreira de destaque no Flamengo e representou a selecao brasileira em algumas oportunidades, reconhecido pela velocidade e drible pela ponta esquerda. Sua participacao internacional foi mais limitada comparada a outros pontas da geracao. Percentis moderados, coerentes com jogador de selecao de participacao pontual.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q372451",
+        "afirmacao": "Convocacao/carreira internacional de Savio pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Denilson",
+    "pais": "Brazil",
+    "posicao": "LW",
+    "dob": "1988-02-16",
+    "percentis": {
+      "overall": 0.79,
+      "pace": 0.85,
+      "shooting": 0.65,
+      "passing": 0.58,
+      "dribbling": 0.88,
+      "defending": 0.2,
+      "physic": 0.55
+    },
+    "observacao": "Denilson se tornou a transferencia mais cara do futebol na epoca ao se mudar para o Real Betis, reconhecido pelo drible extraordinario e habilidade individual. Disputou a Copa de 1998 pela selecao brasileira. Percentis altos em drible, coerentes com seu talento tecnico reconhecido mundialmente.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q215322",
+        "afirmacao": "Convocacao/carreira internacional de Denilson pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jairzinho",
+    "pais": "Brazil",
+    "posicao": "RW",
+    "dob": "1944-12-25",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.88,
+      "shooting": 0.88,
+      "passing": 0.7,
+      "dribbling": 0.9,
+      "defending": 0.25,
+      "physic": 0.72
+    },
+    "observacao": "Jairzinho foi uma das estrelas do tricampeonato de 1970, unico jogador a marcar em todas as partidas de uma Copa do Mundo, reconhecido pela velocidade e drible pela ponta direita. Sua contribuicao foi decisiva naquela conquista historica. Percentis altos, coerentes com seu protagonismo lendario em 1970.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q210102",
+        "afirmacao": "Convocacao/carreira internacional de Jairzinho pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "ST"
+    ]
+  },
+  {
+    "nome": "Fred",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1983-10-03",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.7,
+      "shooting": 0.76,
+      "passing": 0.55,
+      "dribbling": 0.68,
+      "defending": 0.2,
+      "physic": 0.7
+    },
+    "observacao": "Fred teve passagem pelo Manchester United e integrou convocacoes da selecao brasileira na decada de 2010, atuando como atacante de area. Sua carreira internacional foi solida sem grande protagonismo em torneios decisivos. Percentis moderados, coerentes com atacante de selecao regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q312772",
+        "afirmacao": "Convocacao/carreira internacional de Fred pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Djalma Santos",
+    "pais": "Brazil",
+    "posicao": "RB",
+    "dob": "1929-02-27",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.7,
+      "shooting": 0.4,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.88,
+      "physic": 0.78
+    },
+    "observacao": "Djalma Santos foi lateral-direito titular dos bicampeonatos de 1958 e 1962, reconhecido como um dos melhores lateral-direitos da historia do futebol mundial por sua solidez defensiva e regularidade. Sua carreira longeva incluiu tambem a Copa de 1966. Percentis altos em defesa, coerentes com sua estatura historica na posicao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q299693",
+        "afirmacao": "Convocacao/carreira internacional de Djalma Santos pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Hulk",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1986-07-25",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.82,
+      "shooting": 0.8,
+      "passing": 0.58,
+      "dribbling": 0.78,
+      "defending": 0.22,
+      "physic": 0.85
+    },
+    "observacao": "Hulk se destacou no Zenit russo e no Porto portugues, reconhecido pela forca fisica e potencia de chute, representando a selecao brasileira em diversas convocacoes incluindo Copas do Mundo. Seu estilo de jogo combinava velocidade com impacto fisico. Percentis altos em fisico e chute, coerentes com seu perfil de atacante potente.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q62786",
+        "afirmacao": "Convocacao/carreira internacional de Hulk pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
+  },
+  {
+    "nome": "Dani Alves",
+    "pais": "Brazil",
+    "posicao": "RB",
+    "dob": "1983-05-06",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.85,
+      "shooting": 0.55,
+      "passing": 0.8,
+      "dribbling": 0.78,
+      "defending": 0.75,
+      "physic": 0.72
+    },
+    "observacao": "Dani Alves e o jogador com mais titulos conquistados na historia do futebol, com passagens vitoriosas por Barcelona, Juventus e PSG, alem de ser lateral-direito regular da selecao brasileira. Sua capacidade ofensiva e qualidade de passe eram excepcionais para a posicao. Percentis altos, coerentes com sua trajetoria vencedora sem precedentes.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q172720",
+        "afirmacao": "Convocacao/carreira internacional de Dani Alves pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
+  },
+  {
+    "nome": "Tostao",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1947-01-25",
+    "percentis": {
+      "overall": 0.91,
+      "pace": 0.75,
+      "shooting": 0.88,
+      "passing": 0.78,
+      "dribbling": 0.85,
+      "defending": 0.25,
+      "physic": 0.65
+    },
+    "observacao": "Tostao foi um dos grandes atacantes do tricampeonato de 1970, reconhecido pela inteligencia tatica e capacidade de articulacao ofensiva junto a Pele. Sua carreira foi interrompida precocemente por problemas de visao, mas seu legado na conquista de 1970 e marcante. Percentis altos, coerentes com atacante campeao mundial.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q311407",
+        "afirmacao": "Convocacao/carreira internacional de Tostao pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Leonidas da Silva",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1913-09-06",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.78,
+      "shooting": 0.92,
+      "passing": 0.65,
+      "dribbling": 0.85,
+      "defending": 0.2,
+      "physic": 0.7
+    },
+    "observacao": "Leonidas da Silva, o 'Diamante Negro', foi artilheiro da Copa de 1938 e um dos primeiros grandes idolos do futebol brasileiro, reconhecido por popularizar o drible e a bicicleta. Sua importancia historica para o futebol do pais e inquestionavel. Percentis altos com confianca moderada, dada a escassez de registros detalhados da era pre-profissional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q311739",
+        "afirmacao": "Convocacao/carreira internacional de Leonidas da Silva pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ademir de Menezes",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1922-11-08",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.76,
+      "shooting": 0.9,
+      "passing": 0.62,
+      "dribbling": 0.8,
+      "defending": 0.2,
+      "physic": 0.68
+    },
+    "observacao": "Ademir de Menezes foi artilheiro da Copa de 1950, peca fundamental do time que disputou a final em casa, reconhecido pela capacidade de finalizacao. Sua campanha artilheira naquele torneio o consagrou historicamente. Percentis altos em chute, com confianca moderada por ser registro de era pre-moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q332012",
+        "afirmacao": "Convocacao/carreira internacional de Ademir de Menezes pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Arthur Friedenreich",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1892-07-18",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.65,
+      "shooting": 0.75,
+      "passing": 0.55,
+      "dribbling": 0.68,
+      "defending": 0.2,
+      "physic": 0.55
+    },
+    "observacao": "Arthur Friedenreich e considerado um dos pioneiros do futebol brasileiro nas decadas de 1910-20, com registros historicos escassos sobre seu desempenho detalhado. Sua importancia e mais simbolica e historica do que estatistica, dado o periodo amador do futebol da epoca. Percentis moderados e confianca baixa, refletindo a fragilidade documental da era.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q366156",
+        "afirmacao": "Convocacao/carreira internacional de Arthur Friedenreich pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.42,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Domingos da Guia",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "1912-11-19",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.55,
+      "shooting": 0.3,
+      "passing": 0.58,
+      "dribbling": 0.5,
+      "defending": 0.85,
+      "physic": 0.75
+    },
+    "observacao": "Domingos da Guia atuou nas decadas de 1930-40 e e considerado um dos maiores zagueiros da historia do futebol sul-americano, reconhecido por inovar a funcao com elegancia tecnica. Os registros detalhados de sua carreira sao escassos dado o periodo. Percentis altos em defesa com confianca baixa, refletindo a escassez documental da era.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q717927",
+        "afirmacao": "Convocacao/carreira internacional de Domingos da Guia pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.48,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Leandro",
+    "pais": "Brazil",
+    "posicao": "RB",
+    "dob": "2003-01-22",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.75,
+      "shooting": 0.45,
+      "passing": 0.68,
+      "dribbling": 0.65,
+      "defending": 0.75,
+      "physic": 0.68
+    },
+    "observacao": "Leandro e associado ao contexto da Copa de 1982 como lateral-direito da selecao brasileira. A data de nascimento disponivel no pacote de dados e claramente incompativel com esse periodo historico, o que reduz drasticamente a confianca da avaliacao, mantendo-se os dados exatamente como fornecidos. Percentis moderados-altos, refletindo o perfil tecnico associado ao jogador daquele ciclo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q125167168",
+        "afirmacao": "Convocacao/carreira internacional de Leandro pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.42,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Careca",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1960-10-05",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.76,
+      "shooting": 0.89,
+      "passing": 0.68,
+      "dribbling": 0.8,
+      "defending": 0.22,
+      "physic": 0.72
+    },
+    "observacao": "Careca formou com Maradona uma das duplas de ataque mais lembradas do futebol europeu no Napoli, representando o Brasil na Copa de 1990. Sua capacidade de finalizacao e drible eram de altissimo nivel. Percentis altos em chute, coerentes com seu reconhecimento internacional como artilheiro.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q342489",
+        "afirmacao": "Convocacao/carreira internacional de Careca pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Bebeto",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1964-02-16",
+    "percentis": {
+      "overall": 0.89,
+      "pace": 0.8,
+      "shooting": 0.88,
+      "passing": 0.65,
+      "dribbling": 0.83,
+      "defending": 0.2,
+      "physic": 0.62
+    },
+    "observacao": "Bebeto foi um dos artilheiros do titulo mundial de 1994, com oportunismo refinado na area e boa movimentacao ofensiva. Sua parceria com Romario naquele ataque foi fundamental para a conquista. Percentis altos em chute e drible, coerentes com seu protagonismo na campanha campea.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q204825",
+        "afirmacao": "Convocacao/carreira internacional de Bebeto pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Nilton Santos",
+    "pais": "Brazil",
+    "posicao": "LB",
+    "dob": "1925-05-16",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.72,
+      "shooting": 0.4,
+      "passing": 0.68,
+      "dribbling": 0.58,
+      "defending": 0.88,
+      "physic": 0.75
+    },
+    "observacao": "Nilton Santos foi lateral-esquerdo titular dos bicampeonatos de 1958 e 1962, considerado um dos criadores da funcao moderna de lateral ofensivo, com solidez defensiva excepcional. Sua longevidade e regularidade em duas conquistas mundiais sao notaveis. Percentis altos em defesa, coerentes com sua estatura historica.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q83329",
+        "afirmacao": "Convocacao/carreira internacional de Nilton Santos pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Aldair",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "1965-11-30",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.62,
+      "shooting": 0.35,
+      "passing": 0.62,
+      "dribbling": 0.55,
+      "defending": 0.85,
+      "physic": 0.8
+    },
+    "observacao": "Aldair foi zagueiro titular do titulo mundial de 1994 e teve longa e vitoriosa carreira na Roma italiana, reconhecido pela solidez defensiva e lideranca na zaga. Sua regularidade em alto nivel sustenta percentis elevados. Percentis altos em defesa e fisico, coerentes com zagueiro campeao mundial.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q297721",
+        "afirmacao": "Convocacao/carreira internacional de Aldair pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
+  },
+  {
+    "nome": "Maicon",
+    "pais": "Brazil",
+    "posicao": "RB",
+    "dob": "1981-07-26",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.82,
+      "shooting": 0.5,
+      "passing": 0.7,
+      "dribbling": 0.72,
+      "defending": 0.78,
+      "physic": 0.75
+    },
+    "observacao": "Maicon foi lateral-direito da Inter de Milao na conquista da tripla coroa europeia em 2010, reconhecido pela potencia fisica e capacidade ofensiva pela lateral. Representou a selecao brasileira em diversas convocacoes e Copas do Mundo. Percentis altos, coerentes com lateral de selecao de nivel internacional elevado.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q177686",
+        "afirmacao": "Convocacao/carreira internacional de Maicon pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
+  },
+  {
+    "nome": "Willian",
+    "pais": "Brazil",
+    "posicao": "RW",
+    "dob": "1988-08-09",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.78,
+      "shooting": 0.7,
+      "passing": 0.72,
+      "dribbling": 0.8,
+      "defending": 0.3,
+      "physic": 0.62
+    },
+    "observacao": "Willian teve longa e consistente carreira no Chelsea, reconhecido pela versatilidade ofensiva e qualidade de cruzamento pela direita, representando a selecao brasileira em diversas convocacoes. Sua regularidade em clube de elite europeu sustenta percentis solidos. Percentis moderados-altos, coerentes com ponta de selecao regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q73480",
+        "afirmacao": "Convocacao/carreira internacional de Willian pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
+  },
+  {
+    "nome": "Lucio",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "1978-05-08",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.68,
+      "shooting": 0.4,
+      "passing": 0.62,
+      "dribbling": 0.58,
+      "defending": 0.88,
+      "physic": 0.85
+    },
+    "observacao": "Lucio foi zagueiro titular do titulo mundial de 2002 e teve passagem vitoriosa pela Inter de Milao na conquista da tripla coroa de 2010, reconhecido pela forca fisica e capacidade de marcacao. Sua regularidade em conquistas de clube e selecao sustenta percentis altos. Percentis altos em defesa e fisico, coerentes com zagueiro campeao mundial.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q156822",
+        "afirmacao": "Convocacao/carreira internacional de Lucio pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Juan",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "1979-02-01",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.62,
+      "shooting": 0.35,
+      "passing": 0.58,
+      "dribbling": 0.5,
+      "defending": 0.8,
+      "physic": 0.78
+    },
+    "observacao": "Juan foi zagueiro da selecao brasileira na Copa de 2010, com passagens por clubes europeus como Bayer Leverkusen e Roma, reconhecido pela solidez defensiva. Sua carreira internacional foi relevante sem conquistar titulo mundial com o Brasil adulto. Percentis moderados-altos, coerentes com zagueiro de selecao regular.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q202429",
+        "afirmacao": "Convocacao/carreira internacional de Juan pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Robinho",
+    "pais": "Brazil",
+    "posicao": "RW",
+    "dob": "1984-01-25",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.88,
+      "shooting": 0.72,
+      "passing": 0.65,
+      "dribbling": 0.9,
+      "defending": 0.18,
+      "physic": 0.55
+    },
+    "observacao": "Robinho foi um dos grandes talentos reveleados pelo Santos, com passagem posterior pelo Real Madrid, reconhecido pelo drible extraordinario e velocidade. Representou a selecao brasileira em diversas convocacoes e Copas do Mundo. Percentis altos em drible, coerentes com seu talento individual reconhecido mundialmente.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q58441",
+        "afirmacao": "Convocacao/carreira internacional de Robinho pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Adriano",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1982-02-17",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.72,
+      "shooting": 0.89,
+      "passing": 0.62,
+      "dribbling": 0.78,
+      "defending": 0.2,
+      "physic": 0.85
+    },
+    "observacao": "Adriano, o 'Imperador', teve fase de altissimo nivel na Inter de Milao em meados dos anos 2000, reconhecido pela potencia fisica combinada com finalizacao refinada. Representou a selecao brasileira em diversas convocacoes incluindo torneios importantes. Percentis altos em chute e fisico, coerentes com seu auge como atacante dominante.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q170452",
+        "afirmacao": "Convocacao/carreira internacional de Adriano pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Vava",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "1934-11-12",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.74,
+      "shooting": 0.88,
+      "passing": 0.6,
+      "dribbling": 0.78,
+      "defending": 0.22,
+      "physic": 0.68
+    },
+    "observacao": "Vava foi atacante titular dos bicampeonatos de 1958 e 1962, marcando gols em ambas as finais conquistadas pelo Brasil. Sua capacidade de finalizacao em momentos decisivos o consagrou historicamente. Percentis altos em chute, coerentes com seu protagonismo em duas finais vitoriosas.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q311445",
+        "afirmacao": "Convocacao/carreira internacional de Vava pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Carlos Alberto",
+    "pais": "Brazil",
+    "posicao": "RB",
+    "dob": "1944-07-17",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.8,
+      "shooting": 0.55,
+      "passing": 0.72,
+      "dribbling": 0.68,
+      "defending": 0.8,
+      "physic": 0.75
+    },
+    "observacao": "Carlos Alberto foi capitao do tricampeonato de 1970 e autor do gol final daquela partida, considerado um dos mais bonitos da historia das Copas, alem de referencia como lateral-direito ofensivo. Sua lideranca e qualidade tecnica foram fundamentais naquela conquista. Percentis altos, coerentes com seu papel de capitao campeao mundial.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q295262",
+        "afirmacao": "Convocacao/carreira internacional de Carlos Alberto pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB"
+    ]
+  },
+  {
+    "nome": "Ze Roberto",
+    "pais": "Brazil",
+    "posicao": "LB",
+    "dob": "1974-07-06",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.72,
+      "shooting": 0.45,
+      "passing": 0.68,
+      "dribbling": 0.65,
+      "defending": 0.72,
+      "physic": 0.7
+    },
+    "observacao": "Ze Roberto teve longa e consistente carreira no Bayern de Munique, reconhecido pela resistencia fisica e regularidade como lateral-esquerdo, representando a selecao brasileira por mais de uma decada. Sua longevidade em clube de elite europeu sustenta percentis solidos. Percentis moderados-altos, coerentes com lateral de selecao de longa carreira internacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q57167",
+        "afirmacao": "Convocacao/carreira internacional de Ze Roberto pela selecao brasileira, conforme registro na fonte."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  }
+]

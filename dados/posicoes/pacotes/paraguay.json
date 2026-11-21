@@ -1,0 +1,375 @@
+{
+  "pais": "Paraguay",
+  "jogadores": [
+    {
+      "nome": "Jose Luis Chilavert",
+      "posicao_principal": "GK",
+      "dob": "1965-07-27",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q216312",
+      "contexto": "Goleiro artilheiro"
+    },
+    {
+      "nome": "Carlos Gamarra",
+      "posicao_principal": "CB",
+      "dob": "1971-02-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q295512",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Saturnino Arrua",
+      "posicao_principal": "CAM",
+      "dob": "1949-04-07",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q3950850",
+      "contexto": "Copa 1979"
+    },
+    {
+      "nome": "Damian Bobadilla",
+      "posicao_principal": "CM",
+      "dob": "2001-07-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q116223348",
+      "contexto": "Sao Paulo"
+    },
+    {
+      "nome": "Andres Cubas",
+      "posicao_principal": "CDM",
+      "dob": "1996-05-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q16298600",
+      "contexto": "Vancouver"
+    },
+    {
+      "nome": "Oscar Romero",
+      "posicao_principal": "CAM",
+      "dob": "1992-07-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q15960512",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Victor Caceres",
+      "posicao_principal": "CDM",
+      "dob": "1985-03-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q348925",
+      "contexto": "Libertad"
+    },
+    {
+      "nome": "Julio Cesar Romero",
+      "posicao_principal": "CAM",
+      "dob": "1960-08-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q332006",
+      "contexto": "Copa 1979 e 1983"
+    },
+    {
+      "nome": "Carlos Humberto Paredes",
+      "posicao_principal": "CDM",
+      "dob": "1976-07-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q533712",
+      "contexto": "Reggina"
+    },
+    {
+      "nome": "Roberto Acuna",
+      "posicao_principal": "CM",
+      "dob": "1972-03-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q353234",
+      "contexto": "Real Zaragoza"
+    },
+    {
+      "nome": "Jorge Luis Campos",
+      "posicao_principal": "CAM",
+      "dob": "1970-08-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2722399",
+      "contexto": "Copa 1998-2002"
+    },
+    {
+      "nome": "Julio Cesar Caceres",
+      "posicao_principal": "CB",
+      "dob": "1979-10-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q316728",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Fabian Balbuena",
+      "posicao_principal": "CB",
+      "dob": "1991-08-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q16297591",
+      "contexto": "West Ham"
+    },
+    {
+      "nome": "Celso Ayala",
+      "posicao_principal": "CB",
+      "dob": "1970-08-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q704960",
+      "contexto": "River Plate"
+    },
+    {
+      "nome": "Juan Bautista Villalba",
+      "posicao_principal": "ST",
+      "dob": "1924-08-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2359007",
+      "contexto": "Copa 1947 e 1949"
+    },
+    {
+      "nome": "Delfin Benitez Caceres",
+      "posicao_principal": "ST",
+      "dob": "1910-09-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q940543",
+      "contexto": "Anos 1930"
+    },
+    {
+      "nome": "Aurelio Gonzalez",
+      "posicao_principal": "ST",
+      "dob": "1905-09-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q691179",
+      "contexto": "Copa 1929 e 1947"
+    },
+    {
+      "nome": "Arsenio Erico",
+      "posicao_principal": "ST",
+      "dob": "1915-03-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q470395",
+      "contexto": "Artilheiro do futebol argentino"
+    },
+    {
+      "nome": "Salvador Cabanas",
+      "posicao_principal": "ST",
+      "dob": "1980-08-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q343080",
+      "contexto": "America"
+    },
+    {
+      "nome": "Junior Alonso",
+      "posicao_principal": "CB",
+      "dob": "1993-02-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q11091593",
+      "contexto": "Krasnodar"
+    },
+    {
+      "nome": "Gustavo Gomez",
+      "posicao_principal": "CB",
+      "dob": "1993-05-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1033783",
+      "contexto": "Palmeiras"
+    },
+    {
+      "nome": "Denis Caniza",
+      "posicao_principal": "LB",
+      "dob": "1974-08-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q346718",
+      "contexto": "Copa 1998-2010"
+    },
+    {
+      "nome": "Nelson Cuevas",
+      "posicao_principal": "RW",
+      "dob": "1980-01-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q381394",
+      "contexto": "Copa 2002"
+    },
+    {
+      "nome": "Nelson Haedo Valdez",
+      "posicao_principal": "ST",
+      "dob": "1983-11-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q157584",
+      "contexto": "Rubin Kazan"
+    },
+    {
+      "nome": "Justo Villar",
+      "posicao_principal": "GK",
+      "dob": "1977-06-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q217095",
+      "contexto": "Copa 2010"
+    },
+    {
+      "nome": "Carlos Coronel",
+      "posicao_principal": "GK",
+      "dob": "1996-12-29",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "New York Red Bulls"
+    },
+    {
+      "nome": "Matías Espinoza",
+      "posicao_principal": "CB",
+      "dob": "1997-09-19",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Libertad"
+    },
+    {
+      "nome": "Fabián Balbuena",
+      "posicao_principal": "CB",
+      "dob": "1991-08-23",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Dynamo Moscow"
+    },
+    {
+      "nome": "Júnior Alonso",
+      "posicao_principal": "CB",
+      "dob": "1993-02-09",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Krasnodar"
+    },
+    {
+      "nome": "Damián Bobadilla",
+      "posicao_principal": "CM",
+      "dob": "2001-07-11",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "São Paulo"
+    },
+    {
+      "nome": "Ángel Romero",
+      "posicao_principal": "ST",
+      "dob": "1992-07-04",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Corinthians"
+    },
+    {
+      "nome": "Néstor Giménez",
+      "posicao_principal": "CB",
+      "dob": "1997-07-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Libertad"
+    },
+    {
+      "nome": "Gustavo Gómez",
+      "posicao_principal": "CB",
+      "dob": "1993-05-06",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Palmeiras"
+    },
+    {
+      "nome": "Álex Arce",
+      "posicao_principal": "ST",
+      "dob": "1995-06-16",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "LDU Quito"
+    },
+    {
+      "nome": "Fabrizio Peralta",
+      "posicao_principal": "CM",
+      "dob": "2002-08-02",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Cerro Porteño"
+    },
+    {
+      "nome": "Mathías Villasanti",
+      "posicao_principal": "CM",
+      "dob": "1997-01-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Grêmio"
+    },
+    {
+      "nome": "Hernesto Caballero",
+      "posicao_principal": "CM",
+      "dob": "1991-04-09",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Libertad"
+    }
+  ]
+}

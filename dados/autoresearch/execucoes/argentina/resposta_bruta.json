@@ -1,0 +1,90 @@
+[
+  {
+    "nome": "Alejandro Garnacho",
+    "pais": "Argentina",
+    "posicao": "LW",
+    "dob": "2004-07-01",
+    "club_name": "Manchester United",
+    "league_name": "Premier League",
+    "preferred_foot": "Left",
+    "height_cm": 175,
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.95,
+      "shooting": 0.55,
+      "passing": 0.45,
+      "dribbling": 0.85,
+      "defending": 0.25,
+      "physic": 0.5
+    },
+    "observacao": "Garnacho é um ponta de velocidade e drible explosivos, atuando pela esquerda no Manchester United, mas ainda é uma opção emergente e não titular fixo na seleção argentina, com poucas partidas disputadas até a Copa América 2024. Pouca contribuição defensiva é esperada dado seu perfil ofensivo de ponta.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lista Alejandro Garnacho como convocado da Argentina para a Copa América 2024, atuando pelo Manchester United."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RW"
+    ]
+  },
+  {
+    "nome": "Guido Rodríguez",
+    "pais": "Argentina",
+    "posicao": "CDM",
+    "dob": "1994-04-12",
+    "club_name": "Real Betis",
+    "league_name": "La Liga",
+    "preferred_foot": "Right",
+    "height_cm": 187,
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.35,
+      "shooting": 0.25,
+      "passing": 0.55,
+      "dribbling": 0.45,
+      "defending": 0.85,
+      "physic": 0.8
+    },
+    "observacao": "Volante de contenção experiente do Real Betis, com passagens pela seleção principal incluindo a Copa do Mundo 2022, destaca-se pela marcação e presença física, mas não pelo passe vertical ou velocidade. É opção de meio-campo mais defensiva no grupo, sem ser titular garantido.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lista Guido Rodríguez como convocado da Argentina para a Copa América 2024, atuando pelo Real Betis."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved"
+  },
+  {
+    "nome": "Valentín Carboni",
+    "pais": "Argentina",
+    "posicao": "CF",
+    "dob": "2005-03-05",
+    "club_name": "Monza",
+    "league_name": "Serie A",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.6,
+      "shooting": 0.45,
+      "passing": 0.65,
+      "dribbling": 0.65,
+      "defending": 0.25,
+      "physic": 0.35
+    },
+    "observacao": "Carboni é um atacante jovem e criativo, emprestado ao Monza pela Inter de Milão, que costuma atuar recuado como segundo atacante/armador em vez de referência de área. Sendo o mais jovem e menos experiente do grupo analisado, seu overall relativo ao elenco ofensivo argentino é baixo, refletindo pouca rodagem na seleção principal até a Copa América 2024.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lista Valentín Carboni como convocado da Argentina para a Copa América 2024, atuando pelo Monza."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  }
+]

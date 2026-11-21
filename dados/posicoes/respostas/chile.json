@@ -1,0 +1,338 @@
+[
+  {
+    "nome": "Elias Figueroa",
+    "dob": "1946-10-25",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro puro, sem registro relevante de outra posição ao longo da carreira."
+  },
+  {
+    "nome": "Marcelo Salas",
+    "dob": "1974-12-24",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.5,
+    "justificativa": "Atuou também como segundo atacante/centroavante recuado em parcerias de ataque."
+  },
+  {
+    "nome": "Ivan Zamorano",
+    "dob": "1967-01-18",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Centroavante de referência clássico, sem posição secundária documentada com confiança."
+  },
+  {
+    "nome": "Roberto Rojas",
+    "dob": "1957-08-08",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; lista de posições secundárias sempre vazia."
+  },
+  {
+    "nome": "Marco Cornez",
+    "dob": "1957-10-15",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; lista de posições secundárias sempre vazia."
+  },
+  {
+    "nome": "Misael Escuti",
+    "dob": "1926-12-20",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; lista de posições secundárias sempre vazia."
+  },
+  {
+    "nome": "Nelson Tapia",
+    "dob": "1966-09-22",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; lista de posições secundárias sempre vazia."
+  },
+  {
+    "nome": "Jorge Valdivia",
+    "dob": "1983-10-19",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.4,
+    "justificativa": "Meia criativo que também circulava como volante de criação em alguns esquemas."
+  },
+  {
+    "nome": "Matias Fernandez",
+    "dob": "1986-05-15",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.5,
+    "justificativa": "Atuou aberto pela ponta esquerda em passagens por Sporting e Fiorentina."
+  },
+  {
+    "nome": "Jorge Aravena",
+    "dob": "1958-04-22",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Informação pouco documentada sobre posições alternativas; preferível não arriscar."
+  },
+  {
+    "nome": "Eduardo Bonvallet",
+    "dob": "1955-01-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Volante de marcação sem registro consistente de outra função."
+  },
+  {
+    "nome": "Fabian Estay",
+    "dob": "1968-10-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Dados insuficientes para apontar posição secundária com confiança."
+  },
+  {
+    "nome": "Claudio Maldonado",
+    "dob": "1980-01-03",
+    "posicoes_secundarias": ["CB"],
+    "confianca": 0.5,
+    "justificativa": "Volante combativo que em algumas ocasiões recuou para jogar como zagueiro."
+  },
+  {
+    "nome": "Jorge Toro",
+    "dob": "1939-01-10",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Volante da geração de 1962 sem registro de posição alternativa confiável."
+  },
+  {
+    "nome": "David Pizarro",
+    "dob": "1979-09-11",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.6,
+    "justificativa": "Meio-campista de armação que também exercia função de volante organizador na Roma."
+  },
+  {
+    "nome": "Leonel Sanchez",
+    "dob": "1936-04-25",
+    "posicoes_secundarias": ["ST"],
+    "confianca": 0.6,
+    "justificativa": "Artilheiro da Copa de 1962, funcionava mais como atacante do que ponta pura."
+  },
+  {
+    "nome": "Hugo Rubio",
+    "dob": "1960-07-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante da Copa de 1987 sem registro relevante de outra posição."
+  },
+  {
+    "nome": "Patricio Yanez",
+    "dob": "1961-01-20",
+    "posicoes_secundarias": ["RM"],
+    "confianca": 0.4,
+    "justificativa": "Ponta direita que também atuava mais recuado como meia de apoio."
+  },
+  {
+    "nome": "Osvaldo Castro",
+    "dob": "1947-04-14",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante sem registro consistente de posição alternativa."
+  },
+  {
+    "nome": "Carlos Caszely",
+    "dob": "1950-07-05",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.4,
+    "justificativa": "Ídolo do Colo-Colo, atuava como centroavante clássico com variações de centroavante recuado."
+  },
+  {
+    "nome": "Jaime Ramirez",
+    "dob": "1931-08-14",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante da Copa de 1962 sem registro relevante de outra posição."
+  },
+  {
+    "nome": "Marcelo Barticciotto",
+    "dob": "1967-01-01",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante do Colo-Colo sem posição secundária documentada com confiança."
+  },
+  {
+    "nome": "Reinaldo Navia",
+    "dob": "1978-05-10",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante sem registro relevante de outra posição."
+  },
+  {
+    "nome": "Mark Gonzalez",
+    "dob": "1984-07-10",
+    "posicoes_secundarias": ["LM"],
+    "confianca": 0.5,
+    "justificativa": "Ponta esquerda que também jogava mais recuado como meia pela esquerda."
+  },
+  {
+    "nome": "Eduardo Vargas",
+    "dob": "1989-11-20",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.6,
+    "justificativa": "Atacante versátil, frequentemente usado aberto pela direita na seleção chilena."
+  },
+  {
+    "nome": "Humberto Suazo",
+    "dob": "1981-05-10",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Artilheiro clássico de área, sem posição secundária relevante documentada."
+  },
+  {
+    "nome": "Guillermo Subiabre",
+    "dob": "1903-02-25",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante da Copa de 1930 sem informação confiável de outra posição."
+  },
+  {
+    "nome": "Mauricio Isla",
+    "dob": "1988-06-12",
+    "posicoes_secundarias": ["RWB"],
+    "confianca": 0.6,
+    "justificativa": "Lateral direito muito ofensivo, funcionando com frequência como ala direito."
+  },
+  {
+    "nome": "Raul Sanchez",
+    "dob": "1933-10-26",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro da Copa de 1962 sem registro relevante de outra posição."
+  },
+  {
+    "nome": "Jean Beausejour",
+    "dob": "1984-06-01",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.7,
+    "justificativa": "Iniciou a carreira como ponta esquerda antes de ser convertido em lateral."
+  },
+  {
+    "nome": "Pedro Reyes",
+    "dob": "1972-11-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro da Copa de 1998 sem registro relevante de outra posição."
+  },
+  {
+    "nome": "Javier Margas",
+    "dob": "1969-05-10",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.4,
+    "justificativa": "Zagueiro que em algumas passagens também atuou como lateral direito."
+  },
+  {
+    "nome": "Pablo Contreras",
+    "dob": "1978-09-11",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro de área sem registro consistente de outra posição."
+  },
+  {
+    "nome": "Gonzalo Jara",
+    "dob": "1985-08-29",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.6,
+    "justificativa": "Peça versátil da geração de Bielsa/Sampaoli, frequentemente deslocado para a lateral direita."
+  },
+  {
+    "nome": "Fernando Astengo",
+    "dob": "1960-01-08",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro da Copa de 1987 sem registro relevante de outra posição."
+  },
+  {
+    "nome": "Gabriel Suazo",
+    "dob": "1997-08-09",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.9,
+    "justificativa": "Joga majoritariamente como lateral esquerdo no Toulouse e na seleção, apesar da posição principal do pacote."
+  },
+  {
+    "nome": "Thomas Galdames",
+    "dob": "1998-11-20",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.7,
+    "justificativa": "Atua principalmente como volante no Godoy Cruz, não como zagueiro."
+  },
+  {
+    "nome": "Darío Osorio",
+    "dob": "2004-01-24",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.7,
+    "justificativa": "Joga essencialmente como ponta direita no Midtjylland e na seleção."
+  },
+  {
+    "nome": "Cristián Zavala",
+    "dob": "1999-08-03",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante do Colo-Colo sem posição secundária documentada com confiança."
+  },
+  {
+    "nome": "Rodrigo Echeverría",
+    "dob": "1995-04-17",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.6,
+    "justificativa": "Meio-campista com perfil mais defensivo, atuando com frequência como volante no Huracán."
+  },
+  {
+    "nome": "Marcos Bolados",
+    "dob": "1996-02-28",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.5,
+    "justificativa": "Jogador de ataque do Colo-Colo que costuma atuar aberto pela direita."
+  },
+  {
+    "nome": "Maximiliano Guerrero",
+    "dob": "2000-01-15",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.4,
+    "justificativa": "Atacante da Universidad de Chile com atuações pela ponta esquerda."
+  },
+  {
+    "nome": "Matías Catalán",
+    "dob": "1992-08-19",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro do Talleres sem posição secundária documentada com confiança."
+  },
+  {
+    "nome": "Ben Brereton Díaz",
+    "dob": "1999-04-18",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.4,
+    "justificativa": "Atacante veloz que também é utilizado aberto pela esquerda."
+  },
+  {
+    "nome": "Brayan Cortés",
+    "dob": "1995-03-11",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; lista de posições secundárias sempre vazia."
+  },
+  {
+    "nome": "César Pérez",
+    "dob": "2002-11-29",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meio-campista jovem sem registro consolidado de posição alternativa."
+  },
+  {
+    "nome": "Benjamín Kuscevic",
+    "dob": "1996-05-02",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro do Fortaleza sem posição secundária documentada com confiança."
+  },
+  {
+    "nome": "Nicolás Fernández",
+    "dob": "1999-08-03",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro do Audax Italiano sem posição secundária documentada com confiança."
+  }
+]

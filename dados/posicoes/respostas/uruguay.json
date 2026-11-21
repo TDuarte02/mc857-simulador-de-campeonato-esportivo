@@ -1,0 +1,254 @@
+[
+  {
+    "nome": "Diego Forlan",
+    "dob": "1979-05-19",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.7,
+    "justificativa": "Atuou frequentemente como segundo atacante/CF em Villarreal e Inter de Milao."
+  },
+  {
+    "nome": "Enzo Francescoli",
+    "dob": "1961-11-12",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.5,
+    "justificativa": "Enganche classico que tambem atuou como segundo atacante em alguns times."
+  },
+  {
+    "nome": "Dario Silva",
+    "dob": "1972-11-02",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante de area sem registro consistente de outra posicao."
+  },
+  {
+    "nome": "Alcides Ghiggia",
+    "dob": "1926-11-22",
+    "posicoes_secundarias": ["RM"],
+    "confianca": 0.5,
+    "justificativa": "Ponta direita classico que tambem jogava mais recuado como meia direita."
+  },
+  {
+    "nome": "Julio Cesar Abbadie",
+    "dob": "1930-09-07",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.6,
+    "justificativa": "Conhecido como 'Pardo', atuou como ponta direita na Copa de 1950."
+  },
+  {
+    "nome": "Luis Cubilla",
+    "dob": "1940-03-28",
+    "posicoes_secundarias": ["RM"],
+    "confianca": 0.5,
+    "justificativa": "Extremo direito que tambem se posicionava como meia pela direita."
+  },
+  {
+    "nome": "Pedro Rocha",
+    "dob": "1942-12-03",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.5,
+    "justificativa": "Atuou como atacante armador pelo lado direito no Penarol dos anos 1960."
+  },
+  {
+    "nome": "Cristian Rodriguez",
+    "dob": "1985-09-30",
+    "posicoes_secundarias": ["LB", "LM"],
+    "confianca": 0.7,
+    "justificativa": "Foi reconvertido para lateral esquerdo no Atletico de Madrid, alem de atuar como meia esquerda."
+  },
+  {
+    "nome": "Sebastian Abreu",
+    "dob": "1976-10-17",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.4,
+    "justificativa": "Atacante versatil que por vezes recuava para segundo atacante."
+  },
+  {
+    "nome": "Marcelo Zalayeta",
+    "dob": "1978-12-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante de area classico sem outra posicao bem documentada."
+  },
+  {
+    "nome": "Omar Miguez",
+    "dob": "1927-12-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Sem registro claro de outra posicao alem de atacante."
+  },
+  {
+    "nome": "Daniel Fonseca",
+    "dob": "1969-09-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Centroavante classico sem outra posicao bem documentada."
+  },
+  {
+    "nome": "Ruben Sosa",
+    "dob": "1966-04-25",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.5,
+    "justificativa": "Atacante rapido que tambem atuava partindo da ponta esquerda."
+  },
+  {
+    "nome": "Hector Scarone",
+    "dob": "1898-11-26",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.5,
+    "justificativa": "Conhecido como 'El Mago', era um inside forward com funcao de armador."
+  },
+  {
+    "nome": "Paolo Montero",
+    "dob": "1971-09-03",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro central sem outra posicao bem documentada."
+  },
+  {
+    "nome": "William Martinez",
+    "dob": "1928-01-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro de 1950 sem informacao clara de outra posicao."
+  },
+  {
+    "nome": "Alvaro Pereira",
+    "dob": "1985-11-28",
+    "posicoes_secundarias": ["LWB", "LM"],
+    "confianca": 0.6,
+    "justificativa": "Lateral esquerdo que tambem subia como ala e chegou a jogar como meia esquerda."
+  },
+  {
+    "nome": "Jose Nasazzi",
+    "dob": "1901-05-24",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.6,
+    "justificativa": "Conhecido como 'El Gran Mariscal', iniciou a carreira como lateral direito antes de atuar como zagueiro."
+  },
+  {
+    "nome": "Diego Lugano",
+    "dob": "1980-11-02",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro central sem outra posicao bem documentada na carreira recente."
+  },
+  {
+    "nome": "Jorge Fucile",
+    "dob": "1984-11-19",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "Lateral versatil que tambem atuou pelo lado direito no Porto."
+  },
+  {
+    "nome": "Obdulio Varela",
+    "dob": "1917-09-20",
+    "posicoes_secundarias": ["CB"],
+    "confianca": 0.6,
+    "justificativa": "No sistema WM da epoca, o 'centre-half' de Varela funcionava como um zagueiro central."
+  },
+  {
+    "nome": "Victor Rodriguez Andrade",
+    "dob": "1927-05-02",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Volante de 1950 sem informacao clara de outra posicao."
+  },
+  {
+    "nome": "Schubert Gambetta",
+    "dob": "1920-04-14",
+    "posicoes_secundarias": ["CB"],
+    "confianca": 0.6,
+    "justificativa": "No sistema tatico de 1950, atuava como centre-half com funcao defensiva central."
+  },
+  {
+    "nome": "Giorgian de Arrascaeta",
+    "dob": "1994-06-01",
+    "posicoes_secundarias": ["CM", "LW"],
+    "confianca": 0.7,
+    "justificativa": "Meia versatil do Flamengo que tambem atua como meio-campista central e aberto pela esquerda."
+  },
+  {
+    "nome": "Alvaro Recoba",
+    "dob": "1976-03-17",
+    "posicoes_secundarias": ["LW", "CF"],
+    "confianca": 0.6,
+    "justificativa": "O 'Chino' Recoba atuava como meia-atacante, ponta esquerda e segundo atacante na Inter."
+  },
+  {
+    "nome": "Gaston Ramirez",
+    "dob": "1990-12-02",
+    "posicoes_secundarias": ["CM", "RW"],
+    "confianca": 0.6,
+    "justificativa": "Meia-atacante versatil usado tambem como meio-campista central e aberto na Premier League."
+  },
+  {
+    "nome": "Juan Alberto Schiaffino",
+    "dob": "1925-07-28",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.5,
+    "justificativa": "'Pepe' Schiaffino era um armador classico que tambem organizava o meio-campo."
+  },
+  {
+    "nome": "Egidio Arevalo Rios",
+    "dob": "1982-01-01",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.4,
+    "justificativa": "Volante defensivo que ocasionalmente se deslocava para funcoes de meio-campo central."
+  },
+  {
+    "nome": "Gustavo Varela",
+    "dob": "1978-05-14",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meio-campista do Nacional sem informacao clara de outra posicao."
+  },
+  {
+    "nome": "Pablo Garcia",
+    "dob": "1977-05-11",
+    "posicoes_secundarias": ["CB"],
+    "confianca": 0.5,
+    "justificativa": "Volante robusto que tambem foi usado como zagueiro improvisado no Real Madrid."
+  },
+  {
+    "nome": "Fabian Carini",
+    "dob": "1979-12-26",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; sem posicao secundaria por definicao."
+  },
+  {
+    "nome": "Ladislao Mazurkiewicz",
+    "dob": "1945-02-14",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; sem posicao secundaria por definicao."
+  },
+  {
+    "nome": "Franco Israel",
+    "dob": "2000-04-22",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; sem posicao secundaria por definicao."
+  },
+  {
+    "nome": "Guillermo Varela",
+    "dob": "1993-03-24",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.9,
+    "justificativa": "E amplamente conhecido como lateral direito (Manchester United, Flamengo), apesar da posicao principal registrada como zagueiro."
+  },
+  {
+    "nome": "Emiliano Martínez",
+    "dob": "1999-08-17",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meio-campista do Midtjylland com pouca documentacao sobre outra posicao."
+  },
+  {
+    "nome": "Santiago Mele",
+    "dob": "1997-09-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; sem posicao secundaria por definicao."
+  }
+]

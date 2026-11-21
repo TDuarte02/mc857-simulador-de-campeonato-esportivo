@@ -1,0 +1,325 @@
+{
+  "pais": "Costa Rica",
+  "jogadores": [
+    {
+      "nome": "Paulo Wanchope",
+      "posicao_principal": "ST",
+      "dob": "1976-07-31",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q211126",
+      "contexto": "Derby County"
+    },
+    {
+      "nome": "Bryan Ruiz",
+      "posicao_principal": "CAM",
+      "dob": "1985-08-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q318383",
+      "contexto": "Fulham"
+    },
+    {
+      "nome": "Celso Borges",
+      "posicao_principal": "CM",
+      "dob": "1988-05-27",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2208497",
+      "contexto": "Deportivo La Coruna"
+    },
+    {
+      "nome": "Walter Centeno",
+      "posicao_principal": "CAM",
+      "dob": "1974-10-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q445468",
+      "contexto": "Copa 2002-2006"
+    },
+    {
+      "nome": "Hernan Medford",
+      "posicao_principal": "ST",
+      "dob": "1968-05-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q796301",
+      "contexto": "Copa 1990"
+    },
+    {
+      "nome": "Alvaro Saborio",
+      "posicao_principal": "ST",
+      "dob": "1982-03-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q251281",
+      "contexto": "Real Salt Lake"
+    },
+    {
+      "nome": "Rolando Fonseca",
+      "posicao_principal": "ST",
+      "dob": "1974-06-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q483093",
+      "contexto": "Copa 2002"
+    },
+    {
+      "nome": "Christian Bolanos",
+      "posicao_principal": "RW",
+      "dob": "1984-05-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q361694",
+      "contexto": "Vancouver"
+    },
+    {
+      "nome": "Marco Urena",
+      "posicao_principal": "ST",
+      "dob": "1990-03-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1511793",
+      "contexto": "Copa 2014"
+    },
+    {
+      "nome": "Luis Marin",
+      "posicao_principal": "CB",
+      "dob": "1974-08-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q381462",
+      "contexto": "Copa 2002-2006"
+    },
+    {
+      "nome": "Gilberto Martinez",
+      "posicao_principal": "CB",
+      "dob": "1979-10-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q384232",
+      "contexto": "Brescia"
+    },
+    {
+      "nome": "Michael Umana",
+      "posicao_principal": "CB",
+      "dob": "1982-07-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q726317",
+      "contexto": "Copa 2014"
+    },
+    {
+      "nome": "Kevin Chamorro",
+      "posicao_principal": "GK",
+      "dob": "2000-04-08",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Saprissa"
+    },
+    {
+      "nome": "Gerald Taylor",
+      "posicao_principal": "CB",
+      "dob": "2001-05-28",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Saprissa"
+    },
+    {
+      "nome": "Jeyland Mitchell",
+      "posicao_principal": "CB",
+      "dob": "2004-09-29",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Alajuelense"
+    },
+    {
+      "nome": "Juan Pablo Vargas",
+      "posicao_principal": "CB",
+      "dob": "1995-06-06",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Millonarios"
+    },
+    {
+      "nome": "Fernán Faerrón",
+      "posicao_principal": "CB",
+      "dob": "2000-08-22",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Herediano"
+    },
+    {
+      "nome": "Anthony Contreras",
+      "posicao_principal": "ST",
+      "dob": "2000-01-29",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Pafos"
+    },
+    {
+      "nome": "Brandon Aguilera",
+      "posicao_principal": "CM",
+      "dob": "2003-06-28",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Bristol Rovers"
+    },
+    {
+      "nome": "Jefferson Brenes",
+      "posicao_principal": "CM",
+      "dob": "1997-04-13",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Saprissa"
+    },
+    {
+      "nome": "Orlando Galo",
+      "posicao_principal": "CM",
+      "dob": "2000-08-11",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Herediano"
+    },
+    {
+      "nome": "Alejandro Bran",
+      "posicao_principal": "CM",
+      "dob": "2001-03-05",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Minnesota United FC"
+    },
+    {
+      "nome": "Warren Madrigal",
+      "posicao_principal": "ST",
+      "dob": "2004-07-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Saprissa"
+    },
+    {
+      "nome": "Aarón Cruz",
+      "posicao_principal": "GK",
+      "dob": "1991-05-25",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Herediano"
+    },
+    {
+      "nome": "Kenneth Vargas",
+      "posicao_principal": "ST",
+      "dob": "2002-04-17",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Heart of Midlothian"
+    },
+    {
+      "nome": "Josimar Alcócer",
+      "posicao_principal": "ST",
+      "dob": "2004-07-07",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Westerlo"
+    },
+    {
+      "nome": "Álvaro Zamora",
+      "posicao_principal": "ST",
+      "dob": "2002-03-09",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Aris"
+    },
+    {
+      "nome": "Haxzel Quirós",
+      "posicao_principal": "CB",
+      "dob": "1998-06-03",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Herediano"
+    },
+    {
+      "nome": "Patrick Sequeira",
+      "posicao_principal": "GK",
+      "dob": "1999-03-01",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Ibiza"
+    },
+    {
+      "nome": "Andy Rojas",
+      "posicao_principal": "ST",
+      "dob": "2005-12-05",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Herediano"
+    },
+    {
+      "nome": "Yeison Molina",
+      "posicao_principal": "CB",
+      "dob": "1996-01-25",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Guanacasteca"
+    },
+    {
+      "nome": "Douglas Sequeira",
+      "posicao_principal": "CB",
+      "dob": "2003-09-16",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Saprissa"
+    }
+  ]
+}

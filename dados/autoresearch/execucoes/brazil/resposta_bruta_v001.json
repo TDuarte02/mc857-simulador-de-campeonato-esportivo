@@ -1,0 +1,158 @@
+[
+  {
+    "nome": "Endrick",
+    "pais": "Brazil",
+    "posicao": "ST",
+    "dob": "2006-07-21",
+    "height_cm": 173,
+    "club_name": "Palmeiras",
+    "league_name": "Brazilian Serie A",
+    "preferred_foot": "Left",
+    "percentis": {"overall": 0.97, "pace": 0.93, "shooting": 0.90, "passing": 0.78, "dribbling": 0.93, "defending": 0.30, "physic": 0.75},
+    "observacao": "Atacante de 17 anos convocado pela Seleção. Percentis altos de finalização e velocidade relativos ao pool brasileiro de atacantes; defensivamente irrelevante para a posição.",
+    "fontes": [
+      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Endrick consta na escalação do Brasil para a Copa América 2024, com data de nascimento e clube."}
+    ],
+    "confianca": 0.8,
+    "status": "approved"
+  },
+  {
+    "nome": "Bento",
+    "pais": "Brazil",
+    "posicao": "GK",
+    "dob": "1999-06-10",
+    "height_cm": 190,
+    "weight_kg": 90,
+    "club_name": "Athletico Paranaense",
+    "league_name": "Brazilian Serie A",
+    "preferred_foot": "Right",
+    "percentis": {"overall": 0.88, "goalkeeping_diving": 0.88, "goalkeeping_handling": 0.85, "goalkeeping_kicking": 0.75, "goalkeeping_positioning": 0.85, "goalkeeping_reflexes": 0.90, "goalkeeping_speed": 0.60},
+    "observacao": "Goleiro reserva da Seleção, titular do Athletico Paranaense. Reflexos e defesas como pontos fortes; reposição mais modesta.",
+    "fontes": [
+      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Bento consta na escalação do Brasil para a Copa América 2024, goleiro do Athletico Paranaense."}
+    ],
+    "confianca": 0.85,
+    "status": "approved"
+  },
+  {
+    "nome": "João Gomes",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "2001-02-12",
+    "height_cm": 176,
+    "club_name": "Wolverhampton Wanderers",
+    "league_name": "English Premier League",
+    "preferred_foot": "Right",
+    "percentis": {"overall": 0.93, "pace": 0.80, "shooting": 0.60, "passing": 0.82, "dribbling": 0.82, "defending": 0.92, "physic": 0.78},
+    "observacao": "Volante de marcação, titular contra o Uruguai. Desarme e marcação acima da média para o pool de meio-campistas brasileiros; contribuição ofensiva menor.",
+    "fontes": [
+      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "João Gomes consta na escalação do Brasil para a Copa América 2024, meio-campista do Wolverhampton."}
+    ],
+    "confianca": 0.85,
+    "status": "approved"
+  },
+  {
+    "nome": "Guilherme Arana",
+    "pais": "Brazil",
+    "posicao": "LB",
+    "dob": "1997-04-01",
+    "height_cm": 176,
+    "club_name": "Atlético Mineiro",
+    "league_name": "Brazilian Serie A",
+    "preferred_foot": "Left",
+    "percentis": {"overall": 0.92, "pace": 0.88, "shooting": 0.62, "passing": 0.85, "dribbling": 0.85, "defending": 0.88, "physic": 0.80},
+    "observacao": "Lateral-esquerdo titular, canhoto, com apoio constante ao ataque. Posição refinada de CB (coarse da fonte) para LB.",
+    "fontes": [
+      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Guilherme Arana consta na escalação do Brasil para a Copa América 2024, defensor do Atlético Mineiro."}
+    ],
+    "confianca": 0.8,
+    "status": "approved"
+  },
+  {
+    "nome": "Lucas Beraldo",
+    "pais": "Brazil",
+    "posicao": "CB",
+    "dob": "2003-11-24",
+    "height_cm": 186,
+    "weight_kg": 78,
+    "club_name": "Paris Saint-Germain",
+    "league_name": "French Ligue 1",
+    "preferred_foot": "Left",
+    "percentis": {"overall": 0.90, "pace": 0.82, "shooting": 0.45, "passing": 0.85, "dribbling": 0.78, "defending": 0.90, "physic": 0.82},
+    "observacao": "Zagueiro canhoto de 20 anos, contratado pelo PSG em janeiro de 2024. Boa saída de bola para o pool de defensores brasileiros.",
+    "fontes": [
+      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Lucas Beraldo consta na escalação do Brasil para a Copa América 2024, zagueiro do Paris Saint-Germain."}
+    ],
+    "confianca": 0.8,
+    "status": "approved"
+  },
+  {
+    "nome": "Andreas Pereira",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "1996-01-01",
+    "height_cm": 177,
+    "weight_kg": 66,
+    "club_name": "Fulham",
+    "league_name": "English Premier League",
+    "preferred_foot": "Right",
+    "percentis": {"overall": 0.92, "pace": 0.72, "shooting": 0.80, "passing": 0.90, "dribbling": 0.80, "defending": 0.72, "physic": 0.72},
+    "observacao": "Meio-campista do Fulham, entrou nas quartas contra o Uruguai. Passes e bola parada como destaques.",
+    "fontes": [
+      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Andreas Pereira consta na escalação do Brasil para a Copa América 2024, meio-campista do Fulham."}
+    ],
+    "confianca": 0.8,
+    "status": "approved"
+  },
+  {
+    "nome": "Savinho",
+    "pais": "Brazil",
+    "posicao": "RW",
+    "dob": "2004-04-10",
+    "height_cm": 176,
+    "club_name": "Girona",
+    "league_name": "Spanish LaLiga",
+    "preferred_foot": "Right",
+    "percentis": {"overall": 0.95, "pace": 0.95, "shooting": 0.78, "passing": 0.85, "dribbling": 0.97, "defending": 0.25, "physic": 0.62},
+    "observacao": "Ponta destaque do Girona em 2023/24 (11 gols, 10 assistências, líder de dribles da LaLiga). Posição refinada de ST (coarse) para RW. Empréstimo encerrado em 30/06/2024, anúncio pelo Manchester City em 18/07/2024 — clube em transição na data de referência.",
+    "fontes": [
+      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Savinho consta na escalação do Brasil para a Copa América 2024, atacante do Girona."}
+    ],
+    "confianca": 0.75,
+    "status": "approved"
+  },
+  {
+    "nome": "Rafael",
+    "pais": "Brazil",
+    "posicao": "GK",
+    "dob": "1989-06-23",
+    "height_cm": 188,
+    "club_name": "São Paulo",
+    "league_name": "Brazilian Serie A",
+    "preferred_foot": "Right",
+    "percentis": {"overall": 0.72, "goalkeeping_diving": 0.72, "goalkeeping_handling": 0.70, "goalkeeping_kicking": 0.70, "goalkeeping_positioning": 0.78, "goalkeeping_reflexes": 0.72, "goalkeeping_speed": 0.45},
+    "observacao": "Terceiro goleiro da Seleção (Rafael Pires Monteiro, do São Paulo), veterano de 35 anos. Leitura de jogo e posicionamento como pontos fortes; percentis abaixo dos demais goleiros convocados.",
+    "fontes": [
+      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Rafael consta na escalação do Brasil para a Copa América 2024, goleiro do São Paulo."}
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Éderson",
+    "pais": "Brazil",
+    "posicao": "CM",
+    "dob": "1999-07-07",
+    "height_cm": 183,
+    "club_name": "Atalanta",
+    "league_name": "Italian Serie A",
+    "preferred_foot": "Right",
+    "percentis": {"overall": 0.94, "pace": 0.78, "shooting": 0.72, "passing": 0.88, "dribbling": 0.82, "defending": 0.85, "physic": 0.82},
+    "observacao": "Meio-campista da Atalanta (campeã da Europa League 2024), titular da Seleção na competição. Volante completo, forte na marcação e na saída de bola.",
+    "fontes": [
+      {"url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads", "afirmacao": "Éderson consta na escalação do Brasil para a Copa América 2024, meio-campista da Atalanta."}
+    ],
+    "confianca": 0.85,
+    "status": "approved"
+  }
+]

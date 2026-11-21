@@ -1,0 +1,357 @@
+{
+  "pais": "United States",
+  "jogadores": [
+    {
+      "nome": "Landon Donovan",
+      "posicao_principal": "CAM",
+      "dob": "1982-03-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q202237",
+      "contexto": "Maior artilheiro historico"
+    },
+    {
+      "nome": "Clint Dempsey",
+      "posicao_principal": "ST",
+      "dob": "1983-03-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q201860",
+      "contexto": "Fulham"
+    },
+    {
+      "nome": "Maurice Edu",
+      "posicao_principal": "CDM",
+      "dob": "1986-04-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q322360",
+      "contexto": "Rangers"
+    },
+    {
+      "nome": "Stuart Holden",
+      "posicao_principal": "CAM",
+      "dob": "1985-08-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q312513",
+      "contexto": "Bolton"
+    },
+    {
+      "nome": "Benny Feilhaber",
+      "posicao_principal": "CM",
+      "dob": "1985-01-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q84359",
+      "contexto": "Copa 2010"
+    },
+    {
+      "nome": "Tab Ramos",
+      "posicao_principal": "CAM",
+      "dob": "1966-09-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1341224",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Claudio Reyna",
+      "posicao_principal": "CM",
+      "dob": "1973-07-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q363257",
+      "contexto": "Manchester City"
+    },
+    {
+      "nome": "John Harkes",
+      "posicao_principal": "CM",
+      "dob": "1967-03-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q936196",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Matt Turner",
+      "posicao_principal": "GK",
+      "dob": "1994-06-24",
+      "camadas": [
+        "historico",
+        "convocado_2024"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q24663885",
+      "contexto": "Crystal Palace"
+    },
+    {
+      "nome": "Oguchi Onyewu",
+      "posicao_principal": "CB",
+      "dob": "1982-05-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q207464",
+      "contexto": "Milan"
+    },
+    {
+      "nome": "Carlos Bocanegra",
+      "posicao_principal": "CB",
+      "dob": "1979-05-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q213091",
+      "contexto": "Fulham"
+    },
+    {
+      "nome": "Steve Cherundolo",
+      "posicao_principal": "RB",
+      "dob": "1979-02-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q310928",
+      "contexto": "Hannover 96"
+    },
+    {
+      "nome": "Tony Meola",
+      "posicao_principal": "GK",
+      "dob": "1969-02-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q735119",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Tim Howard",
+      "posicao_principal": "GK",
+      "dob": "1979-03-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q200785",
+      "contexto": "Everton"
+    },
+    {
+      "nome": "Brad Friedel",
+      "posicao_principal": "GK",
+      "dob": "1971-05-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q241378",
+      "contexto": "Blackburn"
+    },
+    {
+      "nome": "Kasey Keller",
+      "posicao_principal": "GK",
+      "dob": "1969-11-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q356814",
+      "contexto": "Tottenham"
+    },
+    {
+      "nome": "Alexi Lalas",
+      "posicao_principal": "CB",
+      "dob": "1970-06-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q168371",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Jeff Agoos",
+      "posicao_principal": "CB",
+      "dob": "1968-05-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q984639",
+      "contexto": "Copa 2002"
+    },
+    {
+      "nome": "Eddie Pope",
+      "posicao_principal": "CB",
+      "dob": "1973-12-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q471669",
+      "contexto": "Copa 1998-2006"
+    },
+    {
+      "nome": "Marcelo Balboa",
+      "posicao_principal": "CB",
+      "dob": "1967-08-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q541952",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Earnie Stewart",
+      "posicao_principal": "RW",
+      "dob": "1969-03-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q594176",
+      "contexto": "Copa 1994-2002"
+    },
+    {
+      "nome": "Joe-Max Moore",
+      "posicao_principal": "ST",
+      "dob": "1971-02-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1340549",
+      "contexto": "Everton"
+    },
+    {
+      "nome": "Brian McBride",
+      "posicao_principal": "ST",
+      "dob": "1972-06-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q314366",
+      "contexto": "Fulham"
+    },
+    {
+      "nome": "DaMarcus Beasley",
+      "posicao_principal": "LW",
+      "dob": "1982-05-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q313035",
+      "contexto": "PSV"
+    },
+    {
+      "nome": "Eric Wynalda",
+      "posicao_principal": "ST",
+      "dob": "1969-06-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q956696",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Cobi Jones",
+      "posicao_principal": "RW",
+      "dob": "1970-06-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q464385",
+      "contexto": "LA Galaxy"
+    },
+    {
+      "nome": "Folarin Balogun",
+      "posicao_principal": "ST",
+      "dob": "2001-07-03",
+      "camadas": [
+        "historico",
+        "convocado_2024"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q101035007",
+      "contexto": "Monaco"
+    },
+    {
+      "nome": "Chris Richards",
+      "posicao_principal": "CB",
+      "dob": "2000-03-28",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Crystal Palace"
+    },
+    {
+      "nome": "Tim Ream",
+      "posicao_principal": "CB",
+      "dob": "1987-10-05",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Fulham"
+    },
+    {
+      "nome": "Johnny Cardoso",
+      "posicao_principal": "CM",
+      "dob": "2001-09-20",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Real Betis"
+    },
+    {
+      "nome": "Shaq Moore",
+      "posicao_principal": "CB",
+      "dob": "1996-11-02",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Nashville SC"
+    },
+    {
+      "nome": "Malik Tillman",
+      "posicao_principal": "CM",
+      "dob": "2002-05-28",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "PSV Eindhoven"
+    },
+    {
+      "nome": "Joe Scally",
+      "posicao_principal": "CB",
+      "dob": "2002-12-31",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Borussia Mönchengladbach"
+    },
+    {
+      "nome": "Kristoffer Lund",
+      "posicao_principal": "CB",
+      "dob": "2002-05-14",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Palermo"
+    },
+    {
+      "nome": "Josh Sargent",
+      "posicao_principal": "ST",
+      "dob": "2000-02-20",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Norwich City"
+    }
+  ]
+}

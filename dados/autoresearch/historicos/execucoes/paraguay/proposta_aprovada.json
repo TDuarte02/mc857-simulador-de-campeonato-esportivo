@@ -1,0 +1,772 @@
+[
+  {
+    "nome": "Jose Luis Chilavert",
+    "pais": "Paraguay",
+    "posicao": "GK",
+    "dob": "1965-07-27",
+    "percentis": {
+      "overall": 0.99,
+      "goalkeeping_diving": 0.97,
+      "goalkeeping_handling": 0.95,
+      "goalkeeping_kicking": 0.99,
+      "goalkeeping_positioning": 0.95,
+      "goalkeeping_reflexes": 0.97,
+      "goalkeeping_speed": 0.85
+    },
+    "observacao": "Chilavert e considerado um dos maiores goleiros da historia do futebol e o maior ja produzido pelo Paraguai, com passagens marcantes por Velez Sarsfield e Strasbourg. Era unico por cobrar e converter penaltis e faltas, o que justifica o pico extremo em goalkeeping_kicking. Suas qualidades de reflexo, posicionamento e dominio de area tambem estao no topo absoluto do grupo GK paraguaio.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q216312",
+        "afirmacao": "Jose Luis Chilavert e reconhecido como goleiro artilheiro e uma das maiores lendas do futebol paraguaio."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 88,
+      "pace": 60,
+      "shooting": 70,
+      "passing": 72,
+      "dribbling": 50,
+      "defending": 88,
+      "physic": 84
+    }
+  },
+  {
+    "nome": "Carlos Gamarra",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1971-02-17",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.75,
+      "shooting": 0.55,
+      "passing": 0.8,
+      "dribbling": 0.7,
+      "defending": 0.95,
+      "physic": 0.9
+    },
+    "observacao": "Gamarra foi capitao e zagueiro titular do Paraguai em tres Copas do Mundo, com passagens por Inter de Milao e Corinthians, consolidando-se como um dos maiores zagueiros sul-americanos de sua geracao. Sua lideranca e solidez defensiva justificam percentis muito altos em defending e physic, enquanto a passagem por clubes europeus de ponta reforca o overall elevado.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q295512",
+        "afirmacao": "Carlos Gamarra teve passagem de destaque pela Inter de Milao e foi um dos pilares da defesa paraguaia."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 86,
+      "pace": 76,
+      "shooting": 42,
+      "passing": 70,
+      "dribbling": 68,
+      "defending": 88,
+      "physic": 86
+    }
+  },
+  {
+    "nome": "Saturnino Arrua",
+    "pais": "Paraguay",
+    "posicao": "CAM",
+    "dob": "1949-04-07",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.75,
+      "shooting": 0.72,
+      "passing": 0.78,
+      "dribbling": 0.75,
+      "defending": 0.45,
+      "physic": 0.6
+    },
+    "observacao": "Saturnino Arrua integrou o elenco paraguaio campeao da Copa America de 1979, um dos poucos titulos continentais da selecao. Por ser de uma era com registros estatisticos escassos, seus percentis refletem um jogador de ataque de bom nivel internacional sem alcancar o status de lenda absoluta. A confianca reduzida reflete a falta de documentacao detalhada sobre sua carreira.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3950850",
+        "afirmacao": "Saturnino Arrua fez parte do elenco do Paraguai na Copa America de 1979."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Damian Bobadilla",
+    "pais": "Paraguay",
+    "posicao": "CM",
+    "dob": "2001-07-11",
+    "percentis": {
+      "overall": 0.58,
+      "pace": 0.6,
+      "shooting": 0.5,
+      "passing": 0.58,
+      "dribbling": 0.55,
+      "defending": 0.55,
+      "physic": 0.6
+    },
+    "observacao": "Damian Bobadilla e um meio-campista jovem, com passagem pelo Sao Paulo, ainda em fase de consolidacao na selecao paraguaia. Diferente dos demais nomes historicos deste pacote, ele ainda nao construiu um legado de longo prazo, por isso seus percentis ficam proximos da mediana do grupo de meio-campo. A confianca mais baixa reflete a incerteza sobre o teto de sua carreira.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q116223348",
+        "afirmacao": "Damian Bobadilla atuou pelo Sao Paulo e foi convocado para a selecao paraguaia."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Andres Cubas",
+    "pais": "Paraguay",
+    "posicao": "CDM",
+    "dob": "1996-05-11",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.6,
+      "shooting": 0.45,
+      "passing": 0.65,
+      "dribbling": 0.6,
+      "defending": 0.72,
+      "physic": 0.65
+    },
+    "observacao": "Andres Cubas e volante regular da selecao paraguaia na era recente, com destaque e faixa de capitao no Vancouver Whitecaps na MLS. E um jogador solido defensivamente, sem ainda ter o status de grande lenda historica do pais, o que posiciona seus percentis na faixa de titular de selecao de bom nivel. A confianca moderada reflete uma carreira ainda em curso.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q16298600",
+        "afirmacao": "Andres Cubas atua pelo Vancouver Whitecaps e e convocado regularmente pela selecao do Paraguai."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Oscar Romero",
+    "pais": "Paraguay",
+    "posicao": "CAM",
+    "dob": "1992-07-04",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.7,
+      "shooting": 0.72,
+      "passing": 0.78,
+      "dribbling": 0.75,
+      "defending": 0.4,
+      "physic": 0.55
+    },
+    "observacao": "Oscar Romero construiu carreira internacional solida, com destaque na passagem pelo Boca Juniors, um dos maiores clubes da America do Sul. Como armador criativo, seus percentis de passing e dribbling ficam acima da mediana do grupo de meio-campo, refletindo um jogador regular da selecao de bom nivel, ainda que sem o status de lenda absoluta.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q15960512",
+        "afirmacao": "Oscar Romero teve passagem pelo Boca Juniors e e peca regular da selecao paraguaia."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Victor Caceres",
+    "pais": "Paraguay",
+    "posicao": "CDM",
+    "dob": "1985-03-25",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.6,
+      "shooting": 0.5,
+      "passing": 0.68,
+      "dribbling": 0.6,
+      "defending": 0.78,
+      "physic": 0.7
+    },
+    "observacao": "Victor Caceres foi volante de longa trajetoria na selecao paraguaia, com base de carreira no Libertad, um dos maiores clubes do pais. Sua funcao de equilibrio tatico justifica percentis elevados em defending e physic, caracterizando-o como um titular regular e confiavel, sem alcancar o nivel das maiores lendas historicas da posicao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q348925",
+        "afirmacao": "Victor Caceres atuou pelo Libertad e foi convocado para a selecao do Paraguai."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Julio Cesar Romero",
+    "pais": "Paraguay",
+    "posicao": "CAM",
+    "dob": "1960-08-28",
+    "percentis": {
+      "overall": 0.99,
+      "pace": 0.88,
+      "shooting": 0.92,
+      "passing": 0.97,
+      "dribbling": 0.97,
+      "defending": 0.5,
+      "physic": 0.65
+    },
+    "observacao": "Conhecido como 'Romerito', e amplamente considerado o maior jogador da historia do Paraguai, tendo brilhado pelo Fluminense e disputado a Copa do Mundo de 1986, alem de ter sido campeao da Copa America de 1979 e 1983. Sua criatividade, drible e capacidade de decisao justificam percentis no topo absoluto em passing, dribbling e shooting, equiparando-o aos maiores craques sul-americanos de sua epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q332006",
+        "afirmacao": "Julio Cesar Romero conquistou a Copa America de 1979 e 1983 e e considerado o maior jogador da historia do Paraguai."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Carlos Humberto Paredes",
+    "pais": "Paraguay",
+    "posicao": "CDM",
+    "dob": "1976-07-16",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.6,
+      "shooting": 0.5,
+      "passing": 0.68,
+      "dribbling": 0.62,
+      "defending": 0.78,
+      "physic": 0.72
+    },
+    "observacao": "Carlos Humberto Paredes teve passagem pela Reggina, clube da Serie A italiana, o que evidencia um nivel internacional solido para um volante paraguaio. Seus percentis refletem um jogador defensivamente consistente e com boa leitura de jogo, posicionado como titular regular de selecao sem alcancar o status de lenda historica maxima.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q533712",
+        "afirmacao": "Carlos Humberto Paredes atuou pela Reggina e foi convocado para a selecao paraguaia."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Roberto Acuna",
+    "pais": "Paraguay",
+    "posicao": "CM",
+    "dob": "1972-03-25",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.72,
+      "shooting": 0.68,
+      "passing": 0.88,
+      "dribbling": 0.8,
+      "defending": 0.68,
+      "physic": 0.75
+    },
+    "observacao": "Roberto Acuna foi capitao da selecao paraguaia e disputou tres Copas do Mundo consecutivas (1998, 2002 e 2006), alem de ter longa e consistente carreira no Real Zaragoza, na Espanha. Sua regularidade e visao de jogo em alto nivel justificam percentis elevados em passing e dribbling, caracterizando-o como um dos grandes meio-campistas da historia do pais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q353234",
+        "afirmacao": "Roberto Acuna foi capitao do Paraguai e teve longa carreira no Real Zaragoza."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Jorge Luis Campos",
+    "pais": "Paraguay",
+    "posicao": "CAM",
+    "dob": "1970-08-11",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.72,
+      "shooting": 0.75,
+      "passing": 0.82,
+      "dribbling": 0.8,
+      "defending": 0.42,
+      "physic": 0.58
+    },
+    "observacao": "Jorge Luis Campos foi peca relevante da selecao paraguaia entre as Copas do Mundo de 1998 e 2002, periodo de grande sucesso competitivo do pais. Como meio-ofensivo, seus percentis de passing e dribbling ficam entre os mais altos do grupo de meio-campo, refletindo um jogador de referencia em uma das melhores geracoes da selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2722399",
+        "afirmacao": "Jorge Luis Campos integrou a selecao paraguaia no periodo entre 1998 e 2002."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Julio Cesar Caceres",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1979-10-05",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.68,
+      "shooting": 0.45,
+      "passing": 0.72,
+      "dribbling": 0.62,
+      "defending": 0.85,
+      "physic": 0.8
+    },
+    "observacao": "Julio Cesar Caceres disputou a Copa do Mundo de 2002 e teve passagem pelo Boca Juniors, um dos clubes mais tradicionais da America do Sul. Como zagueiro central, seus percentis altos em defending e physic refletem solidez defensiva em nivel internacional de destaque, consistente com um titular de peso na defesa paraguaia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q316728",
+        "afirmacao": "Julio Cesar Caceres teve passagem pelo Boca Juniors e integrou a selecao paraguaia na Copa de 2002."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Fabian Balbuena",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1991-08-23",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.65,
+      "shooting": 0.4,
+      "passing": 0.68,
+      "dribbling": 0.58,
+      "defending": 0.82,
+      "physic": 0.78
+    },
+    "observacao": "Fabian Balbuena teve passagem de destaque pelo West Ham United, na Premier League inglesa, demonstrando solidez defensiva em um dos campeonatos mais competitivos do mundo. Seus percentis refletem um zagueiro internacional de alto nivel, forte em defending e physic, consolidado como referencia recente da defesa paraguaia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q16297591",
+        "afirmacao": "Fabian Balbuena atuou pelo West Ham United e e zagueiro regular da selecao do Paraguai."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Celso Ayala",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1970-08-20",
+    "percentis": {
+      "overall": 0.89,
+      "pace": 0.68,
+      "shooting": 0.45,
+      "passing": 0.75,
+      "dribbling": 0.62,
+      "defending": 0.9,
+      "physic": 0.82
+    },
+    "observacao": "Celso Ayala disputou as Copas do Mundo de 1998 e 2002 e construiu grande parte de sua carreira no River Plate, um dos clubes mais tradicionais da Argentina. Sua combinacao de lideranca e consistencia defensiva justifica percentis muito altos em defending e physic, posicionando-o entre os melhores zagueiros da historia recente da selecao paraguaia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q704960",
+        "afirmacao": "Celso Ayala teve longa passagem pelo River Plate e disputou duas Copas do Mundo pelo Paraguai."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Juan Bautista Villalba",
+    "pais": "Paraguay",
+    "posicao": "ST",
+    "dob": "1924-08-29",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.6,
+      "shooting": 0.65,
+      "passing": 0.5,
+      "dribbling": 0.55,
+      "defending": 0.25,
+      "physic": 0.55
+    },
+    "observacao": "Juan Bautista Villalba integrou o ataque paraguaio nas Copas America de 1947 e 1949, periodo em que o pais teve boas campanhas continentais. Por se tratar de uma era com registros historicos escassos, os percentis atribuidos refletem um atacante relevante para sua epoca sem a documentacao detalhada necessaria para um patamar mais alto, resultando em confianca reduzida.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2359007",
+        "afirmacao": "Juan Bautista Villalba integrou o elenco paraguaio nas Copas America de 1947 e 1949."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Delfin Benitez Caceres",
+    "pais": "Paraguay",
+    "posicao": "ST",
+    "dob": "1910-09-24",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.55,
+      "shooting": 0.6,
+      "passing": 0.45,
+      "dribbling": 0.5,
+      "defending": 0.2,
+      "physic": 0.5
+    },
+    "observacao": "Delfin Benitez Caceres e um atacante da decada de 1930, periodo pre-moderno do futebol paraguaio com pouquissimos registros disponiveis. Os percentis moderados refletem a falta de documentacao solida sobre seu desempenho, situando-o entre os jogadores de registro escasso do pool historico, com confianca correspondentemente baixa.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q940543",
+        "afirmacao": "Delfin Benitez Caceres atuou como atacante do Paraguai na decada de 1930."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Aurelio Gonzalez",
+    "pais": "Paraguay",
+    "posicao": "ST",
+    "dob": "1905-09-25",
+    "percentis": {
+      "overall": 0.58,
+      "pace": 0.55,
+      "shooting": 0.62,
+      "passing": 0.45,
+      "dribbling": 0.5,
+      "defending": 0.22,
+      "physic": 0.5
+    },
+    "observacao": "Aurelio Gonzalez integrou as campanhas paraguaias nas Copas America de 1929 e 1947, atravessando duas eras distintas do futebol sul-americano. Dada a escassez de registros detalhados dessa fase pre-moderna, seus percentis ficam na faixa media-alta sem configurar status de lenda maxima, com confianca reduzida pela falta de documentacao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q691179",
+        "afirmacao": "Aurelio Gonzalez disputou as Copas America de 1929 e 1947 pelo Paraguai."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Arsenio Erico",
+    "pais": "Paraguay",
+    "posicao": "ST",
+    "dob": "1915-03-30",
+    "percentis": {
+      "overall": 0.99,
+      "pace": 0.85,
+      "shooting": 0.99,
+      "passing": 0.75,
+      "dribbling": 0.9,
+      "defending": 0.3,
+      "physic": 0.75
+    },
+    "observacao": "Arsenio Erico e ate hoje o maior artilheiro da historia do futebol argentino, feito alcancado pelo Club Atletico Independiente, o que o torna uma das maiores lendas do futebol paraguaio e sul-americano de todos os tempos. Sua capacidade finalizadora excepcional justifica o percentil maximo em shooting, acompanhado de dribbling e overall no topo absoluto do pool de atacantes.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q470395",
+        "afirmacao": "Arsenio Erico e o maior artilheiro da historia do futebol argentino, feito conquistado pelo Independiente."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Salvador Cabanas",
+    "pais": "Paraguay",
+    "posicao": "ST",
+    "dob": "1980-08-05",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.72,
+      "shooting": 0.9,
+      "passing": 0.65,
+      "dribbling": 0.78,
+      "defending": 0.3,
+      "physic": 0.68
+    },
+    "observacao": "Salvador Cabanas foi um dos principais artilheiros da Liga MX enquanto defendia o Club America, tendo sua carreira tragicamente interrompida por um atentado em 2010. Sua eficiencia finalizadora de elite justifica percentil muito alto em shooting, caracterizando-o como um dos grandes centroavantes paraguaios da era moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q343080",
+        "afirmacao": "Salvador Cabanas foi artilheiro de destaque do Club America no futebol mexicano."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Junior Alonso",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1993-02-09",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.65,
+      "shooting": 0.42,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.78,
+      "physic": 0.75
+    },
+    "observacao": "Junior Alonso defendeu o Krasnodar, da Russia, consolidando-se como zagueiro regular e confiavel da selecao paraguaia na era recente. Seus percentis em defending e physic refletem um defensor solido de nivel internacional, sem ainda atingir o status de lenda historica maxima do pais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11091593",
+        "afirmacao": "Junior Alonso atuou pelo Krasnodar e e zagueiro regular da selecao do Paraguai."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gustavo Gomez",
+    "pais": "Paraguay",
+    "posicao": "CB",
+    "dob": "1993-05-06",
+    "percentis": {
+      "overall": 0.91,
+      "pace": 0.68,
+      "shooting": 0.5,
+      "passing": 0.75,
+      "dribbling": 0.62,
+      "defending": 0.92,
+      "physic": 0.85
+    },
+    "observacao": "Gustavo Gomez e capitao do Palmeiras, com quem conquistou multiplos titulos de Libertadores e Brasileirao, alem de ser capitao da selecao paraguaia. Sua lideranca e dominancia defensiva em alto nivel sul-americano justificam percentis muito altos em defending e physic, posicionando-o entre os melhores zagueiros paraguaios da atualidade.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1033783",
+        "afirmacao": "Gustavo Gomez e capitao do Palmeiras e da selecao paraguaia, com multiplos titulos conquistados."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Denis Caniza",
+    "pais": "Paraguay",
+    "posicao": "LB",
+    "dob": "1974-08-29",
+    "percentis": {
+      "overall": 0.91,
+      "pace": 0.75,
+      "shooting": 0.45,
+      "passing": 0.75,
+      "dribbling": 0.68,
+      "defending": 0.88,
+      "physic": 0.78
+    },
+    "observacao": "Denis Caniza disputou quatro Copas do Mundo consecutivas pelo Paraguai, entre 1998 e 2010, uma longevidade raramente vista na posicao de lateral-esquerdo. Essa consistencia em altissimo nivel por mais de uma decada justifica percentis muito altos em defending e overall, consolidando-o como um dos maiores laterais da historia da selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q346718",
+        "afirmacao": "Denis Caniza disputou quatro Copas do Mundo pelo Paraguai entre 1998 e 2010."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LWB"
+    ]
+  },
+  {
+    "nome": "Nelson Cuevas",
+    "pais": "Paraguay",
+    "posicao": "RW",
+    "dob": "1980-01-10",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.85,
+      "shooting": 0.72,
+      "passing": 0.68,
+      "dribbling": 0.78,
+      "defending": 0.35,
+      "physic": 0.6
+    },
+    "observacao": "Nelson Cuevas disputou a Copa do Mundo de 2002 e teve carreira internacional ativa como ponta-direita veloz e decisivo. Seus percentis elevados em pace e dribbling refletem suas qualidades ofensivas em alta velocidade, tipicas de um atacante de ponta regular na selecao paraguaia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q381394",
+        "afirmacao": "Nelson Cuevas integrou a selecao paraguaia na Copa do Mundo de 2002."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "ST"
+    ]
+  },
+  {
+    "nome": "Nelson Haedo Valdez",
+    "pais": "Paraguay",
+    "posicao": "ST",
+    "dob": "1983-11-28",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.78,
+      "shooting": 0.75,
+      "passing": 0.6,
+      "dribbling": 0.72,
+      "defending": 0.3,
+      "physic": 0.72
+    },
+    "observacao": "Nelson Haedo Valdez teve passagem pelo Borussia Dortmund e pelo Rubin Kazan, alem de ter sido peca importante nas Copas do Mundo de 2006 e 2010. Sua combinacao de velocidade e capacidade de finalizacao em clubes europeus de bom nivel justifica percentis elevados em pace e shooting, caracterizando-o como um atacante internacional de destaque.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q157584",
+        "afirmacao": "Nelson Haedo Valdez atuou pelo Rubin Kazan e disputou Copas do Mundo pelo Paraguai."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
+  },
+  {
+    "nome": "Justo Villar",
+    "pais": "Paraguay",
+    "posicao": "GK",
+    "dob": "1977-06-30",
+    "percentis": {
+      "overall": 0.92,
+      "goalkeeping_diving": 0.9,
+      "goalkeeping_handling": 0.88,
+      "goalkeeping_kicking": 0.85,
+      "goalkeeping_positioning": 0.9,
+      "goalkeeping_reflexes": 0.92,
+      "goalkeeping_speed": 0.7
+    },
+    "observacao": "Justo Villar foi o goleiro titular do Paraguai nas Copas do Mundo de 2002, 2006 e 2010, sendo peca fundamental na campanha historica de quartas de final em 2010. Sua longevidade e consistencia em defesas decisivas justificam percentis muito altos em reflexos e posicionamento, consolidando-o como um dos maiores goleiros da historia paraguaia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q217095",
+        "afirmacao": "Justo Villar foi goleiro titular do Paraguai na campanha de quartas de final da Copa do Mundo de 2010."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]

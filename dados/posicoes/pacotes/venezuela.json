@@ -1,0 +1,257 @@
+{
+  "pais": "Venezuela",
+  "jogadores": [
+    {
+      "nome": "Juan Arango",
+      "posicao_principal": "CAM",
+      "dob": "1980-05-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q313143",
+      "contexto": "Borussia Monchengladbach"
+    },
+    {
+      "nome": "Cesar Gonzalez",
+      "posicao_principal": "LW",
+      "dob": "1933-05-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q126914836",
+      "contexto": "Copa America 2011"
+    },
+    {
+      "nome": "Nicolas Fedor",
+      "posicao_principal": "ST",
+      "dob": "1985-08-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q359179",
+      "contexto": "Copa America 2011"
+    },
+    {
+      "nome": "Jefferson Savarino",
+      "posicao_principal": "RW",
+      "dob": "1996-11-11",
+      "camadas": [
+        "historico",
+        "convocado_2024"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q20735677",
+      "contexto": "Real Salt Lake"
+    },
+    {
+      "nome": "Giancarlo Maldonado",
+      "posicao_principal": "ST",
+      "dob": "1982-06-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q596136",
+      "contexto": "Xerez"
+    },
+    {
+      "nome": "Alejandro Guerra",
+      "posicao_principal": "CAM",
+      "dob": "1985-07-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2704072",
+      "contexto": "Copa America 2011"
+    },
+    {
+      "nome": "Luis Manuel Seijas",
+      "posicao_principal": "CM",
+      "dob": "1986-06-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q644017",
+      "contexto": "Santa Fe"
+    },
+    {
+      "nome": "Alain Baroja",
+      "posicao_principal": "GK",
+      "dob": "1989-10-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q5662087",
+      "contexto": "Caracas"
+    },
+    {
+      "nome": "Renny Vega",
+      "posicao_principal": "GK",
+      "dob": "1979-07-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2568239",
+      "contexto": "Copa America 2011"
+    },
+    {
+      "nome": "Jose Manuel Rey",
+      "posicao_principal": "CB",
+      "dob": "1975-05-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q358432",
+      "contexto": "Copa America 2007-2011"
+    },
+    {
+      "nome": "Gabriel Cichero",
+      "posicao_principal": "CB",
+      "dob": "1984-04-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q733037",
+      "contexto": "Copa America 2011"
+    },
+    {
+      "nome": "Fernando Amorebieta",
+      "posicao_principal": "CB",
+      "dob": "1985-03-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q314250",
+      "contexto": "Athletic Bilbao"
+    },
+    {
+      "nome": "Oswaldo Vizcarrondo",
+      "posicao_principal": "CB",
+      "dob": "1984-05-31",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q970711",
+      "contexto": "Copa America 2011"
+    },
+    {
+      "nome": "Alexander Gonzalez",
+      "posicao_principal": "RB",
+      "dob": "1977-02-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q3129298",
+      "contexto": "Young Boys"
+    },
+    {
+      "nome": "Jhon Chancellor",
+      "posicao_principal": "CB",
+      "dob": "1992-01-02",
+      "camadas": [
+        "historico",
+        "convocado_2024"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q20085270",
+      "contexto": "Coritiba"
+    },
+    {
+      "nome": "Roberto Rosales",
+      "posicao_principal": "RB",
+      "dob": "1988-11-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q596146",
+      "contexto": "Maccabi Tel Aviv"
+    },
+    {
+      "nome": "Rubert Quijada",
+      "posicao_principal": "CB",
+      "dob": "1989-02-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q6113099",
+      "contexto": "Caracas"
+    },
+    {
+      "nome": "Joel Graterol",
+      "posicao_principal": "GK",
+      "dob": "1997-02-13",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "América de Cali"
+    },
+    {
+      "nome": "José Contreras",
+      "posicao_principal": "GK",
+      "dob": "1994-10-20",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Águilas Doradas"
+    },
+    {
+      "nome": "José Andrés Martínez",
+      "posicao_principal": "CM",
+      "dob": "1994-09-07",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Philadelphia Union"
+    },
+    {
+      "nome": "Telasco Segovia",
+      "posicao_principal": "CM",
+      "dob": "2003-04-02",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Casa Pia"
+    },
+    {
+      "nome": "Matías Lacava",
+      "posicao_principal": "CM",
+      "dob": "2002-10-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Vizela"
+    },
+    {
+      "nome": "Cristian Cásseres Jr.",
+      "posicao_principal": "CM",
+      "dob": "2000-01-20",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Toulouse"
+    },
+    {
+      "nome": "Alexander González",
+      "posicao_principal": "CB",
+      "dob": "1992-11-13",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Emelec"
+    },
+    {
+      "nome": "Kervin Andrade",
+      "posicao_principal": "CM",
+      "dob": "2005-04-13",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Fortaleza"
+    }
+  ]
+}

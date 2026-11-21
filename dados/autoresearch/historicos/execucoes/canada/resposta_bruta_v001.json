@@ -1,0 +1,379 @@
+[
+  {
+    "nome": "Dwayne De Rosario",
+    "pais": "Canada",
+    "posicao": "AM",
+    "dob": "1978-05-15",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.85,
+      "shooting": 0.95,
+      "passing": 0.9,
+      "dribbling": 0.92,
+      "defending": 0.55,
+      "physic": 0.7
+    },
+    "observacao": "Dwayne De Rosario e o maior artilheiro da historia da selecao canadense e um dos melhores jogadores produzidos pelo pais, com carreira de destaque na MLS incluindo quatro titulos MVP da liga. Como meia-atacante criativo e finalizador prolifico, domina o topo da distribuicao do grupo MID em finalizacao e drible. Sua defensiva e fisico ficam em nivel mediano, coerente com um jogador ofensivo de criacao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q704094",
+        "afirmacao": "Dwayne De Rosario e o maior artilheiro historico da selecao canadense, convocado como referencia do meio-campo ofensivo."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Julian de Guzman",
+    "pais": "Canada",
+    "posicao": "DM",
+    "dob": "1981-03-25",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.65,
+      "shooting": 0.55,
+      "passing": 0.85,
+      "dribbling": 0.72,
+      "defending": 0.85,
+      "physic": 0.78
+    },
+    "observacao": "Julian de Guzman foi titular de longa data no meio-campo defensivo da selecao canadense, atuando em clubes europeus de alto nivel como Deportivo La Coruna na La Liga. Sua funcao exigia solidez defensiva combinada com boa distribuicao de jogo, refletida em percentis altos de passe e marcacao dentro do grupo MID. E um caso claro de titular internacional de alto nivel, mas abaixo do patamar de lenda absoluta.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q362857",
+        "afirmacao": "Julian de Guzman foi volante titular da selecao canadense com passagem pelo Deportivo La Coruna."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Dale Mitchell",
+    "pais": "Canada",
+    "posicao": "ST",
+    "dob": "1958-04-21",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.55,
+      "shooting": 0.58,
+      "passing": 0.5,
+      "dribbling": 0.52,
+      "defending": 0.5,
+      "physic": 0.55
+    },
+    "observacao": "Dale Mitchell integrou o elenco canadense na histórica Copa do Mundo de 1986, a unica participacao do pais em mundiais ate entao. Por ser um jogador de era pre-moderna com registros estatisticos escassos, seus percentis ficam proximos da mediana do grupo ATT, refletindo relevancia historica sem evidencia de dominancia tecnica documentada.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2438777",
+        "afirmacao": "Dale Mitchell integrou o elenco do Canada na Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Tomasz Radzinski",
+    "pais": "Canada",
+    "posicao": "ST",
+    "dob": "1973-12-14",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.93,
+      "shooting": 0.85,
+      "passing": 0.7,
+      "dribbling": 0.82,
+      "defending": 0.45,
+      "physic": 0.72
+    },
+    "observacao": "Tomasz Radzinski foi um atacante veloz que se destacou na Premier League inglesa pelo Everton, um dos maiores patamares competitivos atingidos por um jogador canadense. Sua velocidade e capacidade de finalizacao o colocam entre os percentis mais altos do grupo ATT, caracteristico de um titular internacional de nivel elevado.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q444814",
+        "afirmacao": "Tomasz Radzinski atuou como atacante da selecao canadense e teve passagem de destaque pelo Everton."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alex Bunbury",
+    "pais": "Canada",
+    "posicao": "ST",
+    "dob": "1967-06-18",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.8,
+      "shooting": 0.82,
+      "passing": 0.6,
+      "dribbling": 0.7,
+      "defending": 0.4,
+      "physic": 0.75
+    },
+    "observacao": "Alex Bunbury foi um dos principais artilheiros da selecao canadense nas decadas de 1980 e 1990, com passagem pelo Maritimo em Portugal. Sua combinacao de velocidade e faro de gol o coloca como um titular internacional solido e regular no grupo ATT, sem atingir o nivel de lenda absoluta por conta da menor exposicao em ligas de elite.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1400508",
+        "afirmacao": "Alex Bunbury foi atacante da selecao canadense com passagem pelo Maritimo de Portugal."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Bruce Wilson",
+    "pais": "Canada",
+    "posicao": "LB",
+    "dob": "1951-06-20",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.75,
+      "shooting": 0.4,
+      "passing": 0.75,
+      "dribbling": 0.65,
+      "defending": 0.88,
+      "physic": 0.75
+    },
+    "observacao": "Bruce Wilson foi capitao da selecao canadense na histórica Copa do Mundo de 1986 e e considerado uma das figuras mais importantes da geracao que levou o pais ao seu unico mundial. Como lateral de lideranca e solidez defensiva, seus percentis em defesa e fisico estao no topo do grupo DEF, condizente com status de lenda nacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3273479",
+        "afirmacao": "Bruce Wilson foi capitao da selecao canadense na Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Randy Samuel",
+    "pais": "Canada",
+    "posicao": "CB",
+    "dob": "1963-12-23",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.55,
+      "shooting": 0.35,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.6,
+      "physic": 0.6
+    },
+    "observacao": "Randy Samuel integrou o elenco canadense na Copa do Mundo de 1986, atuando como zagueiro em um time com poucos registros tecnicos detalhados fora do contexto historico. Seus percentis refletem um jogador de defesa solida porem com documentacao esparsa, posicionando-o na faixa de jogador historico menos midiatico dentro do grupo DEF.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1388050",
+        "afirmacao": "Randy Samuel foi zagueiro do Canada convocado para a Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Mark Watson",
+    "pais": "Canada",
+    "posicao": "CB",
+    "dob": "1970-09-08",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.65,
+      "shooting": 0.4,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.72,
+      "physic": 0.7
+    },
+    "observacao": "Mark Watson foi zagueiro titular da selecao canadense na Copa America de 2000, torneio em que o Canada surpreendeu ao avancar nas fases eliminatorias. Seus percentis de defesa e fisico acima da mediana do grupo DEF refletem o perfil de um zagueiro regular e confiavel do elenco principal daquela geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q612493",
+        "afirmacao": "Mark Watson foi zagueiro titular do Canada na Copa America de 2000."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Kevin McKenna",
+    "pais": "Canada",
+    "posicao": "CB",
+    "dob": "1980-01-21",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.68,
+      "shooting": 0.42,
+      "passing": 0.62,
+      "dribbling": 0.58,
+      "defending": 0.76,
+      "physic": 0.72
+    },
+    "observacao": "Kevin McKenna defendeu a selecao canadense como zagueiro titular durante boa parte dos anos 2000, com experiencia na Alemanha pelo Energie Cottbus. Seus percentis de defesa ligeiramente acima da mediana do grupo DEF o colocam como um titular internacional solido, caracteristico de um defensor regular de nivel competitivo europeu intermediario.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q726364",
+        "afirmacao": "Kevin McKenna foi zagueiro da selecao canadense com passagem pelo Energie Cottbus."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jason de Vos",
+    "pais": "Canada",
+    "posicao": "CB",
+    "dob": "1974-01-02",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.7,
+      "shooting": 0.45,
+      "passing": 0.68,
+      "dribbling": 0.6,
+      "defending": 0.9,
+      "physic": 0.82
+    },
+    "observacao": "Jason de Vos foi capitao da selecao canadense e um dos zagueiros mais respeitados da sua geracao, com longa carreira na Inglaterra incluindo o Ipswich Town na Premier League e Championship. Sua lideranca e solidez defensiva consistente o posicionam no topo do grupo DEF, caracteristico de um titular internacional de alto nivel e longa duracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2465196",
+        "afirmacao": "Jason de Vos foi capitao e zagueiro titular da selecao canadense, com passagem pelo Ipswich Town."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Paul Stalteri",
+    "pais": "Canada",
+    "posicao": "RB",
+    "dob": "1977-10-18",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.8,
+      "shooting": 0.48,
+      "passing": 0.75,
+      "dribbling": 0.68,
+      "defending": 0.8,
+      "physic": 0.72
+    },
+    "observacao": "Paul Stalteri foi lateral titular de longa data da selecao canadense e um dos poucos jogadores do pais a atuar em um clube de elite europeia, o Tottenham Hotspur. Sua combinacao de velocidade, capacidade ofensiva e solidez defensiva justifica percentis elevados no grupo DEF, compativel com um titular internacional de alto nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q312091",
+        "afirmacao": "Paul Stalteri foi lateral titular da selecao canadense com passagem pelo Tottenham Hotspur."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Bob Lenarduzzi",
+    "pais": "Canada",
+    "posicao": "RB",
+    "dob": "1955-05-01",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.72,
+      "shooting": 0.42,
+      "passing": 0.72,
+      "dribbling": 0.6,
+      "defending": 0.85,
+      "physic": 0.7
+    },
+    "observacao": "Bob Lenarduzzi foi capitao da selecao canadense na Copa do Mundo de 1986 e e considerado uma lenda do futebol canadense, tendo tambem se tornado figura influente na administracao do esporte no pais apos a carreira. Sua lideranca e longevidade como titular justificam percentis muito altos de defesa e passe dentro do grupo DEF.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2274245",
+        "afirmacao": "Bob Lenarduzzi foi capitao da selecao canadense na Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Craig Forrest",
+    "pais": "Canada",
+    "posicao": "GK",
+    "dob": "1967-09-20",
+    "percentis": {
+      "overall": 0.9,
+      "goalkeeping_diving": 0.88,
+      "goalkeeping_handling": 0.85,
+      "goalkeeping_kicking": 0.8,
+      "goalkeeping_positioning": 0.88,
+      "goalkeeping_reflexes": 0.9,
+      "goalkeeping_speed": 0.6
+    },
+    "observacao": "Craig Forrest foi o goleiro titular da selecao canadense por mais de uma decada, incluindo a campanha da Copa America de 2000, e e amplamente considerado um dos melhores goleiros da historia do pais. Sua longevidade como titular absoluto e reputacao de reflexos e posicionamento solidos justificam percentis no topo da distribuicao do grupo GK.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1138541",
+        "afirmacao": "Craig Forrest foi goleiro titular da selecao canadense na Copa America de 2000."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]

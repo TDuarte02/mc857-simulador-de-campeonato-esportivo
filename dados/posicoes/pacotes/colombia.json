@@ -1,0 +1,375 @@
+{
+  "pais": "Colombia",
+  "jogadores": [
+    {
+      "nome": "Carlos Valderrama",
+      "posicao_principal": "CAM",
+      "dob": "1961-09-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q204089",
+      "contexto": "El Pibe"
+    },
+    {
+      "nome": "Willington Ortiz",
+      "posicao_principal": "RW",
+      "dob": "1952-03-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2422986",
+      "contexto": "Copa 1975-1983"
+    },
+    {
+      "nome": "Miguel Angel Borja",
+      "posicao_principal": "ST",
+      "dob": "1993-01-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q4094820",
+      "contexto": "River Plate"
+    },
+    {
+      "nome": "Jackson Martinez",
+      "posicao_principal": "ST",
+      "dob": "1986-10-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q356142",
+      "contexto": "Porto"
+    },
+    {
+      "nome": "Teofilo Gutierrez",
+      "posicao_principal": "ST",
+      "dob": "1985-05-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q369056",
+      "contexto": "River Plate"
+    },
+    {
+      "nome": "Faustino Asprilla",
+      "posicao_principal": "ST",
+      "dob": "1969-11-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q361409",
+      "contexto": "Newcastle e Parma"
+    },
+    {
+      "nome": "Victor Hugo Aristizabal",
+      "posicao_principal": "ST",
+      "dob": "1971-12-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q441769",
+      "contexto": "Atletico Nacional"
+    },
+    {
+      "nome": "Antony de Avila",
+      "posicao_principal": "ST",
+      "dob": "1962-12-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2287325",
+      "contexto": "America de Cali"
+    },
+    {
+      "nome": "Arnoldo Iguaran",
+      "posicao_principal": "ST",
+      "dob": "1957-01-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q696868",
+      "contexto": "Millonarios"
+    },
+    {
+      "nome": "Juan Pablo Angel",
+      "posicao_principal": "ST",
+      "dob": "1975-10-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q310620",
+      "contexto": "Aston Villa"
+    },
+    {
+      "nome": "Adolfo Valencia",
+      "posicao_principal": "ST",
+      "dob": "1968-02-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q365208",
+      "contexto": "Bayern de Munique"
+    },
+    {
+      "nome": "Leonel Alvarez",
+      "posicao_principal": "CDM",
+      "dob": "1965-07-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q720014",
+      "contexto": "Copa 1990"
+    },
+    {
+      "nome": "Freddy Rincon",
+      "posicao_principal": "CM",
+      "dob": "1966-08-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q225837",
+      "contexto": "Real Madrid"
+    },
+    {
+      "nome": "Wilmar Barrios",
+      "posicao_principal": "CDM",
+      "dob": "1993-10-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q19661792",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Ivan Cordoba",
+      "posicao_principal": "CB",
+      "dob": "1976-08-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q231348",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Mario Yepes",
+      "posicao_principal": "CB",
+      "dob": "1976-01-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q309778",
+      "contexto": "Milan"
+    },
+    {
+      "nome": "Alexis Garcia",
+      "posicao_principal": "CM",
+      "dob": "1960-07-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2325844",
+      "contexto": "Copa 1990"
+    },
+    {
+      "nome": "Camilo Zuniga",
+      "posicao_principal": "RB",
+      "dob": "1985-12-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q456797",
+      "contexto": "Napoli"
+    },
+    {
+      "nome": "Pablo Armero",
+      "posicao_principal": "LB",
+      "dob": "1986-11-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q371305",
+      "contexto": "Udinese"
+    },
+    {
+      "nome": "Carlos Sanchez",
+      "posicao_principal": "CDM",
+      "dob": "1986-02-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q116602",
+      "contexto": "Aston Villa"
+    },
+    {
+      "nome": "Abel Aguilar",
+      "posicao_principal": "CDM",
+      "dob": "1985-01-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q318416",
+      "contexto": "Toulouse"
+    },
+    {
+      "nome": "Fabian Vargas",
+      "posicao_principal": "CM",
+      "dob": "1980-04-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2332517",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Giovanny Hernandez",
+      "posicao_principal": "CAM",
+      "dob": "1976-06-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2664005",
+      "contexto": "Deportivo Cali"
+    },
+    {
+      "nome": "Luis Amaranto Perea",
+      "posicao_principal": "CB",
+      "dob": "1979-01-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q316631",
+      "contexto": "Atletico de Madrid"
+    },
+    {
+      "nome": "Jorge Bermudez",
+      "posicao_principal": "CB",
+      "dob": "1971-06-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2583266",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Mauricio Serna",
+      "posicao_principal": "CDM",
+      "dob": "1968-01-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2383612",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Faryd Mondragon",
+      "posicao_principal": "GK",
+      "dob": "1971-06-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q352215",
+      "contexto": "Copa 1994-2014"
+    },
+    {
+      "nome": "Oscar Cordoba",
+      "posicao_principal": "GK",
+      "dob": "1970-02-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q293267",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Rene Higuita",
+      "posicao_principal": "GK",
+      "dob": "1966-08-27",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q237494",
+      "contexto": "El Loco"
+    },
+    {
+      "nome": "Kevin Castaño",
+      "posicao_principal": "CM",
+      "dob": "2000-09-29",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Krasnodar"
+    },
+    {
+      "nome": "Miguel Borja",
+      "posicao_principal": "ST",
+      "dob": "1993-01-26",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "River Plate"
+    },
+    {
+      "nome": "Jhon Arias",
+      "posicao_principal": "CM",
+      "dob": "1997-09-21",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Fluminense"
+    },
+    {
+      "nome": "Yerry Mina",
+      "posicao_principal": "CB",
+      "dob": "1994-09-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Cagliari"
+    },
+    {
+      "nome": "Jhon Durán",
+      "posicao_principal": "ST",
+      "dob": "2003-12-13",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Aston Villa"
+    },
+    {
+      "nome": "Yáser Asprilla",
+      "posicao_principal": "CM",
+      "dob": "2003-11-19",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Watford"
+    },
+    {
+      "nome": "Jhon Córdoba",
+      "posicao_principal": "ST",
+      "dob": "1993-05-11",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Krasnodar"
+    },
+    {
+      "nome": "Deiver Machado",
+      "posicao_principal": "CB",
+      "dob": "1992-09-02",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Lens"
+    }
+  ]
+}

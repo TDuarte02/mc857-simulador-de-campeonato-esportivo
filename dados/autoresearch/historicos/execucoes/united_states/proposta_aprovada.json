@@ -1,0 +1,854 @@
+[
+  {
+    "nome": "Landon Donovan",
+    "pais": "United States",
+    "posicao": "CAM",
+    "dob": "1982-03-04",
+    "percentis": {
+      "overall": 0.99,
+      "pace": 0.9,
+      "shooting": 0.9,
+      "passing": 0.92,
+      "dribbling": 0.93,
+      "defending": 0.5,
+      "physic": 0.6
+    },
+    "observacao": "Maior artilheiro e maior garçom da história da seleção dos Estados Unidos, Landon Donovan foi a principal referência ofensiva do país por mais de uma década, com passagens marcantes por quatro Copas do Mundo. Sua combinação de velocidade, visão de jogo e faro de gol o torna o jogador de referência máxima no conjunto histórico de meio-campistas americanos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q202237",
+        "afirmacao": "Página da Wikidata confirma Landon Donovan como meio-campista e maior artilheiro histórico da seleção dos Estados Unidos."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 86,
+      "pace": 86,
+      "shooting": 82,
+      "passing": 84,
+      "dribbling": 85,
+      "defending": 46,
+      "physic": 72
+    },
+    "posicoes_secundarias": [
+      "RW"
+    ]
+  },
+  {
+    "nome": "Clint Dempsey",
+    "pais": "United States",
+    "posicao": "ST",
+    "dob": "1983-03-09",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.75,
+      "shooting": 0.93,
+      "passing": 0.78,
+      "dribbling": 0.85,
+      "defending": 0.35,
+      "physic": 0.65
+    },
+    "observacao": "Clint Dempsey divide com Donovan o posto de maior artilheiro histórico dos EUA e foi o primeiro norte-americano a balançar as redes em três Copas do Mundo diferentes. Teve passagens de destaque por Fulham e Tottenham na Premier League, mostrando finalização refinada e capacidade de decidir jogos importantes.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q201860",
+        "afirmacao": "Página da Wikidata confirma Clint Dempsey como atacante da seleção dos Estados Unidos com passagem pelo Fulham."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 85,
+      "pace": 78,
+      "shooting": 85,
+      "passing": 80,
+      "dribbling": 83,
+      "defending": 42,
+      "physic": 78
+    },
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Maurice Edu",
+    "pais": "United States",
+    "posicao": "CDM",
+    "dob": "1986-04-18",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.6,
+      "shooting": 0.5,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.78,
+      "physic": 0.72
+    },
+    "observacao": "Maurice Edu foi um volante de contenção sólido, titular regular da seleção dos EUA na Copa de 2010 e em qualificatórias, com passagem pelo Rangers na Escócia. Jogador combativo e disciplinado taticamente, sem ser um dos nomes de maior destaque histórico, mas peça relevante em meio-campos mais defensivos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q322360",
+        "afirmacao": "Página da Wikidata confirma Maurice Edu como volante da seleção dos Estados Unidos com passagem pelo Rangers."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM",
+      "CB"
+    ]
+  },
+  {
+    "nome": "Stuart Holden",
+    "pais": "United States",
+    "posicao": "CAM",
+    "dob": "1985-08-01",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.7,
+      "dribbling": 0.68,
+      "defending": 0.4,
+      "physic": 0.45
+    },
+    "observacao": "Stuart Holden foi um meio-campista criativo com boa passagem pelo Bolton Wanderers na Premier League, mas teve a carreira internacional marcada e encurtada por lesões graves. Sua qualidade técnica era reconhecida, porém o volume reduzido de jogos em alto nível limita sua colocação entre os maiores nomes históricos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q312513",
+        "afirmacao": "Página da Wikidata confirma Stuart Holden como meio-campista da seleção dos Estados Unidos com passagem pelo Bolton."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Benny Feilhaber",
+    "pais": "United States",
+    "posicao": "CM",
+    "dob": "1985-01-19",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.55,
+      "shooting": 0.6,
+      "passing": 0.78,
+      "dribbling": 0.72,
+      "defending": 0.45,
+      "physic": 0.4
+    },
+    "observacao": "Benny Feilhaber foi um meio-campista criativo que integrou o elenco da Copa do Mundo de 2010 e teve longa e produtiva carreira na MLS. Reconhecido pela qualidade de passe e visão de jogo, consolidou-se como peça regular do meio-campo americano sem alcançar o status de lenda máxima.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q84359",
+        "afirmacao": "Página da Wikidata confirma Benny Feilhaber como meio-campista convocado para a Copa do Mundo de 2010."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Tab Ramos",
+    "pais": "United States",
+    "posicao": "CAM",
+    "dob": "1966-09-21",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.65,
+      "shooting": 0.65,
+      "passing": 0.85,
+      "dribbling": 0.8,
+      "defending": 0.4,
+      "physic": 0.4
+    },
+    "observacao": "Tab Ramos foi um dos primeiros grandes armadores da seleção americana, peça fundamental das Copas do Mundo de 1990 e 1994, inclusive sofrendo uma grave fratura de crânio neste último torneio em jogo decisivo. Sua técnica refinada e capacidade de criação o colocam entre os melhores meio-campistas ofensivos da história do país.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1341224",
+        "afirmacao": "Página da Wikidata confirma Tab Ramos como meio-campista da seleção dos Estados Unidos na Copa do Mundo de 1994."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Claudio Reyna",
+    "pais": "United States",
+    "posicao": "CM",
+    "dob": "1973-07-20",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.65,
+      "shooting": 0.6,
+      "passing": 0.9,
+      "dribbling": 0.78,
+      "defending": 0.68,
+      "physic": 0.6
+    },
+    "observacao": "Claudio Reyna é frequentemente citado como o melhor meio-campista da história da seleção dos EUA, capitão em múltiplas Copas do Mundo e com passagens de destaque por clubes europeus como Manchester City, Rangers e Sunderland. Sua inteligência tática, capacidade de distribuição e liderança em campo o colocam no topo absoluto entre os meio-campistas americanos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q363257",
+        "afirmacao": "Página da Wikidata confirma Claudio Reyna como meio-campista e capitão da seleção dos Estados Unidos, com passagem pelo Manchester City."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM",
+      "RM"
+    ]
+  },
+  {
+    "nome": "John Harkes",
+    "pais": "United States",
+    "posicao": "CM",
+    "dob": "1967-03-08",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.62,
+      "shooting": 0.55,
+      "passing": 0.75,
+      "dribbling": 0.65,
+      "defending": 0.6,
+      "physic": 0.55
+    },
+    "observacao": "John Harkes foi pioneiro, um dos primeiros americanos a se destacar no futebol inglês (Sheffield Wednesday e Derby County), e titular importante da seleção na Copa do Mundo de 1994, inclusive marcando em fase de grupos. Sua versatilidade e consistência o tornam um dos meio-campistas mais relevantes da geração dos anos 1990.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q936196",
+        "afirmacao": "Página da Wikidata confirma John Harkes como meio-campista da seleção dos Estados Unidos na Copa do Mundo de 1994."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
+  },
+  {
+    "nome": "Matt Turner",
+    "pais": "United States",
+    "posicao": "GK",
+    "dob": "1994-06-24",
+    "percentis": {
+      "overall": 0.82,
+      "goalkeeping_diving": 0.8,
+      "goalkeeping_handling": 0.78,
+      "goalkeeping_kicking": 0.75,
+      "goalkeeping_positioning": 0.8,
+      "goalkeeping_reflexes": 0.82,
+      "goalkeeping_speed": 0.55
+    },
+    "observacao": "Matt Turner se consolidou como goleiro titular da seleção dos EUA na Copa do Mundo de 2022, com defesas decisivas, e seguiu carreira na Premier League passando por Arsenal, Nottingham Forest e Crystal Palace. Reflexos rápidos e boa leitura de jogo o colocam entre os goleiros de melhor nível da geração atual.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q24663885",
+        "afirmacao": "Página da Wikidata confirma Matt Turner como goleiro da seleção dos Estados Unidos com passagem pelo Crystal Palace."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Oguchi Onyewu",
+    "pais": "United States",
+    "posicao": "CB",
+    "dob": "1982-05-13",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.55,
+      "shooting": 0.4,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.85,
+      "physic": 0.9
+    },
+    "observacao": "Oguchi Onyewu foi um zagueiro imponente e fisicamente dominante, titular nas Copas do Mundo de 2006 e 2010, com passagem pelo Milan. Sua força física e capacidade de marcação aérea o tornam um dos zagueiros mais respeitados da história recente da seleção americana.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q207464",
+        "afirmacao": "Página da Wikidata confirma Oguchi Onyewu como zagueiro da seleção dos Estados Unidos com passagem pelo Milan."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Carlos Bocanegra",
+    "pais": "United States",
+    "posicao": "CB",
+    "dob": "1979-05-25",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.55,
+      "shooting": 0.42,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.88,
+      "physic": 0.78
+    },
+    "observacao": "Carlos Bocanegra foi capitão da seleção dos Estados Unidos por muitos anos, titular absoluto entre 2002 e 2014, com boas passagens por Fulham e Rangers. Sua liderança, consistência defensiva e longevidade em alto nível o colocam entre os zagueiros mais importantes da história do país.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q213091",
+        "afirmacao": "Página da Wikidata confirma Carlos Bocanegra como zagueiro e capitão da seleção dos Estados Unidos, com passagem pelo Fulham."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
+  },
+  {
+    "nome": "Steve Cherundolo",
+    "pais": "United States",
+    "posicao": "RB",
+    "dob": "1979-02-19",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.72,
+      "shooting": 0.4,
+      "passing": 0.68,
+      "dribbling": 0.65,
+      "defending": 0.78,
+      "physic": 0.6
+    },
+    "observacao": "Steve Cherundolo foi uma lenda do Hannover 96, clube pelo qual atuou por quase toda a carreira na Bundesliga, e lateral-direito titular da seleção dos EUA entre 2002 e 2014, incluindo três Copas do Mundo. Sua regularidade tática e qualidade técnica o tornam uma referência histórica na lateral direita americana.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q310928",
+        "afirmacao": "Página da Wikidata confirma Steve Cherundolo como lateral-direito da seleção dos Estados Unidos com longa passagem pelo Hannover 96."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Tony Meola",
+    "pais": "United States",
+    "posicao": "GK",
+    "dob": "1969-02-21",
+    "percentis": {
+      "overall": 0.8,
+      "goalkeeping_diving": 0.78,
+      "goalkeeping_handling": 0.75,
+      "goalkeeping_kicking": 0.7,
+      "goalkeeping_positioning": 0.75,
+      "goalkeeping_reflexes": 0.78,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Tony Meola foi o goleiro titular da seleção dos EUA nas Copas do Mundo de 1990 e 1994, sendo uma das primeiras grandes referências no gol americano na era moderna. Teve carreira longa também na MLS, mantendo bom nível de atuação por muitos anos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q735119",
+        "afirmacao": "Página da Wikidata confirma Tony Meola como goleiro titular da seleção dos Estados Unidos na Copa do Mundo de 1994."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Tim Howard",
+    "pais": "United States",
+    "posicao": "GK",
+    "dob": "1979-03-06",
+    "percentis": {
+      "overall": 0.97,
+      "goalkeeping_diving": 0.95,
+      "goalkeeping_handling": 0.93,
+      "goalkeeping_kicking": 0.85,
+      "goalkeeping_positioning": 0.95,
+      "goalkeeping_reflexes": 0.97,
+      "goalkeeping_speed": 0.6
+    },
+    "observacao": "Tim Howard é amplamente considerado um dos maiores goleiros da história da seleção dos Estados Unidos, com longa e vitoriosa carreira no Everton na Premier League. Ficou mundialmente conhecido pela atuação histórica na Copa do Mundo de 2014, com 16 defesas em uma única partida, recorde do torneio.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q200785",
+        "afirmacao": "Página da Wikidata confirma Tim Howard como goleiro da seleção dos Estados Unidos com longa passagem pelo Everton."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Brad Friedel",
+    "pais": "United States",
+    "posicao": "GK",
+    "dob": "1971-05-18",
+    "percentis": {
+      "overall": 0.94,
+      "goalkeeping_diving": 0.9,
+      "goalkeeping_handling": 0.88,
+      "goalkeeping_kicking": 0.8,
+      "goalkeeping_positioning": 0.9,
+      "goalkeeping_reflexes": 0.93,
+      "goalkeeping_speed": 0.55
+    },
+    "observacao": "Brad Friedel teve uma das carreiras mais longas e sólidas entre goleiros americanos na Premier League, com passagens de destaque por Blackburn Rovers, Aston Villa e Tottenham. Consistência, reflexos de altíssimo nível e longevidade o colocam entre os melhores goleiros da história da seleção.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q241378",
+        "afirmacao": "Página da Wikidata confirma Brad Friedel como goleiro da seleção dos Estados Unidos com passagem pelo Blackburn Rovers."
+      }
+    ],
+    "confianca": 0.73,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Kasey Keller",
+    "pais": "United States",
+    "posicao": "GK",
+    "dob": "1969-11-29",
+    "percentis": {
+      "overall": 0.93,
+      "goalkeeping_diving": 0.9,
+      "goalkeeping_handling": 0.87,
+      "goalkeeping_kicking": 0.78,
+      "goalkeeping_positioning": 0.88,
+      "goalkeeping_reflexes": 0.92,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Kasey Keller construiu uma longa e respeitada carreira na Europa, com passagens por Tottenham, Leicester City e Borussia Mönchengladbach, consolidando-se como um dos goleiros mais confiáveis da história americana. Disputou múltiplas Copas do Mundo com atuações seguras e consistentes.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q356814",
+        "afirmacao": "Página da Wikidata confirma Kasey Keller como goleiro da seleção dos Estados Unidos com passagem pelo Tottenham."
+      }
+    ],
+    "confianca": 0.73,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alexi Lalas",
+    "pais": "United States",
+    "posicao": "CB",
+    "dob": "1970-06-01",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.5,
+      "shooting": 0.4,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.75,
+      "physic": 0.72
+    },
+    "observacao": "Alexi Lalas tornou-se um dos rostos mais icônicos do futebol americano na Copa do Mundo de 1994, sediada nos próprios EUA, com sua característica barba e postura marcante em campo. Zagueiro sólido e combativo, foi peça importante na defesa americana daquela geração.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q168371",
+        "afirmacao": "Página da Wikidata confirma Alexi Lalas como zagueiro da seleção dos Estados Unidos na Copa do Mundo de 1994."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jeff Agoos",
+    "pais": "United States",
+    "posicao": "CB",
+    "dob": "1968-05-02",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.52,
+      "shooting": 0.38,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.72,
+      "physic": 0.68
+    },
+    "observacao": "Jeff Agoos foi um zagueiro de longa trajetória na seleção dos Estados Unidos, participando dos ciclos de Copa do Mundo de 1994 a 2002, e um dos defensores mais premiados da história da MLS. Sua regularidade e experiência o tornam um nome relevante entre os zagueiros históricos do país.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q984639",
+        "afirmacao": "Página da Wikidata confirma Jeff Agoos como zagueiro da seleção dos Estados Unidos na Copa do Mundo de 2002."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
+  },
+  {
+    "nome": "Eddie Pope",
+    "pais": "United States",
+    "posicao": "CB",
+    "dob": "1973-12-24",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.58,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.8,
+      "physic": 0.72
+    },
+    "observacao": "Eddie Pope foi titular da seleção dos Estados Unidos nas Copas do Mundo de 1998, 2002 e 2006, e vencedor do Hermann Trophy como melhor jogador universitário do país. Zagueiro técnico e seguro, teve carreira de grande sucesso também na MLS.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q471669",
+        "afirmacao": "Página da Wikidata confirma Eddie Pope como zagueiro da seleção dos Estados Unidos entre as Copas do Mundo de 1998 e 2006."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Marcelo Balboa",
+    "pais": "United States",
+    "posicao": "CB",
+    "dob": "1967-08-08",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.55,
+      "shooting": 0.42,
+      "passing": 0.55,
+      "dribbling": 0.52,
+      "defending": 0.82,
+      "physic": 0.7
+    },
+    "observacao": "Marcelo Balboa é lembrado como um dos zagueiros mais talentosos e carismáticos da seleção dos Estados Unidos, ficando famoso por suas finalizações de bicicleta, incluindo uma na Copa do Mundo de 1994. Foi titular por vários ciclos e referência defensiva da geração dos anos 1990.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q541952",
+        "afirmacao": "Página da Wikidata confirma Marcelo Balboa como zagueiro da seleção dos Estados Unidos na Copa do Mundo de 1994."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Earnie Stewart",
+    "pais": "United States",
+    "posicao": "RW",
+    "dob": "1969-03-28",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.78,
+      "shooting": 0.68,
+      "passing": 0.65,
+      "dribbling": 0.68,
+      "defending": 0.4,
+      "physic": 0.55
+    },
+    "observacao": "Earnie Stewart marcou um dos gols mais memoráveis da história da seleção americana, na vitória sobre a Colômbia na Copa do Mundo de 1994, e permaneceu titular importante até a Copa de 2002. Ponta rápido e eficiente, teve longa carreira na Holanda antes de atuar pelos Estados Unidos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q594176",
+        "afirmacao": "Página da Wikidata confirma Earnie Stewart como atacante/ponta da seleção dos Estados Unidos entre 1994 e 2002."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
+  },
+  {
+    "nome": "Joe-Max Moore",
+    "pais": "United States",
+    "posicao": "ST",
+    "dob": "1971-02-23",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.65,
+      "shooting": 0.72,
+      "passing": 0.55,
+      "dribbling": 0.6,
+      "defending": 0.32,
+      "physic": 0.55
+    },
+    "observacao": "Joe-Max Moore foi um atacante regular da seleção dos Estados Unidos na década de 1990 e início dos anos 2000, com passagem pelo Everton na Inglaterra. Marcou gols importantes para o país, consolidando-se como peça confiável do ataque, ainda que sem o mesmo destaque histórico de Donovan ou Dempsey.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1340549",
+        "afirmacao": "Página da Wikidata confirma Joe-Max Moore como atacante da seleção dos Estados Unidos com passagem pelo Everton."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
+  },
+  {
+    "nome": "Brian McBride",
+    "pais": "United States",
+    "posicao": "ST",
+    "dob": "1972-06-19",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.6,
+      "shooting": 0.85,
+      "passing": 0.6,
+      "dribbling": 0.65,
+      "defending": 0.3,
+      "physic": 0.85
+    },
+    "observacao": "Brian McBride foi o principal centroavante da seleção dos Estados Unidos entre 1998 e 2006, tornando-se ídolo no Fulham na Premier League. Ficou simbolizado por sua atuação de rosto ensanguentado contra a Itália na Copa do Mundo de 2006, exemplo de sua garra e liderança ofensiva.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q314366",
+        "afirmacao": "Página da Wikidata confirma Brian McBride como atacante da seleção dos Estados Unidos com passagem pelo Fulham."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "DaMarcus Beasley",
+    "pais": "United States",
+    "posicao": "LW",
+    "dob": "1982-05-24",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.9,
+      "shooting": 0.55,
+      "passing": 0.65,
+      "dribbling": 0.78,
+      "defending": 0.4,
+      "physic": 0.5
+    },
+    "observacao": "DaMarcus Beasley detém o recorde de mais Copas do Mundo disputadas por um jogador americano (quatro), com passagem de destaque pelo PSV Eindhoven na Holanda. Ponta-esquerda de grande velocidade, foi peça-chave da seleção dos EUA entre 2002 e 2014, incluindo adaptação posterior para lateral.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q313035",
+        "afirmacao": "Página da Wikidata confirma DaMarcus Beasley como ponta/lateral da seleção dos Estados Unidos com passagem pelo PSV."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB",
+      "LM"
+    ]
+  },
+  {
+    "nome": "Eric Wynalda",
+    "pais": "United States",
+    "posicao": "ST",
+    "dob": "1969-06-09",
+    "percentis": {
+      "overall": 0.91,
+      "pace": 0.72,
+      "shooting": 0.85,
+      "passing": 0.6,
+      "dribbling": 0.68,
+      "defending": 0.3,
+      "physic": 0.6
+    },
+    "observacao": "Eric Wynalda foi o maior artilheiro da história da seleção dos Estados Unidos antes de Landon Donovan superá-lo, e marcou um gol memorável na Copa do Mundo de 1994 contra a Suíça. Atacante de finalização refinada, foi referência ofensiva do país durante toda a década de 1990.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q956696",
+        "afirmacao": "Página da Wikidata confirma Eric Wynalda como atacante da seleção dos Estados Unidos na Copa do Mundo de 1994."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Cobi Jones",
+    "pais": "United States",
+    "posicao": "RW",
+    "dob": "1970-06-16",
+    "percentis": {
+      "overall": 0.89,
+      "pace": 0.9,
+      "shooting": 0.5,
+      "passing": 0.55,
+      "dribbling": 0.72,
+      "defending": 0.38,
+      "physic": 0.5
+    },
+    "observacao": "Cobi Jones foi, por muitos anos, o jogador com mais convocações na história da seleção dos Estados Unidos, reconhecido também como um dos ícones da MLS pelo LA Galaxy, clube com que formou identidade visual marcante. Ponta de grande velocidade e resistência, participou de três Copas do Mundo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q464385",
+        "afirmacao": "Página da Wikidata confirma Cobi Jones como ponta da seleção dos Estados Unidos com passagem pelo LA Galaxy."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
+  },
+  {
+    "nome": "Folarin Balogun",
+    "pais": "United States",
+    "posicao": "ST",
+    "dob": "2001-07-03",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.7,
+      "shooting": 0.65,
+      "passing": 0.5,
+      "dribbling": 0.62,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Folarin Balogun é um atacante jovem formado nas categorias de base do Arsenal, com passagem de destaque por empréstimo ao Monaco, que optou por representar os Estados Unidos internacionalmente a partir de 2023. Ainda construindo seu histórico com a seleção, é um talento promissor, mas sem a trajetória longa dos nomes mais consagrados deste grupo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q101035007",
+        "afirmacao": "Página da Wikidata confirma Folarin Balogun como atacante que optou por representar a seleção dos Estados Unidos, com passagem pelo Monaco."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  }
+]

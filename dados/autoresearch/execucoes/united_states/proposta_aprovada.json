@@ -1,0 +1,285 @@
+[
+  {
+    "nome": "Matt Turner",
+    "pais": "United States",
+    "posicao": "GK",
+    "dob": "1994-06-24",
+    "club_name": "Nottingham Forest",
+    "league_name": "Premier League",
+    "preferred_foot": "Right",
+    "height_cm": 193,
+    "percentis": {
+      "overall": 0.75,
+      "goalkeeping_diving": 0.7,
+      "goalkeeping_handling": 0.75,
+      "goalkeeping_kicking": 0.6,
+      "goalkeeping_positioning": 0.7,
+      "goalkeeping_reflexes": 0.75,
+      "goalkeeping_speed": 0.4
+    },
+    "observacao": "Turner has been the USMNT's long-time starting goalkeeper, with solid handling and reflexes built on MLS and Premier League experience, though his kicking range is average relative to the pool. Overall placed clearly above the median for the group given his status as first-choice keeper heading into the tournament.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Matt Turner foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo Nottingham Forest."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Chris Richards",
+    "pais": "United States",
+    "posicao": "CB",
+    "dob": "2000-03-28",
+    "club_name": "Crystal Palace",
+    "league_name": "Premier League",
+    "preferred_foot": "Right",
+    "height_cm": 191,
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.6,
+      "shooting": 0.3,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.75,
+      "physic": 0.75
+    },
+    "observacao": "Richards is a young, physically imposing centre-back and Premier League regular, giving him strong defending and physic relative to the national pool. Pace and passing sit comfortably above median thanks to his modern ball-playing profile, while shooting remains a secondary attribute as expected for the position.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Chris Richards foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo Crystal Palace."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RB"
+    ]
+  },
+  {
+    "nome": "Tim Ream",
+    "pais": "United States",
+    "posicao": "CB",
+    "dob": "1987-10-05",
+    "club_name": "Fulham",
+    "league_name": "Premier League",
+    "preferred_foot": "Left",
+    "height_cm": 185,
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.2,
+      "shooting": 0.15,
+      "passing": 0.6,
+      "dribbling": 0.45,
+      "defending": 0.6,
+      "physic": 0.55
+    },
+    "observacao": "At 36, Ream relies on positioning, left-footed passing range and experience rather than pace, which is clearly below the group's median. His long Premier League tenure with Fulham keeps defending and overall solidly in the upper half despite the physical decline typical of a veteran centre-back.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Tim Ream foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo Fulham."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Johnny Cardoso",
+    "pais": "United States",
+    "posicao": "CDM",
+    "dob": "2001-09-20",
+    "club_name": "Real Betis",
+    "league_name": "La Liga",
+    "preferred_foot": "Right",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.55,
+      "shooting": 0.4,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.75,
+      "physic": 0.7
+    },
+    "observacao": "Cardoso operates as a holding/defensive midfielder for Real Betis in La Liga, so the coarse CM tag is refined to CDM. His ball-winning profile gives him high defending and physic for the midfield pool, with solid passing from his deep-lying distributor role.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Johnny Cardoso foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo Real Betis."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Shaq Moore",
+    "pais": "United States",
+    "posicao": "RB",
+    "dob": "1996-11-02",
+    "club_name": "Nashville SC",
+    "league_name": "Major League Soccer",
+    "preferred_foot": "Right",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.7,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.45,
+      "defending": 0.4,
+      "physic": 0.5
+    },
+    "observacao": "Moore is a natural right-back rather than a centre-back, so posicao is refined to RB within the DEF group. As an MLS-level fringe squad member rather than a regular national-team starter, his overall sits below median, though his pace is a clear strength typical of attacking full-backs.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Shaq Moore foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo Nashville SC."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Malik Tillman",
+    "pais": "United States",
+    "posicao": "CAM",
+    "dob": "2002-05-28",
+    "club_name": "PSV Eindhoven",
+    "league_name": "Eredivisie",
+    "preferred_foot": "Left",
+    "percentis": {
+      "overall": 0.7,
+      "pace": 0.65,
+      "shooting": 0.65,
+      "passing": 0.65,
+      "dribbling": 0.75,
+      "defending": 0.3,
+      "physic": 0.5
+    },
+    "observacao": "Tillman plays as an attacking midfielder/second striker for PSV, so the coarse CM tag is refined to CAM. His breakout Eredivisie season with strong goal and assist contributions is reflected in high dribbling, shooting and passing, with defending clearly below median as expected for an attack-minded midfielder.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Malik Tillman foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo PSV Eindhoven."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Folarin Balogun",
+    "pais": "United States",
+    "posicao": "ST",
+    "dob": "2001-07-03",
+    "club_name": "Monaco",
+    "league_name": "Ligue 1",
+    "preferred_foot": "Right",
+    "height_cm": 185,
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.7,
+      "shooting": 0.7,
+      "passing": 0.5,
+      "dribbling": 0.65,
+      "defending": 0.2,
+      "physic": 0.55
+    },
+    "observacao": "Balogun is a talented young striker who earned a big-money move to Monaco in Ligue 1 after a prolific loan spell, giving him above-median pace, shooting and dribbling. He is still a relatively fringe USMNT player with limited caps, which keeps overall from reaching elite levels of the attacking pool.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Folarin Balogun foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo Monaco."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Joe Scally",
+    "pais": "United States",
+    "posicao": "RB",
+    "dob": "2002-12-31",
+    "club_name": "Borussia Mönchengladbach",
+    "league_name": "Bundesliga",
+    "preferred_foot": "Right",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.7,
+      "shooting": 0.3,
+      "passing": 0.5,
+      "dribbling": 0.55,
+      "defending": 0.45,
+      "physic": 0.5
+    },
+    "observacao": "Scally is a natural right-back rather than a centre-back, so posicao is refined to RB. He is a regular starter for Borussia Mönchengladbach in the Bundesliga but a fringe/rotational option for the national team, placing his overall around the median with pace standing out as his best attribute.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Joe Scally foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo Borussia Mönchengladbach."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Kristoffer Lund",
+    "pais": "United States",
+    "posicao": "LB",
+    "dob": "2002-05-14",
+    "club_name": "Palermo",
+    "league_name": "Serie B",
+    "preferred_foot": "Left",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.55,
+      "shooting": 0.25,
+      "passing": 0.4,
+      "dribbling": 0.4,
+      "defending": 0.4,
+      "physic": 0.5
+    },
+    "observacao": "Lund is a natural left-back, so posicao is refined to LB rather than CB. He plays for Palermo in Italy's Serie B and is a newer, fringe addition to the national team pool, which places his overall and most attributes below the median for the group.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kristoffer Lund foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo Palermo."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Josh Sargent",
+    "pais": "United States",
+    "posicao": "ST",
+    "dob": "2000-02-20",
+    "club_name": "Norwich City",
+    "league_name": "EFL Championship",
+    "preferred_foot": "Right",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.55,
+      "shooting": 0.6,
+      "passing": 0.5,
+      "dribbling": 0.55,
+      "defending": 0.25,
+      "physic": 0.6
+    },
+    "observacao": "Sargent is an experienced USMNT forward with a consistent goal-scoring record for Norwich City in the Championship, giving him solidly above-median shooting and physic. His overall sits moderately above the group median, reflecting a reliable but not elite top-flight attacking profile.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Josh Sargent foi convocado para a Copa América 2024 pelos Estados Unidos, atuando pelo Norwich City."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  }
+]

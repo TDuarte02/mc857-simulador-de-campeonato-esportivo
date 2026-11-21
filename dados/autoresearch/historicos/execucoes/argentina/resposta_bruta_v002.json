@@ -1,0 +1,2316 @@
+[
+  {
+    "nome": "Diego Maradona",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1960-10-30",
+    "percentis": {
+      "overall": 0.98,
+      "pace": 0.75,
+      "shooting": 0.85,
+      "passing": 0.95,
+      "dribbling": 0.99,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Diego Maradona e considerado por muitos o maior jogador da historia do futebol argentino, capitao e lider absoluto da conquista da Copa do Mundo de 1986. Sua capacidade de dribles, visao de jogo e decisao em momentos-chave o colocam no topo absoluto do pool historico argentino. Os percentis refletem seu status de icone eterno, com drible e passe excepcionais e defesa irrelevante para sua funcao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q17515",
+        "afirmacao": "Diego Maradona foi convocado e e reconhecido como capitao campeao mundial de 1986 pela selecao argentina."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 97,
+      "pace": 90,
+      "shooting": 88,
+      "passing": 90,
+      "dribbling": 96,
+      "defending": 46,
+      "physic": 76
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Ezequiel Lavezzi",
+    "pais": "Argentina",
+    "posicao": "RW",
+    "dob": "1985-05-03",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.85,
+      "shooting": 0.65,
+      "passing": 0.68,
+      "dribbling": 0.78,
+      "defending": 0.35,
+      "physic": 0.62
+    },
+    "observacao": "Ezequiel Lavezzi foi um ponta rapido e desequilibrante que se destacou no Napoli e depois no PSG, sendo peca relevante da selecao argentina na era pos-2010. Sua velocidade e capacidade de drible o tornam um atacante solido no pool historico, sem atingir o status de lenda absoluta. Os percentis refletem um titular internacional de bom nivel, mais ofensivo que defensivo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q275415",
+        "afirmacao": "Ezequiel Lavezzi jogou pelo PSG e foi convocado regularmente pela selecao argentina."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Omar Sivori",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1935-10-02",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.72,
+      "shooting": 0.85,
+      "passing": 0.8,
+      "dribbling": 0.92,
+      "defending": 0.25,
+      "physic": 0.55
+    },
+    "observacao": "Omar Sivori foi um atacante genial, vencedor da Bola de Ouro em 1961 (jogando pela Italia, mas formado na Argentina), reconhecido por seu drible extraordinario e visao ofensiva na Juventus e na selecao argentina nos anos 50. E um dos grandes talentos tecnicos do futebol sul-americano de sua geracao. Os percentis refletem um craque de nivel internacional altissimo, com drible e finalizacao de elite.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q220700",
+        "afirmacao": "Omar Sivori, posteriormente naturalizado italiano, integrou a selecao argentina antes de sua carreira na Juventus."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jose Manuel Moreno",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1916-08-03",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.78,
+      "shooting": 0.88,
+      "passing": 0.85,
+      "dribbling": 0.9,
+      "defending": 0.3,
+      "physic": 0.62
+    },
+    "observacao": "Jose Manuel Moreno foi uma das estrelas da mitica 'La Maquina' do River Plate nos anos 1940, um atacante completo, elegante e decisivo, considerado um dos maiores jogadores argentinos de todos os tempos. Sua combinacao de tecnica, visao de jogo e faro de gol sustenta percentis muito altos em quase todos os atributos ofensivos. E tratado como um dos pilares da epoca de ouro do futebol argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q543951",
+        "afirmacao": "Jose Manuel Moreno integrou a geracao 'La Maquina' do River Plate nos anos 1940 e defendeu a selecao argentina."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Adolfo Pedernera",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1918-11-15",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.72,
+      "shooting": 0.85,
+      "passing": 0.88,
+      "dribbling": 0.88,
+      "defending": 0.3,
+      "physic": 0.6
+    },
+    "observacao": "Adolfo Pedernera foi o arquiteto e cerebro ofensivo da 'La Maquina' do River Plate, um centroavante recuado com passe e visao de jogo extraordinarios para a epoca. E lembrado como um dos jogadores mais completos e influentes do futebol argentino da primeira metade do seculo XX. Os percentis altos em passe e drible refletem seu papel de criador de jogadas dentro do ataque.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q365127",
+        "afirmacao": "Adolfo Pedernera foi peca central da 'La Maquina' do River Plate e da selecao argentina nos anos 1940."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Angel Labruna",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1918-09-28",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.68,
+      "shooting": 0.88,
+      "passing": 0.75,
+      "dribbling": 0.8,
+      "defending": 0.28,
+      "physic": 0.65
+    },
+    "observacao": "Angel Labruna e o maior artilheiro da historia do River Plate, com uma carreira longeva que atravessou varias geracoes, incluindo a 'La Maquina'. Sua finalizacao e capacidade de gol sustentam um percentil de shooting muito alto, tipico de um artilheiro nato. Os percentis o posicionam como um titular internacional de altissimo nivel por um longo periodo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q251721",
+        "afirmacao": "Angel Labruna e o maior artilheiro historico do River Plate e defendeu a selecao argentina."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Juan Carlos Munoz",
+    "pais": "Argentina",
+    "posicao": "RW",
+    "dob": "1919-05-06",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.82,
+      "shooting": 0.72,
+      "passing": 0.78,
+      "dribbling": 0.85,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Juan Carlos Munoz foi outro integrante da 'La Maquina' do River Plate, um ponta habilidoso e associativo que completava o ataque lendario dos anos 1940. Seus percentis de drible e passe refletem sua funcao de criador e finalizador pelo lado do campo. E reconhecido como um dos grandes nomes da epoca de ouro do futebol argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q561157",
+        "afirmacao": "Juan Carlos Munoz integrou a 'La Maquina' do River Plate e a selecao argentina nos anos 1940."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Norberto Mendez",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1923-01-05",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.65,
+      "shooting": 0.82,
+      "passing": 0.65,
+      "dribbling": 0.72,
+      "defending": 0.28,
+      "physic": 0.62
+    },
+    "observacao": "Norberto Mendez foi um centroavante prolifico que integrou as selecoes argentinas campeas da Copa America entre 1945 e 1947, um periodo de grande dominio do futebol argentino na America do Sul. Sua funcao de artilheiro sustenta um percentil de finalizacao elevado. Os percentis refletem um titular internacional solido, ainda que com registros historicos mais escassos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2735456",
+        "afirmacao": "Norberto Mendez integrou as selecoes argentinas campeas da Copa America em 1945, 1946 e 1947."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Rene Houseman",
+    "pais": "Argentina",
+    "posicao": "RW",
+    "dob": "1953-07-19",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.82,
+      "shooting": 0.68,
+      "passing": 0.7,
+      "dribbling": 0.9,
+      "defending": 0.32,
+      "physic": 0.55
+    },
+    "observacao": "Rene Houseman, conhecido como 'El Pechuga', foi um dos pontas mais queridos pelo publico argentino e peca importante do time campeao mundial de 1978, destacando-se por seu drible desconcertante e estilo de origem humilde. Seus percentis de drible sao muito altos, refletindo seu estilo de jogo caracteristico. E lembrado como simbolo popular da conquista de 1978.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q463492",
+        "afirmacao": "Rene Houseman foi campeao mundial pela Argentina em 1978."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Leopoldo Luque",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1949-05-03",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.75,
+      "shooting": 0.87,
+      "passing": 0.68,
+      "dribbling": 0.75,
+      "defending": 0.28,
+      "physic": 0.65
+    },
+    "observacao": "Leopoldo Luque foi o artilheiro do time argentino campeao da Copa do Mundo de 1978, parceiro de ataque de Kempes e decisivo em jogos-chave do torneio. Sua funcao de finalizador sustenta um percentil alto em shooting. Os percentis o colocam entre os atacantes de maior nivel do pool historico argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q372086",
+        "afirmacao": "Leopoldo Luque foi um dos artilheiros da selecao argentina campea da Copa do Mundo de 1978."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Daniel Bertoni",
+    "pais": "Argentina",
+    "posicao": "RW",
+    "dob": "1955-03-14",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.78,
+      "shooting": 0.75,
+      "passing": 0.68,
+      "dribbling": 0.78,
+      "defending": 0.4,
+      "physic": 0.62
+    },
+    "observacao": "Daniel Bertoni marcou um dos gols na final da Copa do Mundo de 1978 e foi um ponta trabalhador e eficaz na equipe campea. Seu equilibrio entre ataque e contribuicao defensiva justifica um percentil de defending um pouco mais alto que o tipico para pontas. Os percentis refletem um titular internacional de alto nivel na geracao campea de 1978.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q446923",
+        "afirmacao": "Daniel Bertoni marcou gol na final da Copa do Mundo de 1978 pela Argentina."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Rodrigo Palacio",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1982-02-05",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.75,
+      "shooting": 0.7,
+      "passing": 0.62,
+      "dribbling": 0.72,
+      "defending": 0.3,
+      "physic": 0.58
+    },
+    "observacao": "Rodrigo Palacio foi um atacante movel e versatil que se destacou no futebol italiano, principalmente no Inter de Milao, com boa leitura de espacos e faro de gol. Seus percentis refletem um atacante solido de nivel internacional, sem alcancar o status de artilheiro de elite. E um nome relevante mas de perfil mais regular dentro do pool historico argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q310635",
+        "afirmacao": "Rodrigo Palacio defendeu o Inter de Milao e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Abel Balbo",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1966-06-01",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.62,
+      "shooting": 0.78,
+      "passing": 0.6,
+      "dribbling": 0.65,
+      "defending": 0.25,
+      "physic": 0.68
+    },
+    "observacao": "Abel Balbo foi um centroavante de bom nivel que atuou pela Roma na decada de 1990 e integrou selecoes argentinas competitivas daquele periodo. Seu percentil de finalizacao e fisico reflete seu perfil de atacante de area, pouco envolvido na construcao de jogadas. E classificado como um titular internacional solido, sem atingir nivel de lenda.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q318387",
+        "afirmacao": "Abel Balbo atuou pela Roma e foi convocado pela selecao argentina na decada de 1990."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Claudio Lopez",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1974-07-17",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.88,
+      "shooting": 0.78,
+      "passing": 0.62,
+      "dribbling": 0.78,
+      "defending": 0.28,
+      "physic": 0.6
+    },
+    "observacao": "Claudio Lopez, conhecido como 'El Piojo', foi um atacante extremamente veloz e decisivo na Copa do Mundo de 1998, uma das melhores campanhas ofensivas da Argentina na era moderna. Seu percentil de pace e um dos mais altos do pool, refletindo sua caracteristica mais marcante. Os percentis o posicionam como um atacante internacional de alto nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q295883",
+        "afirmacao": "Claudio Lopez integrou a selecao argentina na Copa do Mundo de 1998."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
+  },
+  {
+    "nome": "Kily Gonzalez",
+    "pais": "Argentina",
+    "posicao": "LW",
+    "dob": "1974-08-04",
+    "percentis": {
+      "overall": 0.74,
+      "pace": 0.78,
+      "shooting": 0.65,
+      "passing": 0.7,
+      "dribbling": 0.75,
+      "defending": 0.4,
+      "physic": 0.6
+    },
+    "observacao": "Kily Gonzalez foi um ponta versatil e dinamico que teve passagem destacada pelo Valencia, contribuindo tanto ofensivamente quanto taticamente para a selecao argentina. Seus percentis equilibrados entre ataque e defesa refletem sua versatilidade posicional. E um nome solido dentro do pool historico, sem alcancar nivel de estrela maxima.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q314761",
+        "afirmacao": "Kily Gonzalez defendeu o Valencia e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
+  },
+  {
+    "nome": "Maxi Rodriguez",
+    "pais": "Argentina",
+    "posicao": "RW",
+    "dob": "1981-01-02",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.72,
+      "shooting": 0.85,
+      "passing": 0.72,
+      "dribbling": 0.75,
+      "defending": 0.35,
+      "physic": 0.62
+    },
+    "observacao": "Maxi Rodriguez ficou eternizado por seu gol de voleio contra o Mexico na Copa do Mundo de 2006, um dos mais bonitos da historia do torneio, e foi um ponta de chute potente e consistente. Seu percentil de shooting e elevado, refletindo sua principal qualidade. Os percentis o colocam entre os atacantes internacionais de alto nivel da geracao 2006.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q190929",
+        "afirmacao": "Maxi Rodriguez marcou o gol decisivo contra o Mexico na Copa do Mundo de 2006."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Javier Saviola",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1981-12-11",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.82,
+      "shooting": 0.78,
+      "passing": 0.62,
+      "dribbling": 0.8,
+      "defending": 0.25,
+      "physic": 0.45
+    },
+    "observacao": "Javier Saviola, conhecido como 'El Conejo', foi uma promessa precoce do futebol argentino que brilhou no River Plate e depois no Barcelona, destacando-se por velocidade e faro de gol apesar do porte fisico pequeno. Seus percentis de pace e dribbling sao altos, enquanto o fisico reflete seu biotipo. E classificado como um atacante internacional de bom nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q186071",
+        "afirmacao": "Javier Saviola defendeu o Barcelona e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
+  },
+  {
+    "nome": "Julio Cruz",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1974-10-10",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.6,
+      "shooting": 0.72,
+      "passing": 0.55,
+      "dribbling": 0.55,
+      "defending": 0.3,
+      "physic": 0.78
+    },
+    "observacao": "Julio Cruz, apelidado 'El Emperador', foi um centroavante robusto que teve longa e bem-sucedida passagem pelo Inter de Milao, destacando-se por presenca fisica e capacidade de finalizacao. Seu percentil fisico e um dos mais altos entre os atacantes do pool, coerente com seu estilo de jogo. E classificado como um titular internacional solido.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q297397",
+        "afirmacao": "Julio Cruz defendeu o Inter de Milao e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Martin Palermo",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1973-11-07",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.62,
+      "shooting": 0.85,
+      "passing": 0.55,
+      "dribbling": 0.62,
+      "defending": 0.25,
+      "physic": 0.7
+    },
+    "observacao": "Martin Palermo, 'El Titan', e um icone do Boca Juniors e um dos maiores artilheiros da historia do clube, com carreira internacional mais limitada apesar do grande sucesso em nivel de clube. Seu percentil de shooting e elevado, refletindo sua principal virtude como finalizador. Os percentis equilibram seu status de lenda clubistica com uma passagem menos consistente pela selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q208436",
+        "afirmacao": "Martin Palermo e um dos maiores artilheiros da historia do Boca Juniors e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Artime",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1938-12-02",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.68,
+      "shooting": 0.88,
+      "passing": 0.6,
+      "dribbling": 0.7,
+      "defending": 0.28,
+      "physic": 0.65
+    },
+    "observacao": "Luis Artime foi o artilheiro da Copa America de 1966 e um dos centroavantes mais letais do futebol argentino daquela geracao, com grande capacidade de finalizacao. Seu percentil de shooting e um dos mais altos do pool historico. Os percentis o posicionam como um titular internacional de altissimo nivel em sua epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q690387",
+        "afirmacao": "Luis Artime foi artilheiro da Copa America de 1966 pela selecao argentina."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Felix Loustau",
+    "pais": "Argentina",
+    "posicao": "LW",
+    "dob": "1922-12-25",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.8,
+      "shooting": 0.7,
+      "passing": 0.75,
+      "dribbling": 0.85,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Felix Loustau foi o ponta-esquerda da mitica 'La Maquina' do River Plate, reconhecido por sua tecnica refinada e capacidade de desequilibrio pelas pontas. Seus percentis de drible e passe refletem seu papel criativo dentro do ataque lendario dos anos 1940. E lembrado como um dos pilares daquela geracao historica.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q960209",
+        "afirmacao": "Felix Loustau integrou a 'La Maquina' do River Plate e a selecao argentina nos anos 1940."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Carlos Tevez",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1984-02-05",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.78,
+      "shooting": 0.85,
+      "passing": 0.72,
+      "dribbling": 0.85,
+      "defending": 0.45,
+      "physic": 0.75
+    },
+    "observacao": "Carlos Tevez foi um atacante completo e extremamente competitivo, com titulos relevantes na Libertadores e na Premier League, alem de ouro olimpico pela selecao argentina. Sua versatilidade entre finalizacao, drible e entrega defensiva sustenta percentis altos em quase todos os atributos ofensivos. E um dos atacantes mais consistentes da era moderna no pool historico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q50600",
+        "afirmacao": "Carlos Tevez conquistou a Copa Libertadores e titulos na Premier League, alem de medalhas olimpicas pela Argentina."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Alfredo Di Stefano",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1926-07-04",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.78,
+      "shooting": 0.9,
+      "passing": 0.85,
+      "dribbling": 0.85,
+      "defending": 0.4,
+      "physic": 0.72
+    },
+    "observacao": "Alfredo Di Stefano e considerado um dos maiores jogadores da historia do futebol mundial, com uma breve mas significativa passagem pela selecao argentina antes de se naturalizar espanhol e brilhar no Real Madrid. Sua completude tecnica e capacidade de decidir em todas as fases do jogo justificam percentis muito altos em quase todos os atributos. A confianca e moderada porque sua carreira pela Argentina foi curta frente ao seu legado espanhol.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q164546",
+        "afirmacao": "Alfredo Di Stefano defendeu a selecao argentina antes de se naturalizar espanhol e jogar pelo Real Madrid."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Mario Kempes",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1954-07-15",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.82,
+      "shooting": 0.92,
+      "passing": 0.72,
+      "dribbling": 0.85,
+      "defending": 0.35,
+      "physic": 0.75
+    },
+    "observacao": "Mario Kempes foi o grande heroi da conquista da Copa do Mundo de 1978, artilheiro do torneio e autor de gols decisivos, incluindo na final. Sua combinacao de forca, velocidade e capacidade de finalizacao em corridas pelo meio o tornam um dos atacantes mais completos do pool historico argentino. Os percentis refletem seu status de quase-lenda daquela conquista.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q180649",
+        "afirmacao": "Mario Kempes foi artilheiro e heroi da selecao argentina campea da Copa do Mundo de 1978."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jorge Valdano",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1955-10-04",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.75,
+      "shooting": 0.82,
+      "passing": 0.75,
+      "dribbling": 0.78,
+      "defending": 0.35,
+      "physic": 0.68
+    },
+    "observacao": "Jorge Valdano marcou um dos gols na final da Copa do Mundo de 1986 e era reconhecido por sua inteligencia tatica e capacidade de associacao, alem da finalizacao. Seus percentis equilibrados entre passe e finalizacao refletem um atacante completo e cerebral. E um nome relevante da geracao campea mundial de 1986.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q298305",
+        "afirmacao": "Jorge Valdano marcou gol na final da Copa do Mundo de 1986 pela Argentina."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Herminio Masantonio",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1910-08-05",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.55,
+      "shooting": 0.72,
+      "passing": 0.55,
+      "dribbling": 0.6,
+      "defending": 0.3,
+      "physic": 0.6
+    },
+    "observacao": "Herminio Masantonio foi um centroavante do Huracan ativo nas decadas de 1930 e 1940, periodo com registros historicos mais escassos. Seu percentil de finalizacao reflete sua reputacao como artilheiro de sua epoca, mas a falta de documentacao extensa limita uma avaliacao mais precisa. E tratado como um jogador relevante mas de perfil mais marginal dentro do pool historico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q554390",
+        "afirmacao": "Herminio Masantonio defendeu o Huracan e a selecao argentina nas decadas de 1930 e 1940."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Claudio Caniggia",
+    "pais": "Argentina",
+    "posicao": "RW",
+    "dob": "1967-01-09",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.92,
+      "shooting": 0.8,
+      "passing": 0.65,
+      "dribbling": 0.82,
+      "defending": 0.35,
+      "physic": 0.65
+    },
+    "observacao": "Claudio Caniggia, apelidado 'Hijo del Viento', foi um dos atacantes mais rapidos e espetaculares da Copa do Mundo de 1990, famoso por suas corridas e dribles em velocidade maxima. Seu percentil de pace e um dos mais altos de todo o pool historico argentino. Os percentis o posicionam como um atacante internacional de altissimo nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q270890",
+        "afirmacao": "Claudio Caniggia foi um dos destaques da selecao argentina na Copa do Mundo de 1990."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Hernan Crespo",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1975-07-05",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.72,
+      "shooting": 0.9,
+      "passing": 0.65,
+      "dribbling": 0.72,
+      "defending": 0.28,
+      "physic": 0.7
+    },
+    "observacao": "Hernan Crespo foi um centroavante de elite que se destacou como artilheiro da Lazio e teve passagens de sucesso por Inter e Milan, com grande capacidade de finalizacao e jogo aereo. Seu percentil de shooting e um dos mais altos entre os atacantes do pool historico. E classificado como um dos grandes centroavantes argentinos da era moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q160206",
+        "afirmacao": "Hernan Crespo foi artilheiro da Lazio e integrou a selecao argentina."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Gabriel Batistuta",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1969-02-01",
+    "percentis": {
+      "overall": 0.96,
+      "pace": 0.78,
+      "shooting": 0.95,
+      "passing": 0.68,
+      "dribbling": 0.78,
+      "defending": 0.3,
+      "physic": 0.8
+    },
+    "observacao": "Gabriel Batistuta, 'Batigol', foi o maior artilheiro da selecao argentina na era pre-Messi, reconhecido mundialmente por seu chute potente e precisao impressionante na Fiorentina e na Roma. Seu percentil de shooting e um dos mais altos do pool historico argentino, consistente com seu status de lenda do futebol. Os percentis refletem sua posicao entre os maiores centroavantes da historia do pais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q170376",
+        "afirmacao": "Gabriel Batistuta e o maior artilheiro historico da selecao argentina na era anterior a Messi."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Carlos Peucelle",
+    "pais": "Argentina",
+    "posicao": "RW",
+    "dob": "1908-09-13",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.75,
+      "shooting": 0.75,
+      "passing": 0.72,
+      "dribbling": 0.78,
+      "defending": 0.35,
+      "physic": 0.58
+    },
+    "observacao": "Carlos Peucelle foi um dos pioneiros do futebol argentino, integrante da selecao vice-campea da primeira Copa do Mundo em 1930, com grande habilidade tecnica para a epoca. Seus percentis refletem um atacante de alto nivel para o padrao amador da epoca, com documentacao historica limitada. E reconhecido como um dos primeiros grandes craques do futebol argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q465954",
+        "afirmacao": "Carlos Peucelle integrou a selecao argentina vice-campea da Copa do Mundo de 1930."
+      }
+    ],
+    "confianca": 0.42,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Manuel Ferreira",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1905-10-20",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.7,
+      "shooting": 0.8,
+      "passing": 0.82,
+      "dribbling": 0.82,
+      "defending": 0.32,
+      "physic": 0.6
+    },
+    "observacao": "Manuel Ferreira, conhecido como 'El Nene', foi capitao e um dos grandes nomes da selecao argentina vice-campea da Copa do Mundo de 1930, com grande talento tecnico amador. Seus percentis altos em passe e drible refletem sua reputacao como craque daquela geracao pioneira. E um dos nomes mais lembrados do futebol amador argentino de elite.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q732682",
+        "afirmacao": "Manuel Ferreira foi capitao da selecao argentina vice-campea da Copa do Mundo de 1930."
+      }
+    ],
+    "confianca": 0.42,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Guillermo Stabile",
+    "pais": "Argentina",
+    "posicao": "ST",
+    "dob": "1905-01-17",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.72,
+      "shooting": 0.92,
+      "passing": 0.6,
+      "dribbling": 0.72,
+      "defending": 0.28,
+      "physic": 0.62
+    },
+    "observacao": "Guillermo Stabile foi o artilheiro da primeira Copa do Mundo da historia, em 1930, marcando 8 gols no torneio, uma marca lendaria do futebol argentino. Seu percentil de shooting e um dos mais altos do pool historico, consistente com essa proeza unica. E reconhecido como um dos maiores artilheiros de Copas do Mundo de todos os tempos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q309645",
+        "afirmacao": "Guillermo Stabile foi o artilheiro da Copa do Mundo de 1930 com 8 gols pela selecao argentina."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ubaldo Fillol",
+    "pais": "Argentina",
+    "posicao": "GK",
+    "dob": "1950-07-21",
+    "percentis": {
+      "overall": 0.95,
+      "goalkeeping_diving": 0.95,
+      "goalkeeping_handling": 0.92,
+      "goalkeeping_kicking": 0.85,
+      "goalkeeping_positioning": 0.93,
+      "goalkeeping_reflexes": 0.96,
+      "goalkeeping_speed": 0.7
+    },
+    "observacao": "Ubaldo Fillol e considerado um dos maiores goleiros da historia do futebol argentino, titular da conquista da Copa do Mundo de 1978 e referencia tecnica para geracoes seguintes. Seus percentis de reflexos e defesa sao extremamente altos, consistentes com seu status de lenda na posicao. E frequentemente citado entre os melhores goleiros sul-americanos de todos os tempos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q140319",
+        "afirmacao": "Ubaldo Fillol foi o goleiro titular da selecao argentina campea da Copa do Mundo de 1978."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Sergio Romero",
+    "pais": "Argentina",
+    "posicao": "GK",
+    "dob": "1987-02-22",
+    "percentis": {
+      "overall": 0.84,
+      "goalkeeping_diving": 0.82,
+      "goalkeeping_handling": 0.8,
+      "goalkeeping_kicking": 0.75,
+      "goalkeeping_positioning": 0.8,
+      "goalkeeping_reflexes": 0.85,
+      "goalkeeping_speed": 0.6
+    },
+    "observacao": "Sergio Romero foi o goleiro titular da selecao argentina na final da Copa do Mundo de 2014 e em outras competicoes relevantes entre 2014 e 2018, com boa consistencia sob pressao. Seus percentis refletem um goleiro internacional de alto nivel na era moderna. E um dos ultimos grandes titulares antes da chegada de Emiliano Martinez.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q215463",
+        "afirmacao": "Sergio Romero foi o goleiro titular da selecao argentina entre as Copas de 2014 e 2018."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Amadeo Carrizo",
+    "pais": "Argentina",
+    "posicao": "GK",
+    "dob": "1926-06-12",
+    "percentis": {
+      "overall": 0.88,
+      "goalkeeping_diving": 0.85,
+      "goalkeeping_handling": 0.82,
+      "goalkeeping_kicking": 0.9,
+      "goalkeeping_positioning": 0.88,
+      "goalkeeping_reflexes": 0.85,
+      "goalkeeping_speed": 0.65
+    },
+    "observacao": "Amadeo Carrizo, goleiro do River Plate nos anos 1950, e creditado como pioneiro do estilo de goleiro-libero, saindo da area e participando da construcao de jogadas muito antes disso se tornar comum. Seu percentil de kicking e um dos mais altos entre os goleiros do pool, refletindo essa caracteristica inovadora. E reconhecido como um dos goleiros mais influentes da historia do futebol argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q451749",
+        "afirmacao": "Amadeo Carrizo foi goleiro do River Plate e da selecao argentina nos anos 1950."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Sergio Goycochea",
+    "pais": "Argentina",
+    "posicao": "GK",
+    "dob": "1963-10-17",
+    "percentis": {
+      "overall": 0.87,
+      "goalkeeping_diving": 0.85,
+      "goalkeeping_handling": 0.82,
+      "goalkeeping_kicking": 0.78,
+      "goalkeeping_positioning": 0.83,
+      "goalkeeping_reflexes": 0.92,
+      "goalkeeping_speed": 0.62
+    },
+    "observacao": "Sergio Goycochea se tornou heroi nacional na Copa do Mundo de 1990 por suas defesas decisivas em disputas de penaltis, assumindo a titularidade durante o torneio. Seu percentil de reflexos e particularmente alto, refletindo sua especialidade em defesas de penalti. Os percentis o colocam entre os goleiros mais marcantes do pool historico argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q316205",
+        "afirmacao": "Sergio Goycochea foi heroi da selecao argentina em disputas de penaltis na Copa do Mundo de 1990."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Nery Pumpido",
+    "pais": "Argentina",
+    "posicao": "GK",
+    "dob": "1957-07-30",
+    "percentis": {
+      "overall": 0.84,
+      "goalkeeping_diving": 0.82,
+      "goalkeeping_handling": 0.8,
+      "goalkeeping_kicking": 0.75,
+      "goalkeeping_positioning": 0.82,
+      "goalkeeping_reflexes": 0.85,
+      "goalkeeping_speed": 0.6
+    },
+    "observacao": "Nery Pumpido foi o goleiro titular da selecao argentina campea da Copa do Mundo de 1986, com atuacoes solidas ao longo do torneio antes de se lesionar na edicao seguinte. Seus percentis refletem um goleiro internacional de alto nivel em sua epoca. E lembrado como parte importante da conquista de 1986.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q461838",
+        "afirmacao": "Nery Pumpido foi o goleiro titular da selecao argentina campea da Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Roberto Abbondanzieri",
+    "pais": "Argentina",
+    "posicao": "GK",
+    "dob": "1972-08-19",
+    "percentis": {
+      "overall": 0.76,
+      "goalkeeping_diving": 0.75,
+      "goalkeeping_handling": 0.72,
+      "goalkeeping_kicking": 0.7,
+      "goalkeeping_positioning": 0.74,
+      "goalkeeping_reflexes": 0.78,
+      "goalkeeping_speed": 0.55
+    },
+    "observacao": "Roberto Abbondanzieri foi o goleiro titular da selecao argentina na Copa do Mundo de 2006, com boa regularidade e seguranca no gol, apos carreira de destaque no Boca Juniors. Seus percentis refletem um goleiro internacional solido, sem alcancar o status dos grandes nomes historicos da posicao. E um nome relevante da geracao 2006.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q296961",
+        "afirmacao": "Roberto Abbondanzieri foi o goleiro titular da selecao argentina na Copa do Mundo de 2006."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Hector Enrique",
+    "pais": "Argentina",
+    "posicao": "CM",
+    "dob": "1962-04-26",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.68,
+      "shooting": 0.55,
+      "passing": 0.78,
+      "dribbling": 0.7,
+      "defending": 0.62,
+      "physic": 0.65
+    },
+    "observacao": "Hector Enrique e lembrado por sua assistencia decisiva para o gol mais famoso de Maradona contra a Inglaterra na Copa do Mundo de 1986, atuando como meio-campista equilibrado entre ataque e defesa. Seus percentis refletem um box-to-box solido, com passe de qualidade. E um nome associado diretamente a conquista de 1986.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q516743",
+        "afirmacao": "Hector Enrique integrou a selecao argentina campea da Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Osvaldo Ardiles",
+    "pais": "Argentina",
+    "posicao": "CM",
+    "dob": "1952-08-03",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.7,
+      "shooting": 0.58,
+      "passing": 0.82,
+      "dribbling": 0.78,
+      "defending": 0.6,
+      "physic": 0.62
+    },
+    "observacao": "Osvaldo Ardiles foi um meio-campista elegante e tecnico, peca importante da conquista de 1978 e posteriormente grande sucesso no Tottenham Hotspur, onde se tornou idolo. Seus percentis de passe e drible refletem sua qualidade na construcao de jogadas. E considerado um dos meio-campistas argentinos mais tecnicos de sua geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q310373",
+        "afirmacao": "Osvaldo Ardiles integrou a selecao argentina campea da Copa do Mundo de 1978 e teve sucesso no Tottenham Hotspur."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Ricardo Villa",
+    "pais": "Argentina",
+    "posicao": "CM",
+    "dob": "1952-08-18",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.62,
+      "shooting": 0.62,
+      "passing": 0.72,
+      "dribbling": 0.72,
+      "defending": 0.55,
+      "physic": 0.65
+    },
+    "observacao": "Ricardo Villa foi campeao mundial em 1978 e, assim como Ardiles, teve passagem marcante pelo Tottenham Hotspur, incluindo um gol lembrado em final de FA Cup. Seus percentis equilibrados refletem um meio-campista versatil e competente. E um nome associado a geracao campea de 1978.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q705946",
+        "afirmacao": "Ricardo Villa integrou a selecao argentina campea da Copa do Mundo de 1978."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Monti",
+    "pais": "Argentina",
+    "posicao": "CDM",
+    "dob": "1901-05-15",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.62,
+      "dribbling": 0.55,
+      "defending": 0.85,
+      "physic": 0.8
+    },
+    "observacao": "Luis Monti tem a particularidade unica de ter sido vice-campeao mundial pela Argentina em 1930 e campeao mundial pela Italia em 1934, sendo um volante extremamente duro e fisico para os padroes de sua epoca. Seus percentis de defesa e fisico sao os mais altos entre os meio-campistas do pool. E um dos casos mais singulares da historia das Copas do Mundo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q315333",
+        "afirmacao": "Luis Monti foi vice-campeao mundial pela Argentina em 1930 antes de ser campeao pela Italia em 1934."
+      }
+    ],
+    "confianca": 0.42,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Miguel Angel Brindisi",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1950-10-08",
+    "percentis": {
+      "overall": 0.74,
+      "pace": 0.65,
+      "shooting": 0.6,
+      "passing": 0.75,
+      "dribbling": 0.72,
+      "defending": 0.4,
+      "physic": 0.55
+    },
+    "observacao": "Miguel Angel Brindisi foi um meio-campista criativo do Independiente nos anos 1970, reconhecido por sua tecnica e capacidade de armar jogadas. Seus percentis de passe e drible refletem seu perfil ofensivo dentro do meio-campo. E um nome relevante mas de perfil mais regional dentro do pool historico argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q727597",
+        "afirmacao": "Miguel Angel Brindisi defendeu o Independiente e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Fernando Gago",
+    "pais": "Argentina",
+    "posicao": "CDM",
+    "dob": "1986-04-10",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.62,
+      "shooting": 0.58,
+      "passing": 0.8,
+      "dribbling": 0.7,
+      "defending": 0.62,
+      "physic": 0.6
+    },
+    "observacao": "Fernando Gago foi um volante de passe refinado que se destacou no Real Madrid na decada de 2000, com boa leitura de jogo e qualidade na saida de bola. Seus percentis de passe sao altos, consistentes com seu perfil de organizador. E classificado como um meio-campista internacional solido da era moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q187426",
+        "afirmacao": "Fernando Gago defendeu o Real Madrid e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Alberto Marcico",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1960-05-13",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.6,
+      "shooting": 0.58,
+      "passing": 0.68,
+      "dribbling": 0.65,
+      "defending": 0.35,
+      "physic": 0.52
+    },
+    "observacao": "Alberto Marcico foi um meio-campista ofensivo do Boca Juniors nos anos 1980, com boa tecnica mas carreira internacional mais discreta em comparacao a outros nomes da epoca. Seus percentis refletem um jogador de nivel regular dentro da selecao, mais proximo da reserva do que da titularidade constante. E um nome com documentacao historica limitada.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1998778",
+        "afirmacao": "Alberto Marcico defendeu o Boca Juniors e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jorge Burruchaga",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1962-10-09",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.72,
+      "shooting": 0.7,
+      "passing": 0.8,
+      "dribbling": 0.8,
+      "defending": 0.4,
+      "physic": 0.58
+    },
+    "observacao": "Jorge Burruchaga marcou o gol que decidiu a final da Copa do Mundo de 1986 contra a Alemanha Ocidental, sendo uma peca fundamental da equipe de Maradona naquela campanha. Seus percentis de passe e drible refletem sua qualidade tecnica como meio-campista ofensivo. E um dos nomes mais lembrados por sua contribuicao decisiva em 1986.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q313774",
+        "afirmacao": "Jorge Burruchaga marcou o gol decisivo na final da Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Ariel Ortega",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1974-03-04",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.75,
+      "shooting": 0.68,
+      "passing": 0.78,
+      "dribbling": 0.88,
+      "defending": 0.38,
+      "physic": 0.55
+    },
+    "observacao": "Ariel Ortega, 'El Burrito', foi um meia criativo e driblador que esteve presente em tres Copas do Mundo entre 1994 e 2002, com grande habilidade individual. Seu percentil de dribbling e um dos mais altos entre os meio-campistas do pool. E um dos jogadores mais talentosos tecnicamente de sua geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q296965",
+        "afirmacao": "Ariel Ortega integrou a selecao argentina nas Copas do Mundo de 1994, 1998 e 2002."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Fernando Redondo",
+    "pais": "Argentina",
+    "posicao": "CDM",
+    "dob": "1969-06-06",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.62,
+      "shooting": 0.55,
+      "passing": 0.88,
+      "dribbling": 0.8,
+      "defending": 0.68,
+      "physic": 0.62
+    },
+    "observacao": "Fernando Redondo foi um volante elegante e extremamente tecnico, lenda do Real Madrid nos anos 1990, reconhecido por sua capacidade de distribuir o jogo com calma e precisao mesmo sob pressao. Seu percentil de passe e um dos mais altos entre os meio-campistas do pool historico. E considerado um dos volantes mais sofisticados tecnicamente da historia argentina.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q295456",
+        "afirmacao": "Fernando Redondo defendeu o Real Madrid e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Juan Sebastian Veron",
+    "pais": "Argentina",
+    "posicao": "CM",
+    "dob": "1975-03-09",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.65,
+      "shooting": 0.72,
+      "passing": 0.88,
+      "dribbling": 0.78,
+      "defending": 0.55,
+      "physic": 0.62
+    },
+    "observacao": "Juan Sebastian Veron teve uma carreira longeva e internacionalmente reconhecida, com passagens por Lazio, Manchester United e Chelsea, alem de conquistar a Copa Libertadores com o Estudiantes em 2009 ja em fase avancada da carreira. Seu percentil de passe e um dos mais altos do pool, refletindo sua visao de jogo privilegiada. E um dos meio-campistas argentinos mais completos da era moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q46502",
+        "afirmacao": "Juan Sebastian Veron conquistou a Copa Libertadores de 2009 e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM",
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Ricardo Bochini",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1954-01-25",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.6,
+      "shooting": 0.62,
+      "passing": 0.82,
+      "dribbling": 0.82,
+      "defending": 0.35,
+      "physic": 0.5
+    },
+    "observacao": "Ricardo Bochini foi um meia-armador do Independiente, reconhecido como idolo de Maradona por sua inteligencia e visao de jogo, apesar de uma carreira internacional relativamente mais curta. Seus percentis de passe e drible sao altos, refletindo sua reputacao tecnica mesmo com poucas convocacoes. E um nome respeitado por seu impacto tatico apesar da amostra limitada pela selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q318304",
+        "afirmacao": "Ricardo Bochini defendeu o Independiente e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Norberto Alonso",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1953-01-04",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.65,
+      "shooting": 0.68,
+      "passing": 0.8,
+      "dribbling": 0.8,
+      "defending": 0.38,
+      "physic": 0.55
+    },
+    "observacao": "Norberto Alonso, 'Beto', foi um dos maiores idolos do River Plate nos anos 1970 e 1980, reconhecido por sua elegancia tecnica e capacidade de armacao de jogadas. Seus percentis de passe e drible refletem seu perfil de meia criativo de alto nivel. E um dos nomes mais lembrados pela torcida do River Plate daquela geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q94949",
+        "afirmacao": "Norberto Alonso defendeu o River Plate e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Antonio Rattin",
+    "pais": "Argentina",
+    "posicao": "CDM",
+    "dob": "1937-05-16",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.8,
+      "physic": 0.78
+    },
+    "observacao": "Antonio Rattin foi capitao da selecao argentina na Copa do Mundo de 1966, ficando marcado por sua expulsao polemica na partida contra a Inglaterra, mas tambem reconhecido como um volante imponente e fisico. Seus percentis de defesa e fisico sao elevados, consistentes com seu papel de lider defensivo. E um dos nomes mais marcantes da selecao argentina nos anos 1960.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q604553",
+        "afirmacao": "Antonio Rattin foi capitao da selecao argentina na Copa do Mundo de 1966."
+      }
+    ],
+    "confianca": 0.48,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
+  },
+  {
+    "nome": "Ricardo Giusti",
+    "pais": "Argentina",
+    "posicao": "CM",
+    "dob": "1956-12-11",
+    "percentis": {
+      "overall": 0.74,
+      "pace": 0.65,
+      "shooting": 0.55,
+      "passing": 0.68,
+      "dribbling": 0.62,
+      "defending": 0.6,
+      "physic": 0.65
+    },
+    "observacao": "Ricardo Giusti foi um meio-campista de funcao equilibrada no elenco campeao da Copa do Mundo de 1986, contribuindo tanto na marcacao quanto na construcao de jogadas. Seus percentis refletem um jogador solido de rotacao em uma equipe repleta de estrelas. E um nome associado a profundidade do elenco campeao de 1986.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q721996",
+        "afirmacao": "Ricardo Giusti integrou a selecao argentina campea da Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Claudio Borghi",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1964-09-28",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.68,
+      "shooting": 0.65,
+      "passing": 0.75,
+      "dribbling": 0.78,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Claudio Borghi foi um meia-atacante tecnico que integrou o elenco campeao da Copa do Mundo de 1986 e teve destaque tanto no Argentinos Juniors quanto no River Plate. Seus percentis de passe e drible refletem seu perfil criativo. E um nome relevante dentro do grupo campeao de 1986, ainda que com menor protagonismo que os titulares principais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q516805",
+        "afirmacao": "Claudio Borghi integrou a selecao argentina campea da Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Pedro Troglio",
+    "pais": "Argentina",
+    "posicao": "CM",
+    "dob": "1965-07-28",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.62,
+      "dribbling": 0.58,
+      "defending": 0.58,
+      "physic": 0.68
+    },
+    "observacao": "Pedro Troglio foi um meio-campista de perfil mais discreto que integrou o elenco argentino na Copa do Mundo de 1990, vice-campea naquela edicao. Seus percentis equilibrados refletem um jogador de rotacao, sem grande destaque individual. E um nome relevante como parte do grupo daquela campanha, mais do que como protagonista.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q509107",
+        "afirmacao": "Pedro Troglio integrou a selecao argentina na Copa do Mundo de 1990."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Javier Mascherano",
+    "pais": "Argentina",
+    "posicao": "CDM",
+    "dob": "1984-06-08",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.65,
+      "shooting": 0.45,
+      "passing": 0.75,
+      "dribbling": 0.62,
+      "defending": 0.92,
+      "physic": 0.8
+    },
+    "observacao": "Javier Mascherano foi capitao da selecao argentina na final da Copa do Mundo de 2014 e um dos maiores volantes defensivos da historia do futebol argentino, com carreira vitoriosa no Barcelona. Seu percentil de defesa e um dos mais altos de todo o pool historico, consistente com seu papel de pilar defensivo. E considerado um dos grandes lideres e marcadores da selecao na era moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q161571",
+        "afirmacao": "Javier Mascherano foi capitao da selecao argentina na final da Copa do Mundo de 2014."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
+  },
+  {
+    "nome": "Diego Simeone",
+    "pais": "Argentina",
+    "posicao": "CM",
+    "dob": "1970-04-28",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.68,
+      "shooting": 0.62,
+      "passing": 0.75,
+      "dribbling": 0.68,
+      "defending": 0.78,
+      "physic": 0.75
+    },
+    "observacao": "Diego Simeone, 'Cholo', foi um meio-campista combativo e lider, campeao da Copa America em 1991 e 1993, reconhecido por sua entrega e inteligencia tatica em campo. Seus percentis equilibram boa contribuicao defensiva e ofensiva, tipico de um box-to-box de alto nivel. E um dos meio-campistas mais vitoriosos da selecao argentina em competicoes continentais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q258115",
+        "afirmacao": "Diego Simeone foi campeao da Copa America de 1991 e 1993 pela selecao argentina."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Juan Roman Riquelme",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1978-06-24",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.55,
+      "shooting": 0.72,
+      "passing": 0.92,
+      "dribbling": 0.9,
+      "defending": 0.32,
+      "physic": 0.55
+    },
+    "observacao": "Juan Roman Riquelme foi um dos maiores artistas do futebol argentino, campeao da Copa Libertadores com o Boca Juniors em 2000 e 2007, reconhecido mundialmente por sua pausa e visao de jogo privilegiadas. Seu percentil de passe e um dos mais altos de todo o pool historico, consistente com seu status de craque. Os percentis o posicionam entre os meio-campistas mais talentosos tecnicamente da historia argentina.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q192965",
+        "afirmacao": "Juan Roman Riquelme conquistou a Copa Libertadores com o Boca Juniors em 2000 e 2007."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Matias Almeyda",
+    "pais": "Argentina",
+    "posicao": "CDM",
+    "dob": "1973-12-21",
+    "percentis": {
+      "overall": 0.77,
+      "pace": 0.62,
+      "shooting": 0.5,
+      "passing": 0.65,
+      "dribbling": 0.58,
+      "defending": 0.78,
+      "physic": 0.72
+    },
+    "observacao": "Matias Almeyda foi um volante combativo que se destacou na Lazio durante a decada de 1990, com boa capacidade de recomposicao e marcacao. Seu percentil de defesa e elevado, consistente com seu perfil de meio-campista destruidor. E classificado como um jogador internacional solido dentro do pool historico argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q359494",
+        "afirmacao": "Matias Almeyda defendeu a Lazio e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Leonardo Astrada",
+    "pais": "Argentina",
+    "posicao": "CDM",
+    "dob": "1970-01-06",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.58,
+      "shooting": 0.45,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.7,
+      "physic": 0.68
+    },
+    "observacao": "Leonardo Astrada foi um volante defensivo do River Plate nos anos 1990, com funcao principalmente de contencao e equilibrio tatico para o time. Seus percentis refletem um jogador de nivel regular na selecao, mais relevante em nivel de clube. E um nome com protagonismo internacional mais limitado dentro do pool historico.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2477498",
+        "afirmacao": "Leonardo Astrada defendeu o River Plate e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Pablo Aimar",
+    "pais": "Argentina",
+    "posicao": "CAM",
+    "dob": "1979-11-03",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.68,
+      "shooting": 0.65,
+      "passing": 0.82,
+      "dribbling": 0.88,
+      "defending": 0.32,
+      "physic": 0.48
+    },
+    "observacao": "Pablo Aimar, 'El Payaso', foi um meia extremamente tecnico que brilhou no Valencia na decada de 2000, reconhecido por sua capacidade de drible e passe em espacos reduzidos. Seu percentil de dribbling e um dos mais altos entre os meio-campistas do pool. E lembrado como um dos jogadores mais talentosos tecnicamente de sua geracao na Argentina.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q130215",
+        "afirmacao": "Pablo Aimar defendeu o Valencia e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Lucho Gonzalez",
+    "pais": "Argentina",
+    "posicao": "CM",
+    "dob": "1981-01-19",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.65,
+      "shooting": 0.62,
+      "passing": 0.75,
+      "dribbling": 0.7,
+      "defending": 0.58,
+      "physic": 0.65
+    },
+    "observacao": "Lucho Gonzalez foi um meio-campista completo que teve grande destaque no Porto durante a decada de 2000, equilibrando bem ataque e defesa. Seus percentis refletem um jogador internacional solido e versatil. E um nome relevante da selecao argentina naquele periodo, sem alcancar o status de estrela maxima.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q244894",
+        "afirmacao": "Lucho Gonzalez defendeu o Porto e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Esteban Cambiasso",
+    "pais": "Argentina",
+    "posicao": "CDM",
+    "dob": "1980-08-18",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.62,
+      "shooting": 0.62,
+      "passing": 0.78,
+      "dribbling": 0.7,
+      "defending": 0.72,
+      "physic": 0.68
+    },
+    "observacao": "Esteban Cambiasso foi peca fundamental do Inter de Milao durante a conquista do treble em 2010, com grande versatilidade entre as funcoes de volante e meio-campista box-to-box. Seus percentis equilibrados entre defesa e passe refletem sua inteligencia tatica. E considerado um dos meio-campistas argentinos mais completos e titulados da era moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q192122",
+        "afirmacao": "Esteban Cambiasso conquistou o treble com o Inter de Milao em 2010 e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Javier Zanetti",
+    "pais": "Argentina",
+    "posicao": "RB",
+    "dob": "1973-08-10",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.75,
+      "shooting": 0.55,
+      "passing": 0.78,
+      "dribbling": 0.7,
+      "defending": 0.78,
+      "physic": 0.75
+    },
+    "observacao": "Javier Zanetti foi capitao historico do Inter de Milao por muitos anos e um dos jogadores mais consistentes e versateis da selecao argentina, capaz de atuar tanto como lateral-direito quanto como meio-campista. Seus percentis elevados em defesa e passe refletem sua longevidade e qualidade em multiplas funcoes. E considerado um dos maiores lateral-direitos da historia do futebol sul-americano.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q52876",
+        "afirmacao": "Javier Zanetti foi capitao historico do Inter de Milao e um dos jogadores mais convocados pela selecao argentina."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RWB",
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Jose Luis Brown",
+    "pais": "Argentina",
+    "posicao": "CB",
+    "dob": "1956-11-10",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.58,
+      "shooting": 0.45,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.78,
+      "physic": 0.72
+    },
+    "observacao": "Jose Luis Brown marcou o primeiro gol na final da Copa do Mundo de 1986, atuando como zagueiro apos ter sido reconvertido de meio-campista, o que lhe dava boa qualidade com a bola nos pes. Seus percentis de passe um pouco acima do padrao para zagueiros refletem essa origem. E um dos nomes mais lembrados da conquista de 1986 pela sua contribuicao decisiva.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q721998",
+        "afirmacao": "Jose Luis Brown marcou o primeiro gol na final da Copa do Mundo de 1986 pela Argentina."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Silvio Marzolini",
+    "pais": "Argentina",
+    "posicao": "LB",
+    "dob": "1940-10-04",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.75,
+      "shooting": 0.5,
+      "passing": 0.72,
+      "dribbling": 0.7,
+      "defending": 0.78,
+      "physic": 0.68
+    },
+    "observacao": "Silvio Marzolini e considerado um dos maiores laterais-esquerdos da historia do futebol argentino, idolo do Boca Juniors e reconhecido por sua elegancia e capacidade ofensiva em uma epoca em que laterais eram majoritariamente defensivos. Seus percentis de pace e passe sao elevados para a posicao, refletindo seu estilo adiantado para a epoca. E citado entre os melhores laterais sul-americanos de todos os tempos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q616023",
+        "afirmacao": "Silvio Marzolini defendeu o Boca Juniors e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Daniel Passarella",
+    "pais": "Argentina",
+    "posicao": "CB",
+    "dob": "1953-05-25",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.62,
+      "shooting": 0.68,
+      "passing": 0.72,
+      "dribbling": 0.62,
+      "defending": 0.9,
+      "physic": 0.8
+    },
+    "observacao": "Daniel Passarella, 'El Gran Capitan', foi capitao das conquistas da Copa do Mundo de 1978 e campeao novamente em 1986, sendo um zagueiro excepcional no jogo aereo e com grande capacidade de marcar gols para a posicao. Seus percentis de defesa e shooting sao ambos elevados, refletindo seu perfil raro de zagueiro artilheiro. E considerado um dos maiores zagueiros e lideres da historia do futebol argentino.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q15802",
+        "afirmacao": "Daniel Passarella foi capitao da selecao argentina campea das Copas do Mundo de 1978 e 1986."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Roberto Perfumo",
+    "pais": "Argentina",
+    "posicao": "CB",
+    "dob": "1942-10-03",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.58,
+      "shooting": 0.45,
+      "passing": 0.62,
+      "dribbling": 0.5,
+      "defending": 0.88,
+      "physic": 0.78
+    },
+    "observacao": "Roberto Perfumo foi um zagueiro de elite do Racing Club e da selecao argentina nos anos 1960 e 1970, reconhecido por sua inteligencia de marcacao e lideranca defensiva. Seu percentil de defesa e um dos mais altos entre os zagueiros do pool historico. E considerado um dos melhores defensores argentinos de sua geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q734558",
+        "afirmacao": "Roberto Perfumo defendeu o Racing Club e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Oscar Ruggeri",
+    "pais": "Argentina",
+    "posicao": "CB",
+    "dob": "1962-01-26",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.6,
+      "shooting": 0.48,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.85,
+      "physic": 0.78
+    },
+    "observacao": "Oscar Ruggeri foi um zagueiro titular na conquista da Copa do Mundo de 1986 e teve uma das carreiras mais longevas na selecao argentina, disputando quatro Copas do Mundo. Seu percentil de defesa e elevado, consistente com sua solidez defensiva ao longo de muitos anos. E um dos zagueiros mais experientes e confiaveis da historia da selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q346942",
+        "afirmacao": "Oscar Ruggeri integrou a selecao argentina campea da Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Roberto Ayala",
+    "pais": "Argentina",
+    "posicao": "CB",
+    "dob": "1973-04-14",
+    "percentis": {
+      "overall": 0.89,
+      "pace": 0.62,
+      "shooting": 0.45,
+      "passing": 0.68,
+      "dribbling": 0.58,
+      "defending": 0.88,
+      "physic": 0.75
+    },
+    "observacao": "Roberto Ayala, 'El Raton', foi capitao e um dos zagueiros mais confiaveis e elegantes da selecao argentina na virada dos anos 2000, com excelente leitura de jogo e antecipacao. Seu percentil de defesa e um dos mais altos entre os zagueiros do pool historico. E considerado um dos melhores zagueiros sul-americanos de sua geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q189535",
+        "afirmacao": "Roberto Ayala foi capitao da selecao argentina e um dos zagueiros mais convocados da era moderna."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gabriel Heinze",
+    "pais": "Argentina",
+    "posicao": "LB",
+    "dob": "1978-04-19",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.68,
+      "shooting": 0.45,
+      "passing": 0.65,
+      "dribbling": 0.58,
+      "defending": 0.82,
+      "physic": 0.75
+    },
+    "observacao": "Gabriel Heinze foi um defensor combativo e versatil que passou por Manchester United, Real Madrid e Paris Saint-Germain, atuando tanto como lateral-esquerdo quanto como zagueiro. Seu percentil de defesa e elevado, consistente com sua reputacao de jogador aguerrido. E classificado como um dos defensores argentinos mais titulados em clubes europeus de elite.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q63659",
+        "afirmacao": "Gabriel Heinze defendeu Manchester United, Real Madrid e Paris Saint-Germain, alem da selecao argentina."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB"
+    ]
+  },
+  {
+    "nome": "Alberto Tarantini",
+    "pais": "Argentina",
+    "posicao": "LB",
+    "dob": "1955-12-03",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.78,
+      "shooting": 0.48,
+      "passing": 0.62,
+      "dribbling": 0.62,
+      "defending": 0.72,
+      "physic": 0.65
+    },
+    "observacao": "Alberto Tarantini, 'El Vasco', foi lateral-esquerdo titular na conquista da Copa do Mundo de 1978, reconhecido por sua velocidade e capacidade ofensiva para a posicao. Seu percentil de pace e elevado, refletindo sua caracteristica mais marcante. E um dos nomes emblematicos, inclusive visualmente, da geracao campea de 1978.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q455135",
+        "afirmacao": "Alberto Tarantini integrou a selecao argentina campea da Copa do Mundo de 1978."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Julio Olarticoechea",
+    "pais": "Argentina",
+    "posicao": "LB",
+    "dob": "1958-10-18",
+    "percentis": {
+      "overall": 0.79,
+      "pace": 0.72,
+      "shooting": 0.5,
+      "passing": 0.65,
+      "dribbling": 0.65,
+      "defending": 0.72,
+      "physic": 0.65
+    },
+    "observacao": "Julio Olarticoechea foi lateral-esquerdo do elenco campeao da Copa do Mundo de 1986, contribuindo com boa capacidade ofensiva pela lateral. Seus percentis equilibrados entre ataque e defesa refletem seu perfil moderno para a epoca. E um nome relevante dentro do grupo campeao de 1986.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q516892",
+        "afirmacao": "Julio Olarticoechea integrou a selecao argentina campea da Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
+  },
+  {
+    "nome": "Juan Pablo Sorin",
+    "pais": "Argentina",
+    "posicao": "LB",
+    "dob": "1976-05-05",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.75,
+      "shooting": 0.55,
+      "passing": 0.72,
+      "dribbling": 0.7,
+      "defending": 0.72,
+      "physic": 0.65
+    },
+    "observacao": "Juan Pablo Sorin foi capitao da selecao argentina na Copa do Mundo de 2006, um lateral-esquerdo dinamico e lider, com boa capacidade de chegada ao ataque. Seus percentis de pace e passe refletem seu perfil moderno de lateral ofensivo. E considerado um dos lideres mais marcantes da geracao de 2006.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q220746",
+        "afirmacao": "Juan Pablo Sorin foi capitao da selecao argentina na Copa do Mundo de 2006."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LM"
+    ]
+  },
+  {
+    "nome": "Walter Samuel",
+    "pais": "Argentina",
+    "posicao": "CB",
+    "dob": "1978-03-23",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.62,
+      "shooting": 0.42,
+      "passing": 0.58,
+      "dribbling": 0.5,
+      "defending": 0.88,
+      "physic": 0.82
+    },
+    "observacao": "Walter Samuel, 'El Muro', foi um zagueiro extremamente solido que integrou o Inter de Milao campeao do treble em 2010, reconhecido por sua forca fisica e seguranca defensiva. Seu percentil de defesa e um dos mais altos entre os zagueiros do pool historico. E considerado um dos defensores argentinos mais dominantes da era moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q193702",
+        "afirmacao": "Walter Samuel conquistou o treble com o Inter de Milao em 2010 e foi convocado pela selecao argentina."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Roberto Sensini",
+    "pais": "Argentina",
+    "posicao": "CB",
+    "dob": "1966-10-12",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.6,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.75,
+      "physic": 0.7
+    },
+    "observacao": "Roberto Sensini foi um zagueiro solido que integrou os elencos argentinos nas Copas do Mundo de 1990 e 1994, alem de ter boa passagem pelo futebol italiano no Parma. Seus percentis refletem um defensor internacional confiavel, sem alcancar o status de zagueiro de elite maxima. E um nome relevante da selecao argentina nos anos 1990.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q369133",
+        "afirmacao": "Roberto Sensini integrou a selecao argentina nas Copas do Mundo de 1990 e 1994, alem de defender o Parma."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
+  }
+]

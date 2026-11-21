@@ -1,0 +1,356 @@
+{
+  "pais": "Peru",
+  "jogadores": [
+    {
+      "nome": "Teofilo Cubillas",
+      "posicao_principal": "CAM",
+      "dob": "1949-03-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q311403",
+      "contexto": "Melhor da Copa 1970"
+    },
+    {
+      "nome": "Claudio Pizarro",
+      "posicao_principal": "ST",
+      "dob": "1978-10-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q109397",
+      "contexto": "Bayern de Munique"
+    },
+    {
+      "nome": "Paolo Guerrero",
+      "posicao_principal": "ST",
+      "dob": "1984-01-01",
+      "camadas": [
+        "historico",
+        "convocado_2024"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q156802",
+      "contexto": "Corinthians"
+    },
+    {
+      "nome": "Ramon Mifflin",
+      "posicao_principal": "CM",
+      "dob": "1947-04-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q617816",
+      "contexto": "Copa 1975 e 1978"
+    },
+    {
+      "nome": "Jose del Solar",
+      "posicao_principal": "CM",
+      "dob": "1967-11-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q734534",
+      "contexto": "Copa 1997"
+    },
+    {
+      "nome": "German Leguia",
+      "posicao_principal": "CDM",
+      "dob": "1954-01-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2707715",
+      "contexto": "Copa 1979"
+    },
+    {
+      "nome": "Julio Cesar Uribe",
+      "posicao_principal": "CAM",
+      "dob": "1958-05-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2722415",
+      "contexto": "Copa 1987"
+    },
+    {
+      "nome": "Luis Cruzado",
+      "posicao_principal": "CM",
+      "dob": "1941-07-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2737090",
+      "contexto": "Copa 1963"
+    },
+    {
+      "nome": "Roberto Palacios",
+      "posicao_principal": "CAM",
+      "dob": "1972-12-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q922664",
+      "contexto": "Copa 1999-2004"
+    },
+    {
+      "nome": "Cesar Cueto",
+      "posicao_principal": "CAM",
+      "dob": "1952-06-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2564108",
+      "contexto": "Copa 1975 e 1978"
+    },
+    {
+      "nome": "Hugo Sotil",
+      "posicao_principal": "CAM",
+      "dob": "1949-05-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2307763",
+      "contexto": "Barcelona"
+    },
+    {
+      "nome": "Roberto Challe",
+      "posicao_principal": "CAM",
+      "dob": "1946-11-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q580092",
+      "contexto": "Copa 1967"
+    },
+    {
+      "nome": "Juan Manuel Vargas",
+      "posicao_principal": "LB",
+      "dob": "1983-10-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q311391",
+      "contexto": "Fiorentina"
+    },
+    {
+      "nome": "Alberto Rodriguez",
+      "posicao_principal": "CB",
+      "dob": "1984-03-31",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q552066",
+      "contexto": "Copa America 2015"
+    },
+    {
+      "nome": "Hector Chumpitaz",
+      "posicao_principal": "CB",
+      "dob": "1944-04-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q677720",
+      "contexto": "Capitao anos 70"
+    },
+    {
+      "nome": "Ruben Toribio Diaz",
+      "posicao_principal": "CB",
+      "dob": "1952-04-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q921732",
+      "contexto": "Copa 1975"
+    },
+    {
+      "nome": "Percy Rojas",
+      "posicao_principal": "ST",
+      "dob": "1949-09-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q583263",
+      "contexto": "Copa 1975"
+    },
+    {
+      "nome": "Juan Carlos Oblitas",
+      "posicao_principal": "LW",
+      "dob": "1951-02-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2566639",
+      "contexto": "Copa 1975-1982"
+    },
+    {
+      "nome": "Flavio Maestri",
+      "posicao_principal": "ST",
+      "dob": "1973-01-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2722410",
+      "contexto": "Copa 1997-2004"
+    },
+    {
+      "nome": "Edison Flores",
+      "posicao_principal": "LW",
+      "dob": "1994-05-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q525788",
+      "contexto": "DC United"
+    },
+    {
+      "nome": "Oswaldo Ramirez",
+      "posicao_principal": "ST",
+      "dob": "1947-03-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1120675",
+      "contexto": "Copa 1970"
+    },
+    {
+      "nome": "Jefferson Farfan",
+      "posicao_principal": "RW",
+      "dob": "1984-10-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q295311",
+      "contexto": "Schalke 04"
+    },
+    {
+      "nome": "Nolberto Solano",
+      "posicao_principal": "RW",
+      "dob": "1974-12-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q378005",
+      "contexto": "Newcastle"
+    },
+    {
+      "nome": "Pedro Pablo Leon",
+      "posicao_principal": "ST",
+      "dob": "1943-06-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2313175",
+      "contexto": "Copa 1970"
+    },
+    {
+      "nome": "Alberto Gallardo",
+      "posicao_principal": "LW",
+      "dob": "1940-11-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2574557",
+      "contexto": "Copa 1970"
+    },
+    {
+      "nome": "Ramon Quiroga",
+      "posicao_principal": "GK",
+      "dob": "1950-07-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2718604",
+      "contexto": "Copa 1978"
+    },
+    {
+      "nome": "Oscar Ibanez",
+      "posicao_principal": "GK",
+      "dob": "1967-08-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2352115",
+      "contexto": "Copa 1997-2004"
+    },
+    {
+      "nome": "Bryan Reyna",
+      "posicao_principal": "ST",
+      "dob": "1998-08-23",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Belgrano"
+    },
+    {
+      "nome": "Miguel Araujo",
+      "posicao_principal": "CB",
+      "dob": "1994-10-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Portland Timbers"
+    },
+    {
+      "nome": "Wilder Cartagena",
+      "posicao_principal": "CM",
+      "dob": "1994-09-23",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Orlando City SC"
+    },
+    {
+      "nome": "Oliver Sonne",
+      "posicao_principal": "CB",
+      "dob": "2000-11-10",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Silkeborg"
+    },
+    {
+      "nome": "Edison Flores",
+      "posicao_principal": "ST",
+      "dob": "1994-05-15",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Universitario"
+    },
+    {
+      "nome": "Piero Quispe",
+      "posicao_principal": "CM",
+      "dob": "2001-08-14",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "UNAM"
+    },
+    {
+      "nome": "José Rivera",
+      "posicao_principal": "ST",
+      "dob": "1997-05-08",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Universitario"
+    },
+    {
+      "nome": "Franco Zanelatto",
+      "posicao_principal": "ST",
+      "dob": "2000-05-09",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Alianza Lima"
+    }
+  ]
+}
