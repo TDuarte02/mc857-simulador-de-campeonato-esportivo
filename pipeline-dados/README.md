@@ -146,6 +146,18 @@ A fonte de cada jogador histórico é a página do Wikidata (`https://www.wikida
 derivada de `fonte_validacao` nos arquivos históricos anteriores. Não há chamada de rede
 no pipeline: as propostas entram como JSON versionado, igual à camada 2024.
 
+### Ressalva metodológica (citar no relatório do trabalho)
+
+Das 467 lendas, **30** têm `fonte_atributos="ea_fc_icon"` e **437** têm
+`fonte_atributos="inferencia_llm_calibrada_historico"`. Nos dois casos os valores são
+**estimados, não observados**.
+
+Os atributos dos Icons do EA FC foram compilados de conhecimento público amplamente
+replicado (wikis de comunidade, listas de Ultimate Team), **não** de uma fonte oficial
+baixável: a sofifa.com — fonte usual desses dados — está atrás de Cloudflare e não foi
+raspada. Os valores inferidos derivam da distribuição real do país/grupo de posição no
+`dataset/players_22.csv`, mas a escolha do percentil é heurística nossa.
+
 ## Posições (`pipeline/posicoes.py`)
 
 O jogo só permite escalar um jogador nas posições que ele de fato joga, então cada um
