@@ -36,8 +36,8 @@ from python_prototype.dispute import MD3Result, simulate_md3
 # Constantes
 # ============================================================
 
-CYCLE_MINUTES = 15
-CYCLES_PER_MATCH = 6
+CYCLE_MINUTES = 9
+CYCLES_PER_MATCH = 10
 HALFTIME_MINUTE = (CYCLES_PER_MATCH // 2) * CYCLE_MINUTES   # 45
 FULL_TIME_MINUTE = CYCLES_PER_MATCH * CYCLE_MINUTES         # 90
 

@@ -25,7 +25,7 @@ class AttackParameters:
     P_G + P_C(k) <= 1 para qualquer q e k (o pior caso é q = 1, k = 1).
     """
 
-    g_max: float = 0.30
+    g_max: float = 0.40
     c_max: float = 0.50
     r: float = 0.75
 
@@ -44,6 +44,12 @@ class AttackParameters:
 
 
 DEFAULT_ATTACK_PARAMETERS = AttackParameters()
+
+# Escala da logística em `attack_quality`: quanto maior, mais achatada.
+# Calibrada para a escala geral do motor: uma diferença de 4 pontos em
+# Ataque - Defesa vale ~0.55 de q (favorito modesto), e diferenças acima de
+# ~50 pontos saturam em q ~ 1 (favorito esmagador).
+ESCALA_QUALIDADE = 20.0
 
 
 # ============================================================
@@ -92,19 +98,20 @@ class AttackSequenceResult:
 
 def attack_quality(attack: float, defense: float) -> float:
     """
-    Calcula q = A / (A + D).
+    Calcula q, a qualidade do ataque, como uma logística da diferença: A - D.
 
-    Se Ataque e Defesa efetivos forem ambos zero, a razão é indefinida
-    e q = 0.5.
+    A razão anterior (A / (A + D)) achatava demais: com Ataque e Defesa das
+    seleções entre ~76 e ~85, o denominador (~160) engolia a diferença — uma
+    vantagem de 4 pontos no ataque virava 2,5 pontos percentuais em q. A
+    logística amplifica a mesma vantagem para ~12 pontos, que é o que faz o
+    favorito ganhar mais que empatar.
+
+    Com A = D, q = 0.5 (mesmo comportamento de antes no caso simétrico).
     """
     a = ensure_finite_non_negative(attack, "Ataque efetivo")
     d = ensure_finite_non_negative(defense, "Defesa efetiva")
 
-    total = a + d
-    if total == 0:
-        return 0.5
-
-    return a / total
+    return 1.0 / (1.0 + math.exp(-(a - d) / ESCALA_QUALIDADE))
 
 
 def calculate_attack_probabilities(

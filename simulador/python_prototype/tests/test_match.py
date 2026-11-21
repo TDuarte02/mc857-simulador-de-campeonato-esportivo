@@ -38,23 +38,23 @@ def count(state, event_type):
     return sum(1 for e in state.events if e.type is event_type)
 
 
-def test_each_cycle_advances_clock_by_exactly_15_minutes():
+def test_each_cycle_advances_clock_by_exactly_one_cycle():
     state = new_match()
     rng = random.Random(1)
 
-    for expected in (15, 30, 45):
+    for passo in range(1, 4):
         result = run_cycle(state, rng)
-        assert state.clock == expected
+        assert state.clock == passo * CYCLE_MINUTES
         assert result.end_minute - result.start_minute == CYCLE_MINUTES
 
 
 @pytest.mark.parametrize("seed", range(50))
-def test_regular_match_ends_after_six_cycles(seed):
+def test_regular_match_ends_after_all_cycles(seed):
     state = new_match()
     results = play_match(state, seed=seed)
 
     assert len(results) == CYCLES_PER_MATCH
-    assert state.cycle_index == 6
+    assert state.cycle_index == CYCLES_PER_MATCH
     assert state.clock == 90
     assert state.phase is MatchPhase.FINISHED
     assert count(state, MatchEventType.FULL_TIME) == 1
@@ -97,7 +97,7 @@ def test_cannot_run_cycles_after_match_ends():
 def test_halftime_is_recognized_after_45_minutes():
     state = new_match()
     rng = random.Random(5)
-    for _ in range(3):
+    for _ in range(CYCLES_PER_MATCH // 2):
         run_cycle(state, rng)
 
     assert state.phase is MatchPhase.HALFTIME
@@ -113,7 +113,7 @@ def test_lineup_change_allowed_only_at_halftime():
         change_lineup(state, "A", squad("N", 80), FORMATION_442)
 
     rng = random.Random(9)
-    for _ in range(3):
+    for _ in range(CYCLES_PER_MATCH // 2):
         run_cycle(state, rng)
     before = state.teams["A"].base
 
@@ -130,13 +130,13 @@ def test_lineup_change_allowed_only_at_halftime():
 def test_lineup_change_affects_following_cycles_through_attributes():
     state = new_match(rating_a=70, rating_b=70)
     rng = random.Random(0)
-    for _ in range(3):
+    for _ in range(CYCLES_PER_MATCH // 2):
         run_cycle(state, rng)
     change_lineup(state, "A", squad("N", 100), FORMATION_433)
     start_second_half(state)
 
     assert state.teams["A"].effective().control > state.teams["B"].effective().control
-    for _ in range(3):
+    for _ in range(CYCLES_PER_MATCH // 2):
         run_cycle(state, rng)
     assert state.is_finished
 
@@ -144,7 +144,7 @@ def test_lineup_change_affects_following_cycles_through_attributes():
 def test_invalid_lineup_change_does_not_alter_state():
     state = new_match()
     rng = random.Random(2)
-    for _ in range(3):
+    for _ in range(CYCLES_PER_MATCH // 2):
         run_cycle(state, rng)
     original = state.teams["A"]
 
@@ -251,7 +251,7 @@ def test_cycle_event_order_is_stable():
 def test_change_lineup_with_mismatched_formation_does_not_alter_state():
     state = new_match()
     rng = random.Random(2)
-    for _ in range(3):
+    for _ in range(CYCLES_PER_MATCH // 2):
         run_cycle(state, rng)
     original = state.teams["A"]
     events = len(state.events)
@@ -306,12 +306,12 @@ def test_play_match_on_finished_match_raises_and_keeps_state():
 def test_play_match_resumes_from_halftime():
     state = new_match()
     rng = random.Random(5)
-    for _ in range(3):
+    for _ in range(CYCLES_PER_MATCH // 2):
         run_cycle(state, rng)
 
     results = play_match(state, rng)
 
-    assert len(results) == 3
+    assert len(results) == CYCLES_PER_MATCH - CYCLES_PER_MATCH // 2
     assert state.is_finished
     assert count(state, MatchEventType.SECOND_HALF_START) == 1
 
@@ -531,11 +531,14 @@ def test_bonus_does_not_change_base_or_modifiers():
 
 def test_bonus_survives_halftime_and_lineup_change():
     state = new_match(70, 70)
-    rng = random.Random(0)
-    run_cycle(state, ScriptedRandom([0.9] * 6 + [0.01]))        # B marca
-    run_cycle(state, ScriptedRandom([0.9] * 6 + [0.01]))        # B marca
+    # Enche o primeiro tempo com gols do B (gol não deixa bônus pendente) e faz o
+    # último ciclo antes do intervalo terminar em perda de posse, para que A
+    # chegue ao intervalo com o bônus na mão.
+    for _ in range(CYCLES_PER_MATCH // 2 - 1):
+        run_cycle(state, ScriptedRandom([0.9] * 6 + [0.01]))    # B marca
     run_cycle(state, ScriptedRandom([0.9] * 6 + [0.99]))        # B perde => A ganha bônus
     assert state.phase is MatchPhase.HALFTIME
+    assert state.pending_control_bonus == PendingControlBonus("A", 5.0)
 
     change_lineup(state, "A", squad("N", 70), FORMATION_433)
     start_second_half(state)

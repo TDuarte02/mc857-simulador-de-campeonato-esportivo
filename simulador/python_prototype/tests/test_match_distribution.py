@@ -63,12 +63,16 @@ def mean_goal_difference(scores) -> float:
 # Diferenças pequenas: tendem a empate, mas qualquer time pode vencer
 # ------------------------------------------------------------
 
-def test_small_rating_difference_tends_to_draws():
+def test_small_rating_difference_favours_the_better_team_without_deciding_it():
+    # MUDANÇA DE INTENÇÃO (calibração): a partida passou a ter ~2,5 gols, então
+    # o empate deixou de ser o resultado mais comum — como no futebol real, onde
+    # ele fica em ~25%. Uma diferença pequena garante vantagem, não decisão.
     r = rates(simulate_scores(72, 68))
 
-    assert r["draws"] >= 0.30
-    assert r["draws"] > r["a_wins"]
-    assert r["draws"] > r["b_wins"]
+    assert r["a_wins"] > r["b_wins"]
+    assert r["draws"] >= 0.15
+    assert r["b_wins"] >= 0.15       # o time inferior segue vencendo com frequência
+    assert r["a_wins"] < 0.65        # mas o superior está longe de decidir
 
 
 def test_small_rating_difference_allows_either_team_to_win():
@@ -88,27 +92,33 @@ def test_equal_teams_have_symmetric_outcomes():
     r = rates(simulate_scores(70, 70))
 
     assert abs(r["a_wins"] - r["b_wins"]) < 0.05
-    assert r["draws"] > r["a_wins"] and r["draws"] > r["b_wins"]
+    # Nenhum desfecho domina: com ~2,5 gols por jogo, vitória de qualquer lado
+    # e empate são todos resultados frequentes (o empate em torno de 25%).
+    assert r["draws"] >= 0.15
+    assert max(r.values()) < 0.50
 
 
-def test_small_attack_and_defense_edge_alone_tends_to_draws():
+def test_small_attack_and_defense_edge_alone_gives_a_modest_advantage():
     # Controle idêntico: só ataque e defesa do time A diferem (+5).
     scores = simulate_scores(70, 70, attack_edge=5.0, defense_edge=5.0)
     r = rates(scores)
 
-    assert r["draws"] >= 0.30
-    assert r["draws"] > r["a_wins"]
-    assert r["draws"] > r["b_wins"]
+    assert r["draws"] >= 0.15
     assert r["b_wins"] >= 0.15
     assert r["a_wins"] >= 0.15
     assert r["a_wins"] > r["b_wins"]
+    assert r["a_wins"] < 0.65
 
 
-def test_small_difference_rarely_produces_large_margins():
+def test_small_difference_keeps_large_margins_uncommon():
+    # Margem de 3+ existe, mas segue minoritária e bem mais rara para o lado
+    # inferior. Com ~2,5 gols por jogo, ~10% das partidas terminam com 3+ de
+    # diferença — a taxa do futebol real.
     scores = simulate_scores(72, 68)
 
-    assert big_margin_rate(scores, "A") < 0.05
-    assert big_margin_rate(scores, "B") < 0.05
+    assert big_margin_rate(scores, "A") < 0.20
+    assert big_margin_rate(scores, "B") < 0.10
+    assert big_margin_rate(scores, "B") < big_margin_rate(scores, "A")
 
 
 # ------------------------------------------------------------
@@ -168,4 +178,7 @@ def test_margin_grows_with_strength_gap():
 
     assert all(x < y for x, y in zip(means, means[1:]))
     assert all(x < y for x, y in zip(big[1:], big[2:]))
-    assert big[-1] > 10 * big[1]
+    # Com a calibração atual a margem de 3+ já aparece em ~11% dos confrontos
+    # apertados, então o salto até o extremo é de ~9× (antes era >10× porque a
+    # margem grande quase não existia nos jogos equilibrados).
+    assert big[-1] > 5 * big[1]

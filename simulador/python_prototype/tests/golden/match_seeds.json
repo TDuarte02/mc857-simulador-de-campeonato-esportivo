@@ -25,7 +25,7 @@
     {}
    ],
    [
-    15,
+    9,
     "MD3_RESULT",
     "B",
     {
@@ -34,7 +34,7 @@
     }
    ],
    [
-    15,
+    9,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -42,13 +42,13 @@
     }
    ],
    [
-    15,
+    9,
     "POSSESSION_LOST",
     "B",
     {}
    ],
    [
-    30,
+    18,
     "MD3_RESULT",
     "B",
     {
@@ -57,7 +57,7 @@
     }
    ],
    [
-    30,
+    18,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -65,8 +65,54 @@
     }
    ],
    [
-    30,
+    18,
     "GOAL",
+    "B",
+    {}
+   ],
+   [
+    27,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 1
+    }
+   ],
+   [
+    27,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    27,
+    "POSSESSION_LOST",
+    "A",
+    {}
+   ],
+   [
+    36,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 1,
+     "wins_b": 2
+    }
+   ],
+   [
+    36,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    36,
+    "POSSESSION_LOST",
     "B",
     {}
    ],
@@ -101,21 +147,21 @@
    ],
    [
     45,
-    "POSSESSION_LOST",
+    "GOAL",
     "A",
     {}
    ],
    [
-    60,
+    54,
     "MD3_RESULT",
     "B",
     {
-     "wins_a": 1,
+     "wins_a": 0,
      "wins_b": 2
     }
    ],
    [
-    60,
+    54,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -123,22 +169,68 @@
     }
    ],
    [
-    60,
+    54,
     "POSSESSION_LOST",
     "B",
     {}
    ],
    [
-    75,
+    63,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 0,
+     "wins_b": 2
+    }
+   ],
+   [
+    63,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    63,
+    "POSSESSION_LOST",
+    "B",
+    {}
+   ],
+   [
+    72,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 0,
+     "wins_b": 2
+    }
+   ],
+   [
+    72,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    72,
+    "POSSESSION_LOST",
+    "B",
+    {}
+   ],
+   [
+    81,
     "MD3_RESULT",
     "A",
     {
      "wins_a": 2,
-     "wins_b": 1
+     "wins_b": 0
     }
    ],
    [
-    75,
+    81,
     "ATTACK_SEQUENCE",
     "A",
     {
@@ -146,8 +238,8 @@
     }
    ],
    [
-    75,
-    "GOAL",
+    81,
+    "POSSESSION_LOST",
     "A",
     {}
    ],
@@ -189,7 +281,7 @@
     {}
    ],
    [
-    15,
+    9,
     "MD3_RESULT",
     "A",
     {
@@ -198,21 +290,21 @@
     }
    ],
    [
-    15,
+    9,
     "ATTACK_SEQUENCE",
     "A",
     {
-     "attempts": 2
+     "attempts": 1
     }
    ],
    [
-    15,
-    "POSSESSION_LOST",
+    9,
+    "GOAL",
     "A",
     {}
    ],
    [
-    30,
+    18,
     "MD3_RESULT",
     "A",
     {
@@ -221,7 +313,7 @@
     }
    ],
    [
-    30,
+    18,
     "ATTACK_SEQUENCE",
     "A",
     {
@@ -229,9 +321,55 @@
     }
    ],
    [
-    30,
+    18,
+    "GOAL",
+    "A",
+    {}
+   ],
+   [
+    27,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 1
+    }
+   ],
+   [
+    27,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    27,
     "POSSESSION_LOST",
     "A",
+    {}
+   ],
+   [
+    36,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 0,
+     "wins_b": 2
+    }
+   ],
+   [
+    36,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    36,
+    "POSSESSION_LOST",
+    "B",
     {}
    ],
    [
@@ -270,7 +408,30 @@
     {}
    ],
    [
-    60,
+    54,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 1
+    }
+   ],
+   [
+    54,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    54,
+    "POSSESSION_LOST",
+    "A",
+    {}
+   ],
+   [
+    63,
     "MD3_RESULT",
     "B",
     {
@@ -279,7 +440,7 @@
     }
    ],
    [
-    60,
+    63,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -287,22 +448,22 @@
     }
    ],
    [
-    60,
+    63,
     "POSSESSION_LOST",
     "B",
     {}
    ],
    [
-    75,
+    72,
     "MD3_RESULT",
     "B",
     {
-     "wins_a": 1,
+     "wins_a": 0,
      "wins_b": 2
     }
    ],
    [
-    75,
+    72,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -310,9 +471,32 @@
     }
    ],
    [
-    75,
+    72,
     "POSSESSION_LOST",
     "B",
+    {}
+   ],
+   [
+    81,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 0
+    }
+   ],
+   [
+    81,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 3
+    }
+   ],
+   [
+    81,
+    "POSSESSION_LOST",
+    "A",
     {}
    ],
    [
@@ -323,7 +507,7 @@
    ]
   ],
   "score": {
-   "A": 0,
+   "A": 2,
    "B": 0
   }
  },
@@ -353,7 +537,7 @@
     {}
    ],
    [
-    15,
+    9,
     "MD3_RESULT",
     "B",
     {
@@ -362,7 +546,7 @@
     }
    ],
    [
-    15,
+    9,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -370,13 +554,13 @@
     }
    ],
    [
-    15,
+    9,
     "POSSESSION_LOST",
     "B",
     {}
    ],
    [
-    30,
+    18,
     "MD3_RESULT",
     "B",
     {
@@ -385,7 +569,7 @@
     }
    ],
    [
-    30,
+    18,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -393,9 +577,55 @@
     }
    ],
    [
-    30,
+    18,
     "GOAL",
     "B",
+    {}
+   ],
+   [
+    27,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 1
+    }
+   ],
+   [
+    27,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    27,
+    "POSSESSION_LOST",
+    "A",
+    {}
+   ],
+   [
+    36,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 0
+    }
+   ],
+   [
+    36,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    36,
+    "POSSESSION_LOST",
+    "A",
     {}
    ],
    [
@@ -413,16 +643,16 @@
    [
     45,
     "MD3_RESULT",
-    "A",
+    "B",
     {
-     "wins_a": 2,
-     "wins_b": 1
+     "wins_a": 1,
+     "wins_b": 2
     }
    ],
    [
     45,
     "ATTACK_SEQUENCE",
-    "A",
+    "B",
     {
      "attempts": 1
     }
@@ -430,11 +660,11 @@
    [
     45,
     "POSSESSION_LOST",
-    "A",
+    "B",
     {}
    ],
    [
-    60,
+    54,
     "MD3_RESULT",
     "A",
     {
@@ -443,7 +673,7 @@
     }
    ],
    [
-    60,
+    54,
     "ATTACK_SEQUENCE",
     "A",
     {
@@ -451,13 +681,13 @@
     }
    ],
    [
-    60,
-    "POSSESSION_LOST",
+    54,
+    "GOAL",
     "A",
     {}
    ],
    [
-    75,
+    63,
     "MD3_RESULT",
     "B",
     {
@@ -466,7 +696,7 @@
     }
    ],
    [
-    75,
+    63,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -474,9 +704,55 @@
     }
    ],
    [
-    75,
+    63,
     "POSSESSION_LOST",
     "B",
+    {}
+   ],
+   [
+    72,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 0,
+     "wins_b": 2
+    }
+   ],
+   [
+    72,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    72,
+    "POSSESSION_LOST",
+    "B",
+    {}
+   ],
+   [
+    81,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 1
+    }
+   ],
+   [
+    81,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 2
+    }
+   ],
+   [
+    81,
+    "GOAL",
+    "A",
     {}
    ],
    [
@@ -487,7 +763,7 @@
    ]
   ],
   "score": {
-   "A": 0,
+   "A": 2,
    "B": 1
   }
  },
@@ -507,40 +783,17 @@
     "ATTACK_SEQUENCE",
     "A",
     {
-     "attempts": 2
-    }
-   ],
-   [
-    0,
-    "POSSESSION_LOST",
-    "A",
-    {}
-   ],
-   [
-    15,
-    "MD3_RESULT",
-    "A",
-    {
-     "wins_a": 2,
-     "wins_b": 1
-    }
-   ],
-   [
-    15,
-    "ATTACK_SEQUENCE",
-    "A",
-    {
      "attempts": 1
     }
    ],
    [
-    15,
+    0,
     "GOAL",
     "A",
     {}
    ],
    [
-    30,
+    9,
     "MD3_RESULT",
     "B",
     {
@@ -549,7 +802,30 @@
     }
    ],
    [
-    30,
+    9,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    9,
+    "POSSESSION_LOST",
+    "B",
+    {}
+   ],
+   [
+    18,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 1,
+     "wins_b": 2
+    }
+   ],
+   [
+    18,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -557,9 +833,55 @@
     }
    ],
    [
-    30,
+    18,
     "POSSESSION_LOST",
     "B",
+    {}
+   ],
+   [
+    27,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 1
+    }
+   ],
+   [
+    27,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 2
+    }
+   ],
+   [
+    27,
+    "POSSESSION_LOST",
+    "A",
+    {}
+   ],
+   [
+    36,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 1
+    }
+   ],
+   [
+    36,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    36,
+    "POSSESSION_LOST",
+    "A",
     {}
    ],
    [
@@ -588,7 +910,7 @@
     "ATTACK_SEQUENCE",
     "A",
     {
-     "attempts": 2
+     "attempts": 1
     }
    ],
    [
@@ -598,7 +920,7 @@
     {}
    ],
    [
-    60,
+    54,
     "MD3_RESULT",
     "A",
     {
@@ -607,7 +929,7 @@
     }
    ],
    [
-    60,
+    54,
     "ATTACK_SEQUENCE",
     "A",
     {
@@ -615,22 +937,45 @@
     }
    ],
    [
-    60,
-    "POSSESSION_LOST",
+    54,
+    "GOAL",
     "A",
     {}
    ],
    [
-    75,
+    63,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 1,
+     "wins_b": 2
+    }
+   ],
+   [
+    63,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    63,
+    "POSSESSION_LOST",
+    "B",
+    {}
+   ],
+   [
+    72,
     "MD3_RESULT",
     "A",
     {
      "wins_a": 2,
-     "wins_b": 1
+     "wins_b": 0
     }
    ],
    [
-    75,
+    72,
     "ATTACK_SEQUENCE",
     "A",
     {
@@ -638,9 +983,32 @@
     }
    ],
    [
-    75,
-    "POSSESSION_LOST",
+    72,
+    "GOAL",
     "A",
+    {}
+   ],
+   [
+    81,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 0,
+     "wins_b": 2
+    }
+   ],
+   [
+    81,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    81,
+    "POSSESSION_LOST",
+    "B",
     {}
    ],
    [
@@ -651,7 +1019,7 @@
    ]
   ],
   "score": {
-   "A": 1,
+   "A": 3,
    "B": 0
   }
  },
@@ -671,40 +1039,17 @@
     "ATTACK_SEQUENCE",
     "A",
     {
-     "attempts": 1
-    }
-   ],
-   [
-    0,
-    "POSSESSION_LOST",
-    "A",
-    {}
-   ],
-   [
-    15,
-    "MD3_RESULT",
-    "B",
-    {
-     "wins_a": 1,
-     "wins_b": 2
-    }
-   ],
-   [
-    15,
-    "ATTACK_SEQUENCE",
-    "B",
-    {
      "attempts": 2
     }
    ],
    [
-    15,
+    0,
     "GOAL",
-    "B",
+    "A",
     {}
    ],
    [
-    30,
+    9,
     "MD3_RESULT",
     "A",
     {
@@ -713,7 +1058,7 @@
     }
    ],
    [
-    30,
+    9,
     "ATTACK_SEQUENCE",
     "A",
     {
@@ -721,9 +1066,78 @@
     }
    ],
    [
-    30,
+    9,
+    "GOAL",
+    "A",
+    {}
+   ],
+   [
+    18,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 1
+    }
+   ],
+   [
+    18,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    18,
     "POSSESSION_LOST",
     "A",
+    {}
+   ],
+   [
+    27,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 1,
+     "wins_b": 2
+    }
+   ],
+   [
+    27,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 2
+    }
+   ],
+   [
+    27,
+    "POSSESSION_LOST",
+    "B",
+    {}
+   ],
+   [
+    36,
+    "MD3_RESULT",
+    "B",
+    {
+     "wins_a": 1,
+     "wins_b": 2
+    }
+   ],
+   [
+    36,
+    "ATTACK_SEQUENCE",
+    "B",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    36,
+    "POSSESSION_LOST",
+    "B",
     {}
    ],
    [
@@ -743,35 +1157,12 @@
     "MD3_RESULT",
     "B",
     {
-     "wins_a": 1,
+     "wins_a": 0,
      "wins_b": 2
     }
    ],
    [
     45,
-    "ATTACK_SEQUENCE",
-    "B",
-    {
-     "attempts": 2
-    }
-   ],
-   [
-    45,
-    "POSSESSION_LOST",
-    "B",
-    {}
-   ],
-   [
-    60,
-    "MD3_RESULT",
-    "B",
-    {
-     "wins_a": 1,
-     "wins_b": 2
-    }
-   ],
-   [
-    60,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -779,13 +1170,82 @@
     }
    ],
    [
-    60,
+    45,
     "POSSESSION_LOST",
     "B",
     {}
    ],
    [
-    75,
+    54,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 0
+    }
+   ],
+   [
+    54,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    54,
+    "GOAL",
+    "A",
+    {}
+   ],
+   [
+    63,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 1
+    }
+   ],
+   [
+    63,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    63,
+    "POSSESSION_LOST",
+    "A",
+    {}
+   ],
+   [
+    72,
+    "MD3_RESULT",
+    "A",
+    {
+     "wins_a": 2,
+     "wins_b": 0
+    }
+   ],
+   [
+    72,
+    "ATTACK_SEQUENCE",
+    "A",
+    {
+     "attempts": 1
+    }
+   ],
+   [
+    72,
+    "GOAL",
+    "A",
+    {}
+   ],
+   [
+    81,
     "MD3_RESULT",
     "B",
     {
@@ -794,7 +1254,7 @@
     }
    ],
    [
-    75,
+    81,
     "ATTACK_SEQUENCE",
     "B",
     {
@@ -802,8 +1262,8 @@
     }
    ],
    [
-    75,
-    "POSSESSION_LOST",
+    81,
+    "GOAL",
     "B",
     {}
    ],
@@ -815,7 +1275,7 @@
    ]
   ],
   "score": {
-   "A": 0,
+   "A": 4,
    "B": 1
   }
  }

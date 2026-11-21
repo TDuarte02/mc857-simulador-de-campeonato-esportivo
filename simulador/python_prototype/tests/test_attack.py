@@ -7,6 +7,7 @@ import pytest
 from python_prototype.attack import (
     AttackOutcome,
     AttackParameters,
+    attack_quality,
     calculate_attack_probabilities,
     resolve_attack_attempt,
     simulate_attack_sequence,
@@ -17,10 +18,10 @@ from python_prototype.attack import (
 # Parâmetros
 # ------------------------------------------------------------
 
-def test_default_parameters_match_experimental_values():
+def test_default_parameters_match_calibrated_values():
     params = AttackParameters()
 
-    assert params.g_max == 0.30
+    assert params.g_max == 0.40
     assert params.c_max == 0.50
     assert params.r == 0.75
 
@@ -56,12 +57,15 @@ def test_custom_parameters_are_used():
 # ------------------------------------------------------------
 
 def test_probabilities_match_formulas_for_first_attempt():
-    p = calculate_attack_probabilities(75, 25, attempt=1)
-    q = 0.75
+    # A qualidade q vem da própria função; o teste verifica a ESTRUTURA das
+    # fórmulas (P_G = g_max * q, P_C = c_max * q), não o valor de q.
+    params = AttackParameters()
+    p = calculate_attack_probabilities(75, 25, attempt=1, params=params)
+    q = attack_quality(75, 25)
 
-    assert p.goal == pytest.approx(0.30 * q)
-    assert p.continuation == pytest.approx(0.50 * q)
-    assert p.loss == pytest.approx(1 - 0.30 * q - 0.50 * q)
+    assert p.goal == pytest.approx(params.g_max * q)
+    assert p.continuation == pytest.approx(params.c_max * q)
+    assert p.loss == pytest.approx(1 - params.g_max * q - params.c_max * q)
 
 
 @pytest.mark.parametrize("attack,defense", [(0, 50), (50, 0), (50, 50), (100, 1), (1, 100)])
@@ -78,8 +82,12 @@ def test_extreme_valid_parameters_keep_probabilities_valid():
     params = AttackParameters(g_max=0.5, c_max=0.5, r=0.99)
     p = calculate_attack_probabilities(100, 0, attempt=1, params=params)
 
-    assert p.loss == pytest.approx(0.0)
-    assert p.goal + p.continuation == pytest.approx(1.0)
+    # Com a logística q se aproxima de 1 mas nunca chega lá, então a perda
+    # não é exatamente zero — continua sendo um resíduo pequeno, e as três
+    # probabilidades seguem somando 1.
+    assert p.goal + p.continuation + p.loss == pytest.approx(1.0)
+    assert p.loss >= 0.0
+    assert p.loss < 0.05
 
 
 def test_continuation_probability_decreases_each_attempt():
@@ -100,12 +108,15 @@ def test_goal_probability_is_constant_across_attempts():
     assert len(goals) == 1
 
 
-def test_zero_attack_always_loses_possession():
+def test_zero_attack_almost_always_loses_possession():
+    # A logística nunca devolve q = 0, então um ataque nulo ainda converte uma
+    # fração pequena. O que a regra garante é que a posse se perde na esmagadora
+    # maioria das tentativas.
     p = calculate_attack_probabilities(0, 60, attempt=1)
 
-    assert p.goal == 0.0
-    assert p.continuation == 0.0
-    assert p.loss == pytest.approx(1.0)
+    assert p.goal < 0.05
+    assert p.continuation < 0.05
+    assert p.loss > 0.90
 
 
 @pytest.mark.parametrize("bad", [math.nan, math.inf, -math.inf])
@@ -127,13 +138,15 @@ def test_non_finite_parameters_raise_error(bad):
             AttackParameters(**{field: bad})
 
 
-def test_degenerate_cases_keep_probabilities_constant():
-    # Sem ataque (q = 0) ou sem continuação (c_max = 0), a continuação
-    # fica em 0 e a perda não varia: a monotonicidade estrita não se aplica.
-    for attack, params in ((0, AttackParameters()), (60, AttackParameters(c_max=0.0))):
-        values = [calculate_attack_probabilities(attack, 50, k, params) for k in (1, 2, 3)]
-        assert all(v.continuation == 0.0 for v in values)
-        assert len({v.loss for v in values}) == 1
+def test_degenerate_case_without_continuation_keeps_probabilities_constant():
+    # Sem continuação (c_max = 0), a probabilidade de continuar é zero em todas
+    # as tentativas e a perda não varia: a monotonicidade estrita não se aplica.
+    # (O caso "sem ataque" deixou de ser degenerado: a logística não produz q = 0.)
+    params = AttackParameters(c_max=0.0)
+    values = [calculate_attack_probabilities(60, 50, k, params) for k in (1, 2, 3)]
+
+    assert all(v.continuation == 0.0 for v in values)
+    assert len({v.loss for v in values}) == 1
 
 
 def test_invalid_inputs_raise_error():
@@ -145,11 +158,13 @@ def test_invalid_inputs_raise_error():
         calculate_attack_probabilities(50, 50, attempt=0)
 
 def test_zero_attack_and_zero_defense_gives_even_quality():
-    p = calculate_attack_probabilities(0, 0, attempt=1)
+    params = AttackParameters()
+    p = calculate_attack_probabilities(0, 0, attempt=1, params=params)
 
-    assert p.goal == pytest.approx(0.30 * 0.5)
-    assert p.continuation == pytest.approx(0.50 * 0.5)
-    assert p.loss == pytest.approx(1 - 0.15 - 0.25)
+    # A = D = 0 -> q = 0.5, a qualidade fica equilibrada entre os dois lados.
+    assert p.goal == pytest.approx(params.g_max * 0.5)
+    assert p.continuation == pytest.approx(params.c_max * 0.5)
+    assert p.loss == pytest.approx(1 - params.g_max * 0.5 - params.c_max * 0.5)
 
 
 def test_zero_vs_zero_sequence_terminates_and_is_reproducible():
