@@ -1,429 +1,278 @@
 """
-Experimentos em lote para verificar o comportamento estatístico do simulador.
+Experimentos de calibração (Issue #14) com múltiplas posses por ciclo (Issue #29).
 
-O módulo apenas OBSERVA o motor: cada partida é jogada por `play_match` e as
-métricas são extraídas dos `CycleResult` e do placar devolvidos. Nada aqui
-altera `match.py`, `attack.py` ou `dispute.py`.
-
-Reprodutibilidade: a partida de índice i usa a semente `base_seed + i`.
-Configurações diferentes comparadas com a mesma `base_seed` usam, portanto,
-as mesmas sementes (números aleatórios comuns), o que reduz o ruído das
-comparações.
-
-Rode com:  python -m python_prototype.experiments [arquivo_de_saida.md]
+Rode com: python -m python_prototype.experiments
 """
 from __future__ import annotations
 
-import math
-import sys
+import argparse
 from collections import Counter
-from collections.abc import Mapping, Sequence
-from dataclasses import dataclass, field, replace
+from dataclasses import dataclass, fields
 
-from python_prototype.attack import (
-    AttackOutcome,
-    AttackParameters,
-    DEFAULT_ATTACK_PARAMETERS,
-)
+from python_prototype.attack import AttackParameters, DEFAULT_ATTACK_PARAMETERS
 from python_prototype.collective_attributes import Player
-from python_prototype.common import TeamId, ensure_finite_non_negative
 from python_prototype.match import (
-    DEFAULT_RECOVERY_CONTROL_BONUS,
-    MatchState,
+    CYCLES_PER_MATCH,
+    MatchEventType,
     create_match,
     play_match,
 )
 
-# ============================================================
-# Configuração
-# ============================================================
-
-DEFAULT_N_MATCHES = 4000
+POSITIONS_433 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "RW", "ST", "LW"]
+FORMATION_433 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
 
 
-@dataclass(frozen=True)
-class ExperimentConfig:
-    """
-    Parâmetros de um experimento.
-
-    - n_matches: quantidade de partidas simuladas.
-    - base_seed: a partida i usa a semente `base_seed + i`.
-    - attack_params: parâmetros da sequência ofensiva.
-    - recovery_control_bonus: bônus de Controle após perda de posse.
-    """
-
-    n_matches: int = DEFAULT_N_MATCHES
-    base_seed: int = 0
-    attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS
-    recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS
-
-    def __post_init__(self) -> None:
-        if isinstance(self.n_matches, bool) or not isinstance(self.n_matches, int):
-            raise ValueError(f"n_matches deve ser inteiro; recebido: {self.n_matches!r}")
-        if self.n_matches < 1:
-            raise ValueError("n_matches deve ser pelo menos 1.")
-        if isinstance(self.base_seed, bool) or not isinstance(self.base_seed, int):
-            raise ValueError(f"base_seed deve ser inteiro; recebido: {self.base_seed!r}")
-        ensure_finite_non_negative(
-            self.recovery_control_bonus, "Bônus de recuperação de posse"
-        )
-
-
-@dataclass(frozen=True)
-class MatchSetup:
-    """
-    Descreve os dois times de um experimento.
-
-    O estado da partida é mutável, então cada partida é criada do zero por
-    `build()`. `modifiers_a/b` são ajustes aditivos (chaves "attack",
-    "defense", "control") aplicados antes da partida, úteis para isolar o
-    efeito de um único atributo.
-    """
-
-    players_a: tuple[Player, ...]
-    formation_a: tuple[str, ...]
-    players_b: tuple[Player, ...]
-    formation_b: tuple[str, ...]
-    modifiers_a: Mapping[str, float] = field(default_factory=dict)
-    modifiers_b: Mapping[str, float] = field(default_factory=dict)
-
-    def build(self) -> MatchState:
-        state = create_match(
-            self.players_a, self.formation_a, self.players_b, self.formation_b
-        )
-        state.teams["A"].modifiers.update(self.modifiers_a)
-        state.teams["B"].modifiers.update(self.modifiers_b)
-        return state
-
-
-def with_modifiers(
-    setup: MatchSetup,
-    *,
-    a: Mapping[str, float] | None = None,
-    b: Mapping[str, float] | None = None,
-) -> MatchSetup:
-    """Cópia de `setup` com modificadores adicionais (substituem chaves iguais)."""
-    return replace(
-        setup,
-        modifiers_a={**setup.modifiers_a, **(a or {})},
-        modifiers_b={**setup.modifiers_b, **(b or {})},
-    )
-
-
-# ============================================================
-# Resultado
-# ============================================================
-
-
-def standard_error(proportion: float, n: int) -> float:
-    """Erro-padrão (aproximação normal) de uma proporção observada em n casos."""
-    if n <= 0:
-        return math.nan
-    return math.sqrt(max(0.0, proportion * (1.0 - proportion)) / n)
-
-
-def _ratio(numerator: float, denominator: float) -> float:
-    return numerator / denominator if denominator else math.nan
+def make_squad(prefix: str, rating: int) -> list[Player]:
+    attrs = [f.name for f in fields(Player) if f.name not in ("name", "pos")]
+    return [
+        Player(name=f"{prefix}{i}", pos=pos, **{a: rating for a in attrs})
+        for i, pos in enumerate(POSITIONS_433)
+    ]
 
 
 @dataclass(frozen=True)
 class ExperimentResult:
-    """Contagens brutas de um experimento; as taxas são propriedades derivadas."""
-
-    config: ExperimentConfig
-    matches: int
-    goals_a: int
-    goals_b: int
-    a_wins: int
-    draws: int
-    b_wins: int
-    # tentativas por sequência -> quantidade de sequências
-    attempts_histogram: Mapping[int, int]
-    # desfecho de cada TENTATIVA (CONTINUE, GOAL, POSSESSION_LOST)
-    attempt_outcomes: Mapping[AttackOutcome, int]
-    # por time atacante
-    sequences_by_team: Mapping[TeamId, int]
-    attempts_by_team: Mapping[TeamId, int]
-    goals_by_team: Mapping[TeamId, int]
-    # disputas de Controle
-    duels_won_a: int
-    duels_total: int
-    md3_won_a: int
-    md3_total: int
-
-    # --- partidas ---
-    @property
-    def mean_goals_per_match(self) -> float:
-        return (self.goals_a + self.goals_b) / self.matches
-
-    @property
-    def mean_goals_a(self) -> float:
-        return self.goals_a / self.matches
-
-    @property
-    def mean_goals_b(self) -> float:
-        return self.goals_b / self.matches
-
-    @property
-    def mean_goal_difference(self) -> float:
-        return (self.goals_a - self.goals_b) / self.matches
-
-    @property
-    def a_win_rate(self) -> float:
-        return self.a_wins / self.matches
-
-    @property
-    def draw_rate(self) -> float:
-        return self.draws / self.matches
-
-    @property
-    def b_win_rate(self) -> float:
-        return self.b_wins / self.matches
-
-    # --- sequências ofensivas ---
-    @property
-    def sequences(self) -> int:
-        return sum(self.attempts_histogram.values())
-
-    @property
-    def total_attempts(self) -> int:
-        return sum(k * v for k, v in self.attempts_histogram.items())
-
-    @property
-    def mean_attempts_per_sequence(self) -> float:
-        return _ratio(self.total_attempts, self.sequences)
-
-    @property
-    def continuation_rate(self) -> float:
-        """Fração das tentativas que terminaram em continuação."""
-        return _ratio(self.attempt_outcomes.get(AttackOutcome.CONTINUE, 0), self.total_attempts)
-
-    @property
-    def goal_rate_per_attempt(self) -> float:
-        return _ratio(self.attempt_outcomes.get(AttackOutcome.GOAL, 0), self.total_attempts)
-
-    @property
-    def loss_rate_per_attempt(self) -> float:
-        return _ratio(
-            self.attempt_outcomes.get(AttackOutcome.POSSESSION_LOST, 0), self.total_attempts
-        )
-
-    @property
-    def goal_rate_per_sequence(self) -> float:
-        return _ratio(sum(self.goals_by_team.values()), self.sequences)
-
-    def goal_rate_per_attempt_of(self, team: TeamId) -> float:
-        """Gols por tentativa considerando só os ataques de `team`."""
-        return _ratio(self.goals_by_team.get(team, 0), self.attempts_by_team.get(team, 0))
-
-    # --- Controle ---
-    @property
-    def duel_win_rate_a(self) -> float:
-        return _ratio(self.duels_won_a, self.duels_total)
-
-    @property
-    def md3_win_rate_a(self) -> float:
-        return _ratio(self.md3_won_a, self.md3_total)
-
-    def summary(self) -> dict[str, float]:
-        """Métricas principais, em formato simples para tabelas."""
-        return {
-            "partidas": self.matches,
-            "gols_por_partida": self.mean_goals_per_match,
-            "vitorias_a": self.a_win_rate,
-            "empates": self.draw_rate,
-            "vitorias_b": self.b_win_rate,
-            "tentativas_por_sequencia": self.mean_attempts_per_sequence,
-            "continuacao_por_tentativa": self.continuation_rate,
-            "gol_por_tentativa": self.goal_rate_per_attempt,
-            "perda_por_tentativa": self.loss_rate_per_attempt,
-            "duelos_ganhos_a": self.duel_win_rate_a,
-            "md3_ganhas_a": self.md3_win_rate_a,
-        }
-
-
-# ============================================================
-# Execução
-# ============================================================
+    k: int
+    n_matches: int
+    goals_per_match: float
+    sequences_per_match: float
+    goals_per_cycle: float
+    attempts_per_sequence: float
+    cycle_goal_dist: dict[int, int]    # gols no ciclo -> nº de ciclos
+    match_goal_dist: dict[int, int]    # gols na partida -> nº de partidas
+    max_goals_in_cycle: int
+    max_goals_in_match: int
+    a_wins: float
+    draws: float
+    b_wins: float
 
 
 def run_experiment(
-    setup: MatchSetup, config: ExperimentConfig = ExperimentConfig()
+    rating_a: int = 70,
+    rating_b: int = 70,
+    *,
+    k: int = 1,
+    n: int = 4000,
+    params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
+    recovery_control_bonus: float = 5.0,
 ) -> ExperimentResult:
-    """Joga `config.n_matches` partidas e agrega as métricas."""
-    goals = {"A": 0, "B": 0}
-    wins = {"A": 0, "draw": 0, "B": 0}
-    histogram: Counter[int] = Counter()
-    attempt_outcomes: Counter[AttackOutcome] = Counter()
-    sequences_by_team: Counter[str] = Counter()
-    attempts_by_team: Counter[str] = Counter()
-    goals_by_team: Counter[str] = Counter()
-    duels_won_a = duels_total = md3_won_a = md3_total = 0
+    """Simula `n` partidas (seeds 0..n-1) e agrega as estatísticas."""
+    cycle_dist: Counter[int] = Counter()
+    match_dist: Counter[int] = Counter()
+    total_goals = total_seq = total_attempts = 0
+    a_wins = draws = b_wins = 0
 
-    for i in range(config.n_matches):
-        state = setup.build()
+    for seed in range(n):
+        state = create_match(
+            make_squad("A", rating_a), FORMATION_433,
+            make_squad("B", rating_b), FORMATION_433,
+        )
         results = play_match(
             state,
-            seed=config.base_seed + i,
-            attack_params=config.attack_params,
-            recovery_control_bonus=config.recovery_control_bonus,
+            seed=seed,
+            attack_params=params,
+            recovery_control_bonus=recovery_control_bonus,
+            possessions_per_cycle=k,
         )
 
-        goals["A"] += state.score["A"]
-        goals["B"] += state.score["B"]
-        if state.score["A"] > state.score["B"]:
-            wins["A"] += 1
-        elif state.score["A"] < state.score["B"]:
-            wins["B"] += 1
-        else:
-            wins["draw"] += 1
+        match_goals = sum(r.goals for r in results)
+        goal_events = sum(e.type is MatchEventType.GOAL for e in state.events)
+        # Consistência interna: cada gol contado uma única vez.
+        assert sum(state.score.values()) == match_goals == goal_events
 
-        for result in results:
-            team = result.attacking_team
-            histogram[result.attack.attempts] += 1
-            attempt_outcomes.update(result.attack.history)
-            sequences_by_team[team] += 1
-            attempts_by_team[team] += result.attack.attempts
-            if result.is_goal:
-                goals_by_team[team] += 1
+        for r in results:
+            cycle_dist[r.goals] += 1
+            total_seq += len(r.possessions)
+            total_attempts += sum(p.attack.attempts for p in r.possessions)
 
-            md3_total += 1
-            md3_won_a += result.md3.winner == "A"
-            for md5 in result.md3.series:
-                duels_total += len(md5.duels)
-                duels_won_a += md5.wins_a
+        match_dist[match_goals] += 1
+        total_goals += match_goals
+        sa, sb = state.score["A"], state.score["B"]
+        a_wins += sa > sb
+        draws += sa == sb
+        b_wins += sa < sb
 
+    n_cycles = n * CYCLES_PER_MATCH
     return ExperimentResult(
-        config=config,
-        matches=config.n_matches,
-        goals_a=goals["A"],
-        goals_b=goals["B"],
-        a_wins=wins["A"],
-        draws=wins["draw"],
-        b_wins=wins["B"],
-        attempts_histogram=dict(sorted(histogram.items())),
-        attempt_outcomes=dict(attempt_outcomes),
-        sequences_by_team=dict(sequences_by_team),
-        attempts_by_team=dict(attempts_by_team),
-        goals_by_team=dict(goals_by_team),
-        duels_won_a=duels_won_a,
-        duels_total=duels_total,
-        md3_won_a=md3_won_a,
-        md3_total=md3_total,
+        k=k,
+        n_matches=n,
+        goals_per_match=total_goals / n,
+        sequences_per_match=total_seq / n,
+        goals_per_cycle=total_goals / n_cycles,
+        attempts_per_sequence=total_attempts / total_seq,
+        cycle_goal_dist=dict(sorted(cycle_dist.items())),
+        match_goal_dist=dict(sorted(match_dist.items())),
+        max_goals_in_cycle=max(cycle_dist),
+        max_goals_in_match=max(match_dist),
+        a_wins=a_wins / n,
+        draws=draws / n,
+        b_wins=b_wins / n,
     )
 
 
-def compare_configs(
-    setup: MatchSetup, configs: Mapping[str, ExperimentConfig]
-) -> dict[str, ExperimentResult]:
-    """Roda o mesmo confronto sob várias configurações de parâmetros."""
-    return {label: run_experiment(setup, config) for label, config in configs.items()}
+def expected_goal_probability_per_sequence(
+    q: float = 0.5, params: AttackParameters = DEFAULT_ATTACK_PARAMETERS
+) -> float:
+    """
+    P(gol) de uma sequencia ofensiva, em forma fechada (soma da serie):
+    sum_n  g_max*q * prod_{k<n} P_C(k).
+    Com times iguais q = 0.5 para qualquer atacante, entao vale para o ciclo todo.
+    """
+    p_goal = params.g_max * q
+    survive = 1.0
+    total = 0.0
+    for k in range(1, 500):
+        total += survive * p_goal
+        survive *= params.c_max * params.r ** (k - 1) * q
+        if survive < 1e-15:
+            break
+    return total
 
 
-def compare_setups(
-    setups: Mapping[str, MatchSetup], config: ExperimentConfig = ExperimentConfig()
-) -> dict[str, ExperimentResult]:
-    """Roda a mesma configuração sobre vários confrontos (p. ex. diferenças de nível)."""
-    return {label: run_experiment(setup, config) for label, setup in setups.items()}
+def print_report(r: ExperimentResult, expected_mean: float | None = None) -> None:
+    print(f"\n=== K = {r.k} ({r.n_matches} partidas) ===")
+    line = f"Gols por partida:        {r.goals_per_match:.3f}"
+    if expected_mean is not None:
+        line += f"  (analítico: {expected_mean:.3f})"
+    print(line)
+    print(f"Sequencias por partida:  {r.sequences_per_match:.2f}")
+    print(f"Gols por ciclo:          {r.goals_per_cycle:.3f}")
+    print(f"Tentativas por sequência:{r.attempts_per_sequence:.3f}")
+    print(f"Max. gols em um ciclo:   {r.max_goals_in_cycle}")
+    print(f"Max. gols em uma partida:{r.max_goals_in_match}")
+    print(f"A/empate/B:              {r.a_wins:.1%} / {r.draws:.1%} / {r.b_wins:.1%}")
+    print("Distribuicao de gols por ciclo:")
+    total = sum(r.cycle_goal_dist.values())
+    for goals, c in r.cycle_goal_dist.items():
+        print(f"  {goals} gol(s): {c / total:6.1%}")
 
 
-# ============================================================
-# Montagem de times uniformes (para experimentos controlados)
-# ============================================================
+def verify(results: dict[int, ExperimentResult], params: AttackParameters) -> bool:
+    """Confirma o comportamento esperado da Issue #29 (times iguais)."""
+    p = expected_goal_probability_per_sequence(0.5, params)
+    ok = True
 
-_POSITIONS_433 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "RW", "ST", "LW"]
-_FORMATION_433 = ("GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W")
+    def check(label: str, cond: bool) -> None:
+        nonlocal ok
+        ok &= cond
+        print(f"[{'OK' if cond else 'FALHA'}] {label}")
 
+    print("\n=== Verificaçoes ===")
+    for k, r in sorted(results.items()):
+        expected = CYCLES_PER_MATCH * k * p
+        check(
+            f"K={k}: sequencias por partida == {CYCLES_PER_MATCH * k}",
+            r.sequences_per_match == CYCLES_PER_MATCH * k,
+        )
+        check(
+            f"K={k}: gols por partida ({r.goals_per_match:.3f}) ~ analitico ({expected:.3f})",
+            abs(r.goals_per_match - expected) < 0.08,
+        )
+        check(
+            f"K={k}: nenhum ciclo com mais de {k} gols",
+            r.max_goals_in_cycle <= k,
+        )
+    if 1 in results:
+        check("K=1: no maximo 1 gol por ciclo e 6 por partida",
+              results[1].max_goals_in_cycle <= 1 and results[1].max_goals_in_match <= 6)
+    multi = [r for k, r in results.items() if k > 1]
+    check("K>1: existem ciclos com mais de 1 gol",
+          all(r.max_goals_in_cycle > 1 for r in multi))
+    check("K>1: existem partidas com mais de 6 gols",
+          any(r.max_goals_in_match > 6 for r in multi))
+    ks = sorted(results)
+    check("gols por partida crescem com K",
+          all(results[a].goals_per_match < results[b].goals_per_match
+              for a, b in zip(ks, ks[1:])))
+    return ok
 
-def _uniform_player(name: str, pos: str, rating: int) -> Player:
-    return Player(name, pos, *([rating] * 18))
-
-
-def uniform_setup(
+def to_markdown(
+    results: dict[int, ExperimentResult],
+    params: AttackParameters,
     rating_a: int,
     rating_b: int,
-    *,
-    modifiers_a: Mapping[str, float] | None = None,
-    modifiers_b: Mapping[str, float] | None = None,
-) -> MatchSetup:
-    """Dois times 4-3-3 com todos os atributos iguais ao rating de cada lado."""
-    squad_a = tuple(_uniform_player(f"A{i}", p, rating_a) for i, p in enumerate(_POSITIONS_433))
-    squad_b = tuple(_uniform_player(f"B{i}", p, rating_b) for i, p in enumerate(_POSITIONS_433))
-    return MatchSetup(
-        squad_a, _FORMATION_433, squad_b, _FORMATION_433,
-        modifiers_a=dict(modifiers_a or {}), modifiers_b=dict(modifiers_b or {}),
-    )
-
-
-# ============================================================
-# Relatório
-# ============================================================
-
-
-def describe_config(config: ExperimentConfig) -> str:
-    p = config.attack_params
-    return (
-        f"n={config.n_matches}, seed_base={config.base_seed}, "
-        f"g_max={p.g_max}, c_max={p.c_max}, r={p.r}, "
-        f"bônus_recuperação={config.recovery_control_bonus:g}"
-    )
-
-
-def format_report(results: Mapping[str, ExperimentResult], title: str = "Experimentos") -> str:
-    """Tabela em Markdown com as métricas principais e os parâmetros usados."""
-    header = (
-        "| Cenário | Gols/jogo | Vit. A | Empate | Vit. B | Tent./seq. "
-        "| Continuação | Gol/tent. | Perda | Duelos A | MD3 A |\n"
-        "|---|---|---|---|---|---|---|---|---|---|---|\n"
-    )
-    rows = []
-    for label, r in results.items():
-        rows.append(
-            f"| {label} | {r.mean_goals_per_match:.2f} | {r.a_win_rate:.1%} | "
-            f"{r.draw_rate:.1%} | {r.b_win_rate:.1%} | {r.mean_attempts_per_sequence:.2f} | "
-            f"{r.continuation_rate:.1%} | {r.goal_rate_per_attempt:.1%} | "
-            f"{r.loss_rate_per_attempt:.1%} | {r.duel_win_rate_a:.1%} | {r.md3_win_rate_a:.1%} |"
+) -> str:
+    p = expected_goal_probability_per_sequence(0.5, params)
+    lines = [
+        "# Experimentos: posses por ciclo (Issue #29)",
+        "",
+        f"- Times: {rating_a} x {rating_b}",
+        f"- Parametros: g_max={params.g_max}, c_max={params.c_max}, r={params.r}",
+        f"- P(gol por sequência, times iguais): {p:.4f}",
+        "",
+        "## Resumo por K",
+        "",
+        "| K | Gols/partida | Analitico | Sequencias/partida | Gols/ciclo "
+        "| Tentativas/seq. | Max. gols/ciclo | Max. gols/partida | A | Empate | B |",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
+    ]
+    for k, r in sorted(results.items()):
+        analytic = f"{CYCLES_PER_MATCH * k * p:.3f}" if rating_a == rating_b else "-"
+        lines.append(
+            f"| {k} | {r.goals_per_match:.3f} | {analytic} | "
+            f"{r.sequences_per_match:.2f} | {r.goals_per_cycle:.3f} | "
+            f"{r.attempts_per_sequence:.3f} | {r.max_goals_in_cycle} | "
+            f"{r.max_goals_in_match} | {r.a_wins:.1%} | {r.draws:.1%} | {r.b_wins:.1%} |"
         )
-    params = "\n".join(f"- **{label}**: {describe_config(r.config)}" for label, r in results.items())
-    return f"# {title}\n\n{header}" + "\n".join(rows) + f"\n\n## Parâmetros\n\n{params}\n"
+
+    for k, r in sorted(results.items()):
+        total_c = sum(r.cycle_goal_dist.values())
+        total_m = sum(r.match_goal_dist.values())
+        lines += [
+            "",
+            f"## K = {k} ({r.n_matches} partidas)",
+            "",
+            "**Gols por ciclo**",
+            "",
+            "| Gols | % dos ciclos |",
+            "|---|---|",
+        ]
+        lines += [f"| {g} | {c / total_c:.1%} |" for g, c in r.cycle_goal_dist.items()]
+        lines += [
+            "",
+            "**Gols por partida**",
+            "",
+            "| Gols | % das partidas |",
+            "|---|---|",
+        ]
+        lines += [f"| {g} | {c / total_m:.1%} |" for g, c in r.match_goal_dist.items()]
+
+    return "\n".join(lines) + "\n"
 
 
-# ============================================================
-# Execução direta
-# ============================================================
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Calibração de posses por ciclo")
+    parser.add_argument("--n", type=int, default=4000)
+    parser.add_argument("--ks", type=int, nargs="+", default=[1, 2, 3])
+    parser.add_argument("--rating-a", type=int, default=70)
+    parser.add_argument("--rating-b", type=int, default=70)
+    parser.add_argument("--g-max", type=float, default=DEFAULT_ATTACK_PARAMETERS.g_max)
+    parser.add_argument("--c-max", type=float, default=DEFAULT_ATTACK_PARAMETERS.c_max)
+    parser.add_argument("--r", type=float, default=DEFAULT_ATTACK_PARAMETERS.r)
+    parser.add_argument("--md", type=str, default=None,
+                    help="Caminho do arquivo .md para salvar o relatório")
+    args = parser.parse_args()
+
+    params = AttackParameters(g_max=args.g_max, c_max=args.c_max, r=args.r)
+    p = expected_goal_probability_per_sequence(0.5, params)
+    print(f"P(gol por sequência, times iguais) = {p:.4f}")
+
+    results = {}
+    for k in args.ks:
+        r = run_experiment(args.rating_a, args.rating_b, k=k, n=args.n, params=params)
+        results[k] = r
+        print_report(r, CYCLES_PER_MATCH * k * p)
+
+    if args.rating_a == args.rating_b:
+        verify(results, params)
+    if args.md:
+        from pathlib import Path
+        Path(args.md).write_text(
+            to_markdown(results, params, args.rating_a, args.rating_b),
+            encoding="utf-8",
+        )
+        print(f"\nRelatório salvo em {args.md}")
+
 
 if __name__ == "__main__":
-    base = ExperimentConfig()
-
-    matchups = compare_setups(
-        {
-            "70 x 70": uniform_setup(70, 70),
-            "72 x 68": uniform_setup(72, 68),
-            "80 x 60": uniform_setup(80, 60),
-            "90 x 40": uniform_setup(90, 40),
-            "100 x 20": uniform_setup(100, 20),
-        },
-        base,
-    )
-    
-    parameter_sweep = compare_configs(
-        uniform_setup(70, 70),
-        {
-            "padrão": base,
-            "g_max=0.20": replace(base, attack_params=AttackParameters(g_max=0.20)),
-            "c_max=0.30": replace(base, attack_params=AttackParameters(c_max=0.30)),
-            "r=0.50": replace(base, attack_params=AttackParameters(r=0.50)),
-            "sem bônus": replace(base, recovery_control_bonus=0.0),
-            "bônus=10": replace(base, recovery_control_bonus=10.0),
-        },
-    )
-
-    report = (
-        format_report(matchups, "Diferença de nível entre os times")
-        + "\n"
-        + format_report(parameter_sweep, "Variação de parâmetros (70 x 70)")
-    )
-    if len(sys.argv) > 1:
-        with open(sys.argv[1], "w", encoding="utf-8") as f:
-            f.write(report)
-    print(report)
+    main()
