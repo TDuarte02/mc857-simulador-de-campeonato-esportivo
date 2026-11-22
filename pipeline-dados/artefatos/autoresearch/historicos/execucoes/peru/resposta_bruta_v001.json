@@ -1,0 +1,812 @@
+[
+  {
+    "nome": "Teofilo Cubillas",
+    "pais": "Peru",
+    "posicao": "AM",
+    "dob": "1949-03-08",
+    "percentis": {
+      "overall": 0.99,
+      "pace": 0.85,
+      "shooting": 0.95,
+      "passing": 0.95,
+      "dribbling": 0.97,
+      "defending": 0.4,
+      "physic": 0.7
+    },
+    "observacao": "Teofilo Cubillas e o maior futebolista da historia peruana, artilheiro historico da selecao e eleito o melhor jogador da Copa do Mundo de 1970, onde marcou cinco gols com apenas 21 anos. Tambem foi decisivo na Copa de 1978, consolidando-se como referencia tecnica e de gol da geracao de oro. Seu chute potente, drible e visao de jogo justificam percentis no topo absoluto da amostra.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q311403",
+        "afirmacao": "Wikidata confirma Teofilo Cubillas como meio-campista ofensivo peruano, nascido em 08/03/1949, destaque da Copa do Mundo de 1970."
+      }
+    ],
+    "confianca": 0.8,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 89,
+      "pace": 84,
+      "shooting": 87,
+      "passing": 87,
+      "dribbling": 89,
+      "defending": 44,
+      "physic": 70
+    }
+  },
+  {
+    "nome": "Claudio Pizarro",
+    "pais": "Peru",
+    "posicao": "ST",
+    "dob": "1978-10-03",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.75,
+      "shooting": 0.9,
+      "passing": 0.6,
+      "dribbling": 0.75,
+      "defending": 0.3,
+      "physic": 0.8
+    },
+    "observacao": "Claudio Pizarro foi o maior artilheiro estrangeiro da historia da Bundesliga e capitao historico da selecao peruana, com titulos pela Bayern de Munique incluindo a Liga dos Campeoes. Sua longevidade em alto nivel no futebol europeu e seu faro de gol o colocam entre os atacantes mais decisivos do pais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q109397",
+        "afirmacao": "Wikidata registra Claudio Pizarro como atacante peruano nascido em 03/10/1978, com passagem de destaque pelo Bayern de Munique."
+      }
+    ],
+    "confianca": 0.78,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 86,
+      "pace": 78,
+      "shooting": 88,
+      "passing": 78,
+      "dribbling": 82,
+      "defending": 36,
+      "physic": 80
+    }
+  },
+  {
+    "nome": "Paolo Guerrero",
+    "pais": "Peru",
+    "posicao": "ST",
+    "dob": "1984-01-01",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.78,
+      "shooting": 0.92,
+      "passing": 0.6,
+      "dribbling": 0.78,
+      "defending": 0.3,
+      "physic": 0.82
+    },
+    "observacao": "Paolo Guerrero e o maior artilheiro historico da selecao peruana e capitao em momentos decisivos, incluindo a classificacao para a Copa do Mundo de 2018. Construiu carreira vitoriosa no futebol brasileiro, com titulos pelo Corinthians e Flamengo, sendo referencia de forca fisica e faro de gol na area.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q156802",
+        "afirmacao": "Wikidata identifica Paolo Guerrero como atacante peruano, maior goleador historico da selecao, com passagem pelo Corinthians."
+      }
+    ],
+    "confianca": 0.78,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 85,
+      "pace": 78,
+      "shooting": 86,
+      "passing": 74,
+      "dribbling": 80,
+      "defending": 38,
+      "physic": 84
+    }
+  },
+  {
+    "nome": "Ramon Mifflin",
+    "pais": "Peru",
+    "posicao": "CM",
+    "dob": "1947-04-05",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.65,
+      "shooting": 0.7,
+      "passing": 0.85,
+      "dribbling": 0.75,
+      "defending": 0.6,
+      "physic": 0.65
+    },
+    "observacao": "Ramon Mifflin foi um meio-campista central de alto nivel, peca importante da geracao peruana que disputou a Copa America de 1975 e a Copa do Mundo de 1978. Reconhecido por sua inteligencia tatica e capacidade de organizar o jogo, foi titular regular da selecao por varios anos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q617816",
+        "afirmacao": "Wikidata confirma Ramon Mifflin como meio-campista peruano nascido em 05/04/1947, convocado para as Copas de 1975 e 1978."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jose del Solar",
+    "pais": "Peru",
+    "posicao": "CM",
+    "dob": "1967-11-28",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.78,
+      "dribbling": 0.65,
+      "defending": 0.72,
+      "physic": 0.7
+    },
+    "observacao": "Jose del Solar foi um volante de equilibrio e lideranca, capitao da selecao na Copa America de 1997. Sua atuacao consistente ao longo dos anos 1990 o consolidou como titular regular de alto nivel internacional, mesmo sem ser uma estrela global.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q734534",
+        "afirmacao": "Wikidata registra Jose del Solar como meio-campista peruano, capitao da selecao na Copa America de 1997."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "German Leguia",
+    "pais": "Peru",
+    "posicao": "DM",
+    "dob": "1954-01-02",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.6,
+      "shooting": 0.5,
+      "passing": 0.68,
+      "dribbling": 0.6,
+      "defending": 0.78,
+      "physic": 0.72
+    },
+    "observacao": "German Leguia atuou como volante de contencao pela selecao peruana no ciclo da Copa America de 1979, sendo uma peca regular e confiavel no meio-campo defensivo. Nao alcancou status de estrela internacional, mas foi um titular solido de sua geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2707715",
+        "afirmacao": "Wikidata identifica German Leguia como volante peruano, parte do elenco convocado para a Copa America de 1979."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Julio Cesar Uribe",
+    "pais": "Peru",
+    "posicao": "AM",
+    "dob": "1958-05-09",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.7,
+      "shooting": 0.82,
+      "passing": 0.9,
+      "dribbling": 0.9,
+      "defending": 0.4,
+      "physic": 0.6
+    },
+    "observacao": "Conhecido como 'El Diamante', Julio Cesar Uribe foi um dos meias mais tecnicos da historia peruana, com passagem destacada pelo Sporting Cristal e papel central na Copa America de 1987. Sua qualidade de drible e passe o aproxima do nivel dos grandes craques da geracao de oro peruana.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2722415",
+        "afirmacao": "Wikidata registra Julio Cesar Uribe como meio-campista ofensivo peruano, destaque da Copa America de 1987."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Cruzado",
+    "pais": "Peru",
+    "posicao": "CM",
+    "dob": "1941-07-06",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.5,
+      "shooting": 0.5,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.55,
+      "physic": 0.55
+    },
+    "observacao": "Luis Cruzado e um jogador da era pre-moderna do futebol peruano, convocado para a Copa America de 1963. Os registros historicos sobre sua carreira sao escassos, caracterizando-o como um titular regular de sua epoca sem grande documentacao disponivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2737090",
+        "afirmacao": "Wikidata lista Luis Cruzado como futebolista peruano convocado para a Copa America de 1963."
+      }
+    ],
+    "confianca": 0.42,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Roberto Palacios",
+    "pais": "Peru",
+    "posicao": "AM",
+    "dob": "1972-12-28",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.75,
+      "shooting": 0.72,
+      "passing": 0.82,
+      "dribbling": 0.88,
+      "defending": 0.4,
+      "physic": 0.6
+    },
+    "observacao": "Conhecido como 'El Chorri', Roberto Palacios foi um dos dribladores mais celebrados da selecao peruana, com longa carreira internacional entre 1992 e 2008. Sua popularidade e habilidade individual pelo Sporting Cristal o tornaram um dos meio-campistas ofensivos mais queridos do pais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q922664",
+        "afirmacao": "Wikidata confirma Roberto Palacios como meia peruano, com convocacoes entre as Copas America de 1999 e 2004."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Cesar Cueto",
+    "pais": "Peru",
+    "posicao": "AM",
+    "dob": "1952-06-16",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.68,
+      "shooting": 0.8,
+      "passing": 0.9,
+      "dribbling": 0.9,
+      "defending": 0.4,
+      "physic": 0.58
+    },
+    "observacao": "Chamado de 'El Principe', Cesar Cueto foi um dos meias mais elegantes da geracao de oro peruana, atuando ao lado de Cubillas e Sotil nas Copas America de 1975 e Copa do Mundo de 1978. Sua visao de jogo e passe refinado justificam percentis entre os mais altos da amostra.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2564108",
+        "afirmacao": "Wikidata registra Cesar Cueto como meio-campista ofensivo peruano, parte da geracao convocada para 1975 e 1978."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Hugo Sotil",
+    "pais": "Peru",
+    "posicao": "AM",
+    "dob": "1949-05-18",
+    "percentis": {
+      "overall": 0.94,
+      "pace": 0.8,
+      "shooting": 0.85,
+      "passing": 0.88,
+      "dribbling": 0.92,
+      "defending": 0.4,
+      "physic": 0.68
+    },
+    "observacao": "Hugo Sotil integrou o elenco historico do Barcelona campeao espanhol de 1973-74 ao lado de Johan Cruyff, sendo um dos poucos peruanos a brilhar nesse nivel na Europa de sua epoca. Sua combinacao de velocidade, drible e faro de gol o posiciona entre os maiores craques peruanos de todos os tempos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2307763",
+        "afirmacao": "Wikidata confirma Hugo Sotil como meio-campista peruano, com passagem de destaque pelo Barcelona na decada de 1970."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Roberto Challe",
+    "pais": "Peru",
+    "posicao": "AM",
+    "dob": "1946-11-24",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.6,
+      "shooting": 0.62,
+      "passing": 0.68,
+      "dribbling": 0.68,
+      "defending": 0.4,
+      "physic": 0.55
+    },
+    "observacao": "Roberto Challe foi um meio-campista ofensivo da selecao peruana nos anos 1960 e 1970, participando da Copa America de 1967. Apesar de registros historicos limitados, foi um titular regular de uma geracao que antecedeu a consagracao internacional peruana.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q580092",
+        "afirmacao": "Wikidata lista Roberto Challe como futebolista peruano convocado para a Copa America de 1967."
+      }
+    ],
+    "confianca": 0.48,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Juan Manuel Vargas",
+    "pais": "Peru",
+    "posicao": "LB",
+    "dob": "1983-10-05",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.82,
+      "shooting": 0.65,
+      "passing": 0.7,
+      "dribbling": 0.72,
+      "defending": 0.7,
+      "physic": 0.78
+    },
+    "observacao": "Juan Manuel Vargas foi um lateral-esquerdo ofensivo de grande qualidade tecnica, com destaque pela Fiorentina na Serie A italiana. Seu chute potente e capacidade de apoiar o ataque o tornaram titular absoluto da selecao peruana por mais de uma decada.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q311391",
+        "afirmacao": "Wikidata registra Juan Manuel Vargas como lateral peruano, com passagem de destaque pela Fiorentina."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alberto Rodriguez",
+    "pais": "Peru",
+    "posicao": "CB",
+    "dob": "1984-03-31",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.6,
+      "shooting": 0.4,
+      "passing": 0.6,
+      "dribbling": 0.5,
+      "defending": 0.8,
+      "physic": 0.78
+    },
+    "observacao": "Alberto Rodriguez foi um zagueiro de lideranca, peca chave na campanha peruana ate a semifinal da Copa America de 2015 e parte do elenco que disputou a Copa do Mundo de 2018. Sua solidez defensiva e presenca fisica o consolidaram como titular internacional de alto nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q552066",
+        "afirmacao": "Wikidata confirma Alberto Rodriguez como zagueiro peruano, titular na Copa America de 2015."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Hector Chumpitaz",
+    "pais": "Peru",
+    "posicao": "CB",
+    "dob": "1944-04-12",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.65,
+      "shooting": 0.4,
+      "passing": 0.68,
+      "dribbling": 0.55,
+      "defending": 0.97,
+      "physic": 0.88
+    },
+    "observacao": "Conhecido como 'El Capitan de America', Hector Chumpitaz foi o capitao historico da selecao peruana durante toda a decada de 1970, liderando a geracao de oro na Copa America de 1975 e na Copa do Mundo de 1970 e 1978. E considerado um dos maiores zagueiros sul-americanos de todos os tempos, justificando percentis no topo absoluto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q677720",
+        "afirmacao": "Wikidata identifica Hector Chumpitaz como zagueiro peruano, capitao da selecao durante os anos 1970."
+      }
+    ],
+    "confianca": 0.8,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ruben Toribio Diaz",
+    "pais": "Peru",
+    "posicao": "CB",
+    "dob": "1952-04-17",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.55,
+      "shooting": 0.35,
+      "passing": 0.55,
+      "dribbling": 0.45,
+      "defending": 0.75,
+      "physic": 0.75
+    },
+    "observacao": "Ruben Toribio Diaz foi um zagueiro regular do elenco peruano campeao da Copa America de 1975, contribuindo com solidez defensiva. Sua trajetoria e menos documentada do que a de companheiros mais famosos da mesma geracao, mas foi um titular confiavel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q921732",
+        "afirmacao": "Wikidata registra Ruben Toribio Diaz como zagueiro peruano, parte do elenco da Copa America de 1975."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Percy Rojas",
+    "pais": "Peru",
+    "posicao": "ST",
+    "dob": "1949-09-16",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.68,
+      "shooting": 0.75,
+      "passing": 0.55,
+      "dribbling": 0.62,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Percy Rojas foi atacante do elenco peruano campeao da Copa America de 1975, contribuindo como opcao de ataque regular daquela geracao vitoriosa. Sem ser uma estrela de primeiro nivel, foi um titular solido em seu periodo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q583263",
+        "afirmacao": "Wikidata confirma Percy Rojas como atacante peruano, convocado para a Copa America de 1975."
+      }
+    ],
+    "confianca": 0.48,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Juan Carlos Oblitas",
+    "pais": "Peru",
+    "posicao": "LW",
+    "dob": "1951-02-16",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.82,
+      "shooting": 0.75,
+      "passing": 0.78,
+      "dribbling": 0.85,
+      "defending": 0.35,
+      "physic": 0.65
+    },
+    "observacao": "Juan Carlos Oblitas foi um dos melhores pontas da historia peruana, titular desde a conquista da Copa America de 1975 ate a Copa do Mundo de 1982. Posteriormente se tornou tecnico da selecao, reforcando sua importancia historica para o futebol do pais.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2566639",
+        "afirmacao": "Wikidata registra Juan Carlos Oblitas como ponta peruano, titular entre as Copas America de 1975 e 1982."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Flavio Maestri",
+    "pais": "Peru",
+    "posicao": "ST",
+    "dob": "1973-01-21",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.65,
+      "shooting": 0.75,
+      "passing": 0.55,
+      "dribbling": 0.6,
+      "defending": 0.3,
+      "physic": 0.7
+    },
+    "observacao": "Flavio Maestri foi um atacante prolifico no futebol domestico peruano e referencia ofensiva da selecao entre as Copas America de 1997 e 2004. Sua regularidade em marcar gols o manteve como titular importante por varios ciclos de convocacao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2722410",
+        "afirmacao": "Wikidata confirma Flavio Maestri como atacante peruano, convocado entre as Copas America de 1997 e 2004."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Edison Flores",
+    "pais": "Peru",
+    "posicao": "LW",
+    "dob": "1994-05-14",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.78,
+      "shooting": 0.68,
+      "passing": 0.68,
+      "dribbling": 0.75,
+      "defending": 0.4,
+      "physic": 0.62
+    },
+    "observacao": "Edison Flores e um ponta/meia moderno que teve papel relevante na classificacao do Peru para a Copa do Mundo de 2018 e em finais de Copa America, com passagem pelo DC United na MLS. Sua velocidade e capacidade de drible o tornaram titular regular da selecao na ultima decada.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q525788",
+        "afirmacao": "Wikidata registra Edison Flores como atacante peruano, com passagem pelo DC United."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Oswaldo Ramirez",
+    "pais": "Peru",
+    "posicao": "ST",
+    "dob": "1947-03-28",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.72,
+      "shooting": 0.78,
+      "passing": 0.5,
+      "dribbling": 0.62,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Oswaldo Ramirez foi atacante do historico elenco peruano que alcancou as quartas de final da Copa do Mundo de 1970, contribuindo com gols naquela campanha marcante. Sua participacao nesse feito historico justifica percentis elevados dentro do grupo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1120675",
+        "afirmacao": "Wikidata confirma Oswaldo Ramirez como atacante peruano, parte do elenco da Copa do Mundo de 1970."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jefferson Farfan",
+    "pais": "Peru",
+    "posicao": "RW",
+    "dob": "1984-10-26",
+    "percentis": {
+      "overall": 0.94,
+      "pace": 0.88,
+      "shooting": 0.85,
+      "passing": 0.68,
+      "dribbling": 0.85,
+      "defending": 0.4,
+      "physic": 0.75
+    },
+    "observacao": "Conhecido como 'La Foquita', Jefferson Farfan foi um dos maiores jogadores peruanos da era moderna, com carreira de destaque na Bundesliga pelo Schalke 04. Foi peca fundamental na classificacao do Peru para a Copa do Mundo de 2018, combinando velocidade, finalizacao e drible de alto nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q295311",
+        "afirmacao": "Wikidata registra Jefferson Farfan como atacante peruano, com longa passagem pelo Schalke 04 na Bundesliga."
+      }
+    ],
+    "confianca": 0.78,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Nolberto Solano",
+    "pais": "Peru",
+    "posicao": "RW",
+    "dob": "1974-12-12",
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.78,
+      "shooting": 0.78,
+      "passing": 0.9,
+      "dribbling": 0.8,
+      "defending": 0.45,
+      "physic": 0.68
+    },
+    "observacao": "Nolberto Solano detem um dos maiores numeros de jogos pela selecao peruana e teve carreira longa e bem-sucedida na Premier League pelo Newcastle United. Reconhecido por sua qualidade de cruzamento e cobranca de faltas, foi referencia tecnica do time por mais de uma decada.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q378005",
+        "afirmacao": "Wikidata confirma Nolberto Solano como atacante/meia peruano, com destaque pelo Newcastle United."
+      }
+    ],
+    "confianca": 0.78,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Pedro Pablo Leon",
+    "pais": "Peru",
+    "posicao": "ST",
+    "dob": "1943-06-29",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.72,
+      "shooting": 0.8,
+      "passing": 0.55,
+      "dribbling": 0.68,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Conhecido como 'El Nene', Pedro Pablo Leon foi atacante do historico elenco peruano nas quartas de final da Copa do Mundo de 1970, marcando gols decisivos naquela campanha. Sua participacao nesse feito o eleva entre os atacantes mais relevantes dessa geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2313175",
+        "afirmacao": "Wikidata registra Pedro Pablo Leon como atacante peruano, parte do elenco da Copa do Mundo de 1970."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alberto Gallardo",
+    "pais": "Peru",
+    "posicao": "LW",
+    "dob": "1940-11-28",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.75,
+      "shooting": 0.72,
+      "passing": 0.6,
+      "dribbling": 0.72,
+      "defending": 0.32,
+      "physic": 0.6
+    },
+    "observacao": "Alberto Gallardo foi ponta do celebrado elenco peruano na Copa do Mundo de 1970, contribuindo com velocidade e profundidade ofensiva naquela campanha historica. Sua presenca nesse marco da selecao justifica percentis solidos dentro do grupo de atacantes.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2574557",
+        "afirmacao": "Wikidata confirma Alberto Gallardo como ponta peruano, integrante do elenco da Copa do Mundo de 1970."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ramon Quiroga",
+    "pais": "Peru",
+    "posicao": "GK",
+    "dob": "1950-07-23",
+    "percentis": {
+      "overall": 0.88,
+      "goalkeeping_diving": 0.85,
+      "goalkeeping_handling": 0.82,
+      "goalkeeping_kicking": 0.85,
+      "goalkeeping_positioning": 0.8,
+      "goalkeeping_reflexes": 0.85,
+      "goalkeeping_speed": 0.8
+    },
+    "observacao": "Conhecido como 'El Loco', Ramon Quiroga foi um goleiro excentrico e tecnicamente avancado para sua epoca, destacando-se como titular na Copa do Mundo de 1978 pelo estilo de 'goleiro-libero' que saia da area para jogar com os pes. Sua personalidade e qualidade tecnica o tornaram um dos goleiros mais memoraveis da historia peruana.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2718604",
+        "afirmacao": "Wikidata registra Ramon Quiroga como goleiro peruano, titular na Copa do Mundo de 1978."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Oscar Ibanez",
+    "pais": "Peru",
+    "posicao": "GK",
+    "dob": "1967-08-08",
+    "percentis": {
+      "overall": 0.72,
+      "goalkeeping_diving": 0.68,
+      "goalkeeping_handling": 0.7,
+      "goalkeeping_kicking": 0.65,
+      "goalkeeping_positioning": 0.68,
+      "goalkeeping_reflexes": 0.7,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Oscar Ibanez foi o goleiro titular da selecao peruana entre as Copas America de 1997 e 2004, mantendo-se como referencia confiavel na posicao por varios ciclos. Nao alcancou o status de icone historico, mas foi um titular regular de alto nivel internacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2352115",
+        "afirmacao": "Wikidata confirma Oscar Ibanez como goleiro peruano, titular entre as Copas America de 1997 e 2004."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]

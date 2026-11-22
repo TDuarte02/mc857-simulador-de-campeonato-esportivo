@@ -1,0 +1,795 @@
+{
+  "pais": "Argentina",
+  "jogadores": [
+    {
+      "nome": "Diego Maradona",
+      "posicao_principal": "CAM",
+      "dob": "1960-10-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q17515",
+      "contexto": "Campeao 1986 - Icon EA FC"
+    },
+    {
+      "nome": "Ezequiel Lavezzi",
+      "posicao_principal": "RW",
+      "dob": "1985-05-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q275415",
+      "contexto": "PSG"
+    },
+    {
+      "nome": "Omar Sivori",
+      "posicao_principal": "ST",
+      "dob": "1935-10-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q220700",
+      "contexto": "Naturalizado italiano"
+    },
+    {
+      "nome": "Jose Manuel Moreno",
+      "posicao_principal": "ST",
+      "dob": "1916-08-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q543951",
+      "contexto": "Anos 40"
+    },
+    {
+      "nome": "Adolfo Pedernera",
+      "posicao_principal": "ST",
+      "dob": "1918-11-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q365127",
+      "contexto": "La Maquina"
+    },
+    {
+      "nome": "Angel Labruna",
+      "posicao_principal": "ST",
+      "dob": "1918-09-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q251721",
+      "contexto": "Maior artilheiro do River"
+    },
+    {
+      "nome": "Juan Carlos Munoz",
+      "posicao_principal": "RW",
+      "dob": "1919-05-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q561157",
+      "contexto": "La Maquina"
+    },
+    {
+      "nome": "Norberto Mendez",
+      "posicao_principal": "ST",
+      "dob": "1923-01-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2735456",
+      "contexto": "Copa 1945-47"
+    },
+    {
+      "nome": "Rene Houseman",
+      "posicao_principal": "RW",
+      "dob": "1953-07-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q463492",
+      "contexto": "Campeao 1978"
+    },
+    {
+      "nome": "Leopoldo Luque",
+      "posicao_principal": "ST",
+      "dob": "1949-05-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q372086",
+      "contexto": "Campeao 1978"
+    },
+    {
+      "nome": "Daniel Bertoni",
+      "posicao_principal": "RW",
+      "dob": "1955-03-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q446923",
+      "contexto": "Campeao 1978"
+    },
+    {
+      "nome": "Rodrigo Palacio",
+      "posicao_principal": "ST",
+      "dob": "1982-02-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q310635",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Abel Balbo",
+      "posicao_principal": "ST",
+      "dob": "1966-06-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q318387",
+      "contexto": "Roma"
+    },
+    {
+      "nome": "Claudio Lopez",
+      "posicao_principal": "ST",
+      "dob": "1974-07-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q295883",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Kily Gonzalez",
+      "posicao_principal": "LW",
+      "dob": "1974-08-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q314761",
+      "contexto": "Valencia"
+    },
+    {
+      "nome": "Maxi Rodriguez",
+      "posicao_principal": "RW",
+      "dob": "1981-01-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q190929",
+      "contexto": "Gol contra Mexico 2006"
+    },
+    {
+      "nome": "Javier Saviola",
+      "posicao_principal": "ST",
+      "dob": "1981-12-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q186071",
+      "contexto": "Barcelona"
+    },
+    {
+      "nome": "Julio Cruz",
+      "posicao_principal": "ST",
+      "dob": "1974-10-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q297397",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Martin Palermo",
+      "posicao_principal": "ST",
+      "dob": "1973-11-07",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q208436",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Luis Artime",
+      "posicao_principal": "ST",
+      "dob": "1938-12-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q690387",
+      "contexto": "Artilheiro 1966"
+    },
+    {
+      "nome": "Felix Loustau",
+      "posicao_principal": "LW",
+      "dob": "1922-12-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q960209",
+      "contexto": "La Maquina"
+    },
+    {
+      "nome": "Carlos Tevez",
+      "posicao_principal": "ST",
+      "dob": "1984-02-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q50600",
+      "contexto": "Libertadores e Premier"
+    },
+    {
+      "nome": "Alfredo Di Stefano",
+      "posicao_principal": "ST",
+      "dob": "1926-07-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q164546",
+      "contexto": "Naturalizado espanhol"
+    },
+    {
+      "nome": "Mario Kempes",
+      "posicao_principal": "ST",
+      "dob": "1954-07-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q180649",
+      "contexto": "Campeao 1978"
+    },
+    {
+      "nome": "Jorge Valdano",
+      "posicao_principal": "ST",
+      "dob": "1955-10-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q298305",
+      "contexto": "Campeao 1986"
+    },
+    {
+      "nome": "Herminio Masantonio",
+      "posicao_principal": "ST",
+      "dob": "1910-08-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q554390",
+      "contexto": "Huracan"
+    },
+    {
+      "nome": "Claudio Caniggia",
+      "posicao_principal": "RW",
+      "dob": "1967-01-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q270890",
+      "contexto": "Campeao 1991"
+    },
+    {
+      "nome": "Hernan Crespo",
+      "posicao_principal": "ST",
+      "dob": "1975-07-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q160206",
+      "contexto": "Artilheiro da Lazio"
+    },
+    {
+      "nome": "Gabriel Batistuta",
+      "posicao_principal": "ST",
+      "dob": "1969-02-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q170376",
+      "contexto": "Maior artilheiro pre-Messi"
+    },
+    {
+      "nome": "Carlos Peucelle",
+      "posicao_principal": "RW",
+      "dob": "1908-09-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q465954",
+      "contexto": "Vice 1930"
+    },
+    {
+      "nome": "Manuel Ferreira",
+      "posicao_principal": "ST",
+      "dob": "1905-10-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q732682",
+      "contexto": "Vice 1930"
+    },
+    {
+      "nome": "Guillermo Stabile",
+      "posicao_principal": "ST",
+      "dob": "1905-01-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q309645",
+      "contexto": "Artilheiro 1930"
+    },
+    {
+      "nome": "Ubaldo Fillol",
+      "posicao_principal": "GK",
+      "dob": "1950-07-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q140319",
+      "contexto": "Campeao 1978"
+    },
+    {
+      "nome": "Sergio Romero",
+      "posicao_principal": "GK",
+      "dob": "1987-02-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q215463",
+      "contexto": "Copa 2014-2018"
+    },
+    {
+      "nome": "Amadeo Carrizo",
+      "posicao_principal": "GK",
+      "dob": "1926-06-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q451749",
+      "contexto": "River Plate anos 50"
+    },
+    {
+      "nome": "Sergio Goycochea",
+      "posicao_principal": "GK",
+      "dob": "1963-10-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q316205",
+      "contexto": "Copa 1990"
+    },
+    {
+      "nome": "Nery Pumpido",
+      "posicao_principal": "GK",
+      "dob": "1957-07-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q461838",
+      "contexto": "Campeao 1986"
+    },
+    {
+      "nome": "Roberto Abbondanzieri",
+      "posicao_principal": "GK",
+      "dob": "1972-08-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q296961",
+      "contexto": "Copa 2006"
+    },
+    {
+      "nome": "Hector Enrique",
+      "posicao_principal": "CM",
+      "dob": "1962-04-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q516743",
+      "contexto": "Campeao 1986"
+    },
+    {
+      "nome": "Osvaldo Ardiles",
+      "posicao_principal": "CM",
+      "dob": "1952-08-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q310373",
+      "contexto": "Campeao 1978"
+    },
+    {
+      "nome": "Ricardo Villa",
+      "posicao_principal": "CM",
+      "dob": "1952-08-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q705946",
+      "contexto": "Campeao 1978"
+    },
+    {
+      "nome": "Luis Monti",
+      "posicao_principal": "CDM",
+      "dob": "1901-05-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q315333",
+      "contexto": "Campeao 1934 pela Italia"
+    },
+    {
+      "nome": "Miguel Angel Brindisi",
+      "posicao_principal": "CAM",
+      "dob": "1950-10-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q727597",
+      "contexto": "Independiente"
+    },
+    {
+      "nome": "Fernando Gago",
+      "posicao_principal": "CDM",
+      "dob": "1986-04-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q187426",
+      "contexto": "Real Madrid"
+    },
+    {
+      "nome": "Alberto Marcico",
+      "posicao_principal": "CAM",
+      "dob": "1960-05-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1998778",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Jorge Burruchaga",
+      "posicao_principal": "CAM",
+      "dob": "1962-10-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q313774",
+      "contexto": "Gol na final 1986"
+    },
+    {
+      "nome": "Ariel Ortega",
+      "posicao_principal": "CAM",
+      "dob": "1974-03-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q296965",
+      "contexto": "Copa 1994-2002"
+    },
+    {
+      "nome": "Fernando Redondo",
+      "posicao_principal": "CDM",
+      "dob": "1969-06-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q295456",
+      "contexto": "Real Madrid"
+    },
+    {
+      "nome": "Juan Sebastian Veron",
+      "posicao_principal": "CM",
+      "dob": "1975-03-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q46502",
+      "contexto": "Libertadores 2009"
+    },
+    {
+      "nome": "Ricardo Bochini",
+      "posicao_principal": "CAM",
+      "dob": "1954-01-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q318304",
+      "contexto": "Independiente"
+    },
+    {
+      "nome": "Norberto Alonso",
+      "posicao_principal": "CAM",
+      "dob": "1953-01-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q94949",
+      "contexto": "River Plate"
+    },
+    {
+      "nome": "Antonio Rattin",
+      "posicao_principal": "CDM",
+      "dob": "1937-05-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q604553",
+      "contexto": "Capitao 1966"
+    },
+    {
+      "nome": "Ricardo Giusti",
+      "posicao_principal": "CM",
+      "dob": "1956-12-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q721996",
+      "contexto": "Campeao 1986"
+    },
+    {
+      "nome": "Claudio Borghi",
+      "posicao_principal": "CAM",
+      "dob": "1964-09-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q516805",
+      "contexto": "Campeao 1986"
+    },
+    {
+      "nome": "Pedro Troglio",
+      "posicao_principal": "CM",
+      "dob": "1965-07-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q509107",
+      "contexto": "Copa 1990"
+    },
+    {
+      "nome": "Javier Mascherano",
+      "posicao_principal": "CDM",
+      "dob": "1984-06-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q161571",
+      "contexto": "Capitao 2014"
+    },
+    {
+      "nome": "Diego Simeone",
+      "posicao_principal": "CM",
+      "dob": "1970-04-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q258115",
+      "contexto": "Campeao 1991 e 1993"
+    },
+    {
+      "nome": "Juan Roman Riquelme",
+      "posicao_principal": "CAM",
+      "dob": "1978-06-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q192965",
+      "contexto": "Libertadores 2000"
+    },
+    {
+      "nome": "Matias Almeyda",
+      "posicao_principal": "CDM",
+      "dob": "1973-12-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q359494",
+      "contexto": "Lazio"
+    },
+    {
+      "nome": "Leonardo Astrada",
+      "posicao_principal": "CDM",
+      "dob": "1970-01-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2477498",
+      "contexto": "River Plate"
+    },
+    {
+      "nome": "Pablo Aimar",
+      "posicao_principal": "CAM",
+      "dob": "1979-11-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q130215",
+      "contexto": "Valencia"
+    },
+    {
+      "nome": "Lucho Gonzalez",
+      "posicao_principal": "CM",
+      "dob": "1981-01-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q244894",
+      "contexto": "Porto"
+    },
+    {
+      "nome": "Esteban Cambiasso",
+      "posicao_principal": "CDM",
+      "dob": "1980-08-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q192122",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Javier Zanetti",
+      "posicao_principal": "RB",
+      "dob": "1973-08-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q52876",
+      "contexto": "Recordista de jogos na Inter"
+    },
+    {
+      "nome": "Jose Luis Brown",
+      "posicao_principal": "CB",
+      "dob": "1956-11-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q721998",
+      "contexto": "Campeao 1986"
+    },
+    {
+      "nome": "Silvio Marzolini",
+      "posicao_principal": "LB",
+      "dob": "1940-10-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q616023",
+      "contexto": "Boca Juniors"
+    },
+    {
+      "nome": "Daniel Passarella",
+      "posicao_principal": "CB",
+      "dob": "1953-05-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q15802",
+      "contexto": "Campeao 1978 e 1986"
+    },
+    {
+      "nome": "Roberto Perfumo",
+      "posicao_principal": "CB",
+      "dob": "1942-10-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q734558",
+      "contexto": "Racing"
+    },
+    {
+      "nome": "Oscar Ruggeri",
+      "posicao_principal": "CB",
+      "dob": "1962-01-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q346942",
+      "contexto": "Campeao 1986"
+    },
+    {
+      "nome": "Roberto Ayala",
+      "posicao_principal": "CB",
+      "dob": "1973-04-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q189535",
+      "contexto": "Zagueiro capitao"
+    },
+    {
+      "nome": "Gabriel Heinze",
+      "posicao_principal": "LB",
+      "dob": "1978-04-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q63659",
+      "contexto": "Manchester United"
+    },
+    {
+      "nome": "Alberto Tarantini",
+      "posicao_principal": "LB",
+      "dob": "1955-12-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q455135",
+      "contexto": "Campeao 1978"
+    },
+    {
+      "nome": "Julio Olarticoechea",
+      "posicao_principal": "LB",
+      "dob": "1958-10-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q516892",
+      "contexto": "Campeao 1986"
+    },
+    {
+      "nome": "Juan Pablo Sorin",
+      "posicao_principal": "LB",
+      "dob": "1976-05-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q220746",
+      "contexto": "Capitao 2006"
+    },
+    {
+      "nome": "Walter Samuel",
+      "posicao_principal": "CB",
+      "dob": "1978-03-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q193702",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Roberto Sensini",
+      "posicao_principal": "CB",
+      "dob": "1966-10-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q369133",
+      "contexto": "Parma"
+    },
+    {
+      "nome": "Alejandro Garnacho",
+      "posicao_principal": "ST",
+      "dob": "2004-07-01",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Manchester United"
+    },
+    {
+      "nome": "Guido Rodríguez",
+      "posicao_principal": "CM",
+      "dob": "1994-04-12",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Real Betis"
+    },
+    {
+      "nome": "Valentín Carboni",
+      "posicao_principal": "ST",
+      "dob": "2005-03-05",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Monza"
+    }
+  ]
+}

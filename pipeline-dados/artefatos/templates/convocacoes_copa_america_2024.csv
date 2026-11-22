@@ -1,0 +1,4 @@
+pais,nome,posicao,fonte_url,titular_ultima_partida
+Brazil,Bento,GK,https://exemplo.invalid/convocacao-brazil-2024,false
+Brazil,Alisson,GK,https://exemplo.invalid/convocacao-brazil-2024,true
+Brazil,Vinicius Junior,LW,https://exemplo.invalid/convocacao-brazil-2024,false

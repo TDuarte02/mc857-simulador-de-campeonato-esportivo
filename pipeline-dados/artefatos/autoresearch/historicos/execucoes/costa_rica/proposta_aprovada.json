@@ -1,0 +1,374 @@
+[
+  {
+    "nome": "Paulo Wanchope",
+    "pais": "Costa Rica",
+    "posicao": "ST",
+    "dob": "1976-07-31",
+    "percentis": {
+      "overall": 0.98,
+      "pace": 0.95,
+      "shooting": 0.98,
+      "passing": 0.75,
+      "dribbling": 0.93,
+      "defending": 0.3,
+      "physic": 0.85
+    },
+    "observacao": "Paulo Wanchope é o maior ídolo histórico do ataque costarriquenho, com passagem marcante pela Premier League (Derby County, West Ham, Manchester City) e gols decisivos nas Copas do Mundo de 2002 e 2006. Seu overall e os percentis de finalização e drible ficam no topo do grupo ATT, refletindo o status de lenda absoluta da seleção. A marcação permanece baixa, perfil típico de um atacante de referência.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q211126",
+        "afirmacao": "Paulo Wanchope é identificado na Wikidata como ex-jogador e lenda histórica da seleção costarriquenha, com carreira internacional de destaque."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 85,
+      "pace": 82,
+      "shooting": 85,
+      "passing": 72,
+      "dribbling": 83,
+      "defending": 34,
+      "physic": 76
+    },
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Bryan Ruiz",
+    "pais": "Costa Rica",
+    "posicao": "CAM",
+    "dob": "1985-08-18",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.8,
+      "shooting": 0.85,
+      "passing": 0.92,
+      "dribbling": 0.9,
+      "defending": 0.45,
+      "physic": 0.7
+    },
+    "observacao": "Bryan Ruiz foi capitão e principal criador de jogadas da Costa Rica na histórica campanha de quartas de final da Copa do Mundo de 2014, com carreira consolidada no Fulham e no PSV. Seus percentis de passe e drible ficam bem acima da mediana do grupo MID, compatíveis com um armador de nível internacional alto ao longo de mais de uma década de seleção.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q318383",
+        "afirmacao": "Bryan Ruiz é identificado na Wikidata como ex-capitão e meia-atacante histórico da seleção costarriquenha."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Celso Borges",
+    "pais": "Costa Rica",
+    "posicao": "CM",
+    "dob": "1988-05-27",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.78,
+      "shooting": 0.72,
+      "passing": 0.85,
+      "dribbling": 0.78,
+      "defending": 0.6,
+      "physic": 0.75
+    },
+    "observacao": "Celso Borges foi um volante/meio-campista de longa trajetória na seleção, com passagem pelo Deportivo La Coruña, na Espanha, e presença constante nas convocações ao longo dos anos 2010. Seus percentis ficam acima da mediana do grupo MID, caracterizando um titular internacional sólido e versátil, sem atingir o nível máximo de um ídolo histórico absoluto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2208497",
+        "afirmacao": "Celso Borges é identificado na Wikidata como meio-campista de longa carreira na seleção costarriquenha."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Walter Centeno",
+    "pais": "Costa Rica",
+    "posicao": "CAM",
+    "dob": "1974-10-06",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.75,
+      "shooting": 0.82,
+      "passing": 0.93,
+      "dribbling": 0.92,
+      "defending": 0.4,
+      "physic": 0.65
+    },
+    "observacao": "Walter 'La Chunche' Centeno foi o principal armador da Costa Rica nas Copas do Mundo de 2002 e 2006, reconhecido por sua visão de jogo e capacidade de criação de chances. Seus percentis de passe e drible figuram entre os mais altos do grupo MID, consistentes com o reconhecimento histórico de melhor meia-atacante do país em sua geração.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q445468",
+        "afirmacao": "Walter Centeno é identificado na Wikidata como meia-atacante histórico da seleção costarriquenha, titular nas Copas do Mundo de 2002 e 2006."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Hernan Medford",
+    "pais": "Costa Rica",
+    "posicao": "ST",
+    "dob": "1968-05-23",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.88,
+      "shooting": 0.88,
+      "passing": 0.6,
+      "dribbling": 0.8,
+      "defending": 0.3,
+      "physic": 0.72
+    },
+    "observacao": "Hernán Medford é lembrado por seu gol histórico na Copa do Mundo de 1990, primeira participação da Costa Rica no torneio, e pela velocidade característica de seu jogo ofensivo. Seus percentis de ritmo e finalização ficam no topo do grupo ATT; a confiança é moderada em razão da escassez de registros estatísticos detalhados da época de sua carreira.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q796301",
+        "afirmacao": "Hernán Medford é identificado na Wikidata como atacante histórico da seleção costarriquenha, participante da Copa do Mundo de 1990."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alvaro Saborio",
+    "pais": "Costa Rica",
+    "posicao": "ST",
+    "dob": "1982-03-25",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.78,
+      "shooting": 0.8,
+      "passing": 0.58,
+      "dribbling": 0.72,
+      "defending": 0.3,
+      "physic": 0.78
+    },
+    "observacao": "Álvaro Saborío teve longa carreira na MLS, principalmente pelo Real Salt Lake, e foi titular recorrente no ataque da seleção costarriquenha durante a década de 2010. Seus percentis ficam acima da mediana do grupo ATT, compatíveis com um atacante internacional de bom nível, porém sem o destaque máximo de um ídolo histórico absoluto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q251281",
+        "afirmacao": "Álvaro Saborío é identificado na Wikidata como atacante da seleção costarriquenha com longa passagem pela MLS."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Rolando Fonseca",
+    "pais": "Costa Rica",
+    "posicao": "ST",
+    "dob": "1974-06-06",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.8,
+      "shooting": 0.88,
+      "passing": 0.58,
+      "dribbling": 0.75,
+      "defending": 0.3,
+      "physic": 0.72
+    },
+    "observacao": "Rolando Fonseca é um dos maiores artilheiros históricos da seleção costarriquenha, com participação na Copa do Mundo de 2002. Seus percentis de finalização ficam entre os mais altos do grupo ATT, refletindo seu status de referência goleadora ao longo de toda a sua carreira internacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q483093",
+        "afirmacao": "Rolando Fonseca é identificado na Wikidata como um dos maiores goleadores históricos da seleção costarriquenha."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Christian Bolanos",
+    "pais": "Costa Rica",
+    "posicao": "RW",
+    "dob": "1984-05-17",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.85,
+      "shooting": 0.75,
+      "passing": 0.8,
+      "dribbling": 0.85,
+      "defending": 0.4,
+      "physic": 0.65
+    },
+    "observacao": "Christian Bolaños foi um dos principais jogadores da geração que chegou às quartas de final da Copa do Mundo de 2014, destacando-se como ponta-direita veloz e decisivo, com passagens pelo FC Copenhagen e pelo Vancouver Whitecaps. Seus percentis de ritmo e drible ficam bem acima da mediana do grupo ATT, compatíveis com um titular internacional de alto nível por quase duas décadas.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q361694",
+        "afirmacao": "Christian Bolaños é identificado na Wikidata como ponta histórico da seleção costarriquenha, titular na Copa do Mundo de 2014."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Marco Urena",
+    "pais": "Costa Rica",
+    "posicao": "ST",
+    "dob": "1990-03-05",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.75,
+      "shooting": 0.68,
+      "passing": 0.55,
+      "dribbling": 0.65,
+      "defending": 0.3,
+      "physic": 0.7
+    },
+    "observacao": "Marco Ureña integrou o elenco da Costa Rica na Copa do Mundo de 2014 e manteve presença intermitente na seleção nos anos seguintes, atuando como atacante de apoio. Seus percentis ficam próximos da mediana do grupo ATT, compatíveis com um jogador de seleção regular, sem o destaque de um titular absoluto ao longo de toda a carreira.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1511793",
+        "afirmacao": "Marco Ureña é identificado na Wikidata como atacante da seleção costarriquenha, convocado para a Copa do Mundo de 2014."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Marin",
+    "pais": "Costa Rica",
+    "posicao": "CB",
+    "dob": "1974-08-10",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.68,
+      "shooting": 0.4,
+      "passing": 0.6,
+      "dribbling": 0.55,
+      "defending": 0.78,
+      "physic": 0.78
+    },
+    "observacao": "Luis Marín foi zagueiro titular da Costa Rica nas Copas do Mundo de 2002 e 2006, reconhecido pela solidez defensiva e pela liderança na zaga. Seus percentis de marcação e físico ficam acima da mediana do grupo DEF, compatíveis com um defensor internacional de longa trajetória e bom nível.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q381462",
+        "afirmacao": "Luis Marín é identificado na Wikidata como zagueiro histórico da seleção costarriquenha, titular nas Copas do Mundo de 2002 e 2006."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
+  },
+  {
+    "nome": "Gilberto Martinez",
+    "pais": "Costa Rica",
+    "posicao": "CB",
+    "dob": "1979-10-01",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.72,
+      "shooting": 0.42,
+      "passing": 0.65,
+      "dribbling": 0.6,
+      "defending": 0.85,
+      "physic": 0.8
+    },
+    "observacao": "Gilberto Martínez foi capitão e um dos zagueiros mais respeitados da história recente da seleção costarriquenha, com passagem pelo Brescia, na Itália. Seus percentis de marcação e físico figuram entre os mais altos do grupo DEF, consistentes com o reconhecimento de liderança defensiva e de consistência internacional ao longo de muitos anos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q384232",
+        "afirmacao": "Gilberto Martínez é identificado na Wikidata como zagueiro e ex-capitão histórico da seleção costarriquenha."
+      }
+    ],
+    "confianca": 0.72,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Michael Umana",
+    "pais": "Costa Rica",
+    "posicao": "CB",
+    "dob": "1982-07-16",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.65,
+      "shooting": 0.4,
+      "passing": 0.58,
+      "dribbling": 0.55,
+      "defending": 0.72,
+      "physic": 0.75
+    },
+    "observacao": "Michael Umaña foi zagueiro da convocação de 2014 e manteve-se como opção regular na defesa da seleção nos anos seguintes. Seus percentis ficam pouco acima da mediana do grupo DEF, compatíveis com um defensor internacional sólido, mas sem o destaque máximo de um ídolo histórico absoluto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q726317",
+        "afirmacao": "Michael Umaña é identificado na Wikidata como zagueiro da seleção costarriquenha, convocado para a Copa do Mundo de 2014."
+      }
+    ],
+    "confianca": 0.62,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  }
+]

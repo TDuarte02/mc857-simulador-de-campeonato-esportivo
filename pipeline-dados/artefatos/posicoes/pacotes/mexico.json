@@ -1,0 +1,355 @@
+{
+  "pais": "Mexico",
+  "jogadores": [
+    {
+      "nome": "Hugo Sanchez",
+      "posicao_principal": "ST",
+      "dob": "1958-07-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q487155",
+      "contexto": "Icon EA FC"
+    },
+    {
+      "nome": "Guillermo Franco",
+      "posicao_principal": "ST",
+      "dob": "1976-11-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q176119",
+      "contexto": "Copa 2006-2010"
+    },
+    {
+      "nome": "Omar Bravo",
+      "posicao_principal": "ST",
+      "dob": "1980-03-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q311091",
+      "contexto": "Copa 2006-2010"
+    },
+    {
+      "nome": "Luis Flores",
+      "posicao_principal": "ST",
+      "dob": "1949-04-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1146506",
+      "contexto": "Copa 1986 e 1994"
+    },
+    {
+      "nome": "Carlos Hermosillo",
+      "posicao_principal": "ST",
+      "dob": "1964-08-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q956498",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Javier Fragoso",
+      "posicao_principal": "ST",
+      "dob": "1942-04-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1516606",
+      "contexto": "Copa 1970"
+    },
+    {
+      "nome": "Horacio Casarin",
+      "posicao_principal": "ST",
+      "dob": "1918-05-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1334427",
+      "contexto": "Anos 40-50"
+    },
+    {
+      "nome": "Luis Hernandez",
+      "posicao_principal": "ST",
+      "dob": "1968-12-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q433097",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Salvador Reyes",
+      "posicao_principal": "LW",
+      "dob": "1968-09-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1769038",
+      "contexto": "Copa 1958-1966"
+    },
+    {
+      "nome": "Enrique Borja",
+      "posicao_principal": "ST",
+      "dob": "1945-12-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1343308",
+      "contexto": "Copa 1966 e 1970"
+    },
+    {
+      "nome": "Jared Borgetti",
+      "posicao_principal": "ST",
+      "dob": "1973-08-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q312334",
+      "contexto": "Bolton"
+    },
+    {
+      "nome": "Luis Garcia Postigo",
+      "posicao_principal": "RW",
+      "dob": "1969-06-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q542031",
+      "contexto": "Atletico de Madrid"
+    },
+    {
+      "nome": "Ramon Ramirez",
+      "posicao_principal": "LW",
+      "dob": "1969-12-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q956482",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Oswaldo Sanchez",
+      "posicao_principal": "GK",
+      "dob": "1973-09-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q354327",
+      "contexto": "Copa 2002-2006"
+    },
+    {
+      "nome": "Antonio Carbajal",
+      "posicao_principal": "GK",
+      "dob": "1929-06-07",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q265428",
+      "contexto": "5 Copas do Mundo"
+    },
+    {
+      "nome": "Jorge Campos",
+      "posicao_principal": "GK",
+      "dob": "1966-10-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q313761",
+      "contexto": "Copa 1994-1998"
+    },
+    {
+      "nome": "Cuauhtemoc Blanco",
+      "posicao_principal": "CAM",
+      "dob": "1973-01-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q207644",
+      "contexto": "Copa 1998-2010"
+    },
+    {
+      "nome": "Adolfo Bautista",
+      "posicao_principal": "CAM",
+      "dob": "1979-05-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q365020",
+      "contexto": "Copa 2006"
+    },
+    {
+      "nome": "Benjamin Galindo",
+      "posicao_principal": "CAM",
+      "dob": "1960-12-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q581551",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Alberto Garcia Aspe",
+      "posicao_principal": "CM",
+      "dob": "1967-05-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q709415",
+      "contexto": "Copa 1994-2002"
+    },
+    {
+      "nome": "Tomas Boy",
+      "posicao_principal": "CM",
+      "dob": "1951-06-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2060182",
+      "contexto": "Copa 1986"
+    },
+    {
+      "nome": "Manuel Negrete",
+      "posicao_principal": "CAM",
+      "dob": "1959-03-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1387961",
+      "contexto": "Gol contra Bulgaria 1986"
+    },
+    {
+      "nome": "Pavel Pardo",
+      "posicao_principal": "CDM",
+      "dob": "1976-07-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q316222",
+      "contexto": "Stuttgart"
+    },
+    {
+      "nome": "Gerardo Torrado",
+      "posicao_principal": "CDM",
+      "dob": "1979-04-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q309672",
+      "contexto": "Copa 2002-2010"
+    },
+    {
+      "nome": "Antonio Naelson",
+      "posicao_principal": "CAM",
+      "dob": "1976-05-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q204548",
+      "contexto": "Toluca"
+    },
+    {
+      "nome": "Giovani dos Santos",
+      "posicao_principal": "CAM",
+      "dob": "1989-05-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q562337",
+      "contexto": "Tottenham"
+    },
+    {
+      "nome": "Fernando Quirarte",
+      "posicao_principal": "CB",
+      "dob": "1956-05-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q958304",
+      "contexto": "Copa 1986"
+    },
+    {
+      "nome": "Gustavo Pena",
+      "posicao_principal": "CB",
+      "dob": "1941-11-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1381158",
+      "contexto": "Copa 1966 e 1970"
+    },
+    {
+      "nome": "Claudio Suarez",
+      "posicao_principal": "CB",
+      "dob": "1968-12-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q449624",
+      "contexto": "Copa 1994-2006"
+    },
+    {
+      "nome": "Duilio Davino",
+      "posicao_principal": "CB",
+      "dob": "1976-03-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q891694",
+      "contexto": "Copa 1998-2006"
+    },
+    {
+      "nome": "Carlos Salcido",
+      "posicao_principal": "LB",
+      "dob": "1980-04-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q208689",
+      "contexto": "Copa 2006-2014"
+    },
+    {
+      "nome": "Rafael Marquez",
+      "posicao_principal": "CB",
+      "dob": "1979-02-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q186330",
+      "contexto": "Barcelona"
+    },
+    {
+      "nome": "Julián Quiñones",
+      "posicao_principal": "ST",
+      "dob": "1997-03-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "América"
+    },
+    {
+      "nome": "Marcelo Flores",
+      "posicao_principal": "ST",
+      "dob": "2003-10-01",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "UANL"
+    },
+    {
+      "nome": "Raúl Rangel",
+      "posicao_principal": "GK",
+      "dob": "2000-02-25",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Guadalajara"
+    }
+  ]
+}

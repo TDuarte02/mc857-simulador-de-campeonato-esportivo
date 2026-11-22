@@ -1,0 +1,345 @@
+{
+  "pais": "Ecuador",
+  "jogadores": [
+    {
+      "nome": "Antonio Valencia",
+      "posicao_principal": "RW",
+      "dob": "1985-08-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q174486",
+      "contexto": "Manchester United"
+    },
+    {
+      "nome": "Alberto Spencer",
+      "posicao_principal": "ST",
+      "dob": "1937-12-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q918388",
+      "contexto": "Artilheiro da Libertadores"
+    },
+    {
+      "nome": "Leonardo Campana",
+      "posicao_principal": "ST",
+      "dob": "2000-07-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q30899761",
+      "contexto": "Inter Miami"
+    },
+    {
+      "nome": "Agustin Delgado",
+      "posicao_principal": "ST",
+      "dob": "1974-12-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q313147",
+      "contexto": "Copa 2002 e 2006"
+    },
+    {
+      "nome": "Nicolas Asencio",
+      "posicao_principal": "ST",
+      "dob": "1975-04-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2563253",
+      "contexto": "Copa 2002"
+    },
+    {
+      "nome": "Carlos Tenorio",
+      "posicao_principal": "ST",
+      "dob": "1979-05-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q313361",
+      "contexto": "Copa 2006"
+    },
+    {
+      "nome": "Polo Carrera",
+      "posicao_principal": "CAM",
+      "dob": "1945-01-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q531266",
+      "contexto": "Anos 60-70"
+    },
+    {
+      "nome": "Alex Aguinaga",
+      "posicao_principal": "CAM",
+      "dob": "1968-07-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q250553",
+      "contexto": "Necaxa"
+    },
+    {
+      "nome": "Edison Mendez",
+      "posicao_principal": "CM",
+      "dob": "1979-03-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q346789",
+      "contexto": "PSV"
+    },
+    {
+      "nome": "Cristian Noboa",
+      "posicao_principal": "CM",
+      "dob": "1985-04-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q468083",
+      "contexto": "Rubin Kazan"
+    },
+    {
+      "nome": "Segundo Castillo",
+      "posicao_principal": "CDM",
+      "dob": "1982-05-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q316926",
+      "contexto": "Everton"
+    },
+    {
+      "nome": "Michael Arroyo",
+      "posicao_principal": "CAM",
+      "dob": "1987-04-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2468273",
+      "contexto": "America"
+    },
+    {
+      "nome": "Frickson Erazo",
+      "posicao_principal": "CB",
+      "dob": "1988-05-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q429023",
+      "contexto": "Flamengo"
+    },
+    {
+      "nome": "Gabriel Achilier",
+      "posicao_principal": "CB",
+      "dob": "1985-03-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2007275",
+      "contexto": "Emelec"
+    },
+    {
+      "nome": "Walter Ayovi",
+      "posicao_principal": "LB",
+      "dob": "1979-08-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2562953",
+      "contexto": "Monterrey"
+    },
+    {
+      "nome": "Ulises de la Cruz",
+      "posicao_principal": "RB",
+      "dob": "1974-02-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q353013",
+      "contexto": "Aston Villa"
+    },
+    {
+      "nome": "Ivan Hurtado",
+      "posicao_principal": "CB",
+      "dob": "1974-08-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q363069",
+      "contexto": "Copa 2002 e 2006"
+    },
+    {
+      "nome": "Jorge Guagua",
+      "posicao_principal": "CB",
+      "dob": "1981-09-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q725258",
+      "contexto": "Copa 2014"
+    },
+    {
+      "nome": "Alexander Dominguez",
+      "posicao_principal": "GK",
+      "dob": "1987-06-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2667325",
+      "contexto": "Copa 2014"
+    },
+    {
+      "nome": "Hernan Galindez",
+      "posicao_principal": "GK",
+      "dob": "1987-03-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q5742434",
+      "contexto": "Copa 2022"
+    },
+    {
+      "nome": "Hernán Galíndez",
+      "posicao_principal": "GK",
+      "dob": "1987-03-30",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Huracán"
+    },
+    {
+      "nome": "Joel Ordóñez",
+      "posicao_principal": "CB",
+      "dob": "2004-04-21",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Club Brugge"
+    },
+    {
+      "nome": "Willian Pacho",
+      "posicao_principal": "CB",
+      "dob": "2001-10-16",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Eintracht Frankfurt"
+    },
+    {
+      "nome": "Layan Loor",
+      "posicao_principal": "CB",
+      "dob": "2001-05-23",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Universidad Católica"
+    },
+    {
+      "nome": "John Yeboah",
+      "posicao_principal": "CM",
+      "dob": "2000-06-23",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Raków Częstochowa"
+    },
+    {
+      "nome": "Kendry Páez",
+      "posicao_principal": "CM",
+      "dob": "2007-05-04",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Independiente del Valle"
+    },
+    {
+      "nome": "Kevin Rodríguez",
+      "posicao_principal": "ST",
+      "dob": "2000-03-04",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Union Saint-Gilloise"
+    },
+    {
+      "nome": "Jeremy Sarmiento",
+      "posicao_principal": "CM",
+      "dob": "2002-06-16",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Ipswich Town"
+    },
+    {
+      "nome": "Joao Ortiz",
+      "posicao_principal": "CM",
+      "dob": "1996-05-01",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Independiente del Valle"
+    },
+    {
+      "nome": "Jordy Caicedo",
+      "posicao_principal": "ST",
+      "dob": "1997-11-18",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Atlas"
+    },
+    {
+      "nome": "Janner Corozo",
+      "posicao_principal": "CM",
+      "dob": "1995-09-08",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Barcelona"
+    },
+    {
+      "nome": "Alan Franco",
+      "posicao_principal": "CM",
+      "dob": "1998-08-21",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Atlético Mineiro"
+    },
+    {
+      "nome": "Alexander Domínguez",
+      "posicao_principal": "GK",
+      "dob": "1987-06-05",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "LDU Quito"
+    },
+    {
+      "nome": "Andrés Micolta",
+      "posicao_principal": "CB",
+      "dob": "1999-07-06",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Pachuca"
+    }
+  ]
+}

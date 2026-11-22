@@ -1,0 +1,369 @@
+[
+  {
+    "nome": "Hernán Galíndez",
+    "pais": "Ecuador",
+    "posicao": "GK",
+    "dob": "1987-03-30",
+    "club_name": "Huracán",
+    "league_name": "Primera División Argentina",
+    "percentis": {
+      "overall": 0.85,
+      "goalkeeping_diving": 0.8,
+      "goalkeeping_handling": 0.75,
+      "goalkeeping_kicking": 0.65,
+      "goalkeeping_positioning": 0.8,
+      "goalkeeping_reflexes": 0.85,
+      "goalkeeping_speed": 0.35
+    },
+    "observacao": "Veterano com longo histórico como titular ou primeira opção da seleção equatoriana, com boa leitura de jogo e reflexos acima da média do grupo; percentis de velocidade mais baixos refletem a idade avançada (37 anos).",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Hernán Galíndez foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Joel Ordóñez",
+    "pais": "Ecuador",
+    "posicao": "CB",
+    "dob": "2004-04-21",
+    "club_name": "Club Brugge",
+    "league_name": "Jupiler Pro League",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.65,
+      "shooting": 0.4,
+      "passing": 0.65,
+      "dribbling": 0.55,
+      "defending": 0.85,
+      "physic": 0.75
+    },
+    "observacao": "Zagueiro jovem (nascido em 2004) e titular regular do Club Brugge na Bélgica, destacando-se pela capacidade defensiva e físico robusto; ainda em ascensão, por isso overall não atinge o topo absoluto do grupo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Joel Ordóñez foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Willian Pacho",
+    "pais": "Ecuador",
+    "posicao": "CB",
+    "dob": "2001-10-16",
+    "club_name": "Eintracht Frankfurt",
+    "league_name": "Bundesliga",
+    "preferred_foot": "Left",
+    "height_cm": 189,
+    "percentis": {
+      "overall": 0.92,
+      "pace": 0.7,
+      "shooting": 0.35,
+      "passing": 0.75,
+      "dribbling": 0.65,
+      "defending": 0.92,
+      "physic": 0.85
+    },
+    "observacao": "Zagueiro canhoto com temporada de destaque na Bundesliga pelo Eintracht Frankfurt, considerado um dos melhores defensores equatorianos da atualidade, com excelente capacidade defensiva, físico e saída de bola; percentis no topo do grupo de zagueiros do país.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Willian Pacho foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Layan Loor",
+    "pais": "Ecuador",
+    "posicao": "CB",
+    "dob": "2001-05-23",
+    "club_name": "Universidad Católica",
+    "league_name": "Liga Pro Ecuador",
+    "percentis": {
+      "overall": 0.5,
+      "pace": 0.55,
+      "shooting": 0.35,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.5,
+      "physic": 0.5
+    },
+    "observacao": "Zagueiro de clube doméstico equatoriano, sem grande destaque internacional até a convocação; percentis próximos da mediana do grupo de zagueiros do país, consistentes com um jogador de rotação da seleção.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Layan Loor foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "John Yeboah",
+    "pais": "Ecuador",
+    "posicao": "CAM",
+    "dob": "2000-06-23",
+    "club_name": "Raków Częstochowa",
+    "league_name": "Ekstraklasa",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.55,
+      "dribbling": 0.6,
+      "defending": 0.3,
+      "physic": 0.5
+    },
+    "observacao": "Meio-atacante que joga mais como armador/ponta ofensivo pelo Raków Częstochowa na Polônia do que como meio-campo central puro, por isso a posição foi refinada para CAM; percentis de defesa baixos e de drible/passe acima da mediana refletem esse perfil mais ofensivo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "John Yeboah foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Kendry Páez",
+    "pais": "Ecuador",
+    "posicao": "CAM",
+    "dob": "2007-05-04",
+    "club_name": "Independiente del Valle",
+    "league_name": "Liga Pro Ecuador",
+    "preferred_foot": "Right",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.65,
+      "shooting": 0.6,
+      "passing": 0.75,
+      "dribbling": 0.8,
+      "defending": 0.4,
+      "physic": 0.35
+    },
+    "observacao": "Uma das maiores joias do futebol equatoriano, já titular do Independiente del Valle e com transferência futura acertada para o Chelsea; atua mais como meia ofensivo criativo do que como meio-campo central, daí o refinamento para CAM. Percentis altos de drible e passe, físico ainda em desenvolvimento por ser o jogador mais jovem do grupo (nascido em 2007).",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kendry Páez foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Kevin Rodríguez",
+    "pais": "Ecuador",
+    "posicao": "ST",
+    "dob": "2000-03-04",
+    "club_name": "Union Saint-Gilloise",
+    "league_name": "Jupiler Pro League",
+    "percentis": {
+      "overall": 0.7,
+      "pace": 0.7,
+      "shooting": 0.7,
+      "passing": 0.55,
+      "dribbling": 0.65,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Atacante em ascensão, peça importante do ataque do Union Saint-Gilloise na Bélgica, com boa finalização e velocidade; percentis de defesa baixos conforme esperado para um centroavante.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kevin Rodríguez foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Jeremy Sarmiento",
+    "pais": "Ecuador",
+    "posicao": "RM",
+    "dob": "2002-06-16",
+    "club_name": "Ipswich Town",
+    "league_name": "Premier League",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.75,
+      "shooting": 0.55,
+      "passing": 0.55,
+      "dribbling": 0.65,
+      "defending": 0.3,
+      "physic": 0.5
+    },
+    "observacao": "Atua como ponta/extremo direito pelo Ipswich Town na Premier League inglesa em vez de meio-campo central, por isso a posição foi refinada para RM; percentis de velocidade e drible altos refletem esse perfil de jogador de ataque pelas pontas.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jeremy Sarmiento foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Joao Ortiz",
+    "pais": "Ecuador",
+    "posicao": "CM",
+    "dob": "1996-05-01",
+    "club_name": "Independiente del Valle",
+    "league_name": "Liga Pro Ecuador",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.5,
+      "shooting": 0.5,
+      "passing": 0.8,
+      "dribbling": 0.6,
+      "defending": 0.65,
+      "physic": 0.6
+    },
+    "observacao": "Meio-campista experiente e armador titular habitual da seleção equatoriana, reconhecido por sua qualidade de passe e visão de jogo; percentis de passe e overall entre os mais altos do grupo de meio-campistas do país.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Joao Ortiz foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Jordy Caicedo",
+    "pais": "Ecuador",
+    "posicao": "ST",
+    "dob": "1997-11-18",
+    "club_name": "Atlas",
+    "league_name": "Liga MX",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.6,
+      "shooting": 0.65,
+      "passing": 0.5,
+      "dribbling": 0.55,
+      "defending": 0.3,
+      "physic": 0.65
+    },
+    "observacao": "Centroavante experiente, internacional recorrente pela seleção equatoriana, atuando na Liga MX; finalização e físico acima da mediana, condizente com um atacante de referência consolidado mas não de elite continental.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jordy Caicedo foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Janner Corozo",
+    "pais": "Ecuador",
+    "posicao": "CAM",
+    "dob": "1995-09-08",
+    "club_name": "Barcelona",
+    "league_name": "Liga Pro Ecuador",
+    "percentis": {
+      "overall": 0.5,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.5,
+      "dribbling": 0.55,
+      "defending": 0.35,
+      "physic": 0.45
+    },
+    "observacao": "Meio-campista ofensivo do Barcelona Sporting Club (Equador), atuando mais próximo do ataque do que como meio-campo central puro, por isso refinado para CAM; percentis próximos da mediana do grupo, consistente com jogador de rotação da seleção.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Janner Corozo foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Alan Franco",
+    "pais": "Ecuador",
+    "posicao": "CDM",
+    "dob": "1998-08-21",
+    "club_name": "Atlético Mineiro",
+    "league_name": "Brasileirão Série A",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.45,
+      "shooting": 0.4,
+      "passing": 0.65,
+      "dribbling": 0.5,
+      "defending": 0.75,
+      "physic": 0.7
+    },
+    "observacao": "Volante titular de um grande clube brasileiro (Atlético Mineiro), com perfil mais defensivo e de contenção do que meio-campo central puro, por isso refinado para CDM; percentis de defesa e físico elevados e overall entre os mais altos do grupo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Alan Franco foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Alexander Domínguez",
+    "pais": "Ecuador",
+    "posicao": "GK",
+    "dob": "1987-06-05",
+    "club_name": "LDU Quito",
+    "league_name": "Liga Pro Ecuador",
+    "percentis": {
+      "overall": 0.8,
+      "goalkeeping_diving": 0.75,
+      "goalkeeping_handling": 0.7,
+      "goalkeeping_kicking": 0.6,
+      "goalkeeping_positioning": 0.75,
+      "goalkeeping_reflexes": 0.7,
+      "goalkeeping_speed": 0.3
+    },
+    "observacao": "Goleiro mais capitaneado historicamente pela seleção equatoriana, com extensa carreira de titular tanto na seleção quanto no LDU Quito; percentis elevados de defesa refletem sua experiência, com queda em velocidade por conta da idade (37 anos).",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Alexander Domínguez foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Andrés Micolta",
+    "pais": "Ecuador",
+    "posicao": "RB",
+    "dob": "1999-07-06",
+    "club_name": "Pachuca",
+    "league_name": "Liga MX",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.65,
+      "shooting": 0.4,
+      "passing": 0.5,
+      "dribbling": 0.5,
+      "defending": 0.55,
+      "physic": 0.55
+    },
+    "observacao": "Atua como lateral-direito pelo Pachuca na Liga MX, e não como zagueiro central, por isso a posição foi refinada para RB; percentis de velocidade ligeiramente acima da mediana, condizentes com o perfil de lateral, e overall próximo do centro do grupo defensivo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Andrés Micolta foi convocado para a seleção do Equador na Copa América 2024."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  }
+]

@@ -1,0 +1,198 @@
+[
+  {
+    "nome": "Jaime Penedo",
+    "dob": "1981-09-26",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro de carreira, sem posições secundárias."
+  },
+  {
+    "nome": "Felipe Baloy",
+    "dob": "1981-02-24",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "Defensor que também atuou como lateral-direito ao longo da carreira, antes de se fixar como zagueiro."
+  },
+  {
+    "nome": "Roman Torres",
+    "dob": "1986-03-20",
+    "posicoes_secundarias": [],
+    "confianca": 0.85,
+    "justificativa": "Zagueiro clássico sem registro consistente de outra posição."
+  },
+  {
+    "nome": "Adolfo Machado",
+    "dob": "1985-02-14",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.5,
+    "justificativa": "No Houston Dynamo foi utilizado tanto como zagueiro quanto como lateral-esquerdo."
+  },
+  {
+    "nome": "Julio Dely Valdes",
+    "dob": "1967-03-12",
+    "posicoes_secundarias": [],
+    "confianca": 0.7,
+    "justificativa": "Atacante clássico sem evidência confiável de outra posição recorrente."
+  },
+  {
+    "nome": "Jorge Dely Valdes",
+    "dob": "1967-03-12",
+    "posicoes_secundarias": [],
+    "confianca": 0.7,
+    "justificativa": "Atacante clássico sem evidência confiável de outra posição recorrente."
+  },
+  {
+    "nome": "Blas Perez",
+    "dob": "1981-03-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.7,
+    "justificativa": "Centroavante físico, sem registro de outra posição relevante."
+  },
+  {
+    "nome": "Luis Tejada",
+    "dob": "1982-03-28",
+    "posicoes_secundarias": [],
+    "confianca": 0.7,
+    "justificativa": "Artilheiro histórico atuando sempre como centroavante."
+  },
+  {
+    "nome": "Gabriel Gomez",
+    "dob": "1984-05-29",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.5,
+    "justificativa": "Capitão do Panamá, frequentemente posicionado como volante/meio defensivo."
+  },
+  {
+    "nome": "Amilcar Henriquez",
+    "dob": "1983-08-02",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.5,
+    "justificativa": "Volante que também atuou como meio-campista mais avançado em alguns clubes."
+  },
+  {
+    "nome": "Ismael Diaz",
+    "dob": "1997-05-12",
+    "posicoes_secundarias": ["ST"],
+    "confianca": 0.6,
+    "justificativa": "Mesmo jogador aparece com posição principal ST na camada convocado_2024, indicando atuação também como atacante centralizado."
+  },
+  {
+    "nome": "César Blackman",
+    "dob": "1998-04-02",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Zagueiro jovem sem dados suficientes sobre outra posição."
+  },
+  {
+    "nome": "José Córdoba",
+    "dob": "2001-06-03",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "Defensor frequentemente utilizado como lateral-direito pela seleção panamenha."
+  },
+  {
+    "nome": "Eduardo Anderson",
+    "dob": "2001-01-31",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Zagueiro sem dados suficientes sobre outra posição."
+  },
+  {
+    "nome": "Abdiel Ayarza",
+    "dob": "1992-09-12",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.5,
+    "justificativa": "Meio-campista com perfil mais ofensivo, atuando por vezes como meia-atacante."
+  },
+  {
+    "nome": "Cristian Martínez",
+    "dob": "1997-02-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.35,
+    "justificativa": "Dados insuficientes sobre outra posição além de meio-campo central."
+  },
+  {
+    "nome": "Eduardo Guerrero",
+    "dob": "2000-02-21",
+    "posicoes_secundarias": [],
+    "confianca": 0.35,
+    "justificativa": "Dados insuficientes sobre outra posição além de atacante."
+  },
+  {
+    "nome": "Ismael Díaz",
+    "dob": "1997-05-12",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.6,
+    "justificativa": "Mesmo jogador listado como ponta direita (RW) na camada histórica, indicando atuação também pelo lado direito do ataque."
+  },
+  {
+    "nome": "César Samudio",
+    "dob": "1994-03-26",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro de carreira, sem posições secundárias."
+  },
+  {
+    "nome": "Jovani Welch",
+    "dob": "1999-12-07",
+    "posicoes_secundarias": [],
+    "confianca": 0.35,
+    "justificativa": "Dados insuficientes sobre outra posição além de meio-campo central."
+  },
+  {
+    "nome": "Eric Davis",
+    "dob": "1991-03-31",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "Defensor frequentemente associado à lateral-direita, além de atuar como zagueiro."
+  },
+  {
+    "nome": "José Fajardo",
+    "dob": "1993-08-18",
+    "posicoes_secundarias": [],
+    "confianca": 0.35,
+    "justificativa": "Dados insuficientes sobre outra posição além de atacante."
+  },
+  {
+    "nome": "Omar Valencia",
+    "dob": "2004-06-08",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.45,
+    "justificativa": "Jovem defensor de categorias de base do New York Red Bulls, formado também como lateral-direito."
+  },
+  {
+    "nome": "Iván Anderson",
+    "dob": "1997-11-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Zagueiro sem dados suficientes sobre outra posição."
+  },
+  {
+    "nome": "Orlando Mosquera",
+    "dob": "1994-12-25",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro de carreira, sem posições secundárias."
+  },
+  {
+    "nome": "Edgardo Fariña",
+    "dob": "2001-09-21",
+    "posicoes_secundarias": [],
+    "confianca": 0.35,
+    "justificativa": "Dados insuficientes sobre outra posição além de zagueiro."
+  },
+  {
+    "nome": "Roderick Miller",
+    "dob": "1992-04-03",
+    "posicoes_secundarias": [],
+    "confianca": 0.35,
+    "justificativa": "Dados insuficientes sobre outra posição além de zagueiro."
+  },
+  {
+    "nome": "Kahiser Lenis",
+    "dob": "2000-07-23",
+    "posicoes_secundarias": [],
+    "confianca": 0.35,
+    "justificativa": "Dados insuficientes sobre outra posição além de meio-campo central."
+  }
+]

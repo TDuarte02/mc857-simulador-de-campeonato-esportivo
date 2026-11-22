@@ -1,0 +1,263 @@
+[
+  {
+    "nome": "Diego Medina",
+    "pais": "Bolivia",
+    "posicao": "CB",
+    "dob": "2002-01-13",
+    "club_name": "Always Ready",
+    "league_name": "Bolivian Primera División",
+    "percentis": {
+      "overall": 0.3,
+      "pace": 0.55,
+      "shooting": 0.25,
+      "passing": 0.35,
+      "dribbling": 0.3,
+      "defending": 0.35,
+      "physic": 0.5
+    },
+    "observacao": "Young center-back (22 at the tournament) with Always Ready, a fringe/depth option in Bolivia's squad rather than an established starter. Percentiles reflect below-median overall within the national pool, with slightly above-average mobility typical of a younger defender and still-developing defensive reading.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Diego Medina in Bolivia's official 2024 Copa América squad as a defender for Always Ready."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Luis Haquín",
+    "pais": "Bolivia",
+    "posicao": "CB",
+    "dob": "1997-11-15",
+    "club_name": "Ponte Preta",
+    "league_name": "Campeonato Brasileiro Série B",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.35,
+      "shooting": 0.3,
+      "passing": 0.55,
+      "dribbling": 0.4,
+      "defending": 0.85,
+      "physic": 0.75
+    },
+    "observacao": "Long-tenured Bolivia national-team center-back with extensive senior caps and prior experience in MLS before moving to Ponte Preta, making him one of the most established defenders in the pool. High defending/physic and overall reflect his regular-starter status, offset by reduced pace typical of a veteran stopper.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Luis Haquín in Bolivia's official 2024 Copa América squad as a defender for Ponte Preta."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Adrián Jusino",
+    "pais": "Bolivia",
+    "posicao": "CB",
+    "dob": "1992-07-09",
+    "club_name": "The Strongest",
+    "league_name": "Bolivian Primera División",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.3,
+      "shooting": 0.25,
+      "passing": 0.5,
+      "dribbling": 0.35,
+      "defending": 0.8,
+      "physic": 0.78
+    },
+    "observacao": "Naturalized center-back who has been a regular fixture in Bolivia's backline for several years alongside Haquín, now at The Strongest. Percentiles emphasize strong defending and physical presence consistent with a veteran, experienced starter, with pace below the pool median.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Adrián Jusino in Bolivia's official 2024 Copa América squad as a defender for The Strongest."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Miguel Terceros",
+    "pais": "Bolivia",
+    "posicao": "CAM",
+    "dob": "2004-04-25",
+    "club_name": "Santos",
+    "league_name": "Campeonato Brasileiro Série B",
+    "preferred_foot": "Left",
+    "percentis": {
+      "overall": 0.88,
+      "pace": 0.65,
+      "shooting": 0.75,
+      "passing": 0.82,
+      "dribbling": 0.88,
+      "defending": 0.2,
+      "physic": 0.3
+    },
+    "observacao": "Refined from CM to CAM: Terceros is Bolivia's standout young creative talent, a left-footed attacking playmaker who cuts inside, not a conventional box-to-box midfielder. High dribbling/passing/shooting percentiles reflect his status as one of the team's most important attacking pieces, with low defending/physic consistent with an advanced creative role.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Miguel Terceros in Bolivia's official 2024 Copa América squad as a midfielder for Santos."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Gustavo Almada",
+    "pais": "Bolivia",
+    "posicao": "GK",
+    "dob": "1994-04-29",
+    "club_name": "Universitario de Vinto",
+    "league_name": "Bolivian Primera División",
+    "percentis": {
+      "overall": 0.22,
+      "goalkeeping_diving": 0.25,
+      "goalkeeping_handling": 0.2,
+      "goalkeeping_kicking": 0.3,
+      "goalkeeping_positioning": 0.2,
+      "goalkeeping_reflexes": 0.25,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Goalkeeper from a smaller Bolivian club (Universitario de Vinto), included as squad depth rather than an established national-team starter. Percentiles are set below the pool median across all goalkeeping attributes to reflect a backup/third-choice profile.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Gustavo Almada in Bolivia's official 2024 Copa América squad as a goalkeeper for Universitario de Vinto."
+      }
+    ],
+    "confianca": 0.35,
+    "status": "approved"
+  },
+  {
+    "nome": "Robson Tomé",
+    "pais": "Bolivia",
+    "posicao": "CM",
+    "dob": "2002-05-18",
+    "club_name": "Always Ready",
+    "league_name": "Bolivian Primera División",
+    "percentis": {
+      "overall": 0.3,
+      "pace": 0.45,
+      "shooting": 0.35,
+      "passing": 0.4,
+      "dribbling": 0.4,
+      "defending": 0.4,
+      "physic": 0.4
+    },
+    "observacao": "Central midfielder for Always Ready, a depth/fringe squad member without a prominent established role in the national team at this stage of his career. Percentiles are set modestly below the pool median across all attributes, consistent with a developing rather than first-choice player.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Robson Tomé in Bolivia's official 2024 Copa América squad as a midfielder for Always Ready."
+      }
+    ],
+    "confianca": 0.35,
+    "status": "approved"
+  },
+  {
+    "nome": "Gabriel Villamil",
+    "pais": "Bolivia",
+    "posicao": "CM",
+    "dob": "2001-06-28",
+    "club_name": "LDU Quito",
+    "league_name": "Ecuadorian Serie A",
+    "percentis": {
+      "overall": 0.48,
+      "pace": 0.5,
+      "shooting": 0.45,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.5,
+      "physic": 0.5
+    },
+    "observacao": "Central midfielder playing abroad for LDU Quito in Ecuador, a solid but not headline squad member. Percentiles are set close to the pool median across all attributes given a lack of strong evidence pointing to a clear strength or weakness relative to peers.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Gabriel Villamil in Bolivia's official 2024 Copa América squad as a midfielder for LDU Quito."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Héctor Cuéllar",
+    "pais": "Bolivia",
+    "posicao": "CDM",
+    "dob": "2000-08-16",
+    "club_name": "Always Ready",
+    "league_name": "Bolivian Primera División",
+    "percentis": {
+      "overall": 0.62,
+      "pace": 0.45,
+      "shooting": 0.35,
+      "passing": 0.55,
+      "dribbling": 0.45,
+      "defending": 0.68,
+      "physic": 0.62
+    },
+    "observacao": "Refined from CM to CDM: Cuéllar is known primarily as a defensive-minded, high work-rate holding midfielder for Always Ready, and has been a fairly regular presence in Bolivia's midfield. Percentiles emphasize above-median defending and physic relative to passing/dribbling, consistent with a destroyer-type role.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Héctor Cuéllar in Bolivia's official 2024 Copa América squad as a midfielder for Always Ready."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Marcelo Suárez",
+    "pais": "Bolivia",
+    "posicao": "LB",
+    "dob": "2001-08-29",
+    "club_name": "Always Ready",
+    "league_name": "Bolivian Primera División",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.6,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.45,
+      "defending": 0.4,
+      "physic": 0.45
+    },
+    "observacao": "Refined from CB to LB: Suárez is typically deployed as a left-back for Always Ready rather than a central defender, favoring an overlapping, more mobile profile. Percentiles reflect above-median pace for the defensive pool alongside a fringe/depth overall level.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Marcelo Suárez in Bolivia's official 2024 Copa América squad as a defender for Always Ready."
+      }
+    ],
+    "confianca": 0.35,
+    "status": "approved"
+  },
+  {
+    "nome": "Yomar Rocha",
+    "pais": "Bolivia",
+    "posicao": "CB",
+    "dob": "2003-06-21",
+    "club_name": "Bolívar",
+    "league_name": "Bolivian Primera División",
+    "percentis": {
+      "overall": 0.42,
+      "pace": 0.55,
+      "shooting": 0.25,
+      "passing": 0.4,
+      "dribbling": 0.4,
+      "defending": 0.5,
+      "physic": 0.55
+    },
+    "observacao": "Young, promising center-back for Bolívar, viewed as a rising talent but not yet an entrenched national-team starter. Percentiles sit around or slightly above the pool median for defending/physic/pace, reflecting upside, while overall remains moderate given his limited senior experience.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Lists Yomar Rocha in Bolivia's official 2024 Copa América squad as a defender for Bolívar."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  }
+]

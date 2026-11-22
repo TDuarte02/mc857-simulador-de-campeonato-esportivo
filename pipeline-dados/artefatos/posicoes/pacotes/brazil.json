@@ -1,0 +1,865 @@
+{
+  "pais": "Brazil",
+  "jogadores": [
+    {
+      "nome": "Ronaldo",
+      "posicao_principal": "ST",
+      "dob": "1976-09-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q529207",
+      "contexto": "Campeao 1994 e 2002 - Icon EA FC"
+    },
+    {
+      "nome": "Pele",
+      "posicao_principal": "ST",
+      "dob": "1940-10-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q12897",
+      "contexto": "Rei do Futebol - Icon EA FC"
+    },
+    {
+      "nome": "Ronaldinho",
+      "posicao_principal": "CAM",
+      "dob": "1980-03-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q39444",
+      "contexto": "Campeao 2002 - Icon EA FC"
+    },
+    {
+      "nome": "Garrincha",
+      "posicao_principal": "RW",
+      "dob": "1933-10-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q180642",
+      "contexto": "Campeao 1958 e 1962 - Icon EA FC"
+    },
+    {
+      "nome": "Romario",
+      "posicao_principal": "ST",
+      "dob": "1966-01-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q178649",
+      "contexto": "Campeao 1994"
+    },
+    {
+      "nome": "Zico",
+      "posicao_principal": "CAM",
+      "dob": "1953-03-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q47526",
+      "contexto": "Copa 1982"
+    },
+    {
+      "nome": "Roberto Carlos",
+      "posicao_principal": "LB",
+      "dob": "1973-04-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q429039",
+      "contexto": "Campeao 2002 - Icon EA FC"
+    },
+    {
+      "nome": "Rivaldo",
+      "posicao_principal": "CAM",
+      "dob": "1972-04-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q483577",
+      "contexto": "Campeao 2002"
+    },
+    {
+      "nome": "Cafu",
+      "posicao_principal": "RB",
+      "dob": "1970-06-07",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q178683",
+      "contexto": "Campeao 1994 e 2002"
+    },
+    {
+      "nome": "Kaka",
+      "posicao_principal": "CAM",
+      "dob": "1982-04-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q531814",
+      "contexto": "Melhor do mundo 2007"
+    },
+    {
+      "nome": "Castilho",
+      "posicao_principal": "GK",
+      "dob": "1927-11-27",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q667127",
+      "contexto": "Campeao 1958 e 1962"
+    },
+    {
+      "nome": "Zetti",
+      "posicao_principal": "GK",
+      "dob": "1965-01-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q196897",
+      "contexto": "Campeao 1994"
+    },
+    {
+      "nome": "Gilmar",
+      "posicao_principal": "GK",
+      "dob": "1930-08-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q257606",
+      "contexto": "Campeao 1958 e 1962"
+    },
+    {
+      "nome": "Julio Cesar",
+      "posicao_principal": "GK",
+      "dob": "1979-09-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q182459",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Claudio Taffarel",
+      "posicao_principal": "GK",
+      "dob": "1966-05-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q295891",
+      "contexto": "Campeao 1994"
+    },
+    {
+      "nome": "Ademir da Guia",
+      "posicao_principal": "CAM",
+      "dob": "1942-04-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q355742",
+      "contexto": "Palmeiras"
+    },
+    {
+      "nome": "Rai",
+      "posicao_principal": "CAM",
+      "dob": "1965-05-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q312895",
+      "contexto": "Sao Paulo e PSG"
+    },
+    {
+      "nome": "Juninho Pernambucano",
+      "posicao_principal": "CAM",
+      "dob": "1975-01-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q203451",
+      "contexto": "Lyon"
+    },
+    {
+      "nome": "Emerson",
+      "posicao_principal": "CDM",
+      "dob": "1976-04-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q215952",
+      "contexto": "Roma e Juventus"
+    },
+    {
+      "nome": "Gilberto Silva",
+      "posicao_principal": "CDM",
+      "dob": "1976-10-07",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q190142",
+      "contexto": "Campeao 2002"
+    },
+    {
+      "nome": "Kleberson",
+      "posicao_principal": "CM",
+      "dob": "1979-06-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q311035",
+      "contexto": "Campeao 2002"
+    },
+    {
+      "nome": "Vampeta",
+      "posicao_principal": "CM",
+      "dob": "1974-03-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1982869",
+      "contexto": "Campeao 2002"
+    },
+    {
+      "nome": "Didi",
+      "posicao_principal": "CM",
+      "dob": "1928-10-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q312486",
+      "contexto": "Campeao 1958 e 1962"
+    },
+    {
+      "nome": "Juninho Paulista",
+      "posicao_principal": "CAM",
+      "dob": "1973-02-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q318184",
+      "contexto": "Middlesbrough"
+    },
+    {
+      "nome": "Alex",
+      "posicao_principal": "CAM",
+      "dob": "1977-09-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q507815",
+      "contexto": "Fenerbahce"
+    },
+    {
+      "nome": "Ramires",
+      "posicao_principal": "CM",
+      "dob": "1987-03-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q204407",
+      "contexto": "Chelsea"
+    },
+    {
+      "nome": "Gerson",
+      "posicao_principal": "CM",
+      "dob": "1941-01-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q280306",
+      "contexto": "Campeao 1970"
+    },
+    {
+      "nome": "Cesar Sampaio",
+      "posicao_principal": "CDM",
+      "dob": "1968-03-31",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q316436",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Zito",
+      "posicao_principal": "CDM",
+      "dob": "1932-08-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q372092",
+      "contexto": "Campeao 1958 e 1962"
+    },
+    {
+      "nome": "Dunga",
+      "posicao_principal": "CDM",
+      "dob": "1963-10-31",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q215890",
+      "contexto": "Campeao 1994"
+    },
+    {
+      "nome": "Zizinho",
+      "posicao_principal": "CAM",
+      "dob": "1921-09-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q207085",
+      "contexto": "Vice 1950"
+    },
+    {
+      "nome": "Socrates",
+      "posicao_principal": "CM",
+      "dob": "1954-02-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q102331",
+      "contexto": "Copa 1982"
+    },
+    {
+      "nome": "Falcao",
+      "posicao_principal": "CM",
+      "dob": "1953-10-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q312454",
+      "contexto": "Copa 1982"
+    },
+    {
+      "nome": "Toninho Cerezo",
+      "posicao_principal": "CDM",
+      "dob": "1955-04-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q552917",
+      "contexto": "Copa 1982"
+    },
+    {
+      "nome": "Bauer",
+      "posicao_principal": "CDM",
+      "dob": "1925-11-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q703634",
+      "contexto": "Vice 1950"
+    },
+    {
+      "nome": "Clodoaldo",
+      "posicao_principal": "CDM",
+      "dob": "1949-09-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q464419",
+      "contexto": "Campeao 1970"
+    },
+    {
+      "nome": "Piazza",
+      "posicao_principal": "CDM",
+      "dob": "1943-02-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q535520",
+      "contexto": "Campeao 1970"
+    },
+    {
+      "nome": "Rivellino",
+      "posicao_principal": "CAM",
+      "dob": "1946-01-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q220283",
+      "contexto": "Campeao 1970"
+    },
+    {
+      "nome": "Danilo Alvim",
+      "posicao_principal": "CDM",
+      "dob": "1920-12-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1164053",
+      "contexto": "Vice 1950"
+    },
+    {
+      "nome": "Djalminha",
+      "posicao_principal": "CAM",
+      "dob": "1970-12-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q47489",
+      "contexto": "Deportivo La Coruna"
+    },
+    {
+      "nome": "David Luiz",
+      "posicao_principal": "CB",
+      "dob": "1987-04-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q193706",
+      "contexto": "Chelsea"
+    },
+    {
+      "nome": "Filipe Luis",
+      "posicao_principal": "LB",
+      "dob": "1985-08-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q350547",
+      "contexto": "Atletico de Madrid"
+    },
+    {
+      "nome": "Miranda",
+      "posicao_principal": "CB",
+      "dob": "1962-03-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q9697024",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Edmundo",
+      "posicao_principal": "ST",
+      "dob": "1971-04-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q445541",
+      "contexto": "Vasco da Gama"
+    },
+    {
+      "nome": "Orlando",
+      "posicao_principal": "CB",
+      "dob": "1986-02-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q228616",
+      "contexto": "Campeao 1958"
+    },
+    {
+      "nome": "Luis Fabiano",
+      "posicao_principal": "ST",
+      "dob": "1980-11-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q192963",
+      "contexto": "Sevilla"
+    },
+    {
+      "nome": "Bellini",
+      "posicao_principal": "CB",
+      "dob": "1930-06-07",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q262826",
+      "contexto": "Campeao 1958"
+    },
+    {
+      "nome": "Muller",
+      "posicao_principal": "ST",
+      "dob": "1966-01-31",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q381729",
+      "contexto": "Copa 1986 e 1990"
+    },
+    {
+      "nome": "Pepe",
+      "posicao_principal": "LW",
+      "dob": "1984-02-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q485697",
+      "contexto": "Campeao 1958 e 1962"
+    },
+    {
+      "nome": "Jair da Costa",
+      "posicao_principal": "RW",
+      "dob": "1940-07-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q720549",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Brito",
+      "posicao_principal": "CB",
+      "dob": "1939-08-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q705942",
+      "contexto": "Campeao 1970"
+    },
+    {
+      "nome": "Savio",
+      "posicao_principal": "LW",
+      "dob": "1974-01-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q372451",
+      "contexto": "Flamengo"
+    },
+    {
+      "nome": "Denilson",
+      "posicao_principal": "LW",
+      "dob": "1988-02-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q215322",
+      "contexto": "Real Betis"
+    },
+    {
+      "nome": "Jairzinho",
+      "posicao_principal": "RW",
+      "dob": "1944-12-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q210102",
+      "contexto": "Campeao 1970"
+    },
+    {
+      "nome": "Fred",
+      "posicao_principal": "ST",
+      "dob": "1983-10-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q312772",
+      "contexto": "Manchester United"
+    },
+    {
+      "nome": "Djalma Santos",
+      "posicao_principal": "RB",
+      "dob": "1929-02-27",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q299693",
+      "contexto": "Campeao 1958 e 1962"
+    },
+    {
+      "nome": "Hulk",
+      "posicao_principal": "ST",
+      "dob": "1986-07-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q62786",
+      "contexto": "Zenit e Porto"
+    },
+    {
+      "nome": "Dani Alves",
+      "posicao_principal": "RB",
+      "dob": "1983-05-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q172720",
+      "contexto": "Maior vencedor de titulos"
+    },
+    {
+      "nome": "Tostao",
+      "posicao_principal": "ST",
+      "dob": "1947-01-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q311407",
+      "contexto": "Campeao 1970"
+    },
+    {
+      "nome": "Leonidas da Silva",
+      "posicao_principal": "ST",
+      "dob": "1913-09-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q311739",
+      "contexto": "Artilheiro 1938"
+    },
+    {
+      "nome": "Ademir de Menezes",
+      "posicao_principal": "ST",
+      "dob": "1922-11-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q332012",
+      "contexto": "Vice 1950"
+    },
+    {
+      "nome": "Arthur Friedenreich",
+      "posicao_principal": "ST",
+      "dob": "1892-07-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q366156",
+      "contexto": "Anos 1910-20"
+    },
+    {
+      "nome": "Domingos da Guia",
+      "posicao_principal": "CB",
+      "dob": "1912-11-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q717927",
+      "contexto": "Anos 1930-40"
+    },
+    {
+      "nome": "Leandro",
+      "posicao_principal": "RB",
+      "dob": "2003-01-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q125167168",
+      "contexto": "Copa 1982"
+    },
+    {
+      "nome": "Careca",
+      "posicao_principal": "ST",
+      "dob": "1960-10-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q342489",
+      "contexto": "Copa 1990"
+    },
+    {
+      "nome": "Bebeto",
+      "posicao_principal": "ST",
+      "dob": "1964-02-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q204825",
+      "contexto": "Campeao 1994"
+    },
+    {
+      "nome": "Nilton Santos",
+      "posicao_principal": "LB",
+      "dob": "1925-05-16",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q83329",
+      "contexto": "Campeao 1958 e 1962"
+    },
+    {
+      "nome": "Aldair",
+      "posicao_principal": "CB",
+      "dob": "1965-11-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q297721",
+      "contexto": "Campeao 1994"
+    },
+    {
+      "nome": "Maicon",
+      "posicao_principal": "RB",
+      "dob": "1981-07-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q177686",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Willian",
+      "posicao_principal": "RW",
+      "dob": "1988-08-09",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q73480",
+      "contexto": "Chelsea"
+    },
+    {
+      "nome": "Lucio",
+      "posicao_principal": "CB",
+      "dob": "1978-05-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q156822",
+      "contexto": "Campeao 2002"
+    },
+    {
+      "nome": "Juan",
+      "posicao_principal": "CB",
+      "dob": "1979-02-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q202429",
+      "contexto": "Copa 2010"
+    },
+    {
+      "nome": "Robinho",
+      "posicao_principal": "RW",
+      "dob": "1984-01-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q58441",
+      "contexto": "Santos e Real Madrid"
+    },
+    {
+      "nome": "Adriano",
+      "posicao_principal": "ST",
+      "dob": "1982-02-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q170452",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Vava",
+      "posicao_principal": "ST",
+      "dob": "1934-11-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q311445",
+      "contexto": "Campeao 1958 e 1962"
+    },
+    {
+      "nome": "Carlos Alberto",
+      "posicao_principal": "RB",
+      "dob": "1944-07-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q295262",
+      "contexto": "Campeao 1970"
+    },
+    {
+      "nome": "Ze Roberto",
+      "posicao_principal": "LB",
+      "dob": "1974-07-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q57167",
+      "contexto": "Bayern de Munique"
+    },
+    {
+      "nome": "Endrick",
+      "posicao_principal": "ST",
+      "dob": "2006-07-21",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Palmeiras"
+    },
+    {
+      "nome": "Bento",
+      "posicao_principal": "GK",
+      "dob": "1999-06-10",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Athletico Paranaense"
+    },
+    {
+      "nome": "João Gomes",
+      "posicao_principal": "CM",
+      "dob": "2001-02-12",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Wolverhampton Wanderers"
+    },
+    {
+      "nome": "Guilherme Arana",
+      "posicao_principal": "CB",
+      "dob": "1997-04-01",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Atlético Mineiro"
+    },
+    {
+      "nome": "Lucas Beraldo",
+      "posicao_principal": "CB",
+      "dob": "2003-11-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Paris Saint-Germain"
+    },
+    {
+      "nome": "Andreas Pereira",
+      "posicao_principal": "CM",
+      "dob": "1996-01-01",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Fulham"
+    },
+    {
+      "nome": "Savinho",
+      "posicao_principal": "ST",
+      "dob": "2004-04-10",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Girona"
+    },
+    {
+      "nome": "Rafael",
+      "posicao_principal": "GK",
+      "dob": "1989-06-23",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "São Paulo"
+    },
+    {
+      "nome": "Éderson",
+      "posicao_principal": "CM",
+      "dob": "1999-07-07",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Atalanta"
+    }
+  ]
+}

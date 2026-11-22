@@ -1,0 +1,772 @@
+{
+  "prompt_version": "convocados-v1",
+  "pais": "Panama",
+  "data_referencia": "2024-07-14",
+  "jogadores": [
+    {
+      "nome": "Jaime Penedo",
+      "pais": "Panama",
+      "posicao": "GK",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q2714776",
+      "titular_ultima_partida": false,
+      "dob": "1981-09-26",
+      "contexto": "LA Galaxy"
+    },
+    {
+      "nome": "Felipe Baloy",
+      "pais": "Panama",
+      "posicao": "CB",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q2499879",
+      "titular_ultima_partida": false,
+      "dob": "1981-02-24",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Roman Torres",
+      "pais": "Panama",
+      "posicao": "CB",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q2565181",
+      "titular_ultima_partida": false,
+      "dob": "1986-03-20",
+      "contexto": "Gol contra Costa Rica 2017"
+    },
+    {
+      "nome": "Adolfo Machado",
+      "pais": "Panama",
+      "posicao": "CB",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q3605454",
+      "titular_ultima_partida": false,
+      "dob": "1985-02-14",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Julio Dely Valdes",
+      "pais": "Panama",
+      "posicao": "ST",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q553353",
+      "titular_ultima_partida": false,
+      "dob": "1967-03-12",
+      "contexto": "Maior artilheiro historico"
+    },
+    {
+      "nome": "Jorge Dely Valdes",
+      "pais": "Panama",
+      "posicao": "ST",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q181046",
+      "titular_ultima_partida": false,
+      "dob": "1967-03-12",
+      "contexto": "Malaga"
+    },
+    {
+      "nome": "Blas Perez",
+      "pais": "Panama",
+      "posicao": "ST",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q2528573",
+      "titular_ultima_partida": false,
+      "dob": "1981-03-13",
+      "contexto": "FC Dallas"
+    },
+    {
+      "nome": "Luis Tejada",
+      "pais": "Panama",
+      "posicao": "ST",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q1457192",
+      "titular_ultima_partida": false,
+      "dob": "1982-03-28",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Gabriel Gomez",
+      "pais": "Panama",
+      "posicao": "CM",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q981799",
+      "titular_ultima_partida": false,
+      "dob": "1984-05-29",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Amilcar Henriquez",
+      "pais": "Panama",
+      "posicao": "CDM",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q2844861",
+      "titular_ultima_partida": false,
+      "dob": "1983-08-02",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Ismael Diaz",
+      "pais": "Panama",
+      "posicao": "RW",
+      "fonte_convocacao": "https://www.wikidata.org/wiki/Q18921648",
+      "titular_ultima_partida": false,
+      "dob": "1997-05-12",
+      "contexto": "Leon"
+    }
+  ],
+  "ultima_escalacao": [],
+  "calibracao": {
+    "GK": {
+      "estatisticas": {
+        "pais": "Panama",
+        "grupo": "GK",
+        "n_jogadores": 2,
+        "atributos": {
+          "goalkeeping_diving": {
+            "n": 2,
+            "min": 51.0,
+            "q25": 58.0,
+            "mediana": 65.0,
+            "q75": 72.0,
+            "max": 79.0
+          },
+          "goalkeeping_handling": {
+            "n": 2,
+            "min": 55.0,
+            "q25": 58.5,
+            "mediana": 62.0,
+            "q75": 65.5,
+            "max": 69.0
+          },
+          "goalkeeping_kicking": {
+            "n": 2,
+            "min": 53.0,
+            "q25": 56.5,
+            "mediana": 60.0,
+            "q75": 63.5,
+            "max": 67.0
+          },
+          "goalkeeping_positioning": {
+            "n": 2,
+            "min": 55.0,
+            "q25": 59.0,
+            "mediana": 63.0,
+            "q75": 67.0,
+            "max": 71.0
+          },
+          "goalkeeping_reflexes": {
+            "n": 2,
+            "min": 56.0,
+            "q25": 61.0,
+            "mediana": 66.0,
+            "q75": 71.0,
+            "max": 76.0
+          },
+          "goalkeeping_speed": {
+            "n": 2,
+            "min": 26.0,
+            "q25": 33.25,
+            "mediana": 40.5,
+            "q75": 47.75,
+            "max": 55.0
+          },
+          "overall": {
+            "n": 2,
+            "min": 55.0,
+            "q25": 60.0,
+            "mediana": 65.0,
+            "q75": 70.0,
+            "max": 75.0
+          }
+        }
+      },
+      "amostra": [
+        {
+          "short_name": "L. Mejía",
+          "long_name": "Luis Ricardo Mejía Cajar",
+          "player_positions": "GK",
+          "overall": 75,
+          "pace": NaN,
+          "shooting": NaN,
+          "passing": NaN,
+          "dribbling": NaN,
+          "defending": NaN,
+          "physic": NaN,
+          "goalkeeping_diving": 79,
+          "goalkeeping_handling": 69,
+          "goalkeeping_kicking": 67,
+          "goalkeeping_positioning": 71,
+          "goalkeeping_reflexes": 76,
+          "goalkeeping_speed": 55.0
+        },
+        {
+          "short_name": "A. Rodríguez",
+          "long_name": "Alejandro Rodríguez Bahena",
+          "player_positions": "GK",
+          "overall": 55,
+          "pace": NaN,
+          "shooting": NaN,
+          "passing": NaN,
+          "dribbling": NaN,
+          "defending": NaN,
+          "physic": NaN,
+          "goalkeeping_diving": 51,
+          "goalkeeping_handling": 55,
+          "goalkeeping_kicking": 53,
+          "goalkeeping_positioning": 55,
+          "goalkeeping_reflexes": 56,
+          "goalkeeping_speed": 26.0
+        }
+      ]
+    },
+    "DEF": {
+      "estatisticas": {
+        "pais": "Panama",
+        "grupo": "DEF",
+        "n_jogadores": 4,
+        "atributos": {
+          "pace": {
+            "n": 4,
+            "min": 53.0,
+            "q25": 68.75,
+            "mediana": 75.5,
+            "q75": 78.5,
+            "max": 83.0
+          },
+          "shooting": {
+            "n": 4,
+            "min": 29.0,
+            "q25": 38.0,
+            "mediana": 46.0,
+            "q75": 52.5,
+            "max": 57.0
+          },
+          "passing": {
+            "n": 4,
+            "min": 40.0,
+            "q25": 48.25,
+            "mediana": 55.0,
+            "q75": 61.25,
+            "max": 68.0
+          },
+          "dribbling": {
+            "n": 4,
+            "min": 46.0,
+            "q25": 52.75,
+            "mediana": 59.5,
+            "q75": 65.75,
+            "max": 71.0
+          },
+          "defending": {
+            "n": 4,
+            "min": 64.0,
+            "q25": 66.25,
+            "mediana": 67.5,
+            "q75": 68.75,
+            "max": 71.0
+          },
+          "physic": {
+            "n": 4,
+            "min": 75.0,
+            "q25": 75.75,
+            "mediana": 77.5,
+            "q75": 79.75,
+            "max": 82.0
+          },
+          "overall": {
+            "n": 4,
+            "min": 66.0,
+            "q25": 68.25,
+            "mediana": 69.0,
+            "q75": 70.5,
+            "max": 75.0
+          }
+        }
+      },
+      "amostra": [
+        {
+          "short_name": "M. Murillo",
+          "long_name": "Michael Amir Murillo Bermudez",
+          "player_positions": "RB",
+          "overall": 75,
+          "pace": 83.0,
+          "shooting": 57.0,
+          "passing": 68.0,
+          "dribbling": 71.0,
+          "defending": 71.0,
+          "physic": 75.0,
+          "goalkeeping_diving": 5,
+          "goalkeeping_handling": 15,
+          "goalkeeping_kicking": 12,
+          "goalkeeping_positioning": 11,
+          "goalkeeping_reflexes": 14,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "H. Cummings",
+          "long_name": "Harold Oshkaly Cummings Segura",
+          "player_positions": "CB",
+          "overall": 69,
+          "pace": 53.0,
+          "shooting": 29.0,
+          "passing": 51.0,
+          "dribbling": 55.0,
+          "defending": 67.0,
+          "physic": 82.0,
+          "goalkeeping_diving": 8,
+          "goalkeeping_handling": 15,
+          "goalkeeping_kicking": 12,
+          "goalkeeping_positioning": 13,
+          "goalkeeping_reflexes": 13,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "A. Andrade",
+          "long_name": "Andrés Alberto Andrade Cedeño",
+          "player_positions": "CB",
+          "overall": 69,
+          "pace": 74.0,
+          "shooting": 51.0,
+          "passing": 59.0,
+          "dribbling": 64.0,
+          "defending": 68.0,
+          "physic": 76.0,
+          "goalkeeping_diving": 8,
+          "goalkeeping_handling": 5,
+          "goalkeeping_kicking": 7,
+          "goalkeeping_positioning": 10,
+          "goalkeeping_reflexes": 8,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "F. Escobar",
+          "long_name": "Fidel Escobar Mendieta",
+          "player_positions": "CB, CDM, CM",
+          "overall": 66,
+          "pace": 77.0,
+          "shooting": 41.0,
+          "passing": 40.0,
+          "dribbling": 46.0,
+          "defending": 64.0,
+          "physic": 79.0,
+          "goalkeeping_diving": 10,
+          "goalkeeping_handling": 14,
+          "goalkeeping_kicking": 15,
+          "goalkeeping_positioning": 9,
+          "goalkeeping_reflexes": 11,
+          "goalkeeping_speed": NaN
+        }
+      ]
+    },
+    "ATT": {
+      "estatisticas": {
+        "pais": "Panama",
+        "grupo": "ATT",
+        "n_jogadores": 6,
+        "atributos": {
+          "pace": {
+            "n": 6,
+            "min": 65.0,
+            "q25": 72.5,
+            "mediana": 78.5,
+            "q75": 81.5,
+            "max": 82.0
+          },
+          "shooting": {
+            "n": 6,
+            "min": 63.0,
+            "q25": 65.25,
+            "mediana": 66.0,
+            "q75": 66.75,
+            "max": 70.0
+          },
+          "passing": {
+            "n": 6,
+            "min": 44.0,
+            "q25": 52.75,
+            "mediana": 57.0,
+            "q75": 62.75,
+            "max": 64.0
+          },
+          "dribbling": {
+            "n": 6,
+            "min": 64.0,
+            "q25": 67.25,
+            "mediana": 68.5,
+            "q75": 70.5,
+            "max": 75.0
+          },
+          "defending": {
+            "n": 6,
+            "min": 19.0,
+            "q25": 21.25,
+            "mediana": 28.5,
+            "q75": 35.0,
+            "max": 43.0
+          },
+          "physic": {
+            "n": 6,
+            "min": 53.0,
+            "q25": 60.25,
+            "mediana": 61.0,
+            "q75": 64.75,
+            "max": 71.0
+          },
+          "overall": {
+            "n": 6,
+            "min": 64.0,
+            "q25": 66.0,
+            "mediana": 69.5,
+            "q75": 70.0,
+            "max": 72.0
+          }
+        }
+      },
+      "amostra": [
+        {
+          "short_name": "A. Quintero",
+          "long_name": "Alberto Abdiel Quintero Medina",
+          "player_positions": "RM, RW, ST",
+          "overall": 72,
+          "pace": 80.0,
+          "shooting": 65.0,
+          "passing": 64.0,
+          "dribbling": 75.0,
+          "defending": 20.0,
+          "physic": 61.0,
+          "goalkeeping_diving": 13,
+          "goalkeeping_handling": 16,
+          "goalkeeping_kicking": 7,
+          "goalkeeping_positioning": 9,
+          "goalkeeping_reflexes": 14,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "G. Torres",
+          "long_name": "Gabriel Arturo Torres Tejada",
+          "player_positions": "ST, LW",
+          "overall": 70,
+          "pace": 82.0,
+          "shooting": 66.0,
+          "passing": 59.0,
+          "dribbling": 69.0,
+          "defending": 32.0,
+          "physic": 71.0,
+          "goalkeeping_diving": 6,
+          "goalkeeping_handling": 6,
+          "goalkeeping_kicking": 6,
+          "goalkeeping_positioning": 11,
+          "goalkeeping_reflexes": 6,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "Y. Bárcenas",
+          "long_name": "Edgar Yoel Bárcenas Herrera",
+          "player_positions": "LM, RM, ST",
+          "overall": 70,
+          "pace": 77.0,
+          "shooting": 67.0,
+          "passing": 64.0,
+          "dribbling": 71.0,
+          "defending": 36.0,
+          "physic": 61.0,
+          "goalkeeping_diving": 8,
+          "goalkeeping_handling": 13,
+          "goalkeeping_kicking": 12,
+          "goalkeeping_positioning": 14,
+          "goalkeeping_reflexes": 14,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "R. Blackburn",
+          "long_name": "Rolando Manrique Blackburn Ortega",
+          "player_positions": "ST",
+          "overall": 69,
+          "pace": 65.0,
+          "shooting": 70.0,
+          "passing": 44.0,
+          "dribbling": 67.0,
+          "defending": 25.0,
+          "physic": 60.0,
+          "goalkeeping_diving": 11,
+          "goalkeeping_handling": 9,
+          "goalkeeping_kicking": 8,
+          "goalkeeping_positioning": 13,
+          "goalkeeping_reflexes": 7,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "F. Góndola",
+          "long_name": "Freddy Elías Góndola Smith",
+          "player_positions": "ST, LM",
+          "overall": 65,
+          "pace": 82.0,
+          "shooting": 63.0,
+          "passing": 52.0,
+          "dribbling": 64.0,
+          "defending": 43.0,
+          "physic": 66.0,
+          "goalkeeping_diving": 14,
+          "goalkeeping_handling": 6,
+          "goalkeeping_kicking": 9,
+          "goalkeeping_positioning": 6,
+          "goalkeeping_reflexes": 10,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "A. Stephens",
+          "long_name": "Alfredo Horacio Stephens Francis",
+          "player_positions": "ST",
+          "overall": 64,
+          "pace": 71.0,
+          "shooting": 66.0,
+          "passing": 55.0,
+          "dribbling": 68.0,
+          "defending": 19.0,
+          "physic": 53.0,
+          "goalkeeping_diving": 5,
+          "goalkeeping_handling": 6,
+          "goalkeeping_kicking": 14,
+          "goalkeeping_positioning": 11,
+          "goalkeeping_reflexes": 12,
+          "goalkeeping_speed": NaN
+        }
+      ]
+    },
+    "MID": {
+      "estatisticas": {
+        "pais": "Panama",
+        "grupo": "MID",
+        "n_jogadores": 9,
+        "atributos": {
+          "pace": {
+            "n": 9,
+            "min": 32.0,
+            "q25": 73.0,
+            "mediana": 77.0,
+            "q75": 79.0,
+            "max": 82.0
+          },
+          "shooting": {
+            "n": 9,
+            "min": 41.0,
+            "q25": 51.0,
+            "mediana": 61.0,
+            "q75": 65.0,
+            "max": 67.0
+          },
+          "passing": {
+            "n": 9,
+            "min": 40.0,
+            "q25": 52.0,
+            "mediana": 58.0,
+            "q75": 64.0,
+            "max": 64.0
+          },
+          "dribbling": {
+            "n": 9,
+            "min": 46.0,
+            "q25": 64.0,
+            "mediana": 68.0,
+            "q75": 71.0,
+            "max": 75.0
+          },
+          "defending": {
+            "n": 9,
+            "min": 20.0,
+            "q25": 28.0,
+            "mediana": 43.0,
+            "q75": 57.0,
+            "max": 64.0
+          },
+          "physic": {
+            "n": 9,
+            "min": 45.0,
+            "q25": 61.0,
+            "mediana": 62.0,
+            "q75": 66.0,
+            "max": 79.0
+          },
+          "overall": {
+            "n": 9,
+            "min": 51.0,
+            "q25": 65.0,
+            "mediana": 66.0,
+            "q75": 70.0,
+            "max": 72.0
+          }
+        }
+      },
+      "amostra": [
+        {
+          "short_name": "A. Quintero",
+          "long_name": "Alberto Abdiel Quintero Medina",
+          "player_positions": "RM, RW, ST",
+          "overall": 72,
+          "pace": 80.0,
+          "shooting": 65.0,
+          "passing": 64.0,
+          "dribbling": 75.0,
+          "defending": 20.0,
+          "physic": 61.0,
+          "goalkeeping_diving": 13,
+          "goalkeeping_handling": 16,
+          "goalkeeping_kicking": 7,
+          "goalkeeping_positioning": 9,
+          "goalkeeping_reflexes": 14,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "A. Godoy",
+          "long_name": "Aníbal Cesis Godoy Lemus",
+          "player_positions": "CDM, CM",
+          "overall": 71,
+          "pace": 32.0,
+          "shooting": 55.0,
+          "passing": 64.0,
+          "dribbling": 66.0,
+          "defending": 64.0,
+          "physic": 75.0,
+          "goalkeeping_diving": 8,
+          "goalkeeping_handling": 15,
+          "goalkeeping_kicking": 14,
+          "goalkeeping_positioning": 9,
+          "goalkeeping_reflexes": 6,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "Y. Bárcenas",
+          "long_name": "Edgar Yoel Bárcenas Herrera",
+          "player_positions": "LM, RM, ST",
+          "overall": 70,
+          "pace": 77.0,
+          "shooting": 67.0,
+          "passing": 64.0,
+          "dribbling": 71.0,
+          "defending": 36.0,
+          "physic": 61.0,
+          "goalkeeping_diving": 8,
+          "goalkeeping_handling": 13,
+          "goalkeeping_kicking": 12,
+          "goalkeeping_positioning": 14,
+          "goalkeeping_reflexes": 14,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "A. Carrasquilla",
+          "long_name": "Adalberto Eliécer Carrasquilla Alcázar",
+          "player_positions": "CM, CAM",
+          "overall": 69,
+          "pace": 73.0,
+          "shooting": 61.0,
+          "passing": 64.0,
+          "dribbling": 72.0,
+          "defending": 57.0,
+          "physic": 66.0,
+          "goalkeeping_diving": 14,
+          "goalkeeping_handling": 7,
+          "goalkeeping_kicking": 13,
+          "goalkeeping_positioning": 11,
+          "goalkeeping_reflexes": 8,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "F. Escobar",
+          "long_name": "Fidel Escobar Mendieta",
+          "player_positions": "CB, CDM, CM",
+          "overall": 66,
+          "pace": 77.0,
+          "shooting": 41.0,
+          "passing": 40.0,
+          "dribbling": 46.0,
+          "defending": 64.0,
+          "physic": 79.0,
+          "goalkeeping_diving": 10,
+          "goalkeeping_handling": 14,
+          "goalkeeping_kicking": 15,
+          "goalkeeping_positioning": 9,
+          "goalkeeping_reflexes": 11,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "J. Rodríguez",
+          "long_name": "José Luis Rodríguez Francis",
+          "player_positions": "LM",
+          "overall": 65,
+          "pace": 79.0,
+          "shooting": 67.0,
+          "passing": 56.0,
+          "dribbling": 71.0,
+          "defending": 28.0,
+          "physic": 62.0,
+          "goalkeeping_diving": 11,
+          "goalkeeping_handling": 9,
+          "goalkeeping_kicking": 8,
+          "goalkeeping_positioning": 11,
+          "goalkeeping_reflexes": 9,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "F. Góndola",
+          "long_name": "Freddy Elías Góndola Smith",
+          "player_positions": "ST, LM",
+          "overall": 65,
+          "pace": 82.0,
+          "shooting": 63.0,
+          "passing": 52.0,
+          "dribbling": 64.0,
+          "defending": 43.0,
+          "physic": 66.0,
+          "goalkeeping_diving": 14,
+          "goalkeeping_handling": 6,
+          "goalkeeping_kicking": 9,
+          "goalkeeping_positioning": 6,
+          "goalkeeping_reflexes": 10,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "C. Yanis",
+          "long_name": "César Yanis",
+          "player_positions": "RM, LM",
+          "overall": 65,
+          "pace": 78.0,
+          "shooting": 51.0,
+          "passing": 58.0,
+          "dribbling": 68.0,
+          "defending": 24.0,
+          "physic": 45.0,
+          "goalkeeping_diving": 14,
+          "goalkeeping_handling": 10,
+          "goalkeeping_kicking": 9,
+          "goalkeeping_positioning": 10,
+          "goalkeeping_reflexes": 14,
+          "goalkeeping_speed": NaN
+        },
+        {
+          "short_name": "C. Harvey",
+          "long_name": "Carlos Miguel Harvey Cesneros",
+          "player_positions": "CM",
+          "overall": 51,
+          "pace": 54.0,
+          "shooting": 42.0,
+          "passing": 51.0,
+          "dribbling": 52.0,
+          "defending": 47.0,
+          "physic": 50.0,
+          "goalkeeping_diving": 15,
+          "goalkeeping_handling": 12,
+          "goalkeeping_kicking": 10,
+          "goalkeeping_positioning": 5,
+          "goalkeeping_reflexes": 9,
+          "goalkeeping_speed": NaN
+        }
+      ]
+    }
+  },
+  "instrucoes": {
+    "titularidade_e_convocacao_sao_dados_distintos": true,
+    "colunas_escalacao": [
+      "pais",
+      "data",
+      "fase",
+      "adversario",
+      "nome",
+      "posicao",
+      "ordem",
+      "fonte_url"
+    ],
+    "retorno": "JSON válido, sem markdown",
+    "usar_percentis": true,
+    "nao_inventar": true,
+    "fontes_obrigatorias": true
+  }
+}

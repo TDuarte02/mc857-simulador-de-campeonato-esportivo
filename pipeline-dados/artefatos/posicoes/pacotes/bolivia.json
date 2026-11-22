@@ -1,0 +1,285 @@
+{
+  "pais": "Bolivia",
+  "jogadores": [
+    {
+      "nome": "Marco Etcheverry",
+      "posicao_principal": "CAM",
+      "dob": "1970-09-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q246243",
+      "contexto": "DC United"
+    },
+    {
+      "nome": "Erwin Sanchez",
+      "posicao_principal": "CAM",
+      "dob": "1969-10-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2331752",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Marcelo Martins",
+      "posicao_principal": "ST",
+      "dob": "1987-06-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q370507",
+      "contexto": "Cruzeiro"
+    },
+    {
+      "nome": "Roger Suarez",
+      "posicao_principal": "CAM",
+      "dob": "1977-04-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q772048",
+      "contexto": "Copa 1999"
+    },
+    {
+      "nome": "Julio Cesar Baldivieso",
+      "posicao_principal": "CAM",
+      "dob": "1971-12-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q558955",
+      "contexto": "Copa 1994-2002"
+    },
+    {
+      "nome": "Alejandro Chumacero",
+      "posicao_principal": "CM",
+      "dob": "1991-04-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2017783",
+      "contexto": "Copa America 2015"
+    },
+    {
+      "nome": "Alvaro Pena",
+      "posicao_principal": "CM",
+      "dob": "1965-02-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2563266",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Milton Melgar",
+      "posicao_principal": "CDM",
+      "dob": "1959-09-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2733543",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Ronald Garcia",
+      "posicao_principal": "CM",
+      "dob": "1980-12-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2460918",
+      "contexto": "Copa 2015"
+    },
+    {
+      "nome": "Luis Cristaldo",
+      "posicao_principal": "CB",
+      "dob": "1969-08-31",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1351101",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Marco Sandy",
+      "posicao_principal": "CB",
+      "dob": "1971-08-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q970005",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Juan Manuel Pena",
+      "posicao_principal": "CB",
+      "dob": "1973-01-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q554944",
+      "contexto": "Copa 1994-2002"
+    },
+    {
+      "nome": "Ronald Raldes",
+      "posicao_principal": "CB",
+      "dob": "1981-04-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2422878",
+      "contexto": "Copa 2015"
+    },
+    {
+      "nome": "Carlos Trucco",
+      "posicao_principal": "GK",
+      "dob": "1957-08-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2540098",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Lider Paz",
+      "posicao_principal": "ST",
+      "dob": "1974-12-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2475806",
+      "contexto": "Copa 1999"
+    },
+    {
+      "nome": "Joaquin Botero",
+      "posicao_principal": "ST",
+      "dob": "1977-12-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q720639",
+      "contexto": "Artilheiro da selecao"
+    },
+    {
+      "nome": "William Ramallo",
+      "posicao_principal": "ST",
+      "dob": "1963-07-04",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2439639",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Ramiro Castillo",
+      "posicao_principal": "RW",
+      "dob": "1966-03-27",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2712394",
+      "contexto": "Copa 1994"
+    },
+    {
+      "nome": "Diego Medina",
+      "posicao_principal": "CB",
+      "dob": "2002-01-13",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Always Ready"
+    },
+    {
+      "nome": "Luis Haquín",
+      "posicao_principal": "CB",
+      "dob": "1997-11-15",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Ponte Preta"
+    },
+    {
+      "nome": "Adrián Jusino",
+      "posicao_principal": "CB",
+      "dob": "1992-07-09",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "The Strongest"
+    },
+    {
+      "nome": "Miguel Terceros",
+      "posicao_principal": "CM",
+      "dob": "2004-04-25",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Santos"
+    },
+    {
+      "nome": "Gustavo Almada",
+      "posicao_principal": "GK",
+      "dob": "1994-04-29",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Universitario de Vinto"
+    },
+    {
+      "nome": "Robson Tomé",
+      "posicao_principal": "CM",
+      "dob": "2002-05-18",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Always Ready"
+    },
+    {
+      "nome": "Gabriel Villamil",
+      "posicao_principal": "CM",
+      "dob": "2001-06-28",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "LDU Quito"
+    },
+    {
+      "nome": "Héctor Cuéllar",
+      "posicao_principal": "CM",
+      "dob": "2000-08-16",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Always Ready"
+    },
+    {
+      "nome": "Marcelo Suárez",
+      "posicao_principal": "CB",
+      "dob": "2001-08-29",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Always Ready"
+    },
+    {
+      "nome": "Yomar Rocha",
+      "posicao_principal": "CB",
+      "dob": "2003-06-21",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Bolívar"
+    }
+  ]
+}

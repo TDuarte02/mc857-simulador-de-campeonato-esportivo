@@ -1,0 +1,285 @@
+{
+  "pais": "Panama",
+  "jogadores": [
+    {
+      "nome": "Jaime Penedo",
+      "posicao_principal": "GK",
+      "dob": "1981-09-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2714776",
+      "contexto": "LA Galaxy"
+    },
+    {
+      "nome": "Felipe Baloy",
+      "posicao_principal": "CB",
+      "dob": "1981-02-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2499879",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Roman Torres",
+      "posicao_principal": "CB",
+      "dob": "1986-03-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2565181",
+      "contexto": "Gol contra Costa Rica 2017"
+    },
+    {
+      "nome": "Adolfo Machado",
+      "posicao_principal": "CB",
+      "dob": "1985-02-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q3605454",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Julio Dely Valdes",
+      "posicao_principal": "ST",
+      "dob": "1967-03-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q553353",
+      "contexto": "Maior artilheiro historico"
+    },
+    {
+      "nome": "Jorge Dely Valdes",
+      "posicao_principal": "ST",
+      "dob": "1967-03-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q181046",
+      "contexto": "Malaga"
+    },
+    {
+      "nome": "Blas Perez",
+      "posicao_principal": "ST",
+      "dob": "1981-03-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2528573",
+      "contexto": "FC Dallas"
+    },
+    {
+      "nome": "Luis Tejada",
+      "posicao_principal": "ST",
+      "dob": "1982-03-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1457192",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Gabriel Gomez",
+      "posicao_principal": "CM",
+      "dob": "1984-05-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q981799",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Amilcar Henriquez",
+      "posicao_principal": "CDM",
+      "dob": "1983-08-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2844861",
+      "contexto": "Copa 2018"
+    },
+    {
+      "nome": "Ismael Diaz",
+      "posicao_principal": "RW",
+      "dob": "1997-05-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q18921648",
+      "contexto": "Leon"
+    },
+    {
+      "nome": "César Blackman",
+      "posicao_principal": "CB",
+      "dob": "1998-04-02",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Slovan Bratislava"
+    },
+    {
+      "nome": "José Córdoba",
+      "posicao_principal": "CB",
+      "dob": "2001-06-03",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Levski Sofia"
+    },
+    {
+      "nome": "Eduardo Anderson",
+      "posicao_principal": "CB",
+      "dob": "2001-01-31",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Saprissa"
+    },
+    {
+      "nome": "Abdiel Ayarza",
+      "posicao_principal": "CM",
+      "dob": "1992-09-12",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Cienciano"
+    },
+    {
+      "nome": "Cristian Martínez",
+      "posicao_principal": "CM",
+      "dob": "1997-02-06",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Al-Jandal"
+    },
+    {
+      "nome": "Eduardo Guerrero",
+      "posicao_principal": "ST",
+      "dob": "2000-02-21",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Zorya Luhansk"
+    },
+    {
+      "nome": "Ismael Díaz",
+      "posicao_principal": "ST",
+      "dob": "1997-05-12",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Universidad Católica"
+    },
+    {
+      "nome": "César Samudio",
+      "posicao_principal": "GK",
+      "dob": "1994-03-26",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Marathón"
+    },
+    {
+      "nome": "Jovani Welch",
+      "posicao_principal": "CM",
+      "dob": "1999-12-07",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Académico de Viseu"
+    },
+    {
+      "nome": "Eric Davis",
+      "posicao_principal": "CB",
+      "dob": "1991-03-31",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Košice"
+    },
+    {
+      "nome": "José Fajardo",
+      "posicao_principal": "ST",
+      "dob": "1993-08-18",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Universidad Católica"
+    },
+    {
+      "nome": "Omar Valencia",
+      "posicao_principal": "CB",
+      "dob": "2004-06-08",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "New York Red Bulls"
+    },
+    {
+      "nome": "Iván Anderson",
+      "posicao_principal": "CB",
+      "dob": "1997-11-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Fortaleza"
+    },
+    {
+      "nome": "Orlando Mosquera",
+      "posicao_principal": "GK",
+      "dob": "1994-12-25",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Maccabi Tel Aviv"
+    },
+    {
+      "nome": "Edgardo Fariña",
+      "posicao_principal": "CB",
+      "dob": "2001-09-21",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Municipal"
+    },
+    {
+      "nome": "Roderick Miller",
+      "posicao_principal": "CB",
+      "dob": "1992-04-03",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Turan Tovuz"
+    },
+    {
+      "nome": "Kahiser Lenis",
+      "posicao_principal": "CM",
+      "dob": "2000-07-23",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Jaguares"
+    }
+  ]
+}

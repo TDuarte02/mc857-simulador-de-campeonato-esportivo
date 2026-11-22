@@ -1,0 +1,487 @@
+{
+  "pais": "Chile",
+  "jogadores": [
+    {
+      "nome": "Elias Figueroa",
+      "posicao_principal": "CB",
+      "dob": "1946-10-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q310981",
+      "contexto": "Copa 1966-1982"
+    },
+    {
+      "nome": "Marcelo Salas",
+      "posicao_principal": "ST",
+      "dob": "1974-12-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q295438",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Ivan Zamorano",
+      "posicao_principal": "ST",
+      "dob": "1967-01-18",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q192035",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Roberto Rojas",
+      "posicao_principal": "GK",
+      "dob": "1957-08-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q719023",
+      "contexto": "Copa 1987"
+    },
+    {
+      "nome": "Marco Cornez",
+      "posicao_principal": "GK",
+      "dob": "1957-10-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q951117",
+      "contexto": "Copa 1987"
+    },
+    {
+      "nome": "Misael Escuti",
+      "posicao_principal": "GK",
+      "dob": "1926-12-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2635226",
+      "contexto": "Copa 1962"
+    },
+    {
+      "nome": "Nelson Tapia",
+      "posicao_principal": "GK",
+      "dob": "1966-09-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2463272",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Jorge Valdivia",
+      "posicao_principal": "CAM",
+      "dob": "1983-10-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q360782",
+      "contexto": "Copa America 2015"
+    },
+    {
+      "nome": "Matias Fernandez",
+      "posicao_principal": "CAM",
+      "dob": "1986-05-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q310657",
+      "contexto": "Sporting"
+    },
+    {
+      "nome": "Jorge Aravena",
+      "posicao_principal": "CAM",
+      "dob": "1958-04-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2419813",
+      "contexto": "Copa 1987"
+    },
+    {
+      "nome": "Eduardo Bonvallet",
+      "posicao_principal": "CDM",
+      "dob": "1955-01-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2707333",
+      "contexto": "Copa 1982"
+    },
+    {
+      "nome": "Fabian Estay",
+      "posicao_principal": "CAM",
+      "dob": "1968-10-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2454389",
+      "contexto": "Toluca"
+    },
+    {
+      "nome": "Claudio Maldonado",
+      "posicao_principal": "CDM",
+      "dob": "1980-01-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q718952",
+      "contexto": "Santos"
+    },
+    {
+      "nome": "Jorge Toro",
+      "posicao_principal": "CDM",
+      "dob": "1939-01-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1362642",
+      "contexto": "Copa 1962"
+    },
+    {
+      "nome": "David Pizarro",
+      "posicao_principal": "CM",
+      "dob": "1979-09-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q70567",
+      "contexto": "Roma"
+    },
+    {
+      "nome": "Leonel Sanchez",
+      "posicao_principal": "LW",
+      "dob": "1936-04-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q314630",
+      "contexto": "Copa 1962"
+    },
+    {
+      "nome": "Hugo Rubio",
+      "posicao_principal": "ST",
+      "dob": "1960-07-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q538311",
+      "contexto": "Copa 1987"
+    },
+    {
+      "nome": "Patricio Yanez",
+      "posicao_principal": "RW",
+      "dob": "1961-01-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q509882",
+      "contexto": "Real Zaragoza"
+    },
+    {
+      "nome": "Osvaldo Castro",
+      "posicao_principal": "ST",
+      "dob": "1947-04-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1355128",
+      "contexto": "America"
+    },
+    {
+      "nome": "Carlos Caszely",
+      "posicao_principal": "ST",
+      "dob": "1950-07-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q472401",
+      "contexto": "Copa 1974 e 1982"
+    },
+    {
+      "nome": "Jaime Ramirez",
+      "posicao_principal": "ST",
+      "dob": "1931-08-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q125860",
+      "contexto": "Copa 1962"
+    },
+    {
+      "nome": "Marcelo Barticciotto",
+      "posicao_principal": "ST",
+      "dob": "1967-01-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q3289656",
+      "contexto": "Colo-Colo"
+    },
+    {
+      "nome": "Reinaldo Navia",
+      "posicao_principal": "ST",
+      "dob": "1978-05-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2331895",
+      "contexto": "America"
+    },
+    {
+      "nome": "Mark Gonzalez",
+      "posicao_principal": "LW",
+      "dob": "1984-07-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q213124",
+      "contexto": "CSKA Moscou"
+    },
+    {
+      "nome": "Eduardo Vargas",
+      "posicao_principal": "ST",
+      "dob": "1989-11-20",
+      "camadas": [
+        "historico",
+        "convocado_2024"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2268949",
+      "contexto": "Napoli"
+    },
+    {
+      "nome": "Humberto Suazo",
+      "posicao_principal": "ST",
+      "dob": "1981-05-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q314719",
+      "contexto": "Monterrey"
+    },
+    {
+      "nome": "Guillermo Subiabre",
+      "posicao_principal": "ST",
+      "dob": "1903-02-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q458044",
+      "contexto": "Copa 1930"
+    },
+    {
+      "nome": "Mauricio Isla",
+      "posicao_principal": "RB",
+      "dob": "1988-06-12",
+      "camadas": [
+        "historico",
+        "convocado_2024"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q296222",
+      "contexto": "Juventus"
+    },
+    {
+      "nome": "Raul Sanchez",
+      "posicao_principal": "CB",
+      "dob": "1933-10-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2463508",
+      "contexto": "Copa 1962"
+    },
+    {
+      "nome": "Jean Beausejour",
+      "posicao_principal": "LB",
+      "dob": "1984-06-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q313307",
+      "contexto": "Copa America 2015"
+    },
+    {
+      "nome": "Pedro Reyes",
+      "posicao_principal": "CB",
+      "dob": "1972-11-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2602528",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Javier Margas",
+      "posicao_principal": "CB",
+      "dob": "1969-05-10",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q933450",
+      "contexto": "West Ham"
+    },
+    {
+      "nome": "Pablo Contreras",
+      "posicao_principal": "CB",
+      "dob": "1978-09-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q323358",
+      "contexto": "Monaco"
+    },
+    {
+      "nome": "Gonzalo Jara",
+      "posicao_principal": "CB",
+      "dob": "1985-08-29",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q349172",
+      "contexto": "Copa America 2015"
+    },
+    {
+      "nome": "Fernando Astengo",
+      "posicao_principal": "CB",
+      "dob": "1960-01-08",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q3289820",
+      "contexto": "Copa 1987"
+    },
+    {
+      "nome": "Gabriel Suazo",
+      "posicao_principal": "CB",
+      "dob": "1997-08-09",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Toulouse"
+    },
+    {
+      "nome": "Thomas Galdames",
+      "posicao_principal": "CB",
+      "dob": "1998-11-20",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Godoy Cruz"
+    },
+    {
+      "nome": "Darío Osorio",
+      "posicao_principal": "ST",
+      "dob": "2004-01-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Midtjylland"
+    },
+    {
+      "nome": "Cristián Zavala",
+      "posicao_principal": "ST",
+      "dob": "1999-08-03",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Colo-Colo"
+    },
+    {
+      "nome": "Rodrigo Echeverría",
+      "posicao_principal": "CM",
+      "dob": "1995-04-17",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Huracán"
+    },
+    {
+      "nome": "Marcos Bolados",
+      "posicao_principal": "ST",
+      "dob": "1996-02-28",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Colo-Colo"
+    },
+    {
+      "nome": "Maximiliano Guerrero",
+      "posicao_principal": "ST",
+      "dob": "2000-01-15",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Universidad de Chile"
+    },
+    {
+      "nome": "Matías Catalán",
+      "posicao_principal": "CB",
+      "dob": "1992-08-19",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Talleres"
+    },
+    {
+      "nome": "Ben Brereton Díaz",
+      "posicao_principal": "ST",
+      "dob": "1999-04-18",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Sheffield United"
+    },
+    {
+      "nome": "Brayan Cortés",
+      "posicao_principal": "GK",
+      "dob": "1995-03-11",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Colo-Colo"
+    },
+    {
+      "nome": "César Pérez",
+      "posicao_principal": "CM",
+      "dob": "2002-11-29",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Unión La Calera"
+    },
+    {
+      "nome": "Benjamín Kuscevic",
+      "posicao_principal": "CB",
+      "dob": "1996-05-02",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Fortaleza"
+    },
+    {
+      "nome": "Nicolás Fernández",
+      "posicao_principal": "CB",
+      "dob": "1999-08-03",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Audax Italiano"
+    }
+  ]
+}
