@@ -255,12 +255,34 @@ class CycleResult:
 # Criação e intervalo
 # ============================================================
 
-def _validate_possessions(value: int) -> int:
-    if isinstance(value, bool) or not isinstance(value, int) or value < 1:
-        raise ValueError(
-            f"possessions_per_cycle deve ser um inteiro >= 1; recebido: {value!r}"
-        )
-    return value
+PossessionsSpec = int | tuple[int, int]
+
+
+def _validate_possessions(value: PossessionsSpec) -> PossessionsSpec:
+    """Aceita um inteiro >= 1 (fixo) ou (min, max) com 1 <= min <= max (sorteado)."""
+
+    def valid_int(x: object) -> bool:
+        return isinstance(x, int) and not isinstance(x, bool) and x >= 1
+
+    if isinstance(value, tuple):
+        if len(value) == 2 and all(valid_int(x) for x in value) and value[0] <= value[1]:
+            return value
+    elif valid_int(value):
+        return value
+    raise ValueError(
+        "possessions_per_cycle deve ser um inteiro >= 1 ou um intervalo "
+        f"(min, max) com 1 <= min <= max; recebido: {value!r}"
+    )
+
+
+def _draw_possessions(spec: PossessionsSpec, generator: random.Random) -> int:
+    """K do ciclo: fixo, ou sorteado uniformemente em [min, max]."""
+    if isinstance(spec, int):
+        return spec
+    lo, hi = spec
+    if lo == hi:
+        return lo  # sem sorteio: equivale a K fixo
+    return lo + int(generator.random() * (hi - lo + 1))
 
 def create_match(
     players_a: Sequence[Player],
@@ -315,26 +337,15 @@ def run_cycle(
     seed: int | None = None,
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
     recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS,
-    possessions_per_cycle: int = DEFAULT_POSSESSIONS_PER_CYCLE,
+    possessions_per_cycle: PossessionsSpec = DEFAULT_POSSESSIONS_PER_CYCLE,
 ) -> CycleResult:
-    """
-    Executa um ciclo de 15 minutos com `possessions_per_cycle` posses.
-
-    O ciclo é atômico: todas as posses são simuladas antes de qualquer
-    alteração em `state`. Uma falha em qualquer posse deixa o estado intacto.
-    """
-    if state.is_finished:
-        raise ValueError("A partida já foi encerrada.")
-    if state.phase is MatchPhase.HALFTIME:
-        raise ValueError(
-            "A partida está no intervalo; chame start_second_half antes do próximo ciclo."
-        )
-
-    k = _validate_possessions(possessions_per_cycle)
+    ...
+    spec = _validate_possessions(possessions_per_cycle)
     generator = resolve_rng(rng, seed)
     amount = ensure_finite_non_negative(
         recovery_control_bonus, "Bônus de recuperação de posse"
     )
+    k = _draw_possessions(spec, generator)   # único ponto que consome RNG para o K
     start = state.clock
     new_clock = start + CYCLE_MINUTES
     new_phase = state.phase
@@ -429,7 +440,7 @@ def play_match(
     seed: int | None = None,
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
     recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS,
-    possessions_per_cycle: int = DEFAULT_POSSESSIONS_PER_CYCLE,
+    possessions_per_cycle: PossessionsSpec = DEFAULT_POSSESSIONS_PER_CYCLE,
 ) -> list[CycleResult]:
     """Joga a partida até o fim, sem alterações no intervalo."""
     if state.is_finished:

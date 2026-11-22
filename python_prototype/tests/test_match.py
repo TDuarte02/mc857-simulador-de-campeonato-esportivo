@@ -706,3 +706,58 @@ def test_k1_matches_default_behaviour():
     play_match(a, seed=42)
     play_match(b, seed=42, possessions_per_cycle=1)
     assert a.events == b.events and a.score == b.score
+
+@pytest.mark.parametrize("bad", [(0, 3), (3, 1), (1,), (1, 2, 3), (1.5, 3), (True, 3), [1, 3]])
+def test_invalid_possessions_range_is_rejected(bad):
+    state = new_match()
+    with pytest.raises(ValueError, match="possessions_per_cycle"):
+        run_cycle(state, seed=1, possessions_per_cycle=bad)
+    assert state.clock == 0
+
+
+@pytest.mark.parametrize("draw, expected_k", [(0.0, 1), (0.32, 1), (0.34, 2), (0.65, 2), (0.67, 3), (0.999, 3)])
+def test_k_is_drawn_from_the_range_using_the_first_draw(draw, expected_k):
+    state = new_match(70, 70)
+    # 1º sorteio define K; depois, por posse: MD3 (A vence 2x0) + ataque (gol).
+    rng = ScriptedRandom([draw] + ([0.1] * 6 + [0.01]) * expected_k)
+
+    result = run_cycle(state, rng, possessions_per_cycle=(1, 3))
+
+    assert len(result.possessions) == expected_k
+    assert result.goals == expected_k
+    assert rng.remaining == 0
+
+
+def test_fixed_k_and_degenerate_range_consume_no_draw_for_k():
+    for spec in (2, (2, 2)):
+        state = new_match(70, 70)
+        rng = ScriptedRandom(([0.1] * 6 + [0.01]) * 2)
+
+        result = run_cycle(state, rng, possessions_per_cycle=spec)
+
+        assert len(result.possessions) == 2
+        assert rng.remaining == 0
+
+
+@pytest.mark.parametrize("seed", range(20))
+def test_random_k_match_invariants(seed):
+    state = new_match()
+    results = play_match(state, seed=seed, possessions_per_cycle=(1, 3))
+
+    sizes = [len(r.possessions) for r in results]
+    assert all(1 <= s <= 3 for s in sizes)
+    assert state.clock == 90
+    assert count(state, MatchEventType.MD3_RESULT) == sum(sizes)
+    assert sum(state.score.values()) == count(state, MatchEventType.GOAL)
+    assert state.pending_control_bonus is None
+
+
+def test_random_k_uses_every_value_and_is_reproducible():
+    def sizes(seed):
+        state = new_match()
+        return [len(r.possessions) for r in play_match(state, seed=seed, possessions_per_cycle=(1, 3))]
+
+    seen = {s for seed in range(30) for s in sizes(seed)}
+
+    assert seen == {1, 2, 3}
+    assert sizes(5) == sizes(5)
