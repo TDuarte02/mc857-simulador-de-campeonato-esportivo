@@ -31,6 +31,7 @@ from python_prototype.collective_attributes import (
 )
 
 from python_prototype.dispute import MD3Result, simulate_md3
+from python_prototype.dynamics import DynamicsConfig, DynamicsRuntime
 
 # ============================================================
 # Constantes
@@ -45,7 +46,7 @@ MODIFIER_KEYS = ("attack", "defense", "control")
 
 DEFAULT_RECOVERY_CONTROL_BONUS = 5.0
 
-DEFAULT_POSSESSIONS_PER_CYCLE = 1
+DEFAULT_POSSESSIONS_PER_CYCLE = 2
 # ============================================================
 # Estruturas
 # ============================================================
@@ -62,6 +63,8 @@ class MatchEventType(str, Enum):
     ATTACK_SEQUENCE = "ATTACK_SEQUENCE"
     GOAL = "GOAL"
     POSSESSION_LOST = "POSSESSION_LOST"
+    FALTA = "FALTA"
+    LESAO = "LESAO"
     HALFTIME = "HALFTIME"
     LINEUP_CHANGE = "LINEUP_CHANGE"
     SECOND_HALF_START = "SECOND_HALF_START"
@@ -79,6 +82,10 @@ class MatchEvent:
     `data` guarda os dados estruturados do evento:
     - MD3_RESULT: wins_a, wins_b
     - ATTACK_SEQUENCE: attempts
+    - FALTA (team = time infrator): cycle, possession, md5, duel
+    - LESAO (team = time que sofreu a falta): player, cycle,
+      foul_event (índice do evento FALTA de origem em `state.events`),
+      effect (vazio nesta issue; reservado para uso futuro)
     - demais tipos: vazio
     """
 
@@ -94,6 +101,10 @@ class MatchEvent:
             return f"MD3 {self.data['wins_a']}x{self.data['wins_b']}"
         if self.type is MatchEventType.ATTACK_SEQUENCE:
             return f"{self.data['attempts']} tentativa(s)"
+        if self.type is MatchEventType.FALTA:
+            return f"ciclo {self.data['cycle']}, MD5 {self.data['md5']}, duelo {self.data['duel']}"
+        if self.type is MatchEventType.LESAO:
+            return f"{self.data['player']} (falta no evento {self.data['foul_event']})"
         return ""
 
 
@@ -145,12 +156,14 @@ class TeamState:
             control=clamp(self.base.control + self.modifiers["control"]),
         )
 
+
 @dataclass(frozen=True)
 class PendingControlBonus:
     """Bônus de Controle pendente para a primeira MD5 da próxima disputa."""
 
     team: TeamId
     amount: float
+
 
 @dataclass
 class MatchState:
@@ -170,21 +183,6 @@ class MatchState:
     def is_finished(self) -> bool:
         return self.phase is MatchPhase.FINISHED
 
-@dataclass(frozen=True)
-class CycleResult:
-    cycle: int  # número do ciclo, começando em 1
-    start_minute: int
-    end_minute: int
-    md3: MD3Result
-    attacking_team: TeamId
-    attack: AttackSequenceResult
-    scorer: TeamId | None  # "A", "B" ou None
-    applied_control_bonus: PendingControlBonus | None = None  # consumido neste ciclo
-    granted_control_bonus: PendingControlBonus | None = None  # gerado neste ciclo
-
-    @property
-    def is_goal(self) -> bool:
-        return self.scorer is not None
 
 @dataclass(frozen=True)
 class PossessionResult:
@@ -284,6 +282,7 @@ def _draw_possessions(spec: PossessionsSpec, generator: random.Random) -> int:
         return lo  # sem sorteio: equivale a K fixo
     return lo + int(generator.random() * (hi - lo + 1))
 
+
 def create_match(
     players_a: Sequence[Player],
     formation_a: Sequence[str],
@@ -338,15 +337,33 @@ def run_cycle(
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
     recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS,
     possessions_per_cycle: PossessionsSpec = DEFAULT_POSSESSIONS_PER_CYCLE,
+    dynamics: DynamicsRuntime | None = None,
 ) -> CycleResult:
-    ...
+    """
+    Executa um ciclo de 15 minutos.
+
+    `dynamics` (Issue #15) ativa moral, faltas e lesões; com `None` o
+    comportamento é o da versão anterior. Os sorteios de falta e lesão
+    usam os geradores próprios de `dynamics`, nunca `rng`. Se o ciclo
+    falhar, `state` fica intacto (os geradores já consumidos não voltam).
+    """
+    if state.is_finished:
+        raise ValueError("A partida já foi encerrada.")
+    if state.phase is MatchPhase.HALFTIME:
+        raise ValueError(
+            "A partida está no intervalo: chame start_second_half antes de continuar."
+        )
+
     spec = _validate_possessions(possessions_per_cycle)
     generator = resolve_rng(rng, seed)
     amount = ensure_finite_non_negative(
         recovery_control_bonus, "Bônus de recuperação de posse"
     )
+    if dynamics is not None:
+        dynamics.config.validate(attack_params)
     k = _draw_possessions(spec, generator)   # único ponto que consome RNG para o K
     start = state.clock
+    cycle_number = state.cycle_index + 1
     new_clock = start + CYCLE_MINUTES
     new_phase = state.phase
     if new_clock >= FULL_TIME_MINUTE:
@@ -356,6 +373,21 @@ def run_cycle(
 
     # ---- Fase 1: cálculo (não altera `state`) ----
     effective = {tid: team.effective() for tid, team in state.teams.items()}
+
+    # Preparação: parâmetros ofensivos de cada time (moral calculada a partir
+    # do placar no INÍCIO do ciclo; nunca acumulada).
+    params_by_team = {
+        tid: (
+            attack_params
+            if dynamics is None
+            else dynamics.attack_params_for(
+                attack_params, state.score[tid] - state.score[other_team(tid)]
+            )
+        )
+        for tid in TEAM_IDS
+    }
+    foul_p = dynamics.foul_probability if dynamics is not None else 0.0
+    foul_rng = dynamics.foul_rng if foul_p > 0 else None
 
     pending = state.pending_control_bonus
     possessions: list[PossessionResult] = []
@@ -372,14 +404,49 @@ def run_cycle(
             rng=generator,
             first_md5_bonus_a=bonus_a,
             first_md5_bonus_b=bonus_b,
+            foul_rng=foul_rng,
+            foul_probability=foul_p,
         )
         attacker = md3.winner
         defender = other_team(attacker)
 
+        # Faltas (e lesões decorrentes), em ordem cronológica, antes do MD3_RESULT.
+        foul_events: list[MatchEvent] = []
+        for md5_number, md5 in enumerate(md3.series, start=1):
+            for foul in md5.fouls:
+                foul_index = len(state.events) + len(new_events) + len(foul_events)
+                foul_events.append(
+                    MatchEvent(
+                        start, MatchEventType.FALTA, foul.fouling_team,
+                        {
+                            "cycle": cycle_number,
+                            "possession": j,
+                            "md5": md5_number,
+                            "duel": foul.duel,
+                        },
+                    )
+                )
+                if dynamics is not None:
+                    victim = other_team(foul.fouling_team)
+                    injured = dynamics.draw_injury(state.teams[victim].players)
+                    if injured is not None:
+                        foul_events.append(
+                            MatchEvent(
+                                start, MatchEventType.LESAO, victim,
+                                {
+                                    "player": injured.name,
+                                    "cycle": cycle_number,
+                                    "foul_event": foul_index,
+                                    "effect": {},  # reservado; sem efeito por ora
+                                },
+                            )
+                        )
+        new_events += foul_events
+
         sequence = simulate_attack_sequence(
             effective[attacker].attack,
             effective[defender].defense,
-            params=attack_params,
+            params=params_by_team[attacker],
             rng=generator,
         )
         scorer: TeamId | None = (
@@ -441,13 +508,29 @@ def play_match(
     attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS,
     recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS,
     possessions_per_cycle: PossessionsSpec = DEFAULT_POSSESSIONS_PER_CYCLE,
+    dynamics: DynamicsConfig | None = None,
+    dynamics_seed: int | None = None,
 ) -> list[CycleResult]:
-    """Joga a partida até o fim, sem alterações no intervalo."""
+    """
+    Joga a partida até o fim, sem alterações no intervalo.
+
+    `dynamics` ativa as mecânicas da Issue #15. A semente dos geradores de
+    falta/lesão é `dynamics_seed` ou, se omitida, `seed`. Com `rng` e sem
+    `dynamics_seed`, mecânicas aleatórias ligadas levantam ValueError.
+    """
     if state.is_finished:
         raise ValueError("A partida já foi encerrada.")
 
     k = _validate_possessions(possessions_per_cycle)
     generator = resolve_rng(rng, seed)
+
+    runtime: DynamicsRuntime | None = None
+    if dynamics is not None:
+        dynamics.validate(attack_params)
+        runtime = DynamicsRuntime.create(
+            dynamics, dynamics_seed if dynamics_seed is not None else seed
+        )
+
     results: list[CycleResult] = []
     while not state.is_finished:
         if state.phase is MatchPhase.HALFTIME:
@@ -459,6 +542,7 @@ def play_match(
                 attack_params=attack_params,
                 recovery_control_bonus=recovery_control_bonus,
                 possessions_per_cycle=k,
+                dynamics=runtime,
             )
         )
     return results
@@ -478,7 +562,7 @@ if __name__ == "__main__":
 
     formation = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
     match = create_match(squad("A", 75), formation, squad("B", 65), formation)
-    play_match(match, seed=42)
+    play_match(match, seed=42, dynamics=DynamicsConfig())
     print("Placar final:", match.score)
     for event in match.events:
         print(f"{event.minute:>2}' {event.type.value} {event.team or ''} {event.detail}")
