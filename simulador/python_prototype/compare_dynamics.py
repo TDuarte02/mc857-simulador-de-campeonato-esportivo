@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, replace, fields
 from pathlib import Path
 from statistics import fmean, pvariance
 
@@ -19,9 +19,20 @@ from python_prototype.dynamics import (
     FoulConfig,
     InjuryConfig,
     MoraleConfig,
+    Player
 )
 from python_prototype.experiments import FORMATION_433, make_squad
 from python_prototype.match import MatchEventType, create_match, play_match
+
+
+POSITIONS_433 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "RW", "ST", "LW"]
+
+def make_squad(prefix: str, rating: int) -> list[Player]:
+    attrs = [f.name for f in fields(Player) if f.name not in ("name", "pos")]
+    return [
+        Player(name=f"{prefix}{i}", pos=pos, **{a: rating for a in attrs})
+        for i, pos in enumerate(POSITIONS_433)
+    ]
 
 
 @dataclass(frozen=True)
