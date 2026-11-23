@@ -21,11 +21,11 @@ from python_prototype.dynamics import (
     MoraleConfig,
     Player
 )
-from python_prototype.experiments import FORMATION_433, make_squad
 from python_prototype.match import MatchEventType, create_match, play_match
 
 
 POSITIONS_433 = ["GK", "RB", "CB", "CB", "LB", "CM", "CM", "CM", "RW", "ST", "LW"]
+FORMATION_433 = ["GK", "FB", "CB", "CB", "FB", "CM", "CM", "CM", "ST", "W", "W"]
 
 def make_squad(prefix: str, rating: int) -> list[Player]:
     attrs = [f.name for f in fields(Player) if f.name not in ("name", "pos")]
