@@ -254,3 +254,24 @@ def test_final_tiebreak_lottery_is_reproducible_and_seed_dependent():
     assert len(orders) > 1
     assert all(sorted(o) == sorted(order(state)) for o in orders)
 
+def test_group_completion_fills_quarterfinal_slots_automatically():
+    state = make_state()
+    for record in state.group_matches("A"):
+        play_machine_match(state, record.match_id)
+
+    qf1, qf2 = state.matches["QF1"], state.matches["QF2"]
+    assert qf1.team_a == group_standings(state, "A").rows[0].team
+    assert qf1.team_b is None
+    assert qf2.team_b == group_standings(state, "A").rows[1].team
+
+
+def test_full_group_stage_fills_all_quarterfinal_slots():
+    state = make_state()
+    simulate_group_stage(state)
+
+    assert all(
+        state.matches[m].team_a and state.matches[m].team_b
+        for m in ("QF1", "QF2", "QF3", "QF4")
+    )
+    assert state.phase is TournamentPhase.GRUPOS   # a fase só muda em start_knockout
+

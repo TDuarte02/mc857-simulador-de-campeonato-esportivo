@@ -16,67 +16,17 @@ from python_prototype.group_stage import (
     SlotSource,
     TournamentPhase,
     TournamentState,
-    build_knockout_schedule,   # reexportado
+    build_knockout_schedule,
     group_standings,
     simulate_machine_match_state,
+    match_winner, 
+    match_loser, 
+    _resolve,
+    update_knockout_slots
 )
 
 from python_prototype.penalties import simulate_penalty_shootout
 from python_prototype.tournament import derive_seed
-
-# ============================================================
-# Vencedor / perdedor
-# ============================================================
-
-def _finished_result(record: MatchRecord) -> MatchResult:
-    if record.status is not MatchStatus.ENCERRADA or record.result is None:
-        raise ValueError(f"A partida {record.match_id} ainda não foi jogada.")
-    return record.result
-
-
-def match_winner(record: MatchRecord) -> str:
-    """Vencedor nos 90 minutos ou, em caso de empate, nos pênaltis."""
-    result = _finished_result(record)
-    if result.goals_a != result.goals_b:
-        return record.team_a if result.goals_a > result.goals_b else record.team_b
-    if result.penalties is None:
-        raise ValueError(f"A partida {record.match_id} terminou empatada, sem pênaltis.")
-    return record.team_a if result.penalties.winner == "A" else record.team_b
-
-
-def match_loser(record: MatchRecord) -> str:
-    winner = match_winner(record)
-    return record.team_b if winner == record.team_a else record.team_a
-
-
-# ============================================================
-# Preenchimento das vagas
-# ============================================================
-
-def _resolve(state: TournamentState, source: SlotSource) -> str | None:
-    if source.kind == "group":
-        standings = group_standings(state, source.ref)
-        return standings.rows[source.position - 1].team if standings.is_final else None
-    record = state.matches.get(source.ref)
-    if record is None or record.status is not MatchStatus.ENCERRADA:
-        return None
-    return match_winner(record) if source.kind == "winner" else match_loser(record)
-
-
-def update_knockout_slots(state: TournamentState) -> None:
-    """
-    Preenche as vagas do mata-mata cuja origem terminou: grupo concluído ou
-    partida encerrada. As partidas já existem desde `TournamentState.from_setup`.
-    Vagas já preenchidas nunca mudam. Pode ser chamada a qualquer momento.
-    """
-    for match_id, (source_a, source_b) in KNOCKOUT_BRACKET.items():
-        record = state.matches[match_id]
-        if record.status is MatchStatus.ENCERRADA:
-            continue
-        if record.team_a is None:
-            record.team_a = _resolve(state, source_a)
-        if record.team_b is None:
-            record.team_b = _resolve(state, source_b)
 
 
 def start_knockout(state: TournamentState) -> None:
