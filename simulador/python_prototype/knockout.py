@@ -13,15 +13,12 @@ from python_prototype.group_stage import (
     MatchRecord,
     MatchResult,
     MatchStatus,
-    SlotSource,
     TournamentPhase,
     TournamentState,
     build_knockout_schedule,
-    group_standings,
     simulate_machine_match_state,
     match_winner, 
     match_loser, 
-    _resolve,
     update_knockout_slots
 )
 
