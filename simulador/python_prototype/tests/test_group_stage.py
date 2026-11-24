@@ -47,12 +47,19 @@ def snapshot(state):
 # Tabela de jogos
 # ------------------------------------------------------------
 
-def test_schedule_has_24_pending_matches_with_stable_ids():
+def test_schedule_has_24_group_and_8_knockout_matches_all_pending():
     state = make_state()
 
     assert state.phase is TournamentPhase.GRUPOS
-    assert len(state.matches) == 24
+    assert len(state.matches) == 32
     assert all(r.status is MatchStatus.PENDENTE and r.result is None for r in state.matches.values())
+
+    group_records = [r for r in state.matches.values() if r.phase is TournamentPhase.GRUPOS]
+    knockout_records = [r for r in state.matches.values() if r.phase is TournamentPhase.MATA_MATA]
+    assert len(group_records) == 24
+    assert len(knockout_records) == 8
+    assert all(r.team_a is None and r.team_b is None for r in knockout_records)
+
     assert [m for m in state.matches if m.startswith("G-A-")] == [
         "G-A-R1-1", "G-A-R1-2", "G-A-R2-1", "G-A-R2-2", "G-A-R3-1", "G-A-R3-2",
     ]
@@ -125,7 +132,10 @@ def test_unknown_match_and_wrong_phase_are_rejected():
 
 def test_match_result_does_not_depend_on_simulation_order():
     forward, backward = make_state(), make_state()
-    ids = list(forward.matches)
+    ids = [
+        mid for mid, r in forward.matches.items()
+        if r.phase is TournamentPhase.GRUPOS
+    ]
 
     for match_id in ids:
         play_machine_match(forward, match_id)
@@ -178,7 +188,10 @@ def test_full_group_stage_is_consistent():
 
     tables = simulate_group_stage(state)
 
-    assert all(r.status is MatchStatus.ENCERRADA for r in state.matches.values())
+    assert all(
+        r.status is MatchStatus.ENCERRADA
+        for r in state.matches.values() if r.phase is TournamentPhase.GRUPOS
+    )
     assert set(tables) == {"A", "B", "C", "D"}
     for name, table in tables.items():
         games = state.group_matches(name)

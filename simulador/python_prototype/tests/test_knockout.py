@@ -141,7 +141,9 @@ def test_start_knockout_requires_finished_group_stage():
     with pytest.raises(ValueError, match="grupos"):
         start_knockout(state)
 
-    assert snapshot(state) == before and len(state.matches) == 24
+    assert snapshot(state) == before
+    assert state.phase is TournamentPhase.GRUPOS
+    assert len(state.matches) == 32          # as 8 partidas do mata-mata já existem
 
 
 def test_start_knockout_creates_the_bracket_and_changes_phase():

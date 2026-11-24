@@ -8,79 +8,21 @@ import random
 from dataclasses import dataclass
 
 from python_prototype.group_stage import (
+    KNOCKOUT_BRACKET,
+    KNOCKOUT_ORDER,
     MatchRecord,
     MatchResult,
     MatchStatus,
+    SlotSource,
     TournamentPhase,
     TournamentState,
+    build_knockout_schedule,   # reexportado
     group_standings,
     simulate_machine_match_state,
 )
+
 from python_prototype.penalties import simulate_penalty_shootout
 from python_prototype.tournament import derive_seed
-
-
-# ============================================================
-# Chaves
-# ============================================================
-
-@dataclass(frozen=True)
-class SlotSource:
-    """Origem de uma vaga: posição em um grupo, ou vencedor/perdedor de uma partida."""
-
-    kind: str          # "group" | "winner" | "loser"
-    ref: str           # nome do grupo ou id da partida
-    position: int = 0  # só para "group"
-
-    @property
-    def label(self) -> str:
-        if self.kind == "group":
-            return f"{self.position}º {self.ref}"
-        if self.kind == "winner":
-            return f"Vencedor {self.ref}"
-        return f"Perdedor {self.ref}"
-
-
-def _group(name: str, position: int) -> SlotSource:
-    return SlotSource("group", name, position)
-
-
-def _winner(match_id: str) -> SlotSource:
-    return SlotSource("winner", match_id)
-
-
-def _loser(match_id: str) -> SlotSource:
-    return SlotSource("loser", match_id)
-
-
-KNOCKOUT_BRACKET: dict[str, tuple[SlotSource, SlotSource]] = {
-    "QF1": (_group("A", 1), _group("B", 2)),
-    "QF2": (_group("B", 1), _group("A", 2)),
-    "QF3": (_group("D", 1), _group("C", 2)),
-    "QF4": (_group("C", 1), _group("D", 2)),
-    "SF1": (_winner("QF1"), _winner("QF2")),
-    "SF2": (_winner("QF3"), _winner("QF4")),
-    "THIRD": (_loser("SF1"), _loser("SF2")),
-    "FINAL": (_winner("SF1"), _winner("SF2")),
-}
-# Ordem de jogo: cada partida só depende das anteriores.
-KNOCKOUT_ORDER: tuple[str, ...] = tuple(KNOCKOUT_BRACKET)
-
-
-def build_knockout_schedule() -> list[MatchRecord]:
-    """As 8 partidas do mata-mata, com vagas descritas e ainda indefinidas."""
-    return [
-        MatchRecord(
-            match_id=match_id,
-            phase=TournamentPhase.MATA_MATA,
-            team_a=None,
-            team_b=None,
-            slot_a=source_a.label,
-            slot_b=source_b.label,
-        )
-        for match_id, (source_a, source_b) in KNOCKOUT_BRACKET.items()
-    ]
-
 
 # ============================================================
 # Vencedor / perdedor
@@ -123,13 +65,10 @@ def _resolve(state: TournamentState, source: SlotSource) -> str | None:
 
 def update_knockout_slots(state: TournamentState) -> None:
     """
-    Cria as partidas do mata-mata (se ainda não existirem) e preenche as vagas
-    cuja origem terminou: grupo concluído ou partida encerrada. Vagas já
-    preenchidas nunca mudam. Pode ser chamada a qualquer momento.
+    Preenche as vagas do mata-mata cuja origem terminou: grupo concluído ou
+    partida encerrada. As partidas já existem desde `TournamentState.from_setup`.
+    Vagas já preenchidas nunca mudam. Pode ser chamada a qualquer momento.
     """
-    for record in build_knockout_schedule():
-        state.matches.setdefault(record.match_id, record)
-
     for match_id, (source_a, source_b) in KNOCKOUT_BRACKET.items():
         record = state.matches[match_id]
         if record.status is MatchStatus.ENCERRADA:
@@ -141,7 +80,7 @@ def update_knockout_slots(state: TournamentState) -> None:
 
 
 def start_knockout(state: TournamentState) -> None:
-    """Encerra a fase de grupos: cria as chaves e passa o torneio para o mata-mata."""
+    """Encerra a fase de grupos: preenche as vagas das quartas e passa o torneio ao mata-mata."""
     if state.phase is not TournamentPhase.GRUPOS:
         raise ValueError("O torneio não está na fase de grupos.")
     if not state.group_stage_finished:

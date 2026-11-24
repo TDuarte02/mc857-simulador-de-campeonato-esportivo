@@ -59,6 +59,65 @@ class MatchRecord:
     group: str | None = None
     round_number: int | None = None
 
+# ============================================================
+# Chaves
+# ============================================================
+
+@dataclass(frozen=True)
+class SlotSource:
+    """Origem de uma vaga: posição em um grupo, ou vencedor/perdedor de uma partida."""
+
+    kind: str          # "group" | "winner" | "loser"
+    ref: str           # nome do grupo ou id da partida
+    position: int = 0  # só para "group"
+
+    @property
+    def label(self) -> str:
+        if self.kind == "group":
+            return f"{self.position}º {self.ref}"
+        if self.kind == "winner":
+            return f"Vencedor {self.ref}"
+        return f"Perdedor {self.ref}"
+
+
+def _group(name: str, position: int) -> SlotSource:
+    return SlotSource("group", name, position)
+
+
+def _winner(match_id: str) -> SlotSource:
+    return SlotSource("winner", match_id)
+
+
+def _loser(match_id: str) -> SlotSource:
+    return SlotSource("loser", match_id)
+
+
+KNOCKOUT_BRACKET: dict[str, tuple[SlotSource, SlotSource]] = {
+    "QF1": (_group("A", 1), _group("B", 2)),
+    "QF2": (_group("B", 1), _group("A", 2)),
+    "QF3": (_group("D", 1), _group("C", 2)),
+    "QF4": (_group("C", 1), _group("D", 2)),
+    "SF1": (_winner("QF1"), _winner("QF2")),
+    "SF2": (_winner("QF3"), _winner("QF4")),
+    "THIRD": (_loser("SF1"), _loser("SF2")),
+    "FINAL": (_winner("SF1"), _winner("SF2")),
+}
+# Ordem de jogo: cada partida só depende das anteriores.
+KNOCKOUT_ORDER: tuple[str, ...] = tuple(KNOCKOUT_BRACKET)
+
+def build_knockout_schedule() -> list[MatchRecord]:
+    """As 8 partidas do mata-mata, com vagas descritas e ainda indefinidas."""
+    return [
+        MatchRecord(
+            match_id=match_id,
+            phase=TournamentPhase.MATA_MATA,
+            team_a=None,
+            team_b=None,
+            slot_a=source_a.label,
+            slot_b=source_b.label,
+        )
+        for match_id, (source_a, source_b) in KNOCKOUT_BRACKET.items()
+    ]
 
 @dataclass
 class TournamentState:
@@ -77,6 +136,8 @@ class TournamentState:
             groups=setup.draw.groups,
         )
         for record in build_group_schedule(state.groups):
+            state.matches[record.match_id] = record
+        for record in build_knockout_schedule():      # vagas ainda indefinidas
             state.matches[record.match_id] = record
         return state
 
