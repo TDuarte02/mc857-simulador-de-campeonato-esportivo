@@ -34,6 +34,8 @@ from python_prototype.match import (
     _validate_possessions,
 )
 
+from python_prototype.penalties import DEFAULT_PENALTY_CONFIG, PenaltyConfig
+
 # ============================================================
 # Constantes
 # ============================================================
@@ -105,6 +107,7 @@ class TournamentConfig:
     recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS
     possessions_per_cycle: PossessionsSpec = DEFAULT_POSSESSIONS_PER_CYCLE
     dynamics: DynamicsConfig = DynamicsConfig()
+    penalties: PenaltyConfig = DEFAULT_PENALTY_CONFIG
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "nations", tuple(self.nations))
@@ -127,6 +130,8 @@ class TournamentConfig:
             raise ValueError("O elenco precisa de pelo menos 1 goleiro.")
         if self.squad_size - self.squad_goalkeepers < 10:
             raise ValueError("O elenco precisa de pelo menos 10 jogadores de linha.")
+        if not isinstance(self.penalties, PenaltyConfig):
+            raise ValueError(f"penalties deve ser um PenaltyConfig; recebido: {self.penalties!r}")
 
         ensure_finite_non_negative(self.recovery_control_bonus, "Bônus de recuperação de posse")
         _validate_possessions(self.possessions_per_cycle)
