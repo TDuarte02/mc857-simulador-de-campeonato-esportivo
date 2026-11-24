@@ -16,6 +16,7 @@ from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, fields, replace
 from pathlib import Path
 
+from python_prototype.attack import DEFAULT_ATTACK_PARAMETERS, AttackParameters
 from python_prototype.collective_attributes import (
     POSITION_SECTORS,
     Player,
@@ -23,6 +24,14 @@ from python_prototype.collective_attributes import (
     calculate_team_attributes,
     canonical_position,
     formation_distribution,
+)
+from python_prototype.common import ensure_finite_non_negative
+from python_prototype.dynamics import DynamicsConfig
+from python_prototype.match import (
+    DEFAULT_POSSESSIONS_PER_CYCLE,
+    DEFAULT_RECOVERY_CONTROL_BONUS,
+    PossessionsSpec,
+    _validate_possessions,
 )
 
 # ============================================================
@@ -90,6 +99,12 @@ class TournamentConfig:
     squad_size: int = 23
     squad_goalkeepers: int = 3
     dataset_path: Path | str = "players_data.csv"
+    # Simulação das partidas (Issues #11, #13, #15). Configuração única:
+    # `possessions_per_cycle` é sempre passado explicitamente a `play_match`.
+    attack_params: AttackParameters = DEFAULT_ATTACK_PARAMETERS
+    recovery_control_bonus: float = DEFAULT_RECOVERY_CONTROL_BONUS
+    possessions_per_cycle: PossessionsSpec = DEFAULT_POSSESSIONS_PER_CYCLE
+    dynamics: DynamicsConfig = DynamicsConfig()
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "nations", tuple(self.nations))
@@ -112,6 +127,10 @@ class TournamentConfig:
             raise ValueError("O elenco precisa de pelo menos 1 goleiro.")
         if self.squad_size - self.squad_goalkeepers < 10:
             raise ValueError("O elenco precisa de pelo menos 10 jogadores de linha.")
+
+        ensure_finite_non_negative(self.recovery_control_bonus, "Bônus de recuperação de posse")
+        _validate_possessions(self.possessions_per_cycle)
+        self.dynamics.validate(self.attack_params)
 
 
 # ============================================================
