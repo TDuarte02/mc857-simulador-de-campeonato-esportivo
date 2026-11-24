@@ -183,8 +183,11 @@ def test_load_national_teams_from_csv_and_nation_without_players(tmp_path):
     with pytest.raises(SetupError, match=nations[-1]):
         load_national_teams(TournamentConfig(dataset_path=path))
 
-    write_csv(path, rows + [csv_row(f"{nations[-1]}{i}", nations[-1], "GK" if i == 0 else "CB")
-                            for i in range(11)])
+    last = nations[-1]
+    write_csv(path, rows + [
+        csv_row(m.player.name, last, m.positions[0], m.player.overall)
+        for m in full_roster(last[:3], 80)
+    ])
     teams, report = load_national_teams(TournamentConfig(dataset_path=path))
     assert list(teams) == list(nations)
     assert report.discarded == ()
