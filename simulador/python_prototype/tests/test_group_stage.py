@@ -275,3 +275,13 @@ def test_full_group_stage_fills_all_quarterfinal_slots():
     )
     assert state.phase is TournamentPhase.GRUPOS   # a fase só muda em start_knockout
 
+def test_slots_are_filled_on_the_match_that_closes_the_group():
+    state = make_state()
+    ids = [r.match_id for r in state.group_matches("A")]
+
+    for match_id in ids[:-1]:
+        play_machine_match(state, match_id)
+    assert state.matches["QF1"].team_a is None       # grupo ainda aberto
+
+    play_machine_match(state, ids[-1])
+    assert state.matches["QF1"].team_a is not None   # fechou: vaga preenchida
