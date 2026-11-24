@@ -46,7 +46,7 @@ MODIFIER_KEYS = ("attack", "defense", "control")
 
 DEFAULT_RECOVERY_CONTROL_BONUS = 5.0
 
-DEFAULT_POSSESSIONS_PER_CYCLE = 2
+DEFAULT_POSSESSIONS_PER_CYCLE = 1
 # ============================================================
 # Estruturas
 # ============================================================
