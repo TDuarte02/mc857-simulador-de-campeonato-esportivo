@@ -49,15 +49,14 @@ class MatchResult:
 class MatchRecord:
     match_id: str
     phase: TournamentPhase
-    team_a: str
-    team_b: str
+    team_a: str | None
+    team_b: str | None
     status: MatchStatus = MatchStatus.PENDENTE
-    round_number: int | None = None
-    slot_a: str | None = None
-    slot_b: str | None = None
     result: MatchResult | None = None
     group: str | None = None
     round_number: int | None = None
+    slot_a: str | None = None
+    slot_b: str | None = None
 
 # ============================================================
 # Vencedor / perdedor
