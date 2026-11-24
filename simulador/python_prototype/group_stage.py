@@ -9,12 +9,14 @@ from collections.abc import Sequence
 from dataclasses import dataclass, field
 from enum import Enum
 
-from python_prototype.match import MatchEvent, create_match, play_match
+from python_prototype.match import MatchEvent, MatchState, create_match, play_match
+from python_prototype.penalties import PenaltyShootout
 from python_prototype.tournament import (
     Group,
     NationalTeam,
     TournamentSetup,
     derive_seed,
+    TournamentConfig
 )
 
 # ============================================================
@@ -40,6 +42,7 @@ class MatchResult:
     goals_a: int
     goals_b: int
     events: tuple[MatchEvent, ...]
+    penalties: PenaltyShootout | None = None
 
 
 @dataclass
@@ -49,6 +52,9 @@ class MatchRecord:
     team_a: str
     team_b: str
     status: MatchStatus = MatchStatus.PENDENTE
+    round_number: int | None = None
+    slot_a: str | None = None
+    slot_b: str | None = None
     result: MatchResult | None = None
     group: str | None = None
     round_number: int | None = None
@@ -56,7 +62,7 @@ class MatchRecord:
 
 @dataclass
 class TournamentState:
-    config: "TournamentConfig"  # noqa: F821  (definido em tournament.py)
+    config: TournamentConfig
     teams: dict[str, NationalTeam]
     groups: tuple[Group, ...]
     phase: TournamentPhase = TournamentPhase.GRUPOS
@@ -133,16 +139,7 @@ def build_group_schedule(groups: Sequence[Group]) -> list[MatchRecord]:
 # Simulação de partida de máquina
 # ============================================================
 
-def simulate_machine_match(
-    state: TournamentState, team_a: str, team_b: str, match_id: str
-) -> MatchResult:
-    """
-    Simula uma partida sem alterar o estado do torneio.
-
-    Semente da partida: derive_seed(seed, match_id); da dinâmica (Issue #15):
-    derive_seed(seed, match_id, "dynamics"). O resultado só depende dos dois
-    times, das escalações e da configuração, nunca da ordem das demais partidas.
-    """
+def simulate_machine_match_state(state, team_a, team_b, match_id) -> MatchState:
     config = state.config
     a, b = state.teams[team_a], state.teams[team_b]
     match = create_match(a.lineup, a.formation, b.lineup, b.formation)
@@ -155,6 +152,11 @@ def simulate_machine_match(
         dynamics=config.dynamics,
         dynamics_seed=derive_seed(config.seed, match_id, "dynamics"),
     )
+    return match
+
+
+def simulate_machine_match(state, team_a, team_b, match_id) -> MatchResult:
+    match = simulate_machine_match_state(state, team_a, team_b, match_id)
     return MatchResult(match.score["A"], match.score["B"], tuple(match.events))
 
 
@@ -163,6 +165,8 @@ def play_machine_match(state: TournamentState, match_id: str) -> MatchRecord:
     record = state.match(match_id)
     if record.status is MatchStatus.ENCERRADA:
         raise ValueError(f"A partida {match_id} já foi jogada.")
+    if record.phase is not TournamentPhase.GRUPOS:
+        raise ValueError(f"A partida {match_id} é do mata-mata; use play_knockout_match.")
     if record.phase is not state.phase:
         raise ValueError(
             f"A partida {match_id} é da fase {record.phase.value}, "
