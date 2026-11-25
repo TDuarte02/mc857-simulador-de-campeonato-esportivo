@@ -1,0 +1,2308 @@
+{
+ "machine_only_seed_2026": {
+  "champion": "Mexico",
+  "fourth": "Bolivia",
+  "group_matches": [
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "A",
+    "id": "G-A-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Colombia",
+    "team_b": "Costa Rica",
+    "winner": "Costa Rica"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "A",
+    "id": "G-A-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Brazil",
+    "team_b": "Canada",
+    "winner": "Brazil"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "A",
+    "id": "G-A-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Colombia",
+    "team_b": "Brazil",
+    "winner": "Colombia"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "A",
+    "id": "G-A-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Costa Rica",
+    "team_b": "Canada",
+    "winner": null
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "A",
+    "id": "G-A-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Colombia",
+    "team_b": "Canada",
+    "winner": "Colombia"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 1,
+    "group": "A",
+    "id": "G-A-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Costa Rica",
+    "team_b": "Brazil",
+    "winner": "Costa Rica"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "B",
+    "id": "G-B-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Jamaica",
+    "team_b": "Mexico",
+    "winner": "Mexico"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "B",
+    "id": "G-B-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "United States",
+    "team_b": "Panama",
+    "winner": "Panama"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Jamaica",
+    "team_b": "United States",
+    "winner": null
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Mexico",
+    "team_b": "Panama",
+    "winner": null
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Jamaica",
+    "team_b": "Panama",
+    "winner": "Jamaica"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Mexico",
+    "team_b": "United States",
+    "winner": null
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 2,
+    "group": "C",
+    "id": "G-C-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Peru",
+    "team_b": "Bolivia",
+    "winner": "Bolivia"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Chile",
+    "team_b": "Venezuela",
+    "winner": null
+   },
+   {
+    "goals_a": 3,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Peru",
+    "team_b": "Chile",
+    "winner": "Peru"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Bolivia",
+    "team_b": "Venezuela",
+    "winner": null
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Peru",
+    "team_b": "Venezuela",
+    "winner": "Peru"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 1,
+    "group": "C",
+    "id": "G-C-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Bolivia",
+    "team_b": "Chile",
+    "winner": "Bolivia"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Uruguay",
+    "team_b": "Argentina",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Ecuador",
+    "team_b": "Paraguay",
+    "winner": null
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Uruguay",
+    "team_b": "Ecuador",
+    "winner": null
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "D",
+    "id": "G-D-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Argentina",
+    "team_b": "Paraguay",
+    "winner": "Paraguay"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Uruguay",
+    "team_b": "Paraguay",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Argentina",
+    "team_b": "Ecuador",
+    "winner": "Argentina"
+   }
+  ],
+  "groups": {
+   "A": [
+    {
+     "draws": 1,
+     "goal_diff": 2,
+     "goals_against": 1,
+     "goals_for": 3,
+     "losses": 0,
+     "played": 3,
+     "points": 7,
+     "team": "Costa Rica",
+     "wins": 2
+    },
+    {
+     "draws": 0,
+     "goal_diff": 1,
+     "goals_against": 1,
+     "goals_for": 2,
+     "losses": 1,
+     "played": 3,
+     "points": 6,
+     "team": "Colombia",
+     "wins": 2
+    },
+    {
+     "draws": 0,
+     "goal_diff": -1,
+     "goals_against": 3,
+     "goals_for": 2,
+     "losses": 2,
+     "played": 3,
+     "points": 3,
+     "team": "Brazil",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": -2,
+     "goals_against": 2,
+     "goals_for": 0,
+     "losses": 2,
+     "played": 3,
+     "points": 1,
+     "team": "Canada",
+     "wins": 0
+    }
+   ],
+   "B": [
+    {
+     "draws": 2,
+     "goal_diff": 1,
+     "goals_against": 0,
+     "goals_for": 1,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Mexico",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": 1,
+     "goals_against": 1,
+     "goals_for": 2,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "Jamaica",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": -1,
+     "goals_against": 2,
+     "goals_for": 1,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "Panama",
+     "wins": 1
+    },
+    {
+     "draws": 2,
+     "goal_diff": -1,
+     "goals_against": 1,
+     "goals_for": 0,
+     "losses": 1,
+     "played": 3,
+     "points": 2,
+     "team": "United States",
+     "wins": 0
+    }
+   ],
+   "C": [
+    {
+     "draws": 1,
+     "goal_diff": 3,
+     "goals_against": 1,
+     "goals_for": 4,
+     "losses": 0,
+     "played": 3,
+     "points": 7,
+     "team": "Bolivia",
+     "wins": 2
+    },
+    {
+     "draws": 0,
+     "goal_diff": 2,
+     "goals_against": 2,
+     "goals_for": 4,
+     "losses": 1,
+     "played": 3,
+     "points": 6,
+     "team": "Peru",
+     "wins": 2
+    },
+    {
+     "draws": 2,
+     "goal_diff": -1,
+     "goals_against": 1,
+     "goals_for": 0,
+     "losses": 1,
+     "played": 3,
+     "points": 2,
+     "team": "Venezuela",
+     "wins": 0
+    },
+    {
+     "draws": 1,
+     "goal_diff": -4,
+     "goals_against": 5,
+     "goals_for": 1,
+     "losses": 2,
+     "played": 3,
+     "points": 1,
+     "team": "Chile",
+     "wins": 0
+    }
+   ],
+   "D": [
+    {
+     "draws": 1,
+     "goal_diff": 2,
+     "goals_against": 0,
+     "goals_for": 2,
+     "losses": 0,
+     "played": 3,
+     "points": 7,
+     "team": "Uruguay",
+     "wins": 2
+    },
+    {
+     "draws": 1,
+     "goal_diff": 0,
+     "goals_against": 1,
+     "goals_for": 1,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "Paraguay",
+     "wins": 1
+    },
+    {
+     "draws": 0,
+     "goal_diff": -1,
+     "goals_against": 2,
+     "goals_for": 1,
+     "losses": 2,
+     "played": 3,
+     "points": 3,
+     "team": "Argentina",
+     "wins": 1
+    },
+    {
+     "draws": 2,
+     "goal_diff": -1,
+     "goals_against": 1,
+     "goals_for": 0,
+     "losses": 1,
+     "played": 3,
+     "points": 2,
+     "team": "Ecuador",
+     "wins": 0
+    }
+   ]
+  },
+  "knockout": [
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": null,
+    "id": "QF1",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba A",
+    "slot_b": "2\u00ba B",
+    "team_a": "Costa Rica",
+    "team_b": "Jamaica",
+    "winner": "Jamaica"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": null,
+    "id": "QF2",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba B",
+    "slot_b": "2\u00ba A",
+    "team_a": "Mexico",
+    "team_b": "Colombia",
+    "winner": "Mexico"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": null,
+    "id": "QF3",
+    "penalties": {
+     "first_team": "Uruguay",
+     "goals_a": 5,
+     "goals_b": 4,
+     "kicks": [
+      {
+       "player": "Uruguay 03",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "Peru 03",
+       "scored": false,
+       "team": "Peru"
+      },
+      {
+       "player": "Uruguay 04",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "Peru 04",
+       "scored": true,
+       "team": "Peru"
+      },
+      {
+       "player": "Uruguay 05",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "Peru 05",
+       "scored": true,
+       "team": "Peru"
+      },
+      {
+       "player": "Uruguay 06",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "Peru 06",
+       "scored": true,
+       "team": "Peru"
+      },
+      {
+       "player": "Uruguay 07",
+       "scored": false,
+       "team": "Uruguay"
+      },
+      {
+       "player": "Peru 07",
+       "scored": true,
+       "team": "Peru"
+      },
+      {
+       "player": "Uruguay 08",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "Peru 08",
+       "scored": false,
+       "team": "Peru"
+      }
+     ],
+     "sudden_death": true,
+     "winner": "Uruguay"
+    },
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba D",
+    "slot_b": "2\u00ba C",
+    "team_a": "Uruguay",
+    "team_b": "Peru",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 0,
+    "group": null,
+    "id": "QF4",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba C",
+    "slot_b": "2\u00ba D",
+    "team_a": "Bolivia",
+    "team_b": "Paraguay",
+    "winner": "Bolivia"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": null,
+    "id": "SF1",
+    "penalties": {
+     "first_team": "Mexico",
+     "goals_a": 8,
+     "goals_b": 9,
+     "kicks": [
+      {
+       "player": "Mexico 03",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Jamaica 03",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Mexico 04",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Jamaica 04",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Mexico 05",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Jamaica 05",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Mexico 06",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Jamaica 06",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Mexico 07",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Jamaica 07",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Mexico 08",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Jamaica 08",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Mexico 09",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Jamaica 09",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Mexico 10",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Jamaica 10",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Mexico 11",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Jamaica 11",
+       "scored": false,
+       "team": "Jamaica"
+      }
+     ],
+     "sudden_death": true,
+     "winner": "Mexico"
+    },
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Vencedor QF1",
+    "slot_b": "Vencedor QF2",
+    "team_a": "Jamaica",
+    "team_b": "Mexico",
+    "winner": "Mexico"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 1,
+    "group": null,
+    "id": "SF2",
+    "penalties": {
+     "first_team": "Uruguay",
+     "goals_a": 3,
+     "goals_b": 0,
+     "kicks": [
+      {
+       "player": "Uruguay 03",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "Bolivia 03",
+       "scored": false,
+       "team": "Bolivia"
+      },
+      {
+       "player": "Uruguay 04",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "Bolivia 04",
+       "scored": false,
+       "team": "Bolivia"
+      },
+      {
+       "player": "Uruguay 05",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "Bolivia 05",
+       "scored": false,
+       "team": "Bolivia"
+      }
+     ],
+     "sudden_death": false,
+     "winner": "Uruguay"
+    },
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Vencedor QF3",
+    "slot_b": "Vencedor QF4",
+    "team_a": "Uruguay",
+    "team_b": "Bolivia",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": null,
+    "id": "THIRD",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Perdedor SF1",
+    "slot_b": "Perdedor SF2",
+    "team_a": "Jamaica",
+    "team_b": "Bolivia",
+    "winner": "Jamaica"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": null,
+    "id": "FINAL",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Vencedor SF1",
+    "slot_b": "Vencedor SF2",
+    "team_a": "Mexico",
+    "team_b": "Uruguay",
+    "winner": "Mexico"
+   }
+  ],
+  "runner_up": "Uruguay",
+  "seed": 2026,
+  "third": "Jamaica",
+  "user_team": null
+ },
+ "user_autoplay_seed_7": {
+  "champion": "Uruguay",
+  "fourth": "United States",
+  "group_matches": [
+   {
+    "goals_a": 1,
+    "goals_b": 1,
+    "group": "A",
+    "id": "G-A-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Jamaica",
+    "team_b": "Costa Rica",
+    "winner": null
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 1,
+    "group": "A",
+    "id": "G-A-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Chile",
+    "team_b": "Venezuela",
+    "winner": null
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "A",
+    "id": "G-A-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Jamaica",
+    "team_b": "Chile",
+    "winner": "Jamaica"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 0,
+    "group": "A",
+    "id": "G-A-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Costa Rica",
+    "team_b": "Venezuela",
+    "winner": "Costa Rica"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "A",
+    "id": "G-A-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Jamaica",
+    "team_b": "Venezuela",
+    "winner": "Venezuela"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "A",
+    "id": "G-A-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Costa Rica",
+    "team_b": "Chile",
+    "winner": null
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Peru",
+    "team_b": "Mexico",
+    "winner": "Peru"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Ecuador",
+    "team_b": "Paraguay",
+    "winner": "Ecuador"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Peru",
+    "team_b": "Ecuador",
+    "winner": "Peru"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Mexico",
+    "team_b": "Paraguay",
+    "winner": null
+   },
+   {
+    "goals_a": 3,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Peru",
+    "team_b": "Paraguay",
+    "winner": "Peru"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 1,
+    "group": "B",
+    "id": "G-B-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Mexico",
+    "team_b": "Ecuador",
+    "winner": "Mexico"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Uruguay",
+    "team_b": "Argentina",
+    "winner": null
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 2,
+    "group": "C",
+    "id": "G-C-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "United States",
+    "team_b": "Panama",
+    "winner": "Panama"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 1,
+    "group": "C",
+    "id": "G-C-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Uruguay",
+    "team_b": "United States",
+    "winner": null
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Argentina",
+    "team_b": "Panama",
+    "winner": "Argentina"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Uruguay",
+    "team_b": "Panama",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 2,
+    "group": "C",
+    "id": "G-C-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Argentina",
+    "team_b": "United States",
+    "winner": "United States"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Colombia",
+    "team_b": "Bolivia",
+    "winner": "Colombia"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "D",
+    "id": "G-D-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Brazil",
+    "team_b": "Canada",
+    "winner": "Canada"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Colombia",
+    "team_b": "Brazil",
+    "winner": "Colombia"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 2,
+    "group": "D",
+    "id": "G-D-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Bolivia",
+    "team_b": "Canada",
+    "winner": "Canada"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Colombia",
+    "team_b": "Canada",
+    "winner": "Colombia"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Bolivia",
+    "team_b": "Brazil",
+    "winner": null
+   }
+  ],
+  "groups": {
+   "A": [
+    {
+     "draws": 2,
+     "goal_diff": 2,
+     "goals_against": 1,
+     "goals_for": 3,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Costa Rica",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": 0,
+     "goals_against": 2,
+     "goals_for": 2,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "Jamaica",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": -1,
+     "goals_against": 3,
+     "goals_for": 2,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "Venezuela",
+     "wins": 1
+    },
+    {
+     "draws": 2,
+     "goal_diff": -1,
+     "goals_against": 2,
+     "goals_for": 1,
+     "losses": 1,
+     "played": 3,
+     "points": 2,
+     "team": "Chile",
+     "wins": 0
+    }
+   ],
+   "B": [
+    {
+     "draws": 0,
+     "goal_diff": 7,
+     "goals_against": 0,
+     "goals_for": 7,
+     "losses": 0,
+     "played": 3,
+     "points": 9,
+     "team": "Peru",
+     "wins": 3
+    },
+    {
+     "draws": 1,
+     "goal_diff": -1,
+     "goals_against": 3,
+     "goals_for": 2,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "Mexico",
+     "wins": 1
+    },
+    {
+     "draws": 0,
+     "goal_diff": -2,
+     "goals_against": 4,
+     "goals_for": 2,
+     "losses": 2,
+     "played": 3,
+     "points": 3,
+     "team": "Ecuador",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": -4,
+     "goals_against": 4,
+     "goals_for": 0,
+     "losses": 2,
+     "played": 3,
+     "points": 1,
+     "team": "Paraguay",
+     "wins": 0
+    }
+   ],
+   "C": [
+    {
+     "draws": 2,
+     "goal_diff": 1,
+     "goals_against": 1,
+     "goals_for": 2,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Uruguay",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": 1,
+     "goals_against": 3,
+     "goals_for": 4,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "United States",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": 0,
+     "goals_against": 2,
+     "goals_for": 2,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "Argentina",
+     "wins": 1
+    },
+    {
+     "draws": 0,
+     "goal_diff": -2,
+     "goals_against": 4,
+     "goals_for": 2,
+     "losses": 2,
+     "played": 3,
+     "points": 3,
+     "team": "Panama",
+     "wins": 1
+    }
+   ],
+   "D": [
+    {
+     "draws": 0,
+     "goal_diff": 3,
+     "goals_against": 0,
+     "goals_for": 3,
+     "losses": 0,
+     "played": 3,
+     "points": 9,
+     "team": "Colombia",
+     "wins": 3
+    },
+    {
+     "draws": 0,
+     "goal_diff": 1,
+     "goals_against": 2,
+     "goals_for": 3,
+     "losses": 1,
+     "played": 3,
+     "points": 6,
+     "team": "Canada",
+     "wins": 2
+    },
+    {
+     "draws": 1,
+     "goal_diff": -2,
+     "goals_against": 3,
+     "goals_for": 1,
+     "losses": 2,
+     "played": 3,
+     "points": 1,
+     "team": "Bolivia",
+     "wins": 0
+    },
+    {
+     "draws": 1,
+     "goal_diff": -2,
+     "goals_against": 2,
+     "goals_for": 0,
+     "losses": 2,
+     "played": 3,
+     "points": 1,
+     "team": "Brazil",
+     "wins": 0
+    }
+   ]
+  },
+  "knockout": [
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": null,
+    "id": "QF1",
+    "penalties": {
+     "first_team": "Costa Rica",
+     "goals_a": 5,
+     "goals_b": 3,
+     "kicks": [
+      {
+       "player": "Costa Rica 03",
+       "scored": true,
+       "team": "Costa Rica"
+      },
+      {
+       "player": "Mexico 03",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Costa Rica 04",
+       "scored": true,
+       "team": "Costa Rica"
+      },
+      {
+       "player": "Mexico 04",
+       "scored": false,
+       "team": "Mexico"
+      },
+      {
+       "player": "Costa Rica 05",
+       "scored": true,
+       "team": "Costa Rica"
+      },
+      {
+       "player": "Mexico 05",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Costa Rica 06",
+       "scored": true,
+       "team": "Costa Rica"
+      },
+      {
+       "player": "Mexico 06",
+       "scored": true,
+       "team": "Mexico"
+      },
+      {
+       "player": "Costa Rica 07",
+       "scored": true,
+       "team": "Costa Rica"
+      }
+     ],
+     "sudden_death": false,
+     "winner": "Costa Rica"
+    },
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba A",
+    "slot_b": "2\u00ba B",
+    "team_a": "Costa Rica",
+    "team_b": "Mexico",
+    "winner": "Costa Rica"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": null,
+    "id": "QF2",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba B",
+    "slot_b": "2\u00ba A",
+    "team_a": "Peru",
+    "team_b": "Jamaica",
+    "winner": "Peru"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": null,
+    "id": "QF3",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba D",
+    "slot_b": "2\u00ba C",
+    "team_a": "Colombia",
+    "team_b": "United States",
+    "winner": "United States"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": null,
+    "id": "QF4",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba C",
+    "slot_b": "2\u00ba D",
+    "team_a": "Uruguay",
+    "team_b": "Canada",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": null,
+    "id": "SF1",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Vencedor QF1",
+    "slot_b": "Vencedor QF2",
+    "team_a": "Costa Rica",
+    "team_b": "Peru",
+    "winner": "Costa Rica"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": null,
+    "id": "SF2",
+    "penalties": {
+     "first_team": "Uruguay",
+     "goals_a": 3,
+     "goals_b": 5,
+     "kicks": [
+      {
+       "player": "Uruguay 03",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "United States 03",
+       "scored": true,
+       "team": "United States"
+      },
+      {
+       "player": "Uruguay 04",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "United States 04",
+       "scored": true,
+       "team": "United States"
+      },
+      {
+       "player": "Uruguay 05",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "United States 05",
+       "scored": true,
+       "team": "United States"
+      },
+      {
+       "player": "Uruguay 06",
+       "scored": true,
+       "team": "Uruguay"
+      },
+      {
+       "player": "United States 06",
+       "scored": false,
+       "team": "United States"
+      },
+      {
+       "player": "Uruguay 07",
+       "scored": true,
+       "team": "Uruguay"
+      }
+     ],
+     "sudden_death": false,
+     "winner": "Uruguay"
+    },
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Vencedor QF3",
+    "slot_b": "Vencedor QF4",
+    "team_a": "United States",
+    "team_b": "Uruguay",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 0,
+    "group": null,
+    "id": "THIRD",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Perdedor SF1",
+    "slot_b": "Perdedor SF2",
+    "team_a": "Peru",
+    "team_b": "United States",
+    "winner": "Peru"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 2,
+    "group": null,
+    "id": "FINAL",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Vencedor SF1",
+    "slot_b": "Vencedor SF2",
+    "team_a": "Costa Rica",
+    "team_b": "Uruguay",
+    "winner": "Uruguay"
+   }
+  ],
+  "runner_up": "Costa Rica",
+  "seed": 7,
+  "third": "Peru",
+  "user_team": "Brazil"
+ },
+ "user_halftime_changes_seed_42": {
+  "champion": "Costa Rica",
+  "fourth": "Jamaica",
+  "group_matches": [
+   {
+    "goals_a": 1,
+    "goals_b": 1,
+    "group": "A",
+    "id": "G-A-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Colombia",
+    "team_b": "Bolivia",
+    "winner": null
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "A",
+    "id": "G-A-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "United States",
+    "team_b": "Panama",
+    "winner": null
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "A",
+    "id": "G-A-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Colombia",
+    "team_b": "United States",
+    "winner": "United States"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "A",
+    "id": "G-A-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Bolivia",
+    "team_b": "Panama",
+    "winner": null
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "A",
+    "id": "G-A-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Colombia",
+    "team_b": "Panama",
+    "winner": "Panama"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 1,
+    "group": "A",
+    "id": "G-A-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Bolivia",
+    "team_b": "United States",
+    "winner": "Bolivia"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Uruguay",
+    "team_b": "Argentina",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "B",
+    "id": "G-B-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Chile",
+    "team_b": "Canada",
+    "winner": "Canada"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Uruguay",
+    "team_b": "Chile",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Argentina",
+    "team_b": "Canada",
+    "winner": null
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "B",
+    "id": "G-B-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Uruguay",
+    "team_b": "Canada",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "B",
+    "id": "G-B-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Argentina",
+    "team_b": "Chile",
+    "winner": "Chile"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Jamaica",
+    "team_b": "Mexico",
+    "winner": null
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Brazil",
+    "team_b": "Venezuela",
+    "winner": null
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Jamaica",
+    "team_b": "Brazil",
+    "winner": null
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 1,
+    "group": "C",
+    "id": "G-C-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Mexico",
+    "team_b": "Venezuela",
+    "winner": null
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "C",
+    "id": "G-C-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Jamaica",
+    "team_b": "Venezuela",
+    "winner": "Jamaica"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": "C",
+    "id": "G-C-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Mexico",
+    "team_b": "Brazil",
+    "winner": "Brazil"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 1,
+    "group": "D",
+    "id": "G-D-R1-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Peru",
+    "team_b": "Costa Rica",
+    "winner": null
+   },
+   {
+    "goals_a": 3,
+    "goals_b": 1,
+    "group": "D",
+    "id": "G-D-R1-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 1,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Ecuador",
+    "team_b": "Paraguay",
+    "winner": "Ecuador"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R2-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Peru",
+    "team_b": "Ecuador",
+    "winner": null
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R2-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 2,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Costa Rica",
+    "team_b": "Paraguay",
+    "winner": "Costa Rica"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": "D",
+    "id": "G-D-R3-1",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Peru",
+    "team_b": "Paraguay",
+    "winner": "Peru"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 1,
+    "group": "D",
+    "id": "G-D-R3-2",
+    "penalties": null,
+    "phase": "GRUPOS",
+    "round": 3,
+    "slot_a": null,
+    "slot_b": null,
+    "team_a": "Costa Rica",
+    "team_b": "Ecuador",
+    "winner": null
+   }
+  ],
+  "groups": {
+   "A": [
+    {
+     "draws": 2,
+     "goal_diff": 1,
+     "goals_against": 2,
+     "goals_for": 3,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Bolivia",
+     "wins": 1
+    },
+    {
+     "draws": 2,
+     "goal_diff": 1,
+     "goals_against": 0,
+     "goals_for": 1,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Panama",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": 0,
+     "goals_against": 2,
+     "goals_for": 2,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "United States",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": -2,
+     "goals_against": 3,
+     "goals_for": 1,
+     "losses": 2,
+     "played": 3,
+     "points": 1,
+     "team": "Colombia",
+     "wins": 0
+    }
+   ],
+   "B": [
+    {
+     "draws": 0,
+     "goal_diff": 4,
+     "goals_against": 0,
+     "goals_for": 4,
+     "losses": 0,
+     "played": 3,
+     "points": 9,
+     "team": "Uruguay",
+     "wins": 3
+    },
+    {
+     "draws": 1,
+     "goal_diff": 0,
+     "goals_against": 1,
+     "goals_for": 1,
+     "losses": 1,
+     "played": 3,
+     "points": 4,
+     "team": "Canada",
+     "wins": 1
+    },
+    {
+     "draws": 0,
+     "goal_diff": -1,
+     "goals_against": 2,
+     "goals_for": 1,
+     "losses": 2,
+     "played": 3,
+     "points": 3,
+     "team": "Chile",
+     "wins": 1
+    },
+    {
+     "draws": 1,
+     "goal_diff": -3,
+     "goals_against": 3,
+     "goals_for": 0,
+     "losses": 2,
+     "played": 3,
+     "points": 1,
+     "team": "Argentina",
+     "wins": 0
+    }
+   ],
+   "C": [
+    {
+     "draws": 2,
+     "goal_diff": 1,
+     "goals_against": 0,
+     "goals_for": 1,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Brazil",
+     "wins": 1
+    },
+    {
+     "draws": 2,
+     "goal_diff": 1,
+     "goals_against": 0,
+     "goals_for": 1,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Jamaica",
+     "wins": 1
+    },
+    {
+     "draws": 2,
+     "goal_diff": -1,
+     "goals_against": 2,
+     "goals_for": 1,
+     "losses": 1,
+     "played": 3,
+     "points": 2,
+     "team": "Venezuela",
+     "wins": 0
+    },
+    {
+     "draws": 2,
+     "goal_diff": -1,
+     "goals_against": 2,
+     "goals_for": 1,
+     "losses": 1,
+     "played": 3,
+     "points": 2,
+     "team": "Mexico",
+     "wins": 0
+    }
+   ],
+   "D": [
+    {
+     "draws": 2,
+     "goal_diff": 2,
+     "goals_against": 2,
+     "goals_for": 4,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Ecuador",
+     "wins": 1
+    },
+    {
+     "draws": 2,
+     "goal_diff": 1,
+     "goals_against": 2,
+     "goals_for": 3,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Costa Rica",
+     "wins": 1
+    },
+    {
+     "draws": 2,
+     "goal_diff": 1,
+     "goals_against": 1,
+     "goals_for": 2,
+     "losses": 0,
+     "played": 3,
+     "points": 5,
+     "team": "Peru",
+     "wins": 1
+    },
+    {
+     "draws": 0,
+     "goal_diff": -4,
+     "goals_against": 5,
+     "goals_for": 1,
+     "losses": 3,
+     "played": 3,
+     "points": 0,
+     "team": "Paraguay",
+     "wins": 0
+    }
+   ]
+  },
+  "knockout": [
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": null,
+    "id": "QF1",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba A",
+    "slot_b": "2\u00ba B",
+    "team_a": "Bolivia",
+    "team_b": "Canada",
+    "winner": "Bolivia"
+   },
+   {
+    "goals_a": 2,
+    "goals_b": 0,
+    "group": null,
+    "id": "QF2",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba B",
+    "slot_b": "2\u00ba A",
+    "team_a": "Uruguay",
+    "team_b": "Panama",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": null,
+    "id": "QF3",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba D",
+    "slot_b": "2\u00ba C",
+    "team_a": "Ecuador",
+    "team_b": "Jamaica",
+    "winner": "Jamaica"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": null,
+    "id": "QF4",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "1\u00ba C",
+    "slot_b": "2\u00ba D",
+    "team_a": "Brazil",
+    "team_b": "Costa Rica",
+    "winner": "Costa Rica"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": null,
+    "id": "SF1",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Vencedor QF1",
+    "slot_b": "Vencedor QF2",
+    "team_a": "Bolivia",
+    "team_b": "Uruguay",
+    "winner": "Bolivia"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 0,
+    "group": null,
+    "id": "SF2",
+    "penalties": {
+     "first_team": "Costa Rica",
+     "goals_a": 2,
+     "goals_b": 3,
+     "kicks": [
+      {
+       "player": "Costa Rica 03",
+       "scored": false,
+       "team": "Costa Rica"
+      },
+      {
+       "player": "Jamaica 03",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Costa Rica 04",
+       "scored": false,
+       "team": "Costa Rica"
+      },
+      {
+       "player": "Jamaica 04",
+       "scored": false,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Costa Rica 05",
+       "scored": true,
+       "team": "Costa Rica"
+      },
+      {
+       "player": "Jamaica 05",
+       "scored": false,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Costa Rica 06",
+       "scored": true,
+       "team": "Costa Rica"
+      },
+      {
+       "player": "Jamaica 06",
+       "scored": true,
+       "team": "Jamaica"
+      },
+      {
+       "player": "Costa Rica 07",
+       "scored": true,
+       "team": "Costa Rica"
+      },
+      {
+       "player": "Jamaica 07",
+       "scored": false,
+       "team": "Jamaica"
+      }
+     ],
+     "sudden_death": false,
+     "winner": "Costa Rica"
+    },
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Vencedor QF3",
+    "slot_b": "Vencedor QF4",
+    "team_a": "Jamaica",
+    "team_b": "Costa Rica",
+    "winner": "Costa Rica"
+   },
+   {
+    "goals_a": 1,
+    "goals_b": 0,
+    "group": null,
+    "id": "THIRD",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Perdedor SF1",
+    "slot_b": "Perdedor SF2",
+    "team_a": "Uruguay",
+    "team_b": "Jamaica",
+    "winner": "Uruguay"
+   },
+   {
+    "goals_a": 0,
+    "goals_b": 1,
+    "group": null,
+    "id": "FINAL",
+    "penalties": null,
+    "phase": "MATA_MATA",
+    "round": null,
+    "slot_a": "Vencedor SF1",
+    "slot_b": "Vencedor SF2",
+    "team_a": "Bolivia",
+    "team_b": "Costa Rica",
+    "winner": "Costa Rica"
+   }
+  ],
+  "runner_up": "Bolivia",
+  "seed": 42,
+  "third": "Uruguay",
+  "user_team": "Chile"
+ }
+}
