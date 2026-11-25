@@ -47,12 +47,19 @@ def snapshot(state):
 # Tabela de jogos
 # ------------------------------------------------------------
 
-def test_schedule_has_24_pending_matches_with_stable_ids():
+def test_schedule_has_24_group_and_8_knockout_matches_all_pending():
     state = make_state()
 
     assert state.phase is TournamentPhase.GRUPOS
-    assert len(state.matches) == 24
+    assert len(state.matches) == 32
     assert all(r.status is MatchStatus.PENDENTE and r.result is None for r in state.matches.values())
+
+    group_records = [r for r in state.matches.values() if r.phase is TournamentPhase.GRUPOS]
+    knockout_records = [r for r in state.matches.values() if r.phase is TournamentPhase.MATA_MATA]
+    assert len(group_records) == 24
+    assert len(knockout_records) == 8
+    assert all(r.team_a is None and r.team_b is None for r in knockout_records)
+
     assert [m for m in state.matches if m.startswith("G-A-")] == [
         "G-A-R1-1", "G-A-R1-2", "G-A-R2-1", "G-A-R2-2", "G-A-R3-1", "G-A-R3-2",
     ]
@@ -125,7 +132,10 @@ def test_unknown_match_and_wrong_phase_are_rejected():
 
 def test_match_result_does_not_depend_on_simulation_order():
     forward, backward = make_state(), make_state()
-    ids = list(forward.matches)
+    ids = [
+        mid for mid, r in forward.matches.items()
+        if r.phase is TournamentPhase.GRUPOS
+    ]
 
     for match_id in ids:
         play_machine_match(forward, match_id)
@@ -178,7 +188,10 @@ def test_full_group_stage_is_consistent():
 
     tables = simulate_group_stage(state)
 
-    assert all(r.status is MatchStatus.ENCERRADA for r in state.matches.values())
+    assert all(
+        r.status is MatchStatus.ENCERRADA
+        for r in state.matches.values() if r.phase is TournamentPhase.GRUPOS
+    )
     assert set(tables) == {"A", "B", "C", "D"}
     for name, table in tables.items():
         games = state.group_matches(name)
@@ -241,3 +254,34 @@ def test_final_tiebreak_lottery_is_reproducible_and_seed_dependent():
     assert len(orders) > 1
     assert all(sorted(o) == sorted(order(state)) for o in orders)
 
+def test_group_completion_fills_quarterfinal_slots_automatically():
+    state = make_state()
+    for record in state.group_matches("A"):
+        play_machine_match(state, record.match_id)
+
+    qf1, qf2 = state.matches["QF1"], state.matches["QF2"]
+    assert qf1.team_a == group_standings(state, "A").rows[0].team
+    assert qf1.team_b is None
+    assert qf2.team_b == group_standings(state, "A").rows[1].team
+
+
+def test_full_group_stage_fills_all_quarterfinal_slots():
+    state = make_state()
+    simulate_group_stage(state)
+
+    assert all(
+        state.matches[m].team_a and state.matches[m].team_b
+        for m in ("QF1", "QF2", "QF3", "QF4")
+    )
+    assert state.phase is TournamentPhase.GRUPOS   # a fase só muda em start_knockout
+
+def test_slots_are_filled_on_the_match_that_closes_the_group():
+    state = make_state()
+    ids = [r.match_id for r in state.group_matches("A")]
+
+    for match_id in ids[:-1]:
+        play_machine_match(state, match_id)
+    assert state.matches["QF1"].team_a is None       # grupo ainda aberto
+
+    play_machine_match(state, ids[-1])
+    assert state.matches["QF1"].team_a is not None   # fechou: vaga preenchida

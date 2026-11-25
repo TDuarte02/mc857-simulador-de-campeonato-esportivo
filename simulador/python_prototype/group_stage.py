@@ -9,12 +9,14 @@ from collections.abc import Sequence
 from dataclasses import dataclass, field
 from enum import Enum
 
-from python_prototype.match import MatchEvent, create_match, play_match
+from python_prototype.match import MatchEvent, MatchState, create_match, play_match
+from python_prototype.penalties import PenaltyShootout
 from python_prototype.tournament import (
     Group,
     NationalTeam,
     TournamentSetup,
     derive_seed,
+    TournamentConfig
 )
 
 # ============================================================
@@ -40,23 +42,142 @@ class MatchResult:
     goals_a: int
     goals_b: int
     events: tuple[MatchEvent, ...]
+    penalties: PenaltyShootout | None = None
 
 
 @dataclass
 class MatchRecord:
     match_id: str
     phase: TournamentPhase
-    team_a: str
-    team_b: str
+    team_a: str | None
+    team_b: str | None
     status: MatchStatus = MatchStatus.PENDENTE
     result: MatchResult | None = None
     group: str | None = None
     round_number: int | None = None
+    slot_a: str | None = None
+    slot_b: str | None = None
 
+# ============================================================
+# Vencedor / perdedor
+# ============================================================
+
+def _finished_result(record: MatchRecord) -> MatchResult:
+    if record.status is not MatchStatus.ENCERRADA or record.result is None:
+        raise ValueError(f"A partida {record.match_id} ainda não foi jogada.")
+    return record.result
+
+# ============================================================
+# Chaves
+# ============================================================
+
+@dataclass(frozen=True)
+class SlotSource:
+    """Origem de uma vaga: posição em um grupo, ou vencedor/perdedor de uma partida."""
+
+    kind: str          # "group" | "winner" | "loser"
+    ref: str           # nome do grupo ou id da partida
+    position: int = 0  # só para "group"
+
+    @property
+    def label(self) -> str:
+        if self.kind == "group":
+            return f"{self.position}º {self.ref}"
+        if self.kind == "winner":
+            return f"Vencedor {self.ref}"
+        return f"Perdedor {self.ref}"
+
+
+def _group(name: str, position: int) -> SlotSource:
+    return SlotSource("group", name, position)
+
+
+def _winner(match_id: str) -> SlotSource:
+    return SlotSource("winner", match_id)
+
+
+def _loser(match_id: str) -> SlotSource:
+    return SlotSource("loser", match_id)
+
+
+KNOCKOUT_BRACKET: dict[str, tuple[SlotSource, SlotSource]] = {
+    "QF1": (_group("A", 1), _group("B", 2)),
+    "QF2": (_group("B", 1), _group("A", 2)),
+    "QF3": (_group("D", 1), _group("C", 2)),
+    "QF4": (_group("C", 1), _group("D", 2)),
+    "SF1": (_winner("QF1"), _winner("QF2")),
+    "SF2": (_winner("QF3"), _winner("QF4")),
+    "THIRD": (_loser("SF1"), _loser("SF2")),
+    "FINAL": (_winner("SF1"), _winner("SF2")),
+}
+# Ordem de jogo: cada partida só depende das anteriores.
+KNOCKOUT_ORDER: tuple[str, ...] = tuple(KNOCKOUT_BRACKET)
+
+def build_knockout_schedule() -> list[MatchRecord]:
+    """As 8 partidas do mata-mata, com vagas descritas e ainda indefinidas."""
+    return [
+        MatchRecord(
+            match_id=match_id,
+            phase=TournamentPhase.MATA_MATA,
+            team_a=None,
+            team_b=None,
+            slot_a=source_a.label,
+            slot_b=source_b.label,
+        )
+        for match_id, (source_a, source_b) in KNOCKOUT_BRACKET.items()
+    ]
+
+def match_winner(record: MatchRecord) -> str:
+    """Vencedor nos 90 minutos ou, em caso de empate, nos pênaltis."""
+    result = _finished_result(record)
+    if result.goals_a != result.goals_b:
+        return record.team_a if result.goals_a > result.goals_b else record.team_b
+    if result.penalties is None:
+        raise ValueError(f"A partida {record.match_id} terminou empatada, sem pênaltis.")
+    return record.team_a if result.penalties.winner == "A" else record.team_b
+
+
+def match_loser(record: MatchRecord) -> str:
+    winner = match_winner(record)
+    return record.team_b if winner == record.team_a else record.team_a
+
+
+# ============================================================
+# Preenchimento das vagas
+# ============================================================
+
+def _resolve(state: TournamentState, source: SlotSource) -> str | None:
+    if source.kind == "group":
+        standings = group_standings(state, source.ref)
+        return standings.rows[source.position - 1].team if standings.is_final else None
+    record = state.matches.get(source.ref)
+    if record is None or record.status is not MatchStatus.ENCERRADA:
+        return None
+    return match_winner(record) if source.kind == "winner" else match_loser(record)
+
+
+def update_knockout_slots(state: TournamentState) -> None:
+    """
+    Preenche as vagas do mata-mata cuja origem terminou: grupo concluído ou
+    partida encerrada. As partidas já existem desde `TournamentState.from_setup`.
+    Vagas já preenchidas nunca mudam. Pode ser chamada a qualquer momento.
+    """
+    for match_id, (source_a, source_b) in KNOCKOUT_BRACKET.items():
+        record = state.matches[match_id]
+        if record.status is MatchStatus.ENCERRADA:
+            continue
+        if record.team_a is None:
+            record.team_a = _resolve(state, source_a)
+        if record.team_b is None:
+            record.team_b = _resolve(state, source_b)
+
+# ============================================================
+# Torneio
+# ============================================================
 
 @dataclass
 class TournamentState:
-    config: "TournamentConfig"  # noqa: F821  (definido em tournament.py)
+    config: TournamentConfig
     teams: dict[str, NationalTeam]
     groups: tuple[Group, ...]
     phase: TournamentPhase = TournamentPhase.GRUPOS
@@ -71,6 +192,8 @@ class TournamentState:
             groups=setup.draw.groups,
         )
         for record in build_group_schedule(state.groups):
+            state.matches[record.match_id] = record
+        for record in build_knockout_schedule():      # vagas ainda indefinidas
             state.matches[record.match_id] = record
         return state
 
@@ -133,16 +256,7 @@ def build_group_schedule(groups: Sequence[Group]) -> list[MatchRecord]:
 # Simulação de partida de máquina
 # ============================================================
 
-def simulate_machine_match(
-    state: TournamentState, team_a: str, team_b: str, match_id: str
-) -> MatchResult:
-    """
-    Simula uma partida sem alterar o estado do torneio.
-
-    Semente da partida: derive_seed(seed, match_id); da dinâmica (Issue #15):
-    derive_seed(seed, match_id, "dynamics"). O resultado só depende dos dois
-    times, das escalações e da configuração, nunca da ordem das demais partidas.
-    """
+def simulate_machine_match_state(state, team_a, team_b, match_id) -> MatchState:
     config = state.config
     a, b = state.teams[team_a], state.teams[team_b]
     match = create_match(a.lineup, a.formation, b.lineup, b.formation)
@@ -155,6 +269,11 @@ def simulate_machine_match(
         dynamics=config.dynamics,
         dynamics_seed=derive_seed(config.seed, match_id, "dynamics"),
     )
+    return match
+
+
+def simulate_machine_match(state, team_a, team_b, match_id) -> MatchResult:
+    match = simulate_machine_match_state(state, team_a, team_b, match_id)
     return MatchResult(match.score["A"], match.score["B"], tuple(match.events))
 
 
@@ -163,6 +282,8 @@ def play_machine_match(state: TournamentState, match_id: str) -> MatchRecord:
     record = state.match(match_id)
     if record.status is MatchStatus.ENCERRADA:
         raise ValueError(f"A partida {match_id} já foi jogada.")
+    if record.phase is not TournamentPhase.GRUPOS:
+        raise ValueError(f"A partida {match_id} é do mata-mata; use play_knockout_match.")
     if record.phase is not state.phase:
         raise ValueError(
             f"A partida {match_id} é da fase {record.phase.value}, "
@@ -171,8 +292,9 @@ def play_machine_match(state: TournamentState, match_id: str) -> MatchRecord:
 
     result = simulate_machine_match(state, record.team_a, record.team_b, match_id)
 
-    record.result = result       # commit só depois da simulação completa
+    record.result = result      
     record.status = MatchStatus.ENCERRADA
+    update_knockout_slots(state)
     return record
 
 
