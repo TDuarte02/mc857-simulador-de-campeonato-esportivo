@@ -65,6 +65,8 @@ class MatchEventType(str, Enum):
     POSSESSION_LOST = "POSSESSION_LOST"
     FALTA = "FALTA"
     LESAO = "LESAO"
+    CARTAO_AMARELO = "CARTAO_AMARELO"      
+    CARTAO_VERMELHO = "CARTAO_VERMELHO"  
     HALFTIME = "HALFTIME"
     LINEUP_CHANGE = "LINEUP_CHANGE"
     SECOND_HALF_START = "SECOND_HALF_START"
@@ -104,6 +106,8 @@ class MatchEvent:
         if self.type is MatchEventType.FALTA:
             return f"ciclo {self.data['cycle']}, MD5 {self.data['md5']}, duelo {self.data['duel']}"
         if self.type is MatchEventType.LESAO:
+            return f"{self.data['player']} (falta no evento {self.data['foul_event']})"
+        if self.type in (MatchEventType.CARTAO_AMARELO, MatchEventType.CARTAO_VERMELHO):
             return f"{self.data['player']} (falta no evento {self.data['foul_event']})"
         return ""
 

@@ -33,7 +33,7 @@ from python_prototype.match import (
     PossessionsSpec,
     _validate_possessions,
 )
-
+from python_prototype.cards import DEFAULT_CARD_CONFIG, CardConfig
 from python_prototype.penalties import DEFAULT_PENALTY_CONFIG, PenaltyConfig
 
 # ============================================================
@@ -108,6 +108,7 @@ class TournamentConfig:
     possessions_per_cycle: PossessionsSpec = DEFAULT_POSSESSIONS_PER_CYCLE
     dynamics: DynamicsConfig = DynamicsConfig()
     penalties: PenaltyConfig = DEFAULT_PENALTY_CONFIG
+    cards: CardConfig = DEFAULT_CARD_CONFIG
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "nations", tuple(self.nations))
@@ -132,6 +133,8 @@ class TournamentConfig:
             raise ValueError("O elenco precisa de pelo menos 10 jogadores de linha.")
         if not isinstance(self.penalties, PenaltyConfig):
             raise ValueError(f"penalties deve ser um PenaltyConfig; recebido: {self.penalties!r}")
+        if not isinstance(self.cards, CardConfig):
+            raise ValueError(f"cards deve ser um CardConfig; recebido: {self.cards!r}")
 
         ensure_finite_non_negative(self.recovery_control_bonus, "Bônus de recuperação de posse")
         _validate_possessions(self.possessions_per_cycle)
