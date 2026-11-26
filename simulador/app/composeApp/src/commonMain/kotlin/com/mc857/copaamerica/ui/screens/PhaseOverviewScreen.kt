@@ -168,7 +168,7 @@ fun PhaseOverviewScreen(
             Spacer(Modifier.height(32.dp))
             WideSectionRule("Mata-mata")
             Spacer(Modifier.height(16.dp))
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+            Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
                 Column(
                     Modifier
                         .weight(1f)
@@ -179,15 +179,14 @@ fun PhaseOverviewScreen(
                 ) {
                     BracketTree(bracket, userSquadId = team.id, large = true)
                 }
-                Column(Modifier.width(240.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                // As wide as a large TieCard, so the card ends on the page's right edge.
+                Column(Modifier.width(200.dp).fillMaxHeight(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     WideCaption("Disputa de 3º lugar")
                     TieCard(bracket.thirdPlace, "3º lugar", userSquadId = team.id, large = true)
+                    // Pushes the button down to line up with the bottom of the bracket.
+                    Spacer(Modifier.weight(1f))
+                    RetroPrimaryButton("Novo torneio", onClick = onReset, modifier = Modifier.fillMaxWidth())
                 }
-            }
-
-            Spacer(Modifier.height(32.dp))
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
-                RetroPrimaryButton("Novo torneio", onClick = onReset, modifier = Modifier.width(300.dp))
             }
         }
         return
