@@ -27,6 +27,9 @@ class Settings:
     mongo_uri: str = "mongodb://localhost:27017"
     mongo_db: str = "copa"
 
+    # Browser origins allowed besides localhost (comma-separated CORS_ORIGINS).
+    cors_origins: tuple[str, ...] = ()
+
     @property
     def squad_size(self) -> int:
         return sum(self.squad_quotas.values())
@@ -38,4 +41,9 @@ class Settings:
             repository=os.environ.get("REPOSITORY", "memory"),
             mongo_uri=os.environ.get("MONGO_URI", cls.mongo_uri),
             mongo_db=os.environ.get("MONGO_DB", cls.mongo_db),
+            cors_origins=tuple(
+                origin.strip()
+                for origin in os.environ.get("CORS_ORIGINS", "").split(",")
+                if origin.strip()
+            ),
         )

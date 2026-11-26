@@ -27,19 +27,19 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mc857.copaamerica.domain.logic.tieLine
-import com.mc857.copaamerica.domain.model.KnockoutTie
-import com.mc857.copaamerica.domain.model.PoolTeam
+import com.mc857.copaamerica.domain.model.Bracket
+import com.mc857.copaamerica.domain.model.Match
+import com.mc857.copaamerica.domain.model.Squad
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
-import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 
-/** One tie of the bracket: two rows, one per side. Mirrors TieCard, App.tsx:1167-1197. */
+/** One tie of the bracket: two rows, one per side. [match] null means the sides are still unknown. */
 @Composable
-fun TieCard(tie: KnockoutTie, label: String, highlightName: String? = null, emptyLabel: String = "A definir", large: Boolean = false) {
-    val isUserTie = tie.home?.name == highlightName || tie.away?.name == highlightName
+fun TieCard(match: Match?, label: String, userSquadId: String, large: Boolean = false) {
+    val isUserTie = match != null && match.involves(userSquadId)
     val borderColor = if (isUserTie) AppColors.antiqueGold else AppColors.paperBorder
+    val result = match?.result
     Column(
         Modifier
             .width(if (large) 200.dp else 104.dp)
@@ -60,16 +60,24 @@ fun TieCard(tie: KnockoutTie, label: String, highlightName: String? = null, empt
                 .background(if (isUserTie) AppColors.ticketOrangeBg else AppColors.paper)
                 .padding(horizontal = if (large) 10.dp else 6.dp, vertical = if (large) 4.dp else 2.dp),
         )
-        TieCardRow(tie.home, tie.homeGoals, tie.winner, highlightName, emptyLabel, large)
+        val penalties = result?.penalties
+        TieCardRow(match?.home, goalsLabel(result?.homeGoals, penalties?.home), result?.winner, userSquadId, large)
         Box(Modifier.fillMaxWidth().height(1.dp).background(AppColors.rowBorder))
-        TieCardRow(tie.away, tie.awayGoals, tie.winner, highlightName, emptyLabel, large)
+        TieCardRow(match?.away, goalsLabel(result?.awayGoals, penalties?.away), result?.winner, userSquadId, large)
     }
 }
 
+/** "1", or "1 (4)" after a shootout. */
+private fun goalsLabel(goals: Int?, penalties: Int?): String = when {
+    goals == null -> "–"
+    penalties == null -> "$goals"
+    else -> "$goals ($penalties)"
+}
+
 @Composable
-private fun TieCardRow(side: PoolTeam?, goals: Int?, winner: PoolTeam?, highlightName: String?, emptyLabel: String, large: Boolean) {
-    val isWinner = winner != null && winner.name == side?.name
-    val isUser = side != null && side.name == highlightName
+private fun TieCardRow(side: Squad?, goals: String, winner: String?, userSquadId: String, large: Boolean) {
+    val isWinner = side != null && winner == side.id
+    val isUser = side != null && side.id == userSquadId
     val textColor = when {
         isWinner -> AppColors.antiqueGold
         side == null -> AppColors.mutedText
@@ -83,10 +91,10 @@ private fun TieCardRow(side: PoolTeam?, goals: Int?, winner: PoolTeam?, highligh
             .padding(horizontal = if (large) 10.dp else 6.dp, vertical = if (large) 8.dp else 4.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Text(side?.flag ?: "🎱", fontSize = if (large) 18.sp else 13.sp)
+        FlagImage(side?.flag, height = if (large) 16.dp else 10.dp)
         Spacer(Modifier.width(if (large) 8.dp else 4.dp))
         Text(
-            text = side?.name ?: emptyLabel,
+            text = side?.name ?: "A definir",
             fontFamily = displayFontFamily(),
             fontWeight = FontWeight.ExtraBold,
             fontSize = if (large) 16.sp else 11.sp,
@@ -96,7 +104,7 @@ private fun TieCardRow(side: PoolTeam?, goals: Int?, winner: PoolTeam?, highligh
             modifier = Modifier.weight(1f),
         )
         Text(
-            text = goals?.toString() ?: "–",
+            text = goals,
             fontFamily = monoFontFamily(),
             fontWeight = FontWeight.Bold,
             fontSize = if (large) 14.sp else 11.sp,
@@ -106,11 +114,11 @@ private fun TieCardRow(side: PoolTeam?, goals: Int?, winner: PoolTeam?, highligh
 }
 
 @Composable
-private fun TieColumn(ties: List<KnockoutTie>, labels: List<String>, highlightName: String?, emptyLabel: String = "A definir", large: Boolean = false) {
-    Column(Modifier.fillMaxHeight(), verticalArrangement = androidx.compose.foundation.layout.Arrangement.SpaceEvenly) {
-        ties.forEachIndexed { index, tie ->
+private fun TieColumn(ties: List<Match?>, labels: List<String>, userSquadId: String, large: Boolean) {
+    Column(Modifier.fillMaxHeight(), verticalArrangement = Arrangement.SpaceEvenly) {
+        ties.forEachIndexed { index, match ->
             Box(Modifier.weight(1f), contentAlignment = Alignment.Center) {
-                TieCard(tie = tie, label = labels.getOrElse(index) { "" }, highlightName = highlightName, emptyLabel = emptyLabel, large = large)
+                TieCard(match = match, label = labels.getOrElse(index) { "" }, userSquadId = userSquadId, large = large)
             }
         }
     }
@@ -135,12 +143,14 @@ private fun ConnectorColumn(pairCount: Int, width: Dp = 20.dp) {
 }
 
 /**
- * The whole knockout tree: quarters → semis → final, left to right. Mirrors BracketTree, App.tsx:1237-1250.
+ * The whole knockout tree: quarters → semis → final, left to right.
  * [large] is the wide (desktop/web) variant: bigger cards spread over the full width.
  */
 @Composable
-fun BracketTree(qf: List<KnockoutTie>, sf: List<KnockoutTie>, final: KnockoutTie, highlightName: String?, emptyLabel: String = "A definir", large: Boolean = false) {
+fun BracketTree(bracket: Bracket, userSquadId: String, large: Boolean = false) {
     val connector = if (large) 56.dp else 20.dp
+    val quarterFinals = List(4) { bracket.quarterFinals.getOrNull(it) }
+    val semiFinals = List(2) { bracket.semiFinals.getOrNull(it) }
     Row(
         Modifier
             .fillMaxWidth()
@@ -148,39 +158,10 @@ fun BracketTree(qf: List<KnockoutTie>, sf: List<KnockoutTie>, final: KnockoutTie
             .height(if (large) 480.dp else 340.dp),
         horizontalArrangement = if (large) Arrangement.Center else Arrangement.Start,
     ) {
-        TieColumn(ties = qf, labels = listOf("Quartas 1", "Quartas 2", "Quartas 3", "Quartas 4"), highlightName = highlightName, emptyLabel = emptyLabel, large = large)
-        ConnectorColumn(pairCount = qf.size / 2, width = connector)
-        TieColumn(ties = sf, labels = listOf("Semifinal 1", "Semifinal 2"), highlightName = highlightName, large = large)
-        ConnectorColumn(pairCount = sf.size / 2, width = connector)
-        TieColumn(ties = listOf(final), labels = listOf("Final"), highlightName = highlightName, large = large)
-    }
-}
-
-/** Podium-style recap blocks for the 3rd-place tie and the final. Mirrors KnockoutSummary, App.tsx:1258-1276. */
-@Composable
-fun KnockoutSummary(third: KnockoutTie, final: KnockoutTie) {
-    if (third.winner == null && final.winner == null) return
-    Column(verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(8.dp)) {
-        if (third.winner != null) {
-            SummaryRow(title = "🥉 Disputa pelo 3º lugar", line = tieLine(third))
-        }
-        if (final.winner != null) {
-            SummaryRow(title = "🏆 Final", line = tieLine(final))
-        }
-    }
-}
-
-@Composable
-private fun SummaryRow(title: String, line: String) {
-    Column(
-        Modifier
-            .fillMaxWidth()
-            .hardShadow(cornerRadius = 12.dp)
-            .background(AppColors.cream, RoundedCornerShape(12.dp))
-            .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(12.dp))
-            .padding(horizontal = 16.dp, vertical = 12.dp),
-    ) {
-        Text(title, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.sp, color = AppColors.kicker)
-        Text(line, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink)
+        TieColumn(quarterFinals, listOf("Quartas 1", "Quartas 2", "Quartas 3", "Quartas 4"), userSquadId, large)
+        ConnectorColumn(pairCount = quarterFinals.size / 2, width = connector)
+        TieColumn(semiFinals, listOf("Semifinal 1", "Semifinal 2"), userSquadId, large)
+        ConnectorColumn(pairCount = semiFinals.size / 2, width = connector)
+        TieColumn(listOf(bracket.final), listOf("Final"), userSquadId, large)
     }
 }

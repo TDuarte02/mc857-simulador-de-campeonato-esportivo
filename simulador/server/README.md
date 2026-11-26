@@ -155,6 +155,7 @@ Tudo passa por `api/container.py`, o único lugar que conhece as implementaçõe
 | `MONGO_URI` | URI de conexão | `mongodb://localhost:27017` |
 | `MONGO_DB` | nome do banco | `copa` |
 | `SIMULATOR` | `mock` | `mock` |
+| `CORS_ORIGINS` | origens extras, separadas por vírgula | vazio (só `localhost` é aceito) |
 
 **Modelo de simulação.** Implemente `MatchSimulator` (`api/simulation/base.py`):
 

@@ -34,6 +34,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mc857.copaamerica.domain.model.Position
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
@@ -230,7 +231,15 @@ fun RetroSecondaryButton(text: String, onClick: () -> Unit, modifier: Modifier =
     }
 }
 
-/** Small filled chip used for role tags ("ZAG", "MEI", …). */
+/** Chip and progress-bar color of each position. */
+fun positionColor(position: Position): Color = when (position) {
+    Position.GK -> Color(0xFFB45309)
+    Position.DEF -> Color(0xFF2563EB)
+    Position.MID -> Color(0xFF059669)
+    Position.FW -> Color(0xFFB91C1C)
+}
+
+/** Small filled chip used for position tags ("DEF", "MEI", …). */
 @Composable
 fun RoleChip(text: String, background: Color) {
     Box(
