@@ -13,6 +13,7 @@ Usage: $(basename "$0") --profile <aws-profile> [--region <region>] [--account <
   --region   AWS region (default: us-east-2)
   --account  if given, abort unless the profile resolves to this account
 EOF
+    printf '%s' "${USAGE_EXTRA:-}" >&2  # options of the calling script
     exit 2
 }
 

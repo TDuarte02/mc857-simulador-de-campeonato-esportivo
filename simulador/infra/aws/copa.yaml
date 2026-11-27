@@ -30,9 +30,12 @@ Parameters:
     Type: String
     Default: /copa-simulador/mongo-password
     Description: SSM SecureString (created by deploy.sh) with the MongoDB password, read by the API instance.
+  # Pinned on purpose: a new AMI replaces both instances (and wipes the database), so
+  # deploy.sh keeps the one the stack already runs and moves to the latest Amazon
+  # Linux 2023 only with --update-ami.
   AmiId:
-    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
-    Default: /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
+    Type: AWS::EC2::Image::Id
+    Description: Amazon Linux 2023 AMI for both instances (chosen by deploy.sh).
   ApiRateLimit:
     Type: Number
     Default: 20
@@ -367,8 +370,10 @@ Resources:
           integration.request.path.proxy: method.request.path.proxy
           integration.request.header.X-Origin-Verify: !Sub "'${OriginSecret}'"
 
-  # A stage keeps serving its deployment until a new one exists, so a change to the
-  # methods above (e.g. the instance's address) needs a new logical id here.
+  # A stage serves a snapshot of the methods above: changing them (e.g. the API
+  # instance's address, after a replacement) has no effect until a new deployment
+  # exists. This one is only the first snapshot; deploy.sh publishes a new one on
+  # every run (aws apigateway create-deployment), so the stage always matches.
   DeploymentV2:
     Type: AWS::ApiGateway::Deployment
     DependsOn: [RootMethod, ProxyMethod]
@@ -412,6 +417,11 @@ Outputs:
   ApiKeyId:
     Description: "Read the key with: aws apigateway get-api-key --api-key <id> --include-value"
     Value: !Ref ApiKey
+  RestApiId:
+    Description: deploy.sh republishes the stage of this API on every run
+    Value: !Ref RestApi
+  StageName:
+    Value: !Ref Stage
   InstanceId:
     Description: The API instance (deploys go through SSM on it)
     Value: !Ref ApiInstance

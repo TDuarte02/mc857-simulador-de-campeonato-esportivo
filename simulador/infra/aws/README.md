@@ -64,15 +64,18 @@ simulador/infra/aws/deploy.sh --profile unicamp --account 391016433274
 | `--profile <nome>` | Perfil do AWS CLI. Obrigatório; também pode ser passado sozinho (`deploy.sh unicamp`). O `default` é recusado |
 | `--region <região>` | Padrão: `us-east-2` |
 | `--account <id>` | Se informado, aborta caso o perfil aponte para outra conta |
+| `--update-ami` | Passa as duas instâncias para a AMI mais recente do Amazon Linux 2023. **Recria as instâncias: o banco volta vazio e todas as sessões são perdidas** (o catálogo é recarregado sozinho) |
 
 No WSL, o AWS CLI precisa estar instalado no próprio Linux. As credenciais podem ser as do Windows se `~/.aws` apontar para `/mnt/c/Users/<você>/.aws`.
 
 1. stack `copa-ecr`, build da imagem (`--target aws` do Dockerfile) e push;
 2. cria o segredo de origem no SSM (só na primeira vez; ele nunca é impresso);
 3. RPMs do MongoDB (baixados e conferidos uma vez) e a senha do banco no bucket;
-4. stack `copa`. No primeiro boot, a instância do banco instala e configura o MongoDB; a da API instala o Docker, espera o banco, carrega o catálogo (`python -m api.seed`, sem efeito se ele já estiver carregado) e sobe a API;
-5. nos deploys seguintes, a imagem nova é aplicada pelo SSM (`/opt/copa/set-image.sh`), sem recriar a instância (o banco, que fica na outra instância, não é afetado);
-6. espera a API responder **pelo API Gateway, com a chave**, e imprime a URL.
+4. AMI das instâncias: a que a stack já usa (fixada de propósito, porque trocar a AMI recria as instâncias) ou, na primeira vez ou com `--update-ami`, a mais recente do Amazon Linux 2023;
+5. stack `copa`. No primeiro boot, a instância do banco instala e configura o MongoDB; a da API instala o Docker, espera o banco, carrega o catálogo (`python -m api.seed`, sem efeito se ele já estiver carregado) e sobe a API;
+6. publica de novo o stage `v1` do API Gateway (`create-deployment`): o stage serve uma cópia congelada das rotas, e o CloudFormation atualiza as rotas, mas não a cópia. Sem isso, uma instância recriada ganha outro endereço e o gateway continua chamando o antigo (erro `504`);
+7. nos deploys seguintes, a imagem nova é aplicada pelo SSM (`/opt/copa/set-image.sh`), sem recriar a instância (o banco, que fica na outra instância, não é afetado);
+8. espera a API responder **pelo API Gateway, com a chave**, e imprime a URL.
 
 ## Como o app chama
 
@@ -120,7 +123,8 @@ Apaga as duas stacks (as instâncias e o banco, a API, a chave, as imagens e o b
 
 ## Limitações
 
-- **Sem alta disponibilidade:** uma instância de cada. Se a instância do banco for recriada (por uma mudança no `copa.yaml` que exija substituição), os dados são perdidos; o catálogo é recarregado sozinho, mas as sessões não voltam.
+- **Sem alta disponibilidade:** uma instância de cada. Se a instância do banco for recriada (com `--update-ami` ou por uma mudança no `copa.yaml` que exija substituição), os dados são perdidos; o catálogo é recarregado sozinho, mas as sessões não voltam.
+- **A AMI não se atualiza sozinha:** as atualizações de segurança do sistema só entram com `--update-ami` (até a versão anterior deste script, a stack pegava sempre a mais recente e recriava as instâncias sem aviso quando a Amazon publicava uma nova).
 - **Sem acesso administrativo ao banco:** a instância do banco não alcança o SSM (seria preciso um endpoint de interface, que é pago). Para diagnosticar, entre na instância da API pelo SSM e use a imagem da API (`pymongo`) para falar com o banco.
 - **1 GB de RAM em cada instância** (mais 1 GB de swap): suficiente para o uso do trabalho.
 - **`/docs` pelo gateway:** a página carrega, mas o "Try it out" não funciona (o navegador não manda a chave). Use o `/docs` local.
