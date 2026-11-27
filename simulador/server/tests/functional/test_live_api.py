@@ -219,6 +219,22 @@ def test_a_full_cup_from_session_to_history(cup):
         assert result["homeGoals"] == sum(goal["squad"] == match["home"]["id"] for goal in result["goals"])
 
 
+def test_a_fast_cup_from_session_to_history(client):
+    cup = Cup(client, squad="peru", mode="FAST")
+    draw = cup.start()
+    assert draw["groups"] == []
+    assert len(draw["squads"]) == 8 and "peru" in {squad["id"] for squad in draw["squads"]}
+
+    history = play_to_the_end(cup)
+
+    assert (history["phase"], history["userSquad"]["id"]) == ("FINISHED", "peru")
+    assert history["placement"] in ("CHAMPION", "RUNNER_UP", "THIRD_PLACE", "FOURTH_PLACE", "QUARTER_FINALS")
+    assert len(history["matches"]) == 8
+    assert history["groups"] == []
+    assert history["userPath"][0]["stage"] == "QUARTER_FINAL"
+    assert len({squad["id"] for squad in history["podium"].values()}) == 4
+
+
 def test_a_finished_cup_is_persisted(cup, db):
     cup.start()
     history = play_to_the_end(cup)

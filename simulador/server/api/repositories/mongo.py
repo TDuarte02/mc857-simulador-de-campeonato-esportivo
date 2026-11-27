@@ -25,6 +25,7 @@ from api.domain.models import (
     LineupSlot,
     Match,
     MatchResult,
+    Mode,
     Phase,
     Player,
     PlayerStatus,
@@ -209,6 +210,7 @@ def _session_doc(session: Session) -> dict:
     return {
         "_id": session.id,
         "created_at": session.created_at,
+        "mode": session.mode.value,
         "phase": session.phase.value,
         "squad_id": session.squad_id,
         "call_up": session.call_up,
@@ -237,6 +239,8 @@ def _session(doc: dict) -> Session:
     return Session(
         id=doc["_id"],
         created_at=created_at,
+        # Sessions stored before fast mode existed were all full cups.
+        mode=Mode(doc.get("mode", Mode.FULL)),
         phase=Phase(doc["phase"]),
         squad_id=doc["squad_id"],
         call_up=list(doc["call_up"]),

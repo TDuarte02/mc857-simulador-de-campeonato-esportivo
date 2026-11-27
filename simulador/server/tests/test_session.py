@@ -46,6 +46,7 @@ def test_initial_state(client, cup):
     assert session == {
         "id": cup.id,
         "createdAt": session["createdAt"],
+        "mode": "FULL",
         "phase": "CREATED",
         "squadId": None,
         "callUp": [],

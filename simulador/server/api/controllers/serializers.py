@@ -6,6 +6,7 @@ from api.domain.models import (
     Draw,
     History,
     Match,
+    Mode,
     Player,
     PlayoffsDraw,
     Podium,
@@ -29,6 +30,7 @@ class Serializer:
         return {
             "id": session.id,
             "createdAt": session.created_at.isoformat(),
+            "mode": session.mode,
             "phase": session.phase,
             "squadId": session.squad_id,
             "callUp": session.call_up,
@@ -88,6 +90,13 @@ class Serializer:
                     ],
                 }
                 for name, squad_ids in draw.groups.items()
+            ],
+            # A fast cup has no groups: its squads are listed here instead.
+            "squads": []
+            if draw.mode is Mode.FULL
+            else [
+                {**self._squad_by_id(squad_id), "players": [self.player(player) for player in players]}
+                for squad_id, players in draw.squads.items()
             ],
             "matches": [self.match(match) for match in draw.matches],
         }

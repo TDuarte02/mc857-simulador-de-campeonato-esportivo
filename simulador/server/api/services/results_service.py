@@ -7,6 +7,7 @@ from api.domain.models import (
     RoundResults,
     Session,
     Stage,
+    first_round,
     round_stage,
 )
 from api.domain.rules import group_standings, podium, qualified_squads
@@ -23,7 +24,7 @@ class ResultsService:
     def round_results(self, session_id: str) -> RoundResults:
         """Every result of the round that was just played."""
         session = self._sessions.get(session_id)
-        if session.round == 0:
+        if session.round < first_round(session.mode):  # a fast cup starts after the group rounds
             raise ConflictError("NO_ROUND_PLAYED", "No round has been played yet.")
         tournament = self._tournaments.get(session_id)
         matches = self._matches(session_id)
