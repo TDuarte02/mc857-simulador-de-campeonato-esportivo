@@ -17,8 +17,6 @@ from pymongo.database import Database
 from pymongo.errors import DuplicateKeyError
 
 import uuid
-from argon2 import PasswordHasher
-from argon2.exceptions import VerifyMismatchError
 
 from api.domain.models import (
     MOCK_CATALOG_VERSION,
@@ -43,6 +41,7 @@ from api.domain.models import (
 )
 from api.repositories.base import (
     CatalogRepository,
+    DuplicateEmailError,
     PlayerRepository,
     Repositories,
     SessionRepository,
@@ -142,17 +141,13 @@ class MongoSessionRepository(SessionRepository):
 class MongoLoginRepository(LoginRepository):
     def __init__(self, db: Database):
         self._users = db.users
+        # The unique index is what refuses a duplicate registration, even when two race.
         self._users.create_index([("email", ASCENDING)], unique=True)
-        self._hasher = PasswordHasher()
 
-    def get(self, email: str) -> User:
-        doc = self._users.find_one({"email": email.strip().lower()})
-        return _user(doc) if doc else None
-    
     def exists(self, email: str) -> bool:
         return self._users.find_one({"email": email.strip().lower()}) is not None
 
-    def find_by_email(self, email: str) -> User:
+    def find_by_email(self, email: str) -> User | None:
         doc = self._users.find_one({"email": email.strip().lower()})
         return _user(doc) if doc else None
 
@@ -166,17 +161,7 @@ class MongoLoginRepository(LoginRepository):
         try:
             self._users.insert_one(_user_doc(user))
         except DuplicateKeyError as exc:
-            raise ValueError("EMAIL_ALREADY_EXISTS") from exc
-        return user
-
-    def auth(self, email: str, password: str) -> User | None:
-        user = self.find_by_email(email)
-        if user is None:
-            return None
-        try:
-            self._hasher.verify(user.password, password)
-        except VerifyMismatchError:
-            return None
+            raise DuplicateEmailError(user.email) from exc
         return user
 
 

@@ -4,15 +4,15 @@ Sessions, tournaments and matches are copied on the way in and out, so these
 behave like a real database: a change that is never saved is lost.
 """
 
+import threading
 import uuid
-from argon2 import PasswordHasher
-from argon2.exceptions import VerifyMismatchError
 from collections.abc import Iterable
 from copy import deepcopy
 
 from api.domain.models import MOCK_CATALOG_VERSION, Match, Player, Position, Session, Squad, Tournament, User
 from api.repositories.base import (
     CatalogRepository,
+    DuplicateEmailError,
     PlayerRepository,
     Repositories,
     SessionRepository,
@@ -70,14 +70,10 @@ class InMemorySessionRepository(SessionRepository):
 class InMemoryLoginRepository(LoginRepository):
     def __init__(self, users: Iterable[User] = ()):
         self._users_by_email: dict[str, User] = {}
-        self._hasher = PasswordHasher()
+        self._lock = threading.Lock()  # makes "is it taken? then store it" one step
         for user in users:
             self._users_by_email[user.email.strip().lower()] = deepcopy(user)
 
-    def get(self, email: str) -> User | None:
-        user = self._users_by_email.get(email.strip().lower())
-        return deepcopy(user) if user is not None else None
-    
     def exists(self, email: str) -> bool:
         return email.strip().lower() in self._users_by_email
 
@@ -93,17 +89,10 @@ class InMemoryLoginRepository(LoginRepository):
             email=normalized_email,
             password=password,
         )
-        self._users_by_email[normalized_email] = deepcopy(user)
-        return deepcopy(user)
-
-    def auth(self, email: str, password: str) -> User | None:
-        user = self._users_by_email.get(email.strip().lower())
-        if user is None:
-            return None
-        try:
-            self._hasher.verify(user.password, password)
-        except VerifyMismatchError:
-            return None
+        with self._lock:
+            if normalized_email in self._users_by_email:
+                raise DuplicateEmailError(normalized_email)
+            self._users_by_email[normalized_email] = deepcopy(user)
         return deepcopy(user)
 
 class InMemoryTournamentRepository(TournamentRepository):

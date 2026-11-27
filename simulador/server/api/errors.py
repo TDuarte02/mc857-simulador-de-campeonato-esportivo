@@ -15,6 +15,10 @@ class ValidationError(ApiError):
     status = 400
 
 
+class UnauthorizedError(ApiError):
+    status = 401
+
+
 class NotFoundError(ApiError):
     status = 404
 

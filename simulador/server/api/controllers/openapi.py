@@ -360,7 +360,7 @@ def _ok(description: str, schema: dict, status: int = 200) -> tuple[str, dict]:
 
 def _error(status: int, codes: list[str]) -> tuple[str, dict]:
     """An error response; `error.code` is one of `codes`."""
-    titles = {400: "Corpo ou parâmetro inválido", 401: "Credenciais inválidas", 404: "Não encontrado", 409: "Etapa errada da sessão"}
+    titles = {400: "Corpo ou parâmetro inválido", 401: "Credenciais inválidas", 404: "Não encontrado", 409: "Conflito com o estado atual"}
     schema = _obj({"error": _obj({"code": _enum(codes), "message": STR})})
     listed = ", ".join(f"`{code}`" for code in codes)
     return str(status), {"description": f"{titles[status]}: {listed}.", "content": _json(schema)}
@@ -596,12 +596,12 @@ PATHS = {
             "login",
             _LOGIN,
             "Realiza o login do usuário",
-            "Autentica o usuário e o retorna com seu sessionId",
+            "Autentica o usuário e o retorna com seu sessionId. Email desconhecido e senha errada dão a "
+            "mesma resposta (`401`), para não revelar quais emails têm conta.",
             [
                 _ok("Usuário logado.", _obj({"user": _ref("User")}), status=200),
-                _error(400, ["INSUFFICIENT_INFO"]),
+                _error(400, ["INVALID_BODY", "INSUFFICIENT_INFO"]),
                 _error(401, ["INVALID_CREDENTIALS"]),
-                _error(404, ["USER_NOT_FOUND"])
             ],
             requestBody=_body("LoginRequest"),
         )
@@ -611,12 +611,13 @@ PATHS = {
             "register",
             _REGISTER,
             "Cadastra o usuário",
-            "Cria uma conta e vincula a uma sessão",
+            "Cria uma conta e a vincula a uma sessão: a do `sessionId` informado ou, sem ele, uma nova. "
+            "O email é guardado sem espaços e em minúsculas.",
             [
                 _ok("Usuário criado.", _obj({"user": _ref("User")}), status=201),
-                _error(400, ["INSUFFICIENT_INFO"]),
-                _error(404, ["USER_NOT_FOUND"]),
-                _error(409, ["USER_ALREADY_EXISTS"])
+                _error(400, ["INVALID_BODY", "INSUFFICIENT_INFO", "INVALID_EMAIL"]),
+                _error(404, ["SESSION_NOT_FOUND"]),
+                _error(409, ["USER_ALREADY_EXISTS", "CATALOG_CHANGED"]),
             ],
             requestBody=_body("RegisterRequest"),
         )

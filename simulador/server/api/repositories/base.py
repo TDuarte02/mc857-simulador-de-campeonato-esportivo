@@ -64,7 +64,13 @@ class TournamentRepository(ABC):
     def save_matches(self, matches: Iterable[Match]) -> None:
         """Inserts new matches and updates the ones already stored."""
 
+class DuplicateEmailError(Exception):
+    """An account with this email already exists (raised by LoginRepository.reg_user)."""
+
+
 class LoginRepository(ABC):
+    """Accounts, by email (stored trimmed and lower-cased). Passwords arrive already hashed."""
+
     @abstractmethod
     def exists(self, email: str) -> bool: ...
 
@@ -72,10 +78,12 @@ class LoginRepository(ABC):
     def find_by_email(self, email: str) -> User | None: ...
 
     @abstractmethod
-    def reg_user(self, email: str, password: str, session_id: str) -> User: ...
+    def reg_user(self, email: str, password: str, session_id: str) -> User:
+        """Stores a new account; raises DuplicateEmailError if the email is taken.
 
-    @abstractmethod
-    def auth(self, email: str, password: str) -> User | None: ...
+        The check and the insert are one step, so two registrations racing for the
+        same email cannot both succeed.
+        """
 
 
 @dataclass(frozen=True)
