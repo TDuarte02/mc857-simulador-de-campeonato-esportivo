@@ -38,15 +38,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mc857.copaamerica.domain.model.PoolTeam
-import com.mc857.copaamerica.domain.model.TeamData
-import com.mc857.copaamerica.domain.model.TournamentFormat
+import com.mc857.copaamerica.domain.model.Draw
+import com.mc857.copaamerica.domain.model.Squad
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.CircleFab
+import com.mc857.copaamerica.ui.components.FlagImage
 import com.mc857.copaamerica.ui.components.KickerLabel
 import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
@@ -58,62 +58,55 @@ import com.mc857.copaamerica.ui.components.WidePageHeader
 import com.mc857.copaamerica.ui.components.WideTicketCard
 import kotlinx.coroutines.delay
 
-private enum class DrawState { IDLE, DRAWING, DONE }
+private const val SLOT_COUNT = 16
 
-/** Mirrors DrawSetup (mode==='normal' branch), App.tsx:1279-1421. */
+/**
+ * The groups come from GET /{sessionId}/draw; this screen only reveals them one
+ * team at a time. [onBack] is null once drawn: the call-up can no longer change.
+ */
 @Composable
 fun DrawSetupScreen(
-    team: TeamData,
-    teams: List<TeamData>,
-    onNext: (List<PoolTeam>) -> Unit,
-    onBack: () -> Unit,
+    team: Squad,
+    draw: Draw?,
+    onDraw: () -> Unit,
+    onNext: () -> Unit,
+    onBack: (() -> Unit)?,
     onReset: () -> Unit,
 ) {
-    val rivalPool = remember(team) { teams.filter { it.name != team.name }.take(TournamentFormat.CLASSIC.teamCount - 1).map { PoolTeam(it.name, it.flag) } }
-    var state by remember { mutableStateOf(DrawState.IDLE) }
-    var shuffled by remember { mutableStateOf(listOf<PoolTeam>()) }
-    var revealedCount by remember { mutableStateOf(0) }
+    var revealedCount by remember(draw) { mutableStateOf(0) }
     var infoOpen by remember { mutableStateOf(false) }
+    val userGroup = draw?.groups?.firstOrNull { group -> group.squads.any { it.id == team.id } }?.name
 
-    androidx.compose.runtime.LaunchedEffect(state) {
-        if (state == DrawState.DRAWING) {
-            shuffled.indices.forEach { i ->
+    androidx.compose.runtime.LaunchedEffect(draw) {
+        if (draw != null) {
+            repeat(SLOT_COUNT) { i ->
                 delay(if (i == 0) 180L else 90L)
                 revealedCount = i + 1
             }
-            state = DrawState.DONE
         }
     }
 
     val drawButton: @Composable (Modifier) -> Unit = { modifier ->
-        when (state) {
-            DrawState.IDLE -> RetroPrimaryButton(
-                text = "Sortear grupos",
-                onClick = {
-                    shuffled = rivalPool.shuffled()
-                    revealedCount = 0
-                    state = DrawState.DRAWING
-                },
-                modifier = modifier,
-            )
-            DrawState.DRAWING -> RetroPrimaryButton(text = "Sorteando…", enabled = false, onClick = {}, modifier = modifier)
-            DrawState.DONE -> RetroPrimaryButton(text = "Ir para escalação", onClick = { onNext(shuffled) }, modifier = modifier)
+        when {
+            draw == null -> RetroPrimaryButton(text = "Sortear grupos", onClick = onDraw, modifier = modifier)
+            revealedCount < SLOT_COUNT -> RetroPrimaryButton(text = "Sorteando…", enabled = false, onClick = {}, modifier = modifier)
+            else -> RetroPrimaryButton(text = "Ir para escalação", onClick = onNext, modifier = modifier)
         }
     }
 
     if (LocalWideLayout.current) {
         WidePage {
-            WidePageHeader("SORTEIO DO", "TORNEIO", back = "Elenco" to onBack)
+            WidePageHeader("SORTEIO DO", "TORNEIO", back = onBack?.let { "Elenco" to it })
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
                 Column(Modifier.width(320.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
                     WideTicketCard {
                         Column(Modifier.padding(22.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
                             KickerLabel("Sua seleção")
                             Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-                                Text(team.flag, fontSize = 44.sp)
+                                FlagImage(team.flag, height = 40.dp)
                                 Column {
                                     Text(team.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 30.sp, lineHeight = 30.sp, color = AppColors.ink)
-                                    Text("CABEÇA DE CHAVE · GRUPO A", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
+                                    Text(userGroup?.takeIf { revealedCount == SLOT_COUNT }?.let { "GRUPO $it" } ?: "AGUARDANDO SORTEIO", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
                                 }
                             }
                             drawButton(Modifier.fillMaxWidth())
@@ -142,21 +135,20 @@ fun DrawSetupScreen(
                         }
                         Column(Modifier.padding(10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                             repeat(4) { slot ->
-                                val isHead = groupIndex == 0 && slot == 0
-                                val (item, visible) = drawnSlot(groupIndex, slot, team, shuffled, revealedCount)
+                                val item = drawnSlot(draw, groupIndex, slot, revealedCount)
                                 Row(
                                     Modifier
                                         .fillMaxWidth()
-                                        .background(if (isHead) AppColors.ticketOrangeBg else AppColors.paper, RoundedCornerShape(8.dp))
+                                        .background(if (item?.id == team.id) AppColors.ticketOrangeBg else AppColors.paper, RoundedCornerShape(8.dp))
                                         .padding(horizontal = 10.dp, vertical = 10.dp),
                                     verticalAlignment = Alignment.CenterVertically,
                                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                                 ) {
-                                    Text(if (visible) (item?.flag ?: "🎱") else "🎱", fontSize = 20.sp)
+                                    if (item != null) FlagImage(item.flag, height = 18.dp) else Text("🎱", fontSize = 20.sp)
                                     Text(
-                                        if (visible) (item?.name?.uppercase() ?: "") else "A SORTEAR",
+                                        item?.name?.uppercase() ?: "A SORTEAR",
                                         fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 16.sp,
-                                        color = if (visible) AppColors.ink else AppColors.mutedText, maxLines = 1,
+                                        color = if (item != null) AppColors.ink else AppColors.mutedText, maxLines = 1,
                                     )
                                 }
                             }
@@ -182,7 +174,7 @@ fun DrawSetupScreen(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Box(Modifier.size(48.dp).background(AppColors.card2, RoundedCornerShape(12.dp)), contentAlignment = Alignment.Center) {
-                    Text(team.flag, fontSize = 22.sp)
+                    FlagImage(team.flag, height = 24.dp)
                 }
                 Spacer(Modifier.width(12.dp))
                 Column {
@@ -211,19 +203,18 @@ fun DrawSetupScreen(
                         }
                         Column(Modifier.padding(6.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                             repeat(4) { slot ->
-                                val isHead = groupIndex == 0 && slot == 0
-                                val (item, visible) = drawnSlot(groupIndex, slot, team, shuffled, revealedCount)
+                                val item = drawnSlot(draw, groupIndex, slot, revealedCount)
                                 Row(
                                     Modifier
                                         .fillMaxWidth()
-                                        .background(if (isHead) AppColors.ticketOrangeBg else AppColors.paper, RoundedCornerShape(6.dp))
+                                        .background(if (item?.id == team.id) AppColors.ticketOrangeBg else AppColors.paper, RoundedCornerShape(6.dp))
                                         .padding(horizontal = 6.dp, vertical = 6.dp),
                                     verticalAlignment = Alignment.CenterVertically,
                                 ) {
-                                    Text(if (visible) (item?.flag ?: "🎱") else "🎱", fontSize = 14.sp)
+                                    if (item != null) FlagImage(item.flag, height = 12.dp) else Text("🎱", fontSize = 14.sp)
                                     Spacer(Modifier.width(6.dp))
                                     Text(
-                                        if (visible) (item?.name ?: "") else "A sortear",
+                                        item?.name ?: "A sortear",
                                         fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 11.sp, color = AppColors.ink,
                                         maxLines = 1,
                                     )
@@ -277,10 +268,6 @@ fun DrawSetupScreen(
     }
 }
 
-/** Team in slot [slot] of group [groupIndex] (the user heads group A), and whether the draw has revealed it yet. */
-private fun drawnSlot(groupIndex: Int, slot: Int, team: TeamData, shuffled: List<PoolTeam>, revealedCount: Int): Pair<PoolTeam?, Boolean> {
-    if (groupIndex == 0 && slot == 0) return PoolTeam(team.name, team.flag) to true
-    val globalIndex = groupIndex * 4 + slot - 1
-    val item = shuffled.getOrNull(globalIndex)
-    return item to (item != null && globalIndex < revealedCount)
-}
+/** Squad in slot [slot] of group [groupIndex], or null while the draw has not revealed it. */
+private fun drawnSlot(draw: Draw?, groupIndex: Int, slot: Int, revealedCount: Int): Squad? =
+    draw?.groups?.getOrNull(groupIndex)?.squads?.getOrNull(slot)?.takeIf { groupIndex * 4 + slot < revealedCount }

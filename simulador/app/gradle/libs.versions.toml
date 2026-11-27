@@ -6,6 +6,7 @@ androidx-activityCompose = "1.9.3"
 androidx-core-ktx = "1.15.0"
 androidx-lifecycle = "2.8.4"
 ktor = "3.0.3"
+coil = "3.0.4"
 kotlinx-serialization = "1.7.3"
 kotlinx-coroutines = "1.9.0"
 
@@ -21,6 +22,8 @@ ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "kto
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

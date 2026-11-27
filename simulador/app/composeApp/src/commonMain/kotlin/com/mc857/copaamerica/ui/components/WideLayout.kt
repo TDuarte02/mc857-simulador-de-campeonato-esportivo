@@ -337,7 +337,7 @@ fun <T> WideGrid(
 @Composable
 fun WideFlagName(flag: String, name: String, color: Color, modifier: Modifier = Modifier, flagSize: TextUnit = 44.sp) {
     Column(modifier, horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-        Text(flag, fontSize = flagSize)
+        FlagImage(flag, height = flagSize.value.dp)
         Text(name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 20.sp, color = color, maxLines = 1)
     }
 }

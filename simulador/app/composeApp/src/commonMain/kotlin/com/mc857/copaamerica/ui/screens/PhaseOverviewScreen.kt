@@ -27,14 +27,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mc857.copaamerica.domain.logic.CampaignGame
-import com.mc857.copaamerica.domain.logic.koIndexOf
-import com.mc857.copaamerica.domain.logic.tieLoser
-import com.mc857.copaamerica.domain.logic.userCampaign
-import com.mc857.copaamerica.domain.model.DrawnBracket
-import com.mc857.copaamerica.domain.model.KnockoutTie
-import com.mc857.copaamerica.domain.model.PoolTeam
-import com.mc857.copaamerica.domain.model.TeamData
+import com.mc857.copaamerica.domain.logic.Outcome
+import com.mc857.copaamerica.domain.logic.outcomeFor
+import com.mc857.copaamerica.domain.logic.scoreFor
+import com.mc857.copaamerica.domain.logic.scoreLabel
+import com.mc857.copaamerica.domain.logic.stageReached
+import com.mc857.copaamerica.domain.model.History
+import com.mc857.copaamerica.domain.model.Match
+import com.mc857.copaamerica.domain.model.Squad
+import com.mc857.copaamerica.domain.model.Stage
 import com.mc857.copaamerica.platform.shareText
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
@@ -42,6 +43,7 @@ import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.BracketTree
+import com.mc857.copaamerica.ui.components.FlagImage
 import com.mc857.copaamerica.ui.components.KickerLabel
 import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
@@ -55,78 +57,65 @@ import com.mc857.copaamerica.ui.components.WidePage
 import com.mc857.copaamerica.ui.components.WidePageHeader
 import com.mc857.copaamerica.ui.components.WideSectionRule
 
-/** Mirrors PhaseOverview, App.tsx:2049-2210. */
+/** "Grupos" for any group game, otherwise the stage's name. */
+private fun Match.shortLabel(): String = when (stage) {
+    Stage.GROUP -> "Grupos"
+    Stage.QUARTER_FINAL -> "Quartas"
+    Stage.SEMI_FINAL -> "Semifinal"
+    Stage.THIRD_PLACE -> "3º lugar"
+    Stage.FINAL -> "Final"
+}
+
+/** The finished cup, from GET /{sessionId}/history: champion, podium and the user's campaign. */
 @Composable
 fun PhaseOverviewScreen(
-    team: TeamData,
-    bracket: DrawnBracket,
-    ctaLabel: String?,
-    onNext: (() -> Unit)?,
-    onBack: () -> Unit,
+    team: Squad,
+    history: History,
     onReset: () -> Unit,
 ) {
-    val ko = bracket.ko
-    val champion = ko.final.winner
-    val over = champion != null
+    val podiumSquads = history.podium ?: return
+    val champion = podiumSquads.champion
+    val bracket = history.bracket
 
     val rounds = listOf(
-        "Quartas de final" to ko.qf,
-        "Semifinais" to ko.sf,
-        "Disputa de 3º lugar" to listOf(ko.third),
-        "Final" to listOf(ko.final),
-    ).filter { (_, ties) -> ties.any { it.winner != null } }
-
-    val podium = listOfNotNull(
-        champion?.let { Triple("🥇", "Campeão", it) },
-        tieLoser(ko.final)?.let { Triple("🥈", "Vice-campeão", it) },
-        ko.third.winner?.let { Triple("🥉", "3º lugar", it) },
+        "Quartas de final" to bracket.quarterFinals,
+        "Semifinais" to bracket.semiFinals,
+        "Disputa de 3º lugar" to listOfNotNull(bracket.thirdPlace),
+        "Final" to listOfNotNull(bracket.final),
     )
 
-    val campaign = userCampaign(bracket, team.name)
-    val record = campaign.fold(Triple(0, 0, 0)) { (w, d, l), g ->
-        if (g.drew) Triple(w, d + 1, l) else if (g.won) Triple(w + 1, d, l) else Triple(w, d, l + 1)
-    }
+    val podium = listOf(
+        Triple("🥇", "Campeão", podiumSquads.champion),
+        Triple("🥈", "Vice-campeão", podiumSquads.runnerUp),
+        Triple("🥉", "3º lugar", podiumSquads.third),
+    )
+
+    val campaign = history.userPath
+    val record = Triple(
+        campaign.count { it.outcomeFor(team.id) == Outcome.WIN },
+        campaign.count { it.outcomeFor(team.id) == Outcome.DRAW },
+        campaign.count { it.outcomeFor(team.id) == Outcome.LOSS },
+    )
 
     fun shareResult() {
-        val champ = champion ?: return
         val lines = buildList {
             add("🏆 Copa América Histórica")
-            add("🥇 ${champ.flag} ${champ.name}")
-            tieLoser(ko.final)?.let { add("🥈 ${it.flag} ${it.name}") }
-            ko.third.winner?.let { add("🥉 ${it.flag} ${it.name}") }
+            podium.forEach { (medal, _, side) -> add("$medal ${side.name}") }
             add("")
-            add("Minha campanha com ${team.flag} ${team.name} (${record.first}V ${record.second}E ${record.third}D):")
-            campaign.forEach { add("• ${it.label} — ${it.goals}–${it.rivalGoals} ${it.rival?.flag ?: ""} ${it.rival?.name ?: ""}".trim()) }
+            add("Minha campanha com ${team.name} (${record.first}V ${record.second}E ${record.third}D):")
+            campaign.forEach { add("• ${it.shortLabel()} — ${it.scoreLabel(team.id)} ${it.opponentOf(team.id).name}") }
         }
         shareText("Copa América Histórica", lines.joinToString("\n"))
     }
 
-    val sub = when {
-        over -> "Torneio encerrado"
-        ko.sf.all { it.winner != null } -> "Semifinais concluídas"
-        else -> "Quartas de final concluídas"
-    }
-
     if (LocalWideLayout.current) {
-        val reached = when {
-            champion?.name == team.name -> "Campeã"
-            tieLoser(ko.final)?.name == team.name -> "Vice"
-            ko.third.winner?.name == team.name -> "3º lugar"
-            tieLoser(ko.third)?.name == team.name -> "4º lugar"
-            koIndexOf(ko.sf, team.name) >= 0 -> "Semifinal"
-            koIndexOf(ko.qf, team.name) >= 0 -> "Quartas"
-            else -> "Grupos"
-        }
-        val goalsFor = campaign.sumOf { it.goals }
-        val goalsAgainst = campaign.sumOf { it.rivalGoals }
+        val reached = stageReached(history)
+        val goalsFor = campaign.sumOf { it.scoreFor(team.id).first }
+        val goalsAgainst = campaign.sumOf { it.scoreFor(team.id).second }
         WidePage {
-            WidePageHeader(
-                if (over) "RESUMO DO" else "RESUMO DA", if (over) "TORNEIO" else "FASE",
-                back = "Voltar" to onBack, kicker = "$sub · Modo clássico",
-            )
+            WidePageHeader("RESUMO DO", "TORNEIO", kicker = "Torneio encerrado · Modo clássico")
 
             Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
-                if (champion != null) {
                     Column(
                         Modifier
                             .weight(1f)
@@ -145,7 +134,7 @@ fun PhaseOverviewScreen(
                             Column {
                                 Text("CAMPEÃO DA COPA AMÉRICA", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 2.sp, color = AppColors.kicker)
                                 Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Text(champion.flag, fontSize = 40.sp)
+                                    FlagImage(champion.flag, height = 40.dp)
                                     Text(" ${champion.name.uppercase()}", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 56.sp, lineHeight = 56.sp, color = AppColors.antiqueGold)
                                 }
                                 Text("MELHOR SELEÇÃO HISTÓRICA", fontFamily = displayFontFamily(), fontSize = 15.sp, color = AppColors.bodyText)
@@ -154,27 +143,14 @@ fun PhaseOverviewScreen(
                         Spacer(Modifier.height(20.dp))
                         RetroSecondaryButton("Compartilhar resultado", onClick = ::shareResult, modifier = Modifier.width(260.dp))
                     }
-                } else {
-                    Text(
-                        "Os resultados do mata-mata aparecem aqui conforme as fases forem disputadas.",
-                        fontFamily = monoFontFamily(), fontSize = 14.sp, color = AppColors.bodyText, modifier = Modifier.weight(1f),
-                    )
-                }
-                WideInkHeaderCard("Pódio", if (over) "Final" else "Parcial", Modifier.width(420.dp).fillMaxHeight()) {
-                    if (podium.isEmpty()) {
-                        Text(
-                            "Definido ao fim do mata-mata.", fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText,
-                            modifier = Modifier.padding(16.dp),
-                        )
-                    } else {
-                        PodiumBlocks(podium, Modifier.fillMaxWidth().weight(1f).padding(horizontal = 20.dp).padding(top = 20.dp))
-                    }
+                WideInkHeaderCard("Pódio", "Final", Modifier.width(420.dp).fillMaxHeight()) {
+                    PodiumBlocks(podium, Modifier.fillMaxWidth().weight(1f).padding(horizontal = 20.dp).padding(top = 20.dp))
                 }
             }
 
             if (campaign.isNotEmpty()) {
                 Spacer(Modifier.height(32.dp))
-                WideSectionRule("Sua campanha · ${team.flag} ${team.name}")
+                WideSectionRule("Sua campanha · ${team.name}")
                 Spacer(Modifier.height(16.dp))
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                     CampaignStat("Fase alcançada", reached, AppColors.antiqueGold, Modifier.weight(1.4f))
@@ -186,40 +162,30 @@ fun PhaseOverviewScreen(
                     CampaignStat("Saldo", (goalsFor - goalsAgainst).let { if (it > 0) "+$it" else if (it < 0) "−${-it}" else "0" }, AppColors.ink, Modifier.weight(1f))
                 }
                 Spacer(Modifier.height(16.dp))
-                WideGrid(campaign, minCellWidth = 200.dp, gap = 12.dp) { game -> CampaignGameCard(game) }
-            }
-
-            if (rounds.isNotEmpty()) {
-                Spacer(Modifier.height(32.dp))
-                WideSectionRule("Mata-mata")
-                Spacer(Modifier.height(16.dp))
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
-                    Column(
-                        Modifier
-                            .weight(1f)
-                            .hardShadow(cornerRadius = 16.dp)
-                            .background(AppColors.cream, RoundedCornerShape(16.dp))
-                            .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(16.dp))
-                            .padding(20.dp),
-                    ) {
-                        BracketTree(qf = ko.qf, sf = ko.sf, final = ko.final, highlightName = team.name, large = true)
-                    }
-                    if (ko.third.winner != null) {
-                        Column(Modifier.width(240.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            WideCaption("Disputa de 3º lugar")
-                            TieCard(ko.third, "3º lugar", highlightName = team.name, large = true)
-                        }
-                    }
-                }
+                WideGrid(campaign, minCellWidth = 200.dp, gap = 12.dp) { game -> CampaignGameCard(game, team.id) }
             }
 
             Spacer(Modifier.height(32.dp))
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.End)) {
-                if (ctaLabel != null && onNext != null) {
-                    RetroSecondaryButton("Novo torneio", onClick = onReset, modifier = Modifier.width(260.dp))
-                    RetroPrimaryButton(ctaLabel, onClick = onNext, modifier = Modifier.width(300.dp))
-                } else {
-                    RetroPrimaryButton("Novo torneio", onClick = onReset, modifier = Modifier.width(300.dp))
+            WideSectionRule("Mata-mata")
+            Spacer(Modifier.height(16.dp))
+            Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+                Column(
+                    Modifier
+                        .weight(1f)
+                        .hardShadow(cornerRadius = 16.dp)
+                        .background(AppColors.cream, RoundedCornerShape(16.dp))
+                        .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(16.dp))
+                        .padding(20.dp),
+                ) {
+                    BracketTree(bracket, userSquadId = team.id, large = true)
+                }
+                // As wide as a large TieCard, so the card ends on the page's right edge.
+                Column(Modifier.width(200.dp).fillMaxHeight(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    WideCaption("Disputa de 3º lugar")
+                    TieCard(bracket.thirdPlace, "3º lugar", userSquadId = team.id, large = true)
+                    // Pushes the button down to line up with the bottom of the bracket.
+                    Spacer(Modifier.weight(1f))
+                    RetroPrimaryButton("Novo torneio", onClick = onReset, modifier = Modifier.fillMaxWidth())
                 }
             }
         }
@@ -227,9 +193,8 @@ fun PhaseOverviewScreen(
     }
 
     Column(Modifier.fillMaxSize()) {
-        TopBar(title = "Resumo da fase", sub = "$sub · Modo clássico", onBack = onBack, onReset = onReset)
+        TopBar(title = "Resumo do torneio", sub = "Torneio encerrado · Modo clássico", onReset = onReset)
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).retroPaper().padding(20.dp)) {
-            if (champion != null) {
                 Column(
                     Modifier
                         .fillMaxWidth()
@@ -246,14 +211,13 @@ fun PhaseOverviewScreen(
                     Text("🏆", fontSize = 40.sp)
                     Text("CAMPEÃO DA COPA AMÉRICA", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(champion.flag, fontSize = 26.sp)
+                        FlagImage(champion.flag, height = 26.dp)
                         Text(" ${champion.name.uppercase()}", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 30.sp, color = AppColors.antiqueGold)
                     }
                     Text("MELHOR SELEÇÃO HISTÓRICA", fontFamily = displayFontFamily(), fontSize = 12.sp, color = AppColors.bodyText)
                     Spacer(Modifier.height(12.dp))
                     RetroSecondaryButton("Compartilhar resultado", onClick = ::shareResult, modifier = Modifier.fillMaxWidth())
                 }
-            }
 
             KickerLabel("Pódio", modifier = Modifier.padding(bottom = 8.dp))
             Column(
@@ -280,32 +244,28 @@ fun PhaseOverviewScreen(
                         .background(AppColors.cream, RoundedCornerShape(16.dp))
                         .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(16.dp)),
                 ) {
-                    CampaignRows(campaign)
+                    CampaignRows(campaign, team.id)
                 }
             }
 
             rounds.forEach { (label, ties) ->
                 KickerLabel(label, modifier = Modifier.padding(bottom = 8.dp))
                 Column(Modifier.fillMaxWidth().padding(bottom = 20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    ties.filter { it.winner != null }.forEach { tie -> ResultRow(tie, team.name) }
+                    ties.forEach { tie -> ResultRow(tie, team.id) }
                 }
             }
         }
 
-        Column(Modifier.background(AppColors.paper).padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            if (ctaLabel != null && onNext != null) {
-                RetroPrimaryButton(ctaLabel, onClick = onNext, modifier = Modifier.fillMaxWidth())
-                RetroSecondaryButton("Novo torneio", onClick = onReset, modifier = Modifier.fillMaxWidth())
-            } else {
-                RetroPrimaryButton("Novo torneio", onClick = onReset, modifier = Modifier.fillMaxWidth())
-            }
+        Column(Modifier.background(AppColors.paper).padding(20.dp)) {
+            RetroPrimaryButton("Novo torneio", onClick = onReset, modifier = Modifier.fillMaxWidth())
         }
     }
 }
 
 @Composable
-private fun ResultRow(tie: KnockoutTie, highlightName: String) {
-    val isUserTie = tie.home?.name == highlightName || tie.away?.name == highlightName
+private fun ResultRow(tie: Match, userSquadId: String) {
+    val isUserTie = tie.involves(userSquadId)
+    val result = tie.result
     Column(
         Modifier
             .fillMaxWidth()
@@ -313,42 +273,45 @@ private fun ResultRow(tie: KnockoutTie, highlightName: String) {
             .border(BorderStroke(2.dp, if (isUserTie) AppColors.antiqueGold else AppColors.paperBorder), RoundedCornerShape(12.dp)),
     ) {
         Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
-            SideLabel(tie.home, tie.winner, Modifier.weight(1f), TextAlignStart = true)
-            Text("${tie.homeGoals ?: "-"} – ${tie.awayGoals ?: "-"}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, color = AppColors.ink)
-            SideLabel(tie.away, tie.winner, Modifier.weight(1f), TextAlignStart = false)
+            SideLabel(tie.home, result?.winner == tie.home.id, Modifier.weight(1f), alignStart = true)
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text("${result?.homeGoals ?: "-"} – ${result?.awayGoals ?: "-"}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, color = AppColors.ink)
+                result?.penalties?.let {
+                    Text("${it.home}–${it.away} pên.", fontFamily = monoFontFamily(), fontSize = 9.sp, color = AppColors.mutedText)
+                }
+            }
+            SideLabel(tie.away, result?.winner == tie.away.id, Modifier.weight(1f), alignStart = false)
         }
     }
 }
 
 @Composable
-private fun SideLabel(side: com.mc857.copaamerica.domain.model.PoolTeam?, winner: com.mc857.copaamerica.domain.model.PoolTeam?, modifier: Modifier, TextAlignStart: Boolean) {
-    val isWinner = winner != null && winner.name == side?.name
-    val color = if (isWinner) AppColors.ink else AppColors.mutedText
+private fun SideLabel(side: Squad, isWinner: Boolean, modifier: Modifier, alignStart: Boolean) {
     Row(
         modifier,
-        horizontalArrangement = if (TextAlignStart) Arrangement.Start else Arrangement.End,
+        horizontalArrangement = if (alignStart) Arrangement.Start else Arrangement.End,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        if (TextAlignStart) {
-            Text(side?.flag ?: "🎱", fontSize = 15.sp)
+        if (alignStart) {
+            FlagImage(side.flag, height = 14.dp)
             Spacer(Modifier.width(4.dp))
         }
-        Text(side?.name?.uppercase() ?: "A DEFINIR", fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 12.sp, color = color, maxLines = 1)
-        if (!TextAlignStart) {
+        Text(side.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 12.sp, color = if (isWinner) AppColors.ink else AppColors.mutedText, maxLines = 1)
+        if (!alignStart) {
             Spacer(Modifier.width(4.dp))
-            Text(side?.flag ?: "🎱", fontSize = 15.sp)
+            FlagImage(side.flag, height = 14.dp)
         }
     }
 }
 
 @Composable
-private fun PodiumRows(podium: List<Triple<String, String, PoolTeam>>) {
+private fun PodiumRows(podium: List<Triple<String, String, Squad>>) {
     podium.forEachIndexed { i, (medal, label, side) ->
         if (i != 0) Box(Modifier.fillMaxWidth().height(1.dp).background(AppColors.rowBorder))
         Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
             Text(medal, fontSize = 18.sp)
             Spacer(Modifier.width(8.dp))
-            Text(side.flag, fontSize = 16.sp)
+            FlagImage(side.flag, height = 14.dp)
             Spacer(Modifier.width(8.dp))
             Text(side.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink, modifier = Modifier.weight(1f), maxLines = 1)
             Text(label.uppercase(), fontFamily = monoFontFamily(), fontSize = 10.sp, letterSpacing = 1.sp, color = AppColors.mutedText)
@@ -356,30 +319,38 @@ private fun PodiumRows(podium: List<Triple<String, String, PoolTeam>>) {
     }
 }
 
+private val Outcome.letter get() = when (this) { Outcome.WIN -> "V"; Outcome.DRAW -> "E"; Outcome.LOSS -> "D" }
+
+private val Outcome.color get() = when (this) {
+    Outcome.WIN -> AppColors.ticketGreen
+    Outcome.DRAW -> AppColors.mutedText
+    Outcome.LOSS -> AppColors.lossRed
+}
+
 @Composable
-private fun CampaignRows(campaign: List<CampaignGame>) {
+private fun CampaignRows(campaign: List<Match>, userSquadId: String) {
     campaign.forEachIndexed { i, game ->
+        val outcome = game.outcomeFor(userSquadId)
+        val rival = game.opponentOf(userSquadId)
         if (i != 0) Box(Modifier.fillMaxWidth().height(1.dp).background(AppColors.rowBorder))
         Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text(
-                if (game.drew) "E" else if (game.won) "V" else "D",
-                fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp,
-                color = if (game.drew) AppColors.mutedText else if (game.won) AppColors.ticketGreen else AppColors.lossRed,
-            )
+            Text(outcome.letter, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, color = outcome.color)
             Spacer(Modifier.width(8.dp))
-            Text(game.label.uppercase(), fontFamily = monoFontFamily(), fontSize = 10.sp, letterSpacing = 1.sp, color = AppColors.mutedText, modifier = Modifier.width(64.dp))
+            Text(game.shortLabel().uppercase(), fontFamily = monoFontFamily(), fontSize = 10.sp, letterSpacing = 1.sp, color = AppColors.mutedText, modifier = Modifier.width(64.dp))
+            FlagImage(rival.flag, height = 12.dp)
+            Spacer(Modifier.width(6.dp))
             Text(
-                "${game.rival?.flag ?: ""} ${game.rival?.name ?: "A definir"}", fontFamily = displayFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp,
+                rival.name, fontFamily = displayFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp,
                 color = AppColors.bodyText, modifier = Modifier.weight(1f), maxLines = 1,
             )
-            Text("${game.goals}–${game.rivalGoals}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, color = AppColors.ink)
+            Text(game.scoreLabel(userSquadId), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, color = AppColors.ink)
         }
     }
 }
 
 /** 2nd · 1st · 3rd blocks of increasing/decreasing height, like a real podium. */
 @Composable
-private fun PodiumBlocks(podium: List<Triple<String, String, PoolTeam>>, modifier: Modifier) {
+private fun PodiumBlocks(podium: List<Triple<String, String, Squad>>, modifier: Modifier) {
     // podium is ordered champion, runner-up, third; draw it 2nd · 1st · 3rd.
     val order = listOf(1, 0, 2).mapNotNull { podium.getOrNull(it)?.let { entry -> it to entry } }
     Row(modifier, verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -391,7 +362,7 @@ private fun PodiumBlocks(podium: List<Triple<String, String, PoolTeam>>, modifie
                 else -> 64.dp to Color(0xFFB4693C)
             }
             Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(side.flag, fontSize = 36.sp)
+                FlagImage(side.flag, height = 34.dp)
                 Text(side.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 16.sp, color = AppColors.ink, maxLines = 1)
                 Text(label.uppercase(), fontFamily = monoFontFamily(), fontSize = 10.sp, letterSpacing = 1.sp, color = AppColors.mutedText, maxLines = 1)
                 Spacer(Modifier.height(8.dp))
@@ -424,9 +395,15 @@ private fun CampaignStat(label: String, value: String, color: Color, modifier: M
 }
 
 @Composable
-private fun CampaignGameCard(game: CampaignGame) {
-    val color = if (game.drew) AppColors.kicker else if (game.won) AppColors.ticketGreen else AppColors.lossRed
-    val bg = if (game.drew) AppColors.ticketOrangeBg else if (game.won) AppColors.winGreenBg else AppColors.lossRedBg
+private fun CampaignGameCard(game: Match, userSquadId: String) {
+    val outcome = game.outcomeFor(userSquadId)
+    val rival = game.opponentOf(userSquadId)
+    val color = if (outcome == Outcome.DRAW) AppColors.kicker else outcome.color
+    val bg = when (outcome) {
+        Outcome.WIN -> AppColors.winGreenBg
+        Outcome.DRAW -> AppColors.ticketOrangeBg
+        Outcome.LOSS -> AppColors.lossRedBg
+    }
     Row(
         Modifier
             .fillMaxWidth()
@@ -436,15 +413,17 @@ private fun CampaignGameCard(game: CampaignGame) {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        Text(game.rival?.flag ?: "🎱", fontSize = 28.sp)
+        FlagImage(rival.flag, height = 24.dp)
         Column(Modifier.weight(1f)) {
-            Text(game.label.uppercase(), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.sp, color = AppColors.mutedText)
-            Text(game.rival?.name?.uppercase() ?: "A DEFINIR", fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 16.sp, color = AppColors.ink, maxLines = 1)
+            Text(game.shortLabel().uppercase(), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.sp, color = AppColors.mutedText)
+            Text(rival.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 16.sp, color = AppColors.ink, maxLines = 1)
         }
         Column(horizontalAlignment = Alignment.End) {
-            Text("${game.goals}–${game.rivalGoals}", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 24.sp, color = AppColors.ink)
-            Text(if (game.drew) "EMPATE" else if (game.won) "VITÓRIA" else "DERROTA", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.sp, color = color)
+            val (own, other) = game.scoreFor(userSquadId)
+            Text("$own–$other", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 24.sp, color = AppColors.ink)
+            val verdict = when (outcome) { Outcome.WIN -> "VITÓRIA"; Outcome.DRAW -> "EMPATE"; Outcome.LOSS -> "DERROTA" }
+            val shootout = if (game.result?.penalties != null) " NOS PÊNALTIS" else ""
+            Text(verdict + shootout, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.sp, color = color)
         }
     }
 }
-
