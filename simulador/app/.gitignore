@@ -10,3 +10,4 @@ captures/
 iosApp/build/
 iosApp/Pods/
 iosApp/.xcode.env.local
+.netlify/

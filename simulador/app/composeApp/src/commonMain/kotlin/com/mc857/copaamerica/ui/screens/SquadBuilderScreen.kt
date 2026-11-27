@@ -38,24 +38,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mc857.copaamerica.domain.logic.balancedSquad
-import com.mc857.copaamerica.domain.logic.currentSquad
-import com.mc857.copaamerica.domain.logic.legendsSquad
-import com.mc857.copaamerica.domain.logic.playerAttrs
-import com.mc857.copaamerica.domain.logic.randomSquad
-import com.mc857.copaamerica.domain.logic.roleColor
-import com.mc857.copaamerica.domain.logic.secondaryRole
+import com.mc857.copaamerica.domain.logic.SQUAD_SIZE
+import com.mc857.copaamerica.domain.logic.SQUAD_TOTALS
 import com.mc857.copaamerica.domain.model.Player
 import com.mc857.copaamerica.domain.model.PosFilter
-import com.mc857.copaamerica.domain.model.SlotCat
-import com.mc857.copaamerica.domain.model.SlotRole
-import com.mc857.copaamerica.domain.model.TeamData
+import com.mc857.copaamerica.domain.model.Position
+import com.mc857.copaamerica.domain.model.Preset
+import com.mc857.copaamerica.domain.model.Squad
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
@@ -63,10 +57,12 @@ import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.ChevronDownIcon
 import com.mc857.copaamerica.ui.components.CircleFab
+import com.mc857.copaamerica.ui.components.FlagImage
 import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.PlayTriangle
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
 import com.mc857.copaamerica.ui.components.RoleChip
+import com.mc857.copaamerica.ui.components.positionColor
 import com.mc857.copaamerica.ui.components.TopBar
 import com.mc857.copaamerica.ui.components.WideBackLink
 import com.mc857.copaamerica.ui.components.WideCaption
@@ -78,51 +74,40 @@ import com.mc857.copaamerica.ui.components.WideProgressBar
 import com.mc857.copaamerica.ui.components.WideSearchField
 import com.mc857.copaamerica.ui.components.WideTitle
 
-private val SQUAD_TOTALS = mapOf(SlotCat.GK to 3, SlotCat.DEF to 8, SlotCat.MID to 8, SlotCat.FW to 7)
+private val SECTOR_LABELS = mapOf(Position.GK to "Goleiros", Position.DEF to "Defensores", Position.MID to "Meio-campo", Position.FW to "Atacantes")
 
-/** Auto-fill options: title, hint, squad builder. */
-private val SQUAD_PRESETS: List<Triple<String, String, (List<Player>) -> List<Player>>> = listOf(
-    Triple("Elenco Atual", "Os 26 convocados mais recentes", ::currentSquad),
-    Triple("Seleção das Lendas", "Os 26 maiores da história", ::legendsSquad),
-    Triple("Elenco Equilibrado", "18 atuais + 8 lendas", ::balancedSquad),
-    Triple("Aleatório", "Sorteia cada posição", ::randomSquad),
-)
-
-private val SECTOR_LABELS = mapOf(SlotCat.GK to "Goleiros", SlotCat.DEF to "Defensores", SlotCat.MID to "Meio-campo", SlotCat.FW to "Atacantes")
-
-private fun sectorColor(pos: SlotCat) = Color(roleColor(SlotRole.entries.first { it.sector == pos }))
-
-/** Mirrors SquadBuilder, App.tsx:925-1144. */
+/** Picks the 26-player call-up from GET /{squad}/players; presets come from the API too. */
 @Composable
 fun SquadBuilderScreen(
-    team: TeamData,
+    team: Squad,
     pool: List<Player>,
-    onNext: (List<Player>) -> Unit,
+    presets: List<Preset>,
+    initialSelection: Set<Int>,
+    onPreset: (String, (List<Player>) -> Unit) -> Unit,
+    onNext: (Set<Int>) -> Unit,
     onBack: () -> Unit,
     onReset: () -> Unit,
 ) {
-    var selected by remember { mutableStateOf(setOf<Int>()) }
+    var selected by remember { mutableStateOf(initialSelection) }
     var filter by remember { mutableStateOf(PosFilter.ALL) }
     var search by remember { mutableStateOf("") }
     var sortByRating by remember { mutableStateOf(true) }
     var sortMenuOpen by remember { mutableStateOf(false) }
     var presetSheetOpen by remember { mutableStateOf(false) }
 
-    fun posOf(id: Int) = pool.firstOrNull { it.id == id }?.pos
-    val counts = SlotCat.entries.associateWith { pos -> selected.count { posOf(it) == pos } }
+    fun posOf(id: Int) = pool.firstOrNull { it.id == id }?.position
+    val counts = Position.entries.associateWith { pos -> selected.count { posOf(it) == pos } }
     val complete = SQUAD_TOTALS.all { (pos, total) -> counts[pos] == total }
 
-    fun applySquad(players: List<Player>) { selected = players.map { it.id }.toSet() }
-    fun canAdd(player: Player) = player.id !in selected && (counts[player.pos] ?: 0) < (SQUAD_TOTALS[player.pos] ?: 0)
+    fun applyPreset(presetId: String) = onPreset(presetId) { players -> selected = players.map { it.id }.toSet() }
+    fun canAdd(player: Player) = player.id !in selected && (counts[player.position] ?: 0) < (SQUAD_TOTALS[player.position] ?: 0)
     fun toggle(player: Player) {
         selected = if (player.id in selected) selected - player.id else if (canAdd(player)) selected + player.id else selected
     }
 
     val visible = pool
-        .filter { (filter == PosFilter.ALL || it.pos.name == filter.name) && it.name.contains(search, ignoreCase = true) }
-        .sortedWith(if (sortByRating) compareByDescending<Player> { it.rating }.thenBy { it.name } else compareBy { it.name })
-
-    val squad = pool.filter { it.id in selected }
+        .filter { (filter == PosFilter.ALL || it.position.name == filter.name) && it.name.contains(search, ignoreCase = true) }
+        .sortedWith(if (sortByRating) compareByDescending<Player> { it.overall }.thenBy { it.name } else compareBy { it.name })
 
     if (LocalWideLayout.current) {
         WideSquadBuilder(
@@ -130,15 +115,15 @@ fun SquadBuilderScreen(
             filter = filter, onFilter = { filter = it }, search = search, onSearch = { search = it },
             sortByRating = sortByRating, onSortByRating = { sortByRating = it },
             canAdd = ::canAdd, onToggle = ::toggle,
-            onPreset = { preset -> applySquad(preset(pool)) }, onClear = { selected = emptySet() },
-            onConfirm = { onNext(squad) }, onBack = onBack,
+            presets = presets, onPreset = ::applyPreset, onClear = { selected = emptySet() },
+            onConfirm = { onNext(selected) }, onBack = onBack,
         )
         return
     }
 
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().retroPaper()) {
-        TopBar(title = "Montar elenco", sub = "${team.flag} ${team.name} · Todos os tempos", onBack = onBack, onReset = onReset)
+        TopBar(title = "Montar elenco", sub = "${team.name} · Convocação", onBack = onBack, onReset = onReset)
 
         Column(Modifier.background(AppColors.paper).padding(horizontal = 16.dp, vertical = 10.dp)) {
             Box(
@@ -163,7 +148,8 @@ fun SquadBuilderScreen(
             Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                 PosFilter.entries.forEach { tab ->
                     val active = filter == tab
-                    val label = if (tab == PosFilter.ALL) "TODOS" else "${tab.name} ${counts[SlotCat.valueOf(tab.name)] ?: 0}/${SQUAD_TOTALS[SlotCat.valueOf(tab.name)] ?: 0}"
+                    val position = Position.entries.firstOrNull { it.name == tab.name }
+                    val label = position?.let { "${it.label} ${counts[it] ?: 0}/${SQUAD_TOTALS[it]}" } ?: "TODOS"
                     Box(
                         Modifier
                             .weight(1f)
@@ -231,9 +217,9 @@ fun SquadBuilderScreen(
 
         Column(Modifier.background(AppColors.paper).padding(20.dp)) {
             RetroPrimaryButton(
-                text = if (complete) "Confirmar elenco · 26/26" else "${selected.size}/26 selecionados",
+                text = if (complete) "Confirmar elenco · $SQUAD_SIZE/$SQUAD_SIZE" else "${selected.size}/$SQUAD_SIZE selecionados",
                 enabled = complete,
-                onClick = { onNext(squad) },
+                onClick = { onNext(selected) },
                 modifier = Modifier.fillMaxWidth(),
             )
         }
@@ -249,14 +235,13 @@ fun SquadBuilderScreen(
     } // Box
 
     if (presetSheetOpen) {
-        val presets = SQUAD_PRESETS.map { (title, hint, build) -> Triple(title, hint) { build(pool) } }
         ModalBottomSheet(onDismissRequest = { presetSheetOpen = false }, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
             Column(Modifier.padding(horizontal = 20.dp).padding(bottom = 24.dp)) {
                 Text(
                     "MONTAR ELENCO AUTOMATICAMENTE", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold,
                     fontSize = 12.sp, letterSpacing = 1.sp, color = AppColors.kicker, modifier = Modifier.padding(bottom = 12.dp),
                 )
-                presets.forEach { (title, hint, apply) ->
+                presets.forEach { preset ->
                     Row(
                         Modifier
                             .fillMaxWidth()
@@ -264,14 +249,14 @@ fun SquadBuilderScreen(
                             .background(AppColors.cream, RoundedCornerShape(12.dp))
                             .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(12.dp))
                             .clip(RoundedCornerShape(12.dp))
-                            .clickable { applySquad(apply()); presetSheetOpen = false }
+                            .clickable { presetSheetOpen = false; applyPreset(preset.id) }
                             .padding(horizontal = 16.dp, vertical = 12.dp),
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Column {
-                            Text(title, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 15.sp, color = AppColors.ink)
-                            Text(hint, fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.mutedText)
+                            Text(preset.name, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 15.sp, color = AppColors.ink)
+                            Text(preset.description, fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.mutedText)
                         }
                         PlayTriangle(color = AppColors.antiqueGold, size = 12.dp)
                     }
@@ -290,47 +275,27 @@ private fun PlayerCard(player: Player, selected: Boolean, dimmed: Boolean, onCli
             .border(BorderStroke(2.dp, if (selected) AppColors.antiqueGold else AppColors.paperBorder), RoundedCornerShape(12.dp))
             .clip(RoundedCornerShape(12.dp))
             .clickable(onClick = onClick)
-            .padding(10.dp)
-            .then(if (dimmed) Modifier else Modifier),
+            .alpha(if (dimmed) 0.45f else 1f)
+            .padding(10.dp),
     ) {
-        Box(
-            Modifier
-                .fillMaxWidth()
-                .height(56.dp)
-                .background(AppColors.card2, RoundedCornerShape(8.dp)),
-            contentAlignment = Alignment.Center,
-        ) {
-            Text("⚽", fontSize = 22.sp, modifier = Modifier.align(Alignment.Center))
-            Box(Modifier.align(Alignment.BottomEnd).background(AppColors.ink.copy(alpha = 0.85f), RoundedCornerShape(6.dp)).padding(horizontal = 4.dp, vertical = 1.dp)) {
-                Text("${player.rating}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, color = AppColors.paper)
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
+            RoleChip(player.position.label, positionColor(player.position))
+            Box(Modifier.background(AppColors.ink.copy(alpha = 0.85f), RoundedCornerShape(6.dp)).padding(horizontal = 6.dp, vertical = 2.dp)) {
+                Text("${player.overall}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, color = AppColors.paper)
             }
         }
-        Spacer(Modifier.height(6.dp))
-        Text(player.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink, maxLines = 1)
-        Row(Modifier.padding(top = 2.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-            Text(player.era, fontFamily = monoFontFamily(), fontSize = 9.sp, color = AppColors.bodyText)
-            Spacer(Modifier.weight(1f))
-            RoleChip(player.role.name, androidx.compose.ui.graphics.Color(roleColor(player.role)))
-            secondaryRole(player.role)?.let {
-                Text("($it)", fontFamily = monoFontFamily(), fontSize = 9.sp, color = AppColors.kicker)
-            }
-        }
-        playerAttrs(player)?.let { attrs ->
-            Text(
-                "${attrs.keys.first} ${attrs.values.first} · ${attrs.keys.second} ${attrs.values.second} · ${attrs.keys.third} ${attrs.values.third}",
-                fontFamily = monoFontFamily(), fontSize = 9.sp, color = AppColors.mutedText, maxLines = 1,
-                modifier = Modifier.padding(top = 4.dp),
-            )
-        }
+        Spacer(Modifier.height(8.dp))
+        Text(player.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 14.sp, color = AppColors.ink, maxLines = 1)
+        Text("${player.age} anos", fontFamily = monoFontFamily(), fontSize = 10.sp, color = AppColors.bodyText, modifier = Modifier.padding(top = 2.dp))
     }
 }
 
 @Composable
 private fun WideSquadBuilder(
-    team: TeamData,
+    team: Squad,
     visible: List<Player>,
     selected: Set<Int>,
-    counts: Map<SlotCat, Int>,
+    counts: Map<Position, Int>,
     complete: Boolean,
     filter: PosFilter,
     onFilter: (PosFilter) -> Unit,
@@ -340,13 +305,18 @@ private fun WideSquadBuilder(
     onSortByRating: (Boolean) -> Unit,
     canAdd: (Player) -> Boolean,
     onToggle: (Player) -> Unit,
-    onPreset: ((List<Player>) -> List<Player>) -> Unit,
+    presets: List<Preset>,
+    onPreset: (String) -> Unit,
     onClear: () -> Unit,
     onConfirm: () -> Unit,
     onBack: () -> Unit,
 ) {
     WidePage {
-        WideBackLink("${team.flag} ${team.name} · Todos os tempos", onBack)
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            WideBackLink("Seleções", onBack)
+            FlagImage(team.flag, height = 18.dp)
+            WideCaption(team.name)
+        }
         Spacer(Modifier.height(4.dp))
         WideTitle("MONTAR", "ELENCO")
         Spacer(Modifier.height(24.dp))
@@ -356,10 +326,10 @@ private fun WideSquadBuilder(
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     WideCaption("Posição")
                     PosFilter.entries.forEach { tab ->
-                        val pos = SlotCat.entries.firstOrNull { it.name == tab.name }
+                        val pos = Position.entries.firstOrNull { it.name == tab.name }
                         WideSidebarTab(
                             label = pos?.let { SECTOR_LABELS.getValue(it) } ?: "Todos",
-                            count = if (pos == null) "${selected.size}/26" else "${counts[pos] ?: 0}/${SQUAD_TOTALS.getValue(pos)}",
+                            count = if (pos == null) "${selected.size}/$SQUAD_SIZE" else "${counts[pos] ?: 0}/${SQUAD_TOTALS.getValue(pos)}",
                             active = filter == tab,
                             onClick = { onFilter(tab) },
                         )
@@ -367,18 +337,18 @@ private fun WideSquadBuilder(
                 }
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     WideCaption("Montar automaticamente")
-                    SQUAD_PRESETS.forEach { (title, hint, build) ->
+                    presets.forEach { preset ->
                         Column(
                             Modifier
                                 .fillMaxWidth()
                                 .background(AppColors.cream, RoundedCornerShape(12.dp))
                                 .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(12.dp))
                                 .clip(RoundedCornerShape(12.dp))
-                                .clickable { onPreset(build) }
+                                .clickable { onPreset(preset.id) }
                                 .padding(horizontal = 14.dp, vertical = 10.dp),
                         ) {
-                            Text(title, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 17.sp, color = AppColors.ink)
-                            Text(hint, fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.bodyText)
+                            Text(preset.name, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 17.sp, color = AppColors.ink)
+                            Text(preset.description, fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.bodyText)
                         }
                     }
                     Box(
@@ -402,16 +372,14 @@ private fun WideSquadBuilder(
                 Text("${visible.size} jogadores · clique para selecionar", fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText)
                 WideGrid(visible, minCellWidth = 180.dp, gap = 12.dp) { player ->
                     val isSel = player.id in selected
-                    Box(Modifier.alpha(if (!isSel && !canAdd(player)) 0.45f else 1f)) {
-                        PlayerCard(player = player, selected = isSel, dimmed = false, onClick = { onToggle(player) })
-                    }
+                    PlayerCard(player = player, selected = isSel, dimmed = !isSel && !canAdd(player), onClick = { onToggle(player) })
                 }
             }
 
-            WideInkHeaderCard("Seu elenco", "${selected.size}/26", Modifier.width(290.dp)) {
+            WideInkHeaderCard("Seu elenco", "${selected.size}/$SQUAD_SIZE", Modifier.width(290.dp)) {
                 Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                    WideProgressBar(selected.size / 26f, AppColors.antiqueGold, height = 10.dp)
-                    SlotCat.entries.forEach { pos ->
+                    WideProgressBar(selected.size / SQUAD_SIZE.toFloat(), AppColors.antiqueGold, height = 10.dp)
+                    Position.entries.forEach { pos ->
                         val count = counts[pos] ?: 0
                         val total = SQUAD_TOTALS.getValue(pos)
                         Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -419,11 +387,11 @@ private fun WideSquadBuilder(
                                 Text(SECTOR_LABELS.getValue(pos).uppercase(), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.sp, color = AppColors.ink)
                                 Text("$count/$total", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, color = if (count == total) AppColors.ticketGreenText else AppColors.kicker)
                             }
-                            WideProgressBar(count / total.toFloat(), sectorColor(pos), height = 6.dp)
+                            WideProgressBar(count / total.toFloat(), positionColor(pos), height = 6.dp)
                         }
                     }
                     RetroPrimaryButton(
-                        text = if (complete) "Confirmar elenco" else "Faltam ${26 - selected.size} jogadores",
+                        text = if (complete) "Confirmar elenco" else "Faltam ${SQUAD_SIZE - selected.size} jogadores",
                         enabled = complete,
                         onClick = onConfirm,
                         modifier = Modifier.fillMaxWidth(),

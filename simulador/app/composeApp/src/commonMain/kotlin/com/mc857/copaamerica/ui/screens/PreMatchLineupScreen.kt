@@ -43,17 +43,19 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mc857.copaamerica.domain.data.FIELD_FORMATIONS
-import com.mc857.copaamerica.domain.logic.defaultSquad
+import com.mc857.copaamerica.domain.logic.FIELD_FORMATIONS
+import com.mc857.copaamerica.domain.logic.eligibleFor
+import com.mc857.copaamerica.domain.logic.randomLineup
 import com.mc857.copaamerica.domain.logic.remapLineup
-import com.mc857.copaamerica.domain.logic.secondaryRole
-import com.mc857.copaamerica.domain.model.CardStatus
+import com.mc857.copaamerica.domain.model.Availability
 import com.mc857.copaamerica.domain.model.FormKey
-import com.mc857.copaamerica.domain.model.Phase
+import com.mc857.copaamerica.domain.model.Match
 import com.mc857.copaamerica.domain.model.Player
+import com.mc857.copaamerica.domain.model.Position
 import com.mc857.copaamerica.domain.model.SlotCfg
-import com.mc857.copaamerica.domain.model.PoolTeam
-import com.mc857.copaamerica.domain.model.TeamData
+import com.mc857.copaamerica.domain.model.Squad
+import com.mc857.copaamerica.domain.model.UnavailablePlayer
+import com.mc857.copaamerica.domain.model.UnavailableReason
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
@@ -61,6 +63,7 @@ import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.CircleFab
 import com.mc857.copaamerica.ui.components.DieFiveIcon
+import com.mc857.copaamerica.ui.components.FlagImage
 import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
 import com.mc857.copaamerica.ui.components.RetroSecondaryButton
@@ -73,15 +76,12 @@ import com.mc857.copaamerica.ui.components.WidePage
 import com.mc857.copaamerica.ui.components.WidePageHeader
 import com.mc857.copaamerica.ui.components.WideTicketCard
 
-/** Mirrors PreMatchLineup, App.tsx:1642-1810. */
+/** Picks the XI for [match]; who is fit comes from GET /{sessionId}/available-players. */
 @Composable
 fun PreMatchLineupScreen(
-    team: TeamData,
-    opponent: PoolTeam,
-    squad: List<Player>,
-    pool: List<Player>,
-    phase: Phase,
-    cards: Map<Int, CardStatus>,
+    team: Squad,
+    match: Match,
+    availability: Availability,
     lineup: List<Player?>,
     formKey: FormKey,
     onLineupChange: (List<Player?>) -> Unit,
@@ -90,14 +90,12 @@ fun PreMatchLineupScreen(
     onBack: () -> Unit,
     onReset: () -> Unit,
 ) {
-    val effectiveSquad = squad.ifEmpty { defaultSquad(pool) }
+    val opponent = match.opponentOf(team.id)
     val slots = FIELD_FORMATIONS.getValue(formKey)
     val sized = List(slots.size) { lineup.getOrNull(it) }
     var activeSlot by remember { mutableStateOf<Int?>(null) }
 
-    val suspendedIds = effectiveSquad.filter { cards[it.id] == CardStatus.RED }.map { it.id }.toSet()
-    val yellowIds = effectiveSquad.filter { cards[it.id] == CardStatus.YELLOW }.map { it.id }.toSet()
-    val availableSquad = effectiveSquad.filterNot { it.id in suspendedIds }
+    val yellowIds = availability.available.filter { it.yellowCards > 0 }.map { it.id }.toSet()
     val selectedIds = sized.filterNotNull().map { it.id }.toSet()
     val selectedCount = sized.count { it != null }
 
@@ -107,12 +105,9 @@ fun PreMatchLineupScreen(
         activeSlot = null
     }
 
-    val eligiblePlayers = activeSlot?.let { idx ->
-        val cat = slots[idx].cat
-        val free = availableSquad.filter { it.pos == cat && it.id !in selectedIds }
-        val suspended = effectiveSquad.filter { it.pos == cat && it.id in suspendedIds }
-        (free + suspended).sortedWith(compareBy<Player> { if (it.id in suspendedIds) 1 else 0 }.thenByDescending { it.rating })
-    } ?: emptyList()
+    val eligiblePlayers = activeSlot?.let { eligibleFor(slots[it], availability, selectedIds) } ?: emptyList()
+    // Sidelined players of the sector are listed too (not selectable), with the reason.
+    val sidelined = activeSlot?.let { idx -> availability.unavailable.filter { it.position == slots[idx].cat } } ?: emptyList()
 
     fun choosePlayer(player: Player) {
         val idx = activeSlot ?: return
@@ -121,12 +116,7 @@ fun PreMatchLineupScreen(
     }
 
     fun fillRandom() {
-        val used = mutableSetOf<Int>()
-        val drawn = slots.map { slot ->
-            val candidates = availableSquad.filter { it.pos == slot.cat && it.id !in used }
-            candidates.randomOrNull()?.also { used.add(it.id) }
-        }
-        onLineupChange(drawn)
+        onLineupChange(randomLineup(slots, availability))
         activeSlot = null
     }
 
@@ -135,14 +125,15 @@ fun PreMatchLineupScreen(
 
     if (LocalWideLayout.current) {
         WidePage {
-            WidePageHeader("SUA", "ESCALAÇÃO", back = "Voltar" to onBack, kicker = if (hasPreviousLineup) "Ajuste a escalação" else "Monte seus titulares")
+            WidePageHeader("SUA", "ESCALAÇÃO", back = "Voltar" to onBack, kicker = "${match.stage.label} · ${if (hasPreviousLineup) "ajuste a escalação" else "monte seus titulares"}")
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(28.dp)) {
                 Column(Modifier.width(460.dp)) {
-                    LineupPitch(slots, sized, suspendedIds, yellowIds, activeSlot, onSlotClick = { activeSlot = it }, large = true)
+                    LineupPitch(slots, sized, yellowIds, activeSlot, onSlotClick = { activeSlot = it }, large = true)
                     Row(Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                         Text("Clique em uma posição para escolher o jogador", fontFamily = monoFontFamily(), fontSize = 12.sp, color = AppColors.mutedText)
                         Text("$selectedCount / 11", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, color = AppColors.ticketGreen)
                     }
+                    SidelinedSummary(availability.unavailable)
                 }
                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(20.dp)) {
                     WideTicketCard {
@@ -173,9 +164,12 @@ fun PreMatchLineupScreen(
                                     "Selecione uma posição no campo para ver os jogadores disponíveis.",
                                     fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText,
                                 )
-                                eligiblePlayers.isEmpty() -> Text("Nenhum jogador disponível para esta posição.", fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText)
-                                else -> eligiblePlayers.forEach { player ->
-                                    PlayerPickRow(player, suspended = player.id in suspendedIds, hasYellow = player.id in yellowIds, onChoose = { choosePlayer(player) })
+                                eligiblePlayers.isEmpty() && sidelined.isEmpty() -> Text("Nenhum jogador disponível para esta posição.", fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText)
+                                else -> {
+                                    eligiblePlayers.forEach { player ->
+                                        PlayerPickRow(player, hasYellow = player.id in yellowIds, onChoose = { choosePlayer(player) })
+                                    }
+                                    sidelined.forEach { PlayerPickRow(it.player, unavailable = it) }
                                 }
                             }
                         }
@@ -188,12 +182,12 @@ fun PreMatchLineupScreen(
 
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize()) {
-        TopBar(title = "Escalação", sub = if (hasPreviousLineup) "Ajuste a escalação" else "Monte seus titulares", onBack = onBack, onReset = onReset)
+        TopBar(title = "Escalação", sub = match.stage.label, onBack = onBack, onReset = onReset)
 
         Column(Modifier.background(AppColors.paper).padding(horizontal = 20.dp, vertical = 12.dp)) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(team.flag, fontSize = 18.sp)
+                    FlagImage(team.flag, height = 16.dp)
                     Spacer(Modifier.width(6.dp))
                     Text(team.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 14.sp, color = AppColors.antiqueGold)
                 }
@@ -201,7 +195,7 @@ fun PreMatchLineupScreen(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(opponent.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 14.sp, color = AppColors.bodyText)
                     Spacer(Modifier.width(6.dp))
-                    Text(opponent.flag, fontSize = 18.sp)
+                    FlagImage(opponent.flag, height = 16.dp)
                 }
             }
             Spacer(Modifier.height(10.dp))
@@ -223,7 +217,7 @@ fun PreMatchLineupScreen(
         }
 
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).retroPaper().padding(16.dp)) {
-            LineupPitch(slots, sized, suspendedIds, yellowIds, activeSlot = null, onSlotClick = { activeSlot = it })
+            LineupPitch(slots, sized, yellowIds, activeSlot = null, onSlotClick = { activeSlot = it })
             Row(Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                 Text(
                     if (hasPreviousLineup) "Toque para trocar quem quiser" else "Toque em uma posição para escolher",
@@ -231,6 +225,7 @@ fun PreMatchLineupScreen(
                 )
                 Text("$selectedCount / 11", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, color = AppColors.ticketGreen)
             }
+            SidelinedSummary(availability.unavailable)
         }
 
         Column(Modifier.background(AppColors.paper).padding(20.dp)) {
@@ -257,13 +252,14 @@ fun PreMatchLineupScreen(
                 Text("ESCOLHA O JOGADOR", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.sp, color = AppColors.kicker)
                 Text("Posição ${slots[slotIndex].label}", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 20.sp, color = AppColors.ink)
                 Spacer(Modifier.height(10.dp))
-                if (eligiblePlayers.isEmpty()) {
+                if (eligiblePlayers.isEmpty() && sidelined.isEmpty()) {
                     Text("Nenhum jogador disponível para esta posição.", fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText, modifier = Modifier.padding(vertical = 24.dp))
                 } else {
                     LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         items(eligiblePlayers, key = { it.id }) { player ->
-                            PlayerPickRow(player, suspended = player.id in suspendedIds, hasYellow = player.id in yellowIds, onChoose = { choosePlayer(player) })
+                            PlayerPickRow(player, hasYellow = player.id in yellowIds, onChoose = { choosePlayer(player) })
                         }
+                        items(sidelined, key = { it.id }) { PlayerPickRow(it.player, unavailable = it) }
                     }
                 }
             }
@@ -276,7 +272,6 @@ fun PreMatchLineupScreen(
 private fun LineupPitch(
     slots: List<SlotCfg>,
     lineup: List<Player?>,
-    suspendedIds: Set<Int>,
     yellowIds: Set<Int>,
     activeSlot: Int?,
     onSlotClick: (Int) -> Unit,
@@ -295,7 +290,7 @@ private fun LineupPitch(
         PitchMarkings()
         slots.forEachIndexed { index, slot ->
             val player = lineup.getOrNull(index)
-            val card = player?.let { p -> if (p.id in suspendedIds) CardStatus.RED else if (p.id in yellowIds) CardStatus.YELLOW else null }
+            val booked = player != null && player.id in yellowIds
             val isActive = index == activeSlot
             Box(Modifier.fillMaxSize()) {
                 Column(
@@ -315,9 +310,9 @@ private fun LineupPitch(
                         contentAlignment = Alignment.Center,
                     ) {
                         Text(slot.label, fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = if (large) 13.sp else 11.sp, color = if (player != null) AppColors.cream else Color.White)
-                        if (card != null) {
+                        if (booked) {
                             Text(
-                                if (card == CardStatus.RED) "🟥" else "🟨",
+                                "🟨",
                                 fontSize = 13.sp,
                                 modifier = Modifier.align(Alignment.TopEnd).offset(x = 6.dp, y = (-6).dp),
                             )
@@ -335,32 +330,54 @@ private fun LineupPitch(
     }
 }
 
-/** One choosable (or suspended) player in the position picker. */
+/** Why a player is out, e.g. "SUSPENSO" or "LESIONADO · 2 JOGOS". */
+private fun UnavailablePlayer.reasonLabel(): String {
+    val reasonText = if (reason == UnavailableReason.INJURED) "LESIONADO" else "SUSPENSO"
+    return if (matchesRemaining > 1) "$reasonText · $matchesRemaining JOGOS" else reasonText
+}
+
+/** Who cannot play this match, so their absence is no mystery. */
 @Composable
-private fun PlayerPickRow(player: Player, suspended: Boolean, hasYellow: Boolean, onChoose: () -> Unit) {
+private fun SidelinedSummary(unavailable: List<UnavailablePlayer>) {
+    if (unavailable.isEmpty()) return
+    Text(
+        "Fora desta partida: " + unavailable.joinToString { "${it.name} (${it.reasonLabel().lowercase()})" },
+        fontFamily = monoFontFamily(), fontSize = 11.sp, lineHeight = 16.sp, color = AppColors.lossRed,
+        modifier = Modifier.padding(top = 8.dp),
+    )
+}
+
+/** One player in the position picker; [unavailable] makes the row unselectable. */
+@Composable
+private fun PlayerPickRow(
+    player: Player,
+    hasYellow: Boolean = false,
+    unavailable: UnavailablePlayer? = null,
+    onChoose: () -> Unit = {},
+) {
+    val out = unavailable != null
     Row(
         Modifier
             .fillMaxWidth()
-            .background(if (suspended) AppColors.lossRedBg else AppColors.paper, RoundedCornerShape(12.dp))
-            .border(BorderStroke(2.dp, if (suspended) Color(0xFFE0B4B4) else AppColors.paperBorder), RoundedCornerShape(12.dp))
+            .background(if (out) AppColors.lossRedBg else AppColors.paper, RoundedCornerShape(12.dp))
+            .border(BorderStroke(2.dp, if (out) Color(0xFFE0B4B4) else AppColors.paperBorder), RoundedCornerShape(12.dp))
             .clip(RoundedCornerShape(12.dp))
-            .then(if (!suspended) Modifier.clickable(onClick = onChoose) else Modifier)
+            .then(if (!out) Modifier.clickable(onClick = onChoose) else Modifier)
             .padding(horizontal = 16.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
             player.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 14.sp,
-            color = if (suspended) Color(0xFFB0A488) else AppColors.ink, modifier = Modifier.weight(1f),
+            color = if (out) Color(0xFFB0A488) else AppColors.ink, modifier = Modifier.weight(1f),
         )
         if (hasYellow) Text("🟨", fontSize = 13.sp)
-        if (suspended) {
-            Text("🟥 SUSPENSO", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, color = AppColors.lossRed)
+        if (unavailable != null) {
+            Text(unavailable.reasonLabel(), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, color = AppColors.lossRed)
         } else {
-            Text(player.role.name, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 12.sp, color = AppColors.kicker)
-            secondaryRole(player.role)?.let { Text("($it)", fontFamily = monoFontFamily(), fontSize = 10.sp, color = AppColors.mutedText) }
+            Text("${player.position.label} · ${player.age}a", fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.mutedText)
         }
-        Text("${player.rating}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, color = AppColors.kicker)
+        Text("${player.overall}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, color = AppColors.kicker)
     }
 }
 

@@ -22,17 +22,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mc857.copaamerica.domain.logic.koIndexOf
-import com.mc857.copaamerica.domain.logic.koStageLabel
-import com.mc857.copaamerica.domain.model.DrawnBracket
-import com.mc857.copaamerica.domain.model.TeamData
+import com.mc857.copaamerica.domain.logic.NextStep
+import com.mc857.copaamerica.domain.model.History
+import com.mc857.copaamerica.domain.model.Squad
+import com.mc857.copaamerica.domain.model.Stage
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
 import com.mc857.copaamerica.ui.components.BracketTree
-import com.mc857.copaamerica.ui.components.KnockoutSummary
+import com.mc857.copaamerica.ui.components.FlagImage
+import com.mc857.copaamerica.ui.components.KickerLabel
 import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
 import com.mc857.copaamerica.ui.components.TopBar
@@ -41,29 +42,30 @@ import com.mc857.copaamerica.ui.components.WidePage
 import com.mc857.copaamerica.ui.components.WidePageHeader
 import com.mc857.copaamerica.ui.components.WideTicketCard
 
-/** Mirrors TournamentBracket, App.tsx:1588-1639. */
+/** The knockout tree from GET /{sessionId}/history, with the user's next tie below it. */
 @Composable
 fun TournamentBracketScreen(
-    team: TeamData,
-    bracket: DrawnBracket,
+    team: Squad,
+    history: History,
+    next: NextStep,
     onAdvance: () -> Unit,
-    onSummary: () -> Unit,
-    onBack: () -> Unit,
     onReset: () -> Unit,
 ) {
-    val ko = bracket.ko
-    val inSf = koIndexOf(ko.sf, team.name) >= 0
-    val stageTies = if (inSf) ko.sf else ko.qf
-    val userIndex = koIndexOf(stageTies, team.name)
-    val userTie = stageTies.getOrNull(userIndex)
-    val rival = userTie?.let { if (it.home?.name == team.name) it.away else it.home }
-    val stageLabel = koStageLabel(ko, team.name)
+    val upcoming = (next as? NextStep.Play)?.match ?: return
+    val rival = upcoming.opponentOf(team.id)
+    val stageLabel = upcoming.stage.label
+    val ties = when (upcoming.stage) {
+        Stage.QUARTER_FINAL -> history.bracket.quarterFinals.size
+        Stage.SEMI_FINAL -> history.bracket.semiFinals.size
+        else -> 1
+    }
+    val tiesLabel = if (ties == 1) "1 jogo" else "$ties jogos"
 
     if (LocalWideLayout.current) {
         WidePage {
-            WidePageHeader("CHAVEAMENTO DO", "MATA-MATA", back = "Voltar" to onBack, trailing = {
+            WidePageHeader("CHAVEAMENTO DO", "MATA-MATA", trailing = {
                 Text(
-                    "${stageLabel.uppercase()} · ${if (inSf) ko.sf.size else ko.qf.size} JOGOS",
+                    "${stageLabel.uppercase()} · ${tiesLabel.uppercase()}",
                     fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, letterSpacing = 1.sp, color = AppColors.bodyText,
                 )
             })
@@ -75,31 +77,19 @@ fun TournamentBracketScreen(
                     .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(16.dp))
                     .padding(24.dp),
             ) {
-                BracketTree(qf = ko.qf, sf = ko.sf, final = ko.final, highlightName = team.name, large = true)
+                BracketTree(history.bracket, userSquadId = team.id, large = true)
             }
             Spacer(Modifier.height(24.dp))
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
-                Column(Modifier.weight(1f)) { KnockoutSummary(third = ko.third, final = ko.final) }
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
                 WideTicketCard(Modifier.width(400.dp)) {
                     Column(Modifier.padding(22.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
-                        if (rival != null && ko.final.winner == null) {
-                            Text("SEU CONFRONTO · ${stageLabel.uppercase()}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 2.sp, color = AppColors.ticketOrangeText)
-                            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                                WideFlagName(team.flag, team.name, AppColors.antiqueGold, Modifier.weight(1f))
-                                Text("×", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 28.sp, color = AppColors.mutedText)
-                                WideFlagName(rival.flag, rival.name, AppColors.ink, Modifier.weight(1f))
-                            }
-                        } else {
-                            Text(
-                                if (ko.final.winner != null) "MATA-MATA ENCERRADO" else "SUA SELEÇÃO ESTÁ FORA DO MATA-MATA",
-                                fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 2.sp, color = AppColors.ticketOrangeText,
-                            )
+                        Text("SEU CONFRONTO · ${stageLabel.uppercase()}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 2.sp, color = AppColors.ticketOrangeText)
+                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                            WideFlagName(team.flag, team.name, AppColors.antiqueGold, Modifier.weight(1f))
+                            Text("×", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 28.sp, color = AppColors.mutedText)
+                            WideFlagName(rival.flag, rival.name, AppColors.ink, Modifier.weight(1f))
                         }
-                        RetroPrimaryButton(
-                            text = if (ko.final.winner != null) "Ver resumo da fase" else "Avançar para a partida",
-                            onClick = if (ko.final.winner != null) onSummary else onAdvance,
-                            modifier = Modifier.fillMaxWidth(),
-                        )
+                        RetroPrimaryButton("Avançar para a partida", onClick = onAdvance, modifier = Modifier.fillMaxWidth())
                     }
                 }
             }
@@ -108,47 +98,39 @@ fun TournamentBracketScreen(
     }
 
     Column(Modifier.fillMaxSize()) {
-        TopBar(title = "Chaveamento", sub = "$stageLabel · Modo clássico", onBack = onBack, onReset = onReset)
+        TopBar(title = "Chaveamento", sub = "$stageLabel · Modo clássico", onReset = onReset)
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).retroPaper().padding(16.dp)) {
             Row(Modifier.fillMaxWidth().padding(bottom = 8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                 Text(stageLabel.uppercase(), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.sp, color = AppColors.ink)
-                Text("${(if (inSf) ko.sf.size else ko.qf.size)} jogos", fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.mutedText)
+                Text(tiesLabel, fontFamily = monoFontFamily(), fontSize = 11.sp, color = AppColors.mutedText)
             }
-            BracketTree(qf = ko.qf, sf = ko.sf, final = ko.final, highlightName = team.name)
-            androidx.compose.foundation.layout.Spacer(Modifier.height(8.dp))
-            KnockoutSummary(third = ko.third, final = ko.final)
-            if (rival != null && ko.final.winner == null) {
-                Column(
-                    Modifier
-                        .fillMaxWidth()
-                        .padding(top = 12.dp)
-                        .hardShadow(color = AppColors.antiqueGold.copy(alpha = 0.35f), cornerRadius = 16.dp)
-                        .background(AppColors.cream, RoundedCornerShape(16.dp))
-                        .border(BorderStroke(2.dp, AppColors.antiqueGold), RoundedCornerShape(16.dp))
-                        .padding(16.dp),
-                ) {
-                    com.mc857.copaamerica.ui.components.KickerLabel("Seu confronto")
-                    androidx.compose.foundation.layout.Spacer(Modifier.height(8.dp))
-                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text(team.flag, fontSize = 20.sp)
-                            Text(" ${team.name}", fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink)
-                        }
-                        Text("VS", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 18.sp, color = AppColors.antiqueGold)
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text("${rival.name} ", fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink)
-                            Text(rival.flag, fontSize = 20.sp)
-                        }
+            BracketTree(history.bracket, userSquadId = team.id)
+            Column(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(top = 12.dp)
+                    .hardShadow(color = AppColors.antiqueGold.copy(alpha = 0.35f), cornerRadius = 16.dp)
+                    .background(AppColors.cream, RoundedCornerShape(16.dp))
+                    .border(BorderStroke(2.dp, AppColors.antiqueGold), RoundedCornerShape(16.dp))
+                    .padding(16.dp),
+            ) {
+                KickerLabel("Seu confronto")
+                Spacer(Modifier.height(8.dp))
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                        FlagImage(team.flag, height = 18.dp)
+                        Text(team.name, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink)
+                    }
+                    Text("VS", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 18.sp, color = AppColors.antiqueGold)
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                        Text(rival.name, fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 13.sp, color = AppColors.ink)
+                        FlagImage(rival.flag, height = 18.dp)
                     }
                 }
             }
         }
         Column(Modifier.background(AppColors.paper).padding(20.dp)) {
-            RetroPrimaryButton(
-                text = if (ko.final.winner != null) "Ver resumo da fase" else "Avançar para a partida",
-                onClick = if (ko.final.winner != null) onSummary else onAdvance,
-                modifier = Modifier.fillMaxWidth(),
-            )
+            RetroPrimaryButton("Avançar para a partida", onClick = onAdvance, modifier = Modifier.fillMaxWidth())
         }
     }
 }

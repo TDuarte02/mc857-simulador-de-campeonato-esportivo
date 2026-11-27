@@ -33,18 +33,20 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mc857.copaamerica.domain.model.Confederation
-import com.mc857.copaamerica.domain.model.TeamData
+import com.mc857.copaamerica.domain.model.Federation
+import com.mc857.copaamerica.domain.model.Squad
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.bodyFontFamily
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
 import com.mc857.copaamerica.theme.monoFontFamily
 import com.mc857.copaamerica.theme.retroPaper
+import com.mc857.copaamerica.ui.components.FlagImage
 import com.mc857.copaamerica.ui.components.KickerLabel
 import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.RetroIconButton
 import com.mc857.copaamerica.ui.components.RetroPrimaryButton
+import com.mc857.copaamerica.ui.components.RetroSecondaryButton
 import com.mc857.copaamerica.ui.components.WideBackLink
 import com.mc857.copaamerica.ui.components.WideChip
 import com.mc857.copaamerica.ui.components.WideGrid
@@ -53,15 +55,15 @@ import com.mc857.copaamerica.ui.components.WideSearchField
 import com.mc857.copaamerica.ui.components.WideTicketCard
 import com.mc857.copaamerica.ui.components.WideTitle
 
-/** Mirrors TeamSelection, App.tsx:705-793. */
+/** The squads the API lists (GET /squads); [onReload] retries when none arrived. */
 @Composable
-fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBack: () -> Unit) {
+fun TeamSelectionScreen(teams: List<Squad>, onNext: (Squad) -> Unit, onReload: () -> Unit, onBack: () -> Unit) {
     var selectedId by remember { mutableStateOf<String?>(null) }
     var search by remember { mutableStateOf("") }
-    var confFilter by remember { mutableStateOf<Confederation?>(null) }
+    var confFilter by remember { mutableStateOf<Federation?>(null) }
 
     val filtered = teams.filter {
-        it.name.contains(search, ignoreCase = true) && (confFilter == null || it.conf == confFilter)
+        it.name.contains(search, ignoreCase = true) && (confFilter == null || it.federation == confFilter)
     }
     val selectedTeam = teams.firstOrNull { it.id == selectedId }
 
@@ -70,7 +72,7 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
             teams = filtered, selected = selectedTeam, onSelect = { selectedId = it.id },
             search = search, onSearch = { search = it },
             confFilter = confFilter, onConfFilter = { confFilter = it },
-            onNext = onNext, onBack = onBack,
+            onNext = onNext, onReload = onReload.takeIf { teams.isEmpty() }, onBack = onBack,
         )
         return
     }
@@ -92,7 +94,7 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
                 Text("PAÍS", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 34.sp, color = AppColors.antiqueGold, lineHeight = 32.sp)
             }
             Spacer(Modifier.height(4.dp))
-            Text("16 seleções disponíveis", fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText)
+            Text("${teams.size} seleções disponíveis", fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText)
         }
 
         Box(
@@ -119,7 +121,7 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
         }
 
         Row(Modifier.padding(horizontal = 20.dp).padding(bottom = 12.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            val options = listOf<Confederation?>(null, Confederation.CONMEBOL, Confederation.CONCACAF)
+            val options = listOf<Federation?>(null, Federation.CONMEBOL, Federation.CONCACAF)
             options.forEach { conf ->
                 val active = confFilter == conf
                 Box(
@@ -137,6 +139,10 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
                     )
                 }
             }
+        }
+
+        if (teams.isEmpty()) {
+            RetroSecondaryButton("Recarregar seleções", onClick = onReload, modifier = Modifier.padding(horizontal = 20.dp).fillMaxWidth())
         }
 
         LazyVerticalGrid(
@@ -158,15 +164,15 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
                         .padding(8.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                    Text(team.flag, fontSize = 22.sp)
+                    FlagImage(team.flag, height = 22.dp)
                     Spacer(Modifier.height(4.dp))
                     Text(
                         team.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 11.sp,
                         color = AppColors.ink, textAlign = androidx.compose.ui.text.style.TextAlign.Center, maxLines = 2,
                     )
                     Text(
-                        team.conf.name, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 9.sp, letterSpacing = 0.5.sp,
-                        color = if (team.conf == Confederation.CONMEBOL) AppColors.kicker else AppColors.ticketBlue,
+                        team.federation.name, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 9.sp, letterSpacing = 0.5.sp,
+                        color = if (team.federation == Federation.CONMEBOL) AppColors.kicker else AppColors.ticketBlue,
                     )
                 }
             }
@@ -185,14 +191,15 @@ fun TeamSelectionScreen(teams: List<TeamData>, onNext: (TeamData) -> Unit, onBac
 
 @Composable
 private fun WideTeamSelection(
-    teams: List<TeamData>,
-    selected: TeamData?,
-    onSelect: (TeamData) -> Unit,
+    teams: List<Squad>,
+    selected: Squad?,
+    onSelect: (Squad) -> Unit,
     search: String,
     onSearch: (String) -> Unit,
-    confFilter: Confederation?,
-    onConfFilter: (Confederation?) -> Unit,
-    onNext: (TeamData) -> Unit,
+    confFilter: Federation?,
+    onConfFilter: (Federation?) -> Unit,
+    onNext: (Squad) -> Unit,
+    onReload: (() -> Unit)?,
     onBack: () -> Unit,
 ) {
     WidePage {
@@ -205,12 +212,16 @@ private fun WideTeamSelection(
                 Text("${teams.size} seleções disponíveis", fontFamily = monoFontFamily(), fontSize = 14.sp, color = AppColors.bodyText)
             }
             WideSearchField(search, onSearch, "Buscar seleções…", Modifier.width(280.dp))
-            listOf<Confederation?>(null, Confederation.CONMEBOL, Confederation.CONCACAF).forEach { conf ->
+            listOf<Federation?>(null, Federation.CONMEBOL, Federation.CONCACAF).forEach { conf ->
                 WideChip(conf?.name ?: "Todas", active = confFilter == conf, onClick = { onConfFilter(conf) })
             }
         }
 
         Spacer(Modifier.height(28.dp))
+        onReload?.let {
+            RetroSecondaryButton("Recarregar seleções", onClick = it, modifier = Modifier.width(260.dp))
+            Spacer(Modifier.height(16.dp))
+        }
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(28.dp)) {
             WideGrid(teams, minCellWidth = 150.dp, modifier = Modifier.weight(1f)) { team ->
                 WideTeamCard(team, isSelected = team.id == selected?.id, onClick = { onSelect(team) })
@@ -220,14 +231,14 @@ private fun WideTeamSelection(
                     KickerLabel("Sua seleção")
                     if (selected != null) {
                         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                            Text(selected.flag, fontSize = 48.sp)
+                            FlagImage(selected.flag, height = 44.dp)
                             Column {
                                 Text(selected.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 34.sp, lineHeight = 34.sp, color = AppColors.ink)
-                                Text(selected.conf.name, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.5.sp, color = AppColors.kicker)
+                                Text(selected.federation.name, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.5.sp, color = AppColors.kicker)
                             }
                         }
                         Text(
-                            "Próximo passo: montar o elenco com 26 convocados de todas as épocas.",
+                            "Próximo passo: montar o elenco com 26 convocados.",
                             fontFamily = bodyFontFamily(), fontWeight = FontWeight.Medium, fontSize = 15.sp, lineHeight = 22.sp, color = AppColors.bodyText,
                         )
                     } else {
@@ -249,7 +260,7 @@ private fun WideTeamSelection(
 }
 
 @Composable
-private fun WideTeamCard(team: TeamData, isSelected: Boolean, onClick: () -> Unit) {
+private fun WideTeamCard(team: Squad, isSelected: Boolean, onClick: () -> Unit) {
     Column(
         Modifier
             .fillMaxWidth()
@@ -262,14 +273,14 @@ private fun WideTeamCard(team: TeamData, isSelected: Boolean, onClick: () -> Uni
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(6.dp),
     ) {
-        Text(team.flag, fontSize = 32.sp)
+        FlagImage(team.flag, height = 32.dp)
         Text(
             team.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.ExtraBold, fontSize = 18.sp,
             color = AppColors.ink, textAlign = androidx.compose.ui.text.style.TextAlign.Center, maxLines = 1,
         )
         Text(
-            team.conf.name, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.5.sp,
-            color = if (team.conf == Confederation.CONMEBOL) AppColors.kicker else AppColors.ticketBlueText,
+            team.federation.name, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.5.sp,
+            color = if (team.federation == Federation.CONMEBOL) AppColors.kicker else AppColors.ticketBlueText,
         )
     }
 }
