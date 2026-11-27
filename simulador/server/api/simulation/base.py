@@ -1,7 +1,6 @@
 """Contract between the backend and the simulation model.
 
-The real model only has to implement MatchSimulator and be registered in
-api/container.py.
+A model only has to implement MatchSimulator and be registered in api/container.py.
 """
 
 from abc import ABC, abstractmethod
@@ -13,8 +12,10 @@ from api.domain.models import MatchResult, Player, Stage
 @dataclass(frozen=True)
 class TeamSheet:
     squad_id: str
-    players: list[Player]  # the XI on the pitch
-    formation: str | None = None
+    players: list[Player]  # the XI on the pitch, in slot order
+    formation: str | None = None  # e.g. "4-4-2"
+    # The formation's slot each player fills (e.g. "GK", "FB", "ST"), aligned with `players`.
+    slots: list[str] | None = None
 
 
 @dataclass(frozen=True)
@@ -24,6 +25,9 @@ class MatchContext:
     stage: Stage
     # Knockout matches cannot end level: on a draw the result must carry penalties.
     needs_winner: bool
+    # The session's seed and the match id: a deterministic model derives its draws from both.
+    seed: int = 0
+    match_id: str = ""
 
 
 class MatchSimulator(ABC):
@@ -33,4 +37,4 @@ class MatchSimulator(ABC):
 
     @abstractmethod
     def simulate_quick(self, context: MatchContext) -> MatchResult:
-        """Weaker, cheaper simulation, used for every match the user is not in."""
+        """Used for every match the user is not in (may be weaker and cheaper)."""

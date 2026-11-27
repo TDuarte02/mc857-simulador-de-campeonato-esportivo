@@ -2,7 +2,7 @@ from flask import Flask
 
 from api.config import Settings
 from api.container import Container, build_container
-from api.controllers import docs_controller, session_controller, squad_controller, tournament_controller
+from api.controllers import docs_controller, meta_controller, session_controller, squad_controller, tournament_controller
 from api.controllers.serializers import Serializer
 from api.errors import register_error_handlers
 
@@ -16,7 +16,7 @@ def create_app(container: Container | None = None) -> Flask:
     app.extensions["container"] = container
     app.extensions["serializer"] = Serializer(container.squads)
 
-    for controller in (docs_controller, session_controller, squad_controller, tournament_controller):
+    for controller in (docs_controller, meta_controller, session_controller, squad_controller, tournament_controller):
         app.register_blueprint(controller.bp)
     register_error_handlers(app)
     return app

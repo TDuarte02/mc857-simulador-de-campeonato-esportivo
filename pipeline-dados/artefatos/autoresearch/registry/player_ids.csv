@@ -1,0 +1,640 @@
+sofifa_id,player_key,nome,pais,dob,tipo_registro
+-1,convocado_2024|brazil|endrick|2006-07-21,Endrick,Brazil,2006-07-21,convocado_2024_adicionado
+-2,convocado_2024|brazil|bento|1999-06-10,Bento,Brazil,1999-06-10,convocado_2024_adicionado
+-3,convocado_2024|brazil|joao gomes|2001-02-12,João Gomes,Brazil,2001-02-12,convocado_2024_adicionado
+-4,convocado_2024|brazil|guilherme arana|1997-04-01,Guilherme Arana,Brazil,1997-04-01,convocado_2024_adicionado
+-5,convocado_2024|brazil|lucas beraldo|2003-11-24,Lucas Beraldo,Brazil,2003-11-24,convocado_2024_adicionado
+-6,convocado_2024|brazil|andreas pereira|1996-01-01,Andreas Pereira,Brazil,1996-01-01,convocado_2024_adicionado
+-7,convocado_2024|brazil|savinho|2004-04-10,Savinho,Brazil,2004-04-10,convocado_2024_adicionado
+-8,convocado_2024|brazil|rafael|1989-06-23,Rafael,Brazil,1989-06-23,convocado_2024_adicionado
+-9,convocado_2024|brazil|ederson|1999-07-07,Éderson,Brazil,1999-07-07,convocado_2024_adicionado
+-10,convocado_2024|mexico|julian quinones|1997-03-24,Julián Quiñones,Mexico,1997-03-24,convocado_2024_adicionado
+-11,convocado_2024|mexico|marcelo flores|2003-10-01,Marcelo Flores,Mexico,2003-10-01,convocado_2024_adicionado
+-12,convocado_2024|mexico|raul rangel|2000-02-25,Raúl Rangel,Mexico,2000-02-25,convocado_2024_adicionado
+-13,convocado_2024|uruguay|giorgian de arrascaeta|1994-06-01,Giorgian de Arrascaeta,Uruguay,1994-06-01,convocado_2024_adicionado
+-14,convocado_2024|uruguay|franco israel|2000-04-22,Franco Israel,Uruguay,2000-04-22,convocado_2024_adicionado
+-15,convocado_2024|uruguay|guillermo varela|1993-03-24,Guillermo Varela,Uruguay,1993-03-24,convocado_2024_adicionado
+-16,convocado_2024|uruguay|emiliano martinez|1999-08-17,Emiliano Martínez,Uruguay,1999-08-17,convocado_2024_adicionado
+-17,convocado_2024|uruguay|santiago mele|1997-09-06,Santiago Mele,Uruguay,1997-09-06,convocado_2024_adicionado
+-18,convocado_2024|argentina|alejandro garnacho|2004-07-01,Alejandro Garnacho,Argentina,2004-07-01,convocado_2024_adicionado
+-19,convocado_2024|argentina|guido rodriguez|1994-04-12,Guido Rodríguez,Argentina,1994-04-12,convocado_2024_adicionado
+-20,convocado_2024|argentina|valentin carboni|2005-03-05,Valentín Carboni,Argentina,2005-03-05,convocado_2024_adicionado
+-21,convocado_2024|bolivia|diego medina|2002-01-13,Diego Medina,Bolivia,2002-01-13,convocado_2024_adicionado
+-22,convocado_2024|bolivia|luis haquin|1997-11-15,Luis Haquín,Bolivia,1997-11-15,convocado_2024_adicionado
+-23,convocado_2024|bolivia|adrian jusino|1992-07-09,Adrián Jusino,Bolivia,1992-07-09,convocado_2024_adicionado
+-24,convocado_2024|bolivia|miguel terceros|2004-04-25,Miguel Terceros,Bolivia,2004-04-25,convocado_2024_adicionado
+-25,convocado_2024|bolivia|gustavo almada|1994-04-29,Gustavo Almada,Bolivia,1994-04-29,convocado_2024_adicionado
+-26,convocado_2024|bolivia|robson tome|2002-05-18,Robson Tomé,Bolivia,2002-05-18,convocado_2024_adicionado
+-27,convocado_2024|bolivia|gabriel villamil|2001-06-28,Gabriel Villamil,Bolivia,2001-06-28,convocado_2024_adicionado
+-28,convocado_2024|bolivia|hector cuellar|2000-08-16,Héctor Cuéllar,Bolivia,2000-08-16,convocado_2024_adicionado
+-29,convocado_2024|bolivia|marcelo suarez|2001-08-29,Marcelo Suárez,Bolivia,2001-08-29,convocado_2024_adicionado
+-30,convocado_2024|bolivia|yomar rocha|2003-06-21,Yomar Rocha,Bolivia,2003-06-21,convocado_2024_adicionado
+-31,convocado_2024|canada|luc de fougerolles|2005-10-12,Luc de Fougerolles,Canada,2005-10-12,convocado_2024_adicionado
+-32,convocado_2024|canada|ismael kone|2002-06-16,Ismaël Koné,Canada,2002-06-16,convocado_2024_adicionado
+-33,convocado_2024|canada|theo bair|1999-08-27,Theo Bair,Canada,1999-08-27,convocado_2024_adicionado
+-34,convocado_2024|canada|jacen russell rowe|2002-09-13,Jacen Russell-Rowe,Canada,2002-09-13,convocado_2024_adicionado
+-35,convocado_2024|canada|moise bombito|2000-03-30,Moïse Bombito,Canada,2000-03-30,convocado_2024_adicionado
+-36,convocado_2024|canada|tom mcgill|2000-03-25,Tom McGill,Canada,2000-03-25,convocado_2024_adicionado
+-37,convocado_2024|canada|ali ahmed|2000-10-10,Ali Ahmed,Canada,2000-10-10,convocado_2024_adicionado
+-38,convocado_2024|canada|tani oluwaseyi|2000-05-15,Tani Oluwaseyi,Canada,2000-05-15,convocado_2024_adicionado
+-39,convocado_2024|canada|kyle hiebert|1997-07-30,Kyle Hiebert,Canada,1997-07-30,convocado_2024_adicionado
+-40,convocado_2024|ecuador|hernan galindez|1987-03-30,Hernán Galíndez,Ecuador,1987-03-30,convocado_2024_adicionado
+-41,convocado_2024|ecuador|joel ordonez|2004-04-21,Joel Ordóñez,Ecuador,2004-04-21,convocado_2024_adicionado
+-42,convocado_2024|ecuador|willian pacho|2001-10-16,Willian Pacho,Ecuador,2001-10-16,convocado_2024_adicionado
+-43,convocado_2024|ecuador|layan loor|2001-05-23,Layan Loor,Ecuador,2001-05-23,convocado_2024_adicionado
+-44,convocado_2024|ecuador|john yeboah|2000-06-23,John Yeboah,Ecuador,2000-06-23,convocado_2024_adicionado
+-45,convocado_2024|ecuador|kendry paez|2007-05-04,Kendry Páez,Ecuador,2007-05-04,convocado_2024_adicionado
+-46,convocado_2024|ecuador|kevin rodriguez|2000-03-04,Kevin Rodríguez,Ecuador,2000-03-04,convocado_2024_adicionado
+-47,convocado_2024|ecuador|jeremy sarmiento|2002-06-16,Jeremy Sarmiento,Ecuador,2002-06-16,convocado_2024_adicionado
+-48,convocado_2024|ecuador|joao ortiz|1996-05-01,Joao Ortiz,Ecuador,1996-05-01,convocado_2024_adicionado
+-49,convocado_2024|ecuador|jordy caicedo|1997-11-18,Jordy Caicedo,Ecuador,1997-11-18,convocado_2024_adicionado
+-50,convocado_2024|ecuador|janner corozo|1995-09-08,Janner Corozo,Ecuador,1995-09-08,convocado_2024_adicionado
+-51,convocado_2024|ecuador|alan franco|1998-08-21,Alan Franco,Ecuador,1998-08-21,convocado_2024_adicionado
+-52,convocado_2024|ecuador|alexander dominguez|1987-06-05,Alexander Domínguez,Ecuador,1987-06-05,convocado_2024_adicionado
+-53,convocado_2024|ecuador|andres micolta|1999-07-06,Andrés Micolta,Ecuador,1999-07-06,convocado_2024_adicionado
+-54,convocado_2024|paraguay|carlos coronel|1996-12-29,Carlos Coronel,Paraguay,1996-12-29,convocado_2024_adicionado
+-55,convocado_2024|paraguay|matias espinoza|1997-09-19,Matías Espinoza,Paraguay,1997-09-19,convocado_2024_adicionado
+-56,convocado_2024|paraguay|fabian balbuena|1991-08-23,Fabián Balbuena,Paraguay,1991-08-23,convocado_2024_adicionado
+-57,convocado_2024|paraguay|junior alonso|1993-02-09,Júnior Alonso,Paraguay,1993-02-09,convocado_2024_adicionado
+-58,convocado_2024|paraguay|damian bobadilla|2001-07-11,Damián Bobadilla,Paraguay,2001-07-11,convocado_2024_adicionado
+-59,convocado_2024|paraguay|angel romero|1992-07-04,Ángel Romero,Paraguay,1992-07-04,convocado_2024_adicionado
+-60,convocado_2024|paraguay|nestor gimenez|1997-07-24,Néstor Giménez,Paraguay,1997-07-24,convocado_2024_adicionado
+-61,convocado_2024|paraguay|gustavo gomez|1993-05-06,Gustavo Gómez,Paraguay,1993-05-06,convocado_2024_adicionado
+-62,convocado_2024|paraguay|alex arce|1995-06-16,Álex Arce,Paraguay,1995-06-16,convocado_2024_adicionado
+-63,convocado_2024|paraguay|fabrizio peralta|2002-08-02,Fabrizio Peralta,Paraguay,2002-08-02,convocado_2024_adicionado
+-64,convocado_2024|paraguay|mathias villasanti|1997-01-24,Mathías Villasanti,Paraguay,1997-01-24,convocado_2024_adicionado
+-65,convocado_2024|paraguay|hernesto caballero|1991-04-09,Hernesto Caballero,Paraguay,1991-04-09,convocado_2024_adicionado
+-66,convocado_2024|peru|paolo guerrero|1984-01-01,Paolo Guerrero,Peru,1984-01-01,convocado_2024_adicionado
+-67,convocado_2024|peru|bryan reyna|1998-08-23,Bryan Reyna,Peru,1998-08-23,convocado_2024_adicionado
+-68,convocado_2024|peru|miguel araujo|1994-10-24,Miguel Araujo,Peru,1994-10-24,convocado_2024_adicionado
+-69,convocado_2024|peru|wilder cartagena|1994-09-23,Wilder Cartagena,Peru,1994-09-23,convocado_2024_adicionado
+-70,convocado_2024|peru|oliver sonne|2000-11-10,Oliver Sonne,Peru,2000-11-10,convocado_2024_adicionado
+-71,convocado_2024|peru|edison flores|1994-05-15,Edison Flores,Peru,1994-05-15,convocado_2024_adicionado
+-72,convocado_2024|peru|piero quispe|2001-08-14,Piero Quispe,Peru,2001-08-14,convocado_2024_adicionado
+-73,convocado_2024|peru|jose rivera|1997-05-08,José Rivera,Peru,1997-05-08,convocado_2024_adicionado
+-74,convocado_2024|peru|franco zanelatto|2000-05-09,Franco Zanelatto,Peru,2000-05-09,convocado_2024_adicionado
+-75,convocado_2024|united states|matt turner|1994-06-24,Matt Turner,United States,1994-06-24,convocado_2024_adicionado
+-76,convocado_2024|united states|chris richards|2000-03-28,Chris Richards,United States,2000-03-28,convocado_2024_adicionado
+-77,convocado_2024|united states|tim ream|1987-10-05,Tim Ream,United States,1987-10-05,convocado_2024_adicionado
+-78,convocado_2024|united states|johnny cardoso|2001-09-20,Johnny Cardoso,United States,2001-09-20,convocado_2024_adicionado
+-79,convocado_2024|united states|shaq moore|1996-11-02,Shaq Moore,United States,1996-11-02,convocado_2024_adicionado
+-80,convocado_2024|united states|malik tillman|2002-05-28,Malik Tillman,United States,2002-05-28,convocado_2024_adicionado
+-81,convocado_2024|united states|folarin balogun|2001-07-03,Folarin Balogun,United States,2001-07-03,convocado_2024_adicionado
+-82,convocado_2024|united states|joe scally|2002-12-31,Joe Scally,United States,2002-12-31,convocado_2024_adicionado
+-83,convocado_2024|united states|kristoffer lund|2002-05-14,Kristoffer Lund,United States,2002-05-14,convocado_2024_adicionado
+-84,convocado_2024|united states|josh sargent|2000-02-20,Josh Sargent,United States,2000-02-20,convocado_2024_adicionado
+-85,convocado_2024|venezuela|joel graterol|1997-02-13,Joel Graterol,Venezuela,1997-02-13,convocado_2024_adicionado
+-86,convocado_2024|venezuela|jhon chancellor|1992-01-02,Jhon Chancellor,Venezuela,1992-01-02,convocado_2024_adicionado
+-87,convocado_2024|venezuela|jefferson savarino|1996-11-11,Jefferson Savarino,Venezuela,1996-11-11,convocado_2024_adicionado
+-88,convocado_2024|venezuela|jose contreras|1994-10-20,José Contreras,Venezuela,1994-10-20,convocado_2024_adicionado
+-89,convocado_2024|venezuela|jose andres martinez|1994-09-07,José Andrés Martínez,Venezuela,1994-09-07,convocado_2024_adicionado
+-90,convocado_2024|venezuela|telasco segovia|2003-04-02,Telasco Segovia,Venezuela,2003-04-02,convocado_2024_adicionado
+-91,convocado_2024|venezuela|matias lacava|2002-10-24,Matías Lacava,Venezuela,2002-10-24,convocado_2024_adicionado
+-92,convocado_2024|venezuela|cristian casseres jr|2000-01-20,Cristian Cásseres Jr.,Venezuela,2000-01-20,convocado_2024_adicionado
+-93,convocado_2024|venezuela|alexander gonzalez|1992-11-13,Alexander González,Venezuela,1992-11-13,convocado_2024_adicionado
+-94,convocado_2024|venezuela|kervin andrade|2005-04-13,Kervin Andrade,Venezuela,2005-04-13,convocado_2024_adicionado
+-95,convocado_2024|colombia|kevin castano|2000-09-29,Kevin Castaño,Colombia,2000-09-29,convocado_2024_adicionado
+-96,convocado_2024|colombia|miguel borja|1993-01-26,Miguel Borja,Colombia,1993-01-26,convocado_2024_adicionado
+-97,convocado_2024|colombia|jhon arias|1997-09-21,Jhon Arias,Colombia,1997-09-21,convocado_2024_adicionado
+-98,convocado_2024|colombia|yerry mina|1994-09-24,Yerry Mina,Colombia,1994-09-24,convocado_2024_adicionado
+-99,convocado_2024|colombia|jhon duran|2003-12-13,Jhon Durán,Colombia,2003-12-13,convocado_2024_adicionado
+-100,convocado_2024|colombia|yaser asprilla|2003-11-19,Yáser Asprilla,Colombia,2003-11-19,convocado_2024_adicionado
+-101,convocado_2024|colombia|jhon cordoba|1993-05-11,Jhon Córdoba,Colombia,1993-05-11,convocado_2024_adicionado
+-102,convocado_2024|colombia|deiver machado|1992-09-02,Deiver Machado,Colombia,1992-09-02,convocado_2024_adicionado
+-103,convocado_2024|panama|cesar blackman|1998-04-02,César Blackman,Panama,1998-04-02,convocado_2024_adicionado
+-104,convocado_2024|panama|jose cordoba|2001-06-03,José Córdoba,Panama,2001-06-03,convocado_2024_adicionado
+-105,convocado_2024|panama|eduardo anderson|2001-01-31,Eduardo Anderson,Panama,2001-01-31,convocado_2024_adicionado
+-106,convocado_2024|panama|abdiel ayarza|1992-09-12,Abdiel Ayarza,Panama,1992-09-12,convocado_2024_adicionado
+-107,convocado_2024|panama|cristian martinez|1997-02-06,Cristian Martínez,Panama,1997-02-06,convocado_2024_adicionado
+-108,convocado_2024|panama|eduardo guerrero|2000-02-21,Eduardo Guerrero,Panama,2000-02-21,convocado_2024_adicionado
+-109,convocado_2024|panama|ismael diaz|1997-05-12,Ismael Díaz,Panama,1997-05-12,convocado_2024_adicionado
+-110,convocado_2024|panama|cesar samudio|1994-03-26,César Samudio,Panama,1994-03-26,convocado_2024_adicionado
+-111,convocado_2024|panama|jovani welch|1999-12-07,Jovani Welch,Panama,1999-12-07,convocado_2024_adicionado
+-112,convocado_2024|panama|eric davis|1991-03-31,Eric Davis,Panama,1991-03-31,convocado_2024_adicionado
+-113,convocado_2024|panama|jose fajardo|1993-08-18,José Fajardo,Panama,1993-08-18,convocado_2024_adicionado
+-114,convocado_2024|panama|omar valencia|2004-06-08,Omar Valencia,Panama,2004-06-08,convocado_2024_adicionado
+-115,convocado_2024|panama|ivan anderson|1997-11-24,Iván Anderson,Panama,1997-11-24,convocado_2024_adicionado
+-116,convocado_2024|panama|orlando mosquera|1994-12-25,Orlando Mosquera,Panama,1994-12-25,convocado_2024_adicionado
+-117,convocado_2024|panama|edgardo farina|2001-09-21,Edgardo Fariña,Panama,2001-09-21,convocado_2024_adicionado
+-118,convocado_2024|panama|roderick miller|1992-04-03,Roderick Miller,Panama,1992-04-03,convocado_2024_adicionado
+-119,convocado_2024|panama|kahiser lenis|2000-07-23,Kahiser Lenis,Panama,2000-07-23,convocado_2024_adicionado
+-120,convocado_2024|chile|gabriel suazo|1997-08-09,Gabriel Suazo,Chile,1997-08-09,convocado_2024_adicionado
+-121,convocado_2024|chile|mauricio isla|1988-06-12,Mauricio Isla,Chile,1988-06-12,convocado_2024_adicionado
+-122,convocado_2024|chile|thomas galdames|1998-11-20,Thomas Galdames,Chile,1998-11-20,convocado_2024_adicionado
+-123,convocado_2024|chile|dario osorio|2004-01-24,Darío Osorio,Chile,2004-01-24,convocado_2024_adicionado
+-124,convocado_2024|chile|eduardo vargas|1989-11-20,Eduardo Vargas,Chile,1989-11-20,convocado_2024_adicionado
+-125,convocado_2024|chile|cristian zavala|1999-08-03,Cristián Zavala,Chile,1999-08-03,convocado_2024_adicionado
+-126,convocado_2024|chile|rodrigo echeverria|1995-04-17,Rodrigo Echeverría,Chile,1995-04-17,convocado_2024_adicionado
+-127,convocado_2024|chile|marcos bolados|1996-02-28,Marcos Bolados,Chile,1996-02-28,convocado_2024_adicionado
+-128,convocado_2024|chile|maximiliano guerrero|2000-01-15,Maximiliano Guerrero,Chile,2000-01-15,convocado_2024_adicionado
+-129,convocado_2024|chile|matias catalan|1992-08-19,Matías Catalán,Chile,1992-08-19,convocado_2024_adicionado
+-130,convocado_2024|chile|ben brereton diaz|1999-04-18,Ben Brereton Díaz,Chile,1999-04-18,convocado_2024_adicionado
+-131,convocado_2024|chile|brayan cortes|1995-03-11,Brayan Cortés,Chile,1995-03-11,convocado_2024_adicionado
+-132,convocado_2024|chile|cesar perez|2002-11-29,César Pérez,Chile,2002-11-29,convocado_2024_adicionado
+-133,convocado_2024|chile|benjamin kuscevic|1996-05-02,Benjamín Kuscevic,Chile,1996-05-02,convocado_2024_adicionado
+-134,convocado_2024|chile|nicolas fernandez|1999-08-03,Nicolás Fernández,Chile,1999-08-03,convocado_2024_adicionado
+-135,convocado_2024|jamaica|shaquan davis|2000-11-11,Shaquan Davis,Jamaica,2000-11-11,convocado_2024_adicionado
+-136,convocado_2024|jamaica|dexter lembikisa|2003-11-04,Dexter Lembikisa,Jamaica,2003-11-04,convocado_2024_adicionado
+-137,convocado_2024|jamaica|richard king|2001-11-27,Richard King,Jamaica,2001-11-27,convocado_2024_adicionado
+-138,convocado_2024|jamaica|di shon bernard|2000-10-14,Di'Shon Bernard,Jamaica,2000-10-14,convocado_2024_adicionado
+-139,convocado_2024|jamaica|demarai gray|1996-06-28,Demarai Gray,Jamaica,1996-06-28,convocado_2024_adicionado
+-140,convocado_2024|jamaica|kaheim dixon|2004-10-04,Kaheim Dixon,Jamaica,2004-10-04,convocado_2024_adicionado
+-141,convocado_2024|jamaica|shamar nicholson|1997-02-16,Shamar Nicholson,Jamaica,1997-02-16,convocado_2024_adicionado
+-142,convocado_2024|jamaica|wes harding|1996-10-20,Wes Harding,Jamaica,1996-10-20,convocado_2024_adicionado
+-143,convocado_2024|jamaica|coniah boyce clarke|2003-03-01,Coniah Boyce-Clarke,Jamaica,2003-03-01,convocado_2024_adicionado
+-144,convocado_2024|jamaica|joel latibeaudiere|2000-01-06,Joel Latibeaudiere,Jamaica,2000-01-06,convocado_2024_adicionado
+-145,convocado_2024|jamaica|karoy anderson|2004-10-01,Karoy Anderson,Jamaica,2004-10-01,convocado_2024_adicionado
+-146,convocado_2024|jamaica|damion lowe|1993-05-05,Damion Lowe,Jamaica,1993-05-05,convocado_2024_adicionado
+-147,convocado_2024|jamaica|alex marshall|1998-02-24,Alex Marshall,Jamaica,1998-02-24,convocado_2024_adicionado
+-148,convocado_2024|jamaica|kevon lambert|1997-03-22,Kevon Lambert,Jamaica,1997-03-22,convocado_2024_adicionado
+-149,convocado_2024|jamaica|renaldo cephas|1999-12-08,Renaldo Cephas,Jamaica,1999-12-08,convocado_2024_adicionado
+-150,convocado_2024|jamaica|jon bell|1997-08-26,Jon Bell,Jamaica,1997-08-26,convocado_2024_adicionado
+-151,convocado_2024|jamaica|greg leigh|1994-09-30,Greg Leigh,Jamaica,1994-09-30,convocado_2024_adicionado
+-152,convocado_2024|jamaica|jahmali waite|1998-12-24,Jahmali Waite,Jamaica,1998-12-24,convocado_2024_adicionado
+-153,convocado_2024|costa rica|kevin chamorro|2000-04-08,Kevin Chamorro,Costa Rica,2000-04-08,convocado_2024_adicionado
+-154,convocado_2024|costa rica|gerald taylor|2001-05-28,Gerald Taylor,Costa Rica,2001-05-28,convocado_2024_adicionado
+-155,convocado_2024|costa rica|jeyland mitchell|2004-09-29,Jeyland Mitchell,Costa Rica,2004-09-29,convocado_2024_adicionado
+-156,convocado_2024|costa rica|juan pablo vargas|1995-06-06,Juan Pablo Vargas,Costa Rica,1995-06-06,convocado_2024_adicionado
+-157,convocado_2024|costa rica|fernan faerron|2000-08-22,Fernán Faerrón,Costa Rica,2000-08-22,convocado_2024_adicionado
+-158,convocado_2024|costa rica|anthony contreras|2000-01-29,Anthony Contreras,Costa Rica,2000-01-29,convocado_2024_adicionado
+-159,convocado_2024|costa rica|brandon aguilera|2003-06-28,Brandon Aguilera,Costa Rica,2003-06-28,convocado_2024_adicionado
+-160,convocado_2024|costa rica|jefferson brenes|1997-04-13,Jefferson Brenes,Costa Rica,1997-04-13,convocado_2024_adicionado
+-161,convocado_2024|costa rica|orlando galo|2000-08-11,Orlando Galo,Costa Rica,2000-08-11,convocado_2024_adicionado
+-162,convocado_2024|costa rica|alejandro bran|2001-03-05,Alejandro Bran,Costa Rica,2001-03-05,convocado_2024_adicionado
+-163,convocado_2024|costa rica|warren madrigal|2004-07-24,Warren Madrigal,Costa Rica,2004-07-24,convocado_2024_adicionado
+-164,convocado_2024|costa rica|aaron cruz|1991-05-25,Aarón Cruz,Costa Rica,1991-05-25,convocado_2024_adicionado
+-165,convocado_2024|costa rica|kenneth vargas|2002-04-17,Kenneth Vargas,Costa Rica,2002-04-17,convocado_2024_adicionado
+-166,convocado_2024|costa rica|josimar alcocer|2004-07-07,Josimar Alcócer,Costa Rica,2004-07-07,convocado_2024_adicionado
+-167,convocado_2024|costa rica|alvaro zamora|2002-03-09,Álvaro Zamora,Costa Rica,2002-03-09,convocado_2024_adicionado
+-168,convocado_2024|costa rica|haxzel quiros|1998-06-03,Haxzel Quirós,Costa Rica,1998-06-03,convocado_2024_adicionado
+-169,convocado_2024|costa rica|patrick sequeira|1999-03-01,Patrick Sequeira,Costa Rica,1999-03-01,convocado_2024_adicionado
+-170,convocado_2024|costa rica|andy rojas|2005-12-05,Andy Rojas,Costa Rica,2005-12-05,convocado_2024_adicionado
+-171,convocado_2024|costa rica|yeison molina|1996-01-25,Yeison Molina,Costa Rica,1996-01-25,convocado_2024_adicionado
+-172,convocado_2024|costa rica|douglas sequeira|2003-09-16,Douglas Sequeira,Costa Rica,2003-09-16,convocado_2024_adicionado
+-173,historico|canada|dwayne de rosario|1978-05-15,Dwayne De Rosario,Canada,1978-05-15,historico_estimado
+-174,historico|canada|julian de guzman|1981-03-25,Julian de Guzman,Canada,1981-03-25,historico_estimado
+-175,historico|canada|dale mitchell|1958-04-21,Dale Mitchell,Canada,1958-04-21,historico_estimado
+-176,historico|canada|tomasz radzinski|1973-12-14,Tomasz Radzinski,Canada,1973-12-14,historico_estimado
+-177,historico|canada|alex bunbury|1967-06-18,Alex Bunbury,Canada,1967-06-18,historico_estimado
+-178,historico|canada|bruce wilson|1951-06-20,Bruce Wilson,Canada,1951-06-20,historico_estimado
+-179,historico|canada|randy samuel|1963-12-23,Randy Samuel,Canada,1963-12-23,historico_estimado
+-180,historico|canada|mark watson|1970-09-08,Mark Watson,Canada,1970-09-08,historico_estimado
+-181,historico|canada|kevin mckenna|1980-01-21,Kevin McKenna,Canada,1980-01-21,historico_estimado
+-182,historico|canada|jason de vos|1974-01-02,Jason de Vos,Canada,1974-01-02,historico_estimado
+-183,historico|canada|paul stalteri|1977-10-18,Paul Stalteri,Canada,1977-10-18,historico_estimado
+-184,historico|canada|bob lenarduzzi|1955-05-01,Bob Lenarduzzi,Canada,1955-05-01,historico_estimado
+-185,historico|canada|craig forrest|1967-09-20,Craig Forrest,Canada,1967-09-20,historico_estimado
+-186,historico|ecuador|antonio valencia|1985-08-04,Antonio Valencia,Ecuador,1985-08-04,historico_estimado
+-187,historico|ecuador|alberto spencer|1937-12-06,Alberto Spencer,Ecuador,1937-12-06,historico_estimado
+-188,historico|ecuador|leonardo campana|2000-07-24,Leonardo Campana,Ecuador,2000-07-24,historico_estimado
+-189,historico|ecuador|agustin delgado|1974-12-23,Agustin Delgado,Ecuador,1974-12-23,historico_estimado
+-190,historico|ecuador|nicolas asencio|1975-04-26,Nicolas Asencio,Ecuador,1975-04-26,historico_estimado
+-191,historico|ecuador|carlos tenorio|1979-05-14,Carlos Tenorio,Ecuador,1979-05-14,historico_estimado
+-192,historico|ecuador|polo carrera|1945-01-11,Polo Carrera,Ecuador,1945-01-11,historico_estimado
+-193,historico|ecuador|alex aguinaga|1968-07-09,Alex Aguinaga,Ecuador,1968-07-09,historico_estimado
+-194,historico|ecuador|edison mendez|1979-03-16,Edison Mendez,Ecuador,1979-03-16,historico_estimado
+-195,historico|ecuador|cristian noboa|1985-04-09,Cristian Noboa,Ecuador,1985-04-09,historico_estimado
+-196,historico|ecuador|segundo castillo|1982-05-15,Segundo Castillo,Ecuador,1982-05-15,historico_estimado
+-197,historico|ecuador|michael arroyo|1987-04-23,Michael Arroyo,Ecuador,1987-04-23,historico_estimado
+-198,historico|ecuador|frickson erazo|1988-05-05,Frickson Erazo,Ecuador,1988-05-05,historico_estimado
+-199,historico|ecuador|gabriel achilier|1985-03-24,Gabriel Achilier,Ecuador,1985-03-24,historico_estimado
+-200,historico|ecuador|walter ayovi|1979-08-11,Walter Ayovi,Ecuador,1979-08-11,historico_estimado
+-201,historico|ecuador|ulises de la cruz|1974-02-08,Ulises de la Cruz,Ecuador,1974-02-08,historico_estimado
+-202,historico|ecuador|ivan hurtado|1974-08-16,Ivan Hurtado,Ecuador,1974-08-16,historico_estimado
+-203,historico|ecuador|jorge guagua|1981-09-28,Jorge Guagua,Ecuador,1981-09-28,historico_estimado
+-204,historico|bolivia|marco etcheverry|1970-09-26,Marco Etcheverry,Bolivia,1970-09-26,historico_estimado
+-205,historico|bolivia|erwin sanchez|1969-10-19,Erwin Sanchez,Bolivia,1969-10-19,historico_estimado
+-206,historico|bolivia|marcelo martins|1987-06-18,Marcelo Martins,Bolivia,1987-06-18,historico_estimado
+-207,historico|bolivia|roger suarez|1977-04-02,Roger Suarez,Bolivia,1977-04-02,historico_estimado
+-208,historico|bolivia|julio cesar baldivieso|1971-12-02,Julio Cesar Baldivieso,Bolivia,1971-12-02,historico_estimado
+-209,historico|bolivia|alejandro chumacero|1991-04-22,Alejandro Chumacero,Bolivia,1991-04-22,historico_estimado
+-210,historico|bolivia|alvaro pena|1965-02-11,Alvaro Pena,Bolivia,1965-02-11,historico_estimado
+-211,historico|bolivia|milton melgar|1959-09-20,Milton Melgar,Bolivia,1959-09-20,historico_estimado
+-212,historico|bolivia|ronald garcia|1980-12-17,Ronald Garcia,Bolivia,1980-12-17,historico_estimado
+-213,historico|bolivia|luis cristaldo|1969-08-31,Luis Cristaldo,Bolivia,1969-08-31,historico_estimado
+-214,historico|bolivia|marco sandy|1971-08-29,Marco Sandy,Bolivia,1971-08-29,historico_estimado
+-215,historico|bolivia|juan manuel pena|1973-01-17,Juan Manuel Pena,Bolivia,1973-01-17,historico_estimado
+-216,historico|bolivia|ronald raldes|1981-04-20,Ronald Raldes,Bolivia,1981-04-20,historico_estimado
+-217,historico|bolivia|carlos trucco|1957-08-08,Carlos Trucco,Bolivia,1957-08-08,historico_estimado
+-218,historico|bolivia|lider paz|1974-12-02,Lider Paz,Bolivia,1974-12-02,historico_estimado
+-219,historico|bolivia|joaquin botero|1977-12-10,Joaquin Botero,Bolivia,1977-12-10,historico_estimado
+-220,historico|bolivia|william ramallo|1963-07-04,William Ramallo,Bolivia,1963-07-04,historico_estimado
+-221,historico|bolivia|ramiro castillo|1966-03-27,Ramiro Castillo,Bolivia,1966-03-27,historico_estimado
+-222,historico|costa rica|paulo wanchope|1976-07-31,Paulo Wanchope,Costa Rica,1976-07-31,historico_estimado
+-223,historico|costa rica|bryan ruiz|1985-08-18,Bryan Ruiz,Costa Rica,1985-08-18,historico_estimado
+-224,historico|costa rica|celso borges|1988-05-27,Celso Borges,Costa Rica,1988-05-27,historico_estimado
+-225,historico|costa rica|walter centeno|1974-10-06,Walter Centeno,Costa Rica,1974-10-06,historico_estimado
+-226,historico|costa rica|hernan medford|1968-05-23,Hernan Medford,Costa Rica,1968-05-23,historico_estimado
+-227,historico|costa rica|alvaro saborio|1982-03-25,Alvaro Saborio,Costa Rica,1982-03-25,historico_estimado
+-228,historico|costa rica|rolando fonseca|1974-06-06,Rolando Fonseca,Costa Rica,1974-06-06,historico_estimado
+-229,historico|costa rica|christian bolanos|1984-05-17,Christian Bolanos,Costa Rica,1984-05-17,historico_estimado
+-230,historico|costa rica|marco urena|1990-03-05,Marco Urena,Costa Rica,1990-03-05,historico_estimado
+-231,historico|costa rica|luis marin|1974-08-10,Luis Marin,Costa Rica,1974-08-10,historico_estimado
+-232,historico|costa rica|gilberto martinez|1979-10-01,Gilberto Martinez,Costa Rica,1979-10-01,historico_estimado
+-233,historico|costa rica|michael umana|1982-07-16,Michael Umana,Costa Rica,1982-07-16,historico_estimado
+-234,historico|jamaica|rodolph austin|1985-06-01,Rodolph Austin,Jamaica,1985-06-01,historico_estimado
+-235,historico|jamaica|theodore whitmore|1972-08-05,Theodore Whitmore,Jamaica,1972-08-05,historico_estimado
+-236,historico|jamaica|jermaine hue|1978-06-15,Jermaine Hue,Jamaica,1978-06-15,historico_estimado
+-237,historico|jamaica|robbie earle|1965-01-27,Robbie Earle,Jamaica,1965-01-27,historico_estimado
+-238,historico|jamaica|walter boyd|1972-01-01,Walter Boyd,Jamaica,1972-01-01,historico_estimado
+-239,historico|jamaica|luton shelton|1985-11-11,Luton Shelton,Jamaica,1985-11-11,historico_estimado
+-240,historico|jamaica|onandi lowe|1974-12-02,Onandi Lowe,Jamaica,1974-12-02,historico_estimado
+-241,historico|jamaica|deon burton|1976-10-25,Deon Burton,Jamaica,1976-10-25,historico_estimado
+-242,historico|jamaica|donovan ricketts|1977-06-07,Donovan Ricketts,Jamaica,1977-06-07,historico_estimado
+-243,historico|jamaica|claude davis|1979-03-06,Claude Davis,Jamaica,1979-03-06,historico_estimado
+-244,historico|jamaica|ian goodison|1972-11-21,Ian Goodison,Jamaica,1972-11-21,historico_estimado
+-245,historico|jamaica|ricardo gardner|1978-09-25,Ricardo Gardner,Jamaica,1978-09-25,historico_estimado
+-246,historico|jamaica|demar phillips|1983-09-23,Demar Phillips,Jamaica,1983-09-23,historico_estimado
+-247,historico|jamaica|adrian mariappa|1986-10-03,Adrian Mariappa,Jamaica,1986-10-03,historico_estimado
+-248,historico|jamaica|wes morgan|1984-01-21,Wes Morgan,Jamaica,1984-01-21,historico_estimado
+-249,historico|jamaica|tyrone marshall|1974-11-12,Tyrone Marshall,Jamaica,1974-11-12,historico_estimado
+-250,historico|panama|jaime penedo|1981-09-26,Jaime Penedo,Panama,1981-09-26,historico_estimado
+-251,historico|panama|felipe baloy|1981-02-24,Felipe Baloy,Panama,1981-02-24,historico_estimado
+-252,historico|panama|roman torres|1986-03-20,Roman Torres,Panama,1986-03-20,historico_estimado
+-253,historico|panama|adolfo machado|1985-02-14,Adolfo Machado,Panama,1985-02-14,historico_estimado
+-254,historico|panama|julio dely valdes|1967-03-12,Julio Dely Valdes,Panama,1967-03-12,historico_estimado
+-255,historico|panama|jorge dely valdes|1967-03-12,Jorge Dely Valdes,Panama,1967-03-12,historico_estimado
+-256,historico|panama|blas perez|1981-03-13,Blas Perez,Panama,1981-03-13,historico_estimado
+-257,historico|panama|luis tejada|1982-03-28,Luis Tejada,Panama,1982-03-28,historico_estimado
+-258,historico|panama|gabriel gomez|1984-05-29,Gabriel Gomez,Panama,1984-05-29,historico_estimado
+-259,historico|panama|amilcar henriquez|1983-08-02,Amilcar Henriquez,Panama,1983-08-02,historico_estimado
+-260,historico|venezuela|juan arango|1980-05-16,Juan Arango,Venezuela,1980-05-16,historico_estimado
+-261,historico|venezuela|cesar gonzalez|1933-05-11,Cesar Gonzalez,Venezuela,1933-05-11,historico_estimado
+-262,historico|venezuela|nicolas fedor|1985-08-19,Nicolas Fedor,Venezuela,1985-08-19,historico_estimado
+-263,historico|venezuela|giancarlo maldonado|1982-06-29,Giancarlo Maldonado,Venezuela,1982-06-29,historico_estimado
+-264,historico|venezuela|alejandro guerra|1985-07-09,Alejandro Guerra,Venezuela,1985-07-09,historico_estimado
+-265,historico|venezuela|luis manuel seijas|1986-06-23,Luis Manuel Seijas,Venezuela,1986-06-23,historico_estimado
+-266,historico|venezuela|alain baroja|1989-10-23,Alain Baroja,Venezuela,1989-10-23,historico_estimado
+-267,historico|venezuela|renny vega|1979-07-04,Renny Vega,Venezuela,1979-07-04,historico_estimado
+-268,historico|venezuela|jose manuel rey|1975-05-20,Jose Manuel Rey,Venezuela,1975-05-20,historico_estimado
+-269,historico|venezuela|gabriel cichero|1984-04-25,Gabriel Cichero,Venezuela,1984-04-25,historico_estimado
+-270,historico|venezuela|fernando amorebieta|1985-03-29,Fernando Amorebieta,Venezuela,1985-03-29,historico_estimado
+-271,historico|venezuela|oswaldo vizcarrondo|1984-05-31,Oswaldo Vizcarrondo,Venezuela,1984-05-31,historico_estimado
+-272,historico|venezuela|alexander gonzalez|1977-02-15,Alexander Gonzalez,Venezuela,1977-02-15,historico_estimado
+-273,historico|venezuela|roberto rosales|1988-11-20,Roberto Rosales,Venezuela,1988-11-20,historico_estimado
+-274,historico|venezuela|rubert quijada|1989-02-10,Rubert Quijada,Venezuela,1989-02-10,historico_estimado
+-275,historico|argentina|diego maradona|1960-10-30,Diego Maradona,Argentina,1960-10-30,historico_estimado
+-276,historico|argentina|ezequiel lavezzi|1985-05-03,Ezequiel Lavezzi,Argentina,1985-05-03,historico_estimado
+-277,historico|argentina|omar sivori|1935-10-02,Omar Sivori,Argentina,1935-10-02,historico_estimado
+-278,historico|argentina|jose manuel moreno|1916-08-03,Jose Manuel Moreno,Argentina,1916-08-03,historico_estimado
+-279,historico|argentina|adolfo pedernera|1918-11-15,Adolfo Pedernera,Argentina,1918-11-15,historico_estimado
+-280,historico|argentina|angel labruna|1918-09-28,Angel Labruna,Argentina,1918-09-28,historico_estimado
+-281,historico|argentina|juan carlos munoz|1919-05-06,Juan Carlos Munoz,Argentina,1919-05-06,historico_estimado
+-282,historico|argentina|norberto mendez|1923-01-05,Norberto Mendez,Argentina,1923-01-05,historico_estimado
+-283,historico|argentina|rene houseman|1953-07-19,Rene Houseman,Argentina,1953-07-19,historico_estimado
+-284,historico|argentina|leopoldo luque|1949-05-03,Leopoldo Luque,Argentina,1949-05-03,historico_estimado
+-285,historico|argentina|daniel bertoni|1955-03-14,Daniel Bertoni,Argentina,1955-03-14,historico_estimado
+-286,historico|argentina|rodrigo palacio|1982-02-05,Rodrigo Palacio,Argentina,1982-02-05,historico_estimado
+-287,historico|argentina|abel balbo|1966-06-01,Abel Balbo,Argentina,1966-06-01,historico_estimado
+-288,historico|argentina|claudio lopez|1974-07-17,Claudio Lopez,Argentina,1974-07-17,historico_estimado
+-289,historico|argentina|kily gonzalez|1974-08-04,Kily Gonzalez,Argentina,1974-08-04,historico_estimado
+-290,historico|argentina|maxi rodriguez|1981-01-02,Maxi Rodriguez,Argentina,1981-01-02,historico_estimado
+-291,historico|argentina|javier saviola|1981-12-11,Javier Saviola,Argentina,1981-12-11,historico_estimado
+-292,historico|argentina|julio cruz|1974-10-10,Julio Cruz,Argentina,1974-10-10,historico_estimado
+-293,historico|argentina|martin palermo|1973-11-07,Martin Palermo,Argentina,1973-11-07,historico_estimado
+-294,historico|argentina|luis artime|1938-12-02,Luis Artime,Argentina,1938-12-02,historico_estimado
+-295,historico|argentina|felix loustau|1922-12-25,Felix Loustau,Argentina,1922-12-25,historico_estimado
+-296,historico|argentina|carlos tevez|1984-02-05,Carlos Tevez,Argentina,1984-02-05,historico_estimado
+-297,historico|argentina|alfredo di stefano|1926-07-04,Alfredo Di Stefano,Argentina,1926-07-04,historico_estimado
+-298,historico|argentina|mario kempes|1954-07-15,Mario Kempes,Argentina,1954-07-15,historico_estimado
+-299,historico|argentina|jorge valdano|1955-10-04,Jorge Valdano,Argentina,1955-10-04,historico_estimado
+-300,historico|argentina|herminio masantonio|1910-08-05,Herminio Masantonio,Argentina,1910-08-05,historico_estimado
+-301,historico|argentina|claudio caniggia|1967-01-09,Claudio Caniggia,Argentina,1967-01-09,historico_estimado
+-302,historico|argentina|hernan crespo|1975-07-05,Hernan Crespo,Argentina,1975-07-05,historico_estimado
+-303,historico|argentina|gabriel batistuta|1969-02-01,Gabriel Batistuta,Argentina,1969-02-01,historico_estimado
+-304,historico|argentina|carlos peucelle|1908-09-13,Carlos Peucelle,Argentina,1908-09-13,historico_estimado
+-305,historico|argentina|manuel ferreira|1905-10-20,Manuel Ferreira,Argentina,1905-10-20,historico_estimado
+-306,historico|argentina|guillermo stabile|1905-01-17,Guillermo Stabile,Argentina,1905-01-17,historico_estimado
+-307,historico|argentina|ubaldo fillol|1950-07-21,Ubaldo Fillol,Argentina,1950-07-21,historico_estimado
+-308,historico|argentina|sergio romero|1987-02-22,Sergio Romero,Argentina,1987-02-22,historico_estimado
+-309,historico|argentina|amadeo carrizo|1926-06-12,Amadeo Carrizo,Argentina,1926-06-12,historico_estimado
+-310,historico|argentina|sergio goycochea|1963-10-17,Sergio Goycochea,Argentina,1963-10-17,historico_estimado
+-311,historico|argentina|nery pumpido|1957-07-30,Nery Pumpido,Argentina,1957-07-30,historico_estimado
+-312,historico|argentina|roberto abbondanzieri|1972-08-19,Roberto Abbondanzieri,Argentina,1972-08-19,historico_estimado
+-313,historico|argentina|hector enrique|1962-04-26,Hector Enrique,Argentina,1962-04-26,historico_estimado
+-314,historico|argentina|osvaldo ardiles|1952-08-03,Osvaldo Ardiles,Argentina,1952-08-03,historico_estimado
+-315,historico|argentina|ricardo villa|1952-08-18,Ricardo Villa,Argentina,1952-08-18,historico_estimado
+-316,historico|argentina|luis monti|1901-05-15,Luis Monti,Argentina,1901-05-15,historico_estimado
+-317,historico|argentina|miguel angel brindisi|1950-10-08,Miguel Angel Brindisi,Argentina,1950-10-08,historico_estimado
+-318,historico|argentina|fernando gago|1986-04-10,Fernando Gago,Argentina,1986-04-10,historico_estimado
+-319,historico|argentina|alberto marcico|1960-05-13,Alberto Marcico,Argentina,1960-05-13,historico_estimado
+-320,historico|argentina|jorge burruchaga|1962-10-09,Jorge Burruchaga,Argentina,1962-10-09,historico_estimado
+-321,historico|argentina|ariel ortega|1974-03-04,Ariel Ortega,Argentina,1974-03-04,historico_estimado
+-322,historico|argentina|fernando redondo|1969-06-06,Fernando Redondo,Argentina,1969-06-06,historico_estimado
+-323,historico|argentina|juan sebastian veron|1975-03-09,Juan Sebastian Veron,Argentina,1975-03-09,historico_estimado
+-324,historico|argentina|ricardo bochini|1954-01-25,Ricardo Bochini,Argentina,1954-01-25,historico_estimado
+-325,historico|argentina|norberto alonso|1953-01-04,Norberto Alonso,Argentina,1953-01-04,historico_estimado
+-326,historico|argentina|antonio rattin|1937-05-16,Antonio Rattin,Argentina,1937-05-16,historico_estimado
+-327,historico|argentina|ricardo giusti|1956-12-11,Ricardo Giusti,Argentina,1956-12-11,historico_estimado
+-328,historico|argentina|claudio borghi|1964-09-28,Claudio Borghi,Argentina,1964-09-28,historico_estimado
+-329,historico|argentina|pedro troglio|1965-07-28,Pedro Troglio,Argentina,1965-07-28,historico_estimado
+-330,historico|argentina|javier mascherano|1984-06-08,Javier Mascherano,Argentina,1984-06-08,historico_estimado
+-331,historico|argentina|diego simeone|1970-04-28,Diego Simeone,Argentina,1970-04-28,historico_estimado
+-332,historico|argentina|juan roman riquelme|1978-06-24,Juan Roman Riquelme,Argentina,1978-06-24,historico_estimado
+-333,historico|argentina|matias almeyda|1973-12-21,Matias Almeyda,Argentina,1973-12-21,historico_estimado
+-334,historico|argentina|leonardo astrada|1970-01-06,Leonardo Astrada,Argentina,1970-01-06,historico_estimado
+-335,historico|argentina|pablo aimar|1979-11-03,Pablo Aimar,Argentina,1979-11-03,historico_estimado
+-336,historico|argentina|lucho gonzalez|1981-01-19,Lucho Gonzalez,Argentina,1981-01-19,historico_estimado
+-337,historico|argentina|esteban cambiasso|1980-08-18,Esteban Cambiasso,Argentina,1980-08-18,historico_estimado
+-338,historico|argentina|javier zanetti|1973-08-10,Javier Zanetti,Argentina,1973-08-10,historico_estimado
+-339,historico|argentina|jose luis brown|1956-11-10,Jose Luis Brown,Argentina,1956-11-10,historico_estimado
+-340,historico|argentina|silvio marzolini|1940-10-04,Silvio Marzolini,Argentina,1940-10-04,historico_estimado
+-341,historico|argentina|daniel passarella|1953-05-25,Daniel Passarella,Argentina,1953-05-25,historico_estimado
+-342,historico|argentina|roberto perfumo|1942-10-03,Roberto Perfumo,Argentina,1942-10-03,historico_estimado
+-343,historico|argentina|oscar ruggeri|1962-01-26,Oscar Ruggeri,Argentina,1962-01-26,historico_estimado
+-344,historico|argentina|roberto ayala|1973-04-14,Roberto Ayala,Argentina,1973-04-14,historico_estimado
+-345,historico|argentina|gabriel heinze|1978-04-19,Gabriel Heinze,Argentina,1978-04-19,historico_estimado
+-346,historico|argentina|alberto tarantini|1955-12-03,Alberto Tarantini,Argentina,1955-12-03,historico_estimado
+-347,historico|argentina|julio olarticoechea|1958-10-18,Julio Olarticoechea,Argentina,1958-10-18,historico_estimado
+-348,historico|argentina|juan pablo sorin|1976-05-05,Juan Pablo Sorin,Argentina,1976-05-05,historico_estimado
+-349,historico|argentina|walter samuel|1978-03-23,Walter Samuel,Argentina,1978-03-23,historico_estimado
+-350,historico|argentina|roberto sensini|1966-10-12,Roberto Sensini,Argentina,1966-10-12,historico_estimado
+-351,historico|chile|elias figueroa|1946-10-25,Elias Figueroa,Chile,1946-10-25,historico_estimado
+-352,historico|chile|marcelo salas|1974-12-24,Marcelo Salas,Chile,1974-12-24,historico_estimado
+-353,historico|chile|ivan zamorano|1967-01-18,Ivan Zamorano,Chile,1967-01-18,historico_estimado
+-354,historico|chile|roberto rojas|1957-08-08,Roberto Rojas,Chile,1957-08-08,historico_estimado
+-355,historico|chile|marco cornez|1957-10-15,Marco Cornez,Chile,1957-10-15,historico_estimado
+-356,historico|chile|misael escuti|1926-12-20,Misael Escuti,Chile,1926-12-20,historico_estimado
+-357,historico|chile|nelson tapia|1966-09-22,Nelson Tapia,Chile,1966-09-22,historico_estimado
+-358,historico|chile|jorge valdivia|1983-10-19,Jorge Valdivia,Chile,1983-10-19,historico_estimado
+-359,historico|chile|matias fernandez|1986-05-15,Matias Fernandez,Chile,1986-05-15,historico_estimado
+-360,historico|chile|jorge aravena|1958-04-22,Jorge Aravena,Chile,1958-04-22,historico_estimado
+-361,historico|chile|eduardo bonvallet|1955-01-13,Eduardo Bonvallet,Chile,1955-01-13,historico_estimado
+-362,historico|chile|fabian estay|1968-10-05,Fabian Estay,Chile,1968-10-05,historico_estimado
+-363,historico|chile|claudio maldonado|1980-01-03,Claudio Maldonado,Chile,1980-01-03,historico_estimado
+-364,historico|chile|jorge toro|1939-01-10,Jorge Toro,Chile,1939-01-10,historico_estimado
+-365,historico|chile|david pizarro|1979-09-11,David Pizarro,Chile,1979-09-11,historico_estimado
+-366,historico|chile|leonel sanchez|1936-04-25,Leonel Sanchez,Chile,1936-04-25,historico_estimado
+-367,historico|chile|hugo rubio|1960-07-05,Hugo Rubio,Chile,1960-07-05,historico_estimado
+-368,historico|chile|patricio yanez|1961-01-20,Patricio Yanez,Chile,1961-01-20,historico_estimado
+-369,historico|chile|osvaldo castro|1947-04-14,Osvaldo Castro,Chile,1947-04-14,historico_estimado
+-370,historico|chile|carlos caszely|1950-07-05,Carlos Caszely,Chile,1950-07-05,historico_estimado
+-371,historico|chile|jaime ramirez|1931-08-14,Jaime Ramirez,Chile,1931-08-14,historico_estimado
+-372,historico|chile|marcelo barticciotto|1967-01-01,Marcelo Barticciotto,Chile,1967-01-01,historico_estimado
+-373,historico|chile|reinaldo navia|1978-05-10,Reinaldo Navia,Chile,1978-05-10,historico_estimado
+-374,historico|chile|mark gonzalez|1984-07-10,Mark Gonzalez,Chile,1984-07-10,historico_estimado
+-375,historico|chile|humberto suazo|1981-05-10,Humberto Suazo,Chile,1981-05-10,historico_estimado
+-376,historico|chile|guillermo subiabre|1903-02-25,Guillermo Subiabre,Chile,1903-02-25,historico_estimado
+-377,historico|chile|raul sanchez|1933-10-26,Raul Sanchez,Chile,1933-10-26,historico_estimado
+-378,historico|chile|jean beausejour|1984-06-01,Jean Beausejour,Chile,1984-06-01,historico_estimado
+-379,historico|chile|pedro reyes|1972-11-13,Pedro Reyes,Chile,1972-11-13,historico_estimado
+-380,historico|chile|javier margas|1969-05-10,Javier Margas,Chile,1969-05-10,historico_estimado
+-381,historico|chile|pablo contreras|1978-09-11,Pablo Contreras,Chile,1978-09-11,historico_estimado
+-382,historico|chile|gonzalo jara|1985-08-29,Gonzalo Jara,Chile,1985-08-29,historico_estimado
+-383,historico|chile|fernando astengo|1960-01-08,Fernando Astengo,Chile,1960-01-08,historico_estimado
+-384,historico|colombia|carlos valderrama|1961-09-02,Carlos Valderrama,Colombia,1961-09-02,historico_estimado
+-385,historico|colombia|willington ortiz|1952-03-26,Willington Ortiz,Colombia,1952-03-26,historico_estimado
+-386,historico|colombia|miguel angel borja|1993-01-26,Miguel Angel Borja,Colombia,1993-01-26,historico_estimado
+-387,historico|colombia|jackson martinez|1986-10-03,Jackson Martinez,Colombia,1986-10-03,historico_estimado
+-388,historico|colombia|teofilo gutierrez|1985-05-17,Teofilo Gutierrez,Colombia,1985-05-17,historico_estimado
+-389,historico|colombia|faustino asprilla|1969-11-10,Faustino Asprilla,Colombia,1969-11-10,historico_estimado
+-390,historico|colombia|victor hugo aristizabal|1971-12-09,Victor Hugo Aristizabal,Colombia,1971-12-09,historico_estimado
+-391,historico|colombia|antony de avila|1962-12-21,Antony de Avila,Colombia,1962-12-21,historico_estimado
+-392,historico|colombia|arnoldo iguaran|1957-01-18,Arnoldo Iguaran,Colombia,1957-01-18,historico_estimado
+-393,historico|colombia|juan pablo angel|1975-10-24,Juan Pablo Angel,Colombia,1975-10-24,historico_estimado
+-394,historico|colombia|adolfo valencia|1968-02-06,Adolfo Valencia,Colombia,1968-02-06,historico_estimado
+-395,historico|colombia|leonel alvarez|1965-07-29,Leonel Alvarez,Colombia,1965-07-29,historico_estimado
+-396,historico|colombia|freddy rincon|1966-08-14,Freddy Rincon,Colombia,1966-08-14,historico_estimado
+-397,historico|colombia|wilmar barrios|1993-10-16,Wilmar Barrios,Colombia,1993-10-16,historico_estimado
+-398,historico|colombia|ivan cordoba|1976-08-11,Ivan Cordoba,Colombia,1976-08-11,historico_estimado
+-399,historico|colombia|mario yepes|1976-01-13,Mario Yepes,Colombia,1976-01-13,historico_estimado
+-400,historico|colombia|alexis garcia|1960-07-21,Alexis Garcia,Colombia,1960-07-21,historico_estimado
+-401,historico|colombia|camilo zuniga|1985-12-14,Camilo Zuniga,Colombia,1985-12-14,historico_estimado
+-402,historico|colombia|pablo armero|1986-11-02,Pablo Armero,Colombia,1986-11-02,historico_estimado
+-403,historico|colombia|carlos sanchez|1986-02-06,Carlos Sanchez,Colombia,1986-02-06,historico_estimado
+-404,historico|colombia|abel aguilar|1985-01-06,Abel Aguilar,Colombia,1985-01-06,historico_estimado
+-405,historico|colombia|fabian vargas|1980-04-17,Fabian Vargas,Colombia,1980-04-17,historico_estimado
+-406,historico|colombia|giovanny hernandez|1976-06-16,Giovanny Hernandez,Colombia,1976-06-16,historico_estimado
+-407,historico|colombia|luis amaranto perea|1979-01-30,Luis Amaranto Perea,Colombia,1979-01-30,historico_estimado
+-408,historico|colombia|jorge bermudez|1971-06-18,Jorge Bermudez,Colombia,1971-06-18,historico_estimado
+-409,historico|colombia|mauricio serna|1968-01-22,Mauricio Serna,Colombia,1968-01-22,historico_estimado
+-410,historico|colombia|faryd mondragon|1971-06-21,Faryd Mondragon,Colombia,1971-06-21,historico_estimado
+-411,historico|colombia|oscar cordoba|1970-02-03,Oscar Cordoba,Colombia,1970-02-03,historico_estimado
+-412,historico|colombia|rene higuita|1966-08-27,Rene Higuita,Colombia,1966-08-27,historico_estimado
+-413,historico|mexico|hugo sanchez|1958-07-11,Hugo Sanchez,Mexico,1958-07-11,historico_estimado
+-414,historico|mexico|guillermo franco|1976-11-03,Guillermo Franco,Mexico,1976-11-03,historico_estimado
+-415,historico|mexico|omar bravo|1980-03-04,Omar Bravo,Mexico,1980-03-04,historico_estimado
+-416,historico|mexico|luis flores|1949-04-28,Luis Flores,Mexico,1949-04-28,historico_estimado
+-417,historico|mexico|carlos hermosillo|1964-08-24,Carlos Hermosillo,Mexico,1964-08-24,historico_estimado
+-418,historico|mexico|javier fragoso|1942-04-19,Javier Fragoso,Mexico,1942-04-19,historico_estimado
+-419,historico|mexico|horacio casarin|1918-05-25,Horacio Casarin,Mexico,1918-05-25,historico_estimado
+-420,historico|mexico|luis hernandez|1968-12-22,Luis Hernandez,Mexico,1968-12-22,historico_estimado
+-421,historico|mexico|salvador reyes|1968-09-28,Salvador Reyes,Mexico,1968-09-28,historico_estimado
+-422,historico|mexico|enrique borja|1945-12-30,Enrique Borja,Mexico,1945-12-30,historico_estimado
+-423,historico|mexico|jared borgetti|1973-08-14,Jared Borgetti,Mexico,1973-08-14,historico_estimado
+-424,historico|mexico|luis garcia postigo|1969-06-01,Luis Garcia Postigo,Mexico,1969-06-01,historico_estimado
+-425,historico|mexico|ramon ramirez|1969-12-05,Ramon Ramirez,Mexico,1969-12-05,historico_estimado
+-426,historico|mexico|oswaldo sanchez|1973-09-21,Oswaldo Sanchez,Mexico,1973-09-21,historico_estimado
+-427,historico|mexico|antonio carbajal|1929-06-07,Antonio Carbajal,Mexico,1929-06-07,historico_estimado
+-428,historico|mexico|jorge campos|1966-10-15,Jorge Campos,Mexico,1966-10-15,historico_estimado
+-429,historico|mexico|cuauhtemoc blanco|1973-01-17,Cuauhtemoc Blanco,Mexico,1973-01-17,historico_estimado
+-430,historico|mexico|adolfo bautista|1979-05-15,Adolfo Bautista,Mexico,1979-05-15,historico_estimado
+-431,historico|mexico|benjamin galindo|1960-12-11,Benjamin Galindo,Mexico,1960-12-11,historico_estimado
+-432,historico|mexico|alberto garcia aspe|1967-05-11,Alberto Garcia Aspe,Mexico,1967-05-11,historico_estimado
+-433,historico|mexico|tomas boy|1951-06-28,Tomas Boy,Mexico,1951-06-28,historico_estimado
+-434,historico|mexico|manuel negrete|1959-03-11,Manuel Negrete,Mexico,1959-03-11,historico_estimado
+-435,historico|mexico|pavel pardo|1976-07-26,Pavel Pardo,Mexico,1976-07-26,historico_estimado
+-436,historico|mexico|gerardo torrado|1979-04-30,Gerardo Torrado,Mexico,1979-04-30,historico_estimado
+-437,historico|mexico|antonio naelson|1976-05-23,Antonio Naelson,Mexico,1976-05-23,historico_estimado
+-438,historico|mexico|giovani dos santos|1989-05-11,Giovani dos Santos,Mexico,1989-05-11,historico_estimado
+-439,historico|mexico|fernando quirarte|1956-05-17,Fernando Quirarte,Mexico,1956-05-17,historico_estimado
+-440,historico|mexico|gustavo pena|1941-11-22,Gustavo Pena,Mexico,1941-11-22,historico_estimado
+-441,historico|mexico|claudio suarez|1968-12-17,Claudio Suarez,Mexico,1968-12-17,historico_estimado
+-442,historico|mexico|duilio davino|1976-03-21,Duilio Davino,Mexico,1976-03-21,historico_estimado
+-443,historico|mexico|carlos salcido|1980-04-02,Carlos Salcido,Mexico,1980-04-02,historico_estimado
+-444,historico|mexico|rafael marquez|1979-02-13,Rafael Marquez,Mexico,1979-02-13,historico_estimado
+-445,historico|paraguay|jose luis chilavert|1965-07-27,Jose Luis Chilavert,Paraguay,1965-07-27,historico_estimado
+-446,historico|paraguay|carlos gamarra|1971-02-17,Carlos Gamarra,Paraguay,1971-02-17,historico_estimado
+-447,historico|paraguay|saturnino arrua|1949-04-07,Saturnino Arrua,Paraguay,1949-04-07,historico_estimado
+-448,historico|paraguay|andres cubas|1996-05-11,Andres Cubas,Paraguay,1996-05-11,historico_estimado
+-449,historico|paraguay|oscar romero|1992-07-04,Oscar Romero,Paraguay,1992-07-04,historico_estimado
+-450,historico|paraguay|victor caceres|1985-03-25,Victor Caceres,Paraguay,1985-03-25,historico_estimado
+-451,historico|paraguay|julio cesar romero|1960-08-28,Julio Cesar Romero,Paraguay,1960-08-28,historico_estimado
+-452,historico|paraguay|carlos humberto paredes|1976-07-16,Carlos Humberto Paredes,Paraguay,1976-07-16,historico_estimado
+-453,historico|paraguay|roberto acuna|1972-03-25,Roberto Acuna,Paraguay,1972-03-25,historico_estimado
+-454,historico|paraguay|jorge luis campos|1970-08-11,Jorge Luis Campos,Paraguay,1970-08-11,historico_estimado
+-455,historico|paraguay|julio cesar caceres|1979-10-05,Julio Cesar Caceres,Paraguay,1979-10-05,historico_estimado
+-456,historico|paraguay|celso ayala|1970-08-20,Celso Ayala,Paraguay,1970-08-20,historico_estimado
+-457,historico|paraguay|juan bautista villalba|1924-08-29,Juan Bautista Villalba,Paraguay,1924-08-29,historico_estimado
+-458,historico|paraguay|delfin benitez caceres|1910-09-24,Delfin Benitez Caceres,Paraguay,1910-09-24,historico_estimado
+-459,historico|paraguay|aurelio gonzalez|1905-09-25,Aurelio Gonzalez,Paraguay,1905-09-25,historico_estimado
+-460,historico|paraguay|arsenio erico|1915-03-30,Arsenio Erico,Paraguay,1915-03-30,historico_estimado
+-461,historico|paraguay|salvador cabanas|1980-08-05,Salvador Cabanas,Paraguay,1980-08-05,historico_estimado
+-462,historico|paraguay|denis caniza|1974-08-29,Denis Caniza,Paraguay,1974-08-29,historico_estimado
+-463,historico|paraguay|nelson cuevas|1980-01-10,Nelson Cuevas,Paraguay,1980-01-10,historico_estimado
+-464,historico|paraguay|nelson haedo valdez|1983-11-28,Nelson Haedo Valdez,Paraguay,1983-11-28,historico_estimado
+-465,historico|paraguay|justo villar|1977-06-30,Justo Villar,Paraguay,1977-06-30,historico_estimado
+-466,historico|peru|teofilo cubillas|1949-03-08,Teofilo Cubillas,Peru,1949-03-08,historico_estimado
+-467,historico|peru|claudio pizarro|1978-10-03,Claudio Pizarro,Peru,1978-10-03,historico_estimado
+-468,historico|peru|ramon mifflin|1947-04-05,Ramon Mifflin,Peru,1947-04-05,historico_estimado
+-469,historico|peru|jose del solar|1967-11-28,Jose del Solar,Peru,1967-11-28,historico_estimado
+-470,historico|peru|german leguia|1954-01-02,German Leguia,Peru,1954-01-02,historico_estimado
+-471,historico|peru|julio cesar uribe|1958-05-09,Julio Cesar Uribe,Peru,1958-05-09,historico_estimado
+-472,historico|peru|luis cruzado|1941-07-06,Luis Cruzado,Peru,1941-07-06,historico_estimado
+-473,historico|peru|roberto palacios|1972-12-28,Roberto Palacios,Peru,1972-12-28,historico_estimado
+-474,historico|peru|cesar cueto|1952-06-16,Cesar Cueto,Peru,1952-06-16,historico_estimado
+-475,historico|peru|hugo sotil|1949-05-18,Hugo Sotil,Peru,1949-05-18,historico_estimado
+-476,historico|peru|roberto challe|1946-11-24,Roberto Challe,Peru,1946-11-24,historico_estimado
+-477,historico|peru|juan manuel vargas|1983-10-05,Juan Manuel Vargas,Peru,1983-10-05,historico_estimado
+-478,historico|peru|alberto rodriguez|1984-03-31,Alberto Rodriguez,Peru,1984-03-31,historico_estimado
+-479,historico|peru|hector chumpitaz|1944-04-12,Hector Chumpitaz,Peru,1944-04-12,historico_estimado
+-480,historico|peru|ruben toribio diaz|1952-04-17,Ruben Toribio Diaz,Peru,1952-04-17,historico_estimado
+-481,historico|peru|percy rojas|1949-09-16,Percy Rojas,Peru,1949-09-16,historico_estimado
+-482,historico|peru|juan carlos oblitas|1951-02-16,Juan Carlos Oblitas,Peru,1951-02-16,historico_estimado
+-483,historico|peru|flavio maestri|1973-01-21,Flavio Maestri,Peru,1973-01-21,historico_estimado
+-484,historico|peru|edison flores|1994-05-14,Edison Flores,Peru,1994-05-14,historico_estimado
+-485,historico|peru|oswaldo ramirez|1947-03-28,Oswaldo Ramirez,Peru,1947-03-28,historico_estimado
+-486,historico|peru|jefferson farfan|1984-10-26,Jefferson Farfan,Peru,1984-10-26,historico_estimado
+-487,historico|peru|nolberto solano|1974-12-12,Nolberto Solano,Peru,1974-12-12,historico_estimado
+-488,historico|peru|pedro pablo leon|1943-06-29,Pedro Pablo Leon,Peru,1943-06-29,historico_estimado
+-489,historico|peru|alberto gallardo|1940-11-28,Alberto Gallardo,Peru,1940-11-28,historico_estimado
+-490,historico|peru|ramon quiroga|1950-07-23,Ramon Quiroga,Peru,1950-07-23,historico_estimado
+-491,historico|peru|oscar ibanez|1967-08-08,Oscar Ibanez,Peru,1967-08-08,historico_estimado
+-492,historico|united states|landon donovan|1982-03-04,Landon Donovan,United States,1982-03-04,historico_estimado
+-493,historico|united states|clint dempsey|1983-03-09,Clint Dempsey,United States,1983-03-09,historico_estimado
+-494,historico|united states|maurice edu|1986-04-18,Maurice Edu,United States,1986-04-18,historico_estimado
+-495,historico|united states|stuart holden|1985-08-01,Stuart Holden,United States,1985-08-01,historico_estimado
+-496,historico|united states|benny feilhaber|1985-01-19,Benny Feilhaber,United States,1985-01-19,historico_estimado
+-497,historico|united states|tab ramos|1966-09-21,Tab Ramos,United States,1966-09-21,historico_estimado
+-498,historico|united states|claudio reyna|1973-07-20,Claudio Reyna,United States,1973-07-20,historico_estimado
+-499,historico|united states|john harkes|1967-03-08,John Harkes,United States,1967-03-08,historico_estimado
+-500,historico|united states|oguchi onyewu|1982-05-13,Oguchi Onyewu,United States,1982-05-13,historico_estimado
+-501,historico|united states|carlos bocanegra|1979-05-25,Carlos Bocanegra,United States,1979-05-25,historico_estimado
+-502,historico|united states|steve cherundolo|1979-02-19,Steve Cherundolo,United States,1979-02-19,historico_estimado
+-503,historico|united states|tony meola|1969-02-21,Tony Meola,United States,1969-02-21,historico_estimado
+-504,historico|united states|tim howard|1979-03-06,Tim Howard,United States,1979-03-06,historico_estimado
+-505,historico|united states|brad friedel|1971-05-18,Brad Friedel,United States,1971-05-18,historico_estimado
+-506,historico|united states|kasey keller|1969-11-29,Kasey Keller,United States,1969-11-29,historico_estimado
+-507,historico|united states|alexi lalas|1970-06-01,Alexi Lalas,United States,1970-06-01,historico_estimado
+-508,historico|united states|jeff agoos|1968-05-02,Jeff Agoos,United States,1968-05-02,historico_estimado
+-509,historico|united states|eddie pope|1973-12-24,Eddie Pope,United States,1973-12-24,historico_estimado
+-510,historico|united states|marcelo balboa|1967-08-08,Marcelo Balboa,United States,1967-08-08,historico_estimado
+-511,historico|united states|earnie stewart|1969-03-28,Earnie Stewart,United States,1969-03-28,historico_estimado
+-512,historico|united states|joe max moore|1971-02-23,Joe-Max Moore,United States,1971-02-23,historico_estimado
+-513,historico|united states|brian mcbride|1972-06-19,Brian McBride,United States,1972-06-19,historico_estimado
+-514,historico|united states|damarcus beasley|1982-05-24,DaMarcus Beasley,United States,1982-05-24,historico_estimado
+-515,historico|united states|eric wynalda|1969-06-09,Eric Wynalda,United States,1969-06-09,historico_estimado
+-516,historico|united states|cobi jones|1970-06-16,Cobi Jones,United States,1970-06-16,historico_estimado
+-517,historico|uruguay|diego forlan|1979-05-19,Diego Forlan,Uruguay,1979-05-19,historico_estimado
+-518,historico|uruguay|enzo francescoli|1961-11-12,Enzo Francescoli,Uruguay,1961-11-12,historico_estimado
+-519,historico|uruguay|dario silva|1972-11-02,Dario Silva,Uruguay,1972-11-02,historico_estimado
+-520,historico|uruguay|alcides ghiggia|1926-11-22,Alcides Ghiggia,Uruguay,1926-11-22,historico_estimado
+-521,historico|uruguay|julio cesar abbadie|1930-09-07,Julio Cesar Abbadie,Uruguay,1930-09-07,historico_estimado
+-522,historico|uruguay|luis cubilla|1940-03-28,Luis Cubilla,Uruguay,1940-03-28,historico_estimado
+-523,historico|uruguay|pedro rocha|1942-12-03,Pedro Rocha,Uruguay,1942-12-03,historico_estimado
+-524,historico|uruguay|cristian rodriguez|1985-09-30,Cristian Rodriguez,Uruguay,1985-09-30,historico_estimado
+-525,historico|uruguay|sebastian abreu|1976-10-17,Sebastian Abreu,Uruguay,1976-10-17,historico_estimado
+-526,historico|uruguay|marcelo zalayeta|1978-12-05,Marcelo Zalayeta,Uruguay,1978-12-05,historico_estimado
+-527,historico|uruguay|omar miguez|1927-12-05,Omar Miguez,Uruguay,1927-12-05,historico_estimado
+-528,historico|uruguay|daniel fonseca|1969-09-13,Daniel Fonseca,Uruguay,1969-09-13,historico_estimado
+-529,historico|uruguay|ruben sosa|1966-04-25,Ruben Sosa,Uruguay,1966-04-25,historico_estimado
+-530,historico|uruguay|hector scarone|1898-11-26,Hector Scarone,Uruguay,1898-11-26,historico_estimado
+-531,historico|uruguay|paolo montero|1971-09-03,Paolo Montero,Uruguay,1971-09-03,historico_estimado
+-532,historico|uruguay|william martinez|1928-01-13,William Martinez,Uruguay,1928-01-13,historico_estimado
+-533,historico|uruguay|alvaro pereira|1985-11-28,Alvaro Pereira,Uruguay,1985-11-28,historico_estimado
+-534,historico|uruguay|jose nasazzi|1901-05-24,Jose Nasazzi,Uruguay,1901-05-24,historico_estimado
+-535,historico|uruguay|diego lugano|1980-11-02,Diego Lugano,Uruguay,1980-11-02,historico_estimado
+-536,historico|uruguay|jorge fucile|1984-11-19,Jorge Fucile,Uruguay,1984-11-19,historico_estimado
+-537,historico|uruguay|obdulio varela|1917-09-20,Obdulio Varela,Uruguay,1917-09-20,historico_estimado
+-538,historico|uruguay|victor rodriguez andrade|1927-05-02,Victor Rodriguez Andrade,Uruguay,1927-05-02,historico_estimado
+-539,historico|uruguay|schubert gambetta|1920-04-14,Schubert Gambetta,Uruguay,1920-04-14,historico_estimado
+-540,historico|uruguay|alvaro recoba|1976-03-17,Alvaro Recoba,Uruguay,1976-03-17,historico_estimado
+-541,historico|uruguay|gaston ramirez|1990-12-02,Gaston Ramirez,Uruguay,1990-12-02,historico_estimado
+-542,historico|uruguay|juan alberto schiaffino|1925-07-28,Juan Alberto Schiaffino,Uruguay,1925-07-28,historico_estimado
+-543,historico|uruguay|egidio arevalo rios|1982-01-01,Egidio Arevalo Rios,Uruguay,1982-01-01,historico_estimado
+-544,historico|uruguay|gustavo varela|1978-05-14,Gustavo Varela,Uruguay,1978-05-14,historico_estimado
+-545,historico|uruguay|pablo garcia|1977-05-11,Pablo Garcia,Uruguay,1977-05-11,historico_estimado
+-546,historico|uruguay|fabian carini|1979-12-26,Fabian Carini,Uruguay,1979-12-26,historico_estimado
+-547,historico|uruguay|ladislao mazurkiewicz|1945-02-14,Ladislao Mazurkiewicz,Uruguay,1945-02-14,historico_estimado
+-548,historico|brazil|ronaldo|1976-09-18,Ronaldo,Brazil,1976-09-18,historico_estimado
+-549,historico|brazil|pele|1940-10-23,Pele,Brazil,1940-10-23,historico_estimado
+-550,historico|brazil|ronaldinho|1980-03-21,Ronaldinho,Brazil,1980-03-21,historico_estimado
+-551,historico|brazil|garrincha|1933-10-28,Garrincha,Brazil,1933-10-28,historico_estimado
+-552,historico|brazil|romario|1966-01-29,Romario,Brazil,1966-01-29,historico_estimado
+-553,historico|brazil|zico|1953-03-03,Zico,Brazil,1953-03-03,historico_estimado
+-554,historico|brazil|roberto carlos|1973-04-10,Roberto Carlos,Brazil,1973-04-10,historico_estimado
+-555,historico|brazil|rivaldo|1972-04-19,Rivaldo,Brazil,1972-04-19,historico_estimado
+-556,historico|brazil|cafu|1970-06-07,Cafu,Brazil,1970-06-07,historico_estimado
+-557,historico|brazil|kaka|1982-04-22,Kaka,Brazil,1982-04-22,historico_estimado
+-558,historico|brazil|castilho|1927-11-27,Castilho,Brazil,1927-11-27,historico_estimado
+-559,historico|brazil|zetti|1965-01-10,Zetti,Brazil,1965-01-10,historico_estimado
+-560,historico|brazil|gilmar|1930-08-22,Gilmar,Brazil,1930-08-22,historico_estimado
+-561,historico|brazil|julio cesar|1979-09-03,Julio Cesar,Brazil,1979-09-03,historico_estimado
+-562,historico|brazil|claudio taffarel|1966-05-08,Claudio Taffarel,Brazil,1966-05-08,historico_estimado
+-563,historico|brazil|ademir da guia|1942-04-03,Ademir da Guia,Brazil,1942-04-03,historico_estimado
+-564,historico|brazil|rai|1965-05-15,Rai,Brazil,1965-05-15,historico_estimado
+-565,historico|brazil|juninho pernambucano|1975-01-30,Juninho Pernambucano,Brazil,1975-01-30,historico_estimado
+-566,historico|brazil|emerson|1976-04-04,Emerson,Brazil,1976-04-04,historico_estimado
+-567,historico|brazil|gilberto silva|1976-10-07,Gilberto Silva,Brazil,1976-10-07,historico_estimado
+-568,historico|brazil|kleberson|1979-06-19,Kleberson,Brazil,1979-06-19,historico_estimado
+-569,historico|brazil|vampeta|1974-03-13,Vampeta,Brazil,1974-03-13,historico_estimado
+-570,historico|brazil|didi|1928-10-08,Didi,Brazil,1928-10-08,historico_estimado
+-571,historico|brazil|juninho paulista|1973-02-22,Juninho Paulista,Brazil,1973-02-22,historico_estimado
+-572,historico|brazil|alex|1977-09-14,Alex,Brazil,1977-09-14,historico_estimado
+-573,historico|brazil|ramires|1987-03-24,Ramires,Brazil,1987-03-24,historico_estimado
+-574,historico|brazil|gerson|1941-01-11,Gerson,Brazil,1941-01-11,historico_estimado
+-575,historico|brazil|cesar sampaio|1968-03-31,Cesar Sampaio,Brazil,1968-03-31,historico_estimado
+-576,historico|brazil|zito|1932-08-08,Zito,Brazil,1932-08-08,historico_estimado
+-577,historico|brazil|dunga|1963-10-31,Dunga,Brazil,1963-10-31,historico_estimado
+-578,historico|brazil|zizinho|1921-09-14,Zizinho,Brazil,1921-09-14,historico_estimado
+-579,historico|brazil|socrates|1954-02-09,Socrates,Brazil,1954-02-09,historico_estimado
+-580,historico|brazil|falcao|1953-10-16,Falcao,Brazil,1953-10-16,historico_estimado
+-581,historico|brazil|toninho cerezo|1955-04-21,Toninho Cerezo,Brazil,1955-04-21,historico_estimado
+-582,historico|brazil|bauer|1925-11-21,Bauer,Brazil,1925-11-21,historico_estimado
+-583,historico|brazil|clodoaldo|1949-09-25,Clodoaldo,Brazil,1949-09-25,historico_estimado
+-584,historico|brazil|piazza|1943-02-25,Piazza,Brazil,1943-02-25,historico_estimado
+-585,historico|brazil|rivellino|1946-01-01,Rivellino,Brazil,1946-01-01,historico_estimado
+-586,historico|brazil|danilo alvim|1920-12-03,Danilo Alvim,Brazil,1920-12-03,historico_estimado
+-587,historico|brazil|djalminha|1970-12-09,Djalminha,Brazil,1970-12-09,historico_estimado
+-588,historico|brazil|david luiz|1987-04-22,David Luiz,Brazil,1987-04-22,historico_estimado
+-589,historico|brazil|filipe luis|1985-08-09,Filipe Luis,Brazil,1985-08-09,historico_estimado
+-590,historico|brazil|miranda|1962-03-21,Miranda,Brazil,1962-03-21,historico_estimado
+-591,historico|brazil|edmundo|1971-04-02,Edmundo,Brazil,1971-04-02,historico_estimado
+-592,historico|brazil|orlando|1986-02-19,Orlando,Brazil,1986-02-19,historico_estimado
+-593,historico|brazil|luis fabiano|1980-11-08,Luis Fabiano,Brazil,1980-11-08,historico_estimado
+-594,historico|brazil|bellini|1930-06-07,Bellini,Brazil,1930-06-07,historico_estimado
+-595,historico|brazil|muller|1966-01-31,Muller,Brazil,1966-01-31,historico_estimado
+-596,historico|brazil|pepe|1984-02-26,Pepe,Brazil,1984-02-26,historico_estimado
+-597,historico|brazil|jair da costa|1940-07-09,Jair da Costa,Brazil,1940-07-09,historico_estimado
+-598,historico|brazil|brito|1939-08-09,Brito,Brazil,1939-08-09,historico_estimado
+-599,historico|brazil|savio|1974-01-09,Savio,Brazil,1974-01-09,historico_estimado
+-600,historico|brazil|denilson|1988-02-16,Denilson,Brazil,1988-02-16,historico_estimado
+-601,historico|brazil|jairzinho|1944-12-25,Jairzinho,Brazil,1944-12-25,historico_estimado
+-602,historico|brazil|fred|1983-10-03,Fred,Brazil,1983-10-03,historico_estimado
+-603,historico|brazil|djalma santos|1929-02-27,Djalma Santos,Brazil,1929-02-27,historico_estimado
+-604,historico|brazil|hulk|1986-07-25,Hulk,Brazil,1986-07-25,historico_estimado
+-605,historico|brazil|dani alves|1983-05-06,Dani Alves,Brazil,1983-05-06,historico_estimado
+-606,historico|brazil|tostao|1947-01-25,Tostao,Brazil,1947-01-25,historico_estimado
+-607,historico|brazil|leonidas da silva|1913-09-06,Leonidas da Silva,Brazil,1913-09-06,historico_estimado
+-608,historico|brazil|ademir de menezes|1922-11-08,Ademir de Menezes,Brazil,1922-11-08,historico_estimado
+-609,historico|brazil|arthur friedenreich|1892-07-18,Arthur Friedenreich,Brazil,1892-07-18,historico_estimado
+-610,historico|brazil|domingos da guia|1912-11-19,Domingos da Guia,Brazil,1912-11-19,historico_estimado
+-611,historico|brazil|leandro|2003-01-22,Leandro,Brazil,2003-01-22,historico_estimado
+-612,historico|brazil|careca|1960-10-05,Careca,Brazil,1960-10-05,historico_estimado
+-613,historico|brazil|bebeto|1964-02-16,Bebeto,Brazil,1964-02-16,historico_estimado
+-614,historico|brazil|nilton santos|1925-05-16,Nilton Santos,Brazil,1925-05-16,historico_estimado
+-615,historico|brazil|aldair|1965-11-30,Aldair,Brazil,1965-11-30,historico_estimado
+-616,historico|brazil|maicon|1981-07-26,Maicon,Brazil,1981-07-26,historico_estimado
+-617,historico|brazil|willian|1988-08-09,Willian,Brazil,1988-08-09,historico_estimado
+-618,historico|brazil|lucio|1978-05-08,Lucio,Brazil,1978-05-08,historico_estimado
+-619,historico|brazil|juan|1979-02-01,Juan,Brazil,1979-02-01,historico_estimado
+-620,historico|brazil|robinho|1984-01-25,Robinho,Brazil,1984-01-25,historico_estimado
+-621,historico|brazil|adriano|1982-02-17,Adriano,Brazil,1982-02-17,historico_estimado
+-622,historico|brazil|vava|1934-11-12,Vava,Brazil,1934-11-12,historico_estimado
+-623,historico|brazil|carlos alberto|1944-07-17,Carlos Alberto,Brazil,1944-07-17,historico_estimado
+-624,historico|brazil|ze roberto|1974-07-06,Ze Roberto,Brazil,1974-07-06,historico_estimado
+-625,historico|chile|eduardo vargas|1989-11-20,Eduardo Vargas,Chile,1989-11-20,historico_estimado
+-626,historico|chile|mauricio isla|1988-06-12,Mauricio Isla,Chile,1988-06-12,historico_estimado
+-627,historico|ecuador|alexander dominguez|1987-06-05,Alexander Dominguez,Ecuador,1987-06-05,historico_estimado
+-628,historico|ecuador|hernan galindez|1987-03-30,Hernan Galindez,Ecuador,1987-03-30,historico_estimado
+-629,historico|panama|ismael diaz|1997-05-12,Ismael Diaz,Panama,1997-05-12,historico_estimado
+-630,historico|paraguay|damian bobadilla|2001-07-11,Damian Bobadilla,Paraguay,2001-07-11,historico_estimado
+-631,historico|paraguay|fabian balbuena|1991-08-23,Fabian Balbuena,Paraguay,1991-08-23,historico_estimado
+-632,historico|paraguay|junior alonso|1993-02-09,Junior Alonso,Paraguay,1993-02-09,historico_estimado
+-633,historico|paraguay|gustavo gomez|1993-05-06,Gustavo Gomez,Paraguay,1993-05-06,historico_estimado
+-634,historico|peru|paolo guerrero|1984-01-01,Paolo Guerrero,Peru,1984-01-01,historico_estimado
+-635,historico|united states|matt turner|1994-06-24,Matt Turner,United States,1994-06-24,historico_estimado
+-636,historico|united states|folarin balogun|2001-07-03,Folarin Balogun,United States,2001-07-03,historico_estimado
+-637,historico|uruguay|giorgian de arrascaeta|1994-06-01,Giorgian de Arrascaeta,Uruguay,1994-06-01,historico_estimado
+-638,historico|venezuela|jefferson savarino|1996-11-11,Jefferson Savarino,Venezuela,1996-11-11,historico_estimado
+-639,historico|venezuela|jhon chancellor|1992-01-02,Jhon Chancellor,Venezuela,1992-01-02,historico_estimado

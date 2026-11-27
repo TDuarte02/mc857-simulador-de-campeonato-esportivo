@@ -1,3 +1,5 @@
+from copa_engine.lineup import FORMATIONS, LineupDoesNotFit
+
 from api.config import Settings
 from api.domain.models import (
     FINALS_ROUND,
@@ -7,6 +9,7 @@ from api.domain.models import (
     SEMI_FINAL_PATHS,
     SEMI_FINAL_ROUND,
     Availability,
+    LineupSlot,
     Match,
     NextInfo,
     NextStep,
@@ -26,6 +29,8 @@ from api.services.draw_service import DrawService
 from api.services.match_runner import MatchRunner
 from api.services.session_service import SessionService
 from api.services.squad_service import SquadService
+from api.simulation.base import TeamSheet
+from api.simulation.engine import DEFAULT_USER_FORMATION, user_sheet
 
 
 class MatchService:
@@ -73,9 +78,11 @@ class MatchService:
             raise ConflictError("PLAYOFFS_DRAW_REQUIRED", "Draw the playoffs before the next match.")
 
         lineup = self._validate_lineup(session, player_ids)
+        sheet = self._place(session.squad_id, lineup, formation or DEFAULT_USER_FORMATION)
         round_no = session.round + 1
         match = self._user_match(session, round_no)
-        self._runner.run_full(tournament, match, session.squad_id, lineup, formation)
+        self._runner.run_full(tournament, match, session.seed, sheet)
+        match.lineup = [LineupSlot(slot, player.id) for slot, player in zip(sheet.slots, sheet.players)]
         # Saved before the round closes: _complete_round reloads the round and would
         # otherwise quick-simulate this match again.
         self._tournaments.save_matches([match])
@@ -136,6 +143,22 @@ class MatchService:
             raise ValidationError("INVALID_LINEUP", "A lineup needs exactly one goalkeeper.")
         return lineup
 
+    @staticmethod
+    def _place(squad_id: str, lineup: list[Player], formation: str) -> TeamSheet:
+        """Who plays where (D1); checked before anything changes."""
+        if formation not in FORMATIONS:
+            options = ", ".join(FORMATIONS)
+            raise ValidationError("INVALID_FORMATION", f"'formation' must be one of: {options}.")
+        try:
+            return user_sheet(squad_id, lineup, formation)
+        except LineupDoesNotFit as error:
+            names = {str(player.id): player.name for player in lineup}
+            misfits = ", ".join(f"{names.get(i, i)} ({i})" for i in error.players)
+            raise ValidationError(
+                "LINEUP_DOES_NOT_FIT_FORMATION",
+                f"The lineup does not fit {formation}: no slot for {misfits}.",
+            ) from None
+
     def _complete_round(self, session: Session, tournament: Tournament, round_no: int) -> list[Match]:
         """Resolves what is left of a round, reveals it and sets up the next one.
 
@@ -144,7 +167,7 @@ class MatchService:
         matches = self._tournaments.list_matches(session.id, round_no)
         for match in matches:
             if match.result is None:
-                self._runner.run_quick(tournament, match)
+                self._runner.run_quick(tournament, match, session.seed)
             match.played = True
         self._tournaments.save_matches(matches)
         session.round = round_no
@@ -153,7 +176,7 @@ class MatchService:
         if round_no < GROUP_ROUNDS:
             return matches
         if round_no == GROUP_ROUNDS:
-            qualified = qualified_squads(tournament.groups, self._tournaments.list_matches(session.id))
+            qualified = qualified_squads(tournament.groups, self._tournaments.list_matches(session.id), session.seed)
             session.user_eliminated = user not in qualified
             session.phase = Phase.PLAYOFFS_PENDING
         elif round_no == QUARTER_FINAL_ROUND:

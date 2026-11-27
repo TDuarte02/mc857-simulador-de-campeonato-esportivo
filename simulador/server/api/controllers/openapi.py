@@ -7,6 +7,8 @@ document cannot silently drift from the code.
 
 from functools import cache
 
+from copa_engine.lineup import FORMATIONS
+
 from api.domain.models import (
     GROUP_NAMES,
     CardType,
@@ -18,6 +20,7 @@ from api.domain.models import (
     Stage,
     UnavailableReason,
 )
+from api.simulation.engine import DEFAULT_USER_FORMATION
 
 INT = {"type": "integer"}
 STR = {"type": "string"}
@@ -70,7 +73,12 @@ _PLAYER = {
     "id": {**INT, "example": 301},
     "name": STR,
     "age": INT,
-    "position": _enum(Position),
+    "position": {**_enum(Position), "description": "Setor da posição principal."},
+    "positions": _array(
+        STR,
+        description="Posições do jogador no dataset (códigos FIFA como `CB`, `CAM`, `ST`), a principal primeiro.",
+        example=["CAM", "ST"],
+    ),
     "overall": {**INT, "description": "Força geral do jogador (0–99)."},
 }
 _EVENT = {
@@ -124,7 +132,10 @@ SCHEMAS = {
                 INT,
                 minItems=26,
                 maxItems=26,
-                description="Ids dos 26 convocados: 3 GK, 8 DEF, 8 MID e 7 FW.",
+                description=(
+                    "Ids dos 26 convocados: 3 GK, 8 DEF, 8 MID e 7 FW. Uma pessoa entra uma vez só: "
+                    "as versões atual e lenda de um mesmo jogador não podem ser convocadas juntas."
+                ),
                 example=EXAMPLE_CALL_UP,
             ),
         }
@@ -152,16 +163,41 @@ SCHEMAS = {
                 INT,
                 minItems=11,
                 maxItems=11,
-                description="Os 11 titulares, todos convocados e disponíveis, com exatamente 1 goleiro.",
+                description=(
+                    "Os 11 titulares, todos convocados e disponíveis, com exatamente 1 goleiro, no formato da "
+                    "formação (o servidor decide quem joga em cada slot: posição exata primeiro, depois o mesmo "
+                    "setor). Se nenhum goleiro convocado estiver disponível, mande 11 jogadores de linha: dez no "
+                    "formato da formação e mais um; o de melhores reflexos que deixe os outros dez encaixados vai "
+                    "para o gol."
+                ),
                 example=EXAMPLE_LINEUP,
             ),
-            "formation": {**STR, "description": "Repassada ao modelo.", "example": "4-4-2"},
+            "formation": {
+                **_enum(FORMATIONS),
+                "description": f"Formação da partida; sem ela, {DEFAULT_USER_FORMATION}.",
+                "example": DEFAULT_USER_FORMATION,
+            },
         },
         required=["players"],
     ),
     "EventPlayer": _obj({"id": INT, "name": STR}),
+    "LineupSlot": _obj(
+        {
+            "slot": {**STR, "description": "Slot da formação: GK, CB, FB, DM, CM, AM, W ou ST.", "example": "FB"},
+            "player": _ref("EventPlayer"),
+        }
+    ),
     "Goal": _obj(_EVENT),
-    "Card": _obj({**_EVENT, "type": _enum(CardType)}),
+    "Card": _obj(
+        {
+            **_EVENT,
+            "type": _enum(CardType),
+            "secondYellow": {
+                **BOOL,
+                "description": "Vermelho pelo 2º amarelo na partida (o amarelo também aparece na súmula).",
+            },
+        }
+    ),
     "Injury": _obj({**_EVENT, "matchesOut": {**INT, "description": "Partidas que o jogador vai perder."}}),
     "Penalties": _obj({"home": INT, "away": INT}),
     "MatchResult": _obj(
@@ -185,8 +221,17 @@ SCHEMAS = {
             "away": _ref("Squad"),
             "played": BOOL,
             "result": _nullable(_ref("MatchResult")),
+            "lineup": _nullable(
+                _array(
+                    _ref("LineupSlot"),
+                    description="Quem jogou onde no time do usuário, slot a slot. Só nas partidas do usuário já jogadas.",
+                )
+            ),
         },
-        description="`result` só aparece depois que a rodada da partida foi jogada.",
+        description=(
+            "`result` só aparece depois que a rodada da partida foi jogada. Os minutos são aproximados: caem dentro "
+            "do bloco de 15 minutos em que o lance aconteceu. Expulsos e lesionados terminam a partida em campo."
+        ),
     ),
     "NextStep": _obj(
         {
@@ -213,7 +258,28 @@ SCHEMAS = {
             "redCards": INT,
         }
     ),
-    "GroupTable": _obj({"name": _enum(GROUP_NAMES), "standings": _array(_ref("Standing"))}),
+    "GroupTable": _obj(
+        {
+            "name": _enum(GROUP_NAMES),
+            "standings": _array(
+                _ref("Standing"),
+                description=(
+                    "Na ordem de classificação, que é a do servidor (não reordenar no cliente): pontos, saldo, "
+                    "gols marcados, confronto direto e, se nada desempatar, sorteio. Cartões não desempatam."
+                ),
+            ),
+        }
+    ),
+    "Meta": _obj(
+        {
+            "simulator": {**STR, "description": "Modelo que simula as partidas.", "example": "engine"},
+            "catalogVersion": {
+                **STR,
+                "description": "Versão do catálogo de seleções e jogadores (`mock` para os dados gerados).",
+                "example": "1933dbb180c0",
+            },
+        }
+    ),
     "Podium": _obj(
         {"champion": _ref("Squad"), "runnerUp": _ref("Squad"), "third": _ref("Squad"), "fourth": _ref("Squad")}
     ),
@@ -313,6 +379,15 @@ _LOOP = "Loop de partidas"
 _ENDGAME = "Mata-mata e encerramento"
 
 PATHS = {
+    "/meta": {
+        "get": _operation(
+            "getMeta",
+            _SESSION,
+            "O que está rodando",
+            "O simulador em uso (`engine` ou `mock`) e a versão do catálogo; uma nova versão encerra as sessões antigas.",
+            [_ok("Informações do servidor.", _ref("Meta"))],
+        )
+    },
     "/session": {
         "post": _operation(
             "createSession",
@@ -328,7 +403,11 @@ PATHS = {
             _SESSION,
             "Estado da sessão",
             "Fase atual, seleção e convocação do usuário, rodadas jogadas e a situação de cada convocado.",
-            [_ok("Sessão.", _obj({"session": _ref("SessionState")})), _error(404, ["SESSION_NOT_FOUND"])],
+            [
+                _ok("Sessão.", _obj({"session": _ref("SessionState")})),
+                _error(404, ["SESSION_NOT_FOUND"]),
+                _error(409, ["CATALOG_CHANGED"]),
+            ],
             parameters=[_SESSION_ID],
         )
     },
@@ -370,12 +449,13 @@ PATHS = {
             "callUp",
             _SETUP,
             "Envia a convocação",
-            "Define a seleção do usuário e seus 26 jogadores. Pode ser reenviada até o sorteio.",
+            "Define a seleção do usuário e seus 26 jogadores. Pode ser reenviada até o sorteio. "
+            "`INVALID_CALL_UP` também recusa duas versões da mesma pessoa (atual e lenda).",
             [
                 _ok("Convocação aceita.", _ref("CallUp")),
                 _error(400, ["INVALID_BODY", "INVALID_CALL_UP"]),
                 _error(404, ["SESSION_NOT_FOUND", "SQUAD_NOT_FOUND"]),
-                _error(409, ["DRAW_ALREADY_DONE"]),
+                _error(409, ["DRAW_ALREADY_DONE", "CATALOG_CHANGED"]),
             ],
             parameters=[_SESSION_ID],
             requestBody=_body("CallUpRequest"),
@@ -386,13 +466,14 @@ PATHS = {
             "drawGroups",
             _SETUP,
             "Sorteia os grupos",
-            "Na primeira chamada sorteia 4 grupos de 4, escolhe o elenco das outras 15 seleções e monta a "
+            "Na primeira chamada escolhe o elenco das outras 15 seleções, divide as 16 em 4 potes pela força do "
+            "time titular e sorteia 4 grupos de 4 (um de cada pote; a posição no grupo é o pote) e monta a "
             "tabela; as partidas sem o usuário já são simuladas, mas ficam ocultas até a rodada delas. "
             "Chamadas seguintes devolvem o mesmo sorteio.",
             [
                 _ok("Sorteio.", _ref("Draw")),
                 _error(404, ["SESSION_NOT_FOUND"]),
-                _error(409, ["CALL_UP_REQUIRED"]),
+                _error(409, ["CALL_UP_REQUIRED", "CATALOG_CHANGED"]),
             ],
             parameters=[_SESSION_ID],
         )
@@ -406,7 +487,7 @@ PATHS = {
             [
                 _ok("Disponibilidade.", _ref("Availability")),
                 _error(404, ["SESSION_NOT_FOUND"]),
-                _error(409, ["CALL_UP_REQUIRED"]),
+                _error(409, ["CALL_UP_REQUIRED", "CATALOG_CHANGED"]),
             ],
             parameters=[_SESSION_ID],
         )
@@ -416,12 +497,26 @@ PATHS = {
             "simulateMatch",
             _LOOP,
             "Simula a partida da rodada",
-            "Joga a partida do usuário na rodada atual e fecha a rodada. `next.step` diz o que fazer depois.",
+            "Joga a partida do usuário na rodada atual e fecha a rodada. `next.step` diz o que fazer depois. "
+            "`match.lineup` diz quem jogou em cada slot. `LINEUP_DOES_NOT_FIT_FORMATION` cita os jogadores "
+            "que não cabem na formação.",
             [
                 _ok("Resultado da partida.", _ref("SimulationOutcome")),
-                _error(400, ["INVALID_BODY", "INVALID_LINEUP", "PLAYER_UNAVAILABLE"]),
+                _error(
+                    400,
+                    [
+                        "INVALID_BODY",
+                        "INVALID_LINEUP",
+                        "PLAYER_UNAVAILABLE",
+                        "INVALID_FORMATION",
+                        "LINEUP_DOES_NOT_FIT_FORMATION",
+                    ],
+                ),
                 _error(404, ["SESSION_NOT_FOUND"]),
-                _error(409, ["DRAW_REQUIRED", "PLAYOFFS_DRAW_REQUIRED", "USER_ELIMINATED", "TOURNAMENT_FINISHED"]),
+                _error(
+                    409,
+                    ["DRAW_REQUIRED", "PLAYOFFS_DRAW_REQUIRED", "USER_ELIMINATED", "TOURNAMENT_FINISHED", "CATALOG_CHANGED"],
+                ),
             ],
             parameters=[_SESSION_ID],
             requestBody=_body("SimulateRequest"),
@@ -436,7 +531,7 @@ PATHS = {
             [
                 _ok("Resultados.", _ref("RoundResults")),
                 _error(404, ["SESSION_NOT_FOUND"]),
-                _error(409, ["NO_ROUND_PLAYED"]),
+                _error(409, ["NO_ROUND_PLAYED", "CATALOG_CHANGED"]),
             ],
             parameters=[_SESSION_ID],
         )
@@ -445,13 +540,14 @@ PATHS = {
         "get": _operation(
             "drawPlayoffs",
             _ENDGAME,
-            "Sorteia o mata-mata",
-            "Sorteia as quartas entre os 8 classificados. QF1 × QF2 e QF3 × QF4 se encontram nas semifinais. "
+            "Revela o mata-mata",
+            "Monta as quartas pela classificação final dos grupos: QF1 = 1º A × 2º B, QF2 = 1º B × 2º A, "
+            "QF3 = 1º D × 2º C, QF4 = 1º C × 2º D. QF1 × QF2 e QF3 × QF4 se encontram nas semifinais. "
             "Chamadas seguintes devolvem o mesmo chaveamento.",
             [
                 _ok("Quartas de final.", _ref("PlayoffsDraw")),
                 _error(404, ["SESSION_NOT_FOUND"]),
-                _error(409, ["GROUP_STAGE_NOT_FINISHED"]),
+                _error(409, ["GROUP_STAGE_NOT_FINISHED", "CATALOG_CHANGED"]),
             ],
             parameters=[_SESSION_ID],
         )
@@ -465,7 +561,7 @@ PATHS = {
             [
                 _ok("Histórico da copa encerrada.", _ref("History")),
                 _error(404, ["SESSION_NOT_FOUND"]),
-                _error(409, ["DRAW_REQUIRED", "USER_STILL_PLAYING"]),
+                _error(409, ["DRAW_REQUIRED", "USER_STILL_PLAYING", "CATALOG_CHANGED"]),
             ],
             parameters=[_SESSION_ID],
         )
@@ -476,7 +572,11 @@ PATHS = {
             _ENDGAME,
             "Histórico da sessão",
             "Classificação dos grupos, chaveamento, todas as partidas jogadas, o caminho do usuário e a colocação final.",
-            [_ok("Histórico.", _ref("History")), _error(404, ["SESSION_NOT_FOUND"])],
+            [
+                _ok("Histórico.", _ref("History")),
+                _error(404, ["SESSION_NOT_FOUND"]),
+                _error(409, ["CATALOG_CHANGED"]),
+            ],
             parameters=[_SESSION_ID],
         )
     },
@@ -495,7 +595,9 @@ def openapi_spec() -> dict:
                 "Fluxo: `POST /session` → catálogo → `POST /{sessionId}/call-up` → `GET /{sessionId}/draw` → "
                 "loop de partidas (`available-players` → `simulate` → `round-results`) → `playoffs-draw` quando "
                 "a fase de grupos acaba → `history`. Se o usuário for eliminado, `simulate-all` encerra a copa.\n\n"
-                "Erros têm sempre o formato `{\"error\": {\"code\", \"message\"}}`."
+                "Erros têm sempre o formato `{\"error\": {\"code\", \"message\"}}`. Qualquer rota de sessão "
+                "responde `409 CATALOG_CHANGED` se o catálogo foi recarregado depois que a sessão foi criada: "
+                "a sessão não pode continuar e é preciso criar outra."
             ),
         },
         "servers": [{"url": "/", "description": "Este servidor"}],

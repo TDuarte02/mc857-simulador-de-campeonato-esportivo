@@ -1,3 +1,4 @@
+# Build context: simulador/ (the server depends on ../engine), see docker-compose.yml.
 FROM python:3.14-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -9,19 +10,24 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 RUN pip install --no-cache-dir uv==0.11.18
 
-WORKDIR /app
+WORKDIR /app/server
 
-# Dependencies first, so code changes don't reinstall them.
-COPY pyproject.toml uv.lock ./
+# The engine is an editable path dependency (../engine), installed from source by
+# `uv sync`, so it goes in first. Then the dependencies, so code changes don't
+# reinstall them.
+COPY engine/pyproject.toml /app/engine/pyproject.toml
+COPY engine/copa_engine /app/engine/copa_engine
+COPY server/pyproject.toml server/uv.lock ./
 RUN uv sync --frozen --no-dev --no-install-project
 
-COPY main.py ./
-COPY api ./api
+COPY server/main.py ./
+COPY server/api ./api
 
 ENV PATH="/opt/venv/bin:$PATH" \
     REPOSITORY=mongo \
     MONGO_URI=mongodb://mongo:27017 \
-    MONGO_DB=copa
+    MONGO_DB=copa \
+    SIMULATOR=engine
 
 RUN useradd --system --no-create-home app
 USER app

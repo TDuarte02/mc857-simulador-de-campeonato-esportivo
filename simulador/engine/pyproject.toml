@@ -1,0 +1,23 @@
+[project]
+name = "copa-engine"
+version = "0.1.0"
+description = "Motor de simulação de partidas do simulador de campeonato (MC857)"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.18,<0.12"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "copa_engine"
+module-root = ""
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

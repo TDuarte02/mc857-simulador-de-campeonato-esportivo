@@ -1,6 +1,6 @@
 """Storage contracts the services depend on.
 
-A storage backend implements these four classes and is registered in
+A storage backend implements these five classes and is registered in
 api/container.py; nothing above this layer changes.
 
 Implementations must behave like a database: what `get`/`list_*` return is a
@@ -29,6 +29,12 @@ class PlayerRepository(ABC):
     @abstractmethod
     def get_many(self, player_ids: Iterable[int]) -> list[Player]:
         """Players in the order their ids were given; unknown ids are skipped."""
+
+
+class CatalogRepository(ABC):
+    @abstractmethod
+    def version(self) -> str:
+        """Version of the squads and players in use; sessions are pinned to it."""
 
 
 class SessionRepository(ABC):
@@ -67,3 +73,4 @@ class Repositories:
     players: PlayerRepository
     sessions: SessionRepository
     tournaments: TournamentRepository
+    catalog: CatalogRepository

@@ -7,8 +7,9 @@ behave like a real database: a change that is never saved is lost.
 from collections.abc import Iterable
 from copy import deepcopy
 
-from api.domain.models import Match, Player, Position, Session, Squad, Tournament
+from api.domain.models import MOCK_CATALOG_VERSION, Match, Player, Position, Session, Squad, Tournament
 from api.repositories.base import (
+    CatalogRepository,
     PlayerRepository,
     Repositories,
     SessionRepository,
@@ -42,6 +43,11 @@ class InMemoryPlayerRepository(PlayerRepository):
 
     def get_many(self, player_ids: Iterable[int]) -> list[Player]:
         return [self._players[i] for i in player_ids if i in self._players]
+
+
+class InMemoryCatalogRepository(CatalogRepository):
+    def version(self) -> str:
+        return MOCK_CATALOG_VERSION
 
 
 class InMemorySessionRepository(SessionRepository):
@@ -84,4 +90,5 @@ def create_memory_repositories() -> Repositories:
         players=InMemoryPlayerRepository(build_players()),
         sessions=InMemorySessionRepository(),
         tournaments=InMemoryTournamentRepository(),
+        catalog=InMemoryCatalogRepository(),
     )
