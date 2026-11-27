@@ -26,7 +26,8 @@ from copa_engine.penalties import simulate_penalty_shootout
 from copa_engine.rules import derive_seed
 
 from api.domain.engine_data import ENGINE_ATTRIBUTES
-from api.domain.models import Card, CardType, Goal, Injury, MatchResult, Player, Position
+from api.domain.models import Card, CardType, Goal, Injury, MatchResult, Player
+from api.errors import ApiError
 from api.simulation.base import MatchContext, MatchSimulator, TeamSheet
 
 # D9: what the user plays when they send no formation (the app's default). Machine
@@ -35,28 +36,42 @@ DEFAULT_USER_FORMATION = "4-4-2"
 MACHINE_FORMATION = "4-3-3"
 assert FORMATIONS[MACHINE_FORMATION] == DEFAULT_FORMATION
 
-# A position code for players stored without any (e.g. an old mock catalogue).
-_SECTOR_CODE = {Position.GK: "GK", Position.DEF: "CB", Position.MID: "CM", Position.FW: "ST"}
+class IncompleteCatalogError(ApiError):
+    """A catalogue player lacks what the engine needs. The seed and mock_data always
+    provide it, so this means the stored catalogue is broken: re-seed it."""
+
+    status = 500
+
+    def __init__(self, player: Player, missing: list[str]):
+        super().__init__(
+            "CATALOG_INCOMPLETE",
+            f"Player {player.name} ({player.id}) has no {', '.join(missing)} for the engine; "
+            "re-seed the catalogue.",
+        )
 
 
 # --- Domain -> engine -------------------------------------------------------------------
 
 
-def _positions(player: Player) -> tuple[str, ...]:
-    return tuple(player.positions) or (_SECTOR_CODE[player.position],)
+def _require_engine_data(player: Player) -> None:
+    missing = [field for field in ENGINE_ATTRIBUTES if field not in player.attributes]
+    if not player.positions:
+        missing.insert(0, "positions")
+    if missing:
+        raise IncompleteCatalogError(player, missing)
 
 
 def engine_player(player: Player, pos: str | None = None) -> EnginePlayer:
-    attributes = player.attributes or {field: player.overall for field in ENGINE_ATTRIBUTES}
+    _require_engine_data(player)
     return EnginePlayer(
         name=str(player.id),
-        pos=pos or _positions(player)[0],
-        **{field: attributes[field] for field in ENGINE_ATTRIBUTES},
+        pos=pos or player.positions[0],
+        **{field: player.attributes[field] for field in ENGINE_ATTRIBUTES},
     )
 
 
 def squad_member(player: Player) -> SquadMember:
-    return SquadMember(engine_player(player), _positions(player))
+    return SquadMember(engine_player(player), tuple(player.positions))
 
 
 def _sheet(squad_id: str, players: Sequence[Player], lineup: Sequence[EnginePlayer], formation: str) -> TeamSheet:

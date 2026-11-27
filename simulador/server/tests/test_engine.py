@@ -305,3 +305,21 @@ def test_the_servers_sector_mapping_is_the_engines_for_every_dataset_code():
     assert codes >= {"GK", "CB", "LB", "RB", "CDM", "CM", "CAM", "LM", "RM", "LW", "RW", "ST", "CF"}
     for code in codes:
         assert sector_of(code) is Position(POSITION_SECTORS[engine_canonical(code)]), code
+
+
+def test_a_player_without_engine_data_is_refused_not_guessed():
+    from api.simulation.engine import IncompleteCatalogError, engine_player
+
+    player = squad("brazil")[0]
+    no_attributes = replace(player, attributes={})
+    no_positions = replace(player, positions=())
+    partial = replace(player, attributes={k: v for k, v in player.attributes.items() if k != "mentality_penalties"})
+
+    with pytest.raises(IncompleteCatalogError, match="mentality_penalties"):
+        engine_player(partial)
+    with pytest.raises(IncompleteCatalogError, match="positions"):
+        engine_player(no_positions)
+    with pytest.raises(IncompleteCatalogError) as error:
+        default_sheet("brazil", [no_attributes, *squad("brazil")[1:]])
+    assert (error.value.status, error.value.code) == (500, "CATALOG_INCOMPLETE")
+    assert str(player.id) in error.value.message
