@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import csv
 from pathlib import Path
 
 import pandas as pd
@@ -10,32 +9,7 @@ import pandas as pd
 from .calibration import banda_lenda, converter_percentil, grupo_da_proposta, pool_por_posicao
 from .config import ATRIBUTOS_GK, ATRIBUTOS_LINHA, COLUNAS_RASTREIO
 from .posicoes import formatar_posicoes, prever_colunas
-from .research import chave_jogador
-
-
-def _carregar_registry(caminho: Path) -> pd.DataFrame:
-    colunas = ["sofifa_id", "player_key", "nome", "pais", "dob", "tipo_registro"]
-    if not caminho.exists():
-        return pd.DataFrame(columns=colunas)
-    return pd.read_csv(caminho, dtype={"sofifa_id": "Int64", "player_key": str}).reindex(columns=colunas)
-
-
-def alocar_id(caminho: Path, proposta: dict) -> int:
-    registry = _carregar_registry(caminho)
-    key = chave_jogador(proposta["pais"], proposta["nome"], proposta.get("dob"))
-    existentes = registry[registry["player_key"] == key]
-    if not existentes.empty:
-        return int(existentes.iloc[0]["sofifa_id"])
-    negativos = pd.to_numeric(registry["sofifa_id"], errors="coerce").dropna()
-    proximo = min(negativos.min(), 0) - 1 if not negativos.empty else -1
-    nova = pd.DataFrame([{
-        "sofifa_id": int(proximo), "player_key": key, "nome": proposta["nome"],
-        "pais": proposta["pais"], "dob": proposta.get("dob", ""),
-        "tipo_registro": proposta.get("origem_registro", "convocado_2024_adicionado"),
-    }])
-    caminho.parent.mkdir(parents=True, exist_ok=True)
-    pd.concat([registry, nova], ignore_index=True).to_csv(caminho, index=False, quoting=csv.QUOTE_MINIMAL)
-    return int(proximo)
+from .registry import alocar_id
 
 
 def _aplicar_banda_lenda(atributos: dict, percentil_overall: object) -> dict:

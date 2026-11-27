@@ -5,8 +5,6 @@ __pycache__/
 .pytest_cache/
 cache_wikidata.json
 pipeline-dados/artefatos/pesquisa/respostas_brutas/
-pipeline-dados/artefatos/registry/player_ids.csv
-pipeline-dados/artefatos/autoresearch/registry/player_ids.csv
 # Gradle e saídas de build do app na raiz (nunca versionar)
 app/.gradle/
 app/build/

@@ -118,7 +118,7 @@ python -m pipeline.cli merge-final \
   --output artefatos/autoresearch/copa_america_2024_completo.csv
 ```
 
-O diretório `execucoes/<pais>/` é a fronteira de contexto de cada iteração. O manifesto e o registro de IDs são o estado compartilhado. Por padrão, o registry fica em `artefatos/autoresearch/registry/player_ids.csv` (criado pelo `init-run`, ignorado pelo git); qualquer subcomando aceita `--registry` para apontar outro caminho. O runner não chama um LLM diretamente: isso mantém pesquisa externa, resposta bruta e aprovação humana auditáveis.
+O diretório `execucoes/<pais>/` é a fronteira de contexto de cada iteração. O manifesto e o registro de IDs são o estado compartilhado. Por padrão, o registry fica em `artefatos/autoresearch/registry/player_ids.csv` (criado pelo `init-run`) e é **versionado**: sem ele, `alocar_id` recomeçaria em -1 num clone limpo. A chave inclui a camada (`convocado_2024|pais|nome|dob` ou `historico|...`), para que as versões 2024 e lenda de uma pessoa não dividam o id. Qualquer subcomando aceita `--registry` para apontar outro caminho. Para reconstruí-lo a partir dos ids que já estão nos artefatos publicados: `python -m pipeline.cli rebuild-registry --convocados artefatos/autoresearch/copa_america_2024_completo.csv --historicos artefatos/autoresearch/historicos/historicos_completo.csv` (um id já usado por outra chave fica sem registro e ganha id novo no próximo `alocar_id`). O runner não chama um LLM diretamente: isso mantém pesquisa externa, resposta bruta e aprovação humana auditáveis.
 
 ## Camada histórica (lendas por seleção)
 
@@ -158,6 +158,12 @@ baixável: a sofifa.com — fonte usual desses dados — está atrás de Cloudfl
 raspada. Os valores inferidos derivam da distribuição real do país/grupo de posição no
 `dataset/players_22.csv`, mas a escolha do percentil é heurística nossa.
 
+Além disso, os 9 atributos detalhados que o motor usa (e `goalkeeping_reflexes` dos
+jogadores de linha) **não foram pesquisados** para nenhuma das 639 linhas enriquecidas:
+são estimados por regressão sobre a base FIFA 22 (`pipeline/imputacao.py`, ver
+[Catálogo final](#catálogo-final-pipelinecatalogopy)). A coluna `atributos_imputados`
+lista, por linha, o que foi estimado.
+
 ## Posições (`pipeline/posicoes.py`)
 
 O jogo só permite escalar um jogador nas posições que ele de fato joga, então cada um
@@ -186,4 +192,78 @@ documentação; nenhuma foi inventada.
 
 O pool completo (~5.000 jogadores para 16 seleções) é inviável num jogo. `filter-pool`
 corta por **cota de posição por seleção** (padrão 5 GK / 12 DEF / 12 MID / 11 ATT),
-mantendo os enriquecidos sempre — a cota é **piso**, não teto. Resultado: 756 jogadores.
+mantendo os enriquecidos e os convocados de 2024 sempre — a cota é **piso**, não teto.
+Com `person_key`, a cota conta pessoas distintas (as versões 2024 e lenda de um jogador
+contam uma vez).
+
+## Catálogo final (`pipeline/catalogo.py`)
+
+`build-catalog` gera `artefatos/jogadores_copa_america_2024_filtrado.csv`, o arquivo que o
+servidor carrega no MongoDB (`python -m api.seed`):
+
+```bash
+python -m pipeline.cli build-catalog \
+  --pool artefatos/jogadores_copa_america_2024_pool.csv \
+  --dataset dataset/players_22.csv \
+  --convocacoes artefatos/convocacoes \
+  --aliases artefatos/convocacoes/aliases_copa_america_2024.csv \
+  --output artefatos/jogadores_copa_america_2024_filtrado.csv
+```
+
+1. **Ids** do registro versionado (as 15 lendas que dividiam o id com a versão 2024
+   ganharam ids novos, -625 a -639).
+2. **Convocados**: cada nome de `convocacoes/<pais>.csv` é casado com o pool
+   (`identity.py`). A camada histórica fica de fora (uma lenda nunca é o convocado), a
+   pesquisa de 2024 é preferida à base, e se o nome exato só casar com outra pessoa
+   (data diferente) o casamento por tokens é tentado. Convocado ambíguo ou ausente
+   **interrompe** a execução com um relatório.
+3. Colunas novas: `is_convocado_2024` e `person_key` (o `sofifa_id` da versão atual;
+   cada lenda é casada com as linhas atuais da seleção pelas mesmas regras, com data de
+   nascimento obrigatória).
+4. Filtro de praticabilidade (acima), que sempre mantém os convocados.
+5. **Imputação** (`imputacao.py`): uma regressão linear por atributo na base FIFA 22.
+   Jogador de linha: `overall`, os 6 atributos principais e o grupo da posição; goleiro:
+   `overall` e os 6 de goleiro. Valor arredondado e limitado a [0, 99]. Os atributos de
+   linha dos goleiros continuam vazios (o motor os lê como 0).
+6. **Validação** (`validation.validar_catalogo`): os 18 campos do motor em [0, 100], ids
+   únicos, ao menos 3 GK / 8 DEF / 8 MID / 7 ATT pessoas distintas por seleção e todo
+   convocado listado presente (Jamaica e Panamá listam 25). Qualquer erro interrompe.
+
+Erro médio da imputação por atributo, num corte 15k/4k da base
+(`python -m pipeline.cli avaliar-imputacao --dataset dataset/players_22.csv`):
+
+| Atributo | Linha (3.757) | Goleiro (482) |
+|---|---|---|
+| attacking_heading_accuracy | 5,44 | 2,47 |
+| movement_agility | 5,00 | 7,02 |
+| movement_reactions | 3,03 | 2,22 |
+| movement_balance | 6,43 | 7,91 |
+| power_jumping | 7,48 | 8,22 |
+| power_stamina | 5,60 | 4,98 |
+| mentality_aggression | 6,02 | 5,21 |
+| mentality_penalties | 5,52 | 4,32 |
+| mentality_composure | 4,24 | 8,13 |
+| goalkeeping_reflexes | 2,58 | — |
+
+Resultado: 911 jogadores, 414 convocados (16 × 26, menos 1 de Jamaica e 1 de Panamá).
+
+| Seleção | Convocados | Lendas | Total | GK | DEF | MID | ATT |
+|---|---|---|---|---|---|---|---|
+| Argentina | 26 | 76 | 102 | 9 | 22 | 33 | 38 |
+| Bolivia | 26 | 18 | 45 | 5 | 12 | 17 | 11 |
+| Brazil | 26 | 77 | 103 | 8 | 28 | 37 | 30 |
+| Canada | 26 | 13 | 45 | 5 | 17 | 12 | 11 |
+| Chile | 26 | 35 | 61 | 7 | 17 | 15 | 21 |
+| Colombia | 26 | 29 | 55 | 6 | 14 | 17 | 18 |
+| Costa Rica | 26 | 12 | 43 | 4 | 13 | 12 | 14 |
+| Ecuador | 26 | 20 | 50 | 5 | 15 | 17 | 11 |
+| Jamaica | 25 | 16 | 45 | 5 | 17 | 12 | 11 |
+| Mexico | 26 | 32 | 58 | 6 | 12 | 21 | 19 |
+| Panama | 25 | 11 | 41 | 5 | 12 | 12 | 11 |
+| Paraguay | 26 | 25 | 52 | 5 | 12 | 20 | 11 |
+| Peru | 26 | 27 | 53 | 5 | 13 | 18 | 16 |
+| United States | 26 | 27 | 53 | 7 | 16 | 15 | 13 |
+| Uruguay | 26 | 32 | 58 | 5 | 14 | 22 | 16 |
+| Venezuela | 26 | 17 | 47 | 5 | 15 | 14 | 11 |
+
+(GK/DEF/MID/ATT: pessoas distintas pela posição principal.)
