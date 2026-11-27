@@ -155,9 +155,9 @@ fun HomeScreen(
                 }
                 Box(Modifier.fillMaxWidth().height(2.dp).background(AppColors.antiqueGold))
                 Row(Modifier.fillMaxWidth()) {
-                    StatColumn("SINGLE PLAYER", singlePlayerWins, Modifier.weight(1f))
+                    StatColumn("SINGLE PLAYER", singlePlayerWins, "TÍTULOS", Modifier.weight(1f))
                     Box(Modifier.width(2.dp).height(70.dp).background(AppColors.rowBorder))
-                    StatColumn("MULTIPLAYER", 0, Modifier.weight(1f))
+                    StatColumn("MULTIPLAYER", 0, "VITÓRIAS", Modifier.weight(1f))
                 }
             }
 
@@ -202,11 +202,11 @@ private fun ResumeButton(squadName: String, onResume: () -> Unit, modifier: Modi
 }
 
 @Composable
-private fun StatColumn(label: String, wins: Int, modifier: Modifier) {
+private fun StatColumn(label: String, value: Int, unit: String, modifier: Modifier) {
     Column(modifier.padding(vertical = 10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         Text(label, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
-        Text(wins.toString(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 34.sp, color = AppColors.ink)
-        Text("VITÓRIAS", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
+        Text(value.toString(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 34.sp, color = AppColors.ink)
+        Text(unit, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
     }
 }
 
@@ -284,9 +284,9 @@ private fun WideHome(tickets: List<ModeTicket>, singlePlayerWins: Int, inProgres
             Column(Modifier.width(420.dp)) {
                 WideInkHeaderCard("Suas estatísticas", "Temporada 2026", Modifier.fillMaxWidth()) {
                     Row(Modifier.fillMaxWidth()) {
-                        StatColumn("SINGLE PLAYER", singlePlayerWins, Modifier.weight(1f))
+                        StatColumn("SINGLE PLAYER", singlePlayerWins, "TÍTULOS", Modifier.weight(1f))
                         Box(Modifier.width(2.dp).height(70.dp).background(AppColors.rowBorder).align(Alignment.CenterVertically))
-                        StatColumn("MULTIPLAYER", 0, Modifier.weight(1f))
+                        StatColumn("MULTIPLAYER", 0, "VITÓRIAS", Modifier.weight(1f))
                     }
                 }
                 if (inProgressSquad != null) {
