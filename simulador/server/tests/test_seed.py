@@ -187,7 +187,7 @@ def test_a_failed_seed_leaves_the_old_catalogue_intact(tmp_path, csv_file, rows,
     before = list(db.players.find().sort("_id"))
     row_of(rows, "peru")["sofifa_id"] = 1
     broken = write_catalogue(tmp_path / "broken.csv", rows)
-    monkeypatch.setattr("api.seed.MongoClient", lambda *args, **kwargs: db.client)
+    monkeypatch.setattr("api.container.MongoClient", lambda *args, **kwargs: db.client)
 
     assert main(["--file", str(broken)]) == 1
 
@@ -196,7 +196,7 @@ def test_a_failed_seed_leaves_the_old_catalogue_intact(tmp_path, csv_file, rows,
 
 def test_the_cli_seeds_the_configured_database(csv_file, monkeypatch, capsys):
     db = mock_mongo_db()
-    monkeypatch.setattr("api.seed.MongoClient", lambda *args, **kwargs: db.client)
+    monkeypatch.setattr("api.container.MongoClient", lambda *args, **kwargs: db.client)
     monkeypatch.setenv("MONGO_DB", db.name)
 
     assert main(["--file", str(csv_file)]) == 0

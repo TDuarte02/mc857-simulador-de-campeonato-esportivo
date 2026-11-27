@@ -1,4 +1,6 @@
-from flask import Flask
+import hmac
+
+from flask import Flask, jsonify, request
 
 from api.config import Settings
 from api.container import Container, build_container
@@ -19,4 +21,19 @@ def create_app(container: Container | None = None) -> Flask:
     for controller in (docs_controller, meta_controller, session_controller, squad_controller, tournament_controller):
         app.register_blueprint(controller.bp)
     register_error_handlers(app)
+    if container.settings.origin_secret:
+        _require_origin_header(app, container.settings.origin_secret)
     return app
+
+
+ORIGIN_HEADER = "X-Origin-Verify"
+
+
+def _require_origin_header(app: Flask, secret: str) -> None:
+    """Refuses requests that did not come through API Gateway (see Settings.origin_secret)."""
+
+    @app.before_request
+    def check_origin():
+        if not hmac.compare_digest(request.headers.get(ORIGIN_HEADER, ""), secret):
+            return jsonify({"error": {"code": "FORBIDDEN", "message": "Call the API through its gateway."}}), 403
+        return None

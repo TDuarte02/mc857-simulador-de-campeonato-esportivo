@@ -1,0 +1,421 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  Simulador de Campeonato - two t3.micro in their own VPC. The API instance (public
+  subnet) runs the API in Docker behind an API Gateway REST API that checks the
+  mobile app's API key and adds a secret origin header the API requires. The
+  database instance (private subnet, no internet route) runs only MongoDB, with
+  authentication, reachable only from the API instance. Deployed by deploy.sh;
+  removed by teardown.sh.
+
+  mobile app --x-api-key--> API Gateway (REST, usage plan)
+     --HTTP + X-Origin-Verify--> API instance :80 (copa-api container)
+     --private network, user/password--> database instance :27017 (mongod)
+
+Parameters:
+  ImageUri:
+    Type: String
+    Description: API image (the `aws` target of simulador/server/Dockerfile) in ECR.
+  ArtifactsBucket:
+    Type: String
+    Description: Bucket from the copa-ecr stack with mongodb/*.rpm and secrets/mongo-password.
+  OriginSecret:
+    Type: String
+    NoEcho: true
+    MinLength: 32
+    Description: Value API Gateway sends in X-Origin-Verify; the same value is in SSM at OriginSecretParameter.
+  OriginSecretParameter:
+    Type: String
+    Default: /copa-simulador/origin-secret
+  MongoPasswordParameter:
+    Type: String
+    Default: /copa-simulador/mongo-password
+    Description: SSM SecureString (created by deploy.sh) with the MongoDB password, read by the API instance.
+  AmiId:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
+  ApiRateLimit:
+    Type: Number
+    Default: 20
+  ApiBurstLimit:
+    Type: Number
+    Default: 40
+  ApiMonthlyQuota:
+    Type: Number
+    Default: 100000
+
+Resources:
+  # ---------------------------------------------------------------------------
+  # Network. Both subnets in the same AZ (cross-AZ traffic is billed). The private
+  # subnet has no internet route at all; its only way out is the S3 gateway
+  # endpoint (free), for the MongoDB packages and password.
+  # ---------------------------------------------------------------------------
+  Vpc:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.20.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags: [{ Key: Name, Value: copa-simulador }]
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+  GatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties: { VpcId: !Ref Vpc, InternetGatewayId: !Ref InternetGateway }
+
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      CidrBlock: 10.20.0.0/24
+      AvailabilityZone: !Select [0, !GetAZs ""]
+      MapPublicIpOnLaunch: true
+      Tags: [{ Key: Name, Value: copa-public }]
+  RouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties: { VpcId: !Ref Vpc }
+  DefaultRoute:
+    Type: AWS::EC2::Route
+    DependsOn: GatewayAttachment
+    Properties: { RouteTableId: !Ref RouteTable, DestinationCidrBlock: 0.0.0.0/0, GatewayId: !Ref InternetGateway }
+  SubnetRouteTable:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties: { SubnetId: !Ref PublicSubnet, RouteTableId: !Ref RouteTable }
+
+  PrivateSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      CidrBlock: 10.20.1.0/24
+      AvailabilityZone: !Select [0, !GetAZs ""]
+      MapPublicIpOnLaunch: false
+      Tags: [{ Key: Name, Value: copa-private }]
+  PrivateRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties: { VpcId: !Ref Vpc } # no default route: no internet
+  PrivateSubnetRouteTable:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties: { SubnetId: !Ref PrivateSubnet, RouteTableId: !Ref PrivateRouteTable }
+
+  S3Endpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Properties:
+      VpcId: !Ref Vpc
+      ServiceName: !Sub "com.amazonaws.${AWS::Region}.s3"
+      VpcEndpointType: Gateway
+      RouteTableIds: [!Ref PrivateRouteTable, !Ref RouteTable]
+
+  # API Gateway has no fixed source IPs, so port 80 is open; requests without the
+  # origin secret get 403 from the API. No SSH: administration goes through SSM.
+  ApiSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: API on port 80 (origin header enforced by the app)
+      VpcId: !Ref Vpc
+      SecurityGroupIngress:
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 0.0.0.0/0 }
+
+  DbSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: MongoDB, from the API instance only
+      VpcId: !Ref Vpc
+      SecurityGroupIngress:
+        - { IpProtocol: tcp, FromPort: 27017, ToPort: 27017, SourceSecurityGroupId: !Ref ApiSecurityGroup }
+
+  # ---------------------------------------------------------------------------
+  # Database instance: MongoDB only, no Docker, no internet.
+  # ---------------------------------------------------------------------------
+  DbRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - { Effect: Allow, Principal: { Service: ec2.amazonaws.com }, Action: sts:AssumeRole }
+      Policies:
+        - PolicyName: read-mongodb-artifacts
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: s3:ListBucket
+                Resource: !Sub "arn:aws:s3:::${ArtifactsBucket}"
+                Condition: { StringLike: { s3:prefix: ["mongodb/*", "mongodb/"] } }
+              - Effect: Allow
+                Action: s3:GetObject
+                Resource:
+                  - !Sub "arn:aws:s3:::${ArtifactsBucket}/mongodb/*"
+                  - !Sub "arn:aws:s3:::${ArtifactsBucket}/secrets/mongo-password"
+  DbInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties: { Roles: [!Ref DbRole] }
+
+  DbInstance:
+    Type: AWS::EC2::Instance
+    DependsOn: S3Endpoint # the first boot needs it for the packages
+    Properties:
+      ImageId: !Ref AmiId
+      InstanceType: t3.micro # free tier
+      IamInstanceProfile: !Ref DbInstanceProfile
+      SubnetId: !Ref PrivateSubnet
+      SecurityGroupIds: [!Ref DbSecurityGroup]
+      CreditSpecification: { CPUCredits: standard } # "unlimited" bills CPU bursts
+      MetadataOptions: { HttpTokens: required }
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs: { VolumeSize: 10, VolumeType: gp3, DeleteOnTermination: true, Encrypted: true }
+      Tags: [{ Key: Name, Value: copa-simulador-db }]
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          # MongoDB only. No internet: the packages and the password come from the
+          # artifacts bucket through the S3 gateway endpoint.
+          set -euxo pipefail
+          exec > >(tee -a /var/log/copa-mongo-bootstrap.log) 2>&1
+          if [ ! -f /swapfile ]; then
+            dd if=/dev/zero of=/swapfile bs=1M count=1024 && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile
+            echo '/swapfile swap swap defaults 0 0' >> /etc/fstab
+          fi
+          aws s3 cp "s3://${ArtifactsBucket}/mongodb/" /tmp/mongodb/ --recursive --region ${AWS::Region}
+          # Every dependency is in the base image; the repositories (also reachable
+          # through the S3 endpoint) are only a fallback.
+          dnf install -y --disablerepo='*' /tmp/mongodb/*.rpm || dnf install -y /tmp/mongodb/*.rpm
+
+          cat > /etc/mongod.conf <<'CONF'
+          storage:
+            dbPath: /var/lib/mongo
+            wiredTiger:
+              engineConfig:
+                cacheSizeGB: 0.4
+          systemLog:
+            destination: file
+            logAppend: true
+            path: /var/log/mongodb/mongod.log
+          net:
+            port: 27017
+            bindIp: 0.0.0.0
+          processManagement:
+            timeZoneInfo: /usr/share/zoneinfo
+          CONF
+          systemctl enable --now mongod
+          until mongosh --quiet --eval "db.adminCommand('ping').ok" >/dev/null 2>&1; do sleep 2; done
+
+          # The API's user, then authentication on. Tracing off so the password
+          # never reaches the bootstrap log.
+          set +x
+          export MONGO_PASSWORD="$(aws s3 cp s3://${ArtifactsBucket}/secrets/mongo-password - --region ${AWS::Region})"
+          mongosh --quiet admin --eval 'if (!db.getUser("copa")) db.createUser({user: "copa", pwd: process.env.MONGO_PASSWORD, roles: [{role: "readWrite", db: "copa"}]})'
+          unset MONGO_PASSWORD
+          set -x
+          printf 'security:\n  authorization: enabled\n' >> /etc/mongod.conf
+          systemctl restart mongod
+          echo "mongod ready, authentication on"
+
+  # ---------------------------------------------------------------------------
+  # API instance: the API in Docker. Talks to the database by private IP.
+  # ---------------------------------------------------------------------------
+  ApiRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - { Effect: Allow, Principal: { Service: ec2.amazonaws.com }, Action: sts:AssumeRole }
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore # deploys and admin via SSM
+        - arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+      Policies:
+        - PolicyName: read-secrets
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: ssm:GetParameter
+                Resource:
+                  - !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter${OriginSecretParameter}"
+                  - !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter${MongoPasswordParameter}"
+  ApiInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties: { Roles: [!Ref ApiRole] }
+
+  ApiInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref AmiId
+      InstanceType: t3.micro # free tier
+      IamInstanceProfile: !Ref ApiInstanceProfile
+      SubnetId: !Ref PublicSubnet
+      SecurityGroupIds: [!Ref ApiSecurityGroup]
+      CreditSpecification: { CPUCredits: standard }
+      MetadataOptions: { HttpTokens: required }
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs: { VolumeSize: 20, VolumeType: gp3, DeleteOnTermination: true, Encrypted: true } # with the DB's 10: the free 30 GB
+      Tags: [{ Key: Name, Value: copa-simulador-api }]
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          # First boot: swap (1 GB RAM), Docker, the copa scripts, then start the API.
+          set -euxo pipefail
+          exec > >(tee -a /var/log/copa-bootstrap.log) 2>&1
+          if [ ! -f /swapfile ]; then
+            dd if=/dev/zero of=/swapfile bs=1M count=1024 && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile
+            echo '/swapfile swap swap defaults 0 0' >> /etc/fstab
+          fi
+          dnf install -y docker
+          systemctl enable --now docker
+          mkdir -p /opt/copa && chmod 700 /opt/copa
+
+          cat > /opt/copa/env <<'ENV'
+          REGION=${AWS::Region}
+          IMAGE=${ImageUri}
+          ORIGIN_SECRET_PARAMETER=${OriginSecretParameter}
+          MONGO_PASSWORD_PARAMETER=${MongoPasswordParameter}
+          MONGO_HOST=${DbInstance.PrivateIp}
+          ENV
+
+          # Seeds the catalogue (a no-op when already loaded) and (re)starts the API
+          # with $IMAGE. Run at boot and by every later deploy.
+          cat > /opt/copa/run.sh <<'RUN'
+          #!/bin/bash
+          set -euo pipefail
+          source /opt/copa/env
+          registry="${!IMAGE%%/*}"
+          secret() { aws ssm get-parameter --region "${!REGION}" --name "$1" --with-decryption --query Parameter.Value --output text; }
+          origin_secret="$(secret "${!ORIGIN_SECRET_PARAMETER}")"
+          mongo_password="$(secret "${!MONGO_PASSWORD_PARAMETER}")"
+          aws ecr get-login-password --region "${!REGION}" | docker login --username AWS --password-stdin "${!registry}"
+          docker pull "${!IMAGE}"
+          # Plain MongoDB with authentication: clear the image's DocumentDB settings.
+          mongo_env=(-e MONGO_HOST="${!MONGO_HOST}" -e MONGO_USERNAME=copa -e MONGO_PASSWORD="${!mongo_password}"
+                     -e MONGO_DB=copa -e MONGO_TLS_CA_FILE= -e MONGO_RETRY_WRITES=true -e MONGO_REPLICA_SET=)
+          # The database instance may still be on its first boot: retry for up to 15 min.
+          for attempt in $(seq 1 90); do
+            if docker run --rm "${!mongo_env[@]}" "${!IMAGE}" \
+                 python -m api.seed --file /app/data/jogadores_copa_america_2024_filtrado.csv; then
+              break
+            fi
+            [ "$attempt" -eq 90 ] && { echo "the database never answered" >&2; exit 1; }
+            sleep 10
+          done
+          docker rm -f copa-api 2>/dev/null || true
+          docker run -d --name copa-api --restart unless-stopped -p 80:5000 \
+            "${!mongo_env[@]}" -e REPOSITORY=mongo -e SIMULATOR=engine -e ORIGIN_SECRET="${!origin_secret}" "${!IMAGE}"
+          docker image prune -f
+          RUN
+          chmod 700 /opt/copa/run.sh
+
+          # Used by deploy.sh (through SSM) to ship a new image without replacing the instance.
+          cat > /opt/copa/set-image.sh <<'SET'
+          #!/bin/bash
+          set -euo pipefail
+          sed -i "s#^IMAGE=.*#IMAGE=$1#" /opt/copa/env
+          exec /opt/copa/run.sh
+          SET
+          chmod 700 /opt/copa/set-image.sh
+
+          /opt/copa/run.sh
+
+  # ---------------------------------------------------------------------------
+  # API Gateway: REST API (the flavour with API keys and usage plans), proxying
+  # every path to the API instance and adding the origin secret header.
+  # ---------------------------------------------------------------------------
+  RestApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: copa-simulador
+      Description: Simulador de Campeonato API for the mobile app (x-api-key header required)
+      ApiKeySourceType: HEADER
+      EndpointConfiguration: { Types: [REGIONAL] }
+
+  ProxyResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref RestApi
+      ParentId: !GetAtt RestApi.RootResourceId
+      PathPart: "{proxy+}"
+
+  RootMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref RestApi
+      ResourceId: !GetAtt RestApi.RootResourceId
+      HttpMethod: ANY
+      AuthorizationType: NONE
+      ApiKeyRequired: true
+      Integration:
+        Type: HTTP_PROXY
+        IntegrationHttpMethod: ANY
+        Uri: !Sub "http://${ApiInstance.PublicDnsName}/"
+        RequestParameters:
+          integration.request.header.X-Origin-Verify: !Sub "'${OriginSecret}'"
+
+  ProxyMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref RestApi
+      ResourceId: !Ref ProxyResource
+      HttpMethod: ANY
+      AuthorizationType: NONE
+      ApiKeyRequired: true
+      RequestParameters: { method.request.path.proxy: true }
+      Integration:
+        Type: HTTP_PROXY
+        IntegrationHttpMethod: ANY
+        Uri: !Sub "http://${ApiInstance.PublicDnsName}/{proxy}"
+        RequestParameters:
+          integration.request.path.proxy: method.request.path.proxy
+          integration.request.header.X-Origin-Verify: !Sub "'${OriginSecret}'"
+
+  # A stage keeps serving its deployment until a new one exists, so a change to the
+  # methods above (e.g. the instance's address) needs a new logical id here.
+  DeploymentV2:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn: [RootMethod, ProxyMethod]
+    Properties:
+      RestApiId: !Ref RestApi
+      Description: API instance + separate database instance
+
+  Stage:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      RestApiId: !Ref RestApi
+      DeploymentId: !Ref DeploymentV2
+      StageName: v1
+
+  ApiKey:
+    Type: AWS::ApiGateway::ApiKey
+    Properties:
+      Name: copa-simulador-mobile-app
+      Description: Key embedded in the mobile app
+      Enabled: true
+
+  UsagePlan:
+    Type: AWS::ApiGateway::UsagePlan
+    Properties:
+      UsagePlanName: copa-simulador-mobile-app
+      ApiStages: [{ ApiId: !Ref RestApi, Stage: !Ref Stage }]
+      Throttle: { RateLimit: !Ref ApiRateLimit, BurstLimit: !Ref ApiBurstLimit }
+      Quota: { Limit: !Ref ApiMonthlyQuota, Period: MONTH }
+
+  UsagePlanKey:
+    Type: AWS::ApiGateway::UsagePlanKey
+    Properties:
+      KeyId: !Ref ApiKey
+      KeyType: API_KEY
+      UsagePlanId: !Ref UsagePlan
+
+Outputs:
+  InvokeUrl:
+    Description: Base URL for the mobile app (send the key in the x-api-key header)
+    Value: !Sub "https://${RestApi}.execute-api.${AWS::Region}.amazonaws.com/${Stage}"
+  ApiKeyId:
+    Description: "Read the key with: aws apigateway get-api-key --api-key <id> --include-value"
+    Value: !Ref ApiKey
+  InstanceId:
+    Description: The API instance (deploys go through SSM on it)
+    Value: !Ref ApiInstance
+  DbInstanceId:
+    Value: !Ref DbInstance
+  DbPrivateIp:
+    Value: !GetAtt DbInstance.PrivateIp
