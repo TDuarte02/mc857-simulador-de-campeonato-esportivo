@@ -1,6 +1,7 @@
 """MongoDB repositories.
 
-Collections: squads, players, sessions, tournaments, matches. Documents use
+Collections: squads, players, sessions, tournaments, matches, and catalog_meta
+(written by `python -m api.seed`, absent for the mock catalogue). Documents use
 snake_case fields and plain strings for enums; each repository converts between
 documents and the domain dataclasses, so no Mongo document leaves this module.
 
@@ -15,11 +16,13 @@ from pymongo import ASCENDING
 from pymongo.database import Database
 
 from api.domain.models import (
+    MOCK_CATALOG_VERSION,
     Card,
     CardType,
     Federation,
     Goal,
     Injury,
+    LineupSlot,
     Match,
     MatchResult,
     Phase,
@@ -33,6 +36,7 @@ from api.domain.models import (
     UnavailableReason,
 )
 from api.repositories.base import (
+    CatalogRepository,
     PlayerRepository,
     Repositories,
     SessionRepository,
@@ -42,26 +46,38 @@ from api.repositories.base import (
 from api.repositories.mock_data import build_players, build_squads
 
 
-def create_mongo_repositories(db: Database, seed: bool = True) -> Repositories:
-    """Repositories over `db`, with indexes in place and, if `seed`, the mock catalogue loaded."""
-    db.players.create_index([("squad_id", ASCENDING), ("position", ASCENDING)])
+CATALOG_META_ID = "catalog"
+PLAYER_INDEX = [("squad_id", ASCENDING), ("position", ASCENDING)]
+
+
+def create_mongo_repositories(db: Database, seed_mock: bool = False) -> Repositories:
+    """Repositories over `db`, with indexes in place and, if `seed_mock`, the mock catalogue loaded.
+
+    The real catalogue is loaded offline, by `python -m api.seed`.
+    """
+    db.players.create_index(PLAYER_INDEX)
     db.matches.create_index([("session_id", ASCENDING), ("round", ASCENDING)])
-    if seed:
+    if seed_mock:
         seed_catalogue(db)
     return Repositories(
         squads=MongoSquadRepository(db),
         players=MongoPlayerRepository(db),
         sessions=MongoSessionRepository(db),
         tournaments=MongoTournamentRepository(db),
+        catalog=MongoCatalogRepository(db),
     )
+
+
+def catalog_is_empty(db: Database) -> bool:
+    return db.squads.find_one() is None or db.players.find_one() is None
 
 
 def seed_catalogue(db: Database) -> None:
     """Loads the mock squads and players into empty collections. Existing data is left alone."""
     if db.squads.find_one() is None:
-        db.squads.insert_many([_squad_doc(squad) for squad in build_squads()])
+        db.squads.insert_many([squad_doc(squad) for squad in build_squads()])
     if db.players.find_one() is None:
-        db.players.insert_many([_player_doc(player) for player in build_players()])
+        db.players.insert_many([player_doc(player) for player in build_players()])
 
 
 class MongoSquadRepository(SquadRepository):
@@ -90,6 +106,15 @@ class MongoPlayerRepository(PlayerRepository):
         ids = list(player_ids)
         found = {doc["_id"]: _player(doc) for doc in self._players.find({"_id": {"$in": ids}})}
         return [found[player_id] for player_id in ids if player_id in found]
+
+
+class MongoCatalogRepository(CatalogRepository):
+    def __init__(self, db: Database):
+        self._meta = db.catalog_meta
+
+    def version(self) -> str:
+        doc = self._meta.find_one({"_id": CATALOG_META_ID})
+        return doc["version"] if doc else MOCK_CATALOG_VERSION
 
 
 class MongoSessionRepository(SessionRepository):
@@ -135,7 +160,7 @@ class MongoTournamentRepository(TournamentRepository):
 # --- Domain <-> document ---------------------------------------------------------
 
 
-def _squad_doc(squad: Squad) -> dict:
+def squad_doc(squad: Squad) -> dict:
     return {
         "_id": squad.id,
         "name": squad.name,
@@ -148,7 +173,7 @@ def _squad(doc: dict) -> Squad:
     return Squad(doc["_id"], doc["name"], doc["flag"], Federation(doc["federation"]))
 
 
-def _player_doc(player: Player) -> dict:
+def player_doc(player: Player) -> dict:
     return {
         "_id": player.id,
         "squad_id": player.squad_id,
@@ -158,6 +183,9 @@ def _player_doc(player: Player) -> dict:
         "overall": player.overall,
         "is_current": player.is_current,
         "is_legend": player.is_legend,
+        "positions": list(player.positions),
+        "attributes": dict(player.attributes),
+        "person_key": player.person,
     }
 
 
@@ -171,6 +199,9 @@ def _player(doc: dict) -> Player:
         overall=doc["overall"],
         is_current=doc.get("is_current", False),
         is_legend=doc.get("is_legend", False),
+        positions=tuple(doc.get("positions", ())),
+        attributes=dict(doc.get("attributes", {})),
+        person_key=doc.get("person_key"),
     )
 
 
@@ -194,6 +225,8 @@ def _session_doc(session: Session) -> dict:
         ],
         "round": session.round,
         "user_eliminated": session.user_eliminated,
+        "catalog_version": session.catalog_version,
+        "seed": session.seed,
     }
 
 
@@ -220,6 +253,9 @@ def _session(doc: dict) -> Session:
         },
         round=doc["round"],
         user_eliminated=doc["user_eliminated"],
+        # Sessions stored before catalogues were versioned were played on the mock one.
+        catalog_version=doc.get("catalog_version", MOCK_CATALOG_VERSION),
+        seed=doc.get("seed", 0),
     )
 
 
@@ -247,6 +283,9 @@ def _match_doc(match: Match) -> dict:
         "group": match.group,
         "played": match.played,
         "result": _result_doc(match.result) if match.result else None,
+        "lineup": None
+        if match.lineup is None
+        else [{"slot": entry.slot, "player_id": entry.player_id} for entry in match.lineup],
     }
 
 
@@ -261,6 +300,9 @@ def _match(doc: dict) -> Match:
         group=doc["group"],
         result=_result(doc["result"]) if doc["result"] else None,
         played=doc["played"],
+        lineup=None
+        if doc.get("lineup") is None
+        else [LineupSlot(entry["slot"], entry["player_id"]) for entry in doc["lineup"]],
     )
 
 
@@ -280,6 +322,7 @@ def _result_doc(result: MatchResult) -> dict:
                 "player_id": card.player_id,
                 "squad_id": card.squad_id,
                 "type": card.type.value,
+                "second_yellow": card.second_yellow,
             }
             for card in result.cards
         ],
@@ -300,7 +343,10 @@ def _result(doc: dict) -> MatchResult:
         home_goals=doc["home_goals"],
         away_goals=doc["away_goals"],
         goals=[Goal(g["minute"], g["player_id"], g["squad_id"]) for g in doc["goals"]],
-        cards=[Card(c["minute"], c["player_id"], c["squad_id"], CardType(c["type"])) for c in doc["cards"]],
+        cards=[
+            Card(c["minute"], c["player_id"], c["squad_id"], CardType(c["type"]), c.get("second_yellow", False))
+            for c in doc["cards"]
+        ],
         injuries=[
             Injury(i["minute"], i["player_id"], i["squad_id"], i["matches_out"]) for i in doc["injuries"]
         ],

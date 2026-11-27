@@ -26,6 +26,9 @@ class Settings:
     # Used when repository == "mongo".
     mongo_uri: str = "mongodb://localhost:27017"
     mongo_db: str = "copa"
+    # Loads the generated mock catalogue into an empty database (tests, development).
+    # Off by default: production serves the catalogue loaded by `python -m api.seed`.
+    seed_mock_catalog: bool = False
 
     @property
     def squad_size(self) -> int:
@@ -38,4 +41,5 @@ class Settings:
             repository=os.environ.get("REPOSITORY", "memory"),
             mongo_uri=os.environ.get("MONGO_URI", cls.mongo_uri),
             mongo_db=os.environ.get("MONGO_DB", cls.mongo_db),
+            seed_mock_catalog=os.environ.get("SEED_MOCK_CATALOG", "").lower() in ("1", "true", "yes"),
         )

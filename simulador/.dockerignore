@@ -1,0 +1,10 @@
+# Build context of the server image (simulador/server/Dockerfile). The Dockerfile
+# copies only what it needs; this keeps the context small and the cache stable.
+app/
+**/.venv
+**/__pycache__
+**/.pytest_cache
+server/tests
+engine/tests
+engine/tools
+**/*.md

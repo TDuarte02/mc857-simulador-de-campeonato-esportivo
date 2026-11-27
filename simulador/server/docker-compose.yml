@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     ports:
       # 27018 on the host, so a local Mongo on 27017 can keep running.
-      - "127.0.0.1:27018:27017"
+      - "127.0.0.1:${MONGO_PORT:-27018}:27017"
     volumes:
       - mongo-data:/data/db
     healthcheck:
@@ -16,19 +16,40 @@ services:
       retries: 20
       start_period: 10s
 
+  # One-shot: loads the data pipeline's players into Mongo, then exits. Seeding the
+  # same file again is a no-op, so it runs on every `docker compose up`.
+  seed:
+    build: &build
+      # simulador/: the image also needs the engine (../engine), see the Dockerfile.
+      context: ..
+      dockerfile: server/Dockerfile
+    restart: "no"
+    command: ["python", "-m", "api.seed", "--file", "/data/jogadores_copa_america_2024_filtrado.csv"]
+    environment:
+      MONGO_URI: mongodb://mongo:27017
+      MONGO_DB: copa
+    volumes:
+      - ../../pipeline-dados/artefatos:/data:ro
+    depends_on:
+      mongo:
+        condition: service_healthy
+
   api:
-    build: .
+    build: *build
     restart: unless-stopped
     init: true  # forwards SIGTERM to Flask, so `docker compose stop` is immediate
     environment:
       REPOSITORY: mongo
       MONGO_URI: mongodb://mongo:27017
       MONGO_DB: copa
+      SIMULATOR: engine
     ports:
-      - "127.0.0.1:5000:5000"
+      - "127.0.0.1:${API_PORT:-5000}:5000"
     depends_on:
       mongo:
         condition: service_healthy
+      seed:
+        condition: service_completed_successfully
     healthcheck:
       # /squads reads from Mongo, so a healthy API also means a reachable database.
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/squads', timeout=3)"]

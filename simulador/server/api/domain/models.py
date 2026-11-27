@@ -100,16 +100,29 @@ class Squad:
     federation: Federation
 
 
+# Version of the generated mock catalogue; a seeded catalogue's comes from its file.
+MOCK_CATALOG_VERSION = "mock"
+
+
 @dataclass(frozen=True)
 class Player:
     id: int
     squad_id: str
     name: str
     age: int
-    position: Position
+    position: Position  # sector of the primary position
     overall: int
-    is_current: bool = False
+    is_current: bool = False  # called up in 2024
     is_legend: bool = False
+    positions: tuple[str, ...] = ()  # dataset codes, primary first (e.g. "CAM", "ST")
+    # The match engine's 18 numeric fields (engine_data.ENGINE_ATTRIBUTES).
+    attributes: dict[str, float] = field(default_factory=dict, hash=False)
+    # Shared by the 2024 and legend versions of a person; defaults to the player's id.
+    person_key: str | None = None
+
+    @property
+    def person(self) -> str:
+        return self.person_key or str(self.id)
 
 
 @dataclass
@@ -125,6 +138,8 @@ class Card:
     player_id: int
     squad_id: str
     type: CardType
+    # A red for a second yellow in the same match; the report keeps both cards.
+    second_yellow: bool = False
 
 
 @dataclass
@@ -147,6 +162,14 @@ class MatchResult:
 
 
 @dataclass
+class LineupSlot:
+    """Who played where in the user's XI: the formation's slot (e.g. "FB", "ST") and the player."""
+
+    slot: str
+    player_id: int
+
+
+@dataclass
 class Match:
     id: str
     session_id: str
@@ -158,6 +181,8 @@ class Match:
     result: MatchResult | None = None
     # False while a pre-simulated result is still hidden from the user.
     played: bool = False
+    # The user's XI, slot by slot; only on the user's matches.
+    lineup: list[LineupSlot] | None = None
 
     def involves(self, squad_id: str | None) -> bool:
         return squad_id in (self.home, self.away)
@@ -214,6 +239,11 @@ class Session:
     player_status: dict[int, PlayerStatus] = field(default_factory=dict)
     round: int = 0  # rounds completed so far
     user_eliminated: bool = False
+    # The catalogue the session was created on; it cannot continue on another one.
+    catalog_version: str = MOCK_CATALOG_VERSION
+    # Every random choice of the session derives from it (63 bits, fits a BSON int64).
+    # Never sent to the client.
+    seed: int = 0
 
 
 @dataclass

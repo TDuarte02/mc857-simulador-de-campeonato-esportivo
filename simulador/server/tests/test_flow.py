@@ -35,7 +35,7 @@ def test_players_can_be_filtered_by_position(client):
     players = client.get("/brazil/players").get_json()["players"]
     goalkeepers = client.get("/brazil/players?position=gk").get_json()["players"]
 
-    assert set(players[0]) == {"id", "name", "age", "position", "overall"}
+    assert set(players[0]) == {"id", "name", "age", "position", "positions", "overall"}
     assert len(players) > 26
     assert goalkeepers and all(player["position"] == "GK" for player in goalkeepers)
     assert len(goalkeepers) < len(players)

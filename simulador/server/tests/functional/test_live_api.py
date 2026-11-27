@@ -1,7 +1,8 @@
 """Functional tests against a running stack (docker compose up), over real HTTP.
 
 Skipped unless API_BASE_URL is set. With MONGO_URI (and optionally MONGO_DB) set,
-they also check what was written to the database.
+they also check what was written to the database, and, when the stack was seeded
+with the real catalogue (catalog_meta present), the real players.
 
     API_BASE_URL=http://127.0.0.1:5000 MONGO_URI=mongodb://127.0.0.1:27018 uv run pytest tests/functional
 """
@@ -99,6 +100,14 @@ def db():
     client.close()
 
 
+@pytest.fixture
+def catalog_meta(db) -> dict:
+    meta = db.catalog_meta.find_one({"_id": "catalog"})
+    if meta is None:
+        pytest.skip("the stack serves the mock catalogue (no catalog_meta)")
+    return meta
+
+
 def error_code(response: LiveResponse) -> str:
     return response.get_json()["error"]["code"]
 
@@ -141,6 +150,43 @@ def test_catalogue_is_served_from_the_database(client, db):
     for squad in squads:  # byte-for-byte, accents included (Bolívia, Panamá, ...)
         assert squad["name"] == stored[squad["id"]]["name"]
     assert db.players.count_documents({"squad_id": "peru"}) == len(client.get("/peru/players").get_json()["players"])
+
+
+def test_the_real_catalogue_is_served(client, db, catalog_meta):
+    squads = {squad["id"]: squad for squad in client.get("/squads").get_json()["squads"]}
+    argentina = client.get("/argentina/players").get_json()["players"]
+
+    assert len(squads) == 16
+    assert squads["canada"]["name"] == "Canadá"
+    assert "haiti" not in squads
+    messi = [player for player in argentina if player["name"] == "L. Messi"]
+    assert len(messi) == 1 and messi[0]["position"] == "FW"
+    assert db.players.count_documents({}) == catalog_meta["players"]
+    assert db.players.count_documents({"is_current": True}) == 16 * 26 - 2  # Jamaica and Panama list 25
+
+
+def test_the_stack_runs_the_engine(client):
+    meta = client.get("/meta").get_json()
+
+    assert meta["simulator"] == "engine"
+    assert meta["catalogVersion"]
+
+
+def test_engine_results_look_like_the_engines(cup, capsys):
+    cup.start()
+    history = play_to_the_end(cup)
+
+    goals = 0
+    for match in history["matches"]:
+        result = match["result"]
+        goals += result["homeGoals"] + result["awayGoals"]
+        # minutes fall inside the engine's six 15-minute cycles
+        assert all(0 <= event["minute"] < 90 for event in result["goals"] + result["cards"] + result["injuries"])
+        assert len(result["goals"]) == result["homeGoals"] + result["awayGoals"]
+    user_matches = [m for m in history["matches"] if m["lineup"] is not None]
+    assert user_matches and all(len(m["lineup"]) == 11 for m in user_matches)
+    with capsys.disabled():
+        print(f"\naverage goals per match over {len(history['matches'])} matches: {goals / len(history['matches']):.2f}")
 
 
 # --- A whole cup ----------------------------------------------------------------

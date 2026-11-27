@@ -33,9 +33,9 @@ class ResultsService:
             matches=[match for match in matches if match.round == session.round],
         )
         if session.round <= GROUP_ROUNDS:
-            results.groups = group_standings(tournament.groups, matches)
+            results.groups = group_standings(tournament.groups, matches, session.seed)
             if session.round == GROUP_ROUNDS:
-                results.qualified = qualified_squads(tournament.groups, matches)
+                results.qualified = qualified_squads(tournament.groups, matches, session.seed)
         elif session.round < LAST_ROUND:
             results.advanced = [match.winner for match in results.matches]
         else:
@@ -53,7 +53,7 @@ class ResultsService:
             user_squad=session.squad_id,
             placement=self._placement(session, matches),
             podium=podium(matches),
-            groups=group_standings(tournament.groups, matches) if tournament else {},
+            groups=group_standings(tournament.groups, matches, session.seed) if tournament else {},
             matches=matches,
         )
 

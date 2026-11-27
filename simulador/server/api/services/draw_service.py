@@ -1,11 +1,11 @@
 import random
+from dataclasses import dataclass
+
+from copa_engine.rules import GROUP_ROUNDS, KNOCKOUT_BRACKET, derive_seed, draw_groups
 
 from api.domain.models import (
-    GROUP_NAMES,
-    GROUP_ROUNDS,
-    GROUP_SIZE,
+    GROUP_ROUNDS as GROUP_ROUND_COUNT,
     QUARTER_FINAL_ROUND,
-    TEAM_COUNT,
     Draw,
     Match,
     Phase,
@@ -14,28 +14,42 @@ from api.domain.models import (
     Stage,
     Tournament,
 )
-from api.domain.rules import qualified_squads, round_robin
+from api.domain.rules import group_standings, qualified_squads
 from api.errors import ConflictError
 from api.repositories.base import TournamentRepository
 from api.services.match_runner import MatchRunner
 from api.services.session_service import SessionService
 from api.services.squad_service import SquadService
+from api.simulation.engine import team_strength
+
+
+@dataclass(frozen=True)
+class _Entrant:
+    """What copa_engine.rules.draw_groups needs of a squad."""
+
+    name: str
+    strength: float
 
 
 class DrawService:
+    """The group draw and the bracket, both the engine's (decision D2).
+
+    Pots are seeded by the strength of each squad's default XI; the groups are drawn
+    with the session seed; the quarter-finals follow group positions (QF1 = 1A x 2B,
+    QF2 = 1B x 2A, QF3 = 1D x 2C, QF4 = 1C x 2D).
+    """
+
     def __init__(
         self,
         sessions: SessionService,
         squads: SquadService,
         tournaments: TournamentRepository,
         runner: MatchRunner,
-        rng: random.Random,
     ):
         self._sessions = sessions
         self._squads = squads
         self._tournaments = tournaments
         self._runner = runner
-        self._rng = rng
 
     def draw(self, session_id: str) -> Draw:
         """Draws the groups on the first call; later calls return the same draw."""
@@ -54,15 +68,15 @@ class DrawService:
         )
 
     def playoffs_draw(self, session_id: str) -> PlayoffsDraw:
-        """Draws the quarter-finals on the first call; later calls return the same bracket."""
+        """Reveals the quarter-finals on the first call; later calls return the same bracket."""
         session = self._sessions.get(session_id)
         tournament = self._tournaments.get(session_id)
-        if tournament is None or session.round < GROUP_ROUNDS:
+        if tournament is None or session.round < GROUP_ROUND_COUNT:
             raise ConflictError(
                 "GROUP_STAGE_NOT_FINISHED", "The playoffs are drawn once the group stage is over."
             )
         quarter_finals = self.ensure_playoffs(session, tournament)
-        qualified = qualified_squads(tournament.groups, self._tournaments.list_matches(session_id))
+        qualified = qualified_squads(tournament.groups, self._played_group_matches(session.id), session.seed)
         return PlayoffsDraw(qualified=qualified, quarter_finals=quarter_finals)
 
     def ensure_playoffs(self, session: Session, tournament: Tournament) -> list[Match]:
@@ -70,39 +84,52 @@ class DrawService:
         if existing:
             return existing
 
-        qualified = qualified_squads(tournament.groups, self._tournaments.list_matches(session.id))
-        self._rng.shuffle(qualified)
+        tables = group_standings(tournament.groups, self._played_group_matches(session.id), session.seed)
+
+        def team(source) -> str:
+            return tables[source.ref][source.position - 1].squad_id
+
         quarter_finals = [
             Match(
-                id=f"QF{n + 1}",
+                id=match_id,
                 session_id=session.id,
                 stage=Stage.QUARTER_FINAL,
                 round=QUARTER_FINAL_ROUND,
-                home=qualified[2 * n],
-                away=qualified[2 * n + 1],
+                home=team(home),
+                away=team(away),
             )
-            for n in range(len(qualified) // 2)
+            for match_id, (home, away) in KNOCKOUT_BRACKET.items()
+            if home.kind == "group"
         ]
         self._tournaments.save_matches(quarter_finals)
         session.phase = Phase.QUARTER_FINALS
         self._sessions.save(session)
         return quarter_finals
 
+    def _played_group_matches(self, session_id: str) -> list[Match]:
+        return [m for m in self._tournaments.list_matches(session_id) if m.stage is Stage.GROUP and m.played]
+
     def _create_tournament(self, session: Session) -> Tournament:
-        rivals = [squad.id for squad in self._squads.list_squads() if squad.id != session.squad_id]
-        participants = [session.squad_id, *self._rng.sample(rivals, TEAM_COUNT - 1)]
-        self._rng.shuffle(participants)
-        groups = {
-            name: participants[i * GROUP_SIZE : (i + 1) * GROUP_SIZE]
-            for i, name in enumerate(GROUP_NAMES)
-        }
-        # Rivals bring one of their preset squads; it is stored so later matches reuse it.
+        participants = [squad.id for squad in self._squads.list_squads()]  # the 16 (the seed checks)
+        # Each rival brings one of its presets; which one, and the shuffle of `random`,
+        # come from one generator per squad, derived from the session seed.
         squads = {
             squad_id: list(session.call_up)
             if squad_id == session.squad_id
-            else [player.id for player in self._squads.random_preset(squad_id).players]
+            else [
+                player.id
+                for player in self._squads.random_preset(
+                    squad_id, random.Random(derive_seed(session.seed, "preset", squad_id))
+                ).players
+            ]
             for squad_id in participants
         }
+        entrants = [
+            _Entrant(squad_id, team_strength(squad_id, self._squads.get_players(squads[squad_id])))
+            for squad_id in participants
+        ]
+        drawn = draw_groups(entrants, session.seed)
+        groups = {group.name: [team.name for team in group.teams] for group in drawn.groups}
         tournament = Tournament(session.id, groups, squads)
 
         matches = [
@@ -111,18 +138,18 @@ class DrawService:
                 session_id=session.id,
                 stage=Stage.GROUP,
                 round=round_no,
-                home=home,
-                away=away,
+                home=teams[a - 1],
+                away=teams[b - 1],
                 group=group,
             )
             for group, teams in groups.items()
-            for round_no, fixtures in enumerate(round_robin(teams), 1)
-            for n, (home, away) in enumerate(fixtures, 1)
+            for round_no, pairs in enumerate(GROUP_ROUNDS, 1)
+            for n, (a, b) in enumerate(pairs, 1)
         ]
         # Group matches without the user are simulated up front and revealed round by round.
         for match in matches:
             if not match.involves(session.squad_id):
-                self._runner.run_quick(tournament, match)
+                self._runner.run_quick(tournament, match, session.seed)
 
         self._tournaments.save(tournament)
         self._tournaments.save_matches(matches)
