@@ -9,6 +9,7 @@ from pathlib import Path
 import pandas as pd
 
 from .catalogo import carregar_todas_convocacoes, construir_catalogo, resumo_catalogo
+from .correcoes import CORRECOES_PADRAO, carregar_correcoes
 from .filtro import COTAS_PADRAO, filtrar_pool, parse_cotas
 from .identity import carregar_aliases, descobrir_lacunas
 from .imputacao import avaliar_imputacao
@@ -121,6 +122,7 @@ def _parser() -> argparse.ArgumentParser:
     catalogo.add_argument("--convocacoes", type=Path, required=True, help="diretório com <pais>.csv")
     catalogo.add_argument("--aliases", type=Path)
     catalogo.add_argument("--registry", type=Path, default=REGISTRY_PADRAO)
+    catalogo.add_argument("--correcoes", type=Path, default=CORRECOES_PADRAO, help="datas de nascimento corrigidas, com fonte")
     catalogo.add_argument("--cotas", default=",".join(f"{g}={n}" for g, n in COTAS_PADRAO.items()))
     catalogo.add_argument("--output", type=Path, required=True)
 
@@ -223,6 +225,7 @@ def main(argv: list[str] | None = None) -> int:
             args.registry,
             carregar_aliases(args.aliases),
             parse_cotas(args.cotas),
+            carregar_correcoes(args.correcoes),
         )
         if resultado.erros:
             print("\n".join(resultado.erros))

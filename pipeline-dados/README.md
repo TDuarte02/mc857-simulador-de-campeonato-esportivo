@@ -211,7 +211,11 @@ python -m pipeline.cli build-catalog \
 ```
 
 1. **Ids** do registro versionado (as 15 lendas que dividiam o id com a versão 2024
-   ganharam ids novos, -625 a -639).
+   ganharam ids novos, -625 a -639). Em seguida entram as **datas de nascimento
+   corrigidas** de `artefatos/correcoes/datas_nascimento.csv` (`--correcoes`; cada
+   linha exige `fonte_url`). Uma data errada impede o `person_key` de ligar as versões
+   2024 e lenda da mesma pessoa; corrija aqui, nunca na base FIFA 22. A correção é
+   aplicada depois do registro, cuja chave inclui a data, para não trocar o id.
 2. **Convocados**: cada nome de `convocacoes/<pais>.csv` é casado com o pool
    (`identity.py`). A camada histórica fica de fora (uma lenda nunca é o convocado), a
    pesquisa de 2024 é preferida à base, e se o nome exato só casar com outra pessoa

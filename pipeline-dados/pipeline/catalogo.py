@@ -3,7 +3,8 @@
 Passos, nesta ordem:
 
 1. ids das linhas enriquecidas vêm do registro versionado (lendas que dividiam o
-   id com a versão 2024 ganham um id novo);
+   id com a versão 2024 ganham um id novo); em seguida entram as correções de
+   data de nascimento (`correcoes.py`), antes de tudo que usa a data;
 2. cada convocado listado em `convocacoes/<pais>.csv` é casado com o pool
    (`identity.descobrir_lacunas`); ambíguo ou ausente interrompe a execução;
 3. `is_convocado_2024` e `person_key` (versões 2024 e lenda da mesma pessoa);
@@ -20,6 +21,7 @@ from pathlib import Path
 import pandas as pd
 
 from .config import SELECOES_COPA_AMERICA_2024, grupo_posicao, slug
+from .correcoes import aplicar_datas_nascimento
 from .filtro import COTAS_PADRAO, filtrar_pool
 from .identity import atribuir_pessoas, descobrir_lacunas, exigir_convocados
 from .imputacao import CAMPOS_MOTOR, COLUNA_IMPUTADOS, imputar, treinar_imputacao
@@ -53,10 +55,13 @@ def construir_catalogo(
     registry: Path,
     aliases: dict[str, str] | None = None,
     cotas: dict[str, int] | None = None,
+    correcoes: pd.DataFrame | None = None,
 ) -> Catalogo:
     selecoes = list(SELECOES_COPA_AMERICA_2024)
     df = pool[pool["nationality_name"].isin(selecoes)].reset_index(drop=True)
     df = aplicar_registry(df, registry)
+    if correcoes is not None:  # depois do registro: a chave dele inclui a data
+        df = aplicar_datas_nascimento(df, correcoes)
 
     lacunas = descobrir_lacunas(convocacoes, df, aliases)
     exigir_convocados(lacunas)

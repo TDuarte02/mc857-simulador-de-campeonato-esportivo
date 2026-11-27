@@ -276,7 +276,7 @@ SCHEMAS = {
             "catalogVersion": {
                 **STR,
                 "description": "Versão do catálogo de seleções e jogadores (`mock` para os dados gerados).",
-                "example": "82a2bea343c2",
+                "example": "1933dbb180c0",
             },
         }
     ),

@@ -50,7 +50,7 @@ O seed valida o arquivo inteiro antes de escrever e recusa, com linha, nome e mo
 
 ```bash
 curl http://127.0.0.1:5000/meta
-# {"simulator": "engine", "catalogVersion": "82a2bea343c2"}
+# {"simulator": "engine", "catalogVersion": "1933dbb180c0"}
 ```
 
 `catalogVersion` é `mock` quando o catálogo é o gerado (sem `catalog_meta`).
