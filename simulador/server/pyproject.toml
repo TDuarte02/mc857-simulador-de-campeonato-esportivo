@@ -18,6 +18,9 @@ testpaths = ["tests"]
 copa-engine = { path = "../engine", editable = true }
 
 [dependency-groups]
+deploy = [
+    "gunicorn>=27.0.1",
+]
 dev = [
     "mongomock>=4.3.0",
     "jsonschema>=4.26.0",

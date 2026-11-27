@@ -23,6 +23,7 @@ services:
       # simulador/: the image also needs the engine (../engine), see the Dockerfile.
       context: ..
       dockerfile: server/Dockerfile
+      target: local  # Flask's server; the AWS image is the `aws` target
     restart: "no"
     command: ["python", "-m", "api.seed", "--file", "/data/jogadores_copa_america_2024_filtrado.csv"]
     environment:

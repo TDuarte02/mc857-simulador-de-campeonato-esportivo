@@ -60,9 +60,24 @@ class EmptyCatalogError(RuntimeError):
     """The database has no squads or players, and the mock catalogue was not asked for."""
 
 
+def open_mongo_client(settings: Settings) -> MongoClient:
+    """A client for MongoDB, or for Amazon DocumentDB when its TLS/retry settings are set.
+
+    Reads always go to the primary (pymongo's default): the services read back what
+    they just wrote, so a lagging replica would return stale sessions.
+    """
+    options: dict = {"tz_aware": True, "serverSelectionTimeoutMS": 5000}
+    if settings.mongo_tls_ca_file:
+        options |= {"tls": True, "tlsCAFile": settings.mongo_tls_ca_file}
+    if not settings.mongo_retry_writes:
+        options["retryWrites"] = False
+    if settings.mongo_replica_set:
+        options["replicaSet"] = settings.mongo_replica_set
+    return MongoClient(settings.mongo_uri, **options)
+
+
 def _mongo_repositories(settings: Settings) -> Repositories:
-    client = MongoClient(settings.mongo_uri, tz_aware=True, serverSelectionTimeoutMS=5000)
-    db = client[settings.mongo_db]
+    db = open_mongo_client(settings)[settings.mongo_db]
     repositories = create_mongo_repositories(db, seed_mock=settings.seed_mock_catalog)
     if catalog_is_empty(db):
         raise EmptyCatalogError(

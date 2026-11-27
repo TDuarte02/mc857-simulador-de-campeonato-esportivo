@@ -5,6 +5,11 @@ they also check what was written to the database, and, when the stack was seeded
 with the real catalogue (catalog_meta present), the real players.
 
     API_BASE_URL=http://127.0.0.1:5000 MONGO_URI=mongodb://127.0.0.1:27018 uv run pytest tests/functional
+
+Behind AWS API Gateway, set API_KEY too: it is sent as the x-api-key header, and a
+request without it must be refused (the database is private there, so no MONGO_URI):
+
+    API_BASE_URL=https://<id>.execute-api.us-east-2.amazonaws.com/v1 API_KEY=<key> uv run pytest tests/functional
 """
 
 import json as jsonlib
@@ -23,6 +28,7 @@ from openapi_check import response_problems
 
 BASE_URL = os.environ.get("API_BASE_URL", "").rstrip("/")
 MONGO_URI = os.environ.get("MONGO_URI")
+API_KEY = os.environ.get("API_KEY")
 MONGO_DB = os.environ.get("MONGO_DB", "copa")
 QUOTAS = {"GK": 3, "DEF": 8, "MID": 8, "FW": 7}
 
@@ -71,8 +77,12 @@ def live_spec() -> dict:
     return _request("GET", "/openapi.json").get_json()
 
 
-def _request(method: str, path: str, data: bytes | None = None, content_type: str | None = None) -> LiveResponse:
+def _request(
+    method: str, path: str, data: bytes | None = None, content_type: str | None = None, api_key: str | None = API_KEY
+) -> LiveResponse:
     headers = {"Content-Type": content_type} if content_type else {}
+    if api_key:
+        headers["x-api-key"] = api_key
     request = urllib.request.Request(BASE_URL + path, data=data, method=method, headers=headers)
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
@@ -283,3 +293,16 @@ def test_docs_are_served(client):
     assert b"swagger-ui-bundle.js" in page.body
     assert spec["openapi"] == "3.1.0"
     assert "/{sessionId}/simulate" in spec["paths"]
+
+
+# --- API Gateway --------------------------------------------------------------------
+
+
+@pytest.mark.skipif(not API_KEY, reason="API_KEY is not set (not behind API Gateway)")
+def test_requests_without_the_api_key_are_refused():
+    without = _request("GET", "/squads", api_key=None)
+    wrong = _request("GET", "/squads", api_key="not-the-key")
+
+    assert without.status_code == 403
+    assert wrong.status_code == 403
+    assert _request("GET", "/squads").status_code == 200

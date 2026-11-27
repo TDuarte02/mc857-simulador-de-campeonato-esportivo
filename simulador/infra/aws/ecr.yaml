@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  Simulador de Campeonato - what must exist before the main stack (copa.yaml) runs:
+  the container registry for the API image, and a private bucket with the MongoDB
+  RPMs and the database password for the database instance, which has no internet
+  access and reads them through the VPC's S3 gateway endpoint.
+
+Resources:
+  Repository:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: copa-simulador-api
+      EmptyOnDelete: true # teardown removes the images too
+      ImageScanningConfiguration:
+        ScanOnPush: true
+      LifecyclePolicy:
+        LifecyclePolicyText: |
+          {"rules": [{"rulePriority": 1, "description": "keep the 3 most recent images (free tier: 500 MB)",
+            "selection": {"tagStatus": "any", "countType": "imageCountMoreThan", "countNumber": 3},
+            "action": {"type": "expire"}}]}
+
+  # mongodb/*.rpm (pinned and checksummed by deploy.sh) and secrets/mongo-password.
+  # teardown.sh empties it before deleting the stack.
+  ArtifactsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault: { SSEAlgorithm: AES256 }
+      OwnershipControls:
+        Rules: [{ ObjectOwnership: BucketOwnerEnforced }]
+
+Outputs:
+  RepositoryUri:
+    Value: !GetAtt Repository.RepositoryUri
+  ArtifactsBucket:
+    Value: !Ref ArtifactsBucket

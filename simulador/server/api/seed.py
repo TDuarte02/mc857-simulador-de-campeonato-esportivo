@@ -28,10 +28,10 @@ from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
 
-from pymongo import MongoClient
 from pymongo.database import Database
 
 from api.config import Settings
+from api.container import open_mongo_client
 from api.domain.engine_data import ATTRIBUTE_MAX, ENGINE_ATTRIBUTES, LINE_ATTRIBUTES, canonical_position, sector_of
 from api.domain.models import Player, Position, Squad
 from api.repositories.mongo import CATALOG_META_ID, PLAYER_INDEX, player_doc, squad_doc
@@ -247,7 +247,7 @@ def main(argv: list[str] | None = None) -> int:
         print(error, file=sys.stderr)
         return 1
 
-    client = MongoClient(settings.mongo_uri, tz_aware=True, serverSelectionTimeoutMS=5000)
+    client = open_mongo_client(settings)
     try:
         changed = seed_catalog(client[settings.mongo_db], catalog)
     finally:
