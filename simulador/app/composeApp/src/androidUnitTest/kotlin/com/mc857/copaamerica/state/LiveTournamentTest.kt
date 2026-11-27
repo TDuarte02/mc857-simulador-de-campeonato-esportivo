@@ -7,6 +7,8 @@ import com.mc857.copaamerica.domain.logic.SQUAD_SIZE
 import com.mc857.copaamerica.domain.logic.randomLineup
 import com.mc857.copaamerica.domain.model.FormKey
 import com.mc857.copaamerica.domain.model.SessionPhase
+import com.mc857.copaamerica.domain.model.Stage
+import com.mc857.copaamerica.domain.model.TournamentMode
 import com.mc857.copaamerica.nav.Screen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -24,10 +26,15 @@ import kotlin.test.assertTrue
  * API. Skipped unless API_BASE_URL is set (API_KEY too, for the API Gateway):
  *
  *     API_BASE_URL=http://127.0.0.1:5000 ./gradlew :composeApp:testDebugUnitTest
+ *
+ * The Modo Rápido cups run only with API_FAST_MODE=1, against a server that has it.
+ * API_CUPS sets how many cups of each mode are played (40 by default).
  */
 class LiveTournamentTest {
     private val baseUrl: String? = System.getenv("API_BASE_URL")
     private val apiKey: String = System.getenv("API_KEY").orEmpty()
+    private val fastMode: Boolean = System.getenv("API_FAST_MODE") == "1"
+    private val cups: Int = System.getenv("API_CUPS")?.toIntOrNull() ?: 40
 
     private suspend fun TournamentController.act(action: TournamentController.() -> Unit) {
         action()
@@ -36,15 +43,22 @@ class LiveTournamentTest {
     }
 
     @Test
-    fun playsWholeCupsAgainstTheApi() = runBlocking {
+    fun playsWholeCupsAgainstTheApi() = playCups(TournamentMode.FULL)
+
+    @Test
+    fun playsWholeFastCupsAgainstTheApi() {
+        if (fastMode) playCups(TournamentMode.FAST)
+    }
+
+    private fun playCups(mode: TournamentMode) = runBlocking {
         val url = baseUrl ?: return@runBlocking
         val controller = TournamentController(CopaApi(url, apiKey), CoroutineScope(Dispatchers.Default), url)
         val placements = mutableMapOf<String, Int>()
 
         // Enough cups for the random server model to reach every branch of the flow.
-        repeat(40) { cup ->
+        repeat(cups) { cup ->
             controller.reset()
-            controller.act { openTeamSelection() }
+            controller.act { openTeamSelection(mode) }
             assertEquals(16, controller.squads.size)
             controller.act { selectSquad(squads[cup % squads.size]) }
             assertEquals(listOf("current", "legends", "random"), controller.presets.map { it.id })
@@ -55,6 +69,14 @@ class LiveTournamentTest {
             controller.act { confirmCallUp(picked) }
             assertEquals(Screen.DRAW_SETUP, controller.screen)
             controller.act { runDraw() }
+            val draw = assertNotNull(controller.draw)
+            if (mode == TournamentMode.FAST) {
+                assertTrue(draw.groups.isEmpty())
+                assertEquals(8, draw.squads.size)
+                assertTrue(draw.matches.all { it.stage == Stage.QUARTER_FINAL })
+            } else {
+                assertEquals(4, draw.groups.size)
+            }
             controller.act { openLineup() }
 
             var steps = 0
@@ -85,7 +107,9 @@ class LiveTournamentTest {
             assertNotNull(history.podium)
             val placement = assertNotNull(history.placement).name
             placements[placement] = (placements[placement] ?: 0) + 1
+            val played = if (mode == TournamentMode.FAST) 8 else 32
+            assertEquals(played, history.matches.size)
         }
-        println("Placements reached: $placements")
+        println("$mode placements reached: $placements")
     }
 }

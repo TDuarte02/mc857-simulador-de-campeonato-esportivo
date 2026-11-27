@@ -35,7 +35,7 @@ O web não chama a AWS direto: chama `/api` no próprio endereço, e quem serve 
 
 Para rodar a API localmente: em `simulador/server`, `uv run flask --app main run` (ou `docker compose up -d --build`), em http://127.0.0.1:5000.
 
-Testes do app: `./gradlew testDebugUnitTest`. Com `API_BASE_URL` (e `API_KEY`, para a AWS) definidas, um teste adicional joga copas completas contra a API.
+Testes do app: `./gradlew testDebugUnitTest`. Com `API_BASE_URL` (e `API_KEY`, para a AWS) definidas, um teste adicional joga copas completas contra a API; `API_FAST_MODE=1` inclui copas do Modo Rápido e `API_CUPS` define quantas copas de cada modo (40 por padrão).
 
 ### Deploy do web (Netlify)
 

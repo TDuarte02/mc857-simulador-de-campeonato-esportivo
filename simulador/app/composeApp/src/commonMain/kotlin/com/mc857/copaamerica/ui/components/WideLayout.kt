@@ -72,9 +72,12 @@ enum class TournamentStep(val label: String) {
     KNOCKOUT("Mata-mata"),
 }
 
-/** Ink top bar with the logo, the tournament steps and the "new tournament"/profile actions. */
+/**
+ * Ink top bar with the logo, the tournament steps and the "new tournament"/profile
+ * actions. A cup without groups (Modo Rápido) leaves out [TournamentStep.GROUPS].
+ */
 @Composable
-fun WideNavBar(step: TournamentStep?, onReset: (() -> Unit)?) {
+fun WideNavBar(step: TournamentStep?, onReset: (() -> Unit)?, hasGroups: Boolean = true) {
     Column(Modifier.fillMaxWidth().background(AppColors.ink)) {
         Row(
             Modifier
@@ -93,7 +96,9 @@ fun WideNavBar(step: TournamentStep?, onReset: (() -> Unit)?) {
                 }
                 if (step != null) {
                     Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
-                        TournamentStep.entries.forEach { NavStep(it, current = step) }
+                        TournamentStep.entries
+                            .filter { hasGroups || it != TournamentStep.GROUPS }
+                            .forEachIndexed { index, it -> NavStep(it, number = index + 1, current = step) }
                     }
                 }
                 Spacer(Modifier.weight(1f))
@@ -130,7 +135,7 @@ private val NavMuted = Color(0xFF9AA3B5)
 private val NavBorder = Color(0xFF3A4560)
 
 @Composable
-private fun NavStep(step: TournamentStep, current: TournamentStep) {
+private fun NavStep(step: TournamentStep, number: Int, current: TournamentStep) {
     val done = step.ordinal < current.ordinal
     val isCurrent = step == current
     Row(
@@ -151,7 +156,7 @@ private fun NavStep(step: TournamentStep, current: TournamentStep) {
             contentAlignment = Alignment.Center,
         ) {
             Text(
-                "${step.ordinal + 1}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp,
+                "$number", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp,
                 color = when {
                     isCurrent -> AppColors.antiqueGold
                     done -> AppColors.ink

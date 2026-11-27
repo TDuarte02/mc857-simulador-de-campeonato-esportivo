@@ -25,7 +25,7 @@ class TournamentRulesTest {
     private fun match(id: String, stage: Stage, round: Int, played: Boolean = false) =
         Match(id, stage, round, home = user, away = squad("peru"), played = played)
 
-    private val draw = Draw(user, emptyList(), (1..3).map { match("G$it", Stage.GROUP, it) })
+    private val draw = Draw(user, emptyList(), matches = (1..3).map { match("G$it", Stage.GROUP, it) })
 
     private fun history(
         phase: SessionPhase,
@@ -66,6 +66,16 @@ class TournamentRulesTest {
 
         assertEquals(NextStep.Eliminated, nextStep(draw, state))
         assertEquals(NextStep.Finished, nextStep(draw, history(SessionPhase.FINISHED)))
+    }
+
+    @Test
+    fun aFastCupStartsAtTheQuarterFinals() {
+        // Modo Rápido: no groups, and the draw's matches are the quarter-finals.
+        val quarters = (1..4).map { match("QF$it", Stage.QUARTER_FINAL, 4) }
+        val fastDraw = Draw(user, groups = emptyList(), squads = listOf(user), matches = quarters)
+        val state = history(SessionPhase.QUARTER_FINALS, bracket = Bracket(quarterFinals = quarters))
+
+        assertEquals(NextStep.Play(quarters[0]), nextStep(fastDraw, state))
     }
 
     private fun available(id: Int, position: Position) = AvailablePlayer(id, "P$id", 25, position, 70 + id % 10, 0)

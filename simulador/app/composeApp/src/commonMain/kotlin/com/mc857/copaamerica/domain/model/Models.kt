@@ -93,14 +93,29 @@ data class Match(
     fun opponentOf(squadId: String) = if (home.id == squadId) away else home
 }
 
+/** How long the cup is (the `mode` of POST /session). */
+enum class TournamentMode(val label: String) {
+    /** 16 squads: group stage, then the 8-team knockout. */
+    FULL("Modo clássico"),
+
+    /** 8 squads straight into the quarter-finals (third-place match included). */
+    FAST("Modo rápido"),
+}
+
 @Serializable
 data class DrawGroup(val name: String, val squads: List<Squad>)
 
 @Serializable
 data class Draw(
     val userSquad: Squad,
+    /** Empty in [TournamentMode.FAST]. */
     val groups: List<DrawGroup>,
-    /** Every group-stage fixture; results are hidden until their round is played. */
+    /** The 8 squads of a [TournamentMode.FAST] cup, which has no groups; empty otherwise. */
+    val squads: List<Squad> = emptyList(),
+    /**
+     * The group-stage fixtures, or the quarter-finals in [TournamentMode.FAST];
+     * results are hidden until their round is played.
+     */
     val matches: List<Match>,
 )
 
@@ -183,6 +198,8 @@ enum class Placement(val label: String) {
 @Serializable
 data class SessionState(
     val id: String,
+    /** Null from a server without fast mode, where every cup is a full one. */
+    val mode: TournamentMode? = null,
     val phase: SessionPhase,
     val squadId: String? = null,
     /** The called-up player ids; empty before the call-up. */

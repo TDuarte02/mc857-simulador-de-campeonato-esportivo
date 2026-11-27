@@ -36,6 +36,7 @@ import com.mc857.copaamerica.domain.model.History
 import com.mc857.copaamerica.domain.model.Match
 import com.mc857.copaamerica.domain.model.Squad
 import com.mc857.copaamerica.domain.model.Stage
+import com.mc857.copaamerica.domain.model.TournamentMode
 import com.mc857.copaamerica.platform.shareText
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
@@ -72,6 +73,7 @@ fun PhaseOverviewScreen(
     team: Squad,
     history: History,
     onReset: () -> Unit,
+    mode: TournamentMode = TournamentMode.FULL,
 ) {
     val podiumSquads = history.podium ?: return
     val champion = podiumSquads.champion
@@ -113,7 +115,7 @@ fun PhaseOverviewScreen(
         val goalsFor = campaign.sumOf { it.scoreFor(team.id).first }
         val goalsAgainst = campaign.sumOf { it.scoreFor(team.id).second }
         WidePage {
-            WidePageHeader("RESUMO DO", "TORNEIO", kicker = "Torneio encerrado · Modo clássico")
+            WidePageHeader("RESUMO DO", "TORNEIO", kicker = "Torneio encerrado · ${mode.label}")
 
             Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(24.dp)) {
                     Column(
@@ -193,7 +195,7 @@ fun PhaseOverviewScreen(
     }
 
     Column(Modifier.fillMaxSize()) {
-        TopBar(title = "Resumo do torneio", sub = "Torneio encerrado · Modo clássico", onReset = onReset)
+        TopBar(title = "Resumo do torneio", sub = "Torneio encerrado · ${mode.label}", onReset = onReset)
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).retroPaper().padding(20.dp)) {
                 Column(
                     Modifier
