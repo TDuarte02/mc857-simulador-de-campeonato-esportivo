@@ -1,0 +1,452 @@
+[
+  {
+    "nome": "César Blackman",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "1998-04-02",
+    "club_name": "Slovan Bratislava",
+    "league_name": "Slovak First Football League",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.5,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.55,
+      "physic": 0.55
+    },
+    "observacao": "Zagueiro jovem que atua na primeira divisão eslovaca, perfil de titular em formação com boa capacidade física e defensiva, mas sem destaque ofensivo relevante na seleção panamenha.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "César Blackman foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Slovan Bratislava."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "José Córdoba",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "2001-06-03",
+    "club_name": "Levski Sofia",
+    "league_name": "Bulgarian First League",
+    "percentis": {
+      "overall": 0.5,
+      "pace": 0.55,
+      "shooting": 0.25,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.5,
+      "physic": 0.5
+    },
+    "observacao": "Zagueiro jovem em desenvolvimento na primeira divisão búlgara, com perfil mediano dentro do grupo de defensores panamenhos, ainda sem papel de titular consolidado na seleção.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "José Córdoba foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Levski Sofia."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RB"
+    ]
+  },
+  {
+    "nome": "Eduardo Anderson",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "2001-01-31",
+    "club_name": "Saprissa",
+    "league_name": "Liga Promerica",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.55,
+      "shooting": 0.25,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.55,
+      "physic": 0.55
+    },
+    "observacao": "Zagueiro jovem de um clube tradicional costarriquenho (Saprissa), com desempenho físico e defensivo levemente acima da mediana do grupo de zagueiros panamenhos.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Eduardo Anderson foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Saprissa."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Abdiel Ayarza",
+    "pais": "Panama",
+    "posicao": "CM",
+    "dob": "1992-09-12",
+    "club_name": "Cienciano",
+    "league_name": "Liga 1",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.5,
+      "shooting": 0.5,
+      "passing": 0.55,
+      "dribbling": 0.55,
+      "defending": 0.45,
+      "physic": 0.5
+    },
+    "observacao": "Meio-campista experiente, com boa contribuição em passe e condução de bola, jogando em clube peruano de bom nível regional; perfil intermediário a levemente acima da mediana do grupo de meio-campistas panamenhos.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Abdiel Ayarza foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Cienciano."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Cristian Martínez",
+    "pais": "Panama",
+    "posicao": "CM",
+    "dob": "1997-02-06",
+    "club_name": "Al-Jandal",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.5,
+      "shooting": 0.4,
+      "passing": 0.4,
+      "dribbling": 0.45,
+      "defending": 0.3,
+      "physic": 0.4
+    },
+    "observacao": "Meio-campista atuando em clube de menor expressão no futebol saudita, com perfil abaixo da mediana do grupo de meio-campistas panamenhos e papel mais periférico na seleção.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Cristian Martínez foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Al-Jandal."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Eduardo Guerrero",
+    "pais": "Panama",
+    "posicao": "ST",
+    "dob": "2000-02-21",
+    "club_name": "Zorya Luhansk",
+    "league_name": "Ukrainian Premier League",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.55,
+      "shooting": 0.55,
+      "passing": 0.45,
+      "dribbling": 0.5,
+      "defending": 0.3,
+      "physic": 0.5
+    },
+    "observacao": "Atacante jogando em liga europeia de nível intermediário (Ucrânia), com finalização e ritmo levemente acima da mediana do grupo de atacantes panamenhos.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Eduardo Guerrero foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Zorya Luhansk."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Ismael Díaz",
+    "pais": "Panama",
+    "posicao": "RW",
+    "dob": "1997-05-12",
+    "club_name": "Universidad Católica",
+    "league_name": "Primera División de Chile",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.55,
+      "dribbling": 0.6,
+      "defending": 0.35,
+      "physic": 0.45
+    },
+    "observacao": "Atua predominantemente como ponta direita, não como centroavante fixo, com boa condução e criação de jogadas pelo lado do campo; peça habitual nas convocações do Panamá, acima da mediana do grupo ofensivo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Ismael Díaz foi convocado para a Copa América 2024 defendendo o Panamá, atuando pela Universidad Católica."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "César Samudio",
+    "pais": "Panama",
+    "posicao": "GK",
+    "dob": "1994-03-26",
+    "club_name": "Marathón",
+    "league_name": "Liga Nacional de Honduras",
+    "percentis": {
+      "overall": 0.3,
+      "goalkeeping_diving": 0.3,
+      "goalkeeping_handling": 0.3,
+      "goalkeeping_kicking": 0.3,
+      "goalkeeping_positioning": 0.3,
+      "goalkeeping_reflexes": 0.3,
+      "goalkeeping_speed": 0.4
+    },
+    "observacao": "Goleiro reserva na hierarquia da seleção, atuando em clube hondurenho de nível médio; perfil abaixo da mediana do grupo de goleiros panamenhos, sem titularidade recente confirmada.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "César Samudio foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Marathón."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Jovani Welch",
+    "pais": "Panama",
+    "posicao": "CM",
+    "dob": "1999-12-07",
+    "club_name": "Académico de Viseu",
+    "league_name": "Liga Portugal 2",
+    "percentis": {
+      "overall": 0.45,
+      "pace": 0.55,
+      "shooting": 0.4,
+      "passing": 0.5,
+      "dribbling": 0.5,
+      "defending": 0.4,
+      "physic": 0.45
+    },
+    "observacao": "Meio-campista em desenvolvimento na segunda divisão portuguesa, com perfil próximo da mediana do grupo de meio-campistas panamenhos e boa mobilidade.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jovani Welch foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Académico de Viseu."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Eric Davis",
+    "pais": "Panama",
+    "posicao": "RB",
+    "dob": "1991-03-31",
+    "club_name": "Košice",
+    "league_name": "Slovak First Football League",
+    "percentis": {
+      "overall": 0.7,
+      "pace": 0.4,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.65,
+      "physic": 0.6
+    },
+    "observacao": "Defensor experiente que historicamente atua como lateral/ala direito pelo Panamá, com vasta experiência internacional; perda natural de ritmo pela idade, mas defensivamente acima da mediana do grupo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Eric Davis foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Košice."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "José Fajardo",
+    "pais": "Panama",
+    "posicao": "ST",
+    "dob": "1993-08-18",
+    "club_name": "Universidad Católica",
+    "league_name": "Primera División de Chile",
+    "percentis": {
+      "overall": 0.5,
+      "pace": 0.45,
+      "shooting": 0.5,
+      "passing": 0.4,
+      "dribbling": 0.45,
+      "defending": 0.3,
+      "physic": 0.45
+    },
+    "observacao": "Atacante experiente atuando no futebol chileno, com perfil de finalização na mediana do grupo de atacantes panamenhos e contribuição ofensiva regular.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "José Fajardo foi convocado para a Copa América 2024 defendendo o Panamá, atuando pela Universidad Católica."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Omar Valencia",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "2004-06-08",
+    "club_name": "New York Red Bulls",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.45,
+      "pace": 0.6,
+      "shooting": 0.25,
+      "passing": 0.4,
+      "dribbling": 0.4,
+      "defending": 0.45,
+      "physic": 0.5
+    },
+    "observacao": "Zagueiro jovem formado na MLS, com boa velocidade de recuperação para a idade, mas ainda em consolidação defensiva; perfil próximo da mediana do grupo de zagueiros panamenhos.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Omar Valencia foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo New York Red Bulls."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RB"
+    ]
+  },
+  {
+    "nome": "Iván Anderson",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "1997-11-24",
+    "club_name": "Fortaleza",
+    "league_name": "Campeonato Brasileiro Série A",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.55,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.6,
+      "physic": 0.6
+    },
+    "observacao": "Zagueiro atuando em clube de ponta do futebol brasileiro (Fortaleza, Série A), com bom desempenho físico e defensivo, destacando-se acima da mediana do grupo de zagueiros panamenhos.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Iván Anderson foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Fortaleza."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Orlando Mosquera",
+    "pais": "Panama",
+    "posicao": "GK",
+    "dob": "1994-12-25",
+    "club_name": "Maccabi Tel Aviv",
+    "league_name": "Israeli Premier League",
+    "percentis": {
+      "overall": 0.85,
+      "goalkeeping_diving": 0.8,
+      "goalkeeping_handling": 0.85,
+      "goalkeeping_kicking": 0.8,
+      "goalkeeping_positioning": 0.85,
+      "goalkeeping_reflexes": 0.85,
+      "goalkeeping_speed": 0.55
+    },
+    "observacao": "Goleiro titular estabelecido da seleção do Panamá, defendendo clube de bom nível em Israel; claramente acima da mediana do grupo de goleiros panamenhos em todos os fundamentos.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Orlando Mosquera foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Maccabi Tel Aviv."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Edgardo Fariña",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "2001-09-21",
+    "club_name": "Municipal",
+    "league_name": "Liga Nacional de Guatemala",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.45,
+      "shooting": 0.2,
+      "passing": 0.35,
+      "dribbling": 0.35,
+      "defending": 0.4,
+      "physic": 0.45
+    },
+    "observacao": "Zagueiro jovem em clube guatemalense de nível regional, com perfil abaixo da mediana do grupo de zagueiros panamenhos e ainda sem grande destaque internacional.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Edgardo Fariña foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Municipal."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Roderick Miller",
+    "pais": "Panama",
+    "posicao": "CB",
+    "dob": "1992-04-03",
+    "club_name": "Turan Tovuz",
+    "league_name": "Azerbaijan Premier League",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.3,
+      "shooting": 0.2,
+      "passing": 0.35,
+      "dribbling": 0.3,
+      "defending": 0.45,
+      "physic": 0.5
+    },
+    "observacao": "Zagueiro veterano em liga de menor expressão (Azerbaijão), com perda de velocidade pela idade e perfil levemente abaixo da mediana do grupo de zagueiros panamenhos, ainda com solidez física.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Roderick Miller foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Turan Tovuz."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Kahiser Lenis",
+    "pais": "Panama",
+    "posicao": "CM",
+    "dob": "2000-07-23",
+    "club_name": "Jaguares",
+    "league_name": "Categoría Primera A",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.55,
+      "shooting": 0.4,
+      "passing": 0.45,
+      "dribbling": 0.5,
+      "defending": 0.35,
+      "physic": 0.4
+    },
+    "observacao": "Meio-campista jovem no futebol colombiano, com boa mobilidade e condução de bola, mas perfil geral levemente abaixo da mediana do grupo de meio-campistas panamenhos por falta de maior rodagem internacional.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kahiser Lenis foi convocado para a Copa América 2024 defendendo o Panamá, atuando pelo Jaguares."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  }
+]

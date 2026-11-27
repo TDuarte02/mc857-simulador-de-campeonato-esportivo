@@ -1,0 +1,478 @@
+[
+  {
+    "nome": "Shaquan Davis",
+    "pais": "Jamaica",
+    "posicao": "GK",
+    "dob": "2000-11-11",
+    "club_name": "Mount Pleasant",
+    "league_name": "Jamaica Premier League",
+    "percentis": {
+      "overall": 0.08,
+      "goalkeeping_diving": 0.1,
+      "goalkeeping_handling": 0.1,
+      "goalkeeping_kicking": 0.1,
+      "goalkeeping_positioning": 0.1,
+      "goalkeeping_reflexes": 0.12,
+      "goalkeeping_speed": 0.35
+    },
+    "observacao": "Goleiro de clube doméstico jamaicano sem passagem por ligas de maior exigência; dentro do grupo de calibração de GKs da Jamaica (cujo piso já é um reserva de Championship/USL), fica no extremo inferior, condizente com papel de 3º goleiro na convocação.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Shaquan Davis foi convocado pela Jamaica para a Copa América 2024, listado como goleiro do Mount Pleasant."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Dexter Lembikisa",
+    "pais": "Jamaica",
+    "posicao": "RB",
+    "dob": "2003-11-04",
+    "club_name": "Heart of Midlothian",
+    "league_name": "Scottish Premiership",
+    "percentis": {
+      "overall": 0.53,
+      "pace": 0.83,
+      "shooting": 0.1,
+      "passing": 0.35,
+      "dribbling": 0.33,
+      "defending": 0.22,
+      "physic": 0.21
+    },
+    "observacao": "Lateral-direito jovem e veloz, refinado de CB (código grosseiro) para RB por ser essa sua posição real no Hearts of Midlothian; velocidade muito acima da mediana do grupo defensivo da Jamaica, mas marcação/físico ainda em desenvolvimento, coerente com jogador emergente e não titular fixo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Dexter Lembikisa foi convocado pela Jamaica para a Copa América 2024, listado como defensor do Heart of Midlothian."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Richard King",
+    "pais": "Jamaica",
+    "posicao": "CB",
+    "dob": "2001-11-27",
+    "club_name": "Cavalier",
+    "league_name": "Jamaica Premier League",
+    "percentis": {
+      "overall": 0.11,
+      "pace": 0.15,
+      "shooting": 0.05,
+      "passing": 0.13,
+      "dribbling": 0.09,
+      "defending": 0.22,
+      "physic": 0.13
+    },
+    "observacao": "Zagueiro de clube doméstico (Cavalier FC), sem experiência em ligas no exterior; dentro do grupo de zagueiros/laterais da Jamaica (que inclui vários jogadores de Championship/MLS) fica no piso da distribuição, refletindo papel marginal na convocação.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Richard King foi convocado pela Jamaica para a Copa América 2024, listado como zagueiro do Cavalier."
+      }
+    ],
+    "confianca": 0.35,
+    "status": "approved"
+  },
+  {
+    "nome": "Di'Shon Bernard",
+    "pais": "Jamaica",
+    "posicao": "CB",
+    "dob": "2000-10-14",
+    "club_name": "Sheffield Wednesday",
+    "league_name": "EFL Championship",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.28,
+      "shooting": 0.22,
+      "passing": 0.23,
+      "dribbling": 0.19,
+      "defending": 0.79,
+      "physic": 0.44
+    },
+    "observacao": "Zagueiro titular do Sheffield Wednesday na Championship inglesa, com bom nível defensivo; acima da mediana do grupo de zagueiros/laterais da Jamaica, com defesa como atributo claramente mais forte.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Di'Shon Bernard foi convocado pela Jamaica para a Copa América 2024, listado como zagueiro do Sheffield Wednesday."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Demarai Gray",
+    "pais": "Jamaica",
+    "posicao": "RW",
+    "dob": "1996-06-28",
+    "club_name": "Al-Ettifaq",
+    "league_name": "Saudi Pro League",
+    "preferred_foot": "Right",
+    "height_cm": 180,
+    "percentis": {
+      "overall": 0.89,
+      "pace": 0.68,
+      "shooting": 0.58,
+      "passing": 0.79,
+      "dribbling": 0.86,
+      "defending": 0.4,
+      "physic": 0.23
+    },
+    "observacao": "Refinado de ST para RW por ser esta sua posição real de carreira (ponta/extremo, com passagens por Leicester e Everton na Premier League); é o jogador mais talentoso do grupo ofensivo da Jamaica, com drible, passe e velocidade bem acima da mediana.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Demarai Gray foi convocado pela Jamaica para a Copa América 2024, listado como atacante do Al-Ettifaq."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved"
+  },
+  {
+    "nome": "Kaheim Dixon",
+    "pais": "Jamaica",
+    "posicao": "ST",
+    "dob": "2004-10-04",
+    "club_name": "Arnett Gardens",
+    "league_name": "Jamaica Premier League",
+    "percentis": {
+      "overall": 0.05,
+      "pace": 0.22,
+      "shooting": 0.07,
+      "passing": 0.05,
+      "dribbling": 0.09,
+      "defending": 0.08,
+      "physic": 0.14
+    },
+    "observacao": "Atacante jovem de clube doméstico (Arnett Gardens), sem exposição internacional relevante; fica no piso do grupo ofensivo da Jamaica, condizente com uma convocação de reposição/experimental.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kaheim Dixon foi convocado pela Jamaica para a Copa América 2024, listado como atacante do Arnett Gardens."
+      }
+    ],
+    "confianca": 0.3,
+    "status": "approved"
+  },
+  {
+    "nome": "Shamar Nicholson",
+    "pais": "Jamaica",
+    "posicao": "ST",
+    "dob": "1997-02-16",
+    "club_name": "Clermont",
+    "league_name": "Ligue 2",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.16,
+      "shooting": 0.82,
+      "passing": 0.48,
+      "dribbling": 0.42,
+      "defending": 0.19,
+      "physic": 0.82
+    },
+    "observacao": "Atacante com amostra direta no pacote de calibração (overall 71, finalização 74, físico 77), o que dá alta confiança nos percentis; finalizador físico e eficiente, mas abaixo da mediana em velocidade dentro do grupo ofensivo jamaicano.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Shamar Nicholson foi convocado pela Jamaica para a Copa América 2024, listado como atacante do Clermont."
+      }
+    ],
+    "confianca": 0.8,
+    "status": "approved"
+  },
+  {
+    "nome": "Wes Harding",
+    "pais": "Jamaica",
+    "posicao": "RB",
+    "dob": "1996-10-20",
+    "club_name": "Millwall",
+    "league_name": "EFL Championship",
+    "percentis": {
+      "overall": 0.62,
+      "pace": 0.4,
+      "shooting": 0.15,
+      "passing": 0.2,
+      "dribbling": 0.18,
+      "defending": 0.43,
+      "physic": 0.28
+    },
+    "observacao": "Refinado de CB para RB por ser sua posição real titular no Millwall (Championship inglesa); defensor sólido e acima da mediana geral do grupo, sem destaque isolado em nenhum atributo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Wes Harding foi convocado pela Jamaica para a Copa América 2024, listado como defensor do Millwall."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Coniah Boyce-Clarke",
+    "pais": "Jamaica",
+    "posicao": "GK",
+    "dob": "2003-03-01",
+    "club_name": "Reading",
+    "league_name": "EFL League One",
+    "percentis": {
+      "overall": 0.25,
+      "goalkeeping_diving": 0.25,
+      "goalkeeping_handling": 0.22,
+      "goalkeeping_kicking": 0.2,
+      "goalkeeping_positioning": 0.25,
+      "goalkeeping_reflexes": 0.28,
+      "goalkeeping_speed": 0.4
+    },
+    "observacao": "Goleiro jovem em formação na base/elenco do Reading (League One inglesa); reserva com potencial, ligeiramente abaixo da mediana do grupo de goleiros jamaicanos devido à pouca experiência em time principal.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Coniah Boyce-Clarke foi convocado pela Jamaica para a Copa América 2024, listado como goleiro do Reading."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Joel Latibeaudiere",
+    "pais": "Jamaica",
+    "posicao": "CDM",
+    "dob": "2000-01-06",
+    "club_name": "Coventry City",
+    "league_name": "EFL Championship",
+    "percentis": {
+      "overall": 0.56,
+      "pace": 0.09,
+      "shooting": 0.03,
+      "passing": 0.37,
+      "dribbling": 0.1,
+      "defending": 0.88,
+      "physic": 0.67
+    },
+    "observacao": "Refinado de CM para CDM: é um defensor com perfil muito mais defensivo que ofensivo (zagueiro de origem reconvertido em volante), por isso defesa e físico muito acima da mediana do grupo de meio-campo, com finalização e drible quase nulos.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Joel Latibeaudiere foi convocado pela Jamaica para a Copa América 2024, listado como meio-campista do Coventry City."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CB"
+    ]
+  },
+  {
+    "nome": "Karoy Anderson",
+    "pais": "Jamaica",
+    "posicao": "CM",
+    "dob": "2004-10-01",
+    "club_name": "Charlton Athletic",
+    "league_name": "EFL League One",
+    "percentis": {
+      "overall": 0.1,
+      "pace": 0.28,
+      "shooting": 0.1,
+      "passing": 0.14,
+      "dribbling": 0.15,
+      "defending": 0.32,
+      "physic": 0.18
+    },
+    "observacao": "Meio-campista jovem no Charlton Athletic (League One inglesa), ainda em início de carreira; fica abaixo da mediana do grupo de meio-campo da Jamaica, coerente com uma convocação de aposta para o futuro.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Karoy Anderson foi convocado pela Jamaica para a Copa América 2024, listado como meio-campista do Charlton Athletic."
+      }
+    ],
+    "confianca": 0.35,
+    "status": "approved"
+  },
+  {
+    "nome": "Damion Lowe",
+    "pais": "Jamaica",
+    "posicao": "CB",
+    "dob": "1993-05-05",
+    "club_name": "Philadelphia Union",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.22,
+      "shooting": 0.2,
+      "passing": 0.2,
+      "dribbling": 0.09,
+      "defending": 0.86,
+      "physic": 0.61
+    },
+    "observacao": "Zagueiro veterano e peça regular da Jamaica na MLS (Philadelphia Union), com longo histórico na seleção; topo da distribuição de zagueiros do grupo, com defesa muito acima da mediana, custando em velocidade.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Damion Lowe foi convocado pela Jamaica para a Copa América 2024, listado como zagueiro do Philadelphia Union."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Alex Marshall",
+    "pais": "Jamaica",
+    "posicao": "CM",
+    "dob": "1998-02-24",
+    "club_name": "Portmore United",
+    "league_name": "Jamaica Premier League",
+    "percentis": {
+      "overall": 0.05,
+      "pace": 0.13,
+      "shooting": 0.04,
+      "passing": 0.03,
+      "dribbling": 0.06,
+      "defending": 0.24,
+      "physic": 0.09
+    },
+    "observacao": "Meio-campista de clube doméstico (Portmore United), sem passagem por ligas no exterior; posicionado no extremo inferior do grupo de meio-campo da Jamaica, coerente com papel marginal na convocação.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Alex Marshall foi convocado pela Jamaica para a Copa América 2024, listado como meio-campista do Portmore United."
+      }
+    ],
+    "confianca": 0.3,
+    "status": "approved"
+  },
+  {
+    "nome": "Kevon Lambert",
+    "pais": "Jamaica",
+    "posicao": "CDM",
+    "dob": "1997-03-22",
+    "club_name": "San Antonio FC",
+    "league_name": "USL Championship",
+    "percentis": {
+      "overall": 0.2,
+      "pace": 0.19,
+      "shooting": 0.02,
+      "passing": 0.25,
+      "dribbling": 0.1,
+      "defending": 0.6,
+      "physic": 0.35
+    },
+    "observacao": "Refinado de CM para CDM: joga como volante de contenção no San Antonio FC (USL Championship), com defesa acima da mediana do grupo e contribuição ofensiva baixa.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kevon Lambert foi convocado pela Jamaica para a Copa América 2024, listado como meio-campista do San Antonio FC."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Renaldo Cephas",
+    "pais": "Jamaica",
+    "posicao": "ST",
+    "dob": "1999-12-08",
+    "club_name": "Ankaragücü",
+    "league_name": "Süper Lig",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.42,
+      "shooting": 0.25,
+      "passing": 0.24,
+      "dribbling": 0.29,
+      "defending": 0.15,
+      "physic": 0.42
+    },
+    "observacao": "Atacante com passagem pela primeira divisão turca (Ankaragücü), nível intermediário no contexto do grupo ofensivo da Jamaica; perfil equilibrado, sem nenhum atributo muito acima ou abaixo da mediana.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Renaldo Cephas foi convocado pela Jamaica para a Copa América 2024, listado como atacante do Ankaragücü."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Jon Bell",
+    "pais": "Jamaica",
+    "posicao": "CB",
+    "dob": "1997-08-26",
+    "club_name": "Seattle Sounders FC",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.36,
+      "pace": 0.34,
+      "shooting": 0.1,
+      "passing": 0.17,
+      "dribbling": 0.18,
+      "defending": 0.24,
+      "physic": 0.21
+    },
+    "observacao": "Zagueiro versátil na MLS (Seattle Sounders), com nível ligeiramente abaixo da mediana do grupo defensivo da Jamaica; sem atributo de destaque claro.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jon Bell foi convocado pela Jamaica para a Copa América 2024, listado como zagueiro do Seattle Sounders FC."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LB"
+    ]
+  },
+  {
+    "nome": "Greg Leigh",
+    "pais": "Jamaica",
+    "posicao": "LB",
+    "dob": "1994-09-30",
+    "club_name": "Oxford United",
+    "league_name": "EFL League One",
+    "percentis": {
+      "overall": 0.36,
+      "pace": 0.54,
+      "shooting": 0.54,
+      "passing": 0.25,
+      "dribbling": 0.44,
+      "defending": 0.37,
+      "physic": 0.28
+    },
+    "observacao": "Refinado de CB para LB (sua posição real de carreira, lateral-esquerdo); percentis calculados diretamente a partir da amostra de calibração que contém este mesmo jogador (overall 65, velocidade 74, defesa 62), dando alta confiança.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Greg Leigh foi convocado pela Jamaica para a Copa América 2024, listado como defensor do Oxford United."
+      }
+    ],
+    "confianca": 0.8,
+    "status": "approved"
+  },
+  {
+    "nome": "Jahmali Waite",
+    "pais": "Jamaica",
+    "posicao": "GK",
+    "dob": "1998-12-24",
+    "club_name": "El Paso Locomotive FC",
+    "league_name": "USL Championship",
+    "percentis": {
+      "overall": 0.42,
+      "goalkeeping_diving": 0.4,
+      "goalkeeping_handling": 0.38,
+      "goalkeeping_kicking": 0.35,
+      "goalkeeping_positioning": 0.4,
+      "goalkeeping_reflexes": 0.42,
+      "goalkeeping_speed": 0.45
+    },
+    "observacao": "Goleiro mais experiente do trio convocado neste grupo, atuando na USL Championship; fica próximo da mediana do grupo de goleiros jamaicanos, coerente com um segundo goleiro consolidado no elenco.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jahmali Waite foi convocado pela Jamaica para a Copa América 2024, listado como goleiro do El Paso Locomotive FC."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  }
+]

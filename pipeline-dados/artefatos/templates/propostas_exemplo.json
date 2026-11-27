@@ -1,0 +1,33 @@
+[
+  {
+    "nome": "Bento",
+    "pais": "Brazil",
+    "posicao": "GK",
+    "dob": "1999-06-10",
+    "height_cm": 190,
+    "weight_kg": 90,
+    "club_name": "Athletico Paranaense",
+    "league_name": "Brazilian Serie A",
+    "preferred_foot": "Right",
+    "weak_foot": 3,
+    "skill_moves": 1,
+    "percentis": {
+      "overall": 0.62,
+      "goalkeeping_diving": 0.55,
+      "goalkeeping_handling": 0.58,
+      "goalkeeping_kicking": 0.48,
+      "goalkeeping_positioning": 0.61,
+      "goalkeeping_reflexes": 0.68,
+      "goalkeeping_speed": 0.50
+    },
+    "observacao": "Goleiro convocado como opção de banco e com experiência em competição nacional.",
+    "fontes": [
+      {
+        "url": "https://exemplo.invalid/perfil-bento",
+        "afirmacao": "Perfil, clube e data de nascimento."
+      }
+    ],
+    "confianca": 0.82,
+    "status": "approved"
+  }
+]

@@ -1,2 +1,5 @@
 # Git hooks run under sh, which fails on CRLF line endings.
 .githooks/* text eol=lf
+
+# Shell scripts run under bash (also on Linux/WSL), which fails on CRLF line endings.
+*.sh text eol=lf

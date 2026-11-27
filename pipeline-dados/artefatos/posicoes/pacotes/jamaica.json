@@ -1,0 +1,345 @@
+{
+  "pais": "Jamaica",
+  "jogadores": [
+    {
+      "nome": "Rodolph Austin",
+      "posicao_principal": "CDM",
+      "dob": "1985-06-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q769566",
+      "contexto": "Leeds United"
+    },
+    {
+      "nome": "Theodore Whitmore",
+      "posicao_principal": "CAM",
+      "dob": "1972-08-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q950720",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Jermaine Hue",
+      "posicao_principal": "CAM",
+      "dob": "1978-06-15",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q6182326",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Robbie Earle",
+      "posicao_principal": "ST",
+      "dob": "1965-01-27",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q975790",
+      "contexto": "Wimbledon"
+    },
+    {
+      "nome": "Walter Boyd",
+      "posicao_principal": "ST",
+      "dob": "1972-01-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q973675",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Luton Shelton",
+      "posicao_principal": "ST",
+      "dob": "1985-11-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q289756",
+      "contexto": "Valerenga"
+    },
+    {
+      "nome": "Onandi Lowe",
+      "posicao_principal": "ST",
+      "dob": "1974-12-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1982002",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Deon Burton",
+      "posicao_principal": "ST",
+      "dob": "1976-10-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2456848",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Donovan Ricketts",
+      "posicao_principal": "GK",
+      "dob": "1977-06-07",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q426615",
+      "contexto": "LA Galaxy"
+    },
+    {
+      "nome": "Claude Davis",
+      "posicao_principal": "CB",
+      "dob": "1979-03-06",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q675535",
+      "contexto": "Derby County"
+    },
+    {
+      "nome": "Ian Goodison",
+      "posicao_principal": "CB",
+      "dob": "1972-11-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1269556",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Ricardo Gardner",
+      "posicao_principal": "LB",
+      "dob": "1978-09-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q317754",
+      "contexto": "Bolton"
+    },
+    {
+      "nome": "Demar Phillips",
+      "posicao_principal": "LB",
+      "dob": "1983-09-23",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q973733",
+      "contexto": "Real Salt Lake"
+    },
+    {
+      "nome": "Adrian Mariappa",
+      "posicao_principal": "CB",
+      "dob": "1986-10-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q10572",
+      "contexto": "Watford"
+    },
+    {
+      "nome": "Wes Morgan",
+      "posicao_principal": "CB",
+      "dob": "1984-01-21",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1392500",
+      "contexto": "Leicester City"
+    },
+    {
+      "nome": "Tyrone Marshall",
+      "posicao_principal": "CB",
+      "dob": "1974-11-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q2062203",
+      "contexto": "Copa 1998"
+    },
+    {
+      "nome": "Shaquan Davis",
+      "posicao_principal": "GK",
+      "dob": "2000-11-11",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Mount Pleasant"
+    },
+    {
+      "nome": "Dexter Lembikisa",
+      "posicao_principal": "CB",
+      "dob": "2003-11-04",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Heart of Midlothian"
+    },
+    {
+      "nome": "Richard King",
+      "posicao_principal": "CB",
+      "dob": "2001-11-27",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Cavalier"
+    },
+    {
+      "nome": "Di'Shon Bernard",
+      "posicao_principal": "CB",
+      "dob": "2000-10-14",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Sheffield Wednesday"
+    },
+    {
+      "nome": "Demarai Gray",
+      "posicao_principal": "ST",
+      "dob": "1996-06-28",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Al-Ettifaq"
+    },
+    {
+      "nome": "Kaheim Dixon",
+      "posicao_principal": "ST",
+      "dob": "2004-10-04",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Arnett Gardens"
+    },
+    {
+      "nome": "Shamar Nicholson",
+      "posicao_principal": "ST",
+      "dob": "1997-02-16",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Clermont"
+    },
+    {
+      "nome": "Wes Harding",
+      "posicao_principal": "CB",
+      "dob": "1996-10-20",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Millwall"
+    },
+    {
+      "nome": "Coniah Boyce-Clarke",
+      "posicao_principal": "GK",
+      "dob": "2003-03-01",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Reading"
+    },
+    {
+      "nome": "Joel Latibeaudiere",
+      "posicao_principal": "CM",
+      "dob": "2000-01-06",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Coventry City"
+    },
+    {
+      "nome": "Karoy Anderson",
+      "posicao_principal": "CM",
+      "dob": "2004-10-01",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Charlton Athletic"
+    },
+    {
+      "nome": "Damion Lowe",
+      "posicao_principal": "CB",
+      "dob": "1993-05-05",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Philadelphia Union"
+    },
+    {
+      "nome": "Alex Marshall",
+      "posicao_principal": "CM",
+      "dob": "1998-02-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Portmore United"
+    },
+    {
+      "nome": "Kevon Lambert",
+      "posicao_principal": "CM",
+      "dob": "1997-03-22",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "San Antonio FC"
+    },
+    {
+      "nome": "Renaldo Cephas",
+      "posicao_principal": "ST",
+      "dob": "1999-12-08",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Ankaragücü"
+    },
+    {
+      "nome": "Jon Bell",
+      "posicao_principal": "CB",
+      "dob": "1997-08-26",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Seattle Sounders FC"
+    },
+    {
+      "nome": "Greg Leigh",
+      "posicao_principal": "CB",
+      "dob": "1994-09-30",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Oxford United"
+    },
+    {
+      "nome": "Jahmali Waite",
+      "posicao_principal": "GK",
+      "dob": "1998-12-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "El Paso Locomotive FC"
+    }
+  ]
+}

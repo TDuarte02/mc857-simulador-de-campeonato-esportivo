@@ -1,0 +1,239 @@
+[
+  {
+    "nome": "Luc de Fougerolles",
+    "pais": "Canada",
+    "posicao": "CB",
+    "dob": "2005-10-12",
+    "club_name": "Fulham",
+    "league_name": "Premier League",
+    "percentis": {
+      "overall": 0.25,
+      "pace": 0.55,
+      "shooting": 0.25,
+      "passing": 0.4,
+      "dribbling": 0.35,
+      "defending": 0.35,
+      "physic": 0.4
+    },
+    "observacao": "Zagueiro canadense mais jovem do grupo (nascido em 2005), ainda em formação no Fulham e sem minutos relevantes na seleção principal; dentro do pool DEF do Canadá, fica abaixo da mediana em overall, finalização e defesa, com ritmo um pouco acima da mediana pelo atletismo típico de defensores formados na academia inglesa.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Luc de Fougerolles foi convocado pelo Canadá para a Copa América 2024, atuando como zagueiro do Fulham."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Ismaël Koné",
+    "pais": "Canada",
+    "posicao": "CDM",
+    "dob": "2002-06-16",
+    "club_name": "Watford",
+    "league_name": "EFL Championship",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.6,
+      "shooting": 0.5,
+      "passing": 0.65,
+      "dribbling": 0.6,
+      "defending": 0.6,
+      "physic": 0.6
+    },
+    "observacao": "Koné é volante box-to-box com bagagem europeia (Marseille/Watford) e peça rotineira do meio-campo canadense, por isso fica acima da mediana do pool MID em quase todos os atributos, com destaque para passe e marcação, compatíveis com seu perfil mais defensivo/organizador do que de criação pura.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Ismaël Koné foi convocado pelo Canadá para a Copa América 2024, atuando como meio-campista do Watford."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Theo Bair",
+    "pais": "Canada",
+    "posicao": "ST",
+    "dob": "1999-08-27",
+    "club_name": "Motherwell",
+    "league_name": "Scottish Premiership",
+    "percentis": {
+      "overall": 0.3,
+      "pace": 0.25,
+      "shooting": 0.4,
+      "passing": 0.3,
+      "dribbling": 0.3,
+      "defending": 0.35,
+      "physic": 0.75
+    },
+    "observacao": "Atacante de referência (pivô alto) que joga na Escócia, fora do radar das principais ligas europeias e sem espaço fixo na seleção; dentro do pool ATT do Canadá fica abaixo da mediana em overall, ritmo, passe e drible, mas acima em físico, perfil típico de centroavante de área.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Theo Bair foi convocado pelo Canadá para a Copa América 2024, atuando como atacante do Motherwell."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Jacen Russell-Rowe",
+    "pais": "Canada",
+    "posicao": "ST",
+    "dob": "2002-09-13",
+    "club_name": "Columbus Crew",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.3,
+      "pace": 0.5,
+      "shooting": 0.35,
+      "passing": 0.3,
+      "dribbling": 0.4,
+      "defending": 0.3,
+      "physic": 0.4
+    },
+    "observacao": "Atacante jovem da MLS, convocação de aposta/profundidade de elenco sem titularidade consolidada; no pool ATT do Canadá fica abaixo da mediana em quase todos os atributos, com ritmo próximo à mediana por ser jogador ainda em desenvolvimento físico.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jacen Russell-Rowe foi convocado pelo Canadá para a Copa América 2024, atuando como atacante do Columbus Crew."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Moïse Bombito",
+    "pais": "Canada",
+    "posicao": "CB",
+    "dob": "2000-03-30",
+    "club_name": "Colorado Rapids",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.95,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.65,
+      "physic": 0.7
+    },
+    "observacao": "Bombito é zagueiro titular do Canadá na Copa América 2024, conhecido por velocidade incomum para a posição; dentro do pool DEF do Canadá isso o coloca entre os mais rápidos (próximo do topo), com overall, defesa e físico acima da mediana, condizente com titularidade.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Moïse Bombito foi convocado pelo Canadá para a Copa América 2024, atuando como zagueiro do Colorado Rapids."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Tom McGill",
+    "pais": "Canada",
+    "posicao": "GK",
+    "dob": "2000-03-25",
+    "club_name": "Brighton & Hove Albion",
+    "league_name": "Premier League",
+    "percentis": {
+      "overall": 0.2,
+      "goalkeeping_diving": 0.25,
+      "goalkeeping_handling": 0.25,
+      "goalkeeping_kicking": 0.25,
+      "goalkeeping_positioning": 0.25,
+      "goalkeeping_reflexes": 0.3,
+      "goalkeeping_speed": 0.3
+    },
+    "observacao": "McGill é o goleiro mais jovem e menos experiente do grupo convocado, sem minutos relevantes no nível sênior (ligado ao Brighton, mas com passagens por clubes menores); no pool GK do Canadá isso o posiciona abaixo da mediana em todos os atributos de goleiro, como reserva de profundidade.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Tom McGill foi convocado pelo Canadá para a Copa América 2024, atuando como goleiro do Brighton & Hove Albion."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Ali Ahmed",
+    "pais": "Canada",
+    "posicao": "LM",
+    "dob": "2000-10-10",
+    "club_name": "Vancouver Whitecaps FC",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.45,
+      "pace": 0.75,
+      "shooting": 0.45,
+      "passing": 0.5,
+      "dribbling": 0.65,
+      "defending": 0.3,
+      "physic": 0.35
+    },
+    "observacao": "Ahmed é ponta de perfil driblador/vertical do Vancouver Whitecaps, peça de rotação da seleção canadense; no pool MID do Canadá isso se traduz em ritmo e drible acima da mediana, com marcação e físico abaixo, perfil clássico de jogador de corredor ofensivo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Ali Ahmed foi convocado pelo Canadá para a Copa América 2024, atuando como meio-campista/ponta do Vancouver Whitecaps FC."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Tani Oluwaseyi",
+    "pais": "Canada",
+    "posicao": "ST",
+    "dob": "2000-05-15",
+    "club_name": "Minnesota United FC",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.4,
+      "dribbling": 0.45,
+      "defending": 0.3,
+      "physic": 0.45
+    },
+    "observacao": "Atacante da MLS convocado como opção de profundidade de ataque, sem titularidade fixa na seleção; no pool ATT do Canadá fica levemente abaixo da mediana em overall e nos atributos técnicos, com finalização e ritmo próximos da mediana do grupo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Tani Oluwaseyi foi convocado pelo Canadá para a Copa América 2024, atuando como atacante do Minnesota United FC."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Kyle Hiebert",
+    "pais": "Canada",
+    "posicao": "CB",
+    "dob": "1997-07-30",
+    "club_name": "St. Louis City SC",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.3,
+      "pace": 0.35,
+      "shooting": 0.3,
+      "passing": 0.35,
+      "dribbling": 0.3,
+      "defending": 0.45,
+      "physic": 0.6
+    },
+    "observacao": "Zagueiro de referência física da MLS, convocação de profundidade sem espaço fixo na seleção principal; no pool DEF do Canadá fica abaixo da mediana em overall e nos atributos técnicos, com físico acima da mediana, perfil de zagueiro robusto e pouco associativo.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kyle Hiebert foi convocado pelo Canadá para a Copa América 2024, atuando como zagueiro do St. Louis City SC."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  }
+]

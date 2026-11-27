@@ -1,0 +1,259 @@
+"""CLI do pipeline de convocados."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+import pandas as pd
+
+from .catalogo import carregar_todas_convocacoes, construir_catalogo, resumo_catalogo
+from .correcoes import CORRECOES_PADRAO, carregar_correcoes
+from .filtro import COTAS_PADRAO, filtrar_pool, parse_cotas
+from .identity import carregar_aliases, descobrir_lacunas
+from .imputacao import avaliar_imputacao
+from .io import carregar_convocacoes, carregar_dataset, escrever_csv
+from .materialize import materializar
+from .posicoes import aplicar_posicoes, treinar_modelo
+from .registry import reconstruir_registry
+from .report import consolidar_resumo, mesclar_publicados
+from .research import gerar_pacote, escrever_pacote
+from .runner import (
+    iniciar_manifesto,
+    preparar_pais,
+    proximo_passo,
+    publicar_pais,
+    validar_resposta_pais,
+)
+from .state import carregar_manifesto, salvar_manifesto, resumo_manifesto
+from .validation import carregar_propostas, validar_propostas
+
+REGISTRY_PADRAO = Path("artefatos/autoresearch/registry/player_ids.csv")
+
+
+def _parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    sub = parser.add_subparsers(dest="comando", required=True)
+
+    discover = sub.add_parser("discover", help="compara convocados com a base")
+    discover.add_argument("--dataset", type=Path, required=True)
+    discover.add_argument("--convocations", type=Path, required=True)
+    discover.add_argument("--aliases", type=Path)
+    discover.add_argument("--output", type=Path, required=True)
+
+    package = sub.add_parser("package", help="gera pacote de pesquisa e calibração")
+    package.add_argument("--dataset", type=Path, required=True)
+    package.add_argument("--gaps", type=Path, required=True)
+    package.add_argument("--pais", required=True)
+    package.add_argument("--data-referencia", required=True)
+    package.add_argument("--output", type=Path, required=True)
+
+    validate = sub.add_parser("validate", help="valida resposta JSON do LLM")
+    validate.add_argument("--input", type=Path, required=True)
+    validate.add_argument("--pais", required=True)
+    validate.add_argument("--output", type=Path, required=True)
+
+    material = sub.add_parser("materialize", help="materializa propostas aprovadas")
+    material.add_argument("--dataset", type=Path, required=True)
+    material.add_argument("--input", type=Path, required=True)
+    material.add_argument("--pais", required=True)
+    material.add_argument("--data-referencia", required=True)
+    material.add_argument("--registry", type=Path, default=REGISTRY_PADRAO)
+    material.add_argument("--output", type=Path, required=True)
+
+    init = sub.add_parser("init-run", help="cria ou carrega manifesto global")
+    init.add_argument("--manifest", type=Path, required=True)
+    init.add_argument("--competicao", default="Copa América")
+    init.add_argument("--edicao", type=int, required=True)
+    init.add_argument("--data-referencia", required=True)
+    init.add_argument("--paises", nargs="+", required=True)
+
+    prepare = sub.add_parser("prepare-country", help="prepara uma iteração isolada")
+    prepare.add_argument("--manifest", type=Path, required=True)
+    prepare.add_argument("--pais", required=True)
+    prepare.add_argument("--dataset", type=Path, required=True)
+    prepare.add_argument("--convocations", type=Path, required=True)
+    prepare.add_argument("--aliases", type=Path)
+    prepare.add_argument("--escalacoes", type=Path, help="escalação da última partida do país")
+    prepare.add_argument("--state-dir", type=Path, required=True)
+
+    resume = sub.add_parser("validate-country", help="valida a resposta bruta do país")
+    resume.add_argument("--manifest", type=Path, required=True)
+    resume.add_argument("--pais", required=True)
+    resume.add_argument("--state-dir", type=Path, required=True)
+
+    publish = sub.add_parser("publish-country", help="materializa e publica o snapshot do país")
+    publish.add_argument("--manifest", type=Path, required=True)
+    publish.add_argument("--pais", required=True)
+    publish.add_argument("--dataset", type=Path, required=True)
+    publish.add_argument("--registry", type=Path, default=REGISTRY_PADRAO)
+    publish.add_argument("--allow-partial", action="store_true", help="publica mesmo com jogadores em revisão manual (requer allow_partial_publish no manifesto)")
+    publish.add_argument("--state-dir", type=Path, required=True)
+
+    nxt = sub.add_parser("next-country", help="mostra o próximo país pendente")
+    nxt.add_argument("--manifest", type=Path, required=True)
+    nxt.add_argument("--state-dir", type=Path, required=True)
+
+    report = sub.add_parser("report", help="gera o resumo consolidado da execução")
+    report.add_argument("--manifest", type=Path, required=True)
+    report.add_argument("--state-dir", type=Path, help="diretório com execucoes/ para contar convocados/presentes/ausentes")
+    report.add_argument("--output", type=Path, required=True)
+
+    merge = sub.add_parser("merge-final", help="concatena os snapshots publicados")
+    merge.add_argument("--manifest", type=Path, required=True)
+    merge.add_argument("--state-dir", type=Path, required=True)
+    merge.add_argument("--output", type=Path, required=True)
+
+    filtro = sub.add_parser("filter-pool", help="aplica cota de posição por seleção ao pool")
+    filtro.add_argument("--pool", type=Path, required=True)
+    filtro.add_argument("--output", type=Path, required=True)
+    filtro.add_argument("--cotas", default=",".join(f"{g}={n}" for g, n in COTAS_PADRAO.items()))
+    filtro.add_argument("--selecoes", nargs="+", help="restringe a estas seleções (padrão: todas)")
+
+    registry = sub.add_parser("rebuild-registry", help="reconstrói o registro de ids a partir dos artefatos publicados")
+    registry.add_argument("--convocados", type=Path, required=True, help="snapshot consolidado da camada 2024")
+    registry.add_argument("--historicos", type=Path, required=True, help="snapshot consolidado da camada histórica")
+    registry.add_argument("--registry", type=Path, default=REGISTRY_PADRAO)
+
+    catalogo = sub.add_parser("build-catalog", help="gera o catálogo final (convocados, ids, filtro, imputação, validação)")
+    catalogo.add_argument("--pool", type=Path, required=True)
+    catalogo.add_argument("--dataset", type=Path, required=True, help="base FIFA 22, usada para treinar a imputação")
+    catalogo.add_argument("--convocacoes", type=Path, required=True, help="diretório com <pais>.csv")
+    catalogo.add_argument("--aliases", type=Path)
+    catalogo.add_argument("--registry", type=Path, default=REGISTRY_PADRAO)
+    catalogo.add_argument("--correcoes", type=Path, default=CORRECOES_PADRAO, help="datas de nascimento corrigidas, com fonte")
+    catalogo.add_argument("--cotas", default=",".join(f"{g}={n}" for g, n in COTAS_PADRAO.items()))
+    catalogo.add_argument("--output", type=Path, required=True)
+
+    avaliar = sub.add_parser("avaliar-imputacao", help="erro da imputação por atributo, num corte 15k/4k da base")
+    avaliar.add_argument("--dataset", type=Path, required=True)
+
+    posicoes = sub.add_parser("aplicar-posicoes", help="posições secundárias + colunas de posição")
+    posicoes.add_argument("--snapshot", type=Path, required=True)
+    posicoes.add_argument("--respostas", type=Path, required=True, help="JSON com as posições secundárias")
+    posicoes.add_argument("--dataset", type=Path, required=True, help="base usada para treinar o modelo")
+    posicoes.add_argument("--output", type=Path, required=True)
+    return parser
+
+
+def _print_json(value: object) -> None:
+    print(json.dumps(value, ensure_ascii=False, indent=2))
+
+
+def _run_orchestration(args: argparse.Namespace) -> int | None:
+    if args.comando == "init-run":
+        manifesto = iniciar_manifesto(args.manifest, args.competicao, args.edicao, args.data_referencia, args.paises)
+        _print_json({"manifest": str(args.manifest), "summary": resumo_manifesto(manifesto)})
+        return 0
+    if args.comando == "prepare-country":
+        manifesto = carregar_manifesto(args.manifest)
+        pacote = preparar_pais(
+            manifesto, args.pais, args.dataset, args.convocations, args.aliases,
+            args.state_dir, escalacoes=args.escalacoes,
+        )
+        salvar_manifesto(manifesto, args.manifest)
+        _print_json({"pais": args.pais, "package_path": str(pacote), "response_path": str(pacote.parent / "resposta_bruta.json")})
+        return 0
+    if args.comando == "validate-country":
+        manifesto = carregar_manifesto(args.manifest)
+        resultado = validar_resposta_pais(manifesto, args.pais, args.state_dir)
+        salvar_manifesto(manifesto, args.manifest)
+        _print_json({"pais": args.pais, "approved": int((resultado["status"] == "approved").sum()), "total": len(resultado), "manifest_status": manifesto["paises"][args.pais]["status"]})
+        return 0 if (resultado["status"] == "approved").all() else 2
+    if args.comando == "publish-country":
+        manifesto = carregar_manifesto(args.manifest)
+        saida = publicar_pais(
+            manifesto, args.pais, args.dataset, args.state_dir, args.registry,
+            allow_partial=args.allow_partial,
+        )
+        salvar_manifesto(manifesto, args.manifest)
+        _print_json({"pais": args.pais, "output_path": str(saida), "manifest_status": manifesto["paises"][args.pais]["status"]})
+        return 0
+    if args.comando == "next-country":
+        manifesto = carregar_manifesto(args.manifest)
+        _print_json(proximo_passo(manifesto, args.state_dir))
+        return 0
+    if args.comando == "report":
+        manifesto = carregar_manifesto(args.manifest)
+        escrever_csv(consolidar_resumo(manifesto, args.state_dir), args.output)
+        return 0
+    if args.comando == "merge-final":
+        manifesto = carregar_manifesto(args.manifest)
+        escrever_csv(mesclar_publicados(manifesto, args.state_dir), args.output)
+        return 0
+    return None
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = _parser().parse_args(argv)
+    if args.comando == "discover":
+        resultado = descobrir_lacunas(carregar_convocacoes(args.convocations), carregar_dataset(args.dataset), carregar_aliases(args.aliases))
+        escrever_csv(resultado, args.output)
+        return 0
+    if args.comando == "package":
+        dataset = carregar_dataset(args.dataset)
+        lacunas = carregar_convocacoes(args.gaps)
+        escrever_pacote(gerar_pacote(dataset, lacunas, args.pais, args.data_referencia), args.output)
+        return 0
+    if args.comando == "validate":
+        propostas = carregar_propostas(args.input)
+        resultado = validar_propostas(propostas, args.pais)
+        escrever_csv(pd.DataFrame(resultado), args.output)
+        return 0 if all(item["status"] == "approved" for item in resultado) else 2
+    orchestration_result = _run_orchestration(args)
+    if orchestration_result is not None:
+        return orchestration_result
+    if args.comando == "filter-pool":
+        pool = pd.read_csv(args.pool, low_memory=False)
+        filtrado = filtrar_pool(pool, parse_cotas(args.cotas), args.selecoes)
+        escrever_csv(filtrado, args.output)
+        return 0
+    if args.comando == "rebuild-registry":
+        camadas = [
+            ("convocado_2024", pd.read_csv(args.convocados, low_memory=False)),
+            ("historico", pd.read_csv(args.historicos, low_memory=False)),
+        ]
+        pendentes = reconstruir_registry(camadas, args.registry)
+        _print_json({"registry": str(args.registry), "sem_registro": pendentes.to_dict("records")})
+        return 0
+    if args.comando == "build-catalog":
+        resultado = construir_catalogo(
+            pd.read_csv(args.pool, low_memory=False),
+            carregar_dataset(args.dataset),
+            carregar_todas_convocacoes(args.convocacoes),
+            args.registry,
+            carregar_aliases(args.aliases),
+            parse_cotas(args.cotas),
+            carregar_correcoes(args.correcoes),
+        )
+        if resultado.erros:
+            print("\n".join(resultado.erros))
+            return 2
+        escrever_csv(resultado.jogadores, args.output)
+        print(resumo_catalogo(resultado.jogadores).to_string(index=False))
+        return 0
+    if args.comando == "avaliar-imputacao":
+        print(avaliar_imputacao(carregar_dataset(args.dataset)).to_string(index=False))
+        return 0
+    if args.comando == "aplicar-posicoes":
+        modelo = treinar_modelo(carregar_dataset(args.dataset))
+        snapshot = pd.read_csv(args.snapshot, low_memory=False)
+        respostas = json.loads(args.respostas.read_text(encoding="utf-8"))
+        resultado, atualizados = aplicar_posicoes(snapshot, respostas, modelo)
+        escrever_csv(resultado, args.output)
+        print(json.dumps({"atualizados": atualizados, "total": len(resultado)}, ensure_ascii=False))
+        return 0
+    if args.comando == "materialize":
+        propostas = carregar_propostas(args.input)
+        validacao = validar_propostas(propostas, args.pais)
+        if any(item["status"] != "approved" for item in validacao):
+            raise ValueError("há propostas inválidas; execute validate e corrija antes de materializar")
+        resultado = materializar(propostas, carregar_dataset(args.dataset), args.data_referencia, args.registry)
+        escrever_csv(resultado, args.output)
+        return 0
+    return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

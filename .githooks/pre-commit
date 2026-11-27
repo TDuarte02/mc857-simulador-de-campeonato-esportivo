@@ -1,31 +1,51 @@
 #!/bin/sh
-# Runs the server's tests before a commit that touches server/.
+# Runs the engine's tests before a commit that touches simulador/engine/, and the
+# server's before one that touches simulador/server/.
 # Enable once per clone:  git config core.hooksPath .githooks
 # Skip in an emergency:   git commit --no-verify
 
-if git diff --cached --quiet -- server/; then
-    exit 0  # nothing staged under server/
+engine_staged=1
+server_staged=1
+git diff --cached --quiet -- simulador/engine/ && engine_staged=0
+git diff --cached --quiet -- simulador/server/ && server_staged=0
+
+if [ "$engine_staged" -eq 0 ] && [ "$server_staged" -eq 0 ]; then
+    exit 0  # nothing staged under simulador/engine/ or simulador/server/
 fi
 
 if ! command -v uv >/dev/null 2>&1; then
-    echo "pre-commit: uv not found; install it to run the server tests (https://docs.astral.sh/uv/)." >&2
+    echo "pre-commit: uv not found; install it to run the tests (https://docs.astral.sh/uv/)." >&2
     exit 1
 fi
 
-cd "$(git rev-parse --show-toplevel)/server" || exit 1
+root="$(git rev-parse --show-toplevel)"
+
+if [ "$engine_staged" -eq 1 ]; then
+    echo "pre-commit: running the engine tests"
+    if ! (cd "$root/simulador/engine" && uv run pytest -q -p no:cacheprovider); then
+        echo "pre-commit: engine tests failed, commit aborted (use --no-verify to bypass)." >&2
+        exit 1
+    fi
+fi
+
+if [ "$server_staged" -eq 0 ]; then
+    exit 0
+fi
+
+cd "$root/simulador/server" || exit 1
 
 # The functional tests run too when the Docker stack is up; otherwise pytest skips them.
 API_BASE_URL="${API_BASE_URL:-http://127.0.0.1:5000}"
 if curl -s -o /dev/null --max-time 2 "$API_BASE_URL/squads"; then
     export API_BASE_URL
     export MONGO_URI="${MONGO_URI:-mongodb://127.0.0.1:27018}"
-    echo "pre-commit: running unit + functional tests (stack at $API_BASE_URL)"
+    echo "pre-commit: running server unit + functional tests (stack at $API_BASE_URL)"
 else
     unset API_BASE_URL
-    echo "pre-commit: running unit tests (stack not running, functional tests skipped)"
+    echo "pre-commit: running server unit tests (stack not running, functional tests skipped)"
 fi
 
 if ! uv run pytest -q -p no:cacheprovider; then
-    echo "pre-commit: tests failed, commit aborted (use --no-verify to bypass)." >&2
+    echo "pre-commit: server tests failed, commit aborted (use --no-verify to bypass)." >&2
     exit 1
 fi

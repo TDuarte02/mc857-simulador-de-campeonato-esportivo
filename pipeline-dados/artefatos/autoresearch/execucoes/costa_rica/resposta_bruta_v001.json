@@ -1,0 +1,522 @@
+[
+  {
+    "nome": "Kevin Chamorro",
+    "pais": "Costa Rica",
+    "posicao": "GK",
+    "dob": "2000-04-08",
+    "club_name": "Saprissa",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.35,
+      "goalkeeping_diving": 0.3,
+      "goalkeeping_handling": 0.3,
+      "goalkeeping_kicking": 0.4,
+      "goalkeeping_positioning": 0.35,
+      "goalkeeping_reflexes": 0.3,
+      "goalkeeping_speed": 0.45
+    },
+    "observacao": "Goleiro jovem do Saprissa, ainda em consolidação como titular na seleção; percentis abaixo da mediana do grupo GK, cujo referencial é Keylor Navas em nível de elite mundial.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kevin Chamorro foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Saprissa."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Gerald Taylor",
+    "pais": "Costa Rica",
+    "posicao": "CB",
+    "dob": "2001-05-28",
+    "club_name": "Saprissa",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.5,
+      "shooting": 0.3,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.6,
+      "physic": 0.6
+    },
+    "observacao": "Zagueiro titular do Saprissa, um dos clubes mais tradicionais da Costa Rica; perfil de defensor sólido, ligeiramente acima da mediana do grupo DEF do país.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Gerald Taylor foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Saprissa."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Jeyland Mitchell",
+    "pais": "Costa Rica",
+    "posicao": "RB",
+    "dob": "2004-09-29",
+    "club_name": "Alajuelense",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.62,
+      "pace": 0.8,
+      "shooting": 0.35,
+      "passing": 0.55,
+      "dribbling": 0.6,
+      "defending": 0.55,
+      "physic": 0.55
+    },
+    "observacao": "Reclassificado de CB para RB: Mitchell foi convertido em lateral-direito pela comissão técnica e é um dos jovens mais promissores da seleção, com grande velocidade. Percentis de ritmo e drible elevados refletem seu perfil ofensivo como lateral.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jeyland Mitchell foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Alajuelense."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Juan Pablo Vargas",
+    "pais": "Costa Rica",
+    "posicao": "CB",
+    "dob": "1995-06-06",
+    "club_name": "Millonarios",
+    "league_name": "Categoría Primera A",
+    "percentis": {
+      "overall": 0.7,
+      "pace": 0.55,
+      "shooting": 0.4,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.75,
+      "physic": 0.75
+    },
+    "observacao": "Zagueiro titular e referência defensiva da seleção, atuando no Millonarios (Colômbia); percentil mais alto do grupo DEF do país pela consistência e liderança na zaga.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Juan Pablo Vargas foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Millonarios."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Fernán Faerrón",
+    "pais": "Costa Rica",
+    "posicao": "CB",
+    "dob": "2000-08-22",
+    "club_name": "Herediano",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.48,
+      "pace": 0.45,
+      "shooting": 0.3,
+      "passing": 0.4,
+      "dribbling": 0.35,
+      "defending": 0.55,
+      "physic": 0.55
+    },
+    "observacao": "Zagueiro do Herediano com presença regular na seleção; percentil próximo da mediana do grupo DEF, condizente com um defensor titular de clube grande do campeonato local.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Fernán Faerrón foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Herediano."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Anthony Contreras",
+    "pais": "Costa Rica",
+    "posicao": "RW",
+    "dob": "2000-01-29",
+    "club_name": "Pafos",
+    "league_name": "Cypriot First Division",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.65,
+      "shooting": 0.5,
+      "passing": 0.5,
+      "dribbling": 0.6,
+      "defending": 0.3,
+      "physic": 0.45
+    },
+    "observacao": "Reclassificado de ST para RW: Contreras é um ponta que joga aberto pelo Pafos (Cyprus) e pela seleção, com drible e velocidade acima da mediana do grupo ATT.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Anthony Contreras foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Pafos."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Brandon Aguilera",
+    "pais": "Costa Rica",
+    "posicao": "CAM",
+    "dob": "2003-06-28",
+    "club_name": "Bristol Rovers",
+    "league_name": "EFL League One",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.6,
+      "shooting": 0.55,
+      "passing": 0.7,
+      "dribbling": 0.7,
+      "defending": 0.4,
+      "physic": 0.5
+    },
+    "observacao": "Reclassificado de CM para CAM: Aguilera é um meia ofensivo formado em academias europeias (passagem pelo Nottingham Forest, emprestado ao Bristol Rovers), com passe e drible destacados entre os meio-campistas do país.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Brandon Aguilera foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Bristol Rovers."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Jefferson Brenes",
+    "pais": "Costa Rica",
+    "posicao": "CM",
+    "dob": "1997-04-13",
+    "club_name": "Saprissa",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.45,
+      "pace": 0.4,
+      "shooting": 0.4,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.45,
+      "physic": 0.5
+    },
+    "observacao": "Meio-campista experiente do Saprissa, com perfil equilibrado entre funções defensivas e ofensivas, próximo à mediana do grupo MID.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jefferson Brenes foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Saprissa."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Orlando Galo",
+    "pais": "Costa Rica",
+    "posicao": "CDM",
+    "dob": "2000-08-11",
+    "club_name": "Herediano",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.52,
+      "pace": 0.45,
+      "shooting": 0.35,
+      "passing": 0.45,
+      "dribbling": 0.4,
+      "defending": 0.65,
+      "physic": 0.6
+    },
+    "observacao": "Reclassificado de CM para CDM: Galo é conhecido pelo trabalho defensivo e desarmes pelo Herediano, com percentil de defending acima da mediana do grupo MID.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Orlando Galo foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Herediano."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Alejandro Bran",
+    "pais": "Costa Rica",
+    "posicao": "CDM",
+    "dob": "2001-03-05",
+    "club_name": "Minnesota United FC",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.6,
+      "pace": 0.5,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.65,
+      "physic": 0.6
+    },
+    "observacao": "Reclassificado de CM para CDM: Bran é titular do Minnesota United na MLS, atuando como volante de contenção; percentis de defesa e físico acima da mediana do grupo MID.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Alejandro Bran foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Minnesota United FC."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  },
+  {
+    "nome": "Warren Madrigal",
+    "pais": "Costa Rica",
+    "posicao": "LW",
+    "dob": "2004-07-24",
+    "club_name": "Saprissa",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.48,
+      "pace": 0.65,
+      "shooting": 0.45,
+      "passing": 0.45,
+      "dribbling": 0.55,
+      "defending": 0.3,
+      "physic": 0.4
+    },
+    "observacao": "Reclassificado de ST para LW: Madrigal é um ponta jovem e veloz do Saprissa, com drible e ritmo acima da mediana do grupo ATT, ainda em fase de consolidação na seleção principal.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Warren Madrigal foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Saprissa."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Aarón Cruz",
+    "pais": "Costa Rica",
+    "posicao": "GK",
+    "dob": "1991-05-25",
+    "club_name": "Herediano",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.25,
+      "goalkeeping_diving": 0.2,
+      "goalkeeping_handling": 0.25,
+      "goalkeeping_kicking": 0.35,
+      "goalkeeping_positioning": 0.25,
+      "goalkeeping_reflexes": 0.2,
+      "goalkeeping_speed": 0.4
+    },
+    "observacao": "Goleiro veterano e reserva no Herediano, com participação limitada como titular; percentis baixos dentro do grupo GK, cujo referencial é Keylor Navas em nível de elite mundial.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Aarón Cruz foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Herediano."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Kenneth Vargas",
+    "pais": "Costa Rica",
+    "posicao": "ST",
+    "dob": "2002-04-17",
+    "club_name": "Heart of Midlothian",
+    "league_name": "Scottish Premiership",
+    "percentis": {
+      "overall": 0.62,
+      "pace": 0.6,
+      "shooting": 0.6,
+      "passing": 0.5,
+      "dribbling": 0.55,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Atacante com experiência no futebol europeu (Escócia) e papel relevante no ataque da seleção; percentis de overall e finalização acima da mediana do grupo ATT.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kenneth Vargas foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Heart of Midlothian."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Josimar Alcócer",
+    "pais": "Costa Rica",
+    "posicao": "LW",
+    "dob": "2004-07-07",
+    "club_name": "Westerlo",
+    "league_name": "Belgian Pro League",
+    "percentis": {
+      "overall": 0.45,
+      "pace": 0.6,
+      "shooting": 0.4,
+      "passing": 0.4,
+      "dribbling": 0.5,
+      "defending": 0.3,
+      "physic": 0.4
+    },
+    "observacao": "Reclassificado de ST para LW: Alcócer é um ponta jovem que joga na Bélgica, com ritmo e drible próximos à mediana do grupo ATT, ainda em desenvolvimento como opção na seleção.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Josimar Alcócer foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Westerlo."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Álvaro Zamora",
+    "pais": "Costa Rica",
+    "posicao": "ST",
+    "dob": "2002-03-09",
+    "club_name": "Aris",
+    "league_name": "Greek Super League",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.5,
+      "shooting": 0.45,
+      "passing": 0.4,
+      "dribbling": 0.45,
+      "defending": 0.3,
+      "physic": 0.45
+    },
+    "observacao": "Atacante com passagem pelo futebol grego, perfil mediano a levemente abaixo da mediana do grupo ATT; participação limitada como opção de ataque na seleção.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Álvaro Zamora foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Aris."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Haxzel Quirós",
+    "pais": "Costa Rica",
+    "posicao": "CB",
+    "dob": "1998-06-03",
+    "club_name": "Herediano",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.42,
+      "pace": 0.4,
+      "shooting": 0.25,
+      "passing": 0.35,
+      "dribbling": 0.3,
+      "defending": 0.5,
+      "physic": 0.5
+    },
+    "observacao": "Zagueiro do Herediano com participação regular no campeonato local; percentis levemente abaixo da mediana do grupo DEF, refletindo um perfil de defensor sólido mas não destaque.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Haxzel Quirós foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Herediano."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Patrick Sequeira",
+    "pais": "Costa Rica",
+    "posicao": "GK",
+    "dob": "1999-03-01",
+    "club_name": "Ibiza",
+    "league_name": "Primera Federación",
+    "percentis": {
+      "overall": 0.5,
+      "goalkeeping_diving": 0.45,
+      "goalkeeping_handling": 0.45,
+      "goalkeeping_kicking": 0.55,
+      "goalkeeping_positioning": 0.5,
+      "goalkeeping_reflexes": 0.45,
+      "goalkeeping_speed": 0.55
+    },
+    "observacao": "Goleiro que disputa a titularidade da seleção, atuando na terceira divisão espanhola (Ibiza); percentil próximo à mediana do grupo GK, cujo referencial é Keylor Navas em nível de elite mundial.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Patrick Sequeira foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Ibiza."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Andy Rojas",
+    "pais": "Costa Rica",
+    "posicao": "ST",
+    "dob": "2005-12-05",
+    "club_name": "Herediano",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.3,
+      "pace": 0.55,
+      "shooting": 0.35,
+      "passing": 0.35,
+      "dribbling": 0.4,
+      "defending": 0.25,
+      "physic": 0.35
+    },
+    "observacao": "Jogador mais jovem do grupo ofensivo convocado, ainda em fase inicial de carreira no Herediano; percentis abaixo da mediana do grupo ATT, refletindo o estágio de desenvolvimento.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Andy Rojas foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Herediano."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Yeison Molina",
+    "pais": "Costa Rica",
+    "posicao": "CB",
+    "dob": "1996-01-25",
+    "club_name": "Guanacasteca",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.28,
+      "pace": 0.4,
+      "shooting": 0.2,
+      "passing": 0.3,
+      "dribbling": 0.3,
+      "defending": 0.35,
+      "physic": 0.4
+    },
+    "observacao": "Zagueiro de um clube menor do campeonato costarriquenho, convocação mais periférica; percentis baixos dentro do grupo DEF do país.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Yeison Molina foi convocado pela Costa Rica para a Copa América 2024, atuando pela Guanacasteca."
+      }
+    ],
+    "confianca": 0.35,
+    "status": "approved"
+  },
+  {
+    "nome": "Douglas Sequeira",
+    "pais": "Costa Rica",
+    "posicao": "CB",
+    "dob": "2003-09-16",
+    "club_name": "Saprissa",
+    "league_name": "Costa Rican Primera División",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.5,
+      "shooting": 0.25,
+      "passing": 0.35,
+      "dribbling": 0.35,
+      "defending": 0.4,
+      "physic": 0.4
+    },
+    "observacao": "Zagueiro jovem do Saprissa, ainda consolidando espaço como titular; percentis abaixo da mediana do grupo DEF, compatível com um jogador emergente.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Douglas Sequeira foi convocado pela Costa Rica para a Copa América 2024, atuando pelo Saprissa."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  }
+]

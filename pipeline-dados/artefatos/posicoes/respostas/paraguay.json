@@ -1,0 +1,261 @@
+[
+  {
+    "nome": "Jose Luis Chilavert",
+    "dob": "1965-07-27",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro puro, sem posicoes secundarias."
+  },
+  {
+    "nome": "Carlos Gamarra",
+    "dob": "1971-02-17",
+    "posicoes_secundarias": [],
+    "confianca": 0.5,
+    "justificativa": "Zagueiro central classico sem registro consistente de outra posicao."
+  },
+  {
+    "nome": "Saturnino Arrua",
+    "dob": "1949-04-07",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Jogador historico pouco documentado, sem confianca para posicao secundaria."
+  },
+  {
+    "nome": "Damian Bobadilla",
+    "dob": "2001-07-11",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meio-campista jovem, informacoes insuficientes para posicao secundaria."
+  },
+  {
+    "nome": "Andres Cubas",
+    "dob": "1996-05-11",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.6,
+    "justificativa": "Volante que tambem atua como meio-campista central mais avancado."
+  },
+  {
+    "nome": "Oscar Romero",
+    "dob": "1992-07-04",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.6,
+    "justificativa": "Meia-atacante que frequentemente joga aberto pelo lado esquerdo."
+  },
+  {
+    "nome": "Victor Caceres",
+    "dob": "1985-03-25",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.5,
+    "justificativa": "Volante da Libertad que tambem atuou como meio-campista central."
+  },
+  {
+    "nome": "Julio Cesar Romero",
+    "dob": "1960-08-28",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.5,
+    "justificativa": "Romerito atuava como armador avancado, proximo de um segundo atacante."
+  },
+  {
+    "nome": "Carlos Humberto Paredes",
+    "dob": "1976-07-16",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.5,
+    "justificativa": "Volante que tambem jogou como meio-campista central na Reggina."
+  },
+  {
+    "nome": "Roberto Acuna",
+    "dob": "1972-03-25",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.5,
+    "justificativa": "Meio-campista de box-to-box que tambem cobriu funcao de volante."
+  },
+  {
+    "nome": "Jorge Luis Campos",
+    "dob": "1970-08-11",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Pouco documentado para alem da posicao principal registrada."
+  },
+  {
+    "nome": "Julio Cesar Caceres",
+    "dob": "1979-10-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.5,
+    "justificativa": "Zagueiro central do Boca Juniors sem funcao secundaria consolidada."
+  },
+  {
+    "nome": "Fabian Balbuena",
+    "dob": "1991-08-23",
+    "posicoes_secundarias": [],
+    "confianca": 0.5,
+    "justificativa": "Zagueiro central do West Ham sem posicao secundaria relevante."
+  },
+  {
+    "nome": "Celso Ayala",
+    "dob": "1970-08-20",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Zagueiro do River Plate, dados insuficientes para posicao secundaria confiavel."
+  },
+  {
+    "nome": "Juan Bautista Villalba",
+    "dob": "1924-08-29",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante historico de 1947/1949 com pouca documentacao detalhada."
+  },
+  {
+    "nome": "Delfin Benitez Caceres",
+    "dob": "1910-09-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante dos anos 1930 com pouca documentacao detalhada."
+  },
+  {
+    "nome": "Aurelio Gonzalez",
+    "dob": "1905-09-25",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante historico com pouca documentacao detalhada."
+  },
+  {
+    "nome": "Arsenio Erico",
+    "dob": "1915-03-30",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Artilheiro classico, atuacao concentrada na funcao de centroavante."
+  },
+  {
+    "nome": "Salvador Cabanas",
+    "dob": "1980-08-05",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Centroavante do America sem registro consistente de outra posicao."
+  },
+  {
+    "nome": "Junior Alonso",
+    "dob": "1993-02-09",
+    "posicoes_secundarias": [],
+    "confianca": 0.5,
+    "justificativa": "Zagueiro central do Krasnodar sem posicao secundaria relevante."
+  },
+  {
+    "nome": "Gustavo Gomez",
+    "dob": "1993-05-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Zagueiro central e capitao, sem posicao secundaria consolidada."
+  },
+  {
+    "nome": "Denis Caniza",
+    "dob": "1974-08-29",
+    "posicoes_secundarias": ["LWB"],
+    "confianca": 0.5,
+    "justificativa": "Lateral-esquerdo com ampla atuacao ofensiva, proximo de ala."
+  },
+  {
+    "nome": "Nelson Cuevas",
+    "dob": "1980-01-10",
+    "posicoes_secundarias": ["ST"],
+    "confianca": 0.6,
+    "justificativa": "Ponta direita que tambem atuou como centroavante no River Plate."
+  },
+  {
+    "nome": "Nelson Haedo Valdez",
+    "dob": "1983-11-28",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.6,
+    "justificativa": "Atacante que tambem jogou como ponta aberto, especialmente no Dortmund."
+  },
+  {
+    "nome": "Justo Villar",
+    "dob": "1977-06-30",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro puro, sem posicoes secundarias."
+  },
+  {
+    "nome": "Carlos Coronel",
+    "dob": "1996-12-29",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro puro, sem posicoes secundarias."
+  },
+  {
+    "nome": "Matías Espinoza",
+    "dob": "1997-09-19",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro da Libertad com pouca documentacao detalhada."
+  },
+  {
+    "nome": "Fabián Balbuena",
+    "dob": "1991-08-23",
+    "posicoes_secundarias": [],
+    "confianca": 0.5,
+    "justificativa": "Zagueiro central sem posicao secundaria relevante."
+  },
+  {
+    "nome": "Júnior Alonso",
+    "dob": "1993-02-09",
+    "posicoes_secundarias": [],
+    "confianca": 0.5,
+    "justificativa": "Zagueiro central sem posicao secundaria relevante."
+  },
+  {
+    "nome": "Damián Bobadilla",
+    "dob": "2001-07-11",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meio-campista jovem, informacoes insuficientes para posicao secundaria."
+  },
+  {
+    "nome": "Ángel Romero",
+    "dob": "1992-07-04",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.6,
+    "justificativa": "Atacante que costuma abrir pelo lado direito como ponta."
+  },
+  {
+    "nome": "Néstor Giménez",
+    "dob": "1997-07-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro da Libertad com pouca documentacao detalhada."
+  },
+  {
+    "nome": "Gustavo Gómez",
+    "dob": "1993-05-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Zagueiro central e capitao, sem posicao secundaria consolidada."
+  },
+  {
+    "nome": "Álex Arce",
+    "dob": "1995-06-16",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante da LDU Quito com pouca documentacao detalhada."
+  },
+  {
+    "nome": "Fabrizio Peralta",
+    "dob": "2002-08-02",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meio-campista do Cerro Porteno com pouca documentacao detalhada."
+  },
+  {
+    "nome": "Mathías Villasanti",
+    "dob": "1997-01-24",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.7,
+    "justificativa": "Meio-campista conhecido por atuar predominantemente como volante."
+  },
+  {
+    "nome": "Hernesto Caballero",
+    "dob": "1991-04-09",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Meio-campista da Libertad com pouca documentacao detalhada."
+  }
+]

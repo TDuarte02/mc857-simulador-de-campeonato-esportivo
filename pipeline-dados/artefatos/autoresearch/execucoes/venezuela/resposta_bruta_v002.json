@@ -1,0 +1,270 @@
+[
+  {
+    "nome": "Joel Graterol",
+    "pais": "Venezuela",
+    "posicao": "GK",
+    "dob": "1997-02-13",
+    "club_name": "América de Cali",
+    "league_name": "Categoría Primera A",
+    "percentis": {
+      "overall": 0.35,
+      "goalkeeping_diving": 0.4,
+      "goalkeeping_handling": 0.35,
+      "goalkeeping_kicking": 0.3,
+      "goalkeeping_positioning": 0.35,
+      "goalkeeping_reflexes": 0.4,
+      "goalkeeping_speed": 0.45
+    },
+    "observacao": "Backup goalkeeper for Colombian side América de Cali, not Venezuela's first-choice shot-stopper in 2024; placed mid-to-low in the national GK pool with average handling and reflexes typical of squad-depth cover.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Joel Graterol foi convocado para a seleção da Venezuela na Copa América 2024 como goleiro, defendendo o América de Cali."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  },
+  {
+    "nome": "Jhon Chancellor",
+    "pais": "Venezuela",
+    "posicao": "CB",
+    "dob": "1992-01-02",
+    "club_name": "Metropolitanos",
+    "league_name": "Liga FUTVE",
+    "percentis": {
+      "overall": 0.68,
+      "pace": 0.25,
+      "shooting": 0.3,
+      "passing": 0.5,
+      "dribbling": 0.4,
+      "defending": 0.78,
+      "physic": 0.72
+    },
+    "observacao": "Veteran center-back and long-time Venezuela squad fixture, known for aerial dominance and positioning; pace has declined with age (32 at the tournament) while defending and physicality remain well above the pool median.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jhon Chancellor foi convocado para a seleção da Venezuela na Copa América 2024 como zagueiro, defendendo o Metropolitanos."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Jefferson Savarino",
+    "pais": "Venezuela",
+    "posicao": "RW",
+    "dob": "1996-11-11",
+    "club_name": "Botafogo",
+    "league_name": "Campeonato Brasileiro Série A",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.8,
+      "shooting": 0.75,
+      "passing": 0.7,
+      "dribbling": 0.85,
+      "defending": 0.3,
+      "physic": 0.5
+    },
+    "observacao": "One of Venezuela's best attacking players in 2024, functioning as a right winger (coarse code CM refined accordingly) while starring for Botafogo; high pace, dribbling and shooting reflect his output as a direct, goal-contributing wide forward, with limited defensive involvement typical of the role.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jefferson Savarino foi convocado para a seleção da Venezuela na Copa América 2024, defendendo o Botafogo."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "RM"
+    ]
+  },
+  {
+    "nome": "José Contreras",
+    "pais": "Venezuela",
+    "posicao": "GK",
+    "dob": "1994-10-20",
+    "club_name": "Águilas Doradas",
+    "league_name": "Categoría Primera A",
+    "percentis": {
+      "overall": 0.25,
+      "goalkeeping_diving": 0.3,
+      "goalkeeping_handling": 0.25,
+      "goalkeeping_kicking": 0.3,
+      "goalkeeping_positioning": 0.25,
+      "goalkeeping_reflexes": 0.3,
+      "goalkeeping_speed": 0.3
+    },
+    "observacao": "Reserve goalkeeper playing for a mid-table Colombian club, deep in Venezuela's goalkeeper depth chart; placed near the lower end of the calibration pool across shot-stopping attributes.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "José Contreras foi convocado para a seleção da Venezuela na Copa América 2024 como goleiro, defendendo o Águilas Doradas."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "José Andrés Martínez",
+    "pais": "Venezuela",
+    "posicao": "CDM",
+    "dob": "1994-09-07",
+    "club_name": "Philadelphia Union",
+    "league_name": "Major League Soccer",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.45,
+      "shooting": 0.35,
+      "passing": 0.6,
+      "dribbling": 0.45,
+      "defending": 0.68,
+      "physic": 0.62
+    },
+    "observacao": "Established defensive midfielder for Philadelphia Union and regular Venezuela squad member, valued for ball-winning and shielding the back line; defending and physicality sit above the pool median while shooting output is modest, consistent with a holding-midfielder profile.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "José Andrés Martínez foi convocado para a seleção da Venezuela na Copa América 2024, defendendo o Philadelphia Union."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  },
+  {
+    "nome": "Telasco Segovia",
+    "pais": "Venezuela",
+    "posicao": "CM",
+    "dob": "2003-04-02",
+    "club_name": "Casa Pia",
+    "league_name": "Primeira Liga",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.55,
+      "shooting": 0.45,
+      "passing": 0.45,
+      "dribbling": 0.5,
+      "defending": 0.35,
+      "physic": 0.4
+    },
+    "observacao": "Young midfielder (21 at the tournament) earning minutes for Casa Pia in Portugal's top flight; a developing squad member whose profile sits near the pool median, reflecting promise without an established senior starting role.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Telasco Segovia foi convocado para a seleção da Venezuela na Copa América 2024, defendendo o Casa Pia."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Matías Lacava",
+    "pais": "Venezuela",
+    "posicao": "CM",
+    "dob": "2002-10-24",
+    "club_name": "Vizela",
+    "percentis": {
+      "overall": 0.3,
+      "pace": 0.5,
+      "shooting": 0.45,
+      "passing": 0.4,
+      "dribbling": 0.5,
+      "defending": 0.3,
+      "physic": 0.35
+    },
+    "observacao": "Young midfielder based at Vizela in Portugal, called up as squad depth rather than an established starter; percentiles placed below the pool median reflecting limited senior international exposure at the time of the tournament.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Matías Lacava foi convocado para a seleção da Venezuela na Copa América 2024, defendendo o Vizela."
+      }
+    ],
+    "confianca": 0.4,
+    "status": "approved"
+  },
+  {
+    "nome": "Cristian Cásseres Jr.",
+    "pais": "Venezuela",
+    "posicao": "CM",
+    "dob": "2000-01-20",
+    "club_name": "Toulouse",
+    "league_name": "Ligue 1",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.6,
+      "shooting": 0.5,
+      "passing": 0.6,
+      "dribbling": 0.6,
+      "defending": 0.58,
+      "physic": 0.62
+    },
+    "observacao": "Box-to-box midfielder playing in France's Ligue 1 for Toulouse and a frequent Venezuela squad member with regular senior caps; a well-rounded profile placed above the pool median across passing, dribbling and defensive contribution.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Cristian Cásseres Jr. foi convocado para a seleção da Venezuela na Copa América 2024, defendendo o Toulouse."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Alexander González",
+    "pais": "Venezuela",
+    "posicao": "CB",
+    "dob": "1992-11-13",
+    "club_name": "Emelec",
+    "league_name": "LigaPro Ecuador",
+    "percentis": {
+      "overall": 0.48,
+      "pace": 0.4,
+      "shooting": 0.3,
+      "passing": 0.42,
+      "dribbling": 0.38,
+      "defending": 0.55,
+      "physic": 0.55
+    },
+    "observacao": "Experienced center-back competing in Ecuador's LigaPro, a rotation defender for Venezuela rather than an automatic starter; defending and physical attributes sit modestly above the pool median, with limited pace befitting a 31-year-old centre-back.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Alexander González foi convocado para a seleção da Venezuela na Copa América 2024 como zagueiro, defendendo o Emelec."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved"
+  },
+  {
+    "nome": "Kervin Andrade",
+    "pais": "Venezuela",
+    "posicao": "CM",
+    "dob": "2005-04-13",
+    "club_name": "Fortaleza",
+    "league_name": "Campeonato Brasileiro Série A",
+    "percentis": {
+      "overall": 0.35,
+      "pace": 0.65,
+      "shooting": 0.45,
+      "passing": 0.45,
+      "dribbling": 0.55,
+      "defending": 0.3,
+      "physic": 0.4
+    },
+    "observacao": "Teenage midfielder (19 at the tournament) developing at Fortaleza in Brazil's top flight, among the youngest and least-established names in the squad; percentiles skew toward athletic upside (pace, dribbling) with lower defending reflecting his emerging, non-starting role.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kervin Andrade foi convocado para a seleção da Venezuela na Copa América 2024, defendendo o Fortaleza."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved"
+  }
+]

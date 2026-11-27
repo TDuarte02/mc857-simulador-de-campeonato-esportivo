@@ -1,0 +1,226 @@
+[
+  {
+    "nome": "Kevin Castaño",
+    "pais": "Colombia",
+    "posicao": "CM",
+    "dob": "2000-09-29",
+    "club_name": "Krasnodar",
+    "league_name": "Russian Premier League",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.55,
+      "shooting": 0.35,
+      "passing": 0.6,
+      "dribbling": 0.65,
+      "defending": 0.45,
+      "physic": 0.45
+    },
+    "observacao": "Meio-campista box-to-box de 24 anos no Krasnodar, com boa condução de bola e passe progressivo, mas ainda não é titular fixo da seleção colombiana em 2024, o que o posiciona como peça de rotação dentro do grupo de meio-campistas.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Kevin Castaño foi convocado pela Colômbia para a Copa América 2024, atuando pelo Krasnodar."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Miguel Borja",
+    "pais": "Colombia",
+    "posicao": "ST",
+    "dob": "1993-01-26",
+    "club_name": "River Plate",
+    "league_name": "Liga Profesional de Fútbol Argentina",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.35,
+      "shooting": 0.7,
+      "passing": 0.45,
+      "dribbling": 0.45,
+      "defending": 0.2,
+      "physic": 0.75
+    },
+    "observacao": "Atacante experiente de 31 anos, referência de área no River Plate, com bom jogo aéreo e faro de gol, mas pouca velocidade; atuou como opção de impacto saindo do banco na Copa América 2024, inclusive marcando na semifinal.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Miguel Borja foi convocado pela Colômbia para a Copa América 2024, atuando pelo River Plate."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Jhon Arias",
+    "pais": "Colombia",
+    "posicao": "RW",
+    "dob": "1997-09-21",
+    "club_name": "Fluminense",
+    "league_name": "Campeonato Brasileiro Série A",
+    "percentis": {
+      "overall": 0.9,
+      "pace": 0.7,
+      "shooting": 0.55,
+      "passing": 0.85,
+      "dribbling": 0.85,
+      "defending": 0.4,
+      "physic": 0.5
+    },
+    "observacao": "Reclassificado de CM para RW, pois atua predominantemente pelo lado direito do ataque no Fluminense e na seleção. Foi um dos destaques da Copa América 2024, integrando a seleção do torneio por sua criatividade, passe e capacidade de desequilibrar com dribles.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jhon Arias foi convocado pela Colômbia para a Copa América 2024, atuando pelo Fluminense."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved"
+  },
+  {
+    "nome": "Yerry Mina",
+    "pais": "Colombia",
+    "posicao": "CB",
+    "dob": "1994-09-24",
+    "club_name": "Cagliari",
+    "league_name": "Serie A",
+    "height_cm": 195,
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.45,
+      "shooting": 0.15,
+      "passing": 0.45,
+      "dribbling": 0.3,
+      "defending": 0.85,
+      "physic": 0.85
+    },
+    "observacao": "Zagueiro experiente e titular histórico da seleção colombiana, com grande presença física e domínio no jogo aéreo, porém limitado em velocidade e construção de jogo com a bola.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Yerry Mina foi convocado pela Colômbia para a Copa América 2024, atuando pelo Cagliari."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved"
+  },
+  {
+    "nome": "Jhon Durán",
+    "pais": "Colombia",
+    "posicao": "ST",
+    "dob": "2003-12-13",
+    "club_name": "Aston Villa",
+    "league_name": "Premier League",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.65,
+      "shooting": 0.7,
+      "passing": 0.45,
+      "dribbling": 0.6,
+      "defending": 0.2,
+      "physic": 0.85
+    },
+    "observacao": "Atacante jovem e físico, em ascensão na Premier League pelo Aston Villa, com bom poder de finalização e explosão; ainda é opção de rotação na seleção principal, atrás de nomes mais consolidados.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jhon Durán foi convocado pela Colômbia para a Copa América 2024, atuando pelo Aston Villa."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Yáser Asprilla",
+    "pais": "Colombia",
+    "posicao": "RW",
+    "dob": "2003-11-19",
+    "club_name": "Watford",
+    "league_name": "EFL Championship",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.6,
+      "shooting": 0.45,
+      "passing": 0.6,
+      "dribbling": 0.7,
+      "defending": 0.25,
+      "physic": 0.4
+    },
+    "observacao": "Reclassificado de CM para RW, já que atua como ponta/meia-ofensivo pelo lado direito no Watford, com bom drible e criatividade. Jovem ainda em desenvolvimento, sem posição cativa na seleção principal em 2024.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Yáser Asprilla foi convocado pela Colômbia para a Copa América 2024, atuando pelo Watford."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Jhon Córdoba",
+    "pais": "Colombia",
+    "posicao": "ST",
+    "dob": "1993-05-11",
+    "club_name": "Krasnodar",
+    "league_name": "Russian Premier League",
+    "percentis": {
+      "overall": 0.5,
+      "pace": 0.45,
+      "shooting": 0.55,
+      "passing": 0.35,
+      "dribbling": 0.4,
+      "defending": 0.2,
+      "physic": 0.75
+    },
+    "observacao": "Centroavante físico e de referência atuando no Krasnodar, com boa força para disputas e finalização razoável, mas limitado em passe e construção de jogo; opção de rotação no ataque da seleção.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Jhon Córdoba foi convocado pela Colômbia para a Copa América 2024, atuando pelo Krasnodar."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Deiver Machado",
+    "pais": "Colombia",
+    "posicao": "LB",
+    "dob": "1992-09-02",
+    "club_name": "Lens",
+    "league_name": "Ligue 1",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.65,
+      "shooting": 0.25,
+      "passing": 0.5,
+      "dribbling": 0.45,
+      "defending": 0.65,
+      "physic": 0.55
+    },
+    "observacao": "Reclassificado de CB para LB, pois é um lateral-esquerdo que atua na Ligue 1 pelo Lens, com boa capacidade defensiva e de apoio ofensivo pela lateral, sendo peça regular no grupo de defensores da seleção.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Deiver Machado foi convocado pela Colômbia para a Copa América 2024, atuando pelo Lens."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved"
+  }
+]

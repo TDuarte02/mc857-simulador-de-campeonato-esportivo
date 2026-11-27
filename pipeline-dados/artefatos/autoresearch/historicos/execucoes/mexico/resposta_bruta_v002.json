@@ -1,0 +1,986 @@
+[
+  {
+    "nome": "Hugo Sanchez",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1958-07-11",
+    "percentis": {
+      "overall": 0.98,
+      "pace": 0.82,
+      "shooting": 0.97,
+      "passing": 0.75,
+      "dribbling": 0.85,
+      "defending": 0.25,
+      "physic": 0.65
+    },
+    "observacao": "Hugo Sanchez e o maior artilheiro mexicano da historia do futebol europeu, vencedor de cinco Pichichis pelo Real Madrid e eleito melhor jogador mexicano do seculo XX pela IFFHS. Sua combinacao de faro de gol, acrobacia e eficiencia o coloca no topo absoluto do pool de atacantes mexicanos. E tratado como lenda incontestavel, consistente com seu status de Icon em jogos de futebol.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q487155",
+        "afirmacao": "Hugo Sanchez e reconhecido como um dos maiores atacantes mexicanos de todos os tempos, com passagem de destaque no Real Madrid."
+      }
+    ],
+    "confianca": 0.8,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "ea_fc_icon",
+    "validacao_via": "wikidata",
+    "atributos_override": {
+      "overall": 91,
+      "pace": 86,
+      "shooting": 92,
+      "passing": 78,
+      "dribbling": 86,
+      "defending": 38,
+      "physic": 74
+    }
+  },
+  {
+    "nome": "Guillermo Franco",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1976-11-03",
+    "percentis": {
+      "overall": 0.73,
+      "pace": 0.55,
+      "shooting": 0.72,
+      "passing": 0.55,
+      "dribbling": 0.6,
+      "defending": 0.35,
+      "physic": 0.78
+    },
+    "observacao": "Guillermo Franco foi um centroavante robusto, referencia de area que disputou as Copas de 2006 e 2010 pelo Mexico, com passagens por Villarreal e West Ham. Seu jogo se apoiava mais em forca fisica e presenca na area do que em velocidade, o que explica o physic elevado. E um titular internacional solido, sem alcancar o status de lenda absoluta.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q176119",
+        "afirmacao": "Guillermo Franco integrou as convocacoes do Mexico nas Copas do Mundo de 2006 e 2010."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Omar Bravo",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1980-03-04",
+    "percentis": {
+      "overall": 0.82,
+      "pace": 0.75,
+      "shooting": 0.82,
+      "passing": 0.6,
+      "dribbling": 0.72,
+      "defending": 0.3,
+      "physic": 0.6
+    },
+    "observacao": "Omar Bravo e um dos maiores artilheiros da historia do Chivas de Guadalajara e foi peca importante do Mexico nas Copas de 2006 e 2010. Rapido e com excelente faro de gol, se encaixa como titular internacional de alto nivel, perto da faixa de lenda nacional dado seu volume de gols em clube e selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q311091",
+        "afirmacao": "Omar Bravo defendeu o Mexico nas Copas do Mundo de 2006 e 2010 como um dos principais artilheiros do pais."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Flores",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1949-04-28",
+    "percentis": {
+      "overall": 0.65,
+      "pace": 0.7,
+      "shooting": 0.6,
+      "passing": 0.55,
+      "dribbling": 0.62,
+      "defending": 0.3,
+      "physic": 0.5
+    },
+    "observacao": "Luis Flores atuou pelo Mexico nas Copas do Mundo de 1986 e 1994, period em que os registros estatisticos sao mais escassos. Era conhecido por velocidade e capacidade de desequilibrio pelas pontas, caracteristico de um jogador internacional regular daquela geracao, sem alcancar o status de icone absoluto.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1146506",
+        "afirmacao": "Luis Flores participou das Copas do Mundo de 1986 e 1994 pela selecao mexicana."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Carlos Hermosillo",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1964-08-24",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.6,
+      "shooting": 0.88,
+      "passing": 0.6,
+      "dribbling": 0.7,
+      "defending": 0.3,
+      "physic": 0.72
+    },
+    "observacao": "Carlos Hermosillo foi um dos artilheiros mais prolificos da Liga MX e titular do Mexico na Copa do Mundo de 1994. Seu jogo era marcado por finalizacao precisa e presenca de area, justificando um shooting bem acima da mediana. E um dos grandes centroavantes mexicanos da decada de 1990, proximo do status de lenda nacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q956498",
+        "afirmacao": "Carlos Hermosillo foi um dos principais artilheiros do futebol mexicano e titular na Copa do Mundo de 1994."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Javier Fragoso",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1942-04-19",
+    "percentis": {
+      "overall": 0.55,
+      "pace": 0.55,
+      "shooting": 0.58,
+      "passing": 0.5,
+      "dribbling": 0.55,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Javier Fragoso integrou o elenco mexicano na Copa do Mundo de 1970, disputada em casa, em uma epoca com poucos registros detalhados de desempenho. E tratado como um jogador internacional de epoca pre-moderna, com dados escassos, o que justifica percentis mais contidos e proximos da mediana do pool.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1516606",
+        "afirmacao": "Javier Fragoso fez parte da convocacao do Mexico para a Copa do Mundo de 1970."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Horacio Casarin",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1918-05-25",
+    "percentis": {
+      "overall": 0.7,
+      "pace": 0.55,
+      "shooting": 0.68,
+      "passing": 0.55,
+      "dribbling": 0.6,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Horacio Casarin e uma figura historica do futebol mexicano das decadas de 1940 e 1950, lembrado como um dos maiores artilheiros da epoca amadora e profissional inicial do pais. A escassez de registros estatisticos detalhados dessa era limita a confianca nos percentis, mas sua relevancia historica justifica ficar no topo da faixa reservada a jogadores pre-modernos com dados escassos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1334427",
+        "afirmacao": "Horacio Casarin e reconhecido como um dos grandes artilheiros do futebol mexicano das decadas de 1940 e 1950."
+      }
+    ],
+    "confianca": 0.45,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Hernandez",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1968-12-22",
+    "percentis": {
+      "overall": 0.89,
+      "pace": 0.85,
+      "shooting": 0.88,
+      "passing": 0.6,
+      "dribbling": 0.75,
+      "defending": 0.28,
+      "physic": 0.65
+    },
+    "observacao": "Luis Hernandez, conhecido como 'El Matador', foi um dos maiores artilheiros do Mexico na Copa do Mundo de 1998, destacando-se por velocidade e capacidade de finalizacao. Tornou-se um icone popular do futebol mexicano daquela geracao, o que o posiciona como titular internacional de altissimo nivel, proximo do status de lenda nacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q433097",
+        "afirmacao": "Luis Hernandez foi um dos principais artilheiros do Mexico na Copa do Mundo de 1998."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Salvador Reyes",
+    "pais": "Mexico",
+    "posicao": "LW",
+    "dob": "1968-09-28",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.78,
+      "shooting": 0.75,
+      "passing": 0.72,
+      "dribbling": 0.8,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Salvador Reyes defendeu o Mexico em tres Copas do Mundo entre 1958 e 1966, sendo um dos pontas de maior destaque de sua geracao. Sua regularidade em multiplos ciclos de Copa do Mundo indica um titular internacional de longa data e alto nivel para o padrao da epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1769038",
+        "afirmacao": "Salvador Reyes disputou Copas do Mundo pelo Mexico entre 1958 e 1966 como ponta de destaque."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RW"
+    ]
+  },
+  {
+    "nome": "Enrique Borja",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1945-12-30",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.68,
+      "shooting": 0.85,
+      "passing": 0.6,
+      "dribbling": 0.72,
+      "defending": 0.3,
+      "physic": 0.58
+    },
+    "observacao": "Enrique Borja foi um dos atacantes mais prolificos do futebol mexicano nas decadas de 1960 e 1970, disputando as Copas do Mundo de 1966 e 1970 e sendo idolo do Pumas e America. Sua reputacao como artilheiro de elite da epoca justifica percentis elevados de finalizacao e overall.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1343308",
+        "afirmacao": "Enrique Borja disputou as Copas do Mundo de 1966 e 1970 e e lembrado como um dos grandes artilheiros mexicanos de sua geracao."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jared Borgetti",
+    "pais": "Mexico",
+    "posicao": "ST",
+    "dob": "1973-08-14",
+    "percentis": {
+      "overall": 0.93,
+      "pace": 0.6,
+      "shooting": 0.9,
+      "passing": 0.55,
+      "dribbling": 0.65,
+      "defending": 0.3,
+      "physic": 0.78
+    },
+    "observacao": "Jared Borgetti foi por anos o maior artilheiro da historia da selecao mexicana, com forte jogo aereo e grande capacidade de finalizacao, tendo atuado no Bolton na Premier League. Seu volume de gols em clubes e selecao o posiciona como um verdadeiro grande nacional, proximo da faixa de lenda absoluta.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q312334",
+        "afirmacao": "Jared Borgetti foi por muitos anos o artilheiro historico da selecao mexicana e atuou no Bolton Wanderers."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Luis Garcia Postigo",
+    "pais": "Mexico",
+    "posicao": "RW",
+    "dob": "1969-06-01",
+    "percentis": {
+      "overall": 0.83,
+      "pace": 0.75,
+      "shooting": 0.72,
+      "passing": 0.78,
+      "dribbling": 0.8,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Luis Garcia Postigo foi um ponta habilidoso que atuou no Atletico de Madrid e representou o Mexico em multiplas competicoes internacionais. Sua combinacao de drible, passe e velocidade o coloca como um titular internacional de alto nivel no futebol mexicano de sua epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q542031",
+        "afirmacao": "Luis Garcia Postigo representou o Mexico internacionalmente apos destacar-se no Atletico de Madrid."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Ramon Ramirez",
+    "pais": "Mexico",
+    "posicao": "LW",
+    "dob": "1969-12-05",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.78,
+      "shooting": 0.62,
+      "passing": 0.65,
+      "dribbling": 0.72,
+      "defending": 0.32,
+      "physic": 0.55
+    },
+    "observacao": "Ramon Ramirez foi um ponta veloz que integrou a selecao mexicana na Copa do Mundo de 1994, contribuindo com drible e capacidade de criacao pelas laterais. E caracterizado como um titular internacional solido de sua geracao, sem chegar ao status de lenda maxima.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q956482",
+        "afirmacao": "Ramon Ramirez disputou a Copa do Mundo de 1994 pela selecao mexicana."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RM"
+    ]
+  },
+  {
+    "nome": "Oswaldo Sanchez",
+    "pais": "Mexico",
+    "posicao": "GK",
+    "dob": "1973-09-21",
+    "percentis": {
+      "overall": 0.92,
+      "goalkeeping_diving": 0.9,
+      "goalkeeping_handling": 0.88,
+      "goalkeeping_kicking": 0.75,
+      "goalkeeping_positioning": 0.9,
+      "goalkeeping_reflexes": 0.92,
+      "goalkeeping_speed": 0.6
+    },
+    "observacao": "Oswaldo Sanchez e considerado um dos melhores goleiros da historia do Mexico, titular e capitao nas Copas do Mundo de 2002 e 2006. Sua excelente leitura de jogo e reflexos o posicionam no topo do pool de goleiros mexicanos, proximo do status de lenda da posicao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q354327",
+        "afirmacao": "Oswaldo Sanchez foi titular e capitao da selecao mexicana nas Copas do Mundo de 2002 e 2006."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Antonio Carbajal",
+    "pais": "Mexico",
+    "posicao": "GK",
+    "dob": "1929-06-07",
+    "percentis": {
+      "overall": 0.95,
+      "goalkeeping_diving": 0.85,
+      "goalkeeping_handling": 0.82,
+      "goalkeeping_kicking": 0.7,
+      "goalkeeping_positioning": 0.85,
+      "goalkeeping_reflexes": 0.88,
+      "goalkeeping_speed": 0.4
+    },
+    "observacao": "Antonio Carbajal foi o primeiro jogador na historia do futebol a disputar cinco Copas do Mundo, feito que o tornou uma figura lendaria e pioneira do esporte. Apesar da escassez de dados estatisticos detalhados de sua epoca, seu status historico justifica percentis elevados no pool de goleiros mexicanos.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q265428",
+        "afirmacao": "Antonio Carbajal foi o primeiro jogador da historia a disputar cinco Copas do Mundo."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Jorge Campos",
+    "pais": "Mexico",
+    "posicao": "GK",
+    "dob": "1966-10-15",
+    "percentis": {
+      "overall": 0.91,
+      "goalkeeping_diving": 0.88,
+      "goalkeeping_handling": 0.85,
+      "goalkeeping_kicking": 0.8,
+      "goalkeeping_positioning": 0.82,
+      "goalkeeping_reflexes": 0.9,
+      "goalkeeping_speed": 0.75
+    },
+    "observacao": "Jorge Campos foi um goleiro iconico das Copas do Mundo de 1994 e 1998, famoso por seu estilo extrovertido, uniformes coloridos e capacidade de tambem atuar como atacante. Sua agilidade e reflexos de elite, somados a relevancia cultural, o colocam entre os maiores goleiros mexicanos da historia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q313761",
+        "afirmacao": "Jorge Campos foi goleiro titular do Mexico nas Copas do Mundo de 1994 e 1998 e ficou famoso por seu estilo unico."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Cuauhtemoc Blanco",
+    "pais": "Mexico",
+    "posicao": "CAM",
+    "dob": "1973-01-17",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.65,
+      "shooting": 0.85,
+      "passing": 0.85,
+      "dribbling": 0.95,
+      "defending": 0.35,
+      "physic": 0.7
+    },
+    "observacao": "Cuauhtemoc Blanco e um dos maiores icones da selecao mexicana, tendo disputado quatro Copas do Mundo entre 1998 e 2010 e criado o drible conhecido mundialmente como 'Cuauhtemina'. Sua combinacao de drible, criatividade e capacidade de decidir jogos o coloca no topo absoluto do pool de meias mexicanos, como verdadeira lenda nacional.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q207644",
+        "afirmacao": "Cuauhtemoc Blanco disputou quatro Copas do Mundo pelo Mexico entre 1998 e 2010 e e considerado um dos maiores icones do futebol mexicano."
+      }
+    ],
+    "confianca": 0.8,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CF"
+    ]
+  },
+  {
+    "nome": "Adolfo Bautista",
+    "pais": "Mexico",
+    "posicao": "CAM",
+    "dob": "1979-05-15",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.6,
+      "shooting": 0.68,
+      "passing": 0.72,
+      "dribbling": 0.75,
+      "defending": 0.3,
+      "physic": 0.5
+    },
+    "observacao": "Adolfo Bautista foi um meia criativo e idolo das Chivas de Guadalajara, integrando a selecao mexicana na Copa do Mundo de 2006. Sua visao de jogo e drible o colocam como um titular internacional de bom nivel, abaixo da faixa de lenda maxima.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q365020",
+        "afirmacao": "Adolfo Bautista defendeu o Mexico na Copa do Mundo de 2006 apos se destacar como idolo das Chivas."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Benjamin Galindo",
+    "pais": "Mexico",
+    "posicao": "CAM",
+    "dob": "1960-12-11",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.58,
+      "shooting": 0.68,
+      "passing": 0.85,
+      "dribbling": 0.82,
+      "defending": 0.32,
+      "physic": 0.52
+    },
+    "observacao": "Benjamin Galindo foi um dos meias mais criativos do Mexico na Copa do Mundo de 1994, reconhecido por sua elegancia e capacidade de distribuicao de jogo. E considerado um dos grandes armadores da historia do futebol mexicano, com percentis elevados de passe e drible.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q581551",
+        "afirmacao": "Benjamin Galindo foi um dos principais meias criativos do Mexico na Copa do Mundo de 1994."
+      }
+    ],
+    "confianca": 0.58,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Alberto Garcia Aspe",
+    "pais": "Mexico",
+    "posicao": "CM",
+    "dob": "1967-05-11",
+    "percentis": {
+      "overall": 0.87,
+      "pace": 0.6,
+      "shooting": 0.75,
+      "passing": 0.85,
+      "dribbling": 0.75,
+      "defending": 0.5,
+      "physic": 0.6
+    },
+    "observacao": "Alberto Garcia Aspe foi capitao da selecao mexicana entre 1994 e 2002, reconhecido por sua qualidade de passe e precisao em cobrancas de falta. Sua longa carreira como titular internacional e lideranca o posicionam entre os grandes meio-campistas mexicanos da historia.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q709415",
+        "afirmacao": "Alberto Garcia Aspe foi capitao do Mexico e disputou as Copas do Mundo entre 1994 e 2002."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Tomas Boy",
+    "pais": "Mexico",
+    "posicao": "CM",
+    "dob": "1951-06-28",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.55,
+      "shooting": 0.55,
+      "passing": 0.68,
+      "dribbling": 0.6,
+      "defending": 0.65,
+      "physic": 0.68
+    },
+    "observacao": "Tomas Boy foi capitao da selecao mexicana na Copa do Mundo de 1986, disputada em casa, destacando-se por sua combatividade e lideranca no meio-campo. E lembrado como um titular internacional de alto nivel, com equilibrio entre marcacao e distribuicao de jogo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2060182",
+        "afirmacao": "Tomas Boy foi capitao da selecao mexicana na Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  },
+  {
+    "nome": "Manuel Negrete",
+    "pais": "Mexico",
+    "posicao": "CAM",
+    "dob": "1959-03-11",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.62,
+      "shooting": 0.68,
+      "passing": 0.72,
+      "dribbling": 0.8,
+      "defending": 0.35,
+      "physic": 0.55
+    },
+    "observacao": "Manuel Negrete ficou eternizado no futebol mexicano pelo gol de bicicleta marcado contra a Bulgaria na Copa do Mundo de 1986, um dos mais lembrados da historia da selecao. Sua habilidade tecnica e capacidade de decisao o colocam como um titular internacional de bom nivel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1387961",
+        "afirmacao": "Manuel Negrete marcou um gol de bicicleta historico contra a Bulgaria na Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Pavel Pardo",
+    "pais": "Mexico",
+    "posicao": "CDM",
+    "dob": "1976-07-26",
+    "percentis": {
+      "overall": 0.86,
+      "pace": 0.58,
+      "shooting": 0.6,
+      "passing": 0.78,
+      "dribbling": 0.68,
+      "defending": 0.72,
+      "physic": 0.68
+    },
+    "observacao": "Pavel Pardo foi um volante de qualidade que se destacou no VfB Stuttgart, inclusive sendo campeao da Bundesliga, e foi titular de longa data na selecao mexicana. Seu equilibrio entre marcacao e distribuicao de jogo o posiciona entre os melhores volantes mexicanos de sua geracao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q316222",
+        "afirmacao": "Pavel Pardo foi titular da selecao mexicana e conquistou a Bundesliga pelo VfB Stuttgart."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Gerardo Torrado",
+    "pais": "Mexico",
+    "posicao": "CDM",
+    "dob": "1979-04-30",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.55,
+      "shooting": 0.5,
+      "passing": 0.7,
+      "dribbling": 0.6,
+      "defending": 0.78,
+      "physic": 0.72
+    },
+    "observacao": "Gerardo Torrado foi capitao e volante titular da selecao mexicana nas Copas do Mundo de 2002 a 2010, reconhecido por sua capacidade defensiva e lideranca em campo. E um dos maiores volantes da historia recente do futebol mexicano.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q309672",
+        "afirmacao": "Gerardo Torrado foi capitao e volante titular do Mexico nas Copas do Mundo de 2002 a 2010."
+      }
+    ],
+    "confianca": 0.7,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CM"
+    ]
+  },
+  {
+    "nome": "Antonio Naelson",
+    "pais": "Mexico",
+    "posicao": "CAM",
+    "dob": "1976-05-23",
+    "percentis": {
+      "overall": 0.72,
+      "pace": 0.55,
+      "shooting": 0.62,
+      "passing": 0.72,
+      "dribbling": 0.72,
+      "defending": 0.32,
+      "physic": 0.52
+    },
+    "observacao": "Antonio Naelson, conhecido como Sinha, e um meia nascido no Brasil e naturalizado mexicano que se destacou pelo Toluca na Liga MX. Teve participacao internacional mais limitada pelo Mexico em comparacao com outros nomes desta lista, situando-se como um jogador solido porem nao de elite absoluta no nivel de selecao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q204548",
+        "afirmacao": "Antonio Naelson (Sinha) se destacou pelo Toluca e representou o Mexico apos naturalizacao."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Giovani dos Santos",
+    "pais": "Mexico",
+    "posicao": "CAM",
+    "dob": "1989-05-11",
+    "percentis": {
+      "overall": 0.84,
+      "pace": 0.68,
+      "shooting": 0.72,
+      "passing": 0.78,
+      "dribbling": 0.85,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Giovani dos Santos foi um dos meias-atacantes mais talentosos de sua geracao no Mexico, passando por clubes como Barcelona B e Tottenham, e titular internacional de longa data na selecao. Seu drible e criatividade o colocam entre os melhores meias mexicanos da epoca moderna, mesmo sem ter atingido todo o potencial esperado em clubes de elite.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q562337",
+        "afirmacao": "Giovani dos Santos foi titular internacional do Mexico e atuou em clubes europeus como Tottenham."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LW",
+      "RW"
+    ]
+  },
+  {
+    "nome": "Fernando Quirarte",
+    "pais": "Mexico",
+    "posicao": "CB",
+    "dob": "1956-05-17",
+    "percentis": {
+      "overall": 0.78,
+      "pace": 0.55,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.75,
+      "physic": 0.68
+    },
+    "observacao": "Fernando Quirarte foi um zagueiro solido da selecao mexicana na Copa do Mundo de 1986, disputada em casa, reconhecido por sua firmeza defensiva. E tratado como um titular internacional de bom nivel para o padrao defensivo mexicano de sua epoca.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q958304",
+        "afirmacao": "Fernando Quirarte foi zagueiro titular do Mexico na Copa do Mundo de 1986."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Gustavo Pena",
+    "pais": "Mexico",
+    "posicao": "CB",
+    "dob": "1941-11-22",
+    "percentis": {
+      "overall": 0.8,
+      "pace": 0.55,
+      "shooting": 0.35,
+      "passing": 0.55,
+      "dribbling": 0.5,
+      "defending": 0.72,
+      "physic": 0.62
+    },
+    "observacao": "Gustavo Pena foi capitao da selecao mexicana na Copa do Mundo de 1970, disputada em casa, sendo uma figura historica relevante do futebol nacional daquela epoca. Sua lideranca e solidez defensiva justificam percentis acima da mediana, apesar da escassez relativa de dados detalhados do periodo.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1381158",
+        "afirmacao": "Gustavo Pena foi capitao da selecao mexicana na Copa do Mundo de 1970."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata"
+  },
+  {
+    "nome": "Claudio Suarez",
+    "pais": "Mexico",
+    "posicao": "CB",
+    "dob": "1968-12-17",
+    "percentis": {
+      "overall": 0.95,
+      "pace": 0.62,
+      "shooting": 0.4,
+      "passing": 0.58,
+      "dribbling": 0.55,
+      "defending": 0.92,
+      "physic": 0.75
+    },
+    "observacao": "Claudio Suarez, conhecido como 'El Emperador', e o jogador com mais partidas pela selecao mexicana na historia, tendo disputado as Copas do Mundo entre 1994 e 2006. Sua liderança e capacidade defensiva o colocam no topo absoluto do pool de zagueiros mexicanos, como verdadeira lenda da posicao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q449624",
+        "afirmacao": "Claudio Suarez e o jogador com mais convocacoes na historia da selecao mexicana."
+      }
+    ],
+    "confianca": 0.75,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "LB"
+    ]
+  },
+  {
+    "nome": "Duilio Davino",
+    "pais": "Mexico",
+    "posicao": "CB",
+    "dob": "1976-03-21",
+    "percentis": {
+      "overall": 0.76,
+      "pace": 0.58,
+      "shooting": 0.35,
+      "passing": 0.55,
+      "dribbling": 0.52,
+      "defending": 0.7,
+      "physic": 0.65
+    },
+    "observacao": "Duilio Davino foi um zagueiro titular da selecao mexicana nas Copas do Mundo de 1998 a 2006, reconhecido por sua consistencia defensiva em clubes como Pachuca e Toluca. E um titular internacional solido, sem alcancar o status de lenda maxima da posicao.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q891694",
+        "afirmacao": "Duilio Davino foi zagueiro titular do Mexico nas Copas do Mundo de 1998 a 2006."
+      }
+    ],
+    "confianca": 0.6,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "RB"
+    ]
+  },
+  {
+    "nome": "Carlos Salcido",
+    "pais": "Mexico",
+    "posicao": "LB",
+    "dob": "1980-04-02",
+    "percentis": {
+      "overall": 0.85,
+      "pace": 0.68,
+      "shooting": 0.5,
+      "passing": 0.65,
+      "dribbling": 0.65,
+      "defending": 0.72,
+      "physic": 0.68
+    },
+    "observacao": "Carlos Salcido foi um lateral-esquerdo versatil e titular da selecao mexicana entre 2006 e 2014, destacando-se tambem como campeao da Eredivisie pelo PSV Eindhoven. Sua combinacao de marcacao, energia e capacidade de jogar em multiplas posicoes o posiciona entre os melhores laterais mexicanos da epoca moderna.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q208689",
+        "afirmacao": "Carlos Salcido foi titular da selecao mexicana entre 2006 e 2014 e campeao da Eredivisie pelo PSV."
+      }
+    ],
+    "confianca": 0.68,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CB",
+      "LM"
+    ]
+  },
+  {
+    "nome": "Rafael Marquez",
+    "pais": "Mexico",
+    "posicao": "CB",
+    "dob": "1979-02-13",
+    "percentis": {
+      "overall": 0.97,
+      "pace": 0.62,
+      "shooting": 0.45,
+      "passing": 0.75,
+      "dribbling": 0.65,
+      "defending": 0.92,
+      "physic": 0.72
+    },
+    "observacao": "Rafael Marquez e considerado o maior zagueiro da historia do futebol mexicano, tendo sido capitao do Barcelona e disputado cinco Copas do Mundo pelo Mexico. Sua lideranca, visao de jogo e capacidade defensiva de elite o colocam no topo absoluto do pool de defensores mexicanos, como uma lenda incontestavel.",
+    "fontes": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q186330",
+        "afirmacao": "Rafael Marquez foi capitao do Barcelona e e considerado o maior zagueiro da historia da selecao mexicana."
+      }
+    ],
+    "confianca": 0.8,
+    "status": "approved",
+    "age": 27,
+    "is_historico": true,
+    "origem_registro": "historico_estimado",
+    "fonte_atributos": "inferencia_llm_calibrada_historico",
+    "validacao_via": "wikidata",
+    "posicoes_secundarias": [
+      "CDM"
+    ]
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "nome": "Julián Quiñones",
+    "pais": "Mexico",
+    "posicao": "RW",
+    "dob": "1997-03-24",
+    "club_name": "América",
+    "league_name": "Liga MX",
+    "preferred_foot": "Right",
+    "percentis": {
+      "overall": 0.75,
+      "pace": 0.6,
+      "shooting": 0.78,
+      "passing": 0.55,
+      "dribbling": 0.72,
+      "defending": 0.3,
+      "physic": 0.55
+    },
+    "observacao": "Atacante naturalizado, titular habitual do América na Liga MX e peça de ataque recorrente na seleção mexicana em 2024; percentis altos em finalização e drible, refletindo seu papel de ponta invertida que corta para o meio e finaliza, com contribuição defensiva baixa típica do grupo ATT.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Julián Quiñones foi convocado pelo México para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.65,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "LW"
+    ]
+  },
+  {
+    "nome": "Marcelo Flores",
+    "pais": "Mexico",
+    "posicao": "LW",
+    "dob": "2003-10-01",
+    "club_name": "UANL",
+    "league_name": "Liga MX",
+    "percentis": {
+      "overall": 0.4,
+      "pace": 0.6,
+      "shooting": 0.4,
+      "passing": 0.55,
+      "dribbling": 0.55,
+      "defending": 0.35,
+      "physic": 0.32
+    },
+    "observacao": "Meio-atacante jovem, formado nas categorias de base do Arsenal e atuando no UANL (Tigres) na Liga MX; perfil mais de armador/ponta do que de referência de área, com papel ainda periférico na seleção, por isso percentis em torno ou abaixo da mediana do grupo ATT do México.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Marcelo Flores foi convocado pelo México para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.5,
+    "status": "approved",
+    "posicoes_secundarias": [
+      "CAM"
+    ]
+  },
+  {
+    "nome": "Raúl Rangel",
+    "pais": "Mexico",
+    "posicao": "GK",
+    "dob": "2000-02-25",
+    "club_name": "Guadalajara",
+    "league_name": "Liga MX",
+    "percentis": {
+      "overall": 0.4,
+      "goalkeeping_diving": 0.45,
+      "goalkeeping_handling": 0.4,
+      "goalkeeping_kicking": 0.5,
+      "goalkeeping_positioning": 0.4,
+      "goalkeeping_reflexes": 0.45,
+      "goalkeeping_speed": 0.5
+    },
+    "observacao": "Goleiro titular do Guadalajara (Chivas) na Liga MX, convocado como opção reserva na seleção mexicana para a Copa América 2024, atrás de goleiros mais experientes; percentis próximos à mediana a levemente abaixo, coerentes com um goleiro de nível intermediário no grupo GK do México.",
+    "fontes": [
+      {
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+        "afirmacao": "Raúl Rangel foi convocado pelo México para a Copa América 2024."
+      }
+    ],
+    "confianca": 0.55,
+    "status": "approved"
+  }
+]

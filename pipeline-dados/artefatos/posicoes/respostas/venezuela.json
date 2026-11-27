@@ -1,0 +1,177 @@
+[
+  {
+    "nome": "Juan Arango",
+    "dob": "1980-05-16",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.6,
+    "justificativa": "Left-footed playmaker also deployed as a left winger at Mallorca and Monchengladbach."
+  },
+  {
+    "nome": "Cesar Gonzalez",
+    "dob": "1933-05-11",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Limited reliable biographical detail on secondary roles for this player."
+  },
+  {
+    "nome": "Nicolas Fedor",
+    "dob": "1985-08-19",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.6,
+    "justificativa": "Traditional Venezuelan striker often used as a second/central forward."
+  },
+  {
+    "nome": "Jefferson Savarino",
+    "dob": "1996-11-11",
+    "posicoes_secundarias": ["RM"],
+    "confianca": 0.6,
+    "justificativa": "Right winger also frequently used as a right midfielder in a 4-4-2/4-3-3."
+  },
+  {
+    "nome": "Giancarlo Maldonado",
+    "dob": "1982-06-29",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Insufficient documented detail to confidently assign a secondary role."
+  },
+  {
+    "nome": "Alejandro Guerra",
+    "dob": "1985-07-09",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.6,
+    "justificativa": "Attacking midfielder who also operated as a central midfielder for club and country."
+  },
+  {
+    "nome": "Luis Manuel Seijas",
+    "dob": "1986-06-23",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.6,
+    "justificativa": "Box-to-box midfielder also used in a deeper holding role."
+  },
+  {
+    "nome": "Alain Baroja",
+    "dob": "1989-10-23",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper, no outfield secondary position."
+  },
+  {
+    "nome": "Renny Vega",
+    "dob": "1979-07-04",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper, no outfield secondary position."
+  },
+  {
+    "nome": "Jose Manuel Rey",
+    "dob": "1975-05-20",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Primarily a pure central defender with no well-documented secondary role."
+  },
+  {
+    "nome": "Gabriel Cichero",
+    "dob": "1984-04-25",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.6,
+    "justificativa": "Versatile defender who also played as a right back for club sides."
+  },
+  {
+    "nome": "Fernando Amorebieta",
+    "dob": "1985-03-29",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.5,
+    "justificativa": "Center back occasionally deployed at left back during his Athletic Bilbao/Fulham years."
+  },
+  {
+    "nome": "Oswaldo Vizcarrondo",
+    "dob": "1984-05-31",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Primarily a pure central defender with no well-documented secondary role."
+  },
+  {
+    "nome": "Alexander Gonzalez",
+    "dob": "1977-02-15",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Insufficient documented detail to confidently assign a secondary role."
+  },
+  {
+    "nome": "Jhon Chancellor",
+    "dob": "1992-01-02",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Primarily a pure central defender with no well-documented secondary role."
+  },
+  {
+    "nome": "Roberto Rosales",
+    "dob": "1988-11-20",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.6,
+    "justificativa": "Full back used on both flanks across his career, including stints at left back."
+  },
+  {
+    "nome": "Rubert Quijada",
+    "dob": "1989-02-10",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Insufficient documented detail to confidently assign a secondary role."
+  },
+  {
+    "nome": "Joel Graterol",
+    "dob": "1997-02-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper, no outfield secondary position."
+  },
+  {
+    "nome": "José Contreras",
+    "dob": "1994-10-20",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goalkeeper, no outfield secondary position."
+  },
+  {
+    "nome": "José Andrés Martínez",
+    "dob": "1994-09-07",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.6,
+    "justificativa": "Central midfielder frequently deployed in a deeper defensive midfield role."
+  },
+  {
+    "nome": "Telasco Segovia",
+    "dob": "2003-04-02",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.5,
+    "justificativa": "Young central midfielder also used in a more advanced attacking midfield role."
+  },
+  {
+    "nome": "Matías Lacava",
+    "dob": "2002-10-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Insufficient documented detail to confidently assign a secondary role."
+  },
+  {
+    "nome": "Cristian Cásseres Jr.",
+    "dob": "2000-01-20",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.6,
+    "justificativa": "Central midfielder also regularly used in a defensive midfield role for Toulouse and the national team."
+  },
+  {
+    "nome": "Alexander González",
+    "dob": "1992-11-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Insufficient documented detail to confidently assign a secondary role."
+  },
+  {
+    "nome": "Kervin Andrade",
+    "dob": "2005-04-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Young player with insufficient documented detail for a secondary role."
+  }
+]

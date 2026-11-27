@@ -1,0 +1,156 @@
+[
+  {
+    "nome": "Dwayne De Rosario",
+    "dob": "1978-05-15",
+    "posicoes_secundarias": ["CM", "RW"],
+    "confianca": 0.5,
+    "justificativa": "De Ro atuou como meio-campista box-to-box e como ponta na MLS antes de se fixar como meia-atacante."
+  },
+  {
+    "nome": "Julian de Guzman",
+    "dob": "1981-03-25",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.6,
+    "justificativa": "Volante que também atuou como meio-campista mais ofensivo em clubes como Deportivo e Mallorca."
+  },
+  {
+    "nome": "Dale Mitchell",
+    "dob": "1958-04-21",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Pouco registro confiável sobre atuação em outra posição alem de atacante."
+  },
+  {
+    "nome": "Tomasz Radzinski",
+    "dob": "1973-12-14",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.6,
+    "justificativa": "No Anderlecht atuou com frequencia como ponta-esquerda antes de se consolidar como atacante no Everton."
+  },
+  {
+    "nome": "Alex Bunbury",
+    "dob": "1967-06-18",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Sem registro consistente de atuacao fora da posicao de atacante."
+  },
+  {
+    "nome": "Bruce Wilson",
+    "dob": "1951-06-20",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Documentacao limitada sobre papel diferente de lateral-esquerdo na Copa de 1986."
+  },
+  {
+    "nome": "Randy Samuel",
+    "dob": "1963-12-23",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.5,
+    "justificativa": "Zagueiro da Copa de 1986 que tambem foi utilizado como lateral-direito pela selecao."
+  },
+  {
+    "nome": "Mark Watson",
+    "dob": "1970-09-08",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Sem registro confiavel de posicao secundaria alem de zagueiro."
+  },
+  {
+    "nome": "Kevin McKenna",
+    "dob": "1980-01-21",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Carreira em ligas inferiores alemas sem documentacao clara de outra posicao."
+  },
+  {
+    "nome": "Jason de Vos",
+    "dob": "1974-01-02",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Capitao e zagueiro solido no Ipswich Town, sem registro relevante em outra posicao."
+  },
+  {
+    "nome": "Paul Stalteri",
+    "dob": "1977-10-18",
+    "posicoes_secundarias": ["LB"],
+    "confianca": 0.7,
+    "justificativa": "Conhecido por sua versatilidade no Tottenham, atuando tanto como lateral-direito quanto lateral-esquerdo."
+  },
+  {
+    "nome": "Bob Lenarduzzi",
+    "dob": "1955-05-01",
+    "posicoes_secundarias": ["CB"],
+    "confianca": 0.5,
+    "justificativa": "Capitao do time de 1986, tambem atuou como zagueiro/libero pelos Whitecaps."
+  },
+  {
+    "nome": "Craig Forrest",
+    "dob": "1967-09-20",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro: lista de posicoes secundarias sempre vazia."
+  },
+  {
+    "nome": "Luc de Fougerolles",
+    "dob": "2005-10-12",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Jovem defensor do Fulham sem historico documentado de outra posicao."
+  },
+  {
+    "nome": "Ismaël Koné",
+    "dob": "2002-06-16",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.7,
+    "justificativa": "Meio-campista que atua tanto como box-to-box quanto como volante no Watford e na selecao."
+  },
+  {
+    "nome": "Theo Bair",
+    "dob": "1999-08-27",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Sem registro consistente de posicao secundaria alem de atacante."
+  },
+  {
+    "nome": "Jacen Russell-Rowe",
+    "dob": "2002-09-13",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Sem documentacao confiavel de outra posicao alem de atacante."
+  },
+  {
+    "nome": "Moïse Bombito",
+    "dob": "2000-03-30",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro rapido do Colorado Rapids sem registro relevante em outra posicao."
+  },
+  {
+    "nome": "Tom McGill",
+    "dob": "2000-03-25",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro: lista de posicoes secundarias sempre vazia."
+  },
+  {
+    "nome": "Ali Ahmed",
+    "dob": "2000-10-10",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.6,
+    "justificativa": "Frequentemente descrito como ponta-esquerda/extremo nos Vancouver Whitecaps, apesar de listado como meio-campista."
+  },
+  {
+    "nome": "Tani Oluwaseyi",
+    "dob": "2000-05-15",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Sem registro consistente de posicao secundaria alem de atacante no Minnesota United."
+  },
+  {
+    "nome": "Kyle Hiebert",
+    "dob": "1997-07-30",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Sem documentacao confiavel de outra posicao alem de zagueiro no St. Louis City SC."
+  }
+]

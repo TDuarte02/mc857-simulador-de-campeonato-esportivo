@@ -1,0 +1,366 @@
+{
+  "pais": "Uruguay",
+  "jogadores": [
+    {
+      "nome": "Diego Forlan",
+      "posicao_principal": "ST",
+      "dob": "1979-05-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q261534",
+      "contexto": "Melhor da Copa 2010"
+    },
+    {
+      "nome": "Enzo Francescoli",
+      "posicao_principal": "CAM",
+      "dob": "1961-11-12",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q210083",
+      "contexto": "Idolo do River"
+    },
+    {
+      "nome": "Dario Silva",
+      "posicao_principal": "ST",
+      "dob": "1972-11-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q359804",
+      "contexto": "Malaga"
+    },
+    {
+      "nome": "Alcides Ghiggia",
+      "posicao_principal": "RW",
+      "dob": "1926-11-22",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q352611",
+      "contexto": "Gol do Maracanazo"
+    },
+    {
+      "nome": "Julio Cesar Abbadie",
+      "posicao_principal": "ST",
+      "dob": "1930-09-07",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q1340304",
+      "contexto": "Campeao 1950"
+    },
+    {
+      "nome": "Luis Cubilla",
+      "posicao_principal": "RW",
+      "dob": "1940-03-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q555204",
+      "contexto": "Campeao 1968 e 1971"
+    },
+    {
+      "nome": "Pedro Rocha",
+      "posicao_principal": "ST",
+      "dob": "1942-12-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q516417",
+      "contexto": "Copa 1962-1974"
+    },
+    {
+      "nome": "Cristian Rodriguez",
+      "posicao_principal": "LW",
+      "dob": "1985-09-30",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q314376",
+      "contexto": "Atletico de Madrid"
+    },
+    {
+      "nome": "Sebastian Abreu",
+      "posicao_principal": "ST",
+      "dob": "1976-10-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q132056",
+      "contexto": "Artilheiro em 6 paises"
+    },
+    {
+      "nome": "Marcelo Zalayeta",
+      "posicao_principal": "ST",
+      "dob": "1978-12-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q316551",
+      "contexto": "Juventus"
+    },
+    {
+      "nome": "Omar Miguez",
+      "posicao_principal": "ST",
+      "dob": "1927-12-05",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q24347",
+      "contexto": "Campeao 1950"
+    },
+    {
+      "nome": "Daniel Fonseca",
+      "posicao_principal": "ST",
+      "dob": "1969-09-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q462842",
+      "contexto": "Napoli e Juventus"
+    },
+    {
+      "nome": "Ruben Sosa",
+      "posicao_principal": "ST",
+      "dob": "1966-04-25",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q463979",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Hector Scarone",
+      "posicao_principal": "ST",
+      "dob": "1898-11-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q318172",
+      "contexto": "Olimpico 1924 e 1928"
+    },
+    {
+      "nome": "Paolo Montero",
+      "posicao_principal": "CB",
+      "dob": "1971-09-03",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q342484",
+      "contexto": "Juventus"
+    },
+    {
+      "nome": "William Martinez",
+      "posicao_principal": "CB",
+      "dob": "1928-01-13",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q977165",
+      "contexto": "Campeao 1950"
+    },
+    {
+      "nome": "Alvaro Pereira",
+      "posicao_principal": "LB",
+      "dob": "1985-11-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q214898",
+      "contexto": "Porto e Inter"
+    },
+    {
+      "nome": "Jose Nasazzi",
+      "posicao_principal": "CB",
+      "dob": "1901-05-24",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q312164",
+      "contexto": "Capitao 1930"
+    },
+    {
+      "nome": "Diego Lugano",
+      "posicao_principal": "CB",
+      "dob": "1980-11-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q373547",
+      "contexto": "Capitao 2010"
+    },
+    {
+      "nome": "Jorge Fucile",
+      "posicao_principal": "LB",
+      "dob": "1984-11-19",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q178599",
+      "contexto": "Porto"
+    },
+    {
+      "nome": "Obdulio Varela",
+      "posicao_principal": "CDM",
+      "dob": "1917-09-20",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q471743",
+      "contexto": "Capitao 1950"
+    },
+    {
+      "nome": "Victor Rodriguez Andrade",
+      "posicao_principal": "CDM",
+      "dob": "1927-05-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q721958",
+      "contexto": "Campeao 1950"
+    },
+    {
+      "nome": "Schubert Gambetta",
+      "posicao_principal": "CDM",
+      "dob": "1920-04-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q722004",
+      "contexto": "Campeao 1950"
+    },
+    {
+      "nome": "Giorgian de Arrascaeta",
+      "posicao_principal": "CAM",
+      "dob": "1994-06-01",
+      "camadas": [
+        "historico",
+        "convocado_2024"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q13578003",
+      "contexto": "Flamengo"
+    },
+    {
+      "nome": "Alvaro Recoba",
+      "posicao_principal": "CAM",
+      "dob": "1976-03-17",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q204108",
+      "contexto": "Inter de Milao"
+    },
+    {
+      "nome": "Gaston Ramirez",
+      "posicao_principal": "CAM",
+      "dob": "1990-12-02",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q437673",
+      "contexto": "Middlesbrough"
+    },
+    {
+      "nome": "Juan Alberto Schiaffino",
+      "posicao_principal": "CAM",
+      "dob": "1925-07-28",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q332064",
+      "contexto": "Campeao 1950"
+    },
+    {
+      "nome": "Egidio Arevalo Rios",
+      "posicao_principal": "CDM",
+      "dob": "1982-01-01",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q315674",
+      "contexto": "Copa 2010"
+    },
+    {
+      "nome": "Gustavo Varela",
+      "posicao_principal": "CM",
+      "dob": "1978-05-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q736488",
+      "contexto": "Nacional"
+    },
+    {
+      "nome": "Pablo Garcia",
+      "posicao_principal": "CDM",
+      "dob": "1977-05-11",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q279673",
+      "contexto": "Real Madrid"
+    },
+    {
+      "nome": "Fabian Carini",
+      "posicao_principal": "GK",
+      "dob": "1979-12-26",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q430729",
+      "contexto": "Juventus"
+    },
+    {
+      "nome": "Ladislao Mazurkiewicz",
+      "posicao_principal": "GK",
+      "dob": "1945-02-14",
+      "camadas": [
+        "historico"
+      ],
+      "fonte": "https://www.wikidata.org/wiki/Q608126",
+      "contexto": "Copa 1970"
+    },
+    {
+      "nome": "Franco Israel",
+      "posicao_principal": "GK",
+      "dob": "2000-04-22",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Sporting CP"
+    },
+    {
+      "nome": "Guillermo Varela",
+      "posicao_principal": "CB",
+      "dob": "1993-03-24",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Flamengo"
+    },
+    {
+      "nome": "Emiliano Martínez",
+      "posicao_principal": "CM",
+      "dob": "1999-08-17",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Midtjylland"
+    },
+    {
+      "nome": "Santiago Mele",
+      "posicao_principal": "GK",
+      "dob": "1997-09-06",
+      "camadas": [
+        "convocado_2024"
+      ],
+      "fonte": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_squads",
+      "contexto": "Atlético Junior"
+    }
+  ]
+}

@@ -1,4 +1,10 @@
 .venv
 __pycache__/
-.pytest_cache/
 *.pyc
+.coverage
+.pytest_cache/
+cache_wikidata.json
+pipeline-dados/artefatos/pesquisa/respostas_brutas/
+# Gradle e saídas de build do app na raiz (nunca versionar)
+app/.gradle/
+app/build/

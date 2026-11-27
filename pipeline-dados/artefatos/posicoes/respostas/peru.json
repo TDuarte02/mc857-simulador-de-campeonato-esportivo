@@ -1,0 +1,247 @@
+[
+  {
+    "nome": "Teofilo Cubillas",
+    "dob": "1949-03-08",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.7,
+    "justificativa": "Playmaker prolifico que tambem atuava como segundo atacante."
+  },
+  {
+    "nome": "Claudio Pizarro",
+    "dob": "1978-10-03",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.6,
+    "justificativa": "Centroavante que frequentemente recuava para jogar como segundo atacante no Bayern."
+  },
+  {
+    "nome": "Paolo Guerrero",
+    "dob": "1984-01-01",
+    "posicoes_secundarias": ["CF"],
+    "confianca": 0.6,
+    "justificativa": "Atacante que tambem atuou como segundo atacante/falso 9 em varios clubes."
+  },
+  {
+    "nome": "Ramon Mifflin",
+    "dob": "1947-04-05",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.5,
+    "justificativa": "Meio-campista criativo, descrito como armador classico nas Copas de 1975 e 1978."
+  },
+  {
+    "nome": "Jose del Solar",
+    "dob": "1967-11-28",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.6,
+    "justificativa": "Volante de contencao conhecido por funcao defensiva no meio-campo."
+  },
+  {
+    "nome": "German Leguia",
+    "dob": "1954-01-02",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Documentacao insuficiente sobre posicoes alternativas; mantendo lista vazia."
+  },
+  {
+    "nome": "Julio Cesar Uribe",
+    "dob": "1958-05-09",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.5,
+    "justificativa": "Armador conhecido como 'El Diamante', tambem atuava mais recuado no meio."
+  },
+  {
+    "nome": "Luis Cruzado",
+    "dob": "1941-07-06",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Pouca documentacao disponivel sobre funcoes alternativas; preferindo lista vazia."
+  },
+  {
+    "nome": "Roberto Palacios",
+    "dob": "1972-12-28",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.6,
+    "justificativa": "Conhecido como driblador pela ponta direita, apesar de listado como meia-atacante."
+  },
+  {
+    "nome": "Cesar Cueto",
+    "dob": "1952-06-16",
+    "posicoes_secundarias": ["CM"],
+    "confianca": 0.5,
+    "justificativa": "Armador canhoto ('El Poeta de la Zurda') que tambem jogava mais recuado no meio-campo."
+  },
+  {
+    "nome": "Hugo Sotil",
+    "dob": "1949-05-18",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.6,
+    "justificativa": "No Barcelona atuou como ponta esquerda alem de armador."
+  },
+  {
+    "nome": "Roberto Challe",
+    "dob": "1946-11-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Informacao limitada sobre posicoes alternativas; preferindo lista vazia."
+  },
+  {
+    "nome": "Juan Manuel Vargas",
+    "dob": "1983-10-05",
+    "posicoes_secundarias": ["LWB"],
+    "confianca": 0.5,
+    "justificativa": "Lateral com perfil ofensivo, atuando com frequencia mais avancado pelo lado esquerdo."
+  },
+  {
+    "nome": "Alberto Rodriguez",
+    "dob": "1984-03-31",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro central sem registro consistente de outra posicao; preferindo lista vazia."
+  },
+  {
+    "nome": "Hector Chumpitaz",
+    "dob": "1944-04-12",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Zagueiro/lider defensivo classico, sem evidencia solida de outra posicao."
+  },
+  {
+    "nome": "Ruben Toribio Diaz",
+    "dob": "1952-04-17",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Pouca documentacao disponivel; preferindo lista vazia."
+  },
+  {
+    "nome": "Percy Rojas",
+    "dob": "1949-09-16",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante da Copa de 1975 sem registro claro de outra posicao."
+  },
+  {
+    "nome": "Juan Carlos Oblitas",
+    "dob": "1951-02-16",
+    "posicoes_secundarias": ["LM"],
+    "confianca": 0.5,
+    "justificativa": "Ponta esquerda que tambem jogava como meia pelo lado do campo."
+  },
+  {
+    "nome": "Flavio Maestri",
+    "dob": "1973-01-21",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Centroavante classico sem evidencia solida de outra posicao."
+  },
+  {
+    "nome": "Edison Flores",
+    "dob": "1994-05-14",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.5,
+    "justificativa": "Ponta esquerda que tambem atua como meia-atacante criativo."
+  },
+  {
+    "nome": "Oswaldo Ramirez",
+    "dob": "1947-03-28",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante da Copa de 1970 sem registro claro de outra posicao."
+  },
+  {
+    "nome": "Jefferson Farfan",
+    "dob": "1984-10-26",
+    "posicoes_secundarias": ["ST"],
+    "confianca": 0.6,
+    "justificativa": "Ponta direita que tambem atuava como atacante central no Schalke 04."
+  },
+  {
+    "nome": "Nolberto Solano",
+    "dob": "1974-12-12",
+    "posicoes_secundarias": ["RM"],
+    "confianca": 0.6,
+    "justificativa": "Conhecido por atuar como meia pelo lado direito no Newcastle, alem de ponta."
+  },
+  {
+    "nome": "Pedro Pablo Leon",
+    "dob": "1943-06-29",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante da Copa de 1970 sem registro claro de outra posicao."
+  },
+  {
+    "nome": "Alberto Gallardo",
+    "dob": "1940-11-28",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Ponta esquerda da Copa de 1970 sem evidencia solida de outra posicao."
+  },
+  {
+    "nome": "Ramon Quiroga",
+    "dob": "1950-07-23",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; lista de posicoes secundarias sempre vazia."
+  },
+  {
+    "nome": "Oscar Ibanez",
+    "dob": "1967-08-08",
+    "posicoes_secundarias": [],
+    "confianca": 0.9,
+    "justificativa": "Goleiro; lista de posicoes secundarias sempre vazia."
+  },
+  {
+    "nome": "Bryan Reyna",
+    "dob": "1998-08-23",
+    "posicoes_secundarias": ["RW"],
+    "confianca": 0.6,
+    "justificativa": "Apesar de listado como atacante, costuma jogar aberto pela ponta direita."
+  },
+  {
+    "nome": "Miguel Araujo",
+    "dob": "1994-10-24",
+    "posicoes_secundarias": [],
+    "confianca": 0.4,
+    "justificativa": "Zagueiro central sem registro consistente de outra posicao; preferindo lista vazia."
+  },
+  {
+    "nome": "Wilder Cartagena",
+    "dob": "1994-09-23",
+    "posicoes_secundarias": ["CDM"],
+    "confianca": 0.6,
+    "justificativa": "Volante defensivo que atua tipicamente na funcao de contencao."
+  },
+  {
+    "nome": "Oliver Sonne",
+    "dob": "2000-11-10",
+    "posicoes_secundarias": ["RB"],
+    "confianca": 0.7,
+    "justificativa": "Atua predominantemente como lateral direito, apesar de listado como zagueiro."
+  },
+  {
+    "nome": "Edison Flores",
+    "dob": "1994-05-15",
+    "posicoes_secundarias": ["LW"],
+    "confianca": 0.5,
+    "justificativa": "Originalmente ponta esquerda, mesmo quando utilizado como atacante avancado."
+  },
+  {
+    "nome": "Piero Quispe",
+    "dob": "2001-08-14",
+    "posicoes_secundarias": ["CAM"],
+    "confianca": 0.6,
+    "justificativa": "Meio-campista criativo que frequentemente joga como meia-atacante."
+  },
+  {
+    "nome": "José Rivera",
+    "dob": "1997-05-08",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Pouca documentacao disponivel sobre funcoes alternativas; preferindo lista vazia."
+  },
+  {
+    "nome": "Franco Zanelatto",
+    "dob": "2000-05-09",
+    "posicoes_secundarias": [],
+    "confianca": 0.3,
+    "justificativa": "Atacante recente sem registro consistente de outra posicao; preferindo lista vazia."
+  }
+]
