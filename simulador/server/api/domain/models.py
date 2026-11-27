@@ -8,7 +8,9 @@ GROUP_SIZE = 4
 TEAM_COUNT = len(GROUP_NAMES) * GROUP_SIZE
 QUALIFIED_PER_GROUP = 2
 
-# Rounds are numbered across the whole cup: 1-3 are the group stage.
+# Rounds are numbered across the whole cup: 1-3 are the group stage. A fast cup has
+# no groups and starts at the quarter-finals, still round 4.
+FAST_TEAM_COUNT = 8
 GROUP_ROUNDS = GROUP_SIZE - 1
 QUARTER_FINAL_ROUND = 4
 SEMI_FINAL_ROUND = 5
@@ -17,6 +19,18 @@ LAST_ROUND = FINALS_ROUND
 
 # Winners of each pair of quarter-finals meet in a semi-final.
 SEMI_FINAL_PATHS = (("QF1", "QF2"), ("QF3", "QF4"))
+
+
+class Mode(StrEnum):
+    """How long the cup is."""
+
+    FULL = "FULL"  # 16 squads: group stage, then the 8-team knockout
+    FAST = "FAST"  # 8 squads straight into the quarter-finals (third-place match included)
+
+
+def first_round(mode: "Mode") -> int:
+    """The first round a session in this mode actually plays."""
+    return QUARTER_FINAL_ROUND if mode is Mode.FAST else 1
 
 
 class Position(StrEnum):
@@ -233,11 +247,12 @@ class PlayerStatus:
 class Session:
     id: str
     created_at: datetime
+    mode: Mode = Mode.FULL
     phase: Phase = Phase.CREATED
     squad_id: str | None = None
     call_up: list[int] = field(default_factory=list)
     player_status: dict[int, PlayerStatus] = field(default_factory=dict)
-    round: int = 0  # rounds completed so far
+    round: int = 0  # rounds completed so far (a fast cup starts at GROUP_ROUNDS)
     user_eliminated: bool = False
     # The catalogue the session was created on; it cannot continue on another one.
     catalog_version: str = MOCK_CATALOG_VERSION
@@ -249,7 +264,7 @@ class Session:
 @dataclass
 class Tournament:
     session_id: str
-    groups: dict[str, list[str]]
+    groups: dict[str, list[str]]  # empty in a fast cup
     # The 26 players each participating squad brought to the cup.
     squads: dict[str, list[int]]
 
@@ -300,10 +315,11 @@ class CallUp:
 
 @dataclass
 class Draw:
+    mode: Mode
     user_squad: str
     groups: dict[str, list[str]]
     squads: dict[str, list[Player]]
-    matches: list[Match]
+    matches: list[Match]  # the group fixtures, or a fast cup's quarter-finals
 
 
 @dataclass

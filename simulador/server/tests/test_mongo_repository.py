@@ -17,6 +17,7 @@ from api.domain.models import (
     LineupSlot,
     Match,
     MatchResult,
+    Mode,
     Phase,
     PlayerStatus,
     Position,
@@ -163,6 +164,22 @@ def test_naive_dates_from_the_driver_are_read_as_utc():
     repos.sessions.add(a_session())
 
     assert repos.sessions.get("s1").created_at == a_session().created_at
+
+
+def test_session_mode_round_trips(repos, db):
+    session = a_session()
+    session.mode = Mode.FAST
+    repos.sessions.add(session)
+
+    assert db.sessions.find_one({"_id": "s1"})["mode"] == "FAST"
+    assert repos.sessions.get("s1").mode is Mode.FAST
+
+
+def test_sessions_stored_before_fast_mode_are_full_cups(repos, db):
+    repos.sessions.add(a_session())
+    db.sessions.update_one({"_id": "s1"}, {"$unset": {"mode": ""}})
+
+    assert repos.sessions.get("s1").mode is Mode.FULL
 
 
 # --- Tournaments and matches ----------------------------------------------------

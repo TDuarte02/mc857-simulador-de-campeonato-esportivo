@@ -2,7 +2,7 @@ import uuid
 from collections.abc import Callable
 from datetime import UTC, datetime
 
-from api.domain.models import Session
+from api.domain.models import Mode, Session
 from api.errors import ConflictError, NotFoundError
 from api.repositories.base import CatalogRepository, SessionRepository
 
@@ -13,10 +13,11 @@ class SessionService:
         self._catalog = catalog
         self._new_seed = new_seed
 
-    def create(self) -> Session:
+    def create(self, mode: Mode = Mode.FULL) -> Session:
         session = Session(
             id=str(uuid.uuid4()),
             created_at=datetime.now(UTC),
+            mode=mode,
             catalog_version=self._catalog.version(),
             seed=self._new_seed(),
         )

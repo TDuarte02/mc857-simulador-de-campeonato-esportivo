@@ -13,6 +13,7 @@ from api.domain.models import (
     GROUP_NAMES,
     CardType,
     Federation,
+    Mode,
     NextStep,
     Phase,
     Placement,
@@ -98,6 +99,19 @@ SCHEMAS = {
             "players": _array(_ref("Player")),
         }
     ),
+    "CreateSessionRequest": _obj(
+        {
+            "mode": {
+                **_enum(Mode),
+                "default": str(Mode.FULL),
+                "description": (
+                    "`FULL`: 16 seleções, fase de grupos e mata-mata. `FAST`: 8 seleções (a do usuário e 7 "
+                    "sorteadas) direto nas quartas de final, com disputa de terceiro lugar."
+                ),
+            }
+        },
+        required=[],
+    ),
     "SessionCreated": _obj({"sessionId": {**STR, "format": "uuid"}}),
     "PlayerStatus": _obj(
         {
@@ -113,6 +127,7 @@ SCHEMAS = {
         {
             "id": {**STR, "format": "uuid"},
             "createdAt": {**STR, "format": "date-time"},
+            "mode": _enum(Mode),
             "phase": _enum(Phase),
             "squadId": _nullable({**STR, "description": "null até a convocação."}),
             "callUp": _array(INT, description="Ids dos 26 convocados; vazio até a convocação."),
@@ -121,7 +136,13 @@ SCHEMAS = {
                 "description": "Situação de cada convocado, indexada pelo id do jogador (como string).",
                 "additionalProperties": _ref("PlayerStatus"),
             },
-            "round": {**INT, "description": "Rodadas já jogadas (0–6)."},
+            "round": {
+                **INT,
+                "description": (
+                    "Rodadas já jogadas (0–6). No modo `FAST` começa em 3: a numeração é a da copa completa "
+                    "(as quartas são a rodada 4)."
+                ),
+            },
             "userEliminated": BOOL,
         }
     ),
@@ -146,8 +167,15 @@ SCHEMAS = {
     "Draw": _obj(
         {
             "userSquad": _ref("Squad"),
-            "groups": _array(_ref("DrawGroup")),
-            "matches": _array(_ref("Match"), description="Tabela da fase de grupos, ainda sem resultados."),
+            "groups": _array(_ref("DrawGroup"), description="Vazio no modo `FAST`."),
+            "squads": _array(
+                _ref("DrawSquad"),
+                description="As 8 seleções do modo `FAST`, que não tem grupos; vazio no modo `FULL` (estão em `groups`).",
+            ),
+            "matches": _array(
+                _ref("Match"),
+                description="Tabela da fase de grupos, ou as quartas de final no modo `FAST`; ainda sem resultados.",
+            ),
         }
     ),
     "AvailablePlayer": _obj({**_PLAYER, "yellowCards": {**INT, "description": "Amarelos acumulados."}}),
@@ -393,8 +421,13 @@ PATHS = {
             "createSession",
             _SESSION,
             "Cria uma sessão",
-            "Não há autenticação: o `sessionId` devolvido identifica o usuário nas outras chamadas.",
-            [_ok("Sessão criada.", _ref("SessionCreated"), status=201)],
+            "Não há autenticação: o `sessionId` devolvido identifica o usuário nas outras chamadas. "
+            "O corpo é opcional; sem ele, a copa é completa (`FULL`).",
+            [
+                _ok("Sessão criada.", _ref("SessionCreated"), status=201),
+                _error(400, ["INVALID_BODY", "INVALID_MODE"]),
+            ],
+            requestBody={"required": False, "content": _json(_ref("CreateSessionRequest"))},
         )
     },
     "/session/{sessionId}": {
@@ -469,7 +502,8 @@ PATHS = {
             "Na primeira chamada escolhe o elenco das outras 15 seleções, divide as 16 em 4 potes pela força do "
             "time titular e sorteia 4 grupos de 4 (um de cada pote; a posição no grupo é o pote) e monta a "
             "tabela; as partidas sem o usuário já são simuladas, mas ficam ocultas até a rodada delas. "
-            "Chamadas seguintes devolvem o mesmo sorteio.",
+            "No modo `FAST`, sorteia as 7 adversárias e as quartas de final: as 4 mais fortes enfrentam, cada "
+            "uma, uma das 4 mais fracas. Chamadas seguintes devolvem o mesmo sorteio.",
             [
                 _ok("Sorteio.", _ref("Draw")),
                 _error(404, ["SESSION_NOT_FOUND"]),

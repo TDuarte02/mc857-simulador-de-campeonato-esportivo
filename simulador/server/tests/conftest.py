@@ -97,10 +97,12 @@ def client(repositories, simulator):
 class Cup:
     """Drives one session through the API the way the mobile app would."""
 
-    def __init__(self, client, squad: str = USER_SQUAD):
+    def __init__(self, client, squad: str = USER_SQUAD, mode: str | None = None):
         self.client = client
         self.squad = squad
-        self.id = client.post("/session").get_json()["sessionId"]
+        response = client.post("/session") if mode is None else client.post("/session", json={"mode": mode})
+        assert response.status_code == 201, response.get_json()
+        self.id = response.get_json()["sessionId"]
 
     def get(self, path: str):
         return self.client.get(f"/{self.id}/{path}")

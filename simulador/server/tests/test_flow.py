@@ -5,6 +5,7 @@ import pytest
 
 from api.container import build_container
 from api.domain.models import Stage
+from api.simulation.engine import team_strength
 from conftest import USER_SQUAD, Cup, make_client
 
 QUOTAS = {"GK": 3, "DEF": 8, "MID": 8, "FW": 7}
@@ -291,13 +292,121 @@ def test_steps_out_of_order_are_conflicts(cup):
     assert cup.get("history").get_json()["matches"] == []
 
 
+# --- Fast mode -------------------------------------------------------------------
+
+
+def fast_cup(client) -> Cup:
+    return Cup(client, mode="FAST")
+
+
+def test_session_mode_is_validated(client):
+    default = Cup(client)  # no body at all
+    assert client.get(f"/session/{default.id}").get_json()["session"]["mode"] == "FULL"
+    explicit = client.post("/session", json={"mode": "FULL"})
+    assert explicit.status_code == 201
+
+    bogus = client.post("/session", json={"mode": "BOGUS"})
+    assert (bogus.status_code, error_code(bogus)) == (400, "INVALID_MODE")
+    not_a_string = client.post("/session", json={"mode": 5})
+    assert (not_a_string.status_code, error_code(not_a_string)) == (400, "INVALID_BODY")
+    not_an_object = client.post("/session", json=["FAST"])
+    assert (not_an_object.status_code, error_code(not_an_object)) == (400, "INVALID_BODY")
+
+
+def test_fast_cup_starts_at_the_quarter_finals_with_eight_squads(repositories, simulator):
+    container = build_container(repositories=repositories, simulator=simulator, rng=random.Random(7))
+    cup = fast_cup(make_client(container))
+    draw = cup.start()
+
+    assert draw["groups"] == []
+    squads = {squad["id"]: [player["id"] for player in squad["players"]] for squad in draw["squads"]}
+    assert len(squads) == 8 and USER_SQUAD in squads
+    assert all(len(players) == 26 for players in squads.values())
+    assert [match["id"] for match in draw["matches"]] == ["QF1", "QF2", "QF3", "QF4"]
+    assert all(match["stage"] == "QUARTER_FINAL" and match["round"] == 4 for match in draw["matches"])
+    assert {match[side]["id"] for match in draw["matches"] for side in ("home", "away")} == set(squads)
+    assert cup.get("draw").get_json() == draw
+
+    # Seeded: each quarter-final puts one of the 4 strongest against one of the 4 weakest.
+    strength = {sid: team_strength(sid, container.squads.get_players(ids)) for sid, ids in squads.items()}
+    strongest = set(sorted(squads, key=lambda sid: (-strength[sid], sid))[:4])
+    assert all((m["home"]["id"] in strongest) != (m["away"]["id"] in strongest) for m in draw["matches"])
+
+    session = cup.client.get(f"/session/{cup.id}").get_json()["session"]
+    assert (session["mode"], session["phase"], session["round"]) == ("FAST", "QUARTER_FINALS", 3)
+    early = cup.get("round-results")
+    assert (early.status_code, error_code(early)) == (409, "NO_ROUND_PLAYED")
+    playoffs = cup.get("playoffs-draw").get_json()
+    assert playoffs["quarterFinals"] == draw["matches"]
+    assert {squad["id"] for squad in playoffs["qualified"]} == set(squads)
+
+
+def test_fast_cup_comes_from_the_session_seed(repositories):
+    def field(seed: int) -> list:
+        client = make_client(build_container(repositories=repositories, session_seed=lambda: seed))
+        draw = fast_cup(client).start()
+        return [(match["home"]["id"], match["away"]["id"]) for match in draw["matches"]]
+
+    assert field(42) == field(42)
+    assert len({tuple(field(seed)) for seed in range(6)}) > 1
+
+
+def test_user_wins_a_fast_cup(client):
+    cup = fast_cup(client)
+    cup.start()
+
+    quarter = cup.play()
+    assert quarter["match"]["stage"] == "QUARTER_FINAL"
+    assert (quarter["next"]["step"], quarter["next"]["stage"]) == ("NEXT_ROUND", "SEMI_FINAL")
+    assert len(cup.get("round-results").get_json()["advanced"]) == 4
+    semi = cup.play()
+    assert (semi["next"]["step"], semi["next"]["stage"]) == ("NEXT_ROUND", "FINAL")
+    final = cup.play()
+    assert final["next"]["step"] == "FINISHED"
+
+    history = cup.get("history").get_json()
+    assert (history["phase"], history["placement"]) == ("FINISHED", "CHAMPION")
+    assert history["groups"] == []
+    assert len(history["matches"]) == 8  # 4 quarter-finals, 2 semi-finals, third place, final
+    assert history["bracket"]["thirdPlace"]["played"]
+    assert [match["stage"] for match in history["userPath"]] == ["QUARTER_FINAL", "SEMI_FINAL", "FINAL"]
+    assert len({squad["id"] for squad in history["podium"].values()}) == 4
+    assert cup.get("round-results").get_json()["podium"] == history["podium"]
+
+
+def test_fast_cup_semi_final_loss_leads_to_the_third_place_match(client, simulator):
+    simulator.user_wins = lambda stage: stage is not Stage.SEMI_FINAL
+    cup = fast_cup(client)
+    cup.start()
+    cup.play()
+
+    semi = cup.play()
+    assert (semi["next"]["step"], semi["next"]["stage"]) == ("THIRD_PLACE_MATCH", "THIRD_PLACE")
+    cup.play()
+    history = cup.get("history").get_json()
+    assert history["placement"] == "THIRD_PLACE"
+    assert history["podium"]["third"]["id"] == USER_SQUAD
+
+
+def test_fast_cup_quarter_final_loss_then_simulate_all(client, simulator):
+    simulator.user_wins = lambda stage: False
+    cup = fast_cup(client)
+    cup.start()
+
+    assert cup.play()["next"]["step"] == "ELIMINATED"
+    history = cup.post("simulate-all").get_json()
+    assert (history["phase"], history["placement"]) == ("FINISHED", "QUARTER_FINALS")
+    assert len(history["matches"]) == 8
+
+
 # --- The random mock model ------------------------------------------------------
 
 
 @pytest.mark.parametrize("seed", range(12))
-def test_random_model_always_finishes_a_cup(seed, repositories):
+@pytest.mark.parametrize("mode", ["FULL", "FAST"])
+def test_random_model_always_finishes_a_cup(seed, mode, repositories):
     client = make_client(build_container(repositories=repositories, rng=random.Random(seed)))
-    cup = Cup(client, squad="uruguay")
+    cup = Cup(client, squad="uruguay", mode=mode)
     cup.start()
 
     step = "NEXT_ROUND"
@@ -312,7 +421,7 @@ def test_random_model_always_finishes_a_cup(seed, repositories):
     history = cup.get("history").get_json()
     assert history["phase"] == "FINISHED"
     assert history["placement"] is not None
-    assert len(history["matches"]) == 32
+    assert len(history["matches"]) == (32 if mode == "FULL" else 8)
     assert len({squad["id"] for squad in history["podium"].values()}) == 4
     for match in history["bracket"]["quarterFinals"] + history["bracket"]["semiFinals"]:
         assert match["result"]["winner"] in (match["home"]["id"], match["away"]["id"])
