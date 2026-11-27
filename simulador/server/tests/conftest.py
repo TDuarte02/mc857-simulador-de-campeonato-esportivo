@@ -16,6 +16,7 @@ from api.simulation.base import MatchContext, MatchSimulator
 from openapi_check import response_problems
 
 USER_SQUAD = "brazil"
+LINEUP_442 = {"GK": 1, "DEF": 4, "MID": 4, "FW": 2}
 
 
 class SpecCheckedClient(FlaskClient):
@@ -79,7 +80,7 @@ def repositories(request) -> Repositories:
     """Every test using it runs once per storage backend; Mongo is faked with mongomock."""
     if request.param == "memory":
         return create_memory_repositories()
-    return create_mongo_repositories(mock_mongo_db())
+    return create_mongo_repositories(mock_mongo_db(), seed_mock=True)
 
 
 @pytest.fixture
@@ -123,10 +124,12 @@ class Cup:
         return response.get_json()
 
     def lineup(self) -> list[int]:
+        """An XI shaped like a 4-4-2: 1 GK, 4 DEF, 4 MID and 2 FW among the available players."""
         available = self.get("available-players").get_json()["available"]
-        goalkeeper = next(p for p in available if p["position"] == "GK")
-        outfield = [p for p in available if p["position"] != "GK"][:10]
-        return [goalkeeper["id"], *(p["id"] for p in outfield)]
+        picked = []
+        for position, count in LINEUP_442.items():
+            picked += [p["id"] for p in available if p["position"] == position][:count]
+        return picked
 
     def play(self) -> dict:
         response = self.post("simulate", {"players": self.lineup(), "formation": "4-4-2"})

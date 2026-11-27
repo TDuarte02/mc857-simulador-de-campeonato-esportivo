@@ -8,11 +8,15 @@ from pathlib import Path
 
 import pandas as pd
 
+from .catalogo import carregar_todas_convocacoes, construir_catalogo, resumo_catalogo
+from .correcoes import CORRECOES_PADRAO, carregar_correcoes
 from .filtro import COTAS_PADRAO, filtrar_pool, parse_cotas
 from .identity import carregar_aliases, descobrir_lacunas
+from .imputacao import avaliar_imputacao
 from .io import carregar_convocacoes, carregar_dataset, escrever_csv
 from .materialize import materializar
 from .posicoes import aplicar_posicoes, treinar_modelo
+from .registry import reconstruir_registry
 from .report import consolidar_resumo, mesclar_publicados
 from .research import gerar_pacote, escrever_pacote
 from .runner import (
@@ -107,6 +111,24 @@ def _parser() -> argparse.ArgumentParser:
     filtro.add_argument("--cotas", default=",".join(f"{g}={n}" for g, n in COTAS_PADRAO.items()))
     filtro.add_argument("--selecoes", nargs="+", help="restringe a estas seleções (padrão: todas)")
 
+    registry = sub.add_parser("rebuild-registry", help="reconstrói o registro de ids a partir dos artefatos publicados")
+    registry.add_argument("--convocados", type=Path, required=True, help="snapshot consolidado da camada 2024")
+    registry.add_argument("--historicos", type=Path, required=True, help="snapshot consolidado da camada histórica")
+    registry.add_argument("--registry", type=Path, default=REGISTRY_PADRAO)
+
+    catalogo = sub.add_parser("build-catalog", help="gera o catálogo final (convocados, ids, filtro, imputação, validação)")
+    catalogo.add_argument("--pool", type=Path, required=True)
+    catalogo.add_argument("--dataset", type=Path, required=True, help="base FIFA 22, usada para treinar a imputação")
+    catalogo.add_argument("--convocacoes", type=Path, required=True, help="diretório com <pais>.csv")
+    catalogo.add_argument("--aliases", type=Path)
+    catalogo.add_argument("--registry", type=Path, default=REGISTRY_PADRAO)
+    catalogo.add_argument("--correcoes", type=Path, default=CORRECOES_PADRAO, help="datas de nascimento corrigidas, com fonte")
+    catalogo.add_argument("--cotas", default=",".join(f"{g}={n}" for g, n in COTAS_PADRAO.items()))
+    catalogo.add_argument("--output", type=Path, required=True)
+
+    avaliar = sub.add_parser("avaliar-imputacao", help="erro da imputação por atributo, num corte 15k/4k da base")
+    avaliar.add_argument("--dataset", type=Path, required=True)
+
     posicoes = sub.add_parser("aplicar-posicoes", help="posições secundárias + colunas de posição")
     posicoes.add_argument("--snapshot", type=Path, required=True)
     posicoes.add_argument("--respostas", type=Path, required=True, help="JSON com as posições secundárias")
@@ -186,6 +208,33 @@ def main(argv: list[str] | None = None) -> int:
         pool = pd.read_csv(args.pool, low_memory=False)
         filtrado = filtrar_pool(pool, parse_cotas(args.cotas), args.selecoes)
         escrever_csv(filtrado, args.output)
+        return 0
+    if args.comando == "rebuild-registry":
+        camadas = [
+            ("convocado_2024", pd.read_csv(args.convocados, low_memory=False)),
+            ("historico", pd.read_csv(args.historicos, low_memory=False)),
+        ]
+        pendentes = reconstruir_registry(camadas, args.registry)
+        _print_json({"registry": str(args.registry), "sem_registro": pendentes.to_dict("records")})
+        return 0
+    if args.comando == "build-catalog":
+        resultado = construir_catalogo(
+            pd.read_csv(args.pool, low_memory=False),
+            carregar_dataset(args.dataset),
+            carregar_todas_convocacoes(args.convocacoes),
+            args.registry,
+            carregar_aliases(args.aliases),
+            parse_cotas(args.cotas),
+            carregar_correcoes(args.correcoes),
+        )
+        if resultado.erros:
+            print("\n".join(resultado.erros))
+            return 2
+        escrever_csv(resultado.jogadores, args.output)
+        print(resumo_catalogo(resultado.jogadores).to_string(index=False))
+        return 0
+    if args.comando == "avaliar-imputacao":
+        print(avaliar_imputacao(carregar_dataset(args.dataset)).to_string(index=False))
         return 0
     if args.comando == "aplicar-posicoes":
         modelo = treinar_modelo(carregar_dataset(args.dataset))

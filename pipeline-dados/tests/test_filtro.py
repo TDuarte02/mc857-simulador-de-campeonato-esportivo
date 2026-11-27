@@ -60,6 +60,29 @@ class FiltroTest(unittest.TestCase):
         self.assertEqual(resumo.loc["Panama", "GK"], 4)
         self.assertEqual(resumo.loc["Argentina", "MID"], 20)
 
+    def test_convocados_da_base_nunca_sao_cortados(self):
+        pool = self._pool()
+        pool["is_convocado_2024"] = False
+        # o pior zagueiro do Panamá (overall 60) é convocado: entra mesmo abaixo do corte
+        pool.loc[pool.sofifa_id.eq(200), "is_convocado_2024"] = True
+        filtrado = filtrar_pool(pool)
+        pan_cb = filtrado[(filtrado.nationality_name == "Panama") & (filtrado.player_positions == "CB")]
+        self.assertIn(200, pan_cb.sofifa_id.tolist())
+        self.assertEqual(len(pan_cb), 12)            # o convocado ocupa uma vaga da cota
+        self.assertEqual(sorted(pan_cb.overall)[1:], list(range(69, 80)))
+
+    def test_cota_conta_pessoas_distintas(self):
+        pool = self._pool()
+        # 6 lendas de zaga do Panamá que são a mesma pessoa dos 6 melhores zagueiros da base
+        lendas = pool[pool.sofifa_id.between(214, 219)].assign(camada="historico", sofifa_id=lambda d: -d.sofifa_id)
+        pool = pd.concat([pool, lendas], ignore_index=True)
+        pool["person_key"] = pool.sofifa_id.abs().astype(str)
+        filtrado = filtrar_pool(pool)
+        pan_cb = filtrado[(filtrado.nationality_name == "Panama") & (filtrado.player_positions == "CB")]
+        # contando linhas, só 6 da base entrariam (as mesmas 6 pessoas): 6 pessoas no total
+        self.assertEqual(pan_cb.person_key.nunique(), 12)
+        self.assertEqual(len(pan_cb), 18)            # 6 lendas + 12 da base (6 repetem pessoas)
+
     def test_respeita_cotas_customizadas(self):
         filtrado = filtrar_pool(self._pool(), cotas={"GK": 2, "DEF": 3, "MID": 3, "ATT": 3})
         pan = filtrado[filtrado.nationality_name == "Panama"]

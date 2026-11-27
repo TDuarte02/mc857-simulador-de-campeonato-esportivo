@@ -54,6 +54,7 @@ class Serializer:
             "name": player.name,
             "age": player.age,
             "position": player.position,
+            "positions": list(player.positions),
             "overall": player.overall,
         }
 
@@ -118,7 +119,17 @@ class Serializer:
             "played": match.played,
             # Pre-simulated results stay hidden until their round is played.
             "result": self._result(match) if match.played else None,
+            "lineup": self._lineup(match),
         }
+
+    def _lineup(self, match: Match) -> list[dict] | None:
+        if match.lineup is None:
+            return None
+        names = {p.id: p.name for p in self._squads.get_players([entry.player_id for entry in match.lineup])}
+        return [
+            {"slot": entry.slot, "player": {"id": entry.player_id, "name": names.get(entry.player_id)}}
+            for entry in match.lineup
+        ]
 
     def outcome(self, outcome: SimulationOutcome) -> dict:
         upcoming = outcome.next.match
@@ -234,7 +245,7 @@ class Serializer:
             "penalties": penalties,
             "winner": match.winner,
             "goals": [event(goal) for goal in result.goals],
-            "cards": [event(card, type=card.type) for card in result.cards],
+            "cards": [event(card, type=card.type, secondYellow=card.second_yellow) for card in result.cards],
             "injuries": [event(injury, matchesOut=injury.matches_out) for injury in result.injuries],
         }
 

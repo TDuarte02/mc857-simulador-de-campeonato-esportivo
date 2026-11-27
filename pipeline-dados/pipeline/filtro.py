@@ -5,10 +5,14 @@ O pool completo (base + enriquecidos) tem ~5.000 jogadores para 16 seleções, o
 forma de um elenco real em vez de ordenar tudo por nota (que produziria elencos com
 1 goleiro e 35 meias).
 
-Regra: os jogadores enriquecidos entram **sempre** (são o produto do trabalho e
-foram declarados obrigatórios); a base completa cada posição até a cota, pelos
-melhores `overall`. Por isso a cota é um **piso**, não um teto: uma seleção com mais
-enriquecidos do que a cota mantém todos eles.
+Regra: os convocados de 2024 casados com o pool (`is_convocado_2024`, venham
+da base ou da pesquisa) e os jogadores enriquecidos entram **sempre**; a base
+completa cada posição até a cota, pelos melhores `overall`. Por isso a cota é um
+**piso**, não um teto: uma seleção com mais obrigatórios do que a cota mantém
+todos eles.
+
+Com `person_key`, a cota conta pessoas distintas, não linhas: as versões 2024 e
+lenda de um jogador contam uma vez só.
 """
 
 from __future__ import annotations
@@ -19,6 +23,8 @@ from .config import grupo_posicao
 
 COTAS_PADRAO = {"GK": 5, "DEF": 12, "MID": 12, "ATT": 11}
 CAMADAS_ENRIQUECIDAS = ("convocado_2024", "historico")
+COLUNA_CONVOCADO = "is_convocado_2024"
+COLUNA_PESSOA = "person_key"
 
 
 def parse_cotas(texto: str) -> dict[str, int]:
@@ -64,16 +70,32 @@ def filtrar_pool(
             do_grupo = recorte[recorte["_grupo"] == grupo]
             if do_grupo.empty:
                 continue
-            enriquecidos = do_grupo[do_grupo[coluna_camada].isin(CAMADAS_ENRIQUECIDAS)]
-            base = do_grupo[~do_grupo[coluna_camada].isin(CAMADAS_ENRIQUECIDAS)]
-            base = base.sort_values(coluna_overall, ascending=False)
-            # enriquecidos nunca são cortados: a cota é piso
+            obrigatorios = do_grupo[coluna_camada].isin(CAMADAS_ENRIQUECIDAS)
+            if COLUNA_CONVOCADO in do_grupo.columns:
+                obrigatorios |= do_grupo[COLUNA_CONVOCADO].fillna(False).astype(bool)
+            enriquecidos = do_grupo[obrigatorios]
+            base = do_grupo[~obrigatorios].sort_values(coluna_overall, ascending=False, kind="stable")
+            # obrigatórios nunca são cortados: a cota é piso
             partes.append(enriquecidos)
-            partes.append(base.head(max(0, cota - len(enriquecidos))))
+            partes.append(_completar(enriquecidos, base, cota))
 
     if not partes:
         return pool.head(0).copy()
     return pd.concat(partes, ignore_index=True).reindex(columns=colunas)
+
+
+def _completar(obrigatorios: pd.DataFrame, base: pd.DataFrame, cota: int) -> pd.DataFrame:
+    """Os melhores da base até a cota; com `person_key`, conta pessoas distintas."""
+    if COLUNA_PESSOA not in base.columns:
+        return base.head(max(0, cota - len(obrigatorios)))
+    pessoas = set(obrigatorios[COLUNA_PESSOA])
+    escolhidos = []
+    for idx, pessoa in base[COLUNA_PESSOA].items():
+        if len(pessoas) >= cota:
+            break
+        escolhidos.append(idx)
+        pessoas.add(pessoa)
+    return base.loc[escolhidos]
 
 
 def resumo_por_selecao(filtrado: pd.DataFrame, coluna_pais: str = "nationality_name") -> pd.DataFrame:

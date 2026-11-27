@@ -44,6 +44,13 @@ class CallUpService:
             )
 
         players = [pool[player_id] for player_id in player_ids]
+        people = Counter(player.person for player in players)
+        repeated = sorted(player.id for player in players if people[player.person] > 1)
+        if repeated:
+            raise ValidationError(
+                "INVALID_CALL_UP",
+                f"Players {repeated} are versions of the same person (2024 and legend); call up only one.",
+            )
         counts = Counter(player.position for player in players)
         for position, quota in self._settings.squad_quotas.items():
             if counts[position] != quota:

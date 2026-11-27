@@ -1,35 +1,44 @@
-"""Mock squads and players, standing in for the real dataset.
+"""Mock squads and players, standing in for the real dataset in tests and development.
 
-The 16 nations mirror the app's MockTeams.kt. Players are generated from name
-pools with an RNG seeded by the squad id, so ids and attributes are identical on
-every start.
+The squads are the pinned 16 (nations.py). Players are generated from name pools
+with an RNG seeded by the squad id, so ids and attributes are identical on every
+start. Like the engine's synthetic teams, every engine attribute of a player
+equals their overall.
 """
 
 import random
 
-from api.domain.models import Federation, Player, Position, Squad
+from api.domain.engine_data import ENGINE_ATTRIBUTES
+from api.domain.models import Player, Position, Squad
+from api.repositories.nations import NATIONS
 
-_CONMEBOL, _CONCACAF = Federation.CONMEBOL, Federation.CONCACAF
+# Per squad id: (base overall, name pool).
+_STRENGTH = {
+    "argentina": (84, "es"),
+    "bolivia": (68, "es"),
+    "brazil": (84, "pt"),
+    "colombia": (79, "es"),
+    "chile": (75, "es"),
+    "ecuador": (76, "es"),
+    "paraguay": (74, "es"),
+    "venezuela": (73, "es"),
+    "uruguay": (80, "es"),
+    "usa": (77, "en"),
+    "mexico": (77, "es"),
+    "costa_rica": (72, "es"),
+    "panama": (71, "es"),
+    "canada": (70, "en"),
+    "jamaica": (71, "en"),
+    "peru": (73, "es"),
+}
 
-# (id, name, ISO code for the flag, federation, base overall, name pool)
-_SQUADS = [
-    ("argentina", "Argentina", "ar", _CONMEBOL, 84, "es"),
-    ("bolivia", "Bolívia", "bo", _CONMEBOL, 68, "es"),
-    ("brazil", "Brasil", "br", _CONMEBOL, 84, "pt"),
-    ("colombia", "Colômbia", "co", _CONMEBOL, 79, "es"),
-    ("chile", "Chile", "cl", _CONMEBOL, 75, "es"),
-    ("ecuador", "Equador", "ec", _CONMEBOL, 76, "es"),
-    ("paraguay", "Paraguai", "py", _CONMEBOL, 74, "es"),
-    ("venezuela", "Venezuela", "ve", _CONMEBOL, 73, "es"),
-    ("uruguay", "Uruguai", "uy", _CONMEBOL, 80, "es"),
-    ("usa", "Estados Unidos", "us", _CONCACAF, 77, "en"),
-    ("mexico", "México", "mx", _CONCACAF, 77, "es"),
-    ("costa_rica", "Costa Rica", "cr", _CONCACAF, 72, "es"),
-    ("panama", "Panamá", "pa", _CONCACAF, 71, "es"),
-    ("haiti", "Haiti", "ht", _CONCACAF, 66, "fr"),
-    ("jamaica", "Jamaica", "jm", _CONCACAF, 71, "en"),
-    ("peru", "Peru", "pe", _CONMEBOL, 73, "es"),
-]
+# Dataset position codes handed out, in turn, to each sector's players.
+_CODES = {
+    Position.GK: ("GK",),
+    Position.DEF: ("CB", "RB", "CB", "LB"),
+    Position.MID: ("CM", "CDM", "CAM", "CM"),
+    Position.FW: ("ST", "LW", "RW", "ST"),
+}
 
 # Per position: (players tagged current, players tagged legend). The current ones
 # add up to exactly one valid 26-player call-up.
@@ -85,34 +94,18 @@ _NAMES = {
             "Green", "Baker", "Campbell", "Morrison", "Bailey", "Lowe",
         ],
     ),
-    "fr": (
-        [
-            "Jean", "Pierre", "Frantzdy", "Duckens", "Wilde", "Carlens", "Ricardo", "Steeven",
-            "Derrick", "Johny", "Mechack", "Kévin", "Alex", "Bryan", "Danley", "Leverton",
-            "Garven", "Josué", "Fabrice", "Stéphane", "Louicius", "Mikaël", "Zachary", "Martin",
-            "Jems", "Djimy", "Carl", "Don", "Christopher", "Ronaldo",
-        ],
-        [
-            "Pierre", "Nazon", "Arcus", "Étienne", "Lafrance", "Jérôme", "Alceus", "Sainté",
-            "Guerrier", "Bazile", "Cantave", "Duverger", "Placide", "Lambese", "Métusala", "Deedson",
-            "Dorsainvil", "Désiré", "Joseph", "Louis", "Charles", "François", "Michel", "Baptiste",
-            "Toussaint", "Dorival", "Belfort", "Geffrard", "Sanon", "Vorbe",
-        ],
-    ),
 }
 
 
 def build_squads() -> list[Squad]:
-    return [
-        Squad(id=squad_id, name=name, flag=f"https://flagcdn.com/w320/{iso}.png", federation=federation)
-        for squad_id, name, iso, federation, _, _ in _SQUADS
-    ]
+    return [Squad(id=n.id, name=n.name, flag=n.flag, federation=n.federation) for n in NATIONS]
 
 
 def build_players() -> list[Player]:
     players = []
-    for index, (squad_id, _, _, _, strength, language) in enumerate(_SQUADS):
-        players += _generate_squad(index, squad_id, strength, language)
+    for index, nation in enumerate(NATIONS):
+        strength, language = _STRENGTH[nation.id]
+        players += _generate_squad(index, nation.id, strength, language)
     return players
 
 
@@ -129,16 +122,21 @@ def _generate_squad(index: int, squad_id: str, strength: int, language: str) -> 
                 name = f"{rng.choice(first_names)} {rng.choice(last_names)}"
             used_names.add(name)
             boost = rng.randint(3, 10) if is_legend else rng.randint(-6, 5)
+            player_id = (index + 1) * 100 + len(players) + 1
+            overall = max(50, min(99, strength + boost))
             players.append(
                 Player(
-                    id=(index + 1) * 100 + len(players) + 1,
+                    id=player_id,
                     squad_id=squad_id,
                     name=name,
                     age=rng.randint(36, 48) if is_legend else rng.randint(19, 34),
                     position=position,
-                    overall=max(50, min(99, strength + boost)),
+                    overall=overall,
                     is_current=not is_legend,
                     is_legend=is_legend,
+                    positions=(_CODES[position][n % len(_CODES[position])],),
+                    attributes={field: overall for field in ENGINE_ATTRIBUTES},
+                    person_key=str(player_id),
                 )
             )
     return players
