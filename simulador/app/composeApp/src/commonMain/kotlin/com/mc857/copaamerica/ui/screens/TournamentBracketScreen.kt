@@ -26,6 +26,7 @@ import com.mc857.copaamerica.domain.logic.NextStep
 import com.mc857.copaamerica.domain.model.History
 import com.mc857.copaamerica.domain.model.Squad
 import com.mc857.copaamerica.domain.model.Stage
+import com.mc857.copaamerica.domain.model.TournamentMode
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
@@ -50,6 +51,7 @@ fun TournamentBracketScreen(
     next: NextStep,
     onAdvance: () -> Unit,
     onReset: () -> Unit,
+    mode: TournamentMode = TournamentMode.FULL,
 ) {
     val upcoming = (next as? NextStep.Play)?.match ?: return
     val rival = upcoming.opponentOf(team.id)
@@ -98,7 +100,7 @@ fun TournamentBracketScreen(
     }
 
     Column(Modifier.fillMaxSize()) {
-        TopBar(title = "Chaveamento", sub = "$stageLabel · Modo clássico", onReset = onReset)
+        TopBar(title = "Chaveamento", sub = "$stageLabel · ${mode.label}", onReset = onReset)
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).retroPaper().padding(16.dp)) {
             Row(Modifier.fillMaxWidth().padding(bottom = 8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                 Text(stageLabel.uppercase(), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.sp, color = AppColors.ink)

@@ -17,6 +17,7 @@ import com.mc857.copaamerica.domain.model.Preset
 import com.mc857.copaamerica.domain.model.SessionPhase
 import com.mc857.copaamerica.domain.model.Squad
 import com.mc857.copaamerica.domain.model.Stage
+import com.mc857.copaamerica.domain.model.TournamentMode
 import com.mc857.copaamerica.nav.Screen
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -32,6 +33,9 @@ data class UiError(
     /** The session is unusable: the only way forward is a new tournament. */
     val mustRestart: Boolean = false,
 )
+
+/** The server created a full cup when asked for a fast one: it predates fast mode. */
+private class FastModeUnavailable : Exception("The server does not support fast mode.")
 
 /**
  * Navigation and tournament state. The server is the source of truth: every
@@ -52,6 +56,9 @@ class TournamentController(
     var error by mutableStateOf<UiError?>(null)
         private set
 
+    /** The mode of the tournament being set up or played. */
+    var mode by mutableStateOf(TournamentMode.FULL)
+        private set
     var squads by mutableStateOf<List<Squad>>(emptyList())
         private set
     var squad by mutableStateOf<Squad?>(null)
@@ -106,10 +113,12 @@ class TournamentController(
     val lastMatch: Match?
         get() = history?.matches?.firstOrNull { it.id == lastMatchId }
 
-    fun openTeamSelection() {
-        // Starting over from Home: a drawn session can no longer take a call-up. The
-        // saved one stays reopenable until the new call-up replaces it.
-        if (draw != null) clearTournament()
+    fun openTeamSelection(mode: TournamentMode = TournamentMode.FULL) {
+        // Starting over from Home: a drawn session can no longer take a call-up, and a
+        // session keeps the mode it was created with. The saved one stays reopenable
+        // until the new call-up replaces it.
+        if (draw != null || (sessionId != null && mode != this.mode)) clearTournament()
+        this.mode = mode
         navigate(Screen.TEAM_SELECTION)
         if (squads.isEmpty()) loadSquads()
     }
@@ -137,13 +146,21 @@ class TournamentController(
     fun confirmCallUp(playerIds: Set<Int>) {
         val squadId = squad?.id ?: return
         request {
-            val session = sessionId ?: api.createSession().also { sessionId = it }
+            val session = sessionId ?: createSession()
             api.callUp(session, squadId, playerIds.toList())
             squad?.let { saved.save(session, it.name) }
             callUp = playerIds
             lineup = emptyList()
             navigate(Screen.DRAW_SETUP)
         }
+    }
+
+    /** A server without fast mode ignores the mode and creates a full cup: that is checked here. */
+    private suspend fun createSession(): String {
+        val created = api.createSession(mode)
+        if (mode != TournamentMode.FULL && api.session(created).mode != mode) throw FastModeUnavailable()
+        sessionId = created
+        return created
     }
 
     fun runDraw() = withSession { session ->
@@ -231,6 +248,7 @@ class TournamentController(
                 history = latest
             }
             sessionId = target.sessionId
+            mode = state.mode ?: TournamentMode.FULL
             callUp = state.callUp.toSet()
             stack = resumedStack()
         }
@@ -325,6 +343,9 @@ class TournamentController(
     }
 
     private fun describe(failure: Throwable, retry: () -> Unit): UiError {
+        if (failure is FastModeUnavailable) {
+            return UiError("O servidor ainda não tem o modo rápido. Jogue o modo clássico por enquanto.")
+        }
         if (failure !is ApiException) {
             return UiError("Não foi possível falar com o servidor em $serverAddress.", retry)
         }

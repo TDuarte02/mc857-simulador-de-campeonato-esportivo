@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
@@ -72,9 +73,12 @@ enum class TournamentStep(val label: String) {
     KNOCKOUT("Mata-mata"),
 }
 
-/** Ink top bar with the logo, the tournament steps and the "new tournament"/profile actions. */
+/**
+ * Ink top bar with the logo, the tournament steps and the "new tournament"/profile
+ * actions. A cup without groups (Modo Rápido) leaves out [TournamentStep.GROUPS].
+ */
 @Composable
-fun WideNavBar(step: TournamentStep?, onReset: (() -> Unit)?) {
+fun WideNavBar(step: TournamentStep?, onReset: (() -> Unit)?, hasGroups: Boolean = true) {
     Column(Modifier.fillMaxWidth().background(AppColors.ink)) {
         Row(
             Modifier
@@ -93,7 +97,9 @@ fun WideNavBar(step: TournamentStep?, onReset: (() -> Unit)?) {
                 }
                 if (step != null) {
                     Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
-                        TournamentStep.entries.forEach { NavStep(it, current = step) }
+                        TournamentStep.entries
+                            .filter { hasGroups || it != TournamentStep.GROUPS }
+                            .forEachIndexed { index, it -> NavStep(it, number = index + 1, current = step) }
                     }
                 }
                 Spacer(Modifier.weight(1f))
@@ -130,7 +136,7 @@ private val NavMuted = Color(0xFF9AA3B5)
 private val NavBorder = Color(0xFF3A4560)
 
 @Composable
-private fun NavStep(step: TournamentStep, current: TournamentStep) {
+private fun NavStep(step: TournamentStep, number: Int, current: TournamentStep) {
     val done = step.ordinal < current.ordinal
     val isCurrent = step == current
     Row(
@@ -151,7 +157,7 @@ private fun NavStep(step: TournamentStep, current: TournamentStep) {
             contentAlignment = Alignment.Center,
         ) {
             Text(
-                "${step.ordinal + 1}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp,
+                "$number", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp,
                 color = when {
                     isCurrent -> AppColors.antiqueGold
                     done -> AppColors.ink
@@ -310,7 +316,9 @@ fun WideInkHeaderCard(
 
 /**
  * Non-lazy grid for content inside a scrolling [WidePage]: as many columns of
- * at least [minCellWidth] as fit, items laid out row by row.
+ * at least [minCellWidth] as fit, items laid out row by row. With [equalHeights],
+ * the cells of a row are as tall as its tallest (a cell must fill its height);
+ * the cells must then support intrinsic measurement (no lazy lists).
  */
 @Composable
 fun <T> WideGrid(
@@ -318,14 +326,17 @@ fun <T> WideGrid(
     minCellWidth: Dp,
     modifier: Modifier = Modifier,
     gap: Dp = 14.dp,
+    equalHeights: Boolean = false,
     cell: @Composable (T) -> Unit,
 ) {
     BoxWithConstraints(modifier) {
         val columns = ((maxWidth + gap) / (minCellWidth + gap)).toInt().coerceAtLeast(1)
         Column(verticalArrangement = Arrangement.spacedBy(gap)) {
             items.chunked(columns).forEach { row ->
-                Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
-                    row.forEach { item -> Box(Modifier.weight(1f)) { cell(item) } }
+                val rowModifier = if (equalHeights) Modifier.height(IntrinsicSize.Min) else Modifier
+                val cellModifier = if (equalHeights) Modifier.fillMaxHeight() else Modifier
+                Row(rowModifier, horizontalArrangement = Arrangement.spacedBy(gap)) {
+                    row.forEach { item -> Box(Modifier.weight(1f).then(cellModifier)) { cell(item) } }
                     repeat(columns - row.size) { Spacer(Modifier.weight(1f)) }
                 }
             }

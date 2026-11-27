@@ -20,6 +20,7 @@ import coil3.network.ktor3.KtorNetworkFetcherFactory
 import com.mc857.copaamerica.data.CopaApi
 import com.mc857.copaamerica.domain.logic.NextStep
 import com.mc857.copaamerica.domain.model.Stage
+import com.mc857.copaamerica.domain.model.TournamentMode
 import com.mc857.copaamerica.nav.Screen
 import com.mc857.copaamerica.platform.apiBaseUrl
 import com.mc857.copaamerica.platform.apiKey
@@ -46,8 +47,8 @@ import com.mc857.copaamerica.ui.screens.TeamSelectionScreen
 import com.mc857.copaamerica.ui.screens.TournamentBracketScreen
 
 /**
- * Root composable: draws the screen the [TournamentController] points at. Only
- * Modo Clássico is wired up; Modo Rápido and Multiplayer stay disabled on Home.
+ * Root composable: draws the screen the [TournamentController] points at. Modo
+ * Clássico and Modo Rápido are wired up; Multiplayer stays disabled on Home.
  */
 @Composable
 fun CopaAmericaApp() {
@@ -69,6 +70,7 @@ fun CopaAmericaApp() {
                     WideNavBar(
                         step = tournamentStep(screen, controller),
                         onReset = if (screen == Screen.HOME) null else controller::reset,
+                        hasGroups = controller.mode == TournamentMode.FULL,
                     )
                 }
                 Box(Modifier.weight(1f).fillMaxWidth()) {
@@ -96,7 +98,8 @@ private fun ScreenContent(controller: TournamentController) {
 
     when (controller.screen) {
         Screen.HOME -> HomeScreen(
-            onClassic = controller::openTeamSelection,
+            onClassic = { controller.openTeamSelection(TournamentMode.FULL) },
+            onFast = { controller.openTeamSelection(TournamentMode.FAST) },
             singlePlayerWins = controller.cupsWon,
             inProgressSquad = controller.inProgress?.squadName,
             onResume = controller::resumeTournament,
@@ -126,6 +129,7 @@ private fun ScreenContent(controller: TournamentController) {
             DrawSetupScreen(
                 team = it,
                 draw = draw,
+                mode = controller.mode,
                 onDraw = controller::runDraw,
                 onNext = controller::openLineup,
                 // The server refuses a new call-up once the groups are drawn.
@@ -185,6 +189,7 @@ private fun ScreenContent(controller: TournamentController) {
                 next = next,
                 onAdvance = controller::openLineup,
                 onReset = controller::reset,
+                mode = controller.mode,
             )
         }
 
@@ -200,7 +205,7 @@ private fun ScreenContent(controller: TournamentController) {
         }
 
         Screen.PHASE_OVERVIEW -> if (squad != null && history != null) {
-            PhaseOverviewScreen(team = squad, history = history, onReset = controller::reset)
+            PhaseOverviewScreen(team = squad, history = history, onReset = controller::reset, mode = controller.mode)
         }
     }
 }

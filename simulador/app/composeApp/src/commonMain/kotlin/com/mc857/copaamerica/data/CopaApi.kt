@@ -7,6 +7,7 @@ import com.mc857.copaamerica.domain.model.Player
 import com.mc857.copaamerica.domain.model.Preset
 import com.mc857.copaamerica.domain.model.SessionState
 import com.mc857.copaamerica.domain.model.Squad
+import com.mc857.copaamerica.domain.model.TournamentMode
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.HttpTimeout
@@ -29,6 +30,9 @@ import kotlinx.serialization.json.Json
 
 /** An error the API answered with: `{"error": {"code", "message"}}`. */
 class ApiException(val status: Int, val code: String, message: String) : Exception(message)
+
+@Serializable
+private data class CreateSessionRequest(val mode: TournamentMode)
 
 @Serializable
 private data class SessionResponse(val sessionId: String)
@@ -74,7 +78,8 @@ class CopaApi(private val baseUrl: String, private val apiKey: String = "") {
         }
     }
 
-    suspend fun createSession(): String = post("session").body<SessionResponse>().sessionId
+    suspend fun createSession(mode: TournamentMode): String =
+        post("session") { jsonBody(CreateSessionRequest(mode)) }.body<SessionResponse>().sessionId
 
     suspend fun session(sessionId: String): SessionState =
         get("session/${sessionId.encodeURLPathPart()}").body<SessionStateResponse>().session

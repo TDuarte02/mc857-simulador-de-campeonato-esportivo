@@ -70,13 +70,14 @@ private data class ModeTicket(
 
 /**
  * Mirrors HomeScreen, App.tsx:2351-2454. [singlePlayerWins] is the number of
- * Modo Clássico cups won on this device; multiplayer does not exist yet. When
+ * single-player cups (Modo Clássico and Modo Rápido) won on this device; multiplayer does not exist yet. When
  * [inProgressSquad] is set, an unfinished tournament with that squad is saved and
  * a button reopens it through [onResume].
  */
 @Composable
 fun HomeScreen(
     onClassic: () -> Unit,
+    onFast: () -> Unit = {},
     singlePlayerWins: Int = 0,
     inProgressSquad: String? = null,
     onResume: () -> Unit = {},
@@ -90,7 +91,7 @@ fun HomeScreen(
         ModeTicket(
             title = "Modo rápido", desc = "8 seleções. Mata-mata direto.", kicker = "Mata-mata direto", ghost = "8",
             bar = AppColors.ticketGreen, bg = AppColors.ticketGreenBg, border = AppColors.ticketGreen,
-            ctaColor = AppColors.ticketGreenText, enabled = false, onClick = null,
+            ctaColor = AppColors.ticketGreenText, enabled = true, onClick = onFast,
         ),
         ModeTicket(
             title = "Multiplayer", desc = "1vs1. Quem escala melhor?", kicker = "Duelo online", ghost = "1v1",

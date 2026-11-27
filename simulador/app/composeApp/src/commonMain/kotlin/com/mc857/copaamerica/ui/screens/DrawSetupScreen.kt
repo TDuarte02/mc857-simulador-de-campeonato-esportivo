@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mc857.copaamerica.domain.model.Draw
 import com.mc857.copaamerica.domain.model.Squad
+import com.mc857.copaamerica.domain.model.TournamentMode
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.theme.displayFontFamily
 import com.mc857.copaamerica.theme.hardShadow
@@ -58,16 +59,51 @@ import com.mc857.copaamerica.ui.components.WidePageHeader
 import com.mc857.copaamerica.ui.components.WideTicketCard
 import kotlinx.coroutines.delay
 
-private const val SLOT_COUNT = 16
+/** The board the draw fills: 4 groups of 4, or Modo Rápido's 4 quarter-finals. */
+private class DrawBoard(
+    val slotsPerCard: Int,
+    val drawLabel: String,
+    val caption: String,
+    val kicker: String,
+    val rules: String,
+    val cardTitle: (Int) -> String,
+) {
+    val slotCount get() = CARD_COUNT * slotsPerCard
+}
+
+private const val CARD_COUNT = 4
+
+private const val KNOCKOUT_RULES = "Empate no mata-mata vai direto para os pênaltis."
+
+private fun boardFor(mode: TournamentMode) = when (mode) {
+    TournamentMode.FULL -> DrawBoard(
+        slotsPerCard = 4,
+        drawLabel = "Sortear grupos",
+        caption = "4 grupos de 4 seleções",
+        kicker = "Fase de grupos",
+        rules = "As duas melhores de cada grupo avançam para as quartas. $KNOCKOUT_RULES",
+        cardTitle = { "GRUPO ${'A' + it}" },
+    )
+    TournamentMode.FAST -> DrawBoard(
+        slotsPerCard = 2,
+        drawLabel = "Sortear confrontos",
+        caption = "8 seleções direto nas quartas",
+        kicker = "Mata-mata direto",
+        rules = "Cada uma das 4 seleções mais fortes enfrenta uma das 4 mais fracas. $KNOCKOUT_RULES",
+        cardTitle = { "QUARTAS ${it + 1}" },
+    )
+}
 
 /**
- * The groups come from GET /{sessionId}/draw; this screen only reveals them one
- * team at a time. [onBack] is null once drawn: the call-up can no longer change.
+ * The groups (or, in Modo Rápido, the quarter-finals) come from GET
+ * /{sessionId}/draw; this screen only reveals them one team at a time. [onBack]
+ * is null once drawn: the call-up can no longer change.
  */
 @Composable
 fun DrawSetupScreen(
     team: Squad,
     draw: Draw?,
+    mode: TournamentMode = TournamentMode.FULL,
     onDraw: () -> Unit,
     onNext: () -> Unit,
     onBack: (() -> Unit)?,
@@ -75,11 +111,12 @@ fun DrawSetupScreen(
 ) {
     var revealedCount by remember(draw) { mutableStateOf(0) }
     var infoOpen by remember { mutableStateOf(false) }
-    val userGroup = draw?.groups?.firstOrNull { group -> group.squads.any { it.id == team.id } }?.name
+    val board = boardFor(mode)
+    val slotCount = board.slotCount
 
     androidx.compose.runtime.LaunchedEffect(draw) {
         if (draw != null) {
-            repeat(SLOT_COUNT) { i ->
+            repeat(slotCount) { i ->
                 delay(if (i == 0) 180L else 90L)
                 revealedCount = i + 1
             }
@@ -88,8 +125,8 @@ fun DrawSetupScreen(
 
     val drawButton: @Composable (Modifier) -> Unit = { modifier ->
         when {
-            draw == null -> RetroPrimaryButton(text = "Sortear grupos", onClick = onDraw, modifier = modifier)
-            revealedCount < SLOT_COUNT -> RetroPrimaryButton(text = "Sorteando…", enabled = false, onClick = {}, modifier = modifier)
+            draw == null -> RetroPrimaryButton(text = board.drawLabel, onClick = onDraw, modifier = modifier)
+            revealedCount < slotCount -> RetroPrimaryButton(text = "Sorteando…", enabled = false, onClick = {}, modifier = modifier)
             else -> RetroPrimaryButton(text = "Ir para escalação", onClick = onNext, modifier = modifier)
         }
     }
@@ -106,7 +143,7 @@ fun DrawSetupScreen(
                                 FlagImage(team.flag, height = 40.dp)
                                 Column {
                                     Text(team.name.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 30.sp, lineHeight = 30.sp, color = AppColors.ink)
-                                    Text(userGroup?.takeIf { revealedCount == SLOT_COUNT }?.let { "GRUPO $it" } ?: "AGUARDANDO SORTEIO", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
+                                    Text(draw?.let { userDrawLabel(it, team) }?.takeIf { revealedCount == slotCount } ?: "AGUARDANDO SORTEIO", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
                                 }
                             }
                             drawButton(Modifier.fillMaxWidth())
@@ -114,14 +151,14 @@ fun DrawSetupScreen(
                     }
                     // The phone layout hides this behind the "i" button.
                     Column(Modifier.padding(horizontal = 4.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                        WideCaption("4 grupos de 4 seleções")
+                        WideCaption(board.caption)
                         Text(
-                            "As duas melhores de cada grupo avançam para as quartas. Empate no mata-mata vai direto para os pênaltis.",
+                            board.rules,
                             fontFamily = monoFontFamily(), fontSize = 13.sp, lineHeight = 20.sp, color = AppColors.bodyText,
                         )
                     }
                 }
-                WideGrid((0 until 4).toList(), minCellWidth = 300.dp, modifier = Modifier.weight(1f), gap = 16.dp) { groupIndex ->
+                WideGrid((0 until CARD_COUNT).toList(), minCellWidth = 300.dp, modifier = Modifier.weight(1f), gap = 16.dp) { groupIndex ->
                     Column(
                         Modifier
                             .fillMaxWidth()
@@ -131,11 +168,11 @@ fun DrawSetupScreen(
                             .clip(RoundedCornerShape(16.dp)),
                     ) {
                         Box(Modifier.fillMaxWidth().background(AppColors.ticketOrangeBg).padding(horizontal = 14.dp, vertical = 10.dp)) {
-                            Text("GRUPO ${('A' + groupIndex)}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, letterSpacing = 1.5.sp, color = AppColors.kicker)
+                            Text(board.cardTitle(groupIndex), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 13.sp, letterSpacing = 1.5.sp, color = AppColors.kicker)
                         }
                         Column(Modifier.padding(10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                            repeat(4) { slot ->
-                                val item = drawnSlot(draw, groupIndex, slot, revealedCount)
+                            repeat(board.slotsPerCard) { slot ->
+                                val item = drawnSlot(draw, board, groupIndex, slot, revealedCount)
                                 Row(
                                     Modifier
                                         .fillMaxWidth()
@@ -162,7 +199,7 @@ fun DrawSetupScreen(
 
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize()) {
-        TopBar(title = "Sorteio do torneio", sub = "Modo Clássico", onBack = onBack, onReset = onReset)
+        TopBar(title = "Sorteio do torneio", sub = mode.label, onBack = onBack, onReset = onReset)
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).retroPaper().padding(horizontal = 20.dp).padding(vertical = 16.dp)) {
             Row(
                 Modifier
@@ -186,11 +223,12 @@ fun DrawSetupScreen(
 
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
-                modifier = Modifier.fillMaxWidth().height(420.dp),
+                // Fixed height: a lazy grid cannot measure itself inside the scrolling column.
+                modifier = Modifier.fillMaxWidth().height(if (board.slotsPerCard == 4) 420.dp else 220.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                items(4) { groupIndex ->
+                items(CARD_COUNT) { groupIndex ->
                     Column(
                         Modifier
                             .fillMaxWidth()
@@ -199,11 +237,11 @@ fun DrawSetupScreen(
                             .border(BorderStroke(2.dp, AppColors.paperBorder), RoundedCornerShape(16.dp)),
                     ) {
                         Box(Modifier.fillMaxWidth().background(AppColors.ticketOrangeBg).padding(horizontal = 10.dp, vertical = 6.dp)) {
-                            Text("GRUPO ${('A' + groupIndex)}", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.sp, color = AppColors.kicker)
+                            Text(board.cardTitle(groupIndex), fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 12.sp, letterSpacing = 1.sp, color = AppColors.kicker)
                         }
                         Column(Modifier.padding(6.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                            repeat(4) { slot ->
-                                val item = drawnSlot(draw, groupIndex, slot, revealedCount)
+                            repeat(board.slotsPerCard) { slot ->
+                                val item = drawnSlot(draw, board, groupIndex, slot, revealedCount)
                                 Row(
                                     Modifier
                                         .fillMaxWidth()
@@ -243,12 +281,12 @@ fun DrawSetupScreen(
     if (infoOpen) {
         ModalBottomSheet(onDismissRequest = { infoOpen = false }, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
             Column(Modifier.padding(horizontal = 20.dp).padding(bottom = 24.dp)) {
-                KickerLabel("Fase de grupos")
+                KickerLabel(board.kicker)
                 Spacer(Modifier.height(6.dp))
-                Text("4 GRUPOS DE 4 SELEÇÕES", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 22.sp, color = AppColors.ink)
+                Text(board.caption.uppercase(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 22.sp, color = AppColors.ink)
                 Spacer(Modifier.height(6.dp))
                 Text(
-                    "As duas melhores de cada grupo avançam para as quartas. Empate no mata-mata vai direto para os pênaltis.",
+                    board.rules,
                     fontFamily = monoFontFamily(), fontSize = 13.sp, color = AppColors.bodyText,
                 )
                 Spacer(Modifier.height(16.dp))
@@ -268,6 +306,22 @@ fun DrawSetupScreen(
     }
 }
 
-/** Squad in slot [slot] of group [groupIndex], or null while the draw has not revealed it. */
-private fun drawnSlot(draw: Draw?, groupIndex: Int, slot: Int, revealedCount: Int): Squad? =
-    draw?.groups?.getOrNull(groupIndex)?.squads?.getOrNull(slot)?.takeIf { groupIndex * 4 + slot < revealedCount }
+/**
+ * Squad in slot [slot] of card [cardIndex] (a group, or a quarter-final in Modo
+ * Rápido), or null while the draw has not revealed it.
+ */
+private fun drawnSlot(draw: Draw?, board: DrawBoard, cardIndex: Int, slot: Int, revealedCount: Int): Squad? {
+    if (draw == null || cardIndex * board.slotsPerCard + slot >= revealedCount) return null
+    if (draw.groups.isNotEmpty()) return draw.groups.getOrNull(cardIndex)?.squads?.getOrNull(slot)
+    val match = draw.matches.sortedBy { it.id }.getOrNull(cardIndex) ?: return null
+    return if (slot == 0) match.home else match.away
+}
+
+/** Where the draw put the user's squad: "GRUPO B", or its quarter-final rival in Modo Rápido. */
+private fun userDrawLabel(draw: Draw, team: Squad): String? {
+    if (draw.groups.isNotEmpty()) {
+        return draw.groups.firstOrNull { group -> group.squads.any { it.id == team.id } }?.let { "GRUPO ${it.name}" }
+    }
+    val rival = draw.matches.firstOrNull { it.involves(team.id) }?.opponentOf(team.id) ?: return null
+    return "QUARTAS CONTRA ${rival.name.uppercase()}"
+}
