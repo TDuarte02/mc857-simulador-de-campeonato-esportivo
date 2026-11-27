@@ -179,6 +179,16 @@ enum class Placement(val label: String) {
     GROUP_STAGE("Grupos"),
 }
 
+/** Where a session stands (GET /session/{sessionId}): enough to reopen it. */
+@Serializable
+data class SessionState(
+    val id: String,
+    val phase: SessionPhase,
+    val squadId: String? = null,
+    /** The called-up player ids; empty before the call-up. */
+    val callUp: List<Int> = emptyList(),
+)
+
 /** Snapshot of everything that happened in a session so far (GET /{sessionId}/history). */
 @Serializable
 data class History(

@@ -5,6 +5,7 @@ import com.mc857.copaamerica.domain.model.Draw
 import com.mc857.copaamerica.domain.model.History
 import com.mc857.copaamerica.domain.model.Player
 import com.mc857.copaamerica.domain.model.Preset
+import com.mc857.copaamerica.domain.model.SessionState
 import com.mc857.copaamerica.domain.model.Squad
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -12,6 +13,7 @@ import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.request.HttpRequestBuilder
+import io.ktor.client.request.header
 import io.ktor.client.request.get
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
@@ -30,6 +32,9 @@ class ApiException(val status: Int, val code: String, message: String) : Excepti
 
 @Serializable
 private data class SessionResponse(val sessionId: String)
+
+@Serializable
+private data class SessionStateResponse(val session: SessionState)
 
 @Serializable
 private data class SquadsResponse(val squads: List<Squad>)
@@ -59,14 +64,20 @@ private val apiJson = Json { ignoreUnknownKeys = true }
  * server answered with an error, or the engine's own exception when it could
  * not be reached.
  */
-class CopaApi(private val baseUrl: String) {
+class CopaApi(private val baseUrl: String, private val apiKey: String = "") {
     private val client = HttpClient {
         install(ContentNegotiation) { json(apiJson) }
         install(HttpTimeout) { requestTimeoutMillis = 15_000 }
-        defaultRequest { url("$baseUrl/") }
+        defaultRequest {
+            url("$baseUrl/")
+            if (apiKey.isNotEmpty()) header("x-api-key", apiKey)
+        }
     }
 
     suspend fun createSession(): String = post("session").body<SessionResponse>().sessionId
+
+    suspend fun session(sessionId: String): SessionState =
+        get("session/${sessionId.encodeURLPathPart()}").body<SessionStateResponse>().session
 
     suspend fun squads(): List<Squad> = get("squads").body<SquadsResponse>().squads
 

@@ -19,11 +19,45 @@ O campeonato será simulado de acordo com suas respectivas fases, com os resulta
 
 O app (`simulador/app`, Android, iOS e web) não simula nada sozinho: seleções, jogadores, sorteio, partidas, classificação e chaveamento vêm da API em `simulador/server`, que por enquanto usa jogadores fictícios e um simulador aleatório no lugar do modelo (veja o [README do servidor](simulador/server/README.md)).
 
-1. Suba a API: em `simulador/server`, rode `uv run flask --app main run` (ou `docker compose up -d --build`). Ela fica em http://127.0.0.1:5000.
-2. Android: abra `simulador/app` no Android Studio e rode no emulador, que acessa o computador por `10.0.2.2`. Para outro endereço, use `-PapiBaseUrl=http://host:5000`.
-3. Web: em `simulador/app`, rode `./gradlew wasmJsBrowserDevelopmentRun`. A API só aceita origens `localhost`, salvo as listadas em `CORS_ORIGINS`.
+Por padrão o app usa a API publicada na AWS, atrás de um API Gateway que exige o header `x-api-key`. A chave não fica no repositório: peça-a ao grupo e coloque-a em `simulador/app/local.properties` (que não é versionado):
 
-Testes do app: `./gradlew testDebugUnitTest`. Com `API_BASE_URL=http://127.0.0.1:5000` definida, um teste adicional joga copas completas contra a API.
+```properties
+api.key=<chave do API Gateway>
+# Opcional: outra API, por exemplo a local (no emulador Android, http://10.0.2.2:5000).
+# api.baseUrl=http://127.0.0.1:5000
+```
+
+1. Android: abra `simulador/app` no Android Studio e rode. Também dá para usar `-PapiBaseUrl=...` e `-PapiKey=...` no Gradle.
+2. iOS: abra `simulador/app/iosApp/iosApp.xcodeproj` no Xcode e rode.
+3. Web: em `simulador/app`, rode `./gradlew wasmJsBrowserDevelopmentRun` e abra http://localhost:8080.
+
+O web não chama a AWS direto: chama `/api` no próprio endereço, e quem serve a página repassa para a API com a chave. Localmente isso é feito pelo servidor de desenvolvimento (`composeApp/webpack.config.d/apiProxy.js`, que lê o mesmo `local.properties`); em produção, por uma edge function do Netlify (`netlify/edge-functions/api.ts`). Assim o navegador não precisa de CORS e a chave não vai para o bundle.
+
+Para rodar a API localmente: em `simulador/server`, `uv run flask --app main run` (ou `docker compose up -d --build`), em http://127.0.0.1:5000.
+
+Testes do app: `./gradlew testDebugUnitTest`. Com `API_BASE_URL` (e `API_KEY`, para a AWS) definidas, um teste adicional joga copas completas contra a API.
+
+### Deploy do web (Netlify)
+
+Uma vez só: crie o site e defina a chave como variável de ambiente dele.
+
+```bash
+cd simulador/app
+npx netlify-cli login
+npx netlify-cli sites:create
+npx netlify-cli env:set API_KEY <chave do API Gateway>
+```
+
+A cada deploy (o `clean` evita subir arquivos `.wasm` de builds anteriores):
+
+```bash
+./gradlew clean :composeApp:wasmJsBrowserDistribution
+npx netlify-cli deploy --prod
+```
+
+O site publicado fica em https://copa-america-mc857.netlify.app. A proteção por login do Netlify vale só para as prévias de deploy; a produção é pública.
+
+O `netlify.toml` já aponta para a pasta gerada pelo build e para a edge function. `API_BASE_URL` também pode ser definida no site para usar outra API.
 
 ## Base de dados
 https://www.kaggle.com/datasets/stefanoleone992/ea-sports-fc-24-complete-player-dataset/data

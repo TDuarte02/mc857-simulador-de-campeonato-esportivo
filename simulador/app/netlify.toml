@@ -1,0 +1,17 @@
+# Web app on Netlify. Build locally and deploy with the Netlify CLI from
+# simulador/app (see the README):
+#
+#   ./gradlew clean :composeApp:wasmJsBrowserDistribution
+#   npx netlify-cli deploy --prod
+#
+# /api/* is handled by netlify/edge-functions/api.ts, which forwards to the API
+# Gateway with the key from the API_KEY environment variable of the Netlify site.
+
+[build]
+  publish = "composeApp/build/dist/wasmJs/productionExecutable"
+  edge_functions = "netlify/edge-functions"
+
+[[headers]]
+  for = "/*.wasm"
+  [headers.values]
+    Content-Type = "application/wasm"

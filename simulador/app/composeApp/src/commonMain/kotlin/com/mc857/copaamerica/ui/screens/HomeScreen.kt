@@ -47,6 +47,7 @@ import com.mc857.copaamerica.ui.components.KickerLabel
 import com.mc857.copaamerica.ui.components.LocalWideLayout
 import com.mc857.copaamerica.ui.components.PlayTriangle
 import com.mc857.copaamerica.ui.components.ProfileIcon
+import com.mc857.copaamerica.ui.components.RetroPrimaryButton
 import com.mc857.copaamerica.ui.components.WideInkHeaderCard
 import com.mc857.copaamerica.ui.components.WidePage
 import com.mc857.copaamerica.ui.components.WideSectionRule
@@ -67,9 +68,19 @@ private data class ModeTicket(
     val onClick: (() -> Unit)?,
 )
 
-/** Mirrors HomeScreen, App.tsx:2351-2454. */
+/**
+ * Mirrors HomeScreen, App.tsx:2351-2454. [singlePlayerWins] is the number of
+ * Modo Clássico cups won on this device; multiplayer does not exist yet. When
+ * [inProgressSquad] is set, an unfinished tournament with that squad is saved and
+ * a button reopens it through [onResume].
+ */
 @Composable
-fun HomeScreen(onClassic: () -> Unit) {
+fun HomeScreen(
+    onClassic: () -> Unit,
+    singlePlayerWins: Int = 0,
+    inProgressSquad: String? = null,
+    onResume: () -> Unit = {},
+) {
     val tickets = listOf(
         ModeTicket(
             title = "Modo clássico", desc = "16 seleções. Conquiste o continente.", kicker = "Fase de grupos", ghost = "16",
@@ -89,7 +100,7 @@ fun HomeScreen(onClassic: () -> Unit) {
     )
 
     if (LocalWideLayout.current) {
-        WideHome(tickets)
+        WideHome(tickets, singlePlayerWins, inProgressSquad, onResume)
         return
     }
 
@@ -144,10 +155,14 @@ fun HomeScreen(onClassic: () -> Unit) {
                 }
                 Box(Modifier.fillMaxWidth().height(2.dp).background(AppColors.antiqueGold))
                 Row(Modifier.fillMaxWidth()) {
-                    StatColumn("SINGLE PLAYER", Modifier.weight(1f))
+                    StatColumn("SINGLE PLAYER", singlePlayerWins, Modifier.weight(1f))
                     Box(Modifier.width(2.dp).height(70.dp).background(AppColors.rowBorder))
-                    StatColumn("MULTIPLAYER", Modifier.weight(1f))
+                    StatColumn("MULTIPLAYER", 0, Modifier.weight(1f))
                 }
+            }
+
+            if (inProgressSquad != null) {
+                ResumeButton(inProgressSquad, onResume, Modifier.padding(horizontal = 20.dp).padding(bottom = 16.dp).fillMaxWidth())
             }
 
             // Section label
@@ -179,11 +194,18 @@ fun HomeScreen(onClassic: () -> Unit) {
     }
 }
 
+/** Reopens the saved, unfinished tournament. */
 @Composable
-private fun StatColumn(label: String, modifier: Modifier) {
+private fun ResumeButton(squadName: String, onResume: () -> Unit, modifier: Modifier) {
+    val label = if (squadName.isBlank()) "Continuar torneio" else "Continuar com $squadName"
+    RetroPrimaryButton(label, onClick = onResume, modifier = modifier)
+}
+
+@Composable
+private fun StatColumn(label: String, wins: Int, modifier: Modifier) {
     Column(modifier.padding(vertical = 10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         Text(label, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
-        Text("0", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 34.sp, color = AppColors.ink)
+        Text(wins.toString(), fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 34.sp, color = AppColors.ink)
         Text("VITÓRIAS", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.sp, color = AppColors.kicker)
     }
 }
@@ -242,7 +264,7 @@ private fun DottedRule(color: Color) {
 }
 
 @Composable
-private fun WideHome(tickets: List<ModeTicket>) {
+private fun WideHome(tickets: List<ModeTicket>, singlePlayerWins: Int, inProgressSquad: String?, onResume: () -> Unit) {
     WidePage {
         Row(Modifier.fillMaxWidth().padding(top = 20.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(40.dp)) {
             BoxWithConstraints(Modifier.weight(1f)) {
@@ -259,11 +281,17 @@ private fun WideHome(tickets: List<ModeTicket>) {
                     )
                 }
             }
-            WideInkHeaderCard("Suas estatísticas", "Temporada 2026", Modifier.width(420.dp)) {
-                Row(Modifier.fillMaxWidth()) {
-                    StatColumn("SINGLE PLAYER", Modifier.weight(1f))
-                    Box(Modifier.width(2.dp).height(70.dp).background(AppColors.rowBorder).align(Alignment.CenterVertically))
-                    StatColumn("MULTIPLAYER", Modifier.weight(1f))
+            Column(Modifier.width(420.dp)) {
+                WideInkHeaderCard("Suas estatísticas", "Temporada 2026", Modifier.fillMaxWidth()) {
+                    Row(Modifier.fillMaxWidth()) {
+                        StatColumn("SINGLE PLAYER", singlePlayerWins, Modifier.weight(1f))
+                        Box(Modifier.width(2.dp).height(70.dp).background(AppColors.rowBorder).align(Alignment.CenterVertically))
+                        StatColumn("MULTIPLAYER", 0, Modifier.weight(1f))
+                    }
+                }
+                if (inProgressSquad != null) {
+                    Spacer(Modifier.height(16.dp))
+                    ResumeButton(inProgressSquad, onResume, Modifier.fillMaxWidth())
                 }
             }
         }

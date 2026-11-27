@@ -21,12 +21,13 @@ import kotlin.test.assertTrue
 
 /**
  * Plays whole cups through the real [TournamentController] against a running
- * API. Skipped unless API_BASE_URL is set:
+ * API. Skipped unless API_BASE_URL is set (API_KEY too, for the API Gateway):
  *
  *     API_BASE_URL=http://127.0.0.1:5000 ./gradlew :composeApp:testDebugUnitTest
  */
 class LiveTournamentTest {
     private val baseUrl: String? = System.getenv("API_BASE_URL")
+    private val apiKey: String = System.getenv("API_KEY").orEmpty()
 
     private suspend fun TournamentController.act(action: TournamentController.() -> Unit) {
         action()
@@ -37,7 +38,7 @@ class LiveTournamentTest {
     @Test
     fun playsWholeCupsAgainstTheApi() = runBlocking {
         val url = baseUrl ?: return@runBlocking
-        val controller = TournamentController(CopaApi(url), CoroutineScope(Dispatchers.Default), url)
+        val controller = TournamentController(CopaApi(url, apiKey), CoroutineScope(Dispatchers.Default), url)
         val placements = mutableMapOf<String, Int>()
 
         // Enough cups for the random server model to reach every branch of the flow.

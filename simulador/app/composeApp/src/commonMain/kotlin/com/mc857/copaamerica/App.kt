@@ -22,6 +22,10 @@ import com.mc857.copaamerica.domain.logic.NextStep
 import com.mc857.copaamerica.domain.model.Stage
 import com.mc857.copaamerica.nav.Screen
 import com.mc857.copaamerica.platform.apiBaseUrl
+import com.mc857.copaamerica.platform.apiKey
+import com.mc857.copaamerica.platform.deviceStore
+import com.mc857.copaamerica.state.PlayerStats
+import com.mc857.copaamerica.state.SavedTournament
 import com.mc857.copaamerica.state.TournamentController
 import com.mc857.copaamerica.theme.AppColors
 import com.mc857.copaamerica.ui.components.LocalWideLayout
@@ -51,7 +55,10 @@ fun CopaAmericaApp() {
         ImageLoader.Builder(context).components { add(KtorNetworkFetcherFactory()) }.build()
     }
     val scope = rememberCoroutineScope()
-    val controller = remember { TournamentController(CopaApi(apiBaseUrl), scope, apiBaseUrl) }
+    val controller = remember {
+        val store = deviceStore()
+        TournamentController(CopaApi(apiBaseUrl, apiKey), scope, apiBaseUrl, PlayerStats(store), SavedTournament(store))
+    }
 
     BoxWithConstraints(Modifier.fillMaxSize().background(AppColors.surface).systemBarsPadding()) {
         val wide = maxWidth >= WideLayoutMinWidth
@@ -88,7 +95,12 @@ private fun ScreenContent(controller: TournamentController) {
     val next = controller.next
 
     when (controller.screen) {
-        Screen.HOME -> HomeScreen(onClassic = controller::openTeamSelection)
+        Screen.HOME -> HomeScreen(
+            onClassic = controller::openTeamSelection,
+            singlePlayerWins = controller.cupsWon,
+            inProgressSquad = controller.inProgress?.squadName,
+            onResume = controller::resumeTournament,
+        )
 
         Screen.TEAM_SELECTION -> TeamSelectionScreen(
             teams = controller.squads,

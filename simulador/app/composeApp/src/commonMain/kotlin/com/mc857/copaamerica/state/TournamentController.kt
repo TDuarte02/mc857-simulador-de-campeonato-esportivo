@@ -42,6 +42,8 @@ class TournamentController(
     private val api: CopaApi,
     private val scope: CoroutineScope,
     private val serverAddress: String,
+    private val stats: PlayerStats = PlayerStats(),
+    private val saved: SavedTournament = SavedTournament(),
 ) {
     var stack by mutableStateOf(listOf(Screen.HOME))
         private set
@@ -62,8 +64,20 @@ class TournamentController(
         private set
     var draw by mutableStateOf<Draw?>(null)
         private set
-    var history by mutableStateOf<History?>(null)
-        private set
+    private var historyState by mutableStateOf<History?>(null)
+
+    /**
+     * Every history the server sends goes through [stats], which counts cups won.
+     * A finished cup is no longer offered for reopening.
+     */
+    var history: History?
+        get() = historyState
+        private set(value) {
+            historyState = value
+            if (value == null) return
+            stats.record(value)
+            if (value.phase == SessionPhase.FINISHED && saved.current?.sessionId == value.sessionId) saved.clear()
+        }
     var availability by mutableStateOf<Availability?>(null)
         private set
     var lineup by mutableStateOf<List<Player?>>(emptyList())
@@ -74,6 +88,12 @@ class TournamentController(
     private var job: Job? = null
 
     val screen get() = stack.last()
+
+    /** Single-player cups won on this device. */
+    val cupsWon get() = stats.cupsWon
+
+    /** The unfinished tournament saved on this device, which Home offers to reopen. */
+    val inProgress get() = saved.current
 
     val next: NextStep?
         get() {
@@ -87,6 +107,9 @@ class TournamentController(
         get() = history?.matches?.firstOrNull { it.id == lastMatchId }
 
     fun openTeamSelection() {
+        // Starting over from Home: a drawn session can no longer take a call-up. The
+        // saved one stays reopenable until the new call-up replaces it.
+        if (draw != null) clearTournament()
         navigate(Screen.TEAM_SELECTION)
         if (squads.isEmpty()) loadSquads()
     }
@@ -116,6 +139,7 @@ class TournamentController(
         request {
             val session = sessionId ?: api.createSession().also { sessionId = it }
             api.callUp(session, squadId, playerIds.toList())
+            squad?.let { saved.save(session, it.name) }
             callUp = playerIds
             lineup = emptyList()
             navigate(Screen.DRAW_SETUP)
@@ -170,6 +194,48 @@ class TournamentController(
         stack = listOf(Screen.HOME, Screen.PHASE_OVERVIEW)
     }
 
+    /**
+     * Reopens the saved tournament where it stopped. The server keeps the whole
+     * tournament: this only reloads what the screens show.
+     */
+    fun resumeTournament() {
+        val target = saved.current ?: return
+        if (target.sessionId == sessionId && callUp.isNotEmpty()) {
+            stack = resumedStack()
+            return
+        }
+        request {
+            val state = api.session(target.sessionId)
+            val squadId = state.squadId
+            if (squadId == null || state.phase == SessionPhase.CREATED || state.phase == SessionPhase.FINISHED) {
+                saved.clear()
+                return@request
+            }
+            if (state.phase == SessionPhase.CALLED_UP) {
+                // Called up but not drawn yet: back to the draw, with the squad screens behind it.
+                val loadedSquads = api.squads()
+                val loadedPlayers = api.players(squadId)
+                val loadedPresets = api.presets(squadId)
+                clearTournament()
+                squads = loadedSquads
+                squad = loadedSquads.firstOrNull { it.id == squadId }
+                players = loadedPlayers
+                presets = loadedPresets
+            } else {
+                // GET /draw returns the existing draw once there is one.
+                val drawn = api.draw(target.sessionId)
+                val latest = api.history(target.sessionId)
+                clearTournament()
+                squad = drawn.userSquad
+                draw = drawn
+                history = latest
+            }
+            sessionId = target.sessionId
+            callUp = state.callUp.toSet()
+            stack = resumedStack()
+        }
+    }
+
     fun back() {
         if (stack.size > 1) stack = stack.dropLast(1)
     }
@@ -185,6 +251,12 @@ class TournamentController(
         busy = false
         error = null
         stack = listOf(Screen.HOME)
+        clearTournament()
+        saved.clear()
+    }
+
+    /** Forgets the tournament in memory; the saved one on the device stays. */
+    private fun clearTournament() {
         sessionId = null
         squad = null
         players = emptyList()
@@ -197,6 +269,13 @@ class TournamentController(
         formKey = FormKey.F442
         lastMatchId = null
     }
+
+    private fun resumedStack(): List<Screen> =
+        if (draw == null) {
+            listOf(Screen.HOME, Screen.TEAM_SELECTION, Screen.SQUAD_BUILDER, Screen.DRAW_SETUP)
+        } else {
+            listOf(Screen.HOME, hubScreen())
+        }
 
     /** The screen the tournament rests on between matches. */
     private fun hubScreen(): Screen {
