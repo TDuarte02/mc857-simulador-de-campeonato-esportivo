@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
@@ -315,7 +316,9 @@ fun WideInkHeaderCard(
 
 /**
  * Non-lazy grid for content inside a scrolling [WidePage]: as many columns of
- * at least [minCellWidth] as fit, items laid out row by row.
+ * at least [minCellWidth] as fit, items laid out row by row. With [equalHeights],
+ * the cells of a row are as tall as its tallest (a cell must fill its height);
+ * the cells must then support intrinsic measurement (no lazy lists).
  */
 @Composable
 fun <T> WideGrid(
@@ -323,14 +326,17 @@ fun <T> WideGrid(
     minCellWidth: Dp,
     modifier: Modifier = Modifier,
     gap: Dp = 14.dp,
+    equalHeights: Boolean = false,
     cell: @Composable (T) -> Unit,
 ) {
     BoxWithConstraints(modifier) {
         val columns = ((maxWidth + gap) / (minCellWidth + gap)).toInt().coerceAtLeast(1)
         Column(verticalArrangement = Arrangement.spacedBy(gap)) {
             items.chunked(columns).forEach { row ->
-                Row(horizontalArrangement = Arrangement.spacedBy(gap)) {
-                    row.forEach { item -> Box(Modifier.weight(1f)) { cell(item) } }
+                val rowModifier = if (equalHeights) Modifier.height(IntrinsicSize.Min) else Modifier
+                val cellModifier = if (equalHeights) Modifier.fillMaxHeight() else Modifier
+                Row(rowModifier, horizontalArrangement = Arrangement.spacedBy(gap)) {
+                    row.forEach { item -> Box(Modifier.weight(1f).then(cellModifier)) { cell(item) } }
                     repeat(columns - row.size) { Spacer(Modifier.weight(1f)) }
                 }
             }

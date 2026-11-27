@@ -164,7 +164,7 @@ fun PhaseOverviewScreen(
                     CampaignStat("Saldo", (goalsFor - goalsAgainst).let { if (it > 0) "+$it" else if (it < 0) "−${-it}" else "0" }, AppColors.ink, Modifier.weight(1f))
                 }
                 Spacer(Modifier.height(16.dp))
-                WideGrid(campaign, minCellWidth = 200.dp, gap = 12.dp) { game -> CampaignGameCard(game, team.id) }
+                WideGrid(campaign, minCellWidth = 200.dp, gap = 12.dp, equalHeights = true) { game -> CampaignGameCard(game, team.id) }
             }
 
             Spacer(Modifier.height(32.dp))
@@ -409,6 +409,7 @@ private fun CampaignGameCard(game: Match, userSquadId: String) {
     Row(
         Modifier
             .fillMaxWidth()
+            .fillMaxHeight()
             .background(bg, RoundedCornerShape(14.dp))
             .border(BorderStroke(2.dp, color), RoundedCornerShape(14.dp))
             .padding(horizontal = 14.dp, vertical = 12.dp),
@@ -424,8 +425,13 @@ private fun CampaignGameCard(game: Match, userSquadId: String) {
             val (own, other) = game.scoreFor(userSquadId)
             Text("$own–$other", fontFamily = displayFontFamily(), fontWeight = FontWeight.Black, fontSize = 24.sp, color = AppColors.ink)
             val verdict = when (outcome) { Outcome.WIN -> "VITÓRIA"; Outcome.DRAW -> "EMPATE"; Outcome.LOSS -> "DERROTA" }
-            val shootout = if (game.result?.penalties != null) " NOS PÊNALTIS" else ""
-            Text(verdict + shootout, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.sp, color = color)
+            Text(verdict, fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.sp, color = color, maxLines = 1)
+            // The shootout on a line of its own: next to the verdict it was wider than
+            // the card's narrowest cell and squeezed the rival's name.
+            game.result?.penalties?.let { pens ->
+                val (ownPens, otherPens) = if (game.home.id == userSquadId) pens.home to pens.away else pens.away to pens.home
+                Text("$ownPens–$otherPens PÊN.", fontFamily = monoFontFamily(), fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.sp, color = AppColors.mutedText, maxLines = 1)
+            }
         }
     }
 }
