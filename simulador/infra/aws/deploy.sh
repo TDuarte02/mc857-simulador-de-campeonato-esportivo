@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Deploys the Simulador de Campeonato API to AWS (see README.md in this folder).
 #
-#   simulador/infra/aws/deploy.sh --profile <aws-profile> [--region us-east-2] [--account <id>]
+#   simulador/infra/aws/deploy.sh --profile <aws-profile> [--region us-east-2] [--account <id>] [--update-ami]
 #   simulador/infra/aws/deploy.sh <aws-profile>
 #
 # Runs on Linux, WSL, macOS and Git Bash on Windows.
@@ -12,6 +12,16 @@
 # Safe to re-run: every step is idempotent; a re-run ships the current code.
 set -euo pipefail
 
+# --update-ami is this script's own option; common.sh parses the rest.
+UPDATE_AMI=0
+args=()
+for arg in "$@"; do
+    if [ "$arg" = "--update-ami" ]; then UPDATE_AMI=1; else args+=("$arg"); fi
+done
+set -- ${args[@]+"${args[@]}"}
+USAGE_EXTRA="  --update-ami  move both instances to the latest Amazon Linux 2023 AMI
+              (replaces them: the database and its sessions are lost)
+"
 # shellcheck source=common.sh
 . "$(dirname "$0")/common.sh"  # options (profile, region, account) and portability helpers
 
@@ -22,6 +32,7 @@ STACK=copa
 CSV=jogadores_copa_america_2024_filtrado.csv
 ORIGIN_PARAMETER=/copa-simulador/origin-secret
 MONGO_PASSWORD_PARAMETER=/copa-simulador/mongo-password
+LATEST_AMI_PARAMETER=/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
 # Pinned MongoDB packages for Amazon Linux 2023, with the SHA-256 from the repo's
 # metadata: the database instance has no internet and installs exactly these.
 MONGODB_REPO=https://repo.mongodb.org/yum/amazon/2023/mongodb-org/8.0/x86_64/RPMS
@@ -110,13 +121,52 @@ fi
 aws_ ssm get-parameter --name "$MONGO_PASSWORD_PARAMETER" --with-decryption --query Parameter.Value --output text \
     | tr -d '\r\n' | aws_ s3 cp - "s3://$bucket/secrets/mongo-password" --only-show-errors
 
+step "Instance image (AMI)"
+# A different AMI replaces both instances, and the database with them, so the stack
+# keeps the AMI it already runs. Older stacks stored the "latest" SSM parameter
+# instead of an id: then the id it resolved to last time is the one running.
+running_ami=""
+if read -r resolved_ami stored_ami < <(aws_ cloudformation describe-stacks --stack-name "$STACK" \
+        --query "Stacks[0].Parameters[?ParameterKey=='AmiId'] | [0].[ResolvedValue, ParameterValue]" \
+        --output text 2>/dev/null); then
+    if [ "$resolved_ami" != "None" ]; then running_ami="$resolved_ami"; else running_ami="$stored_ami"; fi
+fi
+if [ -z "$running_ami" ] || [ "$UPDATE_AMI" = 1 ]; then
+    ami="$(aws_ ssm get-parameter --name "$LATEST_AMI_PARAMETER" --query Parameter.Value --output text)"
+else
+    ami="$running_ami"
+fi
+case "$ami" in ami-?*) ;; *) echo "Unexpected AMI id '$ami'. Aborting." >&2; exit 1 ;; esac
+if [ -z "$running_ami" ]; then
+    echo "new stack: latest Amazon Linux 2023, $ami"
+elif [ "$ami" != "$running_ami" ]; then
+    :  # warned below
+elif [ "$UPDATE_AMI" = 1 ]; then
+    echo "already on the latest AMI, $ami"
+else
+    echo "keeping $ami (--update-ami moves to the latest)"
+fi
+if [ -n "$running_ami" ] && [ "$ami" != "$running_ami" ]; then
+    echo "WARNING: moving from $running_ami to $ami replaces BOTH instances:" >&2
+    echo "the database is recreated empty (the catalogue is reloaded, every session is lost)." >&2
+fi
+
 step "Main stack ($STACK) - the first deploy takes ~5-10 min"
 instance_before="$(output "$STACK" InstanceId 2>/dev/null || true)"
 aws_ cloudformation deploy --stack-name "$STACK" --template-file "$HERE/copa.yaml" \
     --capabilities CAPABILITY_IAM --no-fail-on-empty-changeset \
     --parameter-overrides ImageUri="$image" ArtifactsBucket="$bucket" OriginSecret="$origin_secret" \
-        OriginSecretParameter="$ORIGIN_PARAMETER" MongoPasswordParameter="$MONGO_PASSWORD_PARAMETER"
+        OriginSecretParameter="$ORIGIN_PARAMETER" MongoPasswordParameter="$MONGO_PASSWORD_PARAMETER" \
+        AmiId="$ami"
 instance="$(output "$STACK" InstanceId)"
+
+step "Publishing the API Gateway stage"
+# The stage serves a snapshot of the API's methods. CloudFormation updates the
+# methods (e.g. with a replaced instance's new address) but does not take a new
+# snapshot, so without this the stage keeps calling the old address (504).
+aws_ apigateway create-deployment --rest-api-id "$(output "$STACK" RestApiId)" \
+    --stage-name "$(output "$STACK" StageName)" --description "deploy.sh $tag" \
+    --query id --output text | sed 's/^/deployment /'
 
 # Same API instance as before: ship the image through SSM. A new instance runs
 # run.sh on its own first boot; running it twice at once would fight over containers.
